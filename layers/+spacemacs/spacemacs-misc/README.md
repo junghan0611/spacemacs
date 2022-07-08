@@ -1,0 +1,11 @@
+Description
+===========
+
+This layer adds some general packages into Spacemacs.
+
+Features:
+---------
+
+-   Support for jumping to definitions via `dumb-jump` or
+    `evil-goto-definition`.
+-   Support for an easy http request client via `request`.

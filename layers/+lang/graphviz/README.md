@@ -1,0 +1,44 @@
+![](img/graphviz.png)
+
+Description
+===========
+
+This layer adds support for the open-source graph declaration system
+graphviz to Spacemacs.
+
+Features:
+---------
+
+-   Syntax highlighting for `.dot` files
+-   Integration of a live-preview of `.dot` files via
+    [graphviz-dot-mode](https://github.com/ppareit/graphviz-dot-mode).
+-   Control of the graphviz compiler directly from emacs.
+-   Support for formatting `.dot` files automatically.
+
+Install
+=======
+
+To use this configuration layer, add it to your `~/.spacemacs`. You will
+need to add `graphviz` to the existing
+`dotspacemacs-configuration-layers` list in this file.
+
+To get the compilation working, you will also need the native package
+[graphviz](http://graphviz.org/) installed in your system.
+
+Configuration
+=============
+
+If the live preview is not always updating the rendered image properly,
+you can try to adjust the value of `graphviz-dot-revert-delay` higher to
+give the compiler more time to finish generating the file before
+reverting the buffer.
+
+Key bindings
+============
+
+  Key binding   Description
+  ------------- --------------------------------------
+  `SPC m ,`     Preview file
+  `SPC m =`     Indent graph
+  `SPC m t`     Toggle live-preview
+  `SPC m c`     Set compile command and compile file

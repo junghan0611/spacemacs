@@ -1,0 +1,364 @@
+![](img/emacs.png)
+
+Description
+===========
+
+This layer gathers all the configuration related to emacs-lisp. This
+should always be in your dotfile, it is not recommended to uninstall it.
+
+Features:
+---------
+
+-   Auto-completion using company
+-   Linting using flycheck integration
+-   Linting package file metadata using
+    [flycheck-package](https://github.com/purcell/flycheck-package)
+-   Repl support via `IELM`
+-   Support for specific lisp navigation styles via `emacs-lisp-mode`
+-   Auto-compile via
+    [auto-compile](https://github.com/tarsius/auto-compile) package
+-   Debugging via
+    [edebug](https://www.gnu.org/software/emacs/manual/html_node/elisp/Edebug.html#Edebug)
+-   Ert test runner with
+    [overseer](https://github.com/tonini/overseer.el)
+-   Nameless package prefix with optional
+    [nameless](https://github.com/Malabarba/Nameless)
+-   Structurally safe editing using optional
+    [evil-cleverparens](https://github.com/luxbock/evil-cleverparens)
+-   Visual feedback when evaluation using
+    [eval-sexp-fu](https://github.com/hchbaw/eval-sexp-fu.el)
+
+Install
+=======
+
+To use this configuration layer, add it to your `~/.spacemacs`. You will
+need to add `emacs-lisp` to the existing
+`dotspacemacs-configuration-layers` list in this file.
+
+Auto-compile
+============
+
+This layer adds the
+[auto-compile](https://github.com/tarsius/auto-compile) package to
+automatically keep the byte-compiled version of your Emacs lisp files
+synced with the uncompiled version on every save. If there are any
+compiler errors in the file, you will see a counter show up in the mode
+line. You can hover over these numbers to get a description or view the
+compiler output with the `SPC m c l` key binding. To disable the feature
+use this line in your `dotspacemacs/user-config` function.
+
+``` {.commonlisp org-language="emacs-lisp"}
+(remove-hook 'emacs-lisp-mode-hook 'auto-compile-mode)
+```
+
+You can also exclude the `auto-compile` package.
+
+Working with lisp files (barfage, slurpage & more)
+==================================================
+
+Spacemacs comes with a special `lisp-state` for working with lisp code
+that supports slurpage, barfage and more tools you\'ll likely want when
+working with lisp.
+
+As this state works the same for all files, the documentation is in
+global
+[DOCUMENTATION.org](https://github.com/syl20bnr/spacemacs/blob/master/doc/DOCUMENTATION.org#lisp-key-bindings).
+In general, use `SPC k` to interact with the lisp-state.
+
+Debugging Elisp
+===============
+
+Here is an interactive quick start to debug Emacs Lisp from an
+`emacs-lisp-mode` buffer.
+
+To follow this tutorial open the code of the following source block in
+an `emacs-lisp-mode` buffer. One way to do this is to first find this
+emacs-lisp layer documentation file in Spacemacs using
+`SPC h l emacs-lisp RET`. This will open the current file in
+`space-doc-mode`. Toggle off `space-doc-mode` using `,
+T V` so that Spacemacs will switch to `org-mode`. Now you can place the
+cursor somewhere inside the code block and press `, '` to open the code
+in an interactive `emacs-lisp-buffer`.
+
+``` {.elisp}
+(defun helloworld (name)
+  (let ((n (subroutine name)))
+    (message (format "Hello world, %s!" name))))
+
+(defun subroutine (s)
+  (concat "my dear " s))
+
+(helloworld "Spacemacs")
+```
+
+Steps: Now from within the `emacs-lisp-buffer`
+
+1.  Evaluate each sexp by putting your point in each of them and press
+    `, e f` or press `, e b` to evaluate all code in the buffer at once.
+2.  To debug the `helloworld` function, put your cursor on the `defun`
+    keyword and
+
+press `SPC m d f` (or `, d f`), it will put a breakpoint on the function
+(we say that we instrumentalise this function) so whenever the Lisp
+interpreter encounters this function it will start the debugger.
+
+1.  Then go to the closing parenthesis of `(helloworld "Spacemacs")` and
+    press
+
+`, e e` to evaluate it, if you are using `vim` editing style you end up
+in evilified state otherwise you end up in emacs state and `*Debugging*`
+is displayed in the mode line.
+
+1.  Press `s` to go to next step up to the opening parenthesis of
+    `(subroutine name)`,
+2.  Press `i` to go into the `subroutine` where you can press `s` to
+    step in
+
+function or press `o` to go out of it.
+
+1.  Press `a` to stop debugging.
+
+Using the inspector
+-------------------
+
+This layer adds the
+[inspector](https://github.com/mmontone/emacs-inspector) package to
+provide an easy way for inspecting data structures. Find more
+information about its usage
+[here](https://github.com/mmontone/emacs-inspector) and see key
+bindings.
+
+Nameless
+========
+
+Nameless hides package namespaces in your emacs-lisp code, and replaces
+it by leading `>` It can be toggled with `SPC m T n`.
+
+By default `nameless` is deactivated, to enable it set the layer
+variable `emacs-lisp-hide-namespace-prefix` to `t`.
+
+NOTE: `nameless` is known to cause problems when spacemacs is used
+inside a terminal window, use with caution.
+
+``` {.commonlisp org-language="emacs-lisp"}
+(setq-default dotspacemacs-configuration-layers '(
+  (emacs-lisp :variables emacs-lisp-hide-namespace-prefix t)))
+```
+
+Aliases
+-------
+
+This layer defines some global aliases for Spacemacs:
+
+  alias   namespace
+  ------- ---------------------
+  .S      dotspacemacs
+  CL      configuration-layer
+  S       spacemacs
+  SB      spacemacs-buffer
+
+You can define additional alias in function `dotspacemacs/user-config`
+of your dotfile:
+
+``` {.commonlisp org-language="emacs-lisp"}
+(add-to-list 'nameless-global-aliases '("N" . "nameless"))
+```
+
+Structurally safe editing
+=========================
+
+This layer adds support for `evil-cleverparens` which allows to safely
+edit lisp code by keeping the s-expressions balanced.
+
+By default this mode is not activated. You can turn it on locally on the
+active buffer with `SPC m T s` (`s` for safe).
+
+To turn it on automatically for all `emacs-lisp` buffers call the
+following function in your `dotspacemacs/user-config` function:
+
+``` {.commonlisp org-language="emacs-lisp"}
+(spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-emacs-lisp-mode)
+```
+
+or to enable it for all supported modes:
+
+``` {.commonlisp org-language="emacs-lisp"}
+(spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hooks)
+```
+
+When enabled the symbol `🆂` should be displayed in the mode-line.
+
+Key bindings
+============
+
+  Key binding                  Description
+  ---------------------------- -----------------------------------------------------------------------
+  `SPC m g g`                  go to definition of symbol under point
+  `SPC m g G`                  go to definition of symbol under point in other window
+  `SPC m h h`                  describe symbol at point
+  `SPC m c c`                  byte compile the current file
+  `SPC m c l`                  popup compile-log buffer
+  `SPC m e $` or `SPC m e l`   go to end of current line and evaluate
+  `SPC m e b`                  evaluate current buffer
+  `SPC m e C`                  evaluate current `defun` or `setq`
+  `SPC m e e`                  evaluate sexp before point
+  `SPC m e f`                  evaluation current function
+  `SPC m e r`                  evaluate current region
+  `SPC m ​,​`                  toggle `lisp state`
+  `SPC m t b`                  run tests of current buffer
+  `SPC m t q`                  run `ert`
+  `SPC m d m`                  open [macrostep](https://github.com/joddie/macrostep) transient-state
+  `SPC m :`                    toggle nameless minor mode
+
+Additional testing functions with overseer
+------------------------------------------
+
+Function related to test are present under the `SPC m t` prefix:
+
+  Key binding   Description
+  ------------- ---------------
+  `SPC m t a`   overseer test
+  `SPC m t A`   test debug
+  `SPC m t t`   run test
+  `SPC m t b`   test buffer
+  `SPC m t f`   test file
+  `SPC m t g`   test tags
+  `SPC m t p`   test prompt
+  `SPC m t q`   test quiet
+  `SPC m t h`   test help
+
+Additional evaluation functions
+-------------------------------
+
+If `smartparens` is used the following additional key bindings are
+available:
+
+  Key binding   Description
+  ------------- ------------------------------
+  `SPC m e c`   evaluate sexp around point
+  `SPC m e s`   evaluate symbol around point
+
+Format code
+-----------
+
+The
+[semantic](https://github.com/syl20bnr/spacemacs/blob/develop/layers/%2Bemacs/semantic/README.org)
+layer should be installed for these key bindings to become active.
+
+  Key binding   Description
+  ------------- -------------------------
+  `SPC m = b`   format current buffer
+  `SPC m = d`   format current function
+  `SPC m = o`   format all on one line
+  `SPC m = s`   format current sexp
+
+Debugging
+---------
+
+To start debugging:
+
+  Key binding   Description
+  ------------- ------------------------------------------------------------------------
+  `SPC m d f`   on a `defun` symbol toggle on the instrumentalisation of the function
+  `SPC m d F`   on a `defun` symbol toggle off the instrumentalisation of the function
+  `SPC m d t`   insert `(debug)` to print the stack trace and re-evaluate the function
+
+In `edebug-mode` (`*Debugging*` is displayed in the minor modes segment
+of the mode line)
+
+  Key binding   Description
+  ------------- ----------------------------
+  `s`           step
+  `i`           step in
+  `o`           step out
+  `S`           next
+  `f`           forward-sexp
+  `H`           goto here
+  `I`           instrument callee
+  `c`           go
+  `C`           fast continue
+  `t`           trace
+  `T`           fast trace
+  `q`           quit
+  `Q`           quit nonstop
+  `a`           stop
+  `b`           set breakpoint
+  `u`           unset breakpoint
+  `B`           next breakpoint
+  `x`           set conditional breakpoint
+  `r`           previous result
+  `e`           evaluate expression
+  `C-x C-e`     evaluate last sexp
+  `w`           where
+  `?`           help
+  `d`           backtrace
+
+In `edebug-eval-mode`
+
+  Key binding   Description
+  ------------- ------------------------------
+  `SPC m g w`   where
+  `SPC m a`     delete evaluation item
+  `SPC m k`     delete evaluation item
+  `SPC m ,`     update evaluation list
+  `SPC m c`     update evaluation list
+  `SPC m e e`   evaluate last sexp
+  `SPC m e E`   evaluate last sexp and print
+
+In `debugger-mode` (`Debugger` is displayed in major mode segment of the
+mode line)
+
+  Key binding   Description
+  ------------- --------------------------
+  `<tab>`       forward
+  `S-<tab>`     backward
+  `RET`         backtrace help follow
+  `p`           backtrace backward frame
+  `c`           continue
+  `R`           record expression
+  `d`           step through
+  `e`           eval expression
+  `J`           jump
+  `L`           list functions
+  `b`           frame
+  `r`           return value
+  `u`           frame clear
+  `C-v`         backtrace toggle locals
+  `q`           quit
+
+Refactoring with emr
+--------------------
+
+  Key binding     Description
+  --------------- ---------------------------
+  `SPC m r f e`   implement function
+  `SPC m r f d`   find unused definitions
+  `SPC m r e f`   extract function
+  `SPC m r e v`   extract variable
+  `SPC m r e l`   extract to let
+  `SPC m r e c`   extract constant
+  `SPC m r e a`   extract autoload
+  `SPC m r i v`   inline variable
+  `SPC m r i s`   inline let variable
+  `SPC m r i f`   inline function
+  `SPC m r i a`   insert autoload directive
+  `SPC m r d l`   delete let binding form
+  `SPC m r d d`   delete unused definition
+  `SPC m e w`     eval and replace
+
+Inspector
+---------
+
+**inspector buffer**
+
+  Key binding   Description
+  ------------- -----------------------------
+  `RET`         inspect object
+  `L`           navigate to previous object
+  `q`           quit inspector
+
+**backtrace buffer**
+
+  ----- ----------------
+  `i`   inspect object
+  ----- ----------------

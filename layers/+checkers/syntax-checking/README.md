@@ -1,0 +1,146 @@
+![](img/flycheck.png)
+
+Description
+===========
+
+This layer adds on the fly syntax checking to all supported language
+layers.
+
+Features:
+---------
+
+-   Support for automatic syntax checking with
+    [Flycheck](http://www.flycheck.org/) for various language layers
+-   Tooltip syntax errors with `popwin`
+
+Install
+=======
+
+Layer
+-----
+
+To use this configuration layer, add it to your `~/.spacemacs`. You will
+need to add `syntax-checking` to the existing
+`dotspacemacs-configuration-layers` list in this file.
+
+As this is a support layer you will also have to install at least one
+supported language layer for it to have any effect.
+
+Enabling/Disabling tooltips
+---------------------------
+
+By default tooltips are enabled and used whenever it is possible. You
+can disable them by setting the variable
+`syntax-checking-enable-tooltips` to `nil`:
+
+``` {.commonlisp org-language="emacs-lisp"}
+(setq-default dotspacemacs-configuration-layers
+  '((syntax-checking :variables syntax-checking-enable-tooltips nil)))
+```
+
+Disabling by default
+--------------------
+
+By default, syntax-checking is enabled in all available major modes
+(except for `emacs-lisp-mode`) and may be toggled off with `SPC t s`.
+You can default this to off by setting the variable
+`syntax-checking-enable-by-default` to `nil`:
+
+``` {.commonlisp org-language="emacs-lisp"}
+(setq-default dotspacemacs-configuration-layers
+  '((syntax-checking :variables syntax-checking-enable-by-default nil)))
+```
+
+If you want more fine-grained control, you can configure the variable
+`flycheck-global-modes` instead. Note that this variable should be
+manipulated in `dotspacemacs/user-config`.
+
+Enable flycheck globally
+------------------------
+
+Normally Spacemacs goes a long mile to enable syntax checking only where
+it makes sense. If syntax checking support is missing it is normally
+only a matter of declaring it in the layer. The best approach in this
+case is to open an issue and ask for syntax checking support.
+
+Some guides on the web suggest to enable flycheck globally by setting
+`(global-flycheck-mode)` in your `dotspacemacs/user-config`. This is
+neither necessary nor is it good for the layer system. In the contrary
+by doing so the layer system cannot longer decide for which modes
+activating flycheck would bring any useful outcome. This may result in
+loading slow or not properly configured checkers as well as break some
+of the more advanced configuration settings of the layer system.
+
+Enable support for traditional error navigation
+-----------------------------------------------
+
+By default spacemacs takes care to call the right function to jump to
+the next or previous error. However if wished flycheck can also override
+`next-error` and `previous-error` respectively allowing to use
+alternative general emacs bindings instead of the spacemacs specific
+ones. To do so set `syntax-checking-use-standard-error-navigation` to
+non-nil.
+
+``` {.commonlisp org-language="emacs-lisp"}
+(setq-default dotspacemacs-configuration-layers
+  '((syntax-checking :variables syntax-checking-use-standard-error-navigation t)))
+```
+
+Bitmaps
+-------
+
+If the original flycheck fringe bitmaps are more to your liking, you can
+set the variable `syntax-checking-use-original-bitmaps` to `t`:
+
+``` {.commonlisp org-language="emacs-lisp"}
+(setq-default dotspacemacs-configuration-layers
+  '((syntax-checking :variables syntax-checking-use-original-bitmaps t)))
+```
+
+Auto hide tooltips
+------------------
+
+You can set time in seconds after which tooltips are automatically
+hidden by setting the variable `syntax-checking-auto-hide-tooltips` to a
+positive number of seconds.
+
+Default value of `syntax-checking-auto-hide-tooltips` is `nil`, and in
+that case tooltips are kept open until the cursor is moved.
+
+``` {.commonlisp org-language="emacs-lisp"}
+(setq-default dotspacemacs-configuration-layers
+  '((syntax-checking :variables syntax-checking-auto-hide-tooltips 10)))
+```
+
+Window position and size
+------------------------
+
+You can set the frame position within the emacs window by setting the
+variable `syntax-checking-window-position`. Available values are
+`'bottom`, `'left`, `'right`, and `'top`. You can also set the initial
+size by setting `syntax-checking-window-width` and
+`syntax-checking-window-height` for width and height respectively.
+
+``` {.commonlisp org-language="emacs-lisp"}
+(setq-default dotspacemacs-configuration-layers
+  '((syntax-checking :variables
+                     syntax-checking-window-position 'bottom
+                     syntax-checking-window-width 80
+                     syntax-checking-window-height 25)))
+```
+
+Key bindings
+============
+
+  Key binding   Description
+  ------------- --------------------------------------------------------------
+  `SPC e b`     check for errors now
+  `SPC e c`     clear errors
+  `SPC e h`     describe flycheck checker
+  `SPC e l`     display a list of all the errors
+  `SPC e L`     display a list of all the errors and focus the errors buffer
+  `SPC e s`     set flycheck checker
+  `SPC e S`     set flycheck checker executable
+  `SPC e v`     verify flycheck setup
+  `SPC t s`     toggle flycheck
+  `SPC e x`     explain the error at point

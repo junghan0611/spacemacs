@@ -1,0 +1,42 @@
+![](img/ahk.png)
+
+Description
+===========
+
+Syntax highlighting and Emacs functions for use with
+[AutoHotkey](https://autohotkey.com/) or
+[AutoHotkey~L~](http://ahkscript.org).
+
+Using a combined implementation of ahk-mode from Xah Lee\'s `xahk-mode`
+and Robert Widhopf-Fenk\'s `autohotkey-mode`. Updated with the latest
+ahk and ahk~l~ commands found in the latest revision of
+[SciTE4AutoHotkey](http://fincs.ahk4.net/scite4ahk/).
+
+Contributed and maintained by [Rich
+Alesi](https://www.github.com/ralesi).
+
+Features:
+---------
+
+-   Auto-completion
+-   Documentation Lookup
+-   Execute Code Snippets
+-   Correct Indentation and Commenting
+
+Install
+=======
+
+To use this configuration layer, add it to your `~/.spacemacs`. You will
+need to add `autohotkey` to the existing
+`dotspacemacs-configuration-layers` list in this file.
+
+Key bindings
+============
+
+  Key binding   Description
+  ------------- ------------------------------------
+  `SPC m c b`   block comment
+  `SPC m c c`   line comment
+  `SPC m e b`   execute file with `autohotkey.exe`
+  `SPC m h h`   open documentation in `browser`
+  `SPC m h H`   open documentation in local `chm`

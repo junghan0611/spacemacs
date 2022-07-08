@@ -1,0 +1,12 @@
+Description
+===========
+
+This is the base distribution for Spacemacs.
+
+Features:
+---------
+
+-   Minimalistic approach to Spacemacs, contains only the core packages.
+    Good starting point to make something completely new. This
+    distribution should not be used for a new standalone Spacemacs
+    installation except you have very good reasons to.

@@ -1,0 +1,294 @@
+![](img/php.png)
+
+Description
+===========
+
+This layer adds PHP language support to Spacemacs.
+
+Features:
+---------
+
+-   Edit PHP files using [php-mode](https://github.com/ejmr/php-mode)
+-   Edit Drupal files
+-   Complete and jump to define with
+    [company-php](https://github.com/xcwen/ac-php)
+-   Run tests with PHPUnit
+-   Reformat code with PHP CBF
+-   Debug your programs with XDebug (via
+    [geben](https://github.com/ahungry/geben) or
+    [dap-mode](https://github.com/emacs-lsp/dap-mode))
+-   Refactor source files with help of
+    [phpactor.el](https://github.com/emacs-php/phpactor.el)
+-   Support for the [Language Server Protocol](https://langserver.org/)
+    (experimental)
+
+The `gtags` layer is recommended to benefit from better `eldoc` and
+`helm-gtags`.
+
+Install
+=======
+
+Layer
+-----
+
+To use this configuration layer, add it to your `~/.spacemacs`. You will
+need to add `php` to the existing `dotspacemacs-configuration-layers`
+list in this file.
+
+Backends
+--------
+
+For php you have the choice between a set of possible backends with
+different setup instructions and different capabilities.
+
+### LSP
+
+Note that you\'ll need to use the `lsp` layer to enable these backends.
+
+1.  intelephense
+
+    This is the recommended LSP server solution. To activate it set the
+    layer variable `php-backend`:
+
+    ``` {.commonlisp org-language="emacs-lisp"}
+    (php :variables php-backend 'lsp)
+    ```
+
+    and install the npm server with:
+
+    ``` {.bash org-language="sh"}
+    npm install -g intelephense
+    ```
+
+    You can find further information on the project\'s
+    [website](http://intelephense.net/) and [GitHub
+    page](https://github.com/bmewburn/vscode-intelephense).
+
+2.  php-language-server
+
+    This is an alternative LSP server implementation working on PHP
+    basis rather than nodejs. To activate it set the layer variable
+    `php-backend` like for the intelephense backend and install the
+    server via [composer](https://getcomposer.org/):
+
+    ``` {.bash org-language="sh"}
+    composer require felixfbecker/language-server
+    composer run-script --working-dir=vendor/felixfbecker/language-server parse-stubs
+    ```
+
+    You can find further information on the project\'s [GitHub
+    page](https://github.com/felixfbecker/php-language-server).
+
+3.  Debugging
+
+    In case of using any of LSP backends You can debug using
+    [dap](https://microsoft.github.io/debug-adapter-protocol).
+
+    First of all You have to add `dap` to layer list of Your
+    `dotspacemacs/layers` function of a `.spacemacs` config file.
+
+    As mentioned in [dap-mode doc for
+    php](https://github.com/emacs-lsp/dap-mode#php), dap-mode uses a
+    [VSCode
+    extension](https://marketplace.visualstudio.com/items?itemName=webfreak.debug)
+    as a debugging backend and includes a convenient `dap-php-setup`
+    command to install it into Your emacs. To embrace it open any PHP
+    file in any PHP project just after restarting emacs with `dap` layer
+    enabled. Now You can call the extension installation command:
+    `<M-x> dap-php-setup`.
+
+    After that You can try to debug something. For example add a
+    breakpoint to any of Your phpunit tests with `SPC m d b a`. And
+    start debugging with `SPC m d d d` and selecting a debug template.
+    Now run the test to ensure everything is working. You may refer to
+    one of the following examples to run Your tests.
+
+    For xdebug v2:
+
+    ``` {.bash org-language="sh"}
+    php -d xdebug.idekey=PHPSTORM -d xdebug.remote_autostart=1 -d xdebug.remote_enable=1 -d xdebug.remote_host=127.0.0.1 -d xdebug.remote_port=9000 bin/phpunit ./path/to/Test.php
+    ```
+
+    For xdebug v3:
+
+    ``` {.bash org-language="sh"}
+    php -d xdebug.idekey=PHPSTORM -d xdebug.start_with_request=yes -d xdebug.mode=debug -d xdebug.client_host=127.0.0.1 -d xdebug.client_port=9000 bin/phpunit ./path/to/Test.php
+    ```
+
+    Make sure You use the proper host. For example both `localhost` and
+    `127.0.0.1` most likely will not work while debugging inside of
+    docker. You have to use either `host.docker.internal` or Your
+    machine\'s external IP if it doesn\'t work. See [this docker
+    issue](https://github.com/docker/for-linux/issues/264) for reasons
+    of troubles with `host.docker.internal`.
+
+    The test is now expected to be paused by emacs/dap when it catches
+    code at the breakpoint.
+
+    You may wish to propagate some config options for the VSCode
+    extension which is used as a debug server. For example if You are
+    running Your code in a docker container the project source path may
+    differ between the container (and Xdebug PHP extension consequently)
+    and Emacs. The VSCode extension provides a config option to map the
+    path. In VSCode it is done by adding an appropriate json config. For
+    spacemacs it could be done for example by adding a next call to
+    `dotspacemacs/user-config` function of Your `.spacemacs` config:
+
+    ``` {.commonlisp org-language="emacs-lisp"}
+    (with-eval-after-load 'dap-php
+      (dap-register-debug-template "PHP debug with custom path"
+        (list :type "php"
+              :cwd nil
+              :request "launch"
+              :name "Php Debug with path"
+              :args '("--server=4711")
+              :pathMappings (ht ("/docker/src/path" "/emacs/src/path"))
+              :sourceMaps t)))
+    ```
+
+### ac-php-core
+
+This is a non server solution working entirely from an elisp package.
+This requires no installation of external services but also delivers the
+least amount of IDE like integrations with spacemacs.
+
+To activate it just don\'t set the variable `php-backend` in your
+dotfile. Remember that additional setup instructions are necessary on a
+per project basis which you can find below.
+
+1.  Setup
+
+    Because of the way that the ac-php-core package works, there are a
+    couple of simple initialization tasks which must occur to get the
+    completion working as it should. On any new project make sure to
+    perform the following initialization tasks:
+
+    1.  Run the following
+
+        ``` {.shell}
+        cd /root/of/project
+        touch .ac-php-conf.json
+        ```
+
+    2.  Inside of spacemacs run: = ac-php-remake-tags =
+
+    The `.ac-php-conf.json` file is required to enable auto-completion.
+    When you run `ac-php-remake-tags` and your `.ac-php-conf.json` file
+    is empty the default configuration will be used and inserted in the
+    file.
+
+    If your project contains the following files at the root folder:
+
+    1.  `.projectile`
+    2.  `vendor/autoload.php`
+
+    the necessary configuration file (`.ac-php-conf.json`) will be
+    created automatically if it does not exist.
+
+2.  Refactoring
+
+    This backend provides refactoring and class auto-completion
+    capabilities via
+    [phpactor.el](https://github.com/emacs-php/phpactor.el). To ensure
+    that the phpactor package is intact, just run
+    `M-x phpactor-install-or-update` and the package itself will make
+    sure that you\'re good to go.
+
+3.  Debugging
+
+    While using ac-php-core debug capabilities are provided via the
+    [geben package](https://github.com/ahungry/geben). Please refer for
+    details to the project page.
+
+Key bindings
+============
+
+General
+-------
+
+  Key binding   Description
+  ------------- -------------------------
+  `SPC m g g`   jump to define at point
+  `C-t`         jump back
+
+Refactoring for non LSP backends
+--------------------------------
+
+For more precise insights on the meaning of the key bindings please
+refer to [phpactor API
+reference.](https://phpactor.github.io/phpactor/refactorings.html)
+
+  Key binding     Description
+  --------------- ---------------------------------------------------------
+  `SPC m r i`     import class under cursor
+  `SPC m r r`     rename local variable
+  `SPC m r R`     rename variable in a whole file
+  `SPC m r n`     synchronize namespace with file location
+  `SPC m r v`     toggle method visibility (public-\>protected-\>private)
+  `SPC m r g a`   generate unknown property accessors
+  `SPC m r g m`   generate a method signature by a call example
+  `SPC m r c n`   create a new class at a given path
+  `SPC m r c c`   copy current class elsewhere
+  `SPC m r c m`   move (rename) current class
+  `SPC m r c i`   generate an interface from class\' public methods
+  `SPC m r p c`   declare class properties by constructor signature
+  `SPC m r p p`   add missing class properties
+  `SPC m r e c`   extract constant under cursor from a class
+  `SPC m r e e`   extract expression to a variable
+  `SPC m r e m`   extract a code hunk to a method
+  `SPC m r m c`   add non-implemented stubs from parent classes/contracts
+  `SPC m P s`     ask phpactor about it\'s status
+  `SPC m P u`     install/update phpactor package
+
+Debugging for non LSP backends
+------------------------------
+
+XDebug client management:
+
+  Key binding   Description
+  ------------- ---------------------------------------------
+  `SPC m d x`   start XDebug client
+  `SPC m d X`   stop XDebug client
+  `SPC m d b`   set a predefined breakpoint on current line
+  `SPC m d C`   clear predefined breakpoints
+
+Debugger interaction:
+
+  Key binding   Description
+  ------------- ------------------------------------------------------------------
+  `o` or `n`    step over statement
+  `s` or `i`    step into current call
+  `r`           step out of function
+  `c`           resume execution until cursor position or next breakpoint
+  `e`           evaluate expression in local context
+  `L`           focus line the execution stopped on
+  `v`           display context (local/global variables, user-defined constants)
+  `b b`         set breakpoint here
+  `b c`         set conditional breakpoint here
+  `b e`         set breakpoint on exception here
+  `u`           unset breakpoint here
+  `U`           clear all breakpoints (in all files!)
+  `w`           show current stack trace
+  `g f`         find debugged file in a worktree
+  `q`           quit debugging
+
+Variable listing:
+
+  Key binding   Description
+  ------------- ---------------------------------
+  `j`           next variable or section
+  `k`           previous variable or section
+  `TAB`         fold/unfold variable or section
+  `q`           close variable listing
+
+LSP key bindings
+----------------
+
+For a detailed list of key bindings in `lsp-mode` please checkout the
+README.org file of the `lsp layer`.
+
+Debugging for LSP backends
+--------------------------
+
+See README.org file of the `dap-layer` for key bindings available in
+`dap-mode`

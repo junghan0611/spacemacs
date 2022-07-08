@@ -1,0 +1,37 @@
+Description
+===========
+
+This layer adds support for
+[better-jumper](https://github.com/gilbertw1/better-jumper). A
+configurable jump list implementation for Emacs that can be used to
+easily jump back to previous locations.
+
+Features:
+---------
+
+-   jump back and forth
+
+Install
+=======
+
+To use this configuration layer, add it to your `~/.spacemacs`. You will
+need to add `evil-better-jumper` to the existing
+`dotspacemacs-configuration-layers` list in this file. If `C-i` acts
+like `TAB` instead of `better-jumper-jump-forward`, please use
+`M-x describe-variable` to check the value of the symbol
+`dotspacemacs-distinguish-gui-tab` and ensure it is set to `t` in the
+dotspacemacs file.
+
+``` {.commonlisp org-language="emacs-lisp"}
+(defun dotspacemacs/init ()
+  ;; ...
+  dotspacemacs-distinguish-gui-tab t)
+```
+
+Key bindings
+============
+
+  Key binding   Description
+  ------------- -----------------------------
+  `C-o`         better-jumper-jump-backward
+  `C-i`         better-jumper-jump-forward

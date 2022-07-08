@@ -1,0 +1,79 @@
+![](img/kotlin.png)
+
+Description
+===========
+
+This layer adds support for [Kotlin](http://kotlinlang.org/) to
+Spacemacs.
+
+Features:
+---------
+
+-   Syntax highlighting
+-   Auto-completion
+-   Syntax-checking with [ktlint](https://github.com/shyiko/ktlint) and
+    [flycheck-kotlin](https://github.com/whirm/flycheck-kotlin)
+-   Navigation with `ggtags`
+
+Install
+=======
+
+Layer
+-----
+
+To use this configuration layer, add it to your `~/.spacemacs`. You will
+need to add `kotlin` to the existing `dotspacemacs-configuration-layers`
+list in this file.
+
+Ktlint
+------
+
+You must install [ktlint](https://github.com/shyiko/ktlint) and make
+sure that the `ktlint` binary is on Emacs `exec-path`
+
+Configuration
+=============
+
+All layer configurations can be done by setting layer variables in your
+dotfile. No custom user config lines are necessary
+
+Choosing a backend
+------------------
+
+This layer provides two alternative backends to choose from.
+
+### Company-kotlin
+
+This is the default choice if nothing is set and no lsp layer is loaded
+in your dotfile. This mode only provides very limited IDE capabilities.
+Used best if only small applications are edited. To set explicitly set
+the following in your dotfile:
+
+``` {.commonlisp org-language="emacs-lisp"}
+(kotlin :variables kotlin-backend 'company-kotlin)
+```
+
+### LSP
+
+For proper IDE support this backend should be used. It is based on an
+external server which will be started automatically by emacs, once a
+kotlin file is opened. The key bindings are the same for all lsp modes
+so if you are already familiar with one you should be able to work the
+same in all modes.
+
+To set explicitly do the following in your dotfile:
+
+``` {.commonlisp org-language="emacs-lisp"}
+(kotlin :variables
+        kotlin-backend 'lsp
+        kotlin-lsp-jar-path "path/to/kotlin/installdir/install/server/bin/kotlin-language-server")
+```
+
+For this to work you will also need to obtain the latest version of the
+lsp server from [here](https://github.com/fwcd/kotlin-language-server).
+The path to the server jar must be given in the layer variable
+`kotlin-lsp-jar-path`.
+
+NOTE: Key bindings for LSP are defined in the LSP layer. Also it is
+advisable to have a look at the autocomplete layer for an optimal
+intellisense config for LSP.

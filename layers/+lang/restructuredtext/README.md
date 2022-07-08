@@ -1,0 +1,24 @@
+![](img/restructuredtext.png)
+
+Description
+===========
+
+The layer adds ReStructuredText (ReST) support to Spacemacs and adds
+some functions to `rst-mode`.
+
+Note: to add `Sphinx` specific support use the layer `sphinx`.
+
+Features:
+---------
+
+-   `rst` files are supported via Emacs built-in `rst.el`.
+-   Lists are inserted by new functions.
+-   Directives can be inserted easily.
+-   snippet support via `yasnippet`.
+
+Install
+=======
+
+To use this configuration layer, add it to your `~/.spacemacs`. You will
+need to add `restructuredtext` to the existing
+`dotspacemacs-configuration-layers` list in this file.

@@ -1,0 +1,160 @@
+![](img/scala.png) with ![](img/scalameta.png)
+
+Description
+===========
+
+This layer adds support for the Scala language to Spacemacs.
+
+Features:
+---------
+
+-   Syntax highlighting
+-   Support for language backend using LSP and
+    [Metals](https://scalameta.org/metals/)
+-   Debugging support via `dap`
+-   Auto-completion
+-   Treeview support for viewing project structure and triggering
+    compilation
+-   Syntax-checking
+-   Refactoring
+-   Incremental compilation
+-   Style linting
+-   Optional GGTags search
+
+Layer Installation
+==================
+
+To use this configuration layer, add it to your `~/.spacemacs`. You will
+need to add `scala` to the existing `dotspacemacs-configuration-layers`
+list in this file.
+
+-   To turn on the Metals tree view side bar, set `scala-auto-treeview`
+    to `t`.
+-   To display SBT in a small buffer at the bottom of the frame, set the
+    `scala-sbt-window-position` layer variable to `bottom`.
+
+Backends
+========
+
+The only currently supported language backend is `scala-metals`. Support
+for Ensime has been dropped as that project has been dead for some time.
+
+Metals
+------
+
+Currently, you must manually install the Metals server. It is possible
+to do so via coursier; the latest version can be built using the
+following commands, where `0.9.8` can be replaced with the current
+version of
+[Metals](https://scalameta.org/metals/docs/editors/emacs.html):
+
+``` {.bash}
+./coursier bootstrap \
+  --java-opt -Xss4m \
+  --java-opt -Xms100m \
+  --java-opt -Dmetals.client=emacs \
+  org.scalameta:metals_2.12:0.9.8 \
+  -r bintray:scalacenter/releases \
+  -r sonatype:snapshots \
+  -o /usr/local/bin/metals-emacs -f
+```
+
+Notice that the layer by default overwrites Metals-scala tree view to
+nil. This to avoid issues with buffers when rendering VSCode like view,
+issue described
+[Here](https://github.com/syl20bnr/spacemacs/pull/14470).
+
+You will then have the common LSP key bindings; see
+[LSP\#key-bindings](https://github.com/syl20bnr/spacemacs/tree/develop/layers/%2Btools/lsp#key-bindings)
+for more details.
+
+Scalastyle
+==========
+
+[Scalastyle](http://www.scalastyle.org/) provides style-checking and
+linting. The Emacs functionality is provided by Flycheck.
+
+To use scalastyle, it must be present as an executable in your `PATH`.
+
+-   macOS users: `brew install scalastyle`
+-   Linux, please see <http://www.scalastyle.org/command-line.html>
+
+To test if `scalastyle` executable is in your path, run `scalastyle` in
+a new terminal, it should output something like:
+
+``` {.bash}
+$ scalastyle
+scalastyle 0.8.0
+Usage: scalastyle [options] <source directory>
+...
+```
+
+Finally, enable the `syntax-checking` layer and set the
+`flycheck-scalastylerc` variable to a valid location.
+
+``` {.commonlisp org-language="emacs-lisp"}
+(setq-default flycheck-scalastylerc "/usr/local/etc/scalastyle_config.xml")
+```
+
+See the [flycheck
+documentation](http://www.flycheck.org/en/latest/languages.html?highlight=scala#syntax-checker-scala-scalastyle)
+and [scalastyle
+configuration](http://www.scalastyle.org/configuration.html) for
+up-to-date configuration instructions.
+
+Use Java doc-style
+------------------
+
+To enable `java-doc-style`, set the variable
+`scala-indent:use-javadoc-style` to `t`
+
+``` {.commonlisp org-language="emacs-lisp"}
+(setq-default dotspacemacs-configuration-layers '(
+  (scala :variables scala-indent:use-javadoc-style t)))
+```
+
+Enable Debug Adapter Protocol (DAP)
+===================================
+
+The metals backend enables integration with the DAP layer for debugging
+support.
+
+Automatically insert asterisk in multiline comments
+===================================================
+
+To insert a leading asterisk in multiline comments automatically, set
+the variable `scala-auto-insert-asterisk-in-comments` to `t`.
+
+``` {.commonlisp org-language="emacs-lisp"}
+(setq-default dotspacemacs-configuration-layers '(
+  (scala :variables scala-auto-insert-asterisk-in-comments t)))
+```
+
+Enable GTags as a fallback navigation utility
+=============================================
+
+To enable gtags when in `scala-mode` set the variable
+`scala-enable-gtags` to `t`.
+
+``` {.commonlisp org-language="emacs-lisp"}
+(setq-default dotspacemacs-configuration-layers '(
+  (scala :variables scala-enable-gtags t)))
+```
+
+Key bindings
+============
+
+Additional major mode key bindings are populated by LSP and DAP.
+
+sbt
+---
+
+  Key binding   Description
+  ------------- -----------------------------
+  `SPC m b .`   SBT transient state
+  `SPC m b b`   SBT command
+  `SPC m b c`   Run `compile` in SBT
+  `SPC m b t`   Run `test` in SBT
+  `SPC m b I`   Run `It / compile` in SBT
+  `SPC m b T`   Run `Test / compile` in SBT
+  `SPC m b =`   Run `scalafmtAll` in SBT

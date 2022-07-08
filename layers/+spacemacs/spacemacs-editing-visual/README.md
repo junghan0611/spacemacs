@@ -1,0 +1,16 @@
+Description
+===========
+
+This layer defines a lot of functions used to visually enhance the
+currently edited line in Spacemacs.
+
+Features:
+---------
+
+-   Adaptive wrapping
+-   Hiding of comments
+-   Highlighting of columns longer than 80 chars
+-   Highlighting of different indentations
+-   Automatic highlighting of numbers
+-   Automatic highlighting of parentheses
+-   Adaptive cursor shape in terminal, as it would be in GUI

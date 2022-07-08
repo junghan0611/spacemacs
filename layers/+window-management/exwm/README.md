@@ -1,0 +1,84 @@
+![](img/exwm.jpg)
+
+Description
+===========
+
+Thanks to @ch11ng and his [EXWM](https://github.com/ch11ng/exwm) project
+we can now use Emacs as our window manager, that means that you can
+spawn a Browser Window, or your music player, or anything.
+
+Features:
+---------
+
+-   Support for using Emacs as window manager
+
+Install
+=======
+
+To use `exwm` layer, add it to your `~/.spacemacs`.
+
+The default layer variables are:
+
+``` {.commonlisp org-language="emacs-lisp"}
+(setq-default dotspacemacs-configuration-layers
+              '((exwm :variables exwm-enable-systray nil
+                                 exwm-autostart-xdg-applications nil
+                                 exwm-terminal-command "xterm"
+                                 exwm-locking-command nil
+                                 exwm-hide-tiling-modeline nil
+                                 exwm-workspace-switch-wrap t
+                                 exwm-randr-command nil)))
+```
+
+Please refer to [EXWM Wiki](https://github.com/ch11ng/exwm/wiki) for
+setting up display manager.
+
+System Tray Integratios
+-----------------------
+
+To enable system tray integration, set `exwm-enable-systray` to `t`.
+
+XDG Autostart
+-------------
+
+If `exwm-autostart-xdg-applications` is non-nil, `.desktop` files in
+`$XDG_CONFIG_HOME/autostart` and `XDG_CONFIG_DIRS` will be used to run
+applications at startup. (See [Desktop Application Autostart
+Specification](https://specifications.freedesktop.org/autostart-spec/autostart-spec-latest.html)
+for details).
+
+For the purpose of controlling whether an entry should be run under
+Emacs, the `OnlyShowIn` and `NotShotIn` keys are checked for the string
+`EXWM`.
+
+This is disabled per default.
+
+Key bindings
+============
+
+As other window managers the `s` or **Super** key (Windows Key) is the
+one that is the prefix to every action. We\'ll use a lot of `s`.
+
+Some emacs key bindings are disabled in X Window, for example `C-x` and
+`C-c` are disabled so that they can be used for Cutting and Copying
+text.
+
+  Key binding             Description
+  ----------------------- ------------------------------------------
+  `M-m`                   Spacemacs Leader Key
+  `C-q`                   Send next key pressed to the X window
+  `s-i`                   Toggle between line mode and char mode
+  `s-l`                   Lock Screen
+  `s-r`                   Reset window state
+  `s-w`                   Workspace Switch Menu
+  `s-[1 2 3 ... 8 9 0]`   Switch to workspace \[1 2 3 ... 8 9 10\]
+  `s-TAB`                 Switch to last workspace
+  `s-[` / `s-]`           Switch to prev,next workspace
+  `s-SPC`                 App Launcher
+  `s-RET`                 Spawn terminal
+  `s-:` and `s-;`         Helm M-x (same as `SPC :`)
+  `s-u,U`                 Undo, Redo window configurations
+  `s-b`                   Show all opened buffers
+  `s-[h j k l]`           Switch to window in the direction
+  `s-[H J K L]`           Move window to the direction
+  `M-s-[h j k l]`         Resize window toward the direction

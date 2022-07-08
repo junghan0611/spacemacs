@@ -1,0 +1,84 @@
+Description
+===========
+
+This layer is a port of vim-vinegar for Emacs.
+
+It is based on tpope\'s
+[vinegar.vim](https://github.com/tpope/vim-vinegar), simplifying `dired`
+with a limited number of details and exposing the `-` command in all
+buffers to enter dired.
+
+Features:
+---------
+
+-   navigation up folders with `-` key
+-   simplify dired buffer to show only file names
+-   better evil/vim bindings for navigation within dired buffer
+-   keep only one active dired buffer
+-   Use dired-k extension to show time / vcs related information in
+    single bar
+-   right mouse click moves up directory if in blank space or shows
+    context menu
+
+Install
+=======
+
+Layer
+-----
+
+To use this configuration layer add `vinegar` to the
+`dotspacemacs-configuration-layers` list.
+
+Reuse dired buffer
+------------------
+
+To reuse dired buffers set the variable `vinegar-reuse-dired-buffer` to
+`t`.
+
+``` {.commonlisp org-language="emacs-lisp"}
+(setq-default dotspacemacs-configuration-layers '(
+  (vinegar :variables
+           vinegar-reuse-dired-buffer nil))
+```
+
+Deactive hide details mode
+--------------------------
+
+Per default extensive details in dired are hidden with this layer. This
+can be deactivated by setting the variable `vinegar-dired-hide-details`
+to `nil`.
+
+``` {.commonlisp org-language="emacs-lisp"}
+(setq-default dotspacemacs-configuration-layers '(
+  (vinegar :variables
+           vinegar-dired-hide-details t)))
+```
+
+Mouse bindings
+--------------
+
+  Mouse Binding   Description
+  --------------- -----------------------------------------------
+  `mouse-1`       (Dired) Open selected file
+  `mouse-2`       (Dired) Open clicked file in other-window
+  `mouse-3`       (Dired) Open context popup or go up directory
+
+Key bindings
+------------
+
+  Key binding   Description
+  ------------- ----------------------------------------------------
+  `-`           Navigate to parent directory in dired
+  `0`           (Dired) Move to the beginning of the file in dired
+  `=`           (Dired) Diff between selected files
+  `C-j`         (Dired) Move to next subdirectory
+  `C-k`         (Dired) Move to previous subdirectory
+  `I`           (Dired) Toggle showing dotfiles
+  `~`           (Dired) Navigate to home directory
+  `f`           (Dired) Helm find file
+  `J`           (Dired) Goto file
+  `C-f`         (Dired) dired-find
+  `H`           (Dired) Show dired history
+  `T`           (Dired) Move down in dired tree
+  `K`           (Dired) Kill marked lines (hide, do not delete)
+  `r`           (Dired) Redisplay buffer

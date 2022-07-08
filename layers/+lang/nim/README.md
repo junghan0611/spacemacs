@@ -1,0 +1,82 @@
+![](img/logo.png)
+
+Description
+===========
+
+This layer adds support for the multi-paradigm language `Nim`.
+
+Features:
+---------
+
+-   Auto-completion
+-   Syntax-checking
+-   Jump to definition.
+
+Install
+=======
+
+To use this configuration layer, add it to your `~/.spacemacs`. You will
+need to add `nim` to the existing `dotspacemacs-configuration-layers`
+list in this file.
+
+For syntax checking, the `syntax-checking` layer must also be added.
+
+Configuration
+=============
+
+All layer configurations can be done by setting layer variables in your
+dotfile. No custom user config lines are necessary
+
+Choosing a backend
+------------------
+
+This layer provides two alternative backends to choose from.
+
+### Company-vim
+
+This is the default choice if nothing is set and no lsp layer is loaded
+in your dotfile. This mode only provides very limited IDE capabilities.
+Used best if only small scripts are edited. To set explicitly set the
+following in your dotfile:
+
+``` {.commonlisp org-language="emacs-lisp"}
+(nim :variables nim-backend 'company-nim)
+```
+
+### LSP
+
+For proper IDE support this backend should be used. It is based on an
+external server which will be started automatically by emacs, once a nim
+file is opened. The key bindings are the same for all lsp modes so if
+you are already familiar with one you should be able to work the same in
+all modes.
+
+To set explicitly do the following in your dotfile:
+
+``` {.commonlisp org-language="emacs-lisp"}
+(nim :variables
+      nim-backend 'lsp)
+```
+
+For this to work you will also need to install the latest version of the
+lsp server by running:
+
+``` {.bash org-language="sh"}
+nimble install nimlsp
+```
+
+Should this not work than further instructions can be obtained from
+[here](https://github.com/PMunch/nimlsp).
+
+NOTE: Key bindings for LSP are defined in the LSP layer. Also it is
+advisable to have a look at the autocomplete layer for an optimal
+intellisense config for LSP.
+
+Key bindings
+============
+
+  Key binding   Description
+  ------------- ------------------------------
+  `SPC m c r`   `nim compile --run main.nim`
+  `SPC m g b`   Jump back
+  `SPC m h h`   Show symbol\'s documentation

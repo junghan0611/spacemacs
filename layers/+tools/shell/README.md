@@ -1,0 +1,372 @@
+![](img/shell.png)
+
+Description
+===========
+
+This layer configures the various shells available in Emacs.
+
+Features:
+---------
+
+-   Shell integration
+-   Running external terminal emulator in current/project directory
+
+Install
+=======
+
+To use this configuration layer, add it to your `~/.spacemacs`. You will
+need to add `shell` to the existing `dotspacemacs-configuration-layers`
+list in this file.
+
+Install vterm
+-------------
+
+`vterm` is the latest addition to Emacs\' set of terminal emulators and
+the only one to be implemented in C, leveraging `libvterm`. It is the
+only one in Emacs at the moment to be as fast as a standalone terminal
+with full support for `ncurses`, `vim`, `htop` and the likes.
+
+On its first run, `vterm` will automatically compile its dynamic
+library, for which dependencies are needed. For more details, head to
+the [official docs](https://github.com/akermu/emacs-libvterm).
+
+### Check that your Emacs supports dynamic modules
+
+You can check if your Emacs supports loading dynamic libraries by
+checking if the `system-configuration-features` variable contains the
+string `MODULES`. If not, you need to get a version of Emacs that
+supports it or compile it from source supplying the
+`./configure --with-module` option at configure time.
+
+### Install CMake 3.11 or higher
+
+1.  macOS
+
+    ``` {.shell}
+    brew install cmake
+    ```
+
+2.  Ubuntu
+
+    ``` {.shell}
+    sudo apt install cmake
+    ```
+
+### Install libtool
+
+If the `libtool` command does not exist in your system (usually in
+`/usr/bin/libtool`), you need to install it:
+
+1.  Ubuntu
+
+    ``` {.shell}
+    sudo apt install libtool-bin
+    ```
+
+### Install libvterm (Optional)
+
+1.  macOS
+
+    ``` {.shell}
+    brew install libvterm
+    ```
+
+2.  Linux
+
+    This library can be found in the official repositories of most
+    distributions (e.g., Arch, Debian, Fedora, Gentoo, openSUSE,
+    Ubuntu). If not available, it will be downloaded during the
+    compilation process. Some distributions (e.g. Ubuntu 18.04) have
+    versions of libvterm that are too old. If you find compilation
+    errors related to VTERM~COLOR~, you should not use your system
+    libvterm.
+
+3.  Windows
+
+    Not supported at the moment, [but possibly coming
+    up](https://github.com/akermu/emacs-libvterm/issues/12).
+
+Configuration
+=============
+
+Default shell
+-------------
+
+Emacs supports five types of shells/terminals:
+
+-   the Emacs shell (eshell)
+-   the inferior shell
+-   the terminal emulator
+-   the ANSI terminal emulator
+-   the vterm terminal emulator based on the C library libvterm
+
+You can find a quick introductions to them
+[here](https://www.masteringemacs.org/article/running-shells-in-emacs-overview).
+
+To define the default shell you can set the layer variable
+`shell-default-shell` to the following variables:
+
+-   `eshell` (default on Windows)
+-   `shell`
+-   `term`
+-   `ansi-term` (default on Linux/macOS)
+-   `multi-term`
+-   `vterm`
+
+``` {.commonlisp org-language="emacs-lisp"}
+(setq-default dotspacemacs-configuration-layers
+  '((shell :variables shell-default-shell 'eshell)))
+```
+
+The default shell is quickly accessible via a the default shortcut key
+`SPC '​`.
+
+Default shell position, width, and height
+-----------------------------------------
+
+It is possible to choose where the shell should pop up by setting the
+variable `shell-default-position` to either `top`, `bottom`, `left`,
+`right`, or `full`. Default value is `bottom`. It is also possible to
+set the default height in percents with the variable
+`shell-default-height`. Default value is `30`. You can also set a
+default width in percents with the variable `shell-default-width`, which
+has a default value of 30 and will take effect if your shell is
+positioned on the left or the right.
+
+``` {.commonlisp org-language="emacs-lisp"}
+(setq-default dotspacemacs-configuration-layers
+  '((shell :variables
+           shell-default-position 'bottom
+           shell-default-height 30)))
+
+(setq-default dotspacemacs-configuration-layers
+  '((shell :variables
+           shell-default-position 'right
+           shell-default-width 40)))
+```
+
+External terminal emulator
+--------------------------
+
+This layer supports opening an external terminal emulator using
+[terminal-here](https://github.com/davidshepherd7/terminal-here). By
+default `terminal-here` finds an appropriate default shell for you. If
+this does not work please check the package documentation how to change
+it.
+
+Set shell for term, ansi-term and vterm
+---------------------------------------
+
+The default shell can be set by setting the variable
+`shell-default-term-shell`. Default value is `/bin/bash`.
+
+``` {.commonlisp org-language="emacs-lisp"}
+(setq-default dotspacemacs-configuration-layers
+  '((shell :variables shell-default-term-shell "/bin/bash")))
+```
+
+Set shell for multi-term
+------------------------
+
+The default shell can be set by setting the variable
+`multi-term-program`. Default value is `/bin/bash`.
+
+``` {.commonlisp org-language="emacs-lisp"}
+(setq-default dotspacemacs-configuration-layers
+  '((shell :variables multi-term-program "/bin/bash")))
+```
+
+Width of the shell popup buffers
+--------------------------------
+
+By default the popup buffer spans the full width of the current frame,
+if you prefer to spans only the width of the current window then set the
+layer variable `shell-default-full-span` to nil.
+
+``` {.commonlisp org-language="emacs-lisp"}
+(setq-default dotspacemacs-configuration-layers
+  '((shell :variables shell-default-full-span nil)))
+```
+
+Enable em-smart in Eshell
+-------------------------
+
+From the `em-smart` documentation:
+
+> The best way to get a sense of what this code is trying to do is by
+> using it. Basically, the philosophy represents a blend between the
+> ease of use of modern day shells, and the review-before-you-proceed
+> mentality of Plan 9\'s 9term.
+
+In a nutshell, when `em-smart` is enabled point won\'t jump at the end
+of the buffer when a command is executed, it will stay at the same
+command prompt used to execute the command. This allows to quickly edit
+the last command in the case of a mistake. If there is no mistake and
+you directly type a new command then the prompt will jump to the next
+prompt at the end of the buffer.
+
+To enable `em-smart` put the following layer variable to non-nil:
+
+``` {.commonlisp org-language="emacs-lisp"}
+(setq-default dotspacemacs-configuration-layers
+  '((shell :variables shell-enable-smart-eshell t)))
+```
+
+Protect your Eshell prompt
+--------------------------
+
+Comint mode (Shell mode) has good support for Evil mode as it inhibits
+movement commands over the prompt. This has the added benefit that Evil
+mode functions work sensibly. E.g. you can press `cc` in normal state
+i.e. `evil-change-whole-line` to kill the current input and start typing
+a new command. In Eshell you also kill the prompt, which is often
+unintended.
+
+By default this layer also protects the `eshell` prompt. If you want to
+disable this protection you can set the variable
+`shell-protect-eshell-prompt` to nil.
+
+``` {.commonlisp org-language="emacs-lisp"}
+(setq-default dotspacemacs-configuration-layers
+  '((shell :variables shell-protect-eshell-prompt nil)))
+```
+
+Fish shell and ansi-term
+------------------------
+
+Making `fish` shell to work with `ansi-term` may be a challenge, here
+are some pointers to save you time to setup your environment correctly.
+
+First be sure `~/.terminfo` is setup correctly by running:
+
+``` {.fish}
+tic -o ~/.terminfo $TERMINFO/e/eterm-color.ti
+```
+
+You can locate the `eterm-colors.ti` file with:
+
+``` {.fish}
+locate eterm-color.ti
+```
+
+Then setup your fish configuration file (usually at
+`~/.config/fish/config.fish`)
+
+``` {.fish}
+# emacs ansi-term support
+if test -n "$EMACS"
+  set -x TERM eterm-color
+end
+
+# this function may be required
+function fish_title
+  true
+end
+```
+
+Finally you may need to toggle truncated lines for some prompts to work
+correctly, in the function `dotspacemacs/user-config` of your dotfile
+add:
+
+``` {.commonlisp org-language="emacs-lisp"}
+(add-hook 'term-mode-hook 'spacemacs/toggle-truncate-lines-on)
+```
+
+Close window with terminal
+--------------------------
+
+If you want its window to close when the terminal terminates, set the
+following layer variable to non-nil:
+
+``` {.commonlisp org-language="emacs-lisp"}
+(setq-default dotspacemacs-configuration-layers
+  '((shell :variables close-window-with-terminal t)))
+```
+
+This is only applied to `term` and `ansi-term` modes.
+
+Eshell
+======
+
+Some advanced configuration is setup for `eshell` in this layer:
+
+-   some elisp functions aliases for quick access
+    -   `s` for `magit-status` in the current directory (when the `git`
+        layer is installed)
+    -   `d` for `dired`
+    -   `e` to find a file via a new buffer
+    -   `z` for quickly jumping to a previously visited directory
+-   optional configuration for `em-smart` (see `Install` section for
+    more info)
+-   support for visual commands via `em-term`
+-   working directory sensitive prompt via
+    [eshell-prompt-extras](https://github.com/kaihaosw/eshell-prompt-extras)
+-   advanced help support via `esh-help` (enable `el-doc` support in
+    eshell)
+-   add support for auto-completion via `company` (when the
+    `auto-completion` layer is installed)
+-   pressing `i` in normal state will automatically jump to the prompt
+
+Key bindings
+============
+
+  Key binding     Description
+  --------------- ----------------------------------------------------------
+  `SPC '​`        Toggle pop-shell with your default shell
+  `SPC "​`        Open external terminal emulator in current directory
+  `SPC a t s e`   Toggle pop-shell with `eshell`
+  `SPC a t s i`   Toggle pop-shell with `shell`
+  `SPC a t s m`   Toggle pop-shell with `multi-term`
+  `SPC a t s t`   Toggle pop-shell with `ansi-term`
+  `SPC a t s T`   Toggle pop-shell with `term`
+  `SPC a t s v`   Toggle pop-shell with `vterm`
+  `SPC p '​`      Toggle pop-shell with your default shell in project root
+  `SPC p "​`      Open external terminal emulator in project root
+  `SPC p $`       Open a new buffer with default shell in project root
+  `TAB`           In a shell buffer, browse completions
+  `SPC m H`       In `shell` or `eshell`, browse history
+  `C-j`           Next item in history
+  `C-k`           Previous item in history
+
+**Note:** You can open multiple shells using a numerical prefix
+argument, for instance pressing `2 SPC '​` will a second default shell,
+the number of shell is indicated on the mode-line.
+
+**Note:** Use the universal prefix argument `SPC u SPC '​` to open the
+shell in the current buffer instead of a popup.
+
+Multi-term
+----------
+
+  Key binding              Description
+  ------------------------ --------------------------------
+  `SPC m c`                create a new multi-term
+  `SPC m C`                switch multi-term char mode
+  `SPC m l`                switch multi-term to line mode
+  `SPC m n`                go to next multi-term
+  `SPC m N` or `SPC m p`   go to previous multi-term
+
+Eshell
+------
+
+  Key binding          Description
+  -------------------- ------------------------------
+  `SPC m H` or `M-l`   search shell command history
+
+vterm
+-----
+
+  Key binding   Description
+  ------------- --------------------------------
+  `M-r`         search shell command history\*
+
+Note\*: `M-r` will only be bound to search for the command history when
+the variable `spacemacs-vterm-history-file-location` is set to the path
+to your shell history file.
+
+For example with bash
+
+``` {.elisp}
+(shell :variables
+       spacemacs-vterm-history-file-location "~/.bash_history")
+```
