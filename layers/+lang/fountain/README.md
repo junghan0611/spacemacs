@@ -1,29 +1,24 @@
-Description
-===========
+# Description
 
 This layer adds support for the [fountain](https://fountain.io/)
 screenwriting format to Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Fountain files support via
     [fountain-mode](https://github.com/rnkn/fountain-mode/)
 -   Confortable writing layout via
     [olivetti-mode](https://github.com/rnkn/olivetti/)
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `fountain` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Key binding
-===========
+# Key binding
 
-Editing
--------
+## Editing
 
 | Key binding | Description             |
 |-------------|-------------------------|
@@ -41,24 +36,21 @@ Editing
 | `SPC m T m` | toggle emphasis markup  |
 | `SPC m T e` | toggle element markup   |
 
-Navigation
-----------
+## Navigation
 
 | Key binding | Description |
 |-------------|-------------|
 | `SPC m j s` | goto scene  |
 | `SPC m j p` | goto page   |
 
-Block editing
--------------
+## Block editing
 
 | Key binding | Description       |
 |-------------|-------------------|
 | `<M-down>`  | move section down |
 | `<M-up>`    | move section up   |
 
-Outline
--------
+## Outline
 
 | Key binding | Description                |
 |-------------|----------------------------|
@@ -67,16 +59,14 @@ Outline
 | `SPC m o`   | outline to indirect buffer |
 | `SPC m i h` | insert section heading     |
 
-Pagination
-----------
+## Pagination
 
 | Key binding | Description       |
 |-------------|-------------------|
 | `SPC m c p` | count pages       |
 | `SPC m c u` | pagination update |
 
-Exporting
----------
+## Exporting
 
 | Key binding | Description    |
 |-------------|----------------|

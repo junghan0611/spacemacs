@@ -1,10 +1,8 @@
-Description
-===========
+# Description
 
 This layer adds various modes to enhance Spacemacs visual appearance.
 
-Features:
----------
+## Features:
 
 -   Automatic colorization of compilation buffers via `ansi-colors`.
 -   Support for resuming the last layout when starting Spacemacs via

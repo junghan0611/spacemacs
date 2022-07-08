@@ -1,14 +1,12 @@
 ![](img/rainbow_dash.png)
 
-Description
-===========
+# Description
 
 This layer colors your life by enhancing the existing coloration of
 identifiers as well as providing you with a more colorful process
 indicator.
 
-Features:
----------
+## Features:
 
 -   Colorize all identifiers (Christmas tree mode :-)) with mostly
     unique colors, and the ability to choose saturation and lightness
@@ -22,18 +20,15 @@ Features:
 -   Display a Nyan cat progress bar in the mode-line with
     [nyan-mode](https://github.com/syl20bnr/nyan-mode).
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `colors` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Configuration
-=============
+# Configuration
 
-Colorize identifiers
---------------------
+## Colorize identifiers
 
 To colorize variable identifiers using color-identifiers and its
 supported languages, set the layer variable
@@ -87,8 +82,7 @@ and lightness. You can configure your own defaults via
   )
 ```
 
-Enable Nyan cat
----------------
+## Enable Nyan cat
 
 To enable the package `nyan-mode` just set the variable
 `colors-enable-nyan-cat-progress-bar` to `t`:
@@ -107,11 +101,9 @@ can do that by using a quasi-quoted list which checks the Emacs mode:
           colors-enable-nyan-cat-progress-bar (display-graphic-p))))
 ```
 
-Key bindings
-============
+# Key bindings
 
-Colorize Identifiers
---------------------
+## Colorize Identifiers
 
 | Key binding   | Description                                                           |
 |---------------|-----------------------------------------------------------------------|
@@ -132,8 +124,7 @@ be adjusted live via the following transient-state:
 | `=`             | reset the `saturation` or `lightness`    |
 | `Any other key` | leave the change mini-mode               |
 
-Rainbow Mode
-------------
+## Rainbow Mode
 
 ![](img/rainbow-mode.png)
 
@@ -149,8 +140,7 @@ platform uses that).
 To enable, you must manually toggle it on and off on a per-buffer basis
 with: `SPC t C c`
 
-Nyan Mode
----------
+## Nyan Mode
 
 `nyan-mode` mode can be toggled on and off with: `SPC t m n`
 

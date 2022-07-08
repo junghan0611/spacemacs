@@ -1,7 +1,6 @@
 ![](img/ember.png)
 
-Description
-===========
+# Description
 
 This enables helpers for working with Ember.js projects.
 
@@ -31,15 +30,13 @@ Add the following to your `dotspacemacs/user-config`:
 (setq create-lockfiles nil)
 ```
 
-Features:
----------
+## Features:
 
 -   Ability to easily switch between various files
 -   Key bindings for generators and also easily revert generator actions
 -   Ability to build, start server, and run tests
 
-Install
-=======
+# Install
 
 To use this contribution add it to your `~/.spacemacs`
 
@@ -47,8 +44,7 @@ To use this contribution add it to your `~/.spacemacs`
 (setq-default dotspacemacs-configuration-layers '(emberjs))
 ```
 
-Completion System
-=================
+# Completion System
 
 By default this will use `ido`, but it may be configured to use helm by
 adding the following in your `dotspacemacs/user-config` function:
@@ -57,11 +53,9 @@ adding the following in your `dotspacemacs/user-config` function:
 (setq ember-completion-system 'helm)
 ```
 
-Key bindings
-============
+# Key bindings
 
-File key bindings
------------------
+## File key bindings
 
 | Key binding | Description            |
 |-------------|------------------------|
@@ -77,8 +71,7 @@ File key bindings
 | SPC m f f u | ember-open-util        |
 | SPC m f f s | ember-open-service     |
 
-Generator key bindings
-----------------------
+## Generator key bindings
 
 | Key binding | Description                |
 |-------------|----------------------------|
@@ -95,8 +88,7 @@ Generator key bindings
 | SPC m f g s | ember-generate-service     |
 | SPC m f g g | ember-generate             |
 
-Destroy (the inverse of generate) key bindings
-----------------------------------------------
+## Destroy (the inverse of generate) key bindings
 
 | Key binding | Description               |
 |-------------|---------------------------|
@@ -113,8 +105,7 @@ Destroy (the inverse of generate) key bindings
 | SPC m f d s | ember-destroy-service     |
 | SPC m f d d | ember-destroy             |
 
-Key bindings to build, start the server and run tests
------------------------------------------------------
+## Key bindings to build, start the server and run tests
 
 | Key binding | Description            |
 |-------------|------------------------|

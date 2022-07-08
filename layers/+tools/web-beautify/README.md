@@ -1,16 +1,13 @@
-Description
-===========
+# Description
 
 This layer adds support for
 [web-beautify](https://github.com/yasuyk/web-beautify).
 
-Features:
----------
+## Features:
 
 -   Format buffer to be beautiful
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `web-beautify` to the existing
@@ -22,8 +19,7 @@ To install `js-beautify` globally:
 $ npm install -g js-beautify
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                       |
 |-------------|-----------------------------------|

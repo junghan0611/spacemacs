@@ -1,18 +1,15 @@
 ![](img/tern.png)
 
-Description
-===========
+# Description
 
 This layer adds support for [tern](http://ternjs.net/) stand-alone
 code-analysis engine for JavaScript.
 
-Features:
----------
+## Features:
 
 -   TODO: list the feature of tern supported by tern package
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `tern` to the existing `dotspacemacs-configuration-layers`
@@ -24,11 +21,9 @@ You can install `tern` globally with the following command:
 $ npm install -g tern
 ```
 
-Configuration
-=============
+# Configuration
 
-Custom tern command
--------------------
+## Custom tern command
 
 Windows users may need to set the variable `tern-command` in order for
 emacs to locate and launch tern server successfully. See [this open
@@ -43,8 +38,7 @@ layer:
 
 Note: `tern-command` must be a list of strings.
 
-Re-use the server across multiple different editing sessions
-------------------------------------------------------------
+## Re-use the server across multiple different editing sessions
 
 By default `tern` is setup to not create multiple `.tern-port` files in
 your repository.
@@ -59,8 +53,7 @@ details](http://ternjs.net/doc/manual.html)) set the variable
 (tern :variables tern-disable-port-files nil)
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding   | Description                                                                              |
 |---------------|------------------------------------------------------------------------------------------|

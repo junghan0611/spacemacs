@@ -1,20 +1,17 @@
 ![](img/dlogo.png)
 
-Description
-===========
+# Description
 
 This simple layer adds support for the [D language](http://dlang.org/)
 to Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting
 -   Auto completion via `company`
 -   Syntax checking via `flycheck`
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `d` to the existing `dotspacemacs-configuration-layers` list
@@ -29,8 +26,7 @@ path.
 It is also recommended to install [DUB](https://github.com/dlang/dub) a
 `D language` package manager.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                           |
 |-------------|-------------------------------------------------------|

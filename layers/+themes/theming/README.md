@@ -1,24 +1,20 @@
-Description
-===========
+# Description
 
 This layer allows for a simple way of modifying themes.
 
-Features:
----------
+## Features:
 
 -   Modify themes from your `.spacemacs`.
 -   Tweak face attributes and other aspects of themes.
 -   Includes three additional layer variables for tweaking headings.
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `theming` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Usage
-=====
+# Usage
 
 To use this layer, set the value of `theming-modifications` (a good
 place is inside your `.spacemacs` in `dotspacemacs/user-init()`). It
@@ -34,8 +30,7 @@ should be a list of the following form:
  ...)
 ```
 
-Example
--------
+## Example
 
 ``` commonlisp
 (defun dotspacemacs/user-init ()
@@ -60,8 +55,7 @@ appropriate theme is loaded. To update without changing the theme, use
 `SPC SPC
 spacemacs/update-theme`.
 
-Attributes
-==========
+# Attributes
 
 See [face
 attributes](http://www.gnu.org/software/emacs/manual/html_node/elisp/Face-Attributes.html#Face-Attributes)
@@ -90,8 +84,7 @@ typically `oblique`, `italic` or `normal`
 `:box`  
 set to `t` to draw a box around characters in the foreground
 
-Faces
-=====
+# Faces
 
 To see a list over all loaded faces and what they look like, use
 `SPC SPC
@@ -122,8 +115,7 @@ As well as the mode-line faces for the active and inactive windows:
 -   `mode-line`
 -   `mode-line-inactive`
 
-Headers
-=======
+# Headers
 
 This layer includes three additional layer variables for tweaking
 headings. Allowed values are a list of themes in which the given effect
@@ -140,8 +132,7 @@ same size as the rest of the text
 `theming-headings-bold`  
 sets the `:weight` attribute to bold on all headings
 
-Example
-=======
+# Example
 
 An example of how to set the default font colour to be black in a custom
 theme leuven:

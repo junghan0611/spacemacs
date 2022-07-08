@@ -1,31 +1,26 @@
 ![](img/idris.png)
 
-Description
-===========
+# Description
 
 This layer adds support for the [Idris](https://www.idris-lang.org/)
 language to Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting
 -   Syntax checking via `flycheck`
 -   Integration of the `Idris` REPL
 -   Integration of the `Idris` build system
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `idris` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Idris
------
+## Idris
 
 Idris can be installed using `Haskell's cabal`:
 
@@ -36,11 +31,9 @@ cabal install idris
 Binaries are also available for some platforms at
 <https://www.idris-lang.org/pages/download.html>
 
-Key bindings
-============
+# Key bindings
 
-Shorthands
-----------
+## Shorthands
 
 Several (but not all) of the evil-leader shorthands that `idris-mode`
 provides are reproduced under the local leader.
@@ -55,8 +48,7 @@ provides are reproduced under the local leader.
 | `SPC m t`   | Get the type for the identifier under point.                                    |
 | `SPC m w`   | Add a with block for the pattern-match clause under point.                      |
 
-Interactive editing
--------------------
+## Interactive editing
 
 | Key binding | Description                                                                                |
 |-------------|--------------------------------------------------------------------------------------------|
@@ -68,8 +60,7 @@ Interactive editing
 | `SPC m i s` | Create an initial pattern match clause for a type declaration.                             |
 | `SPC m i w` | Add a with block for the pattern-match clause under point.                                 |
 
-Documentation
--------------
+## Documentation
 
 | Key binding | Description                                           |
 |-------------|-------------------------------------------------------|
@@ -78,8 +69,7 @@ Documentation
 | `SPC m h s` | Search the documentation regarding a particular type. |
 | `SPC m h t` | Get the type for the identifier under point.          |
 
-REPL
-----
+## REPL
 
 | Key binding | Description                                                                            |
 |-------------|----------------------------------------------------------------------------------------|
@@ -93,8 +83,7 @@ REPL
 | `SPC m s s` | Switch to REPL buffer                                                                  |
 | `SPC m s q` | Quit the Idris process                                                                 |
 
-Active term manipulations
--------------------------
+## Active term manipulations
 
 | Key binding | Description                                   |
 |-------------|-----------------------------------------------|
@@ -103,8 +92,7 @@ Active term manipulations
 | `SPC m m h` | Hide implicits for the term at point.         |
 | `SPC m m n` | Normalize the term at point.                  |
 
-Build system
-------------
+## Build system
 
 | Key binding | Description                                                                |
 |-------------|----------------------------------------------------------------------------|

@@ -1,18 +1,15 @@
 ![](img/transmission.png)
 
-Description
-===========
+# Description
 
 This layer integrates a BitTorrent client into Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Integration of [Transmission](https://transmissionbt.com/) into
     Emacs.
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to install and configure `transmission-daemon`. Debian example:
@@ -31,11 +28,9 @@ for details. Start the daemon:
 sudo service transmission-daemon start
 ```
 
-FAQ
-===
+# FAQ
 
-How to enable status auto refresh?
-----------------------------------
+## How to enable status auto refresh?
 
 Add `(transmission :variables transmission-auto-refresh-all t)` to
 `dotspacemacs-configuration-layers` or pick modes manually:
@@ -47,18 +42,15 @@ Add `(transmission :variables transmission-auto-refresh-all t)` to
                                    transmission-peers-mode))
 ```
 
-Key bindings
-============
+# Key bindings
 
-Global
-------
+## Global
 
 | Key binding | Description        |
 |-------------|--------------------|
 | `SPC a t t` | start transmission |
 
-`transmission-mode`
--------------------
+## `transmission-mode`
 
 | Key binding  | Description                                                       |
 |--------------|-------------------------------------------------------------------|
@@ -88,8 +80,7 @@ Global
 | `SPC m t s`  | Toggle torrent(s) at point or region between started and stopped. |
 | `SPC m t t`  | Toggle `transmission-turtle-mode`.                                |
 
-`transmission-info-mode`
-------------------------
+## `transmission-info-mode`
 
 | Key binding  | Description                                                  |
 |--------------|--------------------------------------------------------------|
@@ -107,8 +98,7 @@ Global
 | `SPC m s r`  | Set seed ratio limit of current torrent.                     |
 | `SPC m s u`  | Set upload limit of current torrent in kB/s.                 |
 
-`transmission-files-mode`
--------------------------
+## `transmission-files-mode`
 
 | Key binding  | Description                                                  |
 |--------------|--------------------------------------------------------------|
@@ -124,16 +114,14 @@ Global
 | `SPC m m u`  | Mark file(s) at point or in region as unwanted.              |
 | `SPC m m w`  | Mark file(s) at point or in region as wanted.                |
 
-`transmission-peers-mode`
--------------------------
+## `transmission-peers-mode`
 
 | Key binding | Description                                                  |
 |-------------|--------------------------------------------------------------|
 | Go to mode  |                                                              |
 | `SPC m g i` | Open a `transmission-info-mode` buffer for torrent at point. |
 
-`transmission-turtle-mode`
---------------------------
+## `transmission-turtle-mode`
 
 | Key binding  | Description                                                 |
 |--------------|-------------------------------------------------------------|

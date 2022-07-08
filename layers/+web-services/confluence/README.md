@@ -1,29 +1,24 @@
 ![](img/confluence.png)
 
-Description
-===========
+# Description
 
 This layer adds support for Atlassian
 [Confluence](https://www.atlassian.com/software/confluence).
 
-Features:
----------
+## Features:
 
 -   Creating/editing of Confluence pages
 -   Exporting of org buffers to Confluence `wiki` format
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `confluence` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Configuration
-=============
+# Configuration
 
 Define the variable `confluence-url` to point on your Confluence server
 `xmlrpc` endpoint.
@@ -35,8 +30,7 @@ Define the variable `confluence-url` to point on your Confluence server
 To be able to convert from `xml` format to the `wiki` format you need to
 install the tool `xsltproc`.
 
-About xml and wiki formats
-==========================
+# About xml and wiki formats
 
 In confluence version 4.0, Atlassian decided to change the wiki format.
 They did away with the `wiki` format and changed the internal document
@@ -53,11 +47,9 @@ Although it is not recommended you can set the variable
 `confluence-xml-convert-to-wiki-on-load` to t in order to automatically
 convert `xml` content to `wiki` content on page load.
 
-Key bindings
-============
+# Key bindings
 
-Confluence page
----------------
+## Confluence page
 
 | Key binding | Description                                              |
 |-------------|----------------------------------------------------------|
@@ -65,8 +57,7 @@ Confluence page
 | `SPC m s`   | save the buffer on the confluence server as a minor edit |
 | `SPC m S`   | save the buffer on the confluence server as a major edit |
 
-Org
----
+## Org
 
 | Key binding | Description                                                    |
 |-------------|----------------------------------------------------------------|

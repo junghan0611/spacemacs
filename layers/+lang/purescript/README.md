@@ -1,12 +1,10 @@
 ![](img/purescript-logo.png)
 
-Description
-===========
+# Description
 
 This layer provides basic Purescript editing support for spacemacs.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting through
     [purescript-mode](https://github.com/dysinger/purescript-mode)
@@ -16,8 +14,7 @@ Features:
 -   Syntax checking through flycheck
 -   Autocompletion through company
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `purescript` to the existing
@@ -28,11 +25,9 @@ binaries (psc-ide-server, psci,…) are on your path. Installation
 instructions can be found
 [here](https://github.com/purescript/documentation/blob/master/guides/Getting-Started.md).
 
-Configuration
-=============
+# Configuration
 
-Formatting
-----------
+## Formatting
 
 The following formatting tools are currently supported:
 
@@ -60,14 +55,12 @@ To enable automatic formatting of the buffer on save, enable
               purescript-fmt-on-save t)))
 ```
 
-Add import on completion
-------------------------
+## Add import on completion
 
 Set `purescript-add-import-on-completion` to nil to make `psc-ide` stop
 adding imports on completion. Default value is `t`.
 
-Node Modules
-------------
+## Node Modules
 
 If you would like `node_modules/.bin` to be automatically added to the
 buffer local `exec_path`, e.g. to support project local purs/pulp
@@ -80,16 +73,14 @@ risk](https://stackoverflow.com/questions/9679932#comment33532258_9683472):
   '((purescript :variables node-add-modules-path t)))
 ```
 
-Error popup
------------
+## Error popup
 
 If you set `purescript-enable-rebuild-on-save` to non-nil, you will get
 a popup buffer showing you your current warnings/errors one at a time.
 This is primarily meant as an alternative to using flycheck. Default
 value is nil.
 
-LSP
----
+## LSP
 
 For proper IDE support this backend should be used. It is based on an
 external server which will be started automatically by emacs, once an
@@ -115,11 +106,9 @@ NOTE: Key bindings for LSP are defined in the LSP layer. Also it is
 advisable to have a look at the autocomplete layer for an optimal
 intellisense config for LSP.
 
-Key bindings
-============
+# Key bindings
 
-Purescript
-----------
+## Purescript
 
 ### Imports
 
@@ -152,8 +141,7 @@ Purescript
 |-------------|-------------------|
 | `SPC m =`   | Format the buffer |
 
-REPL
-----
+## REPL
 
 [psci](https://github.com/ardumont/emacs-psci) provides a very basic
 REPL for purescript. The following key bindings are available:

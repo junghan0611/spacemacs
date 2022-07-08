@@ -1,10 +1,8 @@
-Description
-===========
+# Description
 
 This layer adds auto-completion to all supported language layers.
 
-Features:
----------
+## Features:
 
 -   Support for code completion with
     [company](http://company-mode.github.io/) or
@@ -21,8 +19,7 @@ Features:
 -   Automatic docstring tooltips are provided by
     [company-quickhelp](https://github.com/expez/company-quickhelp)
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `auto-completion` to the existing
@@ -31,11 +28,9 @@ need to add `auto-completion` to the existing
 As this is a support layer you will also have to install at least one
 supported language layer for it to have any effect.
 
-Configuration
-=============
+# Configuration
 
-Key bindings
-------------
+## Key bindings
 
 You can customize the user experience of auto-completion with the
 following layer variables:
@@ -86,8 +81,7 @@ The default configuration of the layer is:
 `auto-completion-complete-with-key-sequence` if you don't use it
 already.
 
-Snippets directories
---------------------
+## Snippets directories
 
 The following directories are added by default:
 
@@ -105,8 +99,7 @@ single path as string or a list of paths.
 If its value is `nil` then the path `~/.emacs.d/private/snippets` is
 used.
 
-Show snippets in auto-completion popup
---------------------------------------
+## Show snippets in auto-completion popup
 
 By default, snippets are not shown in the auto-completion popup. To show
 them in the popup, set the variable
@@ -118,8 +111,7 @@ them in the popup, set the variable
                                  auto-completion-enable-snippets-in-popup t)))
 ```
 
-Tooltips
---------
+## Tooltips
 
 To enable automatic docstring tooltips set
 `auto-completion-enable-help-tooltip` to `t`.
@@ -144,8 +136,7 @@ However the tooltip may overlap on text on macOS, you can use
 `auto-completion-use-company-box` or
 `auto-completion-use-company-posframe` to `t`, respectively.
 
-Sort results by usage
----------------------
+## Sort results by usage
 
 To enable sorting auto-completion results by their usage frequency set
 `auto-completion-enable-sort-by-usage` to `t`. This feature is provided
@@ -163,14 +154,12 @@ completion backend, doing it again in company may degrate performance.
                     auto-completion-enable-sort-by-usage t)))
 ```
 
-Disable auto-completion in specific layers
-------------------------------------------
+## Disable auto-completion in specific layers
 
 See general documentation on how to [disable a layer for specific
 layers](https://github.com/syl20bnr/spacemacs/blob/develop/doc/DOCUMENTATION.org#disabling-layer-services-in-other-layers).
 
-Enable company globally
------------------------
+## Enable company globally
 
 It can be done by adding `(global-company-mode)` in the
 `dotspacemacs/user-config` function of your dotfile. But it is not
@@ -182,15 +171,13 @@ advantages provided by the layer system like [disabling auto-completion
 for specific
 layers](https://github.com/syl20bnr/spacemacs/blob/develop/doc/DOCUMENTATION.org#disabling-layer-services-in-other-layers).
 
-Replacing company by auto-complete
-----------------------------------
+## Replacing company by auto-complete
 
 You can disable `company` by adding it to the
 `dotspacemacs-excluded-packages` variable, then you are free to enable
 `auto-complete` globally.
 
-Add auto-completion in a layer
-------------------------------
+## Add auto-completion in a layer
 
 Here is an example to add `company` auto-completion to python buffers
 via the package `company-anaconda`.
@@ -214,8 +201,7 @@ In the file `packages.el` of the python layer:
        :modes python-mode)))
 ```
 
-Completion back ends
---------------------
+## Completion back ends
 
 Many spacemacs layers (e.g., python, html, haskell) configure company
 mode backends to provide mode-specific completion. These modes will
@@ -231,8 +217,7 @@ well, but you can configure this variable in your `.spacemacs` file with
                     spacemacs-default-company-backends '(company-files company-capf))))
 ```
 
-Improved faces
---------------
+## Improved faces
 
 For nicer-looking faces, try adding the following to
 \`custom-set-faces\` in your dotspacemacs file.
@@ -245,11 +230,9 @@ For nicer-looking faces, try adding the following to
    ((t (:inherit company-tooltip-selection :weight bold :underline nil)))))
 ```
 
-Key bindings
-============
+# Key bindings
 
-Company
--------
+## Company
 
 | Key binding | Description                                                                                          |
 |-------------|------------------------------------------------------------------------------------------------------|
@@ -273,8 +256,7 @@ Emacs style:
 | `C-n`       | (emacs style) go down in company dropdown menu |
 | `C-p`       | (emacs style) go up in company dropdown menu   |
 
-Auto-complete
--------------
+## Auto-complete
 
 | Key binding | Description                                                          |
 |-------------|----------------------------------------------------------------------|
@@ -284,16 +266,14 @@ Auto-complete
 | `S-TAB`     | select previous candidate                                            |
 | `RET`       | complete word, if word is already completed insert a carriage return |
 
-Yasnippet
----------
+## Yasnippet
 
 | Key binding | Description                                                    |
 |-------------|----------------------------------------------------------------|
 | `M-/`       | Expand a snippet if text before point is a prefix of a snippet |
 | `SPC i s`   | List all current yasnippets for inserting                      |
 
-Auto-yasnippet
---------------
+## Auto-yasnippet
 
 | Key binding | Description                                                               |
 |-------------|---------------------------------------------------------------------------|

@@ -1,18 +1,15 @@
-Description
-===========
+# Description
 
 This layer adds support various language related services to Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Show definition of word at point via
     [define-word](https://github.com/abo-abo/define-word).
 -   Integration of google-translate into Emacs via
     [google-translate](https://github.com/atykhonov/google-translate).
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                              |
 |-------------|----------------------------------------------------------|

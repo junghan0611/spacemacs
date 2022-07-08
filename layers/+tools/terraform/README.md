@@ -1,20 +1,17 @@
 ![](img/terraform.png)
 
-Description
-===========
+# Description
 
 This layer provides basic support for Terraform `.tf` files.
 
-Features:
----------
+## Features:
 
 -   Basic syntax highlighting via
     [terraform-mode](https://github.com/syohex/emacs-terraform-mode)
 -   Auto formatting on save via `terraform fmt`
 -   LSP support for terraform-lsp via `terraform-backend`
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `terraform` to the existing
@@ -23,11 +20,9 @@ need to add `terraform` to the existing
 You will also need a working native `terraform` installation on your
 system.
 
-Configuration
-=============
+# Configuration
 
-Auto-format on save
--------------------
+## Auto-format on save
 
 If you want `terraform fmt` to be applied automatically on save then set
 the layer variable `terraform-auto-format-on-save` to `t`:
@@ -36,8 +31,7 @@ the layer variable `terraform-auto-format-on-save` to `t`:
 (terraform :variables terraform-auto-format-on-save t)
 ```
 
-LSP
----
+## LSP
 
 To enable LSP, install
 [terraform-lsp](https://github.com/juliosueiras/terraform-lsp). Then set

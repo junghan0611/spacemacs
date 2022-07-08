@@ -1,12 +1,10 @@
 ![](img/scala.png) with ![](img/scalameta.png)
 
-Description
-===========
+# Description
 
 This layer adds support for the Scala language to Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting
 -   Support for language backend using LSP and
@@ -21,8 +19,7 @@ Features:
 -   Style linting
 -   Optional GGTags search
 
-Layer Installation
-==================
+# Layer Installation
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `scala` to the existing `dotspacemacs-configuration-layers`
@@ -33,14 +30,12 @@ list in this file.
 -   To display SBT in a small buffer at the bottom of the frame, set the
     `scala-sbt-window-position` layer variable to `bottom`.
 
-Backends
-========
+# Backends
 
 The only currently supported language backend is `scala-metals`. Support
 for Ensime has been dropped as that project has been dead for some time.
 
-Metals
-------
+## Metals
 
 Currently, you must manually install the Metals server. It is possible
 to do so via coursier; the latest version can be built using the
@@ -65,11 +60,10 @@ issue described
 [Here](https://github.com/syl20bnr/spacemacs/pull/14470).
 
 You will then have the common LSP key bindings; see
-[LSP\#key-bindings](https://github.com/syl20bnr/spacemacs/tree/develop/layers/%2Btools/lsp#key-bindings)
+[LSP#key-bindings](https://github.com/syl20bnr/spacemacs/tree/develop/layers/%2Btools/lsp#key-bindings)
 for more details.
 
-Scalastyle
-==========
+# Scalastyle
 
 [Scalastyle](http://www.scalastyle.org/) provides style-checking and
 linting. The Emacs functionality is provided by Flycheck.
@@ -102,8 +96,7 @@ and [scalastyle
 configuration](http://www.scalastyle.org/configuration.html) for
 up-to-date configuration instructions.
 
-Use Java doc-style
-------------------
+## Use Java doc-style
 
 To enable `java-doc-style`, set the variable
 `scala-indent:use-javadoc-style` to `t`
@@ -113,14 +106,12 @@ To enable `java-doc-style`, set the variable
   (scala :variables scala-indent:use-javadoc-style t)))
 ```
 
-Enable Debug Adapter Protocol (DAP)
-===================================
+# Enable Debug Adapter Protocol (DAP)
 
 The metals backend enables integration with the DAP layer for debugging
 support.
 
-Automatically insert asterisk in multiline comments
-===================================================
+# Automatically insert asterisk in multiline comments
 
 To insert a leading asterisk in multiline comments automatically, set
 the variable `scala-auto-insert-asterisk-in-comments` to `t`.
@@ -130,8 +121,7 @@ the variable `scala-auto-insert-asterisk-in-comments` to `t`.
   (scala :variables scala-auto-insert-asterisk-in-comments t)))
 ```
 
-Enable GTags as a fallback navigation utility
-=============================================
+# Enable GTags as a fallback navigation utility
 
 To enable gtags when in `scala-mode` set the variable
 `scala-enable-gtags` to `t`.
@@ -141,13 +131,11 @@ To enable gtags when in `scala-mode` set the variable
   (scala :variables scala-enable-gtags t)))
 ```
 
-Key bindings
-============
+# Key bindings
 
 Additional major mode key bindings are populated by LSP and DAP.
 
-sbt
----
+## sbt
 
 | Key binding | Description                 |
 |-------------|-----------------------------|

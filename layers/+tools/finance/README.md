@@ -1,12 +1,10 @@
 ![](img/ledger.png)
 
-Description
-===========
+# Description
 
 This layer integrates a full fledged accounting system into Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Support for maintaining a double-entry accounting system run by text
     files via [ledger-mode](https://www.emacswiki.org/emacs/LedgerMode).
@@ -16,11 +14,9 @@ Features:
 -   Extended support for `evil` style editing with
     [evil-ledger](https://github.com/atheriel/evil-ledger).
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `finance` to the existing
@@ -29,11 +25,9 @@ need to add `finance` to the existing
 For this layer to work properly you also need to install the native
 package [ledger](https://github.com/ledger/ledger).
 
-Configuration
-=============
+# Configuration
 
-Ledger
-------
+## Ledger
 
 You can set what column transaction posts are aligned to on the right by
 setting the variable `ledger-post-amount-alignment-column` in your
@@ -45,11 +39,9 @@ setting the variable `ledger-post-amount-alignment-column` in your
   (setq ledger-post-amount-alignment-column 68))
 ```
 
-Key bindings
-============
+# Key bindings
 
-Ledger
-------
+## Ledger
 
 | Key binding | Description                                   |
 |-------------|-----------------------------------------------|
@@ -70,8 +62,7 @@ evil-ledger additionally adds a transaction text object, bound to `x`,
 so you can for example use `dix` or `vax` to delete or mark the
 transaction at point.
 
-Ledger-Reconcile
-----------------
+## Ledger-Reconcile
 
 | Key binding | Description                                                               |
 |-------------|---------------------------------------------------------------------------|

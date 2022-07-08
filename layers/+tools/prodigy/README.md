@@ -1,7 +1,6 @@
 ![](img/prodigy.png)
 
-Description
-===========
+# Description
 
 This layer adds support for the
 [prodigy](https://github.com/rejeep/prodigy.el) package to manage
@@ -11,25 +10,21 @@ for more details.
 It is recommended to put your prodigy services in the
 `dotspacemacs/user-config` part of your `~/.spacemacs` file.
 
-Features:
----------
+## Features:
 
 -   Managing of pre-declared services from within Emacs
 -   Showing of process output in special buffers
 -   Filtering of processes for tags or names
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `prodigy` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Key bindings
-============
+# Key bindings
 
-Spawn prodigy
--------------
+## Spawn prodigy
 
 You start prodigy with this:
 
@@ -37,8 +32,7 @@ You start prodigy with this:
 |-------------|-------------------------|
 | `SPC a t p` | Open the prodigy buffer |
 
-Navigate through it
--------------------
+## Navigate through it
 
 | Key binding | Description                     |
 |-------------|---------------------------------|

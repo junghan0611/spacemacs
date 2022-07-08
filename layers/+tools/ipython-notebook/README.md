@@ -1,5 +1,4 @@
-Description
-===========
+# Description
 
 This layer adds support for the package `emacs-ipython-notebook`.
 
@@ -7,39 +6,31 @@ Do not hesitate to check the original package README
 [here](https://github.com/millejoh/emacs-ipython-notebook). Also the
 wiki has lots of informative stuff.
 
-Features:
----------
+## Features:
 
 -   Key bindings available through transient-state or leader key
 -   Lazy-loading
 -   Auto-completion
 
-List of TODOS
-=============
+# List of TODOS
 
 This is a WIP, feel free to collaborate.
 
-<span class="todo TODO">TODO</span> Maybe it'd be better if there was a state for this
---------------------------------------------------------------------------------------
+## <span class="todo TODO">TODO</span> Maybe it'd be better if there was a state for this
 
-<span class="todo TODO">TODO</span> Make more key binding to `connect` to a python buffer
------------------------------------------------------------------------------------------
+## <span class="todo TODO">TODO</span> Make more key binding to `connect` to a python buffer
 
-<span class="todo TODO">TODO</span> Deleting visual regions don't work, find out why
-------------------------------------------------------------------------------------
+## <span class="todo TODO">TODO</span> Deleting visual regions don't work, find out why
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `ipython-notebook` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Choosing a backend
-------------------
+## Choosing a backend
 
 To choose a default backend set the layer variable `ein-backend`:
 
@@ -52,8 +43,7 @@ Currently only jupyter backend is available. If `ein-backend` is set to
 enabled. Jupyter backend currently only supports auto-completion
 features.
 
-Dependencies
-------------
+## Dependencies
 
 Install IPython Notebook \> 3
 
@@ -64,8 +54,7 @@ Notebook](https://jupyter.org/install).
 pip install jupyter
 ```
 
-What needs to be run
---------------------
+## What needs to be run
 
 Have an IPython notebook running
 
@@ -73,18 +62,15 @@ Have an IPython notebook running
 jupyter notebook
 ```
 
-Using the IPython notebook
-==========================
+# Using the IPython notebook
 
-Open Notebook List
-------------------
+## Open Notebook List
 
 This layer is lazy loaded so the transient-state will only work after
 you summon the command `ein:notebooklist-open` which is bound to
 `SPC a t i o` or `ein:run` which is bound to `SPC a t i r`.
 
-Key bindings
-------------
+## Key bindings
 
 The key bindings can be used through a transient state or the usual
 evil-leader.
@@ -170,21 +156,17 @@ In traceback mode the following key bindings are defined:
 | `p`   | ein:tb-prev-item                       |
 | `q`   | bury-buffer                            |
 
-Screenshots
-===========
+# Screenshots
 
-Light
------
+## Light
 
 ![](img/light.png)
 
-Dark
-----
+## Dark
 
 ![](img/dark.png)
 
-Bonus
-=====
+# Bonus
 
 If you want to have a matplotlibrc that looks good with a dark
 background try using

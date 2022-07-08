@@ -1,7 +1,6 @@
 ![](img/logo.png)
 
-Description
-===========
+# Description
 
 BibTeX and BibLaTeX files are a common way to manage bibliographies. The
 format was original designed to work with LaTeX files and subsequently
@@ -10,8 +9,7 @@ has been adopted by other markup formats such as MarkDown and Org mode.
 This layer adds support to manipulate BibTeX and BibLaTeX files in
 Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting for BibTeX and BibLaTeX files.
 -   Utilities for automatically adding entries from different data
@@ -20,15 +18,13 @@ Features:
 -   Optionally install full fledged [ebib reference
     manager](https://joostkremers.github.io/ebib/ebib-manual.html)
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `bibtex` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Configuration
-=============
+# Configuration
 
 This layer also supports having a global BibTeX file. For a basic
 configuration, add this to your `~/.spacemacs` inside
@@ -59,8 +55,7 @@ More configuration options are available and are detailed in the
 [biblio](https://github.com/cpitclaudel/biblio.el) package
 documentations.
 
-Ebib and biblio
----------------
+## Ebib and biblio
 
 To enable installation of the [ebib reference
 manager](https://joostkremers.github.io/ebib/ebib-manual.html) set the
@@ -86,8 +81,7 @@ package to provide an easy way of fetching citations from the web into
 the database (follow the links to the packages additional descriptions
 and usage instructions).
 
-Key bindings
-============
+# Key bindings
 
 In a Bib(La)TeX file, the following key bindings are added:
 

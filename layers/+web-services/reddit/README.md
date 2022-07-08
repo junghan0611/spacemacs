@@ -1,27 +1,23 @@
-Description
-===========
+# Description
 
 This layer adds Reddit support to Spacemacs via the package
 [reddigg](https://github.com/thanhvg/emacs-reddigg). This package allows
 you to browse reddit in org-mode.
 
-Features:
----------
+## Features:
 
 -   Activities on Reddit
     -   Viewing main
     -   Viewing sub
     -   Viewing comments
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `reddit` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Configuration
-=============
+# Configuration
 
 You can add sub Reddits to your main page by adding them to
 `reddigg-subs`. You have to write the sub Reddit name in small letters
@@ -35,8 +31,7 @@ Example:
                        trymacs_discord))
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding   | Description |
 |---------------|-------------|

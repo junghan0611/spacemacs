@@ -1,28 +1,23 @@
-Description
-===========
+# Description
 
 This layer adds [AsciiDoc](https://asciidoctor.org) markup language
 support to Spacemacs.
 
-Features:
----------
+## Features:
 
 -   asciidoc format support via
     [adoc-mode](https://github.com/sensorflo/adoc-mode)
 -   `.adoc` files are associated with `adoc-mode` by default
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `asciidoc` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Key bindings
-============
+# Key bindings
 
-Element insertion
------------------
+## Element insertion
 
 | Key binding | Description                                   |
 |-------------|-----------------------------------------------|
@@ -37,8 +32,7 @@ Element insertion
 | `SPC m x b` | Boldface selected                             |
 | `SPC m x i` | Italicize selected                            |
 
-Promotion, Demotion
--------------------
+## Promotion, Demotion
 
 | Key binding | Description         |
 |-------------|---------------------|

@@ -1,12 +1,10 @@
 ![](img/cmake.png)
 
-Description
-===========
+# Description
 
 This layer adds support [CMake](https://cmake.org/) scripts.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting
 -   Auto-completion
@@ -17,21 +15,18 @@ Features:
 -   Extraction of compile parameters from `compile_commands.json` with
     [cmake-ide](https://github.com/atilaneves/cmake-ide)
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `cmake` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Configuration
-=============
+# Configuration
 
 All layer configurations can be done by setting layer variables in your
 dotfile. No custom user config lines are necessary
 
-Choosing a backend
-------------------
+## Choosing a backend
 
 This layer provides two alternative backends to choose from.
 
@@ -75,8 +70,7 @@ NOTE: Key bindings for LSP are defined in the LSP layer. Also it is
 advisable to have a look at the autocomplete layer for an optimal
 intellisense config for LSP.
 
-CMake-ide
----------
+## CMake-ide
 
 To enable CMake projects support set the layer variable
 `cmake-enable-cmake-ide-support` to `t` in your dotfile:
@@ -129,8 +123,7 @@ In case of projectile it's possible to configure project like:
          (helm-make-arguments . "-j7"))))
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                                             |
 |-------------|-------------------------------------------------------------------------|

@@ -1,13 +1,11 @@
 ![](img/floobits.png)
 
-Description
-===========
+# Description
 
 This layer adds support for the peer programming tool
 [floobits](https://github.com/Floobits/floobits-emacs) to Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Loading of floobits configuration files with fixed commands
 -   Creation of floobits workspaces and populating it with content
@@ -15,18 +13,15 @@ Features:
     current workspace
 -   Follow recent changes by other users
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `floobits` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                                                              |
 |-------------|------------------------------------------------------------------------------------------|

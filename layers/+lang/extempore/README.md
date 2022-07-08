@@ -1,26 +1,22 @@
-Description
-===========
+# Description
 
 This layer adds support for the
 [Extempore](https://github.com/digego/extempore) programming
 environment.
 
-Features:
----------
+## Features:
 
 -   run Extempore (inferior extempore buffer)
 -   connect to & evaluate code
 -   eldoc support
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `extempore` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Configuration
--------------
+## Configuration
 
 The only configuration variable you might want to set out-of-the-box is
 `extempore-path`, so that you don't have to answer the "which
@@ -39,8 +35,7 @@ There are a few other config variables to tweak, but in most cases the
 defaults will be ok if you're just starting out. If you want to see them
 all, open up `M-x customize` and look in the `extempore` group.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description             |
 |-------------|-------------------------|

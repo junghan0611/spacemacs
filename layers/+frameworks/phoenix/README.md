@@ -1,26 +1,22 @@
 ![](img/phoenix.png) with ![](img/alchemist.png)
 
-Description
-===========
+# Description
 
 This layer adds key bindings for
 [Alchemist](https://github.com/tonini/alchemist.el)'s already built in
 phoenix mode.
 
-Features:
----------
+## Features:
 
 -   Key bindings for navigation to files
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `phoenix` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding   | Description        |
 |---------------|--------------------|

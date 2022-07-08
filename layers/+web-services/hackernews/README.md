@@ -1,30 +1,25 @@
-Description
-===========
+# Description
 
 This layer adds support for reading [Hacker
 News](https://news.ycombinator.com/).
 
-Features:
----------
+## Features:
 
 -   Read Hacker News
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `hackernews` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description |
 |-------------|-------------|
 | `SPC a w h` | hackernews  |
 
-Major mode key bindings
------------------------
+## Major mode key bindings
 
 | Key binding | Description                                  |
 |-------------|----------------------------------------------|

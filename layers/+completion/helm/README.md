@@ -1,7 +1,6 @@
 ![](img/helm.png)
 
-Description
-===========
+# Description
 
 This layer enables Helm everywhere in Spacemacs. The alternative to this
 layer is the Ivy layer which brings the same level of integration as
@@ -14,8 +13,7 @@ layers, toggles and more…
 Mastering your choice of completion system will make you a Spacemacs
 power user.
 
-Features:
----------
+## Features:
 
 -   Project wide `grep` like text search via `helm-dir-smart-do-search`
 -   Project wide text replacements using `helm-edit-mode`
@@ -24,8 +22,7 @@ Features:
 -   Detailed configuration parameters for helms appearance
 -   Intuitive `transient state`
 
-Install
-=======
+# Install
 
 Helm is part of the standard distribution of Spacemacs so you don't have
 to do anything to install it if you chose this distribution.
@@ -39,8 +36,7 @@ removed or commented out in the `dotspacemacs-configuration-layers`
 list. Or add `helm` below the other completion layers. Spacemacs uses
 the completion layer that's listed last.
 
-Alternative layers
-------------------
+## Alternative layers
 
 Ivy layer is a replacement layer for Helm. When you add `ivy` to the
 existing list in your dotfile, it will completely replace the `helm`
@@ -50,15 +46,13 @@ To switch from Ivy to Helm, modify your `~/.spacemacs`. You will need to
 add `helm` to the existing `dotspacemacs-configuration-layers` list in
 this file, and remove `ivy`.
 
-Configuration
-=============
+# Configuration
 
 Note: in the following configuration examples, it is possible that
 `helm` is not listed explicitly in your dotfile. If that is the case
 then just add it as you would with any other layers.
 
-Auto-Resize
------------
+## Auto-Resize
 
 It is possible to have Helm to resize its buffer window to adapt to the
 length of the candidate list. By default the buffer size is fixed, to
@@ -72,8 +66,7 @@ enable automatic resizing set the layer variable
 
 Default value is `nil`.
 
-Disable Helm header
--------------------
+## Disable Helm header
 
 To hide the header in the Helm buffer set the layer variable
 `helm-no-header` to non-nil.
@@ -85,8 +78,7 @@ To hide the header in the Helm buffer set the layer variable
 
 Default value is `nil`.
 
-Define Helm position
---------------------
+## Define Helm position
 
 To set the position of the Helm buffer add the layer variable
 `helm-position` to your dotfile.
@@ -100,8 +92,7 @@ The supported values are `bottom`, `top`, `left` and `right`.
 
 Default value is `bottom`.
 
-Enable fuzzy searching in Helm buffers
---------------------------------------
+## Enable fuzzy searching in Helm buffers
 
 It is possible to control the fuzziness of Helm when searching for
 candidates. By default this layer enable fuzzy search for all supported
@@ -117,8 +108,7 @@ In this case please open an issue so that this can be fixed.
 
 Default value is `always`.
 
-Ripgrep: maximum number of column
----------------------------------
+## Ripgrep: maximum number of column
 
 If you use `ripgrep` the default value for `--max-columns` is `512`. To
 change if set the layer variable `spacemacs-helm-rg-max-column-number`.
@@ -128,11 +118,9 @@ change if set the layer variable `spacemacs-helm-rg-max-column-number`.
   (helm :variables spacemacs-helm-rg-max-column-number 1024)))
 ```
 
-Key bindings
-============
+# Key bindings
 
-hjkl navigation
----------------
+## hjkl navigation
 
 When using the Vim style or Hybrid style with the variable
 `hybrid-style-enable-hjkl-bindings` set to `t`, Spacemacs adds
@@ -146,8 +134,7 @@ navigation in the Helm buffers with `hjkl`.
 | `C-k`       | go to next candidate         |
 | `C-l`       | same as `<return>`           |
 
-Transient state
----------------
+## Transient state
 
 Spacemacs defines a transient state for `Helm` to make it work like
 [Vim's Unite](https://github.com/Shougo/unite.vim) plugin.
@@ -181,8 +168,7 @@ buffer.
 | `T`                  | mark all candidates                                  |
 | `v`                  | execute persistent action                            |
 
-Files
------
+## Files
 
 In the `helm-files` buffer:
 
@@ -190,8 +176,7 @@ In the `helm-files` buffer:
 |--------------|----------------------------------------|
 | `S-<return>` | open the selected file in other window |
 
-Buffers
--------
+## Buffers
 
 In the `helm-buffers` buffer:
 
@@ -199,8 +184,7 @@ In the `helm-buffers` buffer:
 |--------------|------------------------------------------|
 | `S-<return>` | open the selected buffer in other window |
 
-Bookmarks
----------
+## Bookmarks
 
 In the `helm-bookmarks` buffer:
 
@@ -211,30 +195,26 @@ In the `helm-bookmarks` buffer:
 | `C-f`        | toggle filename location                   |
 | `S-<return>` | open the selected bookmark in other window |
 
-Colors/Faces
-------------
+## Colors/Faces
 
 | Key binding | Description            |
 |-------------|------------------------|
 | `SPC C l`   | `helm-colors`          |
 | `SPC h d F` | `spacemacs/helm-faces` |
 
-C-z and Tab switch
-------------------
+## C-z and Tab switch
 
 The command bound to `C-z` is much more useful than the one bound to
 Tab, so it makes sense to swap them. It's also recommended
 [here](http://tuhdo.github.io/helm-intro.html).
 
-Helm focus
-----------
+## Helm focus
 
 If you find yourself unable to return focus to Helm (after a careless
 mouse-click for example), use `SPC w b` to return focus to the
 minibuffer.
 
-Helm-swoop
-----------
+## Helm-swoop
 
 [Helm-swoop](https://github.com/ShingoFukuyama/helm-swoop) is very
 similar to `moccur`, it displays a `helm` buffer with all the
@@ -251,15 +231,13 @@ apply the modifications to the buffer.
 | `SPC s S`   | execute `helm-multi-swoop`     |
 | `SPC s C-s` | execute `helm-multi-swoop-all` |
 
-Universal argument
-------------------
+## Universal argument
 
 `SPC u` is not working before `helm-M-x` (`SPC SPC`). Instead, call
 `helm-M-x` first, select the command you want to run, and press `C-u`
 before pressing `<return>`. For instance: `SPC SPC org-reload C-u RET`
 
-Replacing text in several files
--------------------------------
+## Replacing text in several files
 
 If you have `rg`, `ag`, `pt` or `ack` installed, replacing an occurrence
 of text in several files can be performed via
@@ -278,14 +256,12 @@ To replace all occurrences of `foo` with `bar` in your current project:
 **Note**: In Spacemacs, `helm-ag` despite its name works with `rg`, `pt`
 and `ack` as well (but not with `grep`).
 
-Resume last session
--------------------
+## Resume last session
 
 Use `SPC r l` to resume the last helm session. For instance it is handy
 to quickly toggle on and off a toggle using `SPC h t`.
 
-External resources
-==================
+# External resources
 
 -   [The Helm wiki](https://github.com/emacs-helm/helm/wiki)
 -   [The Helm guide](http://tuhdo.github.io/helm-intro.html)

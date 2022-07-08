@@ -1,28 +1,24 @@
 ![](img/parinfer.png)
 
-Description
-===========
+# Description
 
 This layer provides an implementation of
 [parinfer](https://shaunlebron.github.io/parinfer/), a lisp editing
 paradigm that controls indentation based on parentheses or vice versa.
 
-Features:
----------
+## Features:
 
 -   Automatic management of parenthesis in clojure, emacs lisp,
     common-lisp and scheme following the parinfer editing paradigm.
 -   Powered by a native library in the background
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `parinfer` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Configuration
-=============
+# Configuration
 
 This package comes preconfigured to auto install the native library in
 your cache directory. If this is not desired set the variables
@@ -35,8 +31,7 @@ If you still want to manually configure it please check the respective
 package repo
 [here](https://github.com/justinbarclay/parinfer-rust-mode).
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                         |
 |-------------|-----------------------------------------------------|

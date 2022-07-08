@@ -1,35 +1,30 @@
 ![](img/eww.png)
 
-Description
-===========
+# Description
 
 Ewww.. So ergonomic!
 
-Features:
----------
+## Features:
 
 -   Adds evil key bindings support to eww-mode (including
     eww-buffers/bookmarks/history-mode)
 -   Adds spacemacs functionality to eww-mode
 -   Adds ability to easily navigate eww buffers
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `eww` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding   | Description      | Function         |
 |---------------|------------------|------------------|
 | `SPC a w e e` | Start eww        | eww              |
 | `SPC a w e w` | List eww buffers | eww-list-buffers |
 
-Eww
----
+## Eww
 
 |             |                          |                                  |
 |-------------|--------------------------|----------------------------------|
@@ -61,16 +56,14 @@ Eww
 | `+/-`       | zoom in/out              | zoom-frm-in/out                  |
 | `=`         | unzoom                   | zoom-frm-unzoom                  |
 
-Eww History
------------
+## Eww History
 
 |           |              |                    |
 |-----------|--------------|--------------------|
 | `SPC m f` | Open History | eww-history-browse |
 | `f`       | Open History | eww-history-browse |
 
-Eww Bookmarks
--------------
+## Eww Bookmarks
 
 |           |                 |                     |
 |-----------|-----------------|---------------------|
@@ -81,8 +74,7 @@ Eww Bookmarks
 | `d`       | Delete Bookmark | eww-bookmark-kill   |
 | `y`       | Yank Bookmark   | eww-yank-bookmark   |
 
-Eww Buffers
------------
+## Eww Buffers
 
 |           |                 |                          |
 |-----------|-----------------|--------------------------|

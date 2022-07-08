@@ -1,13 +1,11 @@
 ![](img/emacs.png)
 
-Description
-===========
+# Description
 
 This layer gathers all the configuration related to emacs-lisp. This
 should always be in your dotfile, it is not recommended to uninstall it.
 
-Features:
----------
+## Features:
 
 -   Auto-completion using company
 -   Linting using flycheck integration
@@ -28,15 +26,13 @@ Features:
 -   Visual feedback when evaluation using
     [eval-sexp-fu](https://github.com/hchbaw/eval-sexp-fu.el)
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `emacs-lisp` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Auto-compile
-============
+# Auto-compile
 
 This layer adds the
 [auto-compile](https://github.com/tarsius/auto-compile) package to
@@ -53,8 +49,7 @@ use this line in your `dotspacemacs/user-config` function.
 
 You can also exclude the `auto-compile` package.
 
-Working with lisp files (barfage, slurpage & more)
-==================================================
+# Working with lisp files (barfage, slurpage & more)
 
 Spacemacs comes with a special `lisp-state` for working with lisp code
 that supports slurpage, barfage and more tools you'll likely want when
@@ -65,8 +60,7 @@ global
 [DOCUMENTATION.org](https://github.com/syl20bnr/spacemacs/blob/master/doc/DOCUMENTATION.org#lisp-key-bindings).
 In general, use `SPC k` to interact with the lisp-state.
 
-Debugging Elisp
-===============
+# Debugging Elisp
 
 Here is an interactive quick start to debug Emacs Lisp from an
 `emacs-lisp-mode` buffer.
@@ -118,8 +112,7 @@ function or press `o` to go out of it.
 
 1.  Press `a` to stop debugging.
 
-Using the inspector
--------------------
+## Using the inspector
 
 This layer adds the
 [inspector](https://github.com/mmontone/emacs-inspector) package to
@@ -128,8 +121,7 @@ information about its usage
 [here](https://github.com/mmontone/emacs-inspector) and see key
 bindings.
 
-Nameless
-========
+# Nameless
 
 Nameless hides package namespaces in your emacs-lisp code, and replaces
 it by leading `>` It can be toggled with `SPC m T n`.
@@ -145,8 +137,7 @@ inside a terminal window, use with caution.
   (emacs-lisp :variables emacs-lisp-hide-namespace-prefix t)))
 ```
 
-Aliases
--------
+## Aliases
 
 This layer defines some global aliases for Spacemacs:
 
@@ -164,8 +155,7 @@ of your dotfile:
 (add-to-list 'nameless-global-aliases '("N" . "nameless"))
 ```
 
-Structurally safe editing
-=========================
+# Structurally safe editing
 
 This layer adds support for `evil-cleverparens` which allows to safely
 edit lisp code by keeping the s-expressions balanced.
@@ -188,8 +178,7 @@ or to enable it for all supported modes:
 
 When enabled the symbol `🆂` should be displayed in the mode-line.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding                | Description                                                           |
 |----------------------------|-----------------------------------------------------------------------|
@@ -204,14 +193,13 @@ Key bindings
 | `SPC m e e`                | evaluate sexp before point                                            |
 | `SPC m e f`                | evaluation current function                                           |
 | `SPC m e r`                | evaluate current region                                               |
-| `SPC m ​,​`                | toggle `lisp state`                                                   |
+| `SPC m ​,​`                  | toggle `lisp state`                                                   |
 | `SPC m t b`                | run tests of current buffer                                           |
 | `SPC m t q`                | run `ert`                                                             |
 | `SPC m d m`                | open [macrostep](https://github.com/joddie/macrostep) transient-state |
 | `SPC m :`                  | toggle nameless minor mode                                            |
 
-Additional testing functions with overseer
-------------------------------------------
+## Additional testing functions with overseer
 
 Function related to test are present under the `SPC m t` prefix:
 
@@ -227,8 +215,7 @@ Function related to test are present under the `SPC m t` prefix:
 | `SPC m t q` | test quiet    |
 | `SPC m t h` | test help     |
 
-Additional evaluation functions
--------------------------------
+## Additional evaluation functions
 
 If `smartparens` is used the following additional key bindings are
 available:
@@ -238,8 +225,7 @@ available:
 | `SPC m e c` | evaluate sexp around point   |
 | `SPC m e s` | evaluate symbol around point |
 
-Format code
------------
+## Format code
 
 The
 [semantic](https://github.com/syl20bnr/spacemacs/blob/develop/layers/%2Bemacs/semantic/README.org)
@@ -252,8 +238,7 @@ layer should be installed for these key bindings to become active.
 | `SPC m = o` | format all on one line  |
 | `SPC m = s` | format current sexp     |
 
-Debugging
----------
+## Debugging
 
 To start debugging:
 
@@ -326,8 +311,7 @@ mode line)
 | `C-v`       | backtrace toggle locals  |
 | `q`         | quit                     |
 
-Refactoring with emr
---------------------
+## Refactoring with emr
 
 | Key binding   | Description               |
 |---------------|---------------------------|
@@ -346,8 +330,7 @@ Refactoring with emr
 | `SPC m r d d` | delete unused definition  |
 | `SPC m e w`   | eval and replace          |
 
-Inspector
----------
+## Inspector
 
 **inspector buffer**
 

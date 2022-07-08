@@ -1,16 +1,13 @@
-Description
-===========
+# Description
 
 This layer adds support for
 [prettier](https://github.com/prettier/prettier)
 
-Features:
----------
+## Features:
 
 -   Format buffer in a consistent style
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`.
 
@@ -20,8 +17,7 @@ To install `prettier` globally:
 $ npm install -g prettier
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                       |
 |-------------|-----------------------------------|

@@ -1,18 +1,15 @@
 ![](img/saltstack.png)
 
-Description
-===========
+# Description
 
 This layer provides syntax highlighting for Saltstack files.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting
 -   Display of salt documentation
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `salt` to the existing `dotspacemacs-configuration-layers`
@@ -22,8 +19,7 @@ To view documentation in Emacs or inline with ElDoc, Python and the Salt
 Python libraries must be installed on the system containing the files
 being edited.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                  |
 |-------------|----------------------------------------------|

@@ -2,14 +2,12 @@
 
 ![](img/zeal.png)
 
-Description
-===========
+# Description
 
 This layer integrates offline API browsers into Emacs. It provides one
 for macOS, Linux and Windows.
 
-Features:
----------
+## Features:
 
 -   Searching for word at point in offline API browser's UI.
 -   Integration of offline API browser search results in Helm and Ivy.
@@ -18,15 +16,13 @@ Features:
 -   Support for [zeal](https://zealdocs.org/) offline API browser for
     Linux.
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `dash` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Dash (macOS)
-------------
+## Dash (macOS)
 
 You have to install [dash](https://kapeli.com/dash) on your machine.
 
@@ -39,15 +35,13 @@ Helm Dash
 [requires](https://github.com/areina/helm-dash#user-content-requirements)
 sqlite3 to be installed to function properly.
 
-Zeal (Linux & Windows)
-----------------------
+## Zeal (Linux & Windows)
 
 You have to install [zeal](https://zealdocs.org/) on your machine.
 
 Then install the docsets you use more frequently
 
-Configuration
-=============
+# Configuration
 
 By default, the dash layer will initialize all installed docsets to be
 active in all buffers. To disable this and opt-in to specific docsets
@@ -65,8 +59,7 @@ To change the location of the installed docsets, set:
       helm-dash-docset-newpath "~/.docsets")
 ```
 
-Word at point
-=============
+# Word at point
 
 `dash-at-point` and `zeal-at-point` will search for the word at point in
 the respective offline API browser. The result will be displayed in the
@@ -91,8 +84,7 @@ For more details please check
 [dash-at-point-usage](https://github.com/stanaka/dash-at-point#Usage) or
 [zeal-at-point](https://github.com/jinzhu/zeal-at-point).
 
-Key bindings
-============
+# Key bindings
 
 | Key binding   | Description                                                     |
 |---------------|-----------------------------------------------------------------|

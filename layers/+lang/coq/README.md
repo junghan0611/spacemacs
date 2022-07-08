@@ -1,14 +1,12 @@
 ![](img/coq.png)
 
-Description
-===========
+# Description
 
 This layer adds support for the [Coq](https://coq.inria.fr/) proof
 assistant (adapted from
 [spacemacs-coq](https://github.com/tchajed/spacemacs-coq)) to Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting
 -   Syntax-checking
@@ -20,18 +18,15 @@ Features:
 -   Replacement of certain constants with the correct mathematical signs
 -   Inserting of certain preconfigured proof elements
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `coq` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Coq
----
+## Coq
 
 Official installers for macOS and Windows are available from:
 <https://coq.inria.fr/download>.
@@ -39,11 +34,9 @@ Official installers for macOS and Windows are available from:
 Linux users can build from source or consult with their own package
 managers.
 
-Troubleshooting
-===============
+# Troubleshooting
 
-There are empty square boxes in place of math operators
--------------------------------------------------------
+## There are empty square boxes in place of math operators
 
 Math symbols present in your buffer (e.g. forall exists) will attempt to
 be prettified, if you are seeing empty square boxes this means an
@@ -56,11 +49,9 @@ following snippet to the your `dotspacemacs/user-config`.
   (add-to-list 'company-coq-disabled-features 'prettify-symbols))
 ```
 
-Key bindings
-============
+# Key bindings
 
-Laying out windows
-------------------
+## Laying out windows
 
 | Key binding | Description           |
 |-------------|-----------------------|
@@ -68,8 +59,7 @@ Laying out windows
 | `SPC m l l` | Re-layout windows     |
 | `SPC m l p` | Show current proof    |
 
-Managing prover process
------------------------
+## Managing prover process
 
 | Key binding | Description                                                     |
 |-------------|-----------------------------------------------------------------|
@@ -78,8 +68,7 @@ Managing prover process
 | `SPC m p q` | Quit prover                                                     |
 | `SPC m p r` | Retract buffer - rewinds and moves point to beginning of buffer |
 
-Getting documentation
----------------------
+## Getting documentation
 
 | Key binding | Description                                                     |
 |-------------|-----------------------------------------------------------------|
@@ -87,8 +76,7 @@ Getting documentation
 | `SPC m h e` | Show documentation for the error in the \`\*response\*\` buffer |
 | `SPC m h E` | Browse all available documentation for errors                   |
 
-Prover queries
---------------
+## Prover queries
 
 The mnemonic for `a` is "ask".
 
@@ -106,8 +94,7 @@ The mnemonic for `a` is "ask".
 | `SPC m a i i` | Print (showing implicits)                   |
 | `SPC m a o`   | Show an outline of the current proof script |
 
-Moving the point
-----------------
+## Moving the point
 
 | Key binding | Description                     |
 |-------------|---------------------------------|
@@ -116,8 +103,7 @@ Moving the point
 | `SPC m g l` | Go to last processed command    |
 | `SPC m g s` | Go to start of command at point |
 
-Inserting
----------
+## Inserting
 
 | Key binding     | Description                                                     |
 |-----------------|-----------------------------------------------------------------|
@@ -139,8 +125,7 @@ showcasing all available `company-coq` key bindings can be accessed at
 any time using `SPC SPC
 company-coq-tutorial`.
 
-Options
--------
+## Options
 
 | Key binding | Description                 |
 |-------------|-----------------------------|

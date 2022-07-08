@@ -1,10 +1,8 @@
-Description
-===========
+# Description
 
 This layer adds packages to improve editing with Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Support for automatic indentation of code via
     [`aggressive-indent`](https://github.com/Malabarba/aggressive-indent-mode).

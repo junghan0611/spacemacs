@@ -1,13 +1,11 @@
 ![](img/rust.png)
 
-Description
-===========
+# Description
 
 This layer supports [Rust](https://www.rust-lang.org) development in
 Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Auto-completion and navigation support through
     [lsp-mode](https://github.com/emacs-lsp/lsp-mode) or
@@ -19,18 +17,15 @@ Features:
 -   Support for [Rusty Object Notation
     (RON)](https://github.com/nabero/ron-mode)
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `rust` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Choosing a backend
-------------------
+## Choosing a backend
 
 To choose a default backend set the layer variable `rust-backend`:
 
@@ -129,8 +124,7 @@ need to set the layer variable `lsp-rust-server` of `lsp` layer:
                                     cargo-process-reload-on-modify t))
     ```
 
-Cargo
------
+## Cargo
 
 [Cargo](http://doc.crates.io/index.html) is a project management command
 line tool for Rust. Installation instructions can be found on the main
@@ -163,8 +157,7 @@ dependencies that have new version available.
 cargo install cargo-outdated
 ```
 
-Rustfmt
--------
+## Rustfmt
 
 Format Rust code according to style guidelines using
 [rustfmt](https://github.com/rust-lang-nursery/rustfmt).
@@ -176,8 +169,7 @@ rustup component add rustfmt
 To enable automatic buffer formatting on save, set the variable
 `rust-format-on-save` to `t`.
 
-Clippy
-------
+## Clippy
 
 [Clippy](https://github.com/rust-lang/rust-clippy) provides a collection
 of lints to to catch common mistakes and improve your code.
@@ -186,8 +178,7 @@ of lints to to catch common mistakes and improve your code.
 rustup component add clippy
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                                                                 |
 |-------------|---------------------------------------------------------------------------------------------|
@@ -221,8 +212,7 @@ Key bindings
 | `SPC m t t` | run the current test                                                                        |
 | `SPC m t b` | run all tests in current buffe                                                              |
 
-Debugger
---------
+## Debugger
 
 Using the `dap` layer you'll get access to all the DAP key bindings, see
 the complete list of key bindings on the [dap layer

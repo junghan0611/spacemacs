@@ -1,5 +1,4 @@
-Description
-===========
+# Description
 
 This layer brings Ranger features to spacemacs from the `ranger`
 package.
@@ -24,21 +23,18 @@ can set both variables at once via the
                        ranger-show-preview t))
 ```
 
-Features:
----------
+## Features:
 
 -   use ranger to display dired with ranger like preview and stacked
     parent windows.
 
-Configuration
-=============
+# Configuration
 
 Most parameters can be toggled on and off and stay within the current
 emacs session. Any settings that are desired on startup should be set
 below.
 
-Customizing
------------
+## Customizing
 
 Toggle the use of `-` to enter deer or ranger with
 `ranger-enter-with-minus`. The possible values are:
@@ -85,8 +81,7 @@ windows. Must return a string that is placed in the header-line.
 (setq ranger-parent-header-func 'ranger-parent-header-line)
 ```
 
-Parent options
---------------
+## Parent options
 
 You can set the number of folders to nest to the left, adjusted by `z-`
 and `z+`
@@ -109,8 +104,7 @@ fraction of frame size to prevent filling up entire frame with parents.
 (setq ranger-max-parent-width 0.12)
 ```
 
-Preview options
----------------
+## Preview options
 
 You can choose to show previews literally, or through find-file, toggled
 by `zi`
@@ -140,8 +134,7 @@ To set the max files size (in MB), set the following parameter:
 (setq ranger-max-preview-size 10)
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding     | Description                                          |
 |-----------------|------------------------------------------------------|

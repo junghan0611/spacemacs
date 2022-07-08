@@ -1,13 +1,11 @@
 ![](img/django.png)
 
-Description
-===========
+# Description
 
 This layer adds support for the Python web framework
 [Django](https://www.djangoproject.com/) to Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Test execution directly from emacs
 -   Starting/stopping of the Django test server
@@ -19,37 +17,32 @@ Features:
 -   Control of [South](http://south.aeracode.org/) database migration
     tool
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `django` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Key bindings
-============
+# Key bindings
 
 Django related key bindings uses
 [pony-mode](https://github.com/davidmiller/pony-mode) and are behind the
 prefix `SPC m j` in `Python-mode`.
 
-General Managment
------------------
+## General Managment
 
 | Key binding | Description                           |
 |-------------|---------------------------------------|
 | `SPC m j m` | Start a `pony-mode` managment session |
 
-Fabric
-------
+## Fabric
 
 | Key binding   | Description                      |
 |---------------|----------------------------------|
 | `SPC m j a f` | Run a fabric command             |
 | `SPC m j a d` | Deploy project with `fab deploy` |
 
-Files
------
+## Files
 
 | Key binding   | Description                                                   |
 |---------------|---------------------------------------------------------------|
@@ -58,8 +51,7 @@ Files
 | `SPC m j f t` | Jump to template at point                                     |
 | `SPC m j f r` | Jump to the view file that the URL resolves to (experimental) |
 
-Interactive
------------
+## Interactive
 
 | Key binding   | Description                                                                    |
 |---------------|--------------------------------------------------------------------------------|
@@ -68,8 +60,7 @@ Interactive
 |               | If the project has the django<sub>extras</sub> package installed, then use the |
 |               | excellent `shell_plus` command. Otherwise, fall back to `manage.py shell`      |
 
-Server
-------
+## Server
 
 | Key binding   | Description                                                                 |
 |---------------|-----------------------------------------------------------------------------|
@@ -79,8 +70,7 @@ Server
 | `SPC m j r u` | Start or open the dev server                                                |
 | `SPC m j r t` | Open a second server with a "throwaway" host/port                           |
 
-South/Syncdb
-------------
+## South/Syncdb
 
 | Key binding   | Description                                |
 |---------------|--------------------------------------------|
@@ -90,8 +80,7 @@ South/Syncdb
 | `SPC m j s m` | Migrate an app                             |
 | `SPC m j s s` | Run syncdb on the current project          |
 
-Test
-----
+## Test
 
 | Key binding   | Description                                                      |
 |---------------|------------------------------------------------------------------|

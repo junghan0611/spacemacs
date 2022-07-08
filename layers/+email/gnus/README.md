@@ -1,28 +1,24 @@
 ![](img/gnus.gif)
 
-Description
-===========
+# Description
 
 This layer integrates a general purpose email/newsgroup client into
 Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Support for reading RSS feeds, newsgroups and mails directly within
     Emacs via [Gnus](http://www.gnus.org/).
 -   Support for beautiful HTML mails generated from any `org` buffer.
 -   Support for credential management via [GnuPG](https://gnupg.org/).
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `gnus` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Basic Concepts
-==============
+# Basic Concepts
 
 Gnus is a news reading application. The Gnus terminology can be
 confusing for new users so the basics are listed here:
@@ -31,8 +27,7 @@ confusing for new users so the basics are listed here:
 -   Newsgroups can be assigned to topics which will be used to structure
     the Group Buffer if Topic Mode is enabled(default).
 
-Adding news sources
-===================
+# Adding news sources
 
 Adding news sources can be done in your `.spacemacs` file by adding the
 following:
@@ -52,8 +47,7 @@ following:
 For adding RSS Feeds please see the [key bindings
 section](#key-bindings).
 
-Configuring gmail
-=================
+# Configuring gmail
 
 To configure Gnus with gmail support you can add the following to your
 `.spacemacs` file.
@@ -101,8 +95,7 @@ If you use two-step verification the password has to be an [application
 specific
 password](https://support.google.com/accounts/answer/185833?hl=en).
 
-Org MIME in Org layer
-=====================
+# Org MIME in Org layer
 
 It is possible to send beautiful HTML emails using org mode.
 
@@ -110,8 +103,7 @@ Pressing `SPC m e m` in a message buffer will convert the current
 message from org mode to html. An org mode buffer can be sent via html
 email by pressing `SPC m e m` in any org mode buffer.
 
-Setup variables
-===============
+# Setup variables
 
 The Gnus layer defines the following variables like this:
 
@@ -141,8 +133,7 @@ gnus-keep-backlog '0
 They can be configured as layer variables or from the
 `dotspacemacs/user-config` section of `.spacemacs`.
 
-Key bindings
-============
+# Key bindings
 
 Gnus has very modal default keybindings. Please see the
 [manual](http://www.gnus.org/manual.html) for a complete list.

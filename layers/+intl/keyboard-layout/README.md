@@ -1,21 +1,18 @@
 ![](img/keyboard-layout-layer-logo.png)
 
-Description
-===========
+# Description
 
 This layer configures some key bindings in Spacemacs, to make it
 compatible with keyboard layouts that differ from the traditional
 `en-us` `QWERTY` layout.
 
-Features:
----------
+## Features:
 
 -   Support alternative keyboard layouts within Spacemacs
 -   Remap navigation commands to the homerow of your chosen layout
 -   Remap missing commands automatically to elsewhere in the layout
 
-Installation
-============
+# Installation
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `keyboard-layout` to the existing
@@ -27,11 +24,9 @@ select the desired layout by specifying the `kl-layout` variable:
   (keyboard-layout :variables kl-layout 'dvorak)))
 ```
 
-Configuration
-=============
+# Configuration
 
-Enable/Disable package configurations
--------------------------------------
+## Enable/Disable package configurations
 
 This layer can be customized with two variables:
 
@@ -53,8 +48,7 @@ will never be loaded, whether it is in the enabled list or not (default:
                    kl-disabled-configurations '(org magit))))
 ```
 
-Add/Override key bindings
--------------------------
+## Add/Override key bindings
 
 It is possible to override or add key bindings, by defining functions
 named `kl/pre-config-<NAME>` and `kl/post-config-<NAME>` in
@@ -76,8 +70,7 @@ Note: If you define some of these functions in your own layer, then make
 sure that the `keyboard-layout` layer is placed **after** it in the
 `dotspacemacs-configuration-layers` list.
 
-Concept
-=======
+# Concept
 
 This package first swaps the traditional `hjkl` movement keys, with
 their equivalent keys in the destination layout. It then tries to
@@ -99,13 +92,11 @@ should be remapped to "move left" in the bepo layout, but since
 operations in `magit` are done line by line, then there's no reason to
 move left, and we won't remap the `c` key.
 
-Keyboard layouts
-================
+# Keyboard layouts
 
 The following keyboard-layouts are available with this layer:
 
-Bepo
-----
+## Bepo
 
 ![](img/bepo-logo.png)
 
@@ -153,8 +144,7 @@ Note: There's one difference from the wiki version: `w` is **not**
 remapped to `C-w`. This avoids having to change its meaning in other
 modes. Spacemacs already provides `SPC w` for working with windows.
 
-Dvorak
-------
+## Dvorak
 
 Dvorak is a keyboard layout, that's optimized for the English language.
 It rearranges the keys, to require less finger movements away from the
@@ -209,8 +199,7 @@ The lost keys are remapped as follows:
 -   `k → n`
 -   `l → s`
 
-Colemak
--------
+## Colemak
 
 Colemak is a modern alternative to the QWERTY and Dvorak layouts. It is
 designed for efficient and ergonomic touch typing in English. More info
@@ -237,8 +226,7 @@ This layer offers four flavors of Colemak bindings:
 when using `colemak-jkhl`, the `kl/pre-config-evil` and
 `kl/post-config-evil` hooks will be run *twice*.
 
-Workman
--------
+## Workman
 
 `Workman` is an English-optimized keyboard layout that's designed to,
 among other things, reduce finger travel-distance, and balance the load
@@ -265,8 +253,7 @@ this layout substitutes the following keys with these mnemonics:
     -   `k → e`
     -   `l → o`
 
-Neo
----
+## Neo
 
 Neo is a ergonomic keyboard that is optimized for German. More
 information can be found on the [website](https://www.neo-layout.org/).
@@ -274,8 +261,7 @@ information can be found on the [website](https://www.neo-layout.org/).
 The Neo layout has six layers, here is only the first:
 ![](img/neo-layout.png)
 
-Package Configurations
-======================
+# Package Configurations
 
 The available configurations are:
 
@@ -302,8 +288,7 @@ The available configurations are:
 -   ranger
 -   twittering-mode
 
-Key bindings
-============
+# Key bindings
 
 This layer tries to bind keys *automatically* in a lot of modes. That
 makes it difficult to list them all. For example the key bindings change
@@ -317,8 +302,7 @@ if:
 
 So the price you have to pay is the absence of a key bindings list.
 
-Image sources
-=============
+# Image sources
 
 -   The keyboard-layout layer logo is a modified image from
     [openclipart.org](https://web.archive.org/web/20170318110408/https://openclipart.org/detail/202777/keyboard-layout),

@@ -1,5 +1,4 @@
-Description
-===========
+# Description
 
 This layer enables Ivy for completion. It will replace the default
 completion by [Helm](https://github.com/emacs-helm/helm).
@@ -11,8 +10,7 @@ layers, toggles and more…
 Mastering your choice of completion system will make you a Spacemacs
 power user.
 
-Features:
----------
+## Features:
 
 -   Project wide `grep` like text search via `search-auto`
 -   Project wide text replacements using `counsel-imenu`
@@ -21,8 +19,7 @@ Features:
 -   Intuitive `transient state`
 -   Advanced buffer information with `ivy-rich`
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `ivy` to the existing `dotspacemacs-configuration-layers`
@@ -33,11 +30,9 @@ removed or commented out in the `dotspacemacs-configuration-layers`
 list. Or add `ivy` below the other completion layers. Spacemacs uses the
 completion layer that's listed last.
 
-Configuration
-=============
+# Configuration
 
-General
--------
+## General
 
 You can customize ivy with the following variables:
 
@@ -48,8 +43,8 @@ You can customize ivy with the following variables:
     directory up by `DEL`. The default value is ("../", "./").
 -   `ivy-use-virtual-buffers` Add bookmarks and recent files to buffer
     completion menu. The Spacemacs default is t.
--   `ivy-height` The height of the minibuffer. The Spacemacs default
-    is 15.
+-   `ivy-height` The height of the minibuffer. The Spacemacs default is
+    15.
 -   `ivy-use-selectable-prompt` When non-nil, make the prompt line
     selectable like a candidate. The Spacemacs default value is `t`.
 -   `ivy-re-builders-alist` An alist of regex building functions for
@@ -64,8 +59,7 @@ You can customize ivy with the following variables:
     [here](https://github.com/abo-abo/swiper/wiki/ido-style-folder-navigation)
     (probably outdated). Default value is `nil`.
 
-Advanced buffer information
----------------------------
+## Advanced buffer information
 
 To display more information about buffers set the layer variable
 `ivy-enable-advanced-buffer-information` to `t` which will enable
@@ -79,8 +73,7 @@ feature is disabled by default.
   (ivy :variables ivy-enable-advanced-buffer-information t)))
 ```
 
-Icons
------
+## Icons
 
 To display icons with
 [all-the-icons-ivy-rich](https://github.com/seagle0128/all-the-icons-ivy-rich),
@@ -101,8 +94,7 @@ To display icons correctly, you should run
 More information about customizing `all-the-icons-ivy-rich` can be found
 [here](https://github.com/seagle0128/all-the-icons-ivy-rich).
 
-Key bindings
-============
+# Key bindings
 
 If you choose `ivy` as completion system, make sure to read the
 [official manual](http://oremacs.com/swiper/). In case you don't want to
@@ -126,8 +118,7 @@ Some useful key bindings are presented in the following table.
 | `C-M-k`     | kill buffer (in `ivy-switch-buffer` (`SPC b b`))                                                                                                    |
 | `C-M-k`     | kill buffer (in `ivy-reverse-i-search` (`C-r` at a prompt))                                                                                         |
 
-Mark/unmark candidates
-----------------------
+## Mark/unmark candidates
 
 | Key binding | Description                                             |
 |-------------|---------------------------------------------------------|
@@ -136,8 +127,7 @@ Mark/unmark candidates
 | `C-<`       | Move to the previous candidate and unmark it.           |
 | `C->`       | Toggle mark for all narrowed candidates.                |
 
-Transient state
----------------
+## Transient state
 
 Press `M-SPC` (`s-M-SPC` [on
 macOS](https://github.com/syl20bnr/spacemacs/blob/cb48ec74c1f401bd2945760799633c0e81e69088/doc/CONVENTIONS.org#transient-state))
@@ -157,8 +147,7 @@ manual](https://oremacs.com/swiper/#minibuffer-key-bindings).
 | `u`         | unmark candidate                                        |
 | `t`         | toggle marks                                            |
 
-Colors/Faces
-------------
+## Colors/Faces
 
 | Key binding | Description             |
 |-------------|-------------------------|
@@ -167,8 +156,7 @@ Colors/Faces
 | `SPC C w`   | `counsel-colors-web`    |
 | `SPC h d F` | `counsel-describe-face` |
 
-Search files with ivy
----------------------
+## Search files with ivy
 
 `ripgrep` is recommended and `Spacemacs` will pick it up as the default
 seach app if found. To pass parameters to `ripgrep` use double dash then

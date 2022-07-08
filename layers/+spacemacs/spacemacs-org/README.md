@@ -1,10 +1,8 @@
-Description
-===========
+# Description
 
 This layer tweaks `org-mode` to integrate nicely into Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Configuration for `flyspell` to check `org-buffers` for typos.
 -   Support for automatically generated Table-Of-Contents via `toc-org`.

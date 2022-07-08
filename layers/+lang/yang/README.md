@@ -1,17 +1,14 @@
-Description
-===========
+# Description
 
 This layer provides support for the YANG file format.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting
 -   Syntax checking via
     [flycheck](http://www.flycheck.org/en/latest/languages.html#yaml)
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `yang` to the existing `dotspacemacs-configuration-layers`
@@ -21,16 +18,14 @@ list in this file.
 (setq-default dotspacemacs-configuration-layers '(yang))
 ```
 
-Syntax checking with flycheck
-=============================
+# Syntax checking with flycheck
 
 Flycheck is used to check the yang syntax utilizing `pyang` which needs
 to be installed on your system. Documentation for pyang can be found at
 the [pyang repository](https://github.com/mbj4668/pyang), and can be
 installed using python packaging mechanisms
 
-Configuration
--------------
+## Configuration
 
 By default the syntax checking is done according to `pyang --lint` which
 uses rules outlined in RFC 6020. To use a different set of rules set the

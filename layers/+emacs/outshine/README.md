@@ -1,27 +1,23 @@
-Description
-===========
+# Description
 
 This layer adds support for
 [outshine](https://github.com/alphapapa/outshine) and
 [outorg](https://github.com/alphapapa/outorg). They will be enabled in
 all programming modes.
 
-Features:
----------
+## Features:
 
 -   Navigate through code buffers via headings like you do with org
     buffers
 -   Edit comments under outline headings in separate org-mode buffers
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `outshine` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding   | Description                                                |
 |---------------|------------------------------------------------------------|

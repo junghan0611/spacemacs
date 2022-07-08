@@ -1,12 +1,10 @@
 ![](img/TypeScript.png)
 
-Description
-===========
+# Description
 
 This layer adds support for TypeScript and TSX editing.
 
-Features:
----------
+## Features:
 
 -   Multiple backends support: Tide and LSP
 -   Eldoc-mode
@@ -20,8 +18,7 @@ Features:
 -   formatting
 -   TypeScript playground integration
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `typescript` to the existing
@@ -31,8 +28,7 @@ need to add `typescript` to the existing
 (setq-default dotspacemacs-configuration-layers '(typescript))
 ```
 
-Formatting
-----------
+## Formatting
 
 If you need formatting on save:
 
@@ -62,8 +58,7 @@ You can choose either tslint (default) or eslint for linting:
               typescript-linter 'tslint)))
 ```
 
-Pre-requisites
---------------
+## Pre-requisites
 
 You will need `node.js v0.12.0` or greater.
 
@@ -96,8 +91,7 @@ npm install -g typescript-formatter
 For best results, make sure that the `auto-completion` (company) and
 `html` layers are enabled.
 
-Choosing a backend
-------------------
+## Choosing a backend
 
 To choose a default backend set the layer variable `typescript-backend`:
 
@@ -123,11 +117,9 @@ example to use the `lsp` backend:
 **Note:** you can easily add a directory local variable with
 `SPC f v d`.
 
-Backends
-========
+# Backends
 
-Tide
-----
+## Tide
 
 Tide comes with an embedded Typescript server, it is recommended to use
 the server intalled by `npm` instead. To do so set the variable
@@ -157,8 +149,7 @@ Send to playground requires browser.
 Currently tsserver doesn't pickup tsconfig.json file changes. You might
 need to restart server after editing it.
 
-Language Server Protocol
-------------------------
+## Language Server Protocol
 
 You also need to install the Typescript Language Server. Consult the
 installation command for the desired language server found at
@@ -174,11 +165,9 @@ want that, then set the variable `typescript-lsp-linter` to `nil`.
               typescript-lsp-linter nil)))
 ```
 
-Key bindings
-============
+# Key bindings
 
-Typescript Major Mode
----------------------
+## Typescript Major Mode
 
 | Key binding                                   | Description                                                  |
 |-----------------------------------------------|--------------------------------------------------------------|
@@ -197,8 +186,7 @@ Typescript Major Mode
 | `SPC m S r`                                   | restart server                                               |
 | `SPC m S j`                                   | create a barebone `jsconfig.json` at project root            |
 
-Reference Major Mode
---------------------
+## Reference Major Mode
 
 | Key binding | Description             |
 |-------------|-------------------------|

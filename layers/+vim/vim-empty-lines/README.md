@@ -1,5 +1,4 @@
-Description
-===========
+# Description
 
 This layer is a drop-in replacement for the `vi-tilde-fringe` mode, for
 those who desire behaviour closer to `vim`'s.
@@ -14,14 +13,12 @@ For details, see the
 [vim-empty-lines-mode](https://github.com/jmickelin/vim-empty-lines-mode)
 repository.
 
-Features:
----------
+## Features:
 
 -   Emulation of original vim behaviour.
 -   Brings you as close to vim as one can be without using vim itself.
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `vim-empty-lines` to the existing

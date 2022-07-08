@@ -1,11 +1,9 @@
-Description
-===========
+# Description
 
 This layer adds support for the [Emacs Application Framework
 (EAF)](https://github.com/emacs-eaf/emacs-application-framework).
 
-Features:
----------
+## Features:
 
 -   Browse using a full-fledged browser within Emacs
 -   PDF viewer (with continuous scroll)
@@ -15,8 +13,7 @@ Features:
     documentation](https://github.com/emacs-eaf/emacs-application-framework#launch-eaf-applications)
     for many more features
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `eaf` to the existing `dotspacemacs-configuration-layers`
@@ -45,19 +42,16 @@ let's you select from the following list of applications:
 -   eaf-markdown-previewer
 -   eaf-camera
 
-Usage
-=====
+# Usage
 
-Configuring applications
-------------------------
+## Configuring applications
 
 By default, all applications that were selected to be installed when
 running `eaf-install` command are loaded. By default all installed
 applications get loaded when eaf gets loaded. If you prefer to load some
 of the applications by default then adjust the variable `eaf-apps`.
 
-Configuring key bindings
-------------------------
+## Configuring key bindings
 
 Configuration of EAF key bindings works in a different way than normally
 in Spacemacs.
@@ -76,8 +70,7 @@ tricks implemented in this layer can be found
 and
 [here](https://github.com/emacs-eaf/emacs-application-framework/pull/500).
 
-Key bindings
-============
+# Key bindings
 
 Except for the few Spacemacs specific modifications listed below, all
 EAF keybindings are documented
@@ -91,8 +84,7 @@ Use `SPC t k m` to [show the EAF key bindings persistently in
 which-key](https://develop.spacemacs.org/doc/DOCUMENTATION.html#which-key-persistent),
 or use `SPC h d K` to show the \`eaf-mode-map\` in a separate buffer.
 
-Global
-------
+## Global
 
 ### All EAF-applications
 
@@ -113,8 +105,7 @@ Global
 | `SPC a a b b` | Open bookmark in new buffer                                                                                                                                                                |
 | `SPC a a b h` | Search and open buffer from history                                                                                                                                                        |
 
-Local
------
+## Local
 
 ### All EAF-applications
 

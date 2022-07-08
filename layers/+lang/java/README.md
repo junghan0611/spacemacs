@@ -1,12 +1,10 @@
 ![](img/java.png)
 
-Description
-===========
+# Description
 
 This layer adds support for the Java language.
 
-Features:
----------
+## Features:
 
 -   Support for the following backends:
     -   [LSP Java](https://github.com/emacs-lsp/lsp-java) client/server
@@ -19,18 +17,15 @@ Features:
 -   Interactive debugger using
     [dap-mode](https://github.com/emacs-lsp/dap-mode)
 
-Layer Installation
-==================
+# Layer Installation
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `java` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Choosing a backend
-------------------
+## Choosing a backend
 
 To choose a default backend set the layer variable `java-backend`:
 
@@ -56,11 +51,9 @@ example to use the `lsp` backend:
 **Note:** you can easily add a directory local variable with
 `SPC f v d`.
 
-Backends
-========
+# Backends
 
-LSP Java
---------
+## LSP Java
 
 LSP Java is the Java adapter for [LSP
 Mode](https://github.com/emacs-lsp/lsp-mode) which is the Emacs client
@@ -79,8 +72,7 @@ different backend.
 The lsp server will be installed automatically whenever a Java file is
 opened.
 
-Meghanada
----------
+## Meghanada
 
 Meghanada is composed of a lightweight server and an Emacs minor mode.
 It is unintrusive and integrates with `company` and `flycheck`.
@@ -105,11 +97,9 @@ Maven is not fully supported by Meghanada (but should still work fine
 for most projects). If you encounter disconnection from the server then
 run `mvn install` at the root of your project first.
 
-Key bindings
-============
+# Key bindings
 
-LSP Java
---------
+## LSP Java
 
 ### Code completion
 
@@ -159,8 +149,7 @@ Using the `dap` layer you'll get access to all the DAP key bindings, see
 the complete list of key bindings on the [dap layer
 description](https://github.com/syl20bnr/spacemacs/tree/develop/layers/%2Btools/dap#key-bindings).
 
-Meghanada
----------
+## Meghanada
 
 ### Server
 
@@ -215,8 +204,7 @@ Meghanada
 |-------------|-------------|
 | `SPC m x :` | Run task    |
 
-Maven
------
+## Maven
 
 | Key binding     | Description                                          |
 |-----------------|------------------------------------------------------|

@@ -1,13 +1,11 @@
 ![](img/go.png)
 
-Description
-===========
+# Description
 
 This layer adds extensive support for the [Go](https://golang.org)
 programming language.
 
-Features:
----------
+## Features:
 
 -   Run [gofmt](https://golang.org/cmd/gofmt/) /
     [goimports](https://godoc.org/golang.org/x/tools/cmd/goimports) on
@@ -34,18 +32,15 @@ Features:
 -   Interactive debugger with LSP using
     [dap-mode](https://github.com/emacs-lsp/dap-mode)
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `go` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Choosing a backend
-------------------
+## Choosing a backend
 
 Basically you have to choose between multiple language backends. This
 choice defines mainly which kind of IDE features spacemacs can deliver.
@@ -142,8 +137,7 @@ go install github.com/zmb3/gogetdoc@latest
     -   You can configure your task runner to run the `go install ./...`
         command on every file change.
 
-Binary dependencies
--------------------
+## Binary dependencies
 
 This section lists dependencies which are independent of the language
 backend, most are installed directly via `go get`:
@@ -163,11 +157,9 @@ go install github.com/josharian/impl@latest
 go install github.com/rogpeppe/godef@latest
 ```
 
-Configuration
-=============
+# Configuration
 
-Execution
----------
+## Execution
 
 By default, the go run command is `go run`. If you want to use a
 different command or run with environment variables, set the layer
@@ -186,8 +178,7 @@ value of `go-run-args` as a file local variable, e.g.
 // End:
 ```
 
-Indentation
------------
+## Indentation
 
 By default, the tab width in Go mode is 8 spaces. To use a different
 value, set the layer variable `go-tab-width`, e.g.
@@ -203,8 +194,7 @@ avoid conflicts, i.e.
 (go :variables go-tab-width nil)
 ```
 
-Autoformat
-----------
+## Autoformat
 
 To run `gofmt` before save, set the value to a non-nil, i.e.
 
@@ -218,8 +208,7 @@ To use a different formatter, set the value of `gofmt-command`, e.g.
 (go :variables gofmt-command "goimports")
 ```
 
-Linting
--------
+## Linting
 
 If you wish to use `golangci-lint`, set the following layer variable to
 non-nil:
@@ -250,8 +239,7 @@ regenerate and further diagnostic data will be made available.
 When this happens please report a bug to \`golangci-lint\` they are
 working hard to fix these.
 
-Tests
------
+## Tests
 
 If you're using `gocheck` or `testify` in your project you can use the
 `go-use-gocheck-for-testing` or `go-use-testify-for-testing` variable to
@@ -276,8 +264,7 @@ To provide additional arguments to `go test`, specify
 (go :variables go-use-test-args "-race -timeout 10s")
 ```
 
-Coverage
---------
+## Coverage
 
 `go-coverage-display-buffer-func` controls how `go-coverage` should
 display the coverage buffer. See
@@ -285,8 +272,7 @@ display the coverage buffer. See
 for a list of possible functions. The default value is
 `display-buffer-reuse-window`.
 
-Guru
-----
+## Guru
 
 If you would like to use the `Go Guru` bindings in your work, in your
 project you will need to set the scope with `SPC m f o`. The scope is a
@@ -294,8 +280,7 @@ comma separated set of packages, and Go's recursive operator is
 supported. In addition, you can prefix it with `-` to exclude a package
 from searching.
 
-Debug
------
+## Debug
 
 Currently there are two implementations to integrate with the dap
 debugger in golang, `dap-go` (which depends on a vscode extension) which
@@ -311,11 +296,9 @@ legacy integration `dap-go,` to do so set the layer variable
 (go :variables go-dap-mode 'dap-go)
 ```
 
-Key bindings
-============
+# Key bindings
 
-Go commands (start with `m`):
------------------------------
+## Go commands (start with `m`):
 
 | Key binding   | Description                                                                            |
 |---------------|----------------------------------------------------------------------------------------|
@@ -340,8 +323,7 @@ Go commands (start with `m`):
 | `SPC m t t`   | run "go test" for the function you're currently in (while you're in a \_.test.go file) |
 | `SPC m x x`   | run "go run" for the current 'main' package                                            |
 
-Go Guru
--------
+## Go Guru
 
 | Key binding | Description                                          |
 |-------------|------------------------------------------------------|
@@ -358,8 +340,7 @@ Go Guru
 | `SPC m f r` | go-guru show referrers                               |
 | `SPC m f s` | go-guru show callstack                               |
 
-Refactoring
------------
+## Refactoring
 
 | Key binding | Description                                                     |
 |-------------|-----------------------------------------------------------------|

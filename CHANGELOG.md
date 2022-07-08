@@ -1,8 +1,6 @@
-Release 0.200.x
-===============
+# Release 0.200.x
 
-0.200.10 (2017/11/01)
----------------------
+## 0.200.10 (2017/11/01)
 
 ### Fixes
 
@@ -11,15 +9,13 @@ Release 0.200.x
 -   Fix window number assignation for Neotree buffer window (thanks to
     duianto)
 
-0.200.9 (2017/04/06)
---------------------
+## 0.200.9 (2017/04/06)
 
 ### Fixes
 
 -   Fix theme loading with terminal Emacs (thanks to wang0z)
 
-0.200.8 (2017/04/01)
---------------------
+## 0.200.8 (2017/04/01)
 
 ### Convention changes
 
@@ -346,38 +342,33 @@ Release 0.200.x
     roryokane, rski, skade, smile12341234, stratosgear, Trevoke,
     xiaohanyu, Wiliamvdv, zetok, zhexuany)
 
-0.200.7 (2017/01/02)
---------------------
+## 0.200.7 (2017/01/02)
 
 ### Fixes
 
 -   More robust fix for error helm :config: 'fuzzy-match' not supported
     in async sources
 
-0.200.6 (2017/01/01)
---------------------
+## 0.200.6 (2017/01/01)
 
 ### Fixes
 
 -   Fix error helm :config: 'fuzzy-match' not supported in async sources
 
-0.200.5 (2016/11/03)
---------------------
+## 0.200.5 (2016/11/03)
 
 ### Fixes
 
 -   Removed themes missing from MELPA (`colorsarenice-theme` and
     `stekene-theme`)
 
-0.200.4 (2016/10/26)
---------------------
+## 0.200.4 (2016/10/26)
 
 ### Fixes
 
 -   Update go-guru package reflecting MELPA changes
 
-0.200.3 (2016/10/18)
---------------------
+## 0.200.3 (2016/10/18)
 
 ### Fixes
 
@@ -569,16 +560,14 @@ Release 0.200.x
     -   Improve search of nearest file in compilation database (thanks
         to deb0ch)
 
-0.200.2 (2016/10/14)
---------------------
+## 0.200.2 (2016/10/14)
 
 ### Fixes
 
 -   Fix compatibility with the `xterm-color` package (thanks to
     bixuanzju)
 
-0.200.1 (2016/10/09)
---------------------
+## 0.200.1 (2016/10/09)
 
 ### Fixes
 
@@ -645,8 +634,7 @@ Release 0.200.x
 -   Various documentation improvements (thanks to andschwa, bmag,
     duianto, jazzpi, Tritlo, vigilancer)
 
-0.200.0 (2016/10/02)
---------------------
+## 0.200.0 (2016/10/02)
 
 ### IMPORTANT: Breaking changes
 
@@ -2012,18 +2000,15 @@ Release 0.200.x
     -   Fabien Dubosson (StreakyCobra)
     -   Justin Burkett (thanks to justbur)
 
-Release 0.105.x
-===============
+# Release 0.105.x
 
-0.105.22 (2016/08/19)
----------------------
+## 0.105.22 (2016/08/19)
 
 ### Fixes
 
 -   Rename the `emacs-eclim` package to `eclim` (thanks to CestDiego)
 
-0.105.21 (2016/06/08)
----------------------
+## 0.105.21 (2016/06/08)
 
 ### Fixes
 
@@ -2036,15 +2021,13 @@ Release 0.105.x
     -   Fix `sbt` command to generate `ensime` configuration (thanks to
         d1egoaz)
 
-0.105.20 (2016/05/10)
----------------------
+## 0.105.20 (2016/05/10)
 
 ### Fixes
 
 -   Update Spaceline configuration for new version
 
-0.105.19 (2016/04/20)
----------------------
+## 0.105.19 (2016/04/20)
 
 ### Fixes
 
@@ -2123,28 +2106,24 @@ Release 0.105.x
 -   Various documentation improvements (thanks to d12frosted, gilch,
     ksrb, nixmaniack, StreakyCobra, TheBB, The-Compiler, xiaohanyu)
 
-0.105.18 (2016/04/10)
----------------------
+## 0.105.18 (2016/04/10)
 
 -   Revert hotfix for `Yasnippet`, the bug has been fixed upstream and
     is now available in MELPA (thanks to TheBB)
 -   Remove obsolete package `evil-jumper` which is now part of `evil`
     (thanks to justbur)
 
-0.105.17 (2016/04/09)
----------------------
+## 0.105.17 (2016/04/09)
 
 -   Hotfix for Yasnippet, using stable version until resolution of
     <https://github.com/capitaomorte/yasnippet/issues/673>
 
-0.105.16 (2016/04/01)
----------------------
+## 0.105.16 (2016/04/01)
 
 -   Add FAQ entry about HTTPS issues (thanks to TheBB)
 -   Add startup list to Zemacs home buffer.
 
-0.105.15 (2016/04/01)
----------------------
+## 0.105.15 (2016/04/01)
 
 ### Improvements
 
@@ -2162,8 +2141,7 @@ Release 0.105.x
 
     -   Fix all `swift` major-mode key bindings (thanks to xinranmsn)
 
-0.105.14 (2016/03/09)
----------------------
+## 0.105.14 (2016/03/09)
 
 ### Fixes
 
@@ -2186,8 +2164,7 @@ Release 0.105.x
 
 -   Various documentation improvements (thanks to triklsbg)
 
-0.105.13 (2016/03/06)
----------------------
+## 0.105.13 (2016/03/06)
 
 ### Fixes
 
@@ -2215,8 +2192,7 @@ Release 0.105.x
 -   Reformat `README.md` title section.
 -   Add a GitHub pull request template (thanks to robbyoconnor)
 
-0.105.12 (2016/03/02)
----------------------
+## 0.105.12 (2016/03/02)
 
 ### Fixes
 
@@ -2292,8 +2268,7 @@ Release 0.105.x
     marcopaga, microamp, nixmaniack, NJBS, SShrike, TheBB, Tinche,
     triklsbg, xfq)
 
-0.105.11 (2016/02/18)
----------------------
+## 0.105.11 (2016/02/18)
 
 Improve loading robustness:
 
@@ -2302,8 +2277,7 @@ Improve loading robustness:
 -   Spacemacs will use the default theme (i.e. no theme) if there is any
     error during the download of the starting theme.
 
-0.105.10 (2016/02/18)
----------------------
+## 0.105.10 (2016/02/18)
 
 ### Fixes
 
@@ -2443,8 +2417,7 @@ Improve loading robustness:
 
     -   Fix wakatime-dashboard url (thanks to hallfox)
 
-0.105.9 (2016/01/17)
---------------------
+## 0.105.9 (2016/01/17)
 
 ### Improvements
 
@@ -2482,8 +2455,7 @@ Improve loading robustness:
     -   Add `bracketed-paste` package to improve pasted text in
         terminals (thanks to AlejandroCatalina)
 
-0.105.8 (2016/01/12)
---------------------
+## 0.105.8 (2016/01/12)
 
 ### Fixes
 
@@ -2513,8 +2485,7 @@ Improve loading robustness:
     -   Add support for javascript code blocks syntax highlighting
         (thanks to AlejandroCatalina)
 
-0.105.7 (2016/01/11)
---------------------
+## 0.105.7 (2016/01/11)
 
 ### Fixes
 
@@ -2554,15 +2525,13 @@ Improve loading robustness:
 -   Add highlight of TODOs in text mode files (thanks to StreakyCobra)
 -   Various documentation improvements (thanks to StreakyCobra, TheBB)
 
-0.105.6 (2016/01/09)
---------------------
+## 0.105.6 (2016/01/09)
 
 ### Fixes
 
 -   Fix shadowed `TAB` (`C-i`) key in terminal (thanks to StreakyCobra)
 
-0.105.5 (2016/01/08)
---------------------
+## 0.105.5 (2016/01/08)
 
 ### Fixes
 
@@ -2586,8 +2555,7 @@ Improve loading robustness:
     -   Don't enter `evil-insert-state` after `aya-expand` when
         `holy-mode` if active (thanks to abaw)
 
-0.105.4 (2016/01/07)
---------------------
+## 0.105.4 (2016/01/07)
 
 ### Fixes
 
@@ -2609,8 +2577,7 @@ Improve loading robustness:
 
     -   Fix and improve `yasnippet` loading (thanks to TheBB)
 
-0.105.3 (2016/01/06)
---------------------
+## 0.105.3 (2016/01/06)
 
 ### Fixes
 
@@ -2640,14 +2607,12 @@ Improve loading robustness:
     mattbaker)
 -   Typos and documentation improvements (thanks to d12frosted)
 
-0.105.2 (2016/01/05)
---------------------
+## 0.105.2 (2016/01/05)
 
 -   Fix empty mode-line when a new Spacemacs version is available
     (thanks to TheBB)
 
-0.105.1 (2016/01/05)
---------------------
+## 0.105.1 (2016/01/05)
 
 ### Fixes
 
@@ -2694,8 +2659,7 @@ Improve loading robustness:
 -   Typos and documentation improvements (thanks to mjs2600, person808,
     robbyoconnor, StreakyCobra, TheBB and xfq)
 
-0.105.0 (2016/01/04)
---------------------
+## 0.105.0 (2016/01/04)
 
 ### IMPORTANT - Breaking changes
 
@@ -2748,8 +2712,8 @@ Improve loading robustness:
     -   `SPC m a` and `SPC m k` to Abort/Discard
 
     (thanks to StreakyCobra)
--   Update evilified state rebinding conventions: `SPC` to `​'​ ~, ~/`
-    to `\` and `:` to `|`
+-   Update evilified state rebinding conventions: `SPC` to `​'​ ~, ~/` to
+    `\` and `:` to `|`
 
 ### New Layers
 
@@ -3537,18 +3501,15 @@ Improve loading robustness:
 -   Fabien Dubosson (StreakyCobra)
 -   Justin Burkett (thanks to justbur)
 
-Release 0.104.x
-===============
+# Release 0.104.x
 
-0.104.8 (2015/12/16)
---------------------
+## 0.104.8 (2015/12/16)
 
 ### Hotfix
 
 -   Revert removal of fancy battery mode-line indicator.
 
-0.104.7 (2015/12/15)
---------------------
+## 0.104.7 (2015/12/15)
 
 ### Distribution layer changes
 
@@ -3575,15 +3536,13 @@ Release 0.104.x
     -   Add support for `flycheck-pos-tip-mode` (thanks to StreakyCobra,
         TheBB and lunaryorn)
 
-0.104.6 (2015/11/27)
---------------------
+## 0.104.6 (2015/11/27)
 
 ### Hotfix
 
 -   Fix void variable error `smartparens-strict-mode` (thanks to TheBB)
 
-0.104.5 (2015/11/22)
---------------------
+## 0.104.5 (2015/11/22)
 
 ### Distribution layer changes
 
@@ -3592,8 +3551,7 @@ Release 0.104.x
     -   Use version 7.1 of `evil-lisp-state`, the version 8 is supported
         in version 105 of Spacemacs only.
 
-0.104.4 (2015/11/04)
---------------------
+## 0.104.4 (2015/11/04)
 
 ### Layer changes
 
@@ -3612,8 +3570,7 @@ Release 0.104.x
 -   Prevent bootstrap packages from being automatically uninstalled
     (thanks to TheBB)
 
-0.104.3 (2015/11/01)
---------------------
+## 0.104.3 (2015/11/01)
 
 ### Layer changes
 
@@ -3627,8 +3584,7 @@ Release 0.104.x
     -   Remove indentation guides to comply with latest `haskell-mode`
         (thanks to PierreR)
 
-0.104.2 (2015/09/29)
---------------------
+## 0.104.2 (2015/09/29)
 
 ### Hotfixes
 
@@ -3656,8 +3612,7 @@ Release 0.104.x
 -   Improve convention documentation for evilified buffers
 -   Typos and documentation improvements (thanks to CarlQLange)
 
-0.104.1 (2015/09/28)
---------------------
+## 0.104.1 (2015/09/28)
 
 ### Dotfile changes
 
@@ -3682,8 +3637,7 @@ Release 0.104.x
 -   Typos and documentation improvements (thanks to k4rtik,
     robbyoconnor, tko, xfq)
 
-0.104.0 (2015/09/28)
---------------------
+## 0.104.0 (2015/09/28)
 
 ### IMPORTANT - Breaking changes
 
@@ -3865,10 +3819,9 @@ Release 0.104.x
     -   Add chocolate color for the `replace` state (thanks to TheBB)
     -   Make `Y` equivalent to `y$` (thanks to person808)
     -   Sync `visual-line-mode` and `evil-visual-xxx` functions. Now
-        `SPC t L` correctly enables `visual-mode-line` <span
-        class="underline">and</span> change Evil to visual navigation
-        accordingly. Use `SPC t l` to disable truncated lines while
-        keeping default Evil behavior.
+        `SPC t L` correctly enables `visual-mode-line` <u>and</u> change
+        Evil to visual navigation accordingly. Use `SPC t l` to disable
+        truncated lines while keeping default Evil behavior.
     -   Reduce autosave interval for evil-jumper (thanks to ralesi)
     -   Improve evil configuration for cursors and colors (thanks to
         justbur)
@@ -4371,18 +4324,15 @@ Release 0.104.x
     robbyoconnor, robmerrell, screamish, sooheon, srid, swaroopch,
     syohex, travisbhartwell, x-ji, xfq, zmthy)
 
-Release 0.103.x
-===============
+# Release 0.103.x
 
-0.103.6 (2015/08/30)
---------------------
+## 0.103.6 (2015/08/30)
 
 ### Core
 
 -   Fix error with `SPC h b` (bookmarks) (thanks to sgepigon)
 
-0.103.5 (2015/08/09)
---------------------
+## 0.103.5 (2015/08/09)
 
 ### Layer changes
 
@@ -4396,8 +4346,7 @@ Release 0.103.x
 -   Temporarily switch to HTTP instead of HTTPS to communicate with
     elpa.gnu.org (thanks to robbyoconnor)
 
-0.103.4 (2015/08/07)
---------------------
+## 0.103.4 (2015/08/07)
 
 ### Layer changes
 
@@ -4406,8 +4355,7 @@ Release 0.103.x
     -   Fix key bindings for new Clojure major modes: `clojurec-mode`,
         `clojurescript-mode` and `clojurex-mode` (thanks to benalbrecht)
 
-0.103.3 (2015/08/04)
---------------------
+## 0.103.3 (2015/08/04)
 
 ### Layer changes
 
@@ -4416,8 +4364,7 @@ Release 0.103.x
     -   Rename `reveal-in-finder` to its new name `reveal-in-osx-finder`
         (thanks to syohex)
 
-0.103.2 (2015/07/04)
---------------------
+## 0.103.2 (2015/07/04)
 
 ### Layer changes
 
@@ -4435,8 +4382,7 @@ Release 0.103.x
     h3dkandi, kccai, MadAnd, person808, Profpatsch, stnly, stormpat,
     xfq, zachlatta)
 
-0.103.1 (2015/07/02)
---------------------
+## 0.103.1 (2015/07/02)
 
 ### Layer changes
 
@@ -4452,8 +4398,7 @@ Release 0.103.x
 -   Fix mandatory dependency on `evil-escape`
 -   Fix evilification of `evil-escape` starter key
 
-0.103.0 (2015/07/01)
---------------------
+## 0.103.0 (2015/07/01)
 
 ### IMPORTANT: Breaking changes
 
@@ -4807,11 +4752,9 @@ Release 0.103.x
     person808, robbyoconnor, royseto, swaroopch, travisbhartwell, tuhdo,
     xfq)
 
-Release 0.102.x
-===============
+# Release 0.102.x
 
-0.102.2 (2015/06/03)
---------------------
+## 0.102.2 (2015/06/03)
 
 ### Layer changes
 
@@ -4823,8 +4766,7 @@ Release 0.102.x
 
 -   Fix detection of new versions by correctly fetch latest changes
 
-0.102.1 (2015/06/01)
---------------------
+## 0.102.1 (2015/06/01)
 
 ### Layer changes
 
@@ -4836,8 +4778,7 @@ Release 0.102.x
 
 -   Catch layer variables syntax errors
 
-0.102.0 (2015/05/31)
---------------------
+## 0.102.0 (2015/05/31)
 
 ### IMPORTANT: Breaking changes
 
@@ -5384,11 +5325,9 @@ Release 0.102.x
     kini, latkins, MadAnd, mlsteel, mosic, person808, skwuent, srid,
     swaroopch and zimbatm)
 
-Release 0.101.x
-===============
+# Release 0.101.x
 
-Hot new features
-----------------
+## Hot new features
 
 ### Choose your own editing style
 
@@ -5448,8 +5387,7 @@ on ⓐ and thus can be toggled with `SPC t a`.
 The package update should now prevent even more errors when upgrading a
 batch of packages.
 
-Initial Release (2015/04/13)
-----------------------------
+## Initial Release (2015/04/13)
 
 ### New layers
 
@@ -5654,8 +5592,8 @@ Initial Release (2015/04/13)
 
 ### Various Improvements and Changes
 
--   New `evil` state called `evilified` which is used in <span
-    class="underline">evilified</span> buffers.
+-   New `evil` state called `evilified` which is used in
+    <u>evilified</u> buffers.
 -   Remove the following packages from Spacemacs layer: `dired+`,
     `fancy-narrow`, `string-edit`, `visual-regexp-steroids` and `wdired`
 -   Rename `*-declarep` functions to `*-usedp` functions
@@ -5723,8 +5661,7 @@ Initial Release (2015/04/13)
 -   Typo and documentation updates (thanks to danielwuz, swaroopch,
     CestDiego, IvanMalison, agevelt, nwolfe)
 
-Hot Fixes
----------
+## Hot Fixes
 
 ### Startup Buffer
 
@@ -5765,7 +5702,6 @@ Hot Fixes
 -   revert back `ag` as the default search tool instead of `pt`, `pt`
     can conflict with `pt` command line tool from TCL parser tools.
 
-Previous Releases
-=================
+# Previous Releases
 
 -   See GitHub release page

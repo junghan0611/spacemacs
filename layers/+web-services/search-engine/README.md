@@ -1,18 +1,15 @@
 ![](img/searchengine.jpg)
 
-Description
-===========
+# Description
 
 This layer adds support for the [Search
 Engine](https://github.com/hrs/engine-mode) package.
 
-Features:
----------
+## Features:
 
 -   Browser search integration
 
-Supported search engines
-========================
+# Supported search engines
 
 -   Amazon
 -   Bing
@@ -43,22 +40,19 @@ Supported search engines
 -   Ubuntu Packages
 -   Rails API
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `search-engine` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Key bindings
-============
+# Key bindings
 
 | Evil        | Holy    | Command                                   |
 |-------------|---------|-------------------------------------------|
 | `SPC a w /` | `C-c /` | Summon a Helm buffer to select any engine |
 
-Customize it!
-=============
+# Customize it!
 
 If you'd rather have emacs use chrome, or firefox or any other thing
 (`eww`) you can have that customization. For example for google chrome

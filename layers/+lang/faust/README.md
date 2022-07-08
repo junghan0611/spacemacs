@@ -1,27 +1,23 @@
 ![](img/faust.png)
 
-Description
-===========
+# Description
 
 This layer adds support for the [faust
 language](https://en.wikipedia.org/wiki/FAUST_(programming_language)) to
 Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting
 -   Auto-completion
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `faust` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                           |
 |-------------|---------------------------------------|

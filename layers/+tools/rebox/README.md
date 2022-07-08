@@ -1,5 +1,4 @@
-Description
-===========
+# Description
 
 This layer adds support for [rebox2](https://github.com/lewang/rebox2)
 package which is a minor-mode allowing to easily add ASCII text boxes to
@@ -8,8 +7,7 @@ a buffer.
 A nice video demonstration by the package author can be found
 [here](https://www.youtube.com/watch?v=53YeTdVtDkU).
 
-Features:
----------
+## Features:
 
 -   Auto-wrap correctly in comments,
 -   Auto-fill correctly in comments,
@@ -19,18 +17,15 @@ Features:
 -   Apparently works well with ancient `filladpt-mode` (see authors
     video).
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `rebox` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Configuration
--------------
+## Configuration
 
 ### Styles cycling
 
@@ -54,11 +49,9 @@ To enable it you need to set the layer variable
     (rebox :variables rebox-enable-in-text-mode t)))
 ```
 
-Style Templates
-===============
+# Style Templates
 
-Standard packaged templates
----------------------------
+## Standard packaged templates
 
 You can find the full list of templates in ["Box templates" section of
 `rebox2.el`](https://github.com/lewang/rebox2/blob/master/rebox2.el)
@@ -69,8 +62,7 @@ These templates are single line comments styles. A `#` is used here for
 illustration; however, it will work equally well if the comment
 character is different (e.g., lisp's `;` comment character).
 
-Additional Templates
---------------------
+## Additional Templates
 
 These templates are added by the Spacemacs layer.
 
@@ -124,8 +116,7 @@ These templates are added by the Spacemacs layer.
 ##==============
 ```
 
-Key bindings
-============
+# Key bindings
 
 **Note:** Use a numerical prefix argument to choose a specific style for
 instance `86 SPC x b b` to use the style 86 above.

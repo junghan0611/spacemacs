@@ -1,12 +1,10 @@
-Description
-===========
+# Description
 
 This layer adds support for Scheme via
 [Geiser](http://geiser.nongnu.org). Note that combined usage of
 racket-mode and geiser has not been tested.
 
-Features:
----------
+## Features:
 
 -   Support the Scheme compiler [Chicken](https://www.call-cc.org/)
 -   Support for the extension language platform
@@ -14,8 +12,7 @@ Features:
 -   Structurally safe editing using optional
     [evil-cleverparens](https://github.com/luxbock/evil-cleverparens)
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `scheme` to the existing `dotspacemacs-configuration-layers`
@@ -44,8 +41,7 @@ documentation](https://nongnu.org/geiser/geiser_3.html)).
 The following subsection shows how to install Chicken scheme and
 activate geiser support.
 
-Install Chicken scheme example
-------------------------------
+## Install Chicken scheme example
 
 First add `chicken` to the list of `scheme-implementations` as explained
 above.
@@ -92,8 +88,7 @@ REPL binary on your system is `chicken-csi`, you will also need to add
 to your `dotspacemacs/user-config` in order for the REPL to start in
 spacemacs.
 
-Structurally safe editing
-=========================
+# Structurally safe editing
 
 This layer adds support for `evil-cleverparens` which allows to safely
 edit lisp code by keeping the s-expressions balanced.
@@ -116,19 +111,16 @@ or to enable it for all supported modes:
 
 When enabled the symbol `🆂` should be displayed in the mode-line.
 
-Key bindings
-============
+# Key bindings
 
-Compiling
----------
+## Compiling
 
 | Key binding | Description                |
 |-------------|----------------------------|
 | `SPC m c c` | Compile current buffer     |
 | `SPC m c p` | Add directory to load path |
 
-Navigation
-----------
+## Navigation
 
 | Key binding | Description         |
 |-------------|---------------------|
@@ -138,8 +130,7 @@ Navigation
 | `SPC m g n` | Goto next error     |
 | `SPC m g N` | Goto previous error |
 
-Documentation
--------------
+## Documentation
 
 | Key binding | Description                              |
 |-------------|------------------------------------------|
@@ -149,15 +140,13 @@ Documentation
 | `SPC m h <` | Display callers                          |
 | `SPC m h >` | Display callees                          |
 
-Insertion
----------
+## Insertion
 
 | Key binding | Description   |
 |-------------|---------------|
 | `SPC m i l` | Insert Lambda |
 
-Macroexpansion
---------------
+## Macroexpansion
 
 | Key binding | Description                  |
 |-------------|------------------------------|
@@ -165,8 +154,7 @@ Macroexpansion
 | `SPC m m f` | Macroexpand surrounding sexp |
 | `SPC m m r` | Macroexpand region           |
 
-REPL interaction
-----------------
+## REPL interaction
 
 | Key binding | Description                              |
 |-------------|------------------------------------------|
@@ -180,8 +168,7 @@ REPL interaction
 | `SPC m s r` | Send region to the REPL                  |
 | `SPC m s R` | Send region to the REPL and focus it     |
 
-Evaluation
-----------
+## Evaluation
 
 | Key binding | Description               |
 |-------------|---------------------------|
@@ -191,8 +178,7 @@ Evaluation
 | `SPC m e l` | Evaluate line             |
 | `SPC m e r` | Evaluate region           |
 
-REPL-mode
----------
+## REPL-mode
 
 **Insert state**
 
@@ -220,8 +206,7 @@ REPL-mode
 | `SPC m k`   | REPL interrupt                                |
 | `SPC m q`   | REPL exit                                     |
 
-Geiser-doc-mode
----------------
+## Geiser-doc-mode
 
 | Key binding     | Description           |
 |-----------------|-----------------------|

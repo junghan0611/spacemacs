@@ -1,12 +1,10 @@
 ![](img/perl5.png)
 
-Description
-===========
+# Description
 
 This layer adds support for the Perl5 language.
 
-Features:
----------
+## Features:
 
 -   Syntactic and semantic checking using
     [flycheck](https://github.com/flycheck/flycheck)
@@ -18,21 +16,18 @@ Features:
     [trepan.pl](http://search.cpan.org/~rocky/Devel-Trepan-0.73/lib/Devel/Trepan.pm)
 -   LSP and DAP support
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `perl5` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Configuration
-=============
+# Configuration
 
 All layer configurations can be done by setting layer variables in your
 dotfile. No custom user config lines are necessary
 
-Choosing a backend
-------------------
+## Choosing a backend
 
 This layer provides two alternative backends to choose from.
 
@@ -81,11 +76,9 @@ NOTE: Key bindings for LSP are defined in the LSP layer. Also it is
 advisable to have a look at the autocomplete layer for an optimal
 intellisense config for LSP.
 
-Key bindings
-============
+# Key bindings
 
-Perldoc
--------
+## Perldoc
 
 Browse formatted perldocs.
 
@@ -94,8 +87,7 @@ Browse formatted perldocs.
 | `SPC m h h` | view perldoc of symbol at point |
 | `SPC m h d` | view perldoc of any symbol      |
 
-POD and HERE doc
-----------------
+## POD and HERE doc
 
 Select a POD or HERE doc.
 
@@ -103,8 +95,7 @@ Select a POD or HERE doc.
 |-------------|----------------------------------------|
 | `SPC m v`   | select entire POD or HERE doc at point |
 
-Find Symbol
------------
+## Find Symbol
 
 Jump to symbol definition.
 
@@ -113,8 +104,7 @@ Jump to symbol definition.
 | `SPC m g g` | jump to symbol definition                 |
 | `SPC m g G` | jump to symbol definition in other window |
 
-Formatting Code
----------------
+## Formatting Code
 
 | Key binding | Description                   |
 |-------------|-------------------------------|

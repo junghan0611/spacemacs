@@ -1,26 +1,22 @@
 ![](img/screen-record.gif)
 
-Description
-===========
+# Description
 
 This layer is designed for Paragraph-oriented minor mode for
 side-by-side document translation workflow.
 
-Features:
----------
+## Features:
 
 -   Paragraph-oriented side-by-side document translation workflow
 -   Integrate word/paragraph online translation
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `translate` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Usage
-=====
+# Usage
 
 It's quite simple to use this layer. Open the translation file you are
 currently working on, and call command `translate-open-reference-file`
@@ -29,8 +25,7 @@ open an existed reference file. Now you can just keep your cursor in
 your translation buffer. The cursor in the reference buffer will be kept
 in sync with the cursor in the translation buffer.
 
-Configuration
-=============
+# Configuration
 
 All layer configurations can be done by setting layer variables in your
 dotfile. No custom user config lines are necessary. For more details
@@ -38,8 +33,7 @@ please see the homepage of package
 [translate-mode](https://github.com/rayw000/translate-mode) and
 [go-translate](https://github.com/lorniu/go-translate/).
 
-Language Pair
--------------
+## Language Pair
 
 You need to set language pairs to make online translation work.
 
@@ -47,8 +41,7 @@ You need to set language pairs to make online translation work.
 (translate :variables gts-translate-list '(("en" "zh") ("en" "fr")))
 ```
 
-Highlighting
-------------
+## Highlighting
 
 Set `translate-enable-highlight` to `nil` to disable highlighting.
 
@@ -56,8 +49,7 @@ Set `translate-enable-highlight` to `nil` to disable highlighting.
 (translate :variables translate-enable-highlight nil)
 ```
 
-Read-only
----------
+## Read-only
 
 You can set `translate-reference-buffer-read-only` to `t` to make the
 reference buffer read-only.
@@ -66,8 +58,7 @@ reference buffer read-only.
 (translate :variables translate-reference-buffer-read-only t)
 ```
 
-Face
-----
+## Face
 
 The face of highlight paragraph can be customized by
 `translate-paragraph-highlight-face`. Put this following line into
@@ -78,8 +69,7 @@ color to red, for example.
 '(translate-paragraph-highlight ((t (:extend t :background "red"))))
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding   | Description                                                                  |
 |---------------|------------------------------------------------------------------------------|

@@ -1,8 +1,6 @@
-Code guidelines
-===============
+# Code guidelines
 
-Spacemacs core and layer
-------------------------
+## Spacemacs core and layer
 
 Function names follow these conventions:
 
@@ -16,8 +14,7 @@ Variables follow these conventions:
 -   `spacemacs-xxx` is a variable
 -   `spacemacs--xxx` is a private variable (implementation details)
 
-All layers
-----------
+## All layers
 
 A package is initialized in a function with name `<layer>/init-xxx`
 where:
@@ -25,8 +22,7 @@ where:
 -   `<layer>` is the layer name
 -   `xxx` is the package name
 
-Use-package
------------
+## Use-package
 
 -   Always use `progn` when a code block requires multiple lines for
     `:init` or `:config` keywords.
@@ -35,11 +31,9 @@ Use-package
 -   Don't nest multiple `use-package` calls unless you have a very good
     reason to do it.
 
-Key bindings conventions
-========================
+# Key bindings conventions
 
-Reserved prefix
----------------
+## Reserved prefix
 
 ### User prefix
 
@@ -64,16 +58,14 @@ spotlight.
 It is recommended to make sure that `q` allows to leave the
 transient-state.
 
-Special-mode buffers
---------------------
+## Special-mode buffers
 
 Except for `eww-mode` and evilified buffers (see next section), all
 buffers with major-modes derived from `special-mode` open in
 motion-state by default. To exclude buffers of such major-modes from
 getting evilified, add a regexp to `evil-buffer-regexps`.
 
-Evilified buffers
------------------
+## Evilified buffers
 
 *Evilifying* a buffer is to set the `evilified state` as the default
 state for the major mode of the buffer.
@@ -88,7 +80,7 @@ map to:
 -   add incremental search with `/`, `n` and `N`
 -   enabling `evil-ex` on `:`
 -   add `visual state` and `visual line state` on `v` and `V`
--   add yank on `y` <span class="underline">in visual state only</span>
+-   add yank on `y` <u>in visual state only</u>
 -   activate evil-leader key on `SPC`
 
 Setting the `evilified state` to a mode is done by calling the macro
@@ -106,8 +98,7 @@ rules:
 If a key binding cannot be remapped then it is ignored and a warning
 message is displayed in `*Messages*`.
 
-Navigation
-----------
+## Navigation
 
 ### n and N
 
@@ -145,22 +136,20 @@ movements.
 | `C-j` | go down     |
 | `C-k` | go up       |
 
-Confirm and Abort
------------------
+## Confirm and Abort
 
 Confirming and aborting actions which are bound to `C-c C-c` and
 `C-c C-k` in raw Emacs are mirrored in Spacemacs to:
 
-| Key                       | Description               |
-|---------------------------|---------------------------|
+| Key                     | Description               |
+|-------------------------|---------------------------|
 | `SPC m ​,​` and `SPC m c` | Valid/Confirm the message |
-| `SPC m a` and `SPC m k`   | Abort/Discard the message |
+| `SPC m a` and `SPC m k` | Abort/Discard the message |
 
 Some example of these modes are `magit` commit messages, `message-mode`
 for mails or `org-mode` notes.
 
-Evaluation
-----------
+## Evaluation
 
 Live evaluation of code is under the prefix `SPC m e`.
 
@@ -173,8 +162,7 @@ Live evaluation of code is under the prefix `SPC m e`.
 | `m e l` | evaluate line                                 |
 | `m e r` | evaluate region                               |
 
-REPLs
------
+## REPLs
 
 ### Send code
 
@@ -215,8 +203,7 @@ History navigation in shells or REPLs buffers should be bound as well to
 | `C-l` | clear screen               |
 | `C-r` | search backward in history |
 
-Building and Compilation
-------------------------
+## Building and Compilation
 
 The base prefix for major mode specific compilation is `SPC m c`.
 
@@ -230,8 +217,7 @@ The base prefix for major mode specific compilation is `SPC m c`.
 Note: we don't distinguish between the file and the buffer. We can
 implement an auto-save of the buffer before compiling the buffer.
 
-Debugging
----------
+## Debugging
 
 The base prefix for debugging commands is `SPC m d`.
 
@@ -257,8 +243,7 @@ Notes:
     implemented at the spacemacs level and ideally the function should
     be proposed as a patch upstream (major mode repository).
 
-Errors
-------
+## Errors
 
 Management of errors should be put under `SPC m E`.
 
@@ -268,8 +253,7 @@ Management of errors should be put under `SPC m E`.
 | `m E l`     | show errors                         |
 | `m E L`     | show errors and jump to errors list |
 
-Plain Text Markup Languages
----------------------------
+## Plain Text Markup Languages
 
 For layers supporting markup languages please follow the following
 keybindings whenever applicable.
@@ -352,8 +336,7 @@ following keys:
 If table specific commands are available the they are grouped under the
 `SPC m t` group.
 
-Tests
------
+## Tests
 
 A lot of languages have their own test frameworks. These frameworks
 share common actions that we can unite under the same key bindings:
@@ -391,19 +374,16 @@ buffer.
 Note that there are overlaps, depending on the language we will choose
 one or more bindings for the same thing
 
-Toggles
--------
+## Toggles
 
 -   Global toggles are under `SPC t`, `SPC T` and `SPC C-t`
 -   Major mode toggles are only under `SPC m T`
 
-Refactoring
------------
+## Refactoring
 
 Refactoring prefix is `SPC m r`.
 
-Imports
--------
+## Imports
 
 When `import` management is supported the following key bindings should
 be used:
@@ -414,8 +394,7 @@ be used:
 | `m i f`     | fix/format imports                 |
 | `m g i`     | go to imports                      |
 
-Code Formatting
----------------
+## Code Formatting
 
 Major-mode code formatting is under prefix `SPC m =`.
 
@@ -425,13 +404,11 @@ Major-mode code formatting is under prefix `SPC m =`.
 | `m = b`     | format current buffer    |
 | `m = f`     | format current function  |
 
-Web frameworks
---------------
+## Web frameworks
 
 Web frameworks key bindings should go under `SPC m f`.
 
-Help or Documentation
----------------------
+## Help or Documentation
 
 The base prefix for help commands is `SPC m h`. Documentation is
 considered as an help command.
@@ -441,14 +418,12 @@ considered as an help command.
 | `m h h` | documentation of thing under point |
 | `m h r` | documentation of selected region   |
 
-Writing documentation
-=====================
+# Writing documentation
 
 Spacemacs provides an example layer `README.org` file in
 `~/.emacs.d/core/templates/README.org.template`.
 
-Spacing in documentation
-------------------------
+## Spacing in documentation
 
 -   Spacemacs tries to keep the documentation consistent between all
     layers by providing some rules for spacing:

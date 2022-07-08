@@ -1,12 +1,10 @@
 ![](img/chrome.png)
 
-Description
-===========
+# Description
 
 This layer provides some integration with the Google Chrome browser.
 
-Features:
----------
+## Features:
 
 -   Edit text boxes with Emacs using
     [edit-server](https://github.com/stsquad/emacs_chrome)
@@ -14,18 +12,15 @@ Features:
     [flymd](https://github.com/mola-T/flymd)
 -   gmail message mode uses standard markdown key bindings
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `chrome` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Chrome extension
-----------------
+## Chrome extension
 
 [edit-server](https://github.com/stsquad/emacs_chrome) is a server that
 responds to edit requests sent Chrome via the Google Chrome extension
@@ -39,8 +34,7 @@ Wiki](http://www.emacswiki.org/emacs/Edit_with_Emacs).
 The edit server is configured to start automatically when Spacemacs
 starts.
 
-Configuration
-=============
+# Configuration
 
 Use `edit-server-url-major-mode-alist` to choose a major mode
 initialization function based on `edit-server-url`, or fall back to
@@ -75,8 +69,7 @@ The following example works on macOS:
 (add-hook 'edit-server-done-hook (lambda () (shell-command "open -a \"Google Chrome\"")))
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description |
 |-------------|-------------|

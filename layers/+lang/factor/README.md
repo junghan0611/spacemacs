@@ -1,12 +1,10 @@
 ![](img/logo.png)
 
-Description
-===========
+# Description
 
 A spacemacs layer for Factor language support.
 
-Features:
----------
+## Features:
 
 -   Syntax Highlighting
 -   Factor REPL integration
@@ -16,8 +14,7 @@ Features:
 -   Running graphical Listeners
 -   Reloading emacs-lisp portion of FUEL
 
-Install
-=======
+# Install
 
 This layer depends on the elisp files that are bundled with factor. To
 use this layer, make sure that factor is installed and the bundled elisp
@@ -26,11 +23,9 @@ files are picked up by emacs (usually somewhere in site-lisp).
 To use this layer, add it to your `./spacemacs` file. Add `factor` to
 the `dotspacemacs-configuration-layers` list there.
 
-Key bindings
-============
+# Key bindings
 
-factor-mode (editing source files)
-----------------------------------
+## factor-mode (editing source files)
 
 | Key binding | Description                                         |
 |-------------|-----------------------------------------------------|
@@ -67,8 +62,7 @@ factor-mode (editing source files)
 | `SPC m S v` | Scaffold vocab                                      |
 | `SPC m S h` | Scaffold help for current vocab                     |
 
-fuel-listener-mode
-------------------
+## fuel-listener-mode
 
 | Key binding | Description               |
 |-------------|---------------------------|
@@ -78,8 +72,7 @@ fuel-listener-mode
 | `SPC m v`   | Edit vocab                |
 | `SPC m S v` | Scaffold vocab            |
 
-Snippets
-========
+# Snippets
 
 This layer provides a yasnippet for colon definitions, which can be
 expanded after typing a single `:`. Note that you might have to set
@@ -87,8 +80,7 @@ expanded after typing a single `:`. Note that you might have to set
 declaration elements a lot, as this will trigger a builtin snippet from
 prog-mode instead of advancing to the next field when pressing `<TAB>`.
 
-Starting a Graphical Listener
-=============================
+# Starting a Graphical Listener
 
 The command `factor/start-ui-listener` can be used to run a Factor
 process which sets up a FUEL server on the standard port and runs the

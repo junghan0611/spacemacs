@@ -1,19 +1,16 @@
 ![](img/exwm.jpg)
 
-Description
-===========
+# Description
 
 Thanks to @ch11ng and his [EXWM](https://github.com/ch11ng/exwm) project
 we can now use Emacs as our window manager, that means that you can
 spawn a Browser Window, or your music player, or anything.
 
-Features:
----------
+## Features:
 
 -   Support for using Emacs as window manager
 
-Install
-=======
+# Install
 
 To use `exwm` layer, add it to your `~/.spacemacs`.
 
@@ -33,13 +30,11 @@ The default layer variables are:
 Please refer to [EXWM Wiki](https://github.com/ch11ng/exwm/wiki) for
 setting up display manager.
 
-System Tray Integratios
------------------------
+## System Tray Integratios
 
 To enable system tray integration, set `exwm-enable-systray` to `t`.
 
-XDG Autostart
--------------
+## XDG Autostart
 
 If `exwm-autostart-xdg-applications` is non-nil, `.desktop` files in
 `$XDG_CONFIG_HOME/autostart` and `XDG_CONFIG_DIRS` will be used to run
@@ -53,8 +48,7 @@ Emacs, the `OnlyShowIn` and `NotShotIn` keys are checked for the string
 
 This is disabled per default.
 
-Key bindings
-============
+# Key bindings
 
 As other window managers the `s` or **Super** key (Windows Key) is the
 one that is the prefix to every action. We'll use a lot of `s`.

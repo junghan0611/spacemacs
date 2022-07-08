@@ -1,16 +1,14 @@
 ![](img/csharp.png)
 
-Description
-===========
+# Description
 
-This layer adds support for the C\# language using the
+This layer adds support for the C# language using the
 [omnisharp-roslyn](https://github.com/OmniSharp/omnisharp-roslyn)
 language server with either the
 [omnisharp-emacs](https://github.com/OmniSharp/omnisharp-emacs) or the
 [lsp-mode](https://github.com/emacs-lsp/lsp-mode) packages.
 
-Features:
----------
+## Features:
 
 -   Syntax checking with flycheck (when `syntax-checking` layer is used)
 -   Support for auto-completion (when `auto-completion` layer is used)
@@ -18,8 +16,7 @@ Features:
 -   Navigation to cross-references
 -   Inspecting types in metadata
 
-Backends
-========
+# Backends
 
 There are two backends available for this layer, one based on the
 `omnisharp-emacs` package and a new one based on `lsp-mode` (language
@@ -29,8 +26,7 @@ Both backends use the omnisharp-roslyn server under the hood however
 different features are available. The `omnisharp` backend might be more
 stable at this moment (late 2019).
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `csharp` to the existing `dotspacemacs-configuration-layers`
@@ -50,12 +46,11 @@ variable set to 'lsp:
 (csharp :variables csharp-backend 'lsp)
 ```
 
-Omnisharp backend
------------------
+## Omnisharp backend
 
-Before you can work with C\# files you will need to install the server
-by invoking `SPC m s i` (or `M-x omnisharp-install-server`). Otherwise,
-if this fails for you, please see
+Before you can work with C# files you will need to install the server by
+invoking `SPC m s i` (or `M-x omnisharp-install-server`). Otherwise, if
+this fails for you, please see
 [omnisharp-emacs/doc/server-installation.md](https://github.com/OmniSharp/omnisharp-emacs/blob/master/doc/server-installation.md).
 
 While the server will start automatically it may still be required for
@@ -63,8 +58,7 @@ you to start it manually using `SPC m s s` (or
 `M-x omnisharp-start-omnisharp-server`). It will prompt a path to your
 .csproj or .sln file.
 
-Caveats
-=======
+# Caveats
 
 -   You should use `dotnet` CLI tool from [.NET Core download
     page](https://www.microsoft.com/net/download/core) or an IDE like
@@ -79,15 +73,13 @@ Caveats
 -   LSP backend supports multiple concurrent language servers/projects
     loaded.
 
-Key bindings for the omnisharp backend
-======================================
+# Key bindings for the omnisharp backend
 
 The following key bindings are available when using the `omnisharp`
 backend. LSP-backend uses key bindings that are common for all
 layers/languages using the `lsp` layer.
 
-Navigation
-----------
+## Navigation
 
 | Key binding | Description                                   |
 |-------------|-----------------------------------------------|
@@ -106,16 +98,14 @@ Navigation
 | `SPC m g u` | Find usages of symbol under cursor using Helm |
 | `SPC m g U` | Find usages of symbol under cursor using ido  |
 
-Helpers (documentation, info)
------------------------------
+## Helpers (documentation, info)
 
 | Key binding | Description                                                            |
 |-------------|------------------------------------------------------------------------|
 | `SPC m h t` | Get type information for symbol under cursor                           |
 | `SPC m h T` | Get type information for symbol under cursor and put it into kill-ring |
 
-Refactoring
------------
+## Refactoring
 
 | Key binding | Description                              |
 |-------------|------------------------------------------|
@@ -123,8 +113,7 @@ Refactoring
 | `SPC m r M` | Rename symbol under cursor interactively |
 | `SPC m r r` | Refactor under cursor                    |
 
-OmniSharp server interaction
-----------------------------
+## OmniSharp server interaction
 
 | Key binding | Description                |
 |-------------|----------------------------|
@@ -133,8 +122,7 @@ OmniSharp server interaction
 | `SPC m s s` | Start the OmniSharp server |
 | `SPC m s S` | Stop the OmniSharp server  |
 
-Tests
------
+## Tests
 
 | Key binding | Description                      |
 |-------------|----------------------------------|

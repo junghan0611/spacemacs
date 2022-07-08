@@ -1,11 +1,9 @@
-Description
-===========
+# Description
 
 This layer adds support for editing `systemd` configuration files in
 Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting
 -   Auto completion
@@ -13,8 +11,7 @@ Features:
 -   Viewing systemd system and user unit via
     [journalctl-mode](https://github.com/SebastianMeisel/journalctl-mode)
 
-Install
-=======
+# Install
 
 To use this contribution add it to your `~/.spacemacs`
 
@@ -22,19 +19,16 @@ To use this contribution add it to your `~/.spacemacs`
 (setq-default dotspacemacs-configuration-layers '(systemd))
 ```
 
-Key bindings
-============
+# Key bindings
 
-Systemd
--------
+## Systemd
 
 | Key binding | Description                                                              |
 |-------------|--------------------------------------------------------------------------|
 | `SPC m h d` | Systemd open the directives documentation                                |
 | `SPC m h o` | Systemd open documentation (if a `\=Documentation` directive is provided |
 
-Journalctl-mode
----------------
+## Journalctl-mode
 
 | Key binding   | Description                                                          |
 |---------------|----------------------------------------------------------------------|

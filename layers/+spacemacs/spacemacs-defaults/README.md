@@ -1,11 +1,9 @@
-Description
-===========
+# Description
 
 This layer configures mostly Emacs built-in packages to given them
 better defaults.
 
-Features:
----------
+## Features:
 
 -   Configures packages:
     -   abbrev

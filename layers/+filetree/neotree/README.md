@@ -1,31 +1,26 @@
 ![](img/neotree.png)
 
-Description
-===========
+# Description
 
 This layer setups a file tree navigator buffer using Neotree (replacing
 the Treemacs layer).
 
-Features:
----------
+## Features:
 
 -   intuitive evil key bindings integration
 -   supports multiple themes
 -   transient state by pressing on `?`
 -   version-control integration
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `neotree` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Configuration
-=============
+# Configuration
 
-NeoTree Theme
--------------
+## NeoTree Theme
 
 You can change the NeoTree theme by using the setting `neo-theme`.
 Possible values are:
@@ -47,8 +42,7 @@ example:
 (setq neo-theme 'nerd)
 ```
 
-NeoTree Source Control Integration
-----------------------------------
+## NeoTree Source Control Integration
 
 If you would like NeoTree to show source control information, you can
 use the setting `neo-vc-integration`. It is a list containing the
@@ -73,8 +67,7 @@ other than `nil`. Otherwise, it will become very slow with larger source
 trees. See <https://github.com/jaypei/emacs-neotree/issues/126> for more
 information.
 
-Usage
-=====
+# Usage
 
 This layer provides a quick and simple way to navigate in an unknown
 project file tree with
@@ -93,8 +86,7 @@ its current state. With default `spacemacs-dark` theme:
 -   green: new file
 -   purple: modified file
 
-NeoTree mode-line
------------------
+## NeoTree mode-line
 
 The mode-line has the following format `[x/y] d (D:a, F:b)` where:
 
@@ -105,11 +97,9 @@ The mode-line has the following format `[x/y] d (D:a, F:b)` where:
 -   `a` the number of directories in the current directory
 -   `b` the number of files in the current directory
 
-Key bindings
-============
+# Key bindings
 
-NeoTree navigation
-------------------
+## NeoTree navigation
 
 Navigation is centered on the `hjkl` keys with the hope of providing a
 fast navigation experience like in [ranger](http://ranger.nongnu.org/):
@@ -129,8 +119,7 @@ fast navigation experience like in [ranger](http://ranger.nongnu.org/):
 **Note**: Point is automatically set to the first letter of a node for a
 smoother experience.
 
-Opening files with NeoTree
---------------------------
+## Opening files with NeoTree
 
 By default a file is opened in the last active window. It is possible to
 choose window number where to open a file by using a numeric argument,
@@ -144,8 +133,7 @@ is also possible to open the file in a split window with `|` and `-`:
 | `¦`              | open file in an vertically split window   |
 | `-`              | open file in an horizontally split window |
 
-Other NeoTree key bindings
---------------------------
+## Other NeoTree key bindings
 
 | Key binding | Description                     |
 |-------------|---------------------------------|

@@ -1,12 +1,10 @@
 ![](img/Japanese.png)
 
-Description
-===========
+# Description
 
 This Layer adds Japanese related packages.
 
-Features:
----------
+## Features:
 
 -   [evil-tutor-ja](https://github.com/kenjimyzk/evil-tutor-ja):
     Japanese Vimtutor adapted to Emacs+Evil and wrapped in a major mode
@@ -25,18 +23,15 @@ Features:
 -   Join consecutive Japanese lines into a single long line without
     unwanted space when exporting org-mode to html.
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `japanese` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Configuration
--------------
+## Configuration
 
 For a basic configuration, add this to your `~/.spacemacs` inside
 `dotspacemacs/user-config`:
@@ -110,9 +105,8 @@ inside `dotspacemacs/user-config`.
 
 ### ddskk
 
-You can write a configuration file `​~/.skk`. For detailed
-configuration, see some
-[documents](http://openlab.ring.gr.jp/skk/ddskk.html).
+You can write a configuration file `​~/.skk`. For detailed configuration,
+see some [documents](http://openlab.ring.gr.jp/skk/ddskk.html).
 
 ### pangu-spacing
 
@@ -125,7 +119,6 @@ prefer the mode globally, add:
 
 inside `dotspacemacs/user-config`.
 
-Key bindings
-============
+# Key bindings
 
 By default, `C-x j` toggles `skk-mode`.

@@ -1,20 +1,17 @@
 ![](img/ietf-logo.png)
 
-Description
-===========
+# Description
 
 The `IETF` layer collects various useful packages for participating in
 the Internet Engineering Task Force (<https://www.ietf.org>).
 
-Features:
----------
+## Features:
 
 -   Fetching and opening IETF documents.
 -   Viewing IETF documents.
 -   Writing IETF documents.
 
-Fetching and Opening IETF Documents
-===================================
+# Fetching and Opening IETF Documents
 
 Support for fetching and downloading IETF documents is added through the
 `ietf-docs` package. The IETF docs package adds support for fetching and
@@ -24,8 +21,7 @@ and one invokes the `ietf-docs-open-at-point` the package will fetch the
 document to a local cache (if not present) and view it. This works for
 the 3 standard document names, STDXXX, RFCXXX and draft-xxxx-yyy.
 
-Viewing IETF Documents
-======================
+# Viewing IETF Documents
 
 Support for viewing IETF documents is added through the IRFC minor mode
 (`irfc-mode`). The IRFC minor mode improves the display and formatting
@@ -33,14 +29,12 @@ of IETF documents using the well known IETF document structure.
 Additionally it creates hyperlink overlays for references within the
 document.
 
-Writing IETF Documents
-======================
+# Writing IETF Documents
 
 Support for writing IETF documents using org mode is added using the RFC
 Org Mode Exporter (`ox-rfc`) package.
 
-Install
-=======
+# Install
 
 To use the ietf layer add it to your `~/.spacemacs`
 
@@ -58,8 +52,7 @@ By default fetched IETF documents are stored in a subdirectory of the
         ietf-docs-cache "~/Downloads/ietf-docs-cache")))
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                         |
 |-------------|-----------------------------------------------------|

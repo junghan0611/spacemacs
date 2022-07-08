@@ -1,14 +1,11 @@
-Description
-===========
+# Description
 
 This file will help you understand CI setup of [Spacemacs
 GitHub](https://github.com/syl20bnr/spacemacs) repository.
 
-Overview
-========
+# Overview
 
-TLDR
-----
+## TLDR
 
 Spacemacs is big - the active maintainers team is small. The more we can
 automate - the better. We use  [CircleCI](https://circleci.com/),
@@ -24,8 +21,7 @@ and [GitHub
 Actions](https://github.com/syl20bnr/spacemacs/tree/develop/.github/workflows)
 directories.
 
-Current stack
--------------
+## Current stack
 
 Wait, what? Why Clojure, why 2 CI providers? I knew you would ask this
 question, dear reader, so here's my rationale:
@@ -79,8 +75,7 @@ The code is compiled to
 so most of the JVM drawbacks such as huge image size and startup delay
 are mitigated.
 
-CI files and directories
-========================
+# CI files and directories
 
 -   [.ci](https://github.com/syl20bnr/spacemacs/tree/develop/.ci) is a
     shared CI directory that holds two config files:
@@ -110,11 +105,9 @@ CI files and directories
     that CircleCI runs for actual jobs. It does so by rendering
     `config_tmpl.yml` template file.
 
-Workflows (groups of CI jobs)
-=============================
+# Workflows (groups of CI jobs)
 
-Pull request jobs
------------------
+## Pull request jobs
 
 ### Emacs Lisp Tests
 
@@ -171,8 +164,7 @@ makes sure that the PR is against develop branch and
 checks if the PR needs a rebase (only when it's updated, so Spacemacs
 HEAD can actually get, well… Ahead, sorry).
 
-Branch updates (runs on merge)
-------------------------------
+## Branch updates (runs on merge)
 
 ### Emacs Lisp Tests
 
@@ -184,8 +176,8 @@ All updates are handled by CircleCI. There are two config files:
 [.circleci/config.yml](https://github.com/syl20bnr/spacemacs/blob/develop/.circleci/config.yml)
 workflow that injects `IS_BRANCH_UDATE` environment variable into the
 second file
-[.circleci/config<sub>tmpl</sub>.yml](https://github.com/syl20bnr/spacemacs/blob/develop/.circleci/config_tmpl.yml)
-- actual config that the CI uses. It has to be done this way because
+[.circleci/config<sub>tmpl</sub>.yml](https://github.com/syl20bnr/spacemacs/blob/develop/.circleci/config_tmpl.yml) -
+actual config that the CI uses. It has to be done this way because
 environment variables aren't accessible outside workflows, but CI needs
 `IS_BRANCH_UDATE` to choose what workflows to run.
 [.circleci/config<sub>tmpl</sub>.yml](https://github.com/syl20bnr/spacemacs/blob/develop/.circleci/config_tmpl.yml)
@@ -273,8 +265,7 @@ variables page under CircleCI project settings.
     Even with this, export is pretty slow since Emacs processes files
     sequentially.
 
-Scheduled jobs
---------------
+## Scheduled jobs
 
 We have 2 cron(scheduled) jobs: [Managing stale
 issues](https://github.com/syl20bnr/spacemacs/blob/develop/.github/workflows/stale.yml)
@@ -285,8 +276,7 @@ configs](https://discuss.circleci.com/t/setup-workflow-and-scheduled-workflow-in
 As a fall-back mechanism, CI updates built-in files every time Spacemacs
 develop branch is pushed.
 
-Potential improvements (PR ideas)
-=================================
+# Potential improvements (PR ideas)
 
 -   CircleCI config generation stage can test if a PR changes any .org
     file and schedule documentation testing job only if it does.
@@ -309,11 +299,9 @@ Potential improvements (PR ideas)
 -   Better error reporting in scripts. It is hard to debug CI so knowing
     what exactly went wrong would help a lot.
 
-Side notes
-==========
+# Side notes
 
-We used to have TravisCI (3 CI providers at the same time)
-----------------------------------------------------------
+## We used to have TravisCI (3 CI providers at the same time)
 
 We ran long running jobs with it but ended up dropping the CI since
 TravisCI doesn't allow collaborators to read/set environment variables

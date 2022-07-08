@@ -1,7 +1,6 @@
 ![](img/elixir.png)
 
-Description
-===========
+# Description
 
 This layer adds support for [Elixir](http://elixir-lang.org/).
 
@@ -14,8 +13,7 @@ features following Language Server Protocol, through
 As Alchemist is no longer maintained, elixir-ls is a preferred solution,
 even though it has less features at the moment.
 
-Features:
----------
+## Features:
 
 -   Powerful IEx integration
 -   Mix integration
@@ -31,18 +29,15 @@ Features:
 -   Interactive debugger using
     [dap-mode](https://github.com/emacs-lsp/dap-mode)
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `elixir` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Choosing a backend
-------------------
+## Choosing a backend
 
 To choose a default backend set the layer variable `elixir-backend`:
 
@@ -90,11 +85,9 @@ The available options are:
 | Integration with `company-mode`    | yes       | yes |
 | Flycheck support                   | yes       | yes |
 
-Configuration
-=============
+# Configuration
 
-Flycheck
---------
+## Flycheck
 
 **Note:** since flycheck checkers are slow, the checks are enabled only
 at save time.
@@ -140,8 +133,7 @@ Then run in your shell:
 $ mix deps.get
 ```
 
-Language server protocol
-------------------------
+## Language server protocol
 
 The `lsp` backend uses
 [elixir-ls](https://github.com/JakeBecker/elixir-ls) as its language
@@ -166,8 +158,7 @@ or in the layer definition
 
 by default `elixir-ls-path` is equal to `"~/elixir-ls/release"`
 
-Debugger
---------
+## Debugger
 
 For `lsp` backend only
 
@@ -178,11 +169,9 @@ installation and configuration instructions as well as make sure to read
 this elixir-ls [debugger support
 note](https://github.com/elixir-lsp/elixir-ls#debugger-support)
 
-Key bindings
-============
+# Key bindings
 
-Alchemist
----------
+## Alchemist
 
 ### Refcard
 
@@ -321,8 +310,7 @@ Hex is the package manager for Elixir & Erlang ecosystem. See
 |-------------|---------------------------|
 | `SPC m d b` | Toggle IEx.pry breakpoint |
 
-LSP
----
+## LSP
 
 You find and overview of all the key bindings on the [lsp layer
 description](https://github.com/syl20bnr/spacemacs/tree/develop/layers/%2Btools/lsp#key-bindings).

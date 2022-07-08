@@ -1,29 +1,25 @@
 ![](img/slack.png)
 
-Description
-===========
+# Description
 
 This layer provides an interface to the Slack chat service via the
 emacs-slack package. Where possible, this layer aims to reuse key
 bindings from the IRC packages in Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Real time messaging with
     [emacs-websocket](https://github.com/ahyatt/emacs-websocket)
 -   Connect to multiple slack instances
 -   Notifications with [alert.el](https://github.com/jwiegley/alert)
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `slack` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Configuration
-=============
+# Configuration
 
 Follow the instructions in the
 [emacs-slack](https://github.com/yuya373/emacs-slack/blob/master/README.md)
@@ -47,8 +43,7 @@ your dotfile.
   :subscribed-channels '(general slackbot))
 ```
 
-Spacemacs layout integration
-----------------------------
+## Spacemacs layout integration
 
 A [Spacemacs custom
 layout](https://github.com/syl20bnr/spacemacs/blob/develop/doc/DOCUMENTATION.org#layouts-and-workspaces)
@@ -66,8 +61,7 @@ By default the values are:
                     slack-spacemacs-layout-binding "s")))
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding   | Description                              |
 |---------------|------------------------------------------|

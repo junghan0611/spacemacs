@@ -1,10 +1,8 @@
-Description
-===========
+# Description
 
 This layer provides spell checking capabilities to Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Buffer-wide spell checking via external command (ispell, hunspell,
     aspell) run through
@@ -16,18 +14,15 @@ Features:
     mode](https://github.com/nschum/auto-dictionary-mode) for some
     languages.
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `spell-checking` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Spell Checker Configuration
----------------------------
+## Spell Checker Configuration
 
 The built-in Emacs variable that controls which external spell-checking
 program is used is `ispell-program-name`, which can be set in your
@@ -38,8 +33,7 @@ will control the default dictionary used by `ispell-program-name`
 (instead of using this variable you can also use the key binding
 `SPC S d`).
 
-Disabling by default
---------------------
+## Disabling by default
 
 By default, `spell-checking` is enabled in all available major modes and
 may be toggled off with `SPC t S`. You can default this to off by
@@ -50,8 +44,7 @@ setting the variable `spell-checking-enable-by-default` to `nil`:
   '((spell-checking :variables spell-checking-enable-by-default nil)))
 ```
 
-Enabling auto-dictionary-mode
------------------------------
+## Enabling auto-dictionary-mode
 
 `auto-dictionary-mode` tries to detect the current language from the
 buffer content, and activate the corresponding dictionary. You can
@@ -94,8 +87,7 @@ list of currently supported language:
 | spanish           |
 | swedish           |
 
-Enabling multi-dictionary support with hunspell
------------------------------------------------
+## Enabling multi-dictionary support with hunspell
 
 If your language is not supported by auto-dictionary feature or you
 author multi-lingual documents you might be compelled to use hunspell's
@@ -116,8 +108,7 @@ dotspacemacs/user-config section in your configuration file:
 One caveat is you need quite modern ispell.el for above to work. It's
 been tested with version coming from Emacs 25.2 repository.
 
-Enable auto-completion popup
-----------------------------
+## Enable auto-completion popup
 
 To enable auto-completion popup when the point is idle on a misspelled
 word set the layer variable `enable-flyspell-auto-completion` to t:
@@ -127,8 +118,7 @@ word set the layer variable `enable-flyspell-auto-completion` to t:
   '((spell-checking :variables enable-flyspell-auto-completion t)))
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding     | Description                            |
 |-----------------|----------------------------------------|
@@ -144,8 +134,7 @@ Key bindings
 | `SPC S n`       | Flyspell goto next error               |
 | `SPC t S`       | Toggle flyspell                        |
 
-Spell Checking Transient-state
-------------------------------
+## Spell Checking Transient-state
 
 | Key binding | Description                                      |
 |-------------|--------------------------------------------------|
@@ -162,8 +151,7 @@ Spell Checking Transient-state
 | `SPC S . G` | Add word to dict (global)                        |
 | `SPC S . S` | Add word to dict (session)                       |
 
-Known issues
-============
+# Known issues
 
 Vim-empty-lines layer seems incompatible with spell-checking inside
 org-mode. If you experience "Args out of range" error message when

@@ -1,12 +1,10 @@
 ![](img/ruby.png)
 
-Description
-===========
+# Description
 
 This layer provides support for the Ruby programming language.
 
-Features:
----------
+## Features:
 
 -   Version manager (rbenv, rvm or chruby)
 -   Integration with bundler
@@ -18,8 +16,7 @@ Features:
 -   Interactive debugger using
     [dap-mode](https://github.com/emacs-lsp/dap-mode)
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `ruby` to the existing `dotspacemacs-configuration-layers`
@@ -35,8 +32,7 @@ default the built-in Ruby mode is enabled. To switch to the
    '((ruby :variables ruby-enable-enh-ruby-mode t)))
 ```
 
-Choosing a backend
-------------------
+## Choosing a backend
 
 To choose a default backend set the layer variable `ruby-backend`:
 
@@ -80,8 +76,7 @@ LSP also supports the DAP debugger which will be automatically
 configured upon using the LSP backend. Dap-mode can be setup here:
 <https://github.com/emacs-lsp/dap-mode#ruby>
 
-Prerequisites
--------------
+## Prerequisites
 
 Some of the advanced features supported by this layer depend on external
 gems that need to be installed in the context of your project (see below
@@ -111,8 +106,7 @@ specific documentation for details and caveats):
 gem install pry
 ```
 
-Ruby version management
------------------------
+## Ruby version management
 
 This layer supports [RVM](https://rvm.io/),
 [Rbenv](https://github.com/rbenv/rbenv), and
@@ -133,8 +127,7 @@ and `gemfile`, the priority order is `.rvmrc` then `.ruby-version` then
 
 Note: Only one version manager at a time can be enabled.
 
-Test runner
------------
+## Test runner
 
 This layer supports `RSpec`, `ruby-test` and `minitest` test runners
 (frameworks). By default `ruby-test` is used, to change to another
@@ -150,8 +143,7 @@ Example to set the test runner to `RSpec`:
 `Tip:` You can enable different test runners for different projects by
 using directory local variables.
 
-Formatting
-----------
+## Formatting
 
 If you'd like to use
 [prettier/plugin-ruby](https://github.com/prettier/plugin-ruby) to
@@ -165,42 +157,38 @@ format on save:
 Note that the `prettier` binary must be available in the project's
 `node_modules/.bin/` or on `exec-path`.
 
-Key bindings
-============
+# Key bindings
 
-Ruby (enh-ruby-mode, robe, inf-ruby, ruby-tools)
-------------------------------------------------
+## Ruby (enh-ruby-mode, robe, inf-ruby, ruby-tools)
 
-| Key binding  | Description                                                                      |
-|--------------|----------------------------------------------------------------------------------|
-| `SPC m g g`  | go to definition (robe-jump)                                                     |
-| `SPC m h h`  | show documentation for method at point (robe-doc)                                |
-| `SPC m s b`  | send buffer                                                                      |
-| `SPC m s B`  | send buffer and switch to REPL                                                   |
-| `SPC m s f`  | send function definition                                                         |
-| `SPC m s F`  | send function definition and switch to REPL                                      |
-| `SPC m s i`  | start REPL                                                                       |
-| `SPC m s l`  | send line                                                                        |
-| `SPC m s L`  | send line and switch to REPL                                                     |
-| `SPC m s r`  | send region                                                                      |
-| `SPC m s R`  | send region and switch to REPL                                                   |
-| `SPC m s s`  | switch to REPL                                                                   |
+| Key binding | Description                                                                      |
+|-------------|----------------------------------------------------------------------------------|
+| `SPC m g g` | go to definition (robe-jump)                                                     |
+| `SPC m h h` | show documentation for method at point (robe-doc)                                |
+| `SPC m s b` | send buffer                                                                      |
+| `SPC m s B` | send buffer and switch to REPL                                                   |
+| `SPC m s f` | send function definition                                                         |
+| `SPC m s F` | send function definition and switch to REPL                                      |
+| `SPC m s i` | start REPL                                                                       |
+| `SPC m s l` | send line                                                                        |
+| `SPC m s L` | send line and switch to REPL                                                     |
+| `SPC m s r` | send region                                                                      |
+| `SPC m s R` | send region and switch to REPL                                                   |
+| `SPC m s s` | switch to REPL                                                                   |
 | `SPC m x '​` | Change symbol or `"` string to `'`                                               |
 | `SPC m x "​` | Change symbol or `'` string to `"`                                               |
-| `SPC m x :`  | Change string to symbol                                                          |
-| `SPC m x h`  | toggle hash syntax in active region                                              |
-| `SPC m = =`  | format buffer using prettier                                                     |
-| `%`          | [evil-matchit](https://github.com/redguardtoo/evil-matchit) jumps between blocks |
+| `SPC m x :` | Change string to symbol                                                          |
+| `SPC m x h` | toggle hash syntax in active region                                              |
+| `SPC m = =` | format buffer using prettier                                                     |
+| `%`         | [evil-matchit](https://github.com/redguardtoo/evil-matchit) jumps between blocks |
 
-Debugger
---------
+## Debugger
 
 Using the `dap` layer you'll get access to all the DAP key bindings, see
 the complete list of key bindings on the [dap layer
 description](https://github.com/syl20bnr/spacemacs/tree/develop/layers/%2Btools/dap#key-bindings).
 
-Bundler
--------
+## Bundler
 
 | Key binding | Description        |
 |-------------|--------------------|
@@ -211,8 +199,7 @@ Bundler
 | `SPC m b x` | run bundle exec    |
 | `SPC m b o` | run bundle open    |
 
-RuboCop
--------
+## RuboCop
 
 | Key binding   | Description                                          |
 |---------------|------------------------------------------------------|
@@ -224,8 +211,7 @@ RuboCop
 | `SPC m R r p` | Runs RuboCop on the entire project                   |
 | `SPC m R r P` | Runs auto-correct on the project                     |
 
-Tests
------
+## Tests
 
 ### RSpec-mode
 
@@ -266,16 +252,14 @@ When `ruby-test-runner` equals `minitest`.
 | `SPC m t r` | repeat last test command  |
 | `SPC m t s` | run test for current file |
 
-Toggles
--------
+## Toggles
 
 | Key binding | Description                                          |
 |-------------|------------------------------------------------------|
 | `SPC m T '` | Toggle quotes of current string (only built-in mode) |
 | `SPC m T {` | Toggle style of current block (only built-in mode)   |
 
-Rake
-----
+## Rake
 
 | Key binding | Description                     |
 |-------------|---------------------------------|
@@ -284,8 +268,7 @@ Rake
 | `SPC m k R` | Regenerates the rake cache      |
 | `SPC m k f` | Finds definition of a rake task |
 
-Refactor
---------
+## Refactor
 
 | Key binding   | Description            |
 |---------------|------------------------|
@@ -294,19 +277,16 @@ Refactor
 | `SPC m r e c` | Extract constant       |
 | `SPC m r e l` | Extract to let (rspec) |
 
-Seeing is believing
--------------------
+## Seeing is believing
 
 | Key binding   | Description                      |
 |---------------|----------------------------------|
 | `<SPC> m @ @` | Run seeing is believing          |
 | `<SPC> m @ c` | Clear seeing is believing output |
 
-Configuration
-=============
+# Configuration
 
-Layer options
--------------
+## Layer options
 
 | Variable                           | Default value | Description                                                                                  |
 |------------------------------------|---------------|----------------------------------------------------------------------------------------------|
@@ -316,8 +296,7 @@ Layer options
 | `ruby-highlight-debugger-keywords` | `t`           | If non-nil, enable highlight for debugger keywords.                                          |
 | `ruby-backend`                     | `robe`        | Defines the backend for IDE feature. Possible values are `robe` or `lsp`.                    |
 
-Disabling the automatic insertion of encoding comment
------------------------------------------------------
+## Disabling the automatic insertion of encoding comment
 
 Note that `ruby-mode` and `enh-ruby-mode` will automatically insert the
 encoding comment `# coding: utf-8` at the top of a `` `.rb `` file, if

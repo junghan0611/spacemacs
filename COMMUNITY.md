@@ -1,8 +1,6 @@
-Philosophy
-==========
+# Philosophy
 
-For Contributors
-----------------
+## For Contributors
 
 -   This community is a community of hackers based on meritocracy and
     volunteering. Hackers strive for excellence to make the world a
@@ -21,8 +19,7 @@ For Contributors
 -   In a nutshell: Be good, positive and/or with good intentions and
     focused on the project.
 
-For Users
----------
+## For Users
 
 -   Any question related to the project is welcomed and encouraged, the
     worst thing that can happen is that we redirect you to the
@@ -32,8 +29,7 @@ For Users
     There is also an active official twitter account `spacemacs`.
 -   Any opinion on the project is valorized given it is constructive.
 
-Moderation
-==========
+# Moderation
 
 We want the community to be judged based on its moderation actions
 instead of telling people how to behave. The golden rules of the
@@ -48,8 +44,7 @@ officially in August 2014. It should allow you to decide whether or not
 you want to be part of this community. If you are not convinced then be
 assured that the only evil part in Spacemacs is the evil mode :-)
 
-Guidelines
-----------
+## Guidelines
 
 These guidelines apply to all collaborators of the project, namely
 @syl20bnr, @TheBB, @d12frosted and @bmag.
@@ -65,10 +60,9 @@ These guidelines apply to all collaborators of the project, namely
 
 ### Issues
 
--   Issues can be locked if their contents are judged <span
-    class="underline">inappropriate</span>, <span
-    class="underline">offending</span> or if they deviate <span
-    class="underline">dangerously</span> from the project.
+-   Issues can be locked if their contents are judged
+    <u>inappropriate</u>, <u>offending</u> or if they deviate
+    <u>dangerously</u> from the project.
 
 ### Pull requests and Commmits
 
@@ -83,7 +77,7 @@ These guidelines apply to all collaborators of the project, namely
 ### Messages
 
 -   Only the form of a message can be edited, not its meaning, except if
-    this meaning is <span class="underline">outrageous</span>.
+    this meaning is <u>outrageous</u>.
 
 -   Moderators can add information to a message to improve its accuracy
     without altering its meaning,
@@ -98,20 +92,15 @@ These guidelines apply to all collaborators of the project, namely
 -   The reason is added only when needed (for instance we won't add a
     reason for formatting edits)
 
-Interpretation
---------------
+## Interpretation
 
-Words used in these guidelines like <span class="underline">good</span>,
-<span class="underline">inappropriate</span>, <span
-class="underline">offending</span>, <span
-class="underline">dangerously</span> and <span
-class="underline">outrageous</span> are used without any explanation,
-their meanings and interpretations are left solely to the discretion of
-the collaborators who are educated persons working in the interest of
-the community.
+Words used in these guidelines like <u>good</u>, <u>inappropriate</u>,
+<u>offending</u>, <u>dangerously</u> and <u>outrageous</u> are used
+without any explanation, their meanings and interpretations are left
+solely to the discretion of the collaborators who are educated persons
+working in the interest of the community.
 
-Collaborators privacy
----------------------
+## Collaborators privacy
 
 Life and actions of collaborators outside of the project (i.e. outside
 of the Spacemacs GitHub repository, official Spacemacs Gitter channels
@@ -121,16 +110,14 @@ any opinion on the project or any other subjects and those opinions
 cannot be used to compromise their roles in the project as long as they
 follow the moderation guidelines with good intentions.
 
-Maintainer
-----------
+## Maintainer
 
 -   The maintainer @syl20bnr as a BDFL is free to demote a collaborator
     in extreme situations.
 -   When there is no consensus on a subject, the BDFL can decide to
     impose his view on the subject.
 
-Log
----
+## Log
 
 For transparency and future reference any major moderation actions are
 recorded here. As of Sunday, April 10th 2016, 7200 issues have been

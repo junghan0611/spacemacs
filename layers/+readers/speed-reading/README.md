@@ -1,22 +1,18 @@
-Description
-===========
+# Description
 
 A speed reading mode for Emacs.
 
-Features:
----------
+## Features:
 
 -   Support for `speed-reading` of arbitrary texts
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `speed-reading` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description   |
 |-------------|---------------|

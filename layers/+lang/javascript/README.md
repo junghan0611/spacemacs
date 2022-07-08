@@ -1,13 +1,11 @@
 ![](img/javascript.png)
 
-Description
-===========
+# Description
 
 This layer adds support for the JavaScript language using
 [js2-mode](https://github.com/mooz/js2-mode).
 
-Features:
----------
+## Features:
 
 -   Multiple backends support: Tern and LSP
 -   Smart code folding
@@ -26,15 +24,13 @@ Features:
     [dap-mode](https://github.com/emacs-lsp/dap-mode)
 -   Display Flow & Typescript type information
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `javascript` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Error checking / linting
-------------------------
+## Error checking / linting
 
 To activate error checking / linting using flycheck, install on your
 system one of the [available
@@ -63,19 +59,16 @@ be in conflict with the linter you are using via flycheck:
 (javascript :variables js2-mode-show-strict-warnings nil)
 ```
 
-web-beautify
-------------
+## web-beautify
 
 See [web-beautify layer](../../+tools/web-beautify/README.org)
 documentation.
 
-prettier
---------
+## prettier
 
 See [prettier layer](../../+tools/prettier/README.org) documentation.
 
-import-js
----------
+## import-js
 
 See [import-js layer](../../+tools/import-js/README.org) documentation.
 
@@ -91,8 +84,7 @@ To enable it, set the layer variable `javascript-import-tool`:
 (javascript :variables javascript-import-tool 'import-js)
 ```
 
-Choosing a backend
-------------------
+## Choosing a backend
 
 To choose a default backend set the layer variable `javascript-backend`:
 
@@ -124,8 +116,7 @@ linter, set the variable `javascript-lsp-linter` to `nil`.
             javascript-lsp-linter nil)
 ```
 
-Choosing a formatter
---------------------
+## Choosing a formatter
 
 To choose a formatter, set the layer variable `javascript-fmt-tool`:
 
@@ -157,28 +148,23 @@ You can choose formatting tool:
 
 Default is `’web-beautify`.
 
-Format buffer before saving
----------------------------
+## Format buffer before saving
 
 ``` elisp
 (javascript :variables javascript-fmt-on-save t)
 ```
 
-Backends
-========
+# Backends
 
-Tern
-----
+## Tern
 
 See [tern layer](../../+tools/tern/README.org) documentation.
 
-Tide
-----
+## Tide
 
 See [tide layer](../../+tools/tide/README.org) documentation.
 
-Language Server Protocol
-------------------------
+## Language Server Protocol
 
 To use an LSP server with JavaScript, add it as a `javascript-backend`
 to your `~/.spacemacs`.
@@ -228,11 +214,9 @@ and adjust `dap-firefox-debug-path` or `dap-chrome-debug-path`. For
 usage instructions refer to
 [dap-mode](https://github.com/emacs-lsp/dap-mode) readme.
 
-Configuration
-=============
+# Configuration
 
-Indentation
------------
+## Indentation
 
 To change how js2-mode indents code, set the variable
 `js2-basic-offset`, as such:
@@ -260,8 +244,7 @@ or when adding the `javascript` configuration layer:
 (javascript :variables js-indent-level 2)
 ```
 
-REPL
-----
+## REPL
 
 ### Browser based REPL
 
@@ -293,8 +276,7 @@ below:
 
 In addition install nodejs and make sure that `node` is in the path.
 
-Node
-----
+## Node
 
 ### Node Modules
 
@@ -321,8 +303,7 @@ section:
   '((javascript :variables js2-include-node-externs t)))
 ```
 
-Flow/Typescript
----------------
+## Flow/Typescript
 
 Enable the [lsp](#language-server-protocol) backend to view type
 information, jump to declarations, and more.
@@ -336,19 +317,16 @@ disable their parse warnings:
             js2-mode-show-parse-errors nil)
 ```
 
-Key bindings
-============
+# Key bindings
 
-js2-mode
---------
+## js2-mode
 
 | Key binding | Description                                                                         |
 |-------------|-------------------------------------------------------------------------------------|
 | `SPC m w`   | toggle js2-mode warnings and errors                                                 |
 | `%`         | jump between blockswith [evil-matchit](https://github.com/redguardtoo/evil-matchit) |
 
-Folding (js2-mode)
-------------------
+## Folding (js2-mode)
 
 | Key binding | Description              |
 |-------------|--------------------------|
@@ -359,8 +337,7 @@ Folding (js2-mode)
 | `SPC m z F` | toggle hide functions    |
 | `SPC m z C` | toggle hide comments     |
 
-Running NPM (npm-mode)
-----------------------
+## Running NPM (npm-mode)
 
 | Key binding | Description                                                                     |
 |-------------|---------------------------------------------------------------------------------|
@@ -374,8 +351,7 @@ Running NPM (npm-mode)
 | `SPC m n l` | List installed project dependencies                                             |
 | `SPC m n p` | Visit project `package.json` file                                               |
 
-Importing (import-js)
----------------------
+## Importing (import-js)
 
 | Key binding | Description                                                         |
 |-------------|---------------------------------------------------------------------|
@@ -383,8 +359,7 @@ Importing (import-js)
 | `SPC m i f` | Import any missing modules and remove any modules that are not used |
 | `SPC m g i` | Go to the module of the variable under cursor                       |
 
-Refactoring (js2-refactor)
---------------------------
+## Refactoring (js2-refactor)
 
 Bindings should match the plain emacs assignments.
 
@@ -432,8 +407,7 @@ You can check more [here](https://github.com/mooz/js-doc/)
 | `SPC m r d t` | insert tag to comment                 |
 | `SPC m r d h` | show list of available jsdoc tags     |
 
-Browser based REPL (skewer-mode)
---------------------------------
+## Browser based REPL (skewer-mode)
 
 | Key binding | Description                                                      |
 |-------------|------------------------------------------------------------------|
@@ -452,8 +426,7 @@ Browser based REPL (skewer-mode)
 | `SPC m s R` | send current region to the skewer REPL and switch to it in insert state            |
 | `SPC m s s` | switch to REPL                                                                     |
 
-Server based REPL (nodejs-repl)
--------------------------------
+## Server based REPL (nodejs-repl)
 
 | Key binding | Description                                                        |
 |-------------|--------------------------------------------------------------------|
@@ -468,8 +441,7 @@ Server based REPL (nodejs-repl)
 | `SPC m s R` | Send active region to NodeJS REPL and switch to REPL               |
 | `SPC m s s` | switch to REPL                                                     |
 
-debugger (dap mode)
--------------------
+## debugger (dap mode)
 
 Using the `dap` layer you'll get access to all the DAP key bindings, see
 the complete list of key bindings on the [dap layer

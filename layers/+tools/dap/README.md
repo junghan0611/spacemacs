@@ -1,5 +1,4 @@
-Description
-===========
+# Description
 
 Experimental integrated visual debugger using [Debug Adapter
 Protocol](https://code.visualstudio.com/docs/extensionAPI/api-debugging).
@@ -11,8 +10,7 @@ similar to the
 [LSP](https://github.com/Microsoft/language-server-protocol) but
 providers integration with debug server.
 
-Features:
----------
+## Features:
 
 Fully featured IDE-like debugger providing:
 
@@ -28,18 +26,15 @@ Fully featured IDE-like debugger providing:
 -   Debug/Run configurations
 -   Debug REPL
 
-Layer installation
-==================
+# Layer installation
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `dap` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Configuration
-=============
+# Configuration
 
-DAP configuration in supported layers
--------------------------------------
+## DAP configuration in supported layers
 
 By default `dap` layer registers global key binding defined under
 `SPC d`. If you want to have debug bindings under major mode leader you
@@ -57,18 +52,15 @@ For instance the `java` layer:
 See the `java` layer for further example on how to setup `dap-mode`
 correctly
 
-Variables
----------
+## Variables
 
 | Variable name              | Default | Description                  |
 |----------------------------|---------|------------------------------|
 | `dap-enable-mouse-support` | t       | Enable/disable mouse support |
 
-Key bindings
-============
+# Key bindings
 
-Declared prefixes
------------------
+## Declared prefixes
 
 The following prefixes have been declared:
 
@@ -83,8 +75,7 @@ The following prefixes have been declared:
 | `SPC d S` | context switching |
 | `SPC d T` | toggles           |
 
-Transient state
----------------
+## Transient state
 
 Most of the DAP functions can be easily repeated using the built-in DAP
 transient state which can be initiate with `SPC m d .`.
@@ -93,8 +84,7 @@ transient state which can be initiate with `SPC m d .`.
 |-------------|-----------------------|
 | `SPC m d .` | debug transient state |
 
-Start/Stop
-----------
+## Start/Stop
 
 | Key binding | Description                |
 |-------------|----------------------------|
@@ -105,8 +95,7 @@ Start/Stop
 | `SPC d d l` | debug last configuration   |
 | `SPC d d r` | debug recent configuration |
 
-Breakpoints
------------
+## Breakpoints
 
 | Key binding | Description                     |
 |-------------|---------------------------------|
@@ -119,8 +108,7 @@ Breakpoints
 | `SPC d b D` | clear all breakpoints           |
 | `SPC d w b` | list breakpoints                |
 
-Navigation
-----------
+## Navigation
 
 | Key binding | Description                   |
 |-------------|-------------------------------|
@@ -135,8 +123,7 @@ Navigation
 | `SPC d w o` | goto output buffer if present |
 | `SPC d w s` | list sessions                 |
 
-Evaluation and REPL
--------------------
+## Evaluation and REPL
 
 | Key binding | Description         |
 |-------------|---------------------|
@@ -145,8 +132,7 @@ Evaluation and REPL
 | `SPC d e r` | eval region         |
 | `SPC d e t` | eval value at point |
 
-Inspection
-----------
+## Inspection
 
 | Key binding | Description                               |
 |-------------|-------------------------------------------|
@@ -157,8 +143,7 @@ Inspection
 | `SPC d w l` | list local variables                      |
 | `SPC d T m` | toggle mouse support for value inspection |
 
-References
-==========
+# References
 
 -   [dap-mode repo](https://github.com/yyoncho/dap-mode)
 -   [lsp-mode repo](https://github.com/emacs-lsp/lsp-mode)

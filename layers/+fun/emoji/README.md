@@ -1,13 +1,11 @@
 ![](img/emojis.png)
 
-Description
-===========
+# Description
 
 This layer adds support for Emoji emoticons from
 [emoji-cheat-sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet/).
 
-Features:
----------
+## Features:
 
 -   Browse Emoji in a dedicated buffer
 -   Display Emoji images in buffer
@@ -15,8 +13,7 @@ Features:
 -   Completion of Emojis using
     [company-emoji](https://github.com/dunn/company-emoji)
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `emoji` to the existing `dotspacemacs-configuration-layers`
@@ -29,8 +26,7 @@ to get company-emoji support with `apt-get`
 apt-get install ttf-ancient-fonts
 ```
 
-Configuration
--------------
+## Configuration
 
 ### Unicode or short-names
 
@@ -43,16 +39,14 @@ unicode. To insert short-names set `company-emoji-insert-unicode` to
                  company-emoji-insert-unicode nil)
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                             |
 |-------------|-----------------------------------------|
 | `SPC a f e` | open a dedicated buffer to browse Emoji |
 | `SPC i e`   | insert Emoji via a helm buffer          |
 
-Emoji dedicated buffer
-----------------------
+## Emoji dedicated buffer
 
 | Key binding | Description             |
 |-------------|-------------------------|

@@ -1,38 +1,32 @@
 ![](img/sml.png)
 
-Description
-===========
+# Description
 
 Adds support for the [SML](http://www.smlnj.org) programming language to
 Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting
 -   Integration of the `SML Repl` into Emacs
 -   Basic completion of SML forms via `sml-electric-space`
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `sml` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Key bindings
-============
+# Key bindings
 
-Form Completion
----------------
+## Form Completion
 
 | Key binding | Description                                                                               |
 |-------------|-------------------------------------------------------------------------------------------|
 | `M-SPC`     | Inserts a space and completes the form before the cursor.                                 |
 | `\vert{}`   | Inserts a pipe and adds a double arrow or copies the function name. Generally just works. |
 
-REPL
-----
+## REPL
 
 | Key binding | Description                                                       |
 |-------------|-------------------------------------------------------------------|

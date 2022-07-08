@@ -1,25 +1,21 @@
-Description
-===========
+# Description
 
 This layer provides templates to Spacemacs. A template consists of text
 that is automatically inserted into a new file when it is opened. This
 is done via [yatemplate](https://github.com/mineo/yatemplate), which
 leverages [yasnippet](https://github.com/joaotavora/yasnippet).
 
-Features:
----------
+## Features:
 
 -   Auto-insert snippets when creating specific new files.
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `templates` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Configuration
-=============
+# Configuration
 
 Drop your templates in `~/.emacs.d/private/templates`.
 
@@ -47,8 +43,7 @@ for specifics. Full yasnippet syntax is supported, so consult the
 [yasnippet](http://joaotavora.github.io/yasnippet/snippet-development.html)
 documentation for details.
 
-Default insertions
-------------------
+## Default insertions
 
 Note that Emacs ships with some default templates. If these are not to
 your liking, set the layer variable `templates-use-default-templates` to
@@ -59,8 +54,7 @@ your liking, set the layer variable `templates-use-default-templates` to
   '((templates :variables templates-use-default-templates nil)))
 ```
 
-Querying
---------
+## Querying
 
 To disable the automatic querying each time a new file is opened, set
 `auto-insert-query` to `nil`.

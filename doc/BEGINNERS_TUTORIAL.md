@@ -1,5 +1,4 @@
-Why Spacemacs?
-==============
+# Why Spacemacs?
 
 -   Unparallelled text and structure editing for all types of writing
     tasks: creative writing, blogging, note-taking, todo-lists,
@@ -7,8 +6,7 @@ Why Spacemacs?
 -   Powerful modes for programming in dozens of programming languages
 -   Deeply customizable yet beginner-friendly
 
-Installation and setup
-======================
+# Installation and setup
 
 Spacemacs is a beginner-friendly and powerful extension of a popular
 text editor called Emacs. To install Spacemacs you need to first install
@@ -17,11 +15,9 @@ most easily done by using a program called Git. The steps are easy and
 detailed in the
 [readme](https://github.com/syl20bnr/spacemacs/blob/master/README.md#prerequisites).
 
-Getting started
-===============
+# Getting started
 
-Key binding notation
---------------------
+## Key binding notation
 
 The power of Spacemacs lies in its efficient key bindings. Because it is
 built on Emacs, we will use Emacs conventions for key binding notation.
@@ -49,8 +45,7 @@ with `M-m` in all the commands that begin with `SPC`.
 (Note: Other modifier keys such as `Super`, notated with a small-case
 `s-`, can be set up but this is rarely necessary in Spacemacs).
 
-Modal text editing - why and how?
----------------------------------
+## Modal text editing - why and how?
 
 Writing (or programming) is typically not a simple linear process of
 adding words and lines until finished. At least as important part of the
@@ -86,8 +81,7 @@ You might have noticed that this was achieved entirely without moving
 your fingers from your home row (the row where your fingers lie in rest
 when touch-typing) and without using modifier keys.
 
-Start the Vim tutorial
-----------------------
+## Start the Vim tutorial
 
 The modal editing features of Spacemacs originate from a text editor
 called [Vi](https://en.wikipedia.org/wiki/Vi), and thus the modal
@@ -95,8 +89,7 @@ editing tutorial is called eVIl tutor. Press `SPC h T v` (that is, the
 `spacebar` followed by `h`, `T` and `v`) to familiarize yourself with
 modal editing.
 
-Using the spacebar to launch commands
--------------------------------------
+## Using the spacebar to launch commands
 
 Now that you are familiar with writing and editing text it is time to
 put the "Space" into Spacemacs. Because the spacebar is the most
@@ -110,8 +103,7 @@ subsequent keypresses. Browsing around this menu is a great way of
 finding new features in Spacemacs, so keep an eye on the different
 options! `ESC` usually breaks the combination you don't want to use.
 
-Buffers, windows and frames
----------------------------
+## Buffers, windows and frames
 
 Because Emacs (the extension of which Spacemacs is) was developed in the
 '80s before the advent of modern graphical user interfaces, Emacs has a
@@ -151,19 +143,16 @@ tutorial and the scratch buffer. `SPC b` has more options for switching
 between buffers, for example `SPC b b` opens a searchable list of all
 currently open buffers and `SPC b d` closes the current buffer.
 
-Accessing files
----------------
+## Accessing files
 
 Files can be accessed under the `SPC f` mnemonic. You can navigate to
 any file with `SPC f f` and open it by pressing `RET`. Accessing
 recently opened files is a very common task and is done with `SPC f r`.
 An edited file is saved with `SPC f s`.
 
-Configuring Spacemacs
-=====================
+# Configuring Spacemacs
 
-Adding language support and other features: using layers
---------------------------------------------------------
+## Adding language support and other features: using layers
 
 Spacemacs divides its configuration into self-contained units called
 configuration layers. These layers are stacked on top of each other to
@@ -185,32 +174,27 @@ Some layers require third-party tools that you'll have to install via
 your favorite package manager. The layer readme will tell if this is the
 case.
 
-Changing the colour theme
--------------------------
+## Changing the colour theme
 
 You can toggle the theme by `SPC T n`. This cycles between currently
 activated themes. You can find more by adding the themes-megapack layer
 and activate them by writing their names in the dotspacemacs-themes
 list.
 
-Starting maximized
-------------------
+## Starting maximized
 
 Editing the `dotspacemacs-maximized-at-startup` variable from `nil` to
 `t` will start Spacemacs maximized.
 
-Quitting
---------
+## Quitting
 
 Save the changes you've made to the dotfile with `SPC f s` and then quit
 emacs by `SPC q q`. You can return to this tutorial by clicking it on
 the home screen!
 
-Additional features, tips and troubleshooting
-=============================================
+# Additional features, tips and troubleshooting
 
-Org mode
---------
+## Org mode
 
 Org mode is one of the best features of Spacemacs and enough reason to
 warrant its use. Org mode's official description tells that it is "for
@@ -240,8 +224,7 @@ with `SPC h SPC org` for more information. Googling for Org mode
 tutorials is also very helpful for finding out about the most useful
 features!
 
-Version control - the intelligent way
--------------------------------------
+## Version control - the intelligent way
 
 Version control means keeping track of the changes and edits you have
 made to your document. Often version control is done by saving different
@@ -272,21 +255,18 @@ Now you know how to make a commit. The commits are saved in the (hidden)
 .git folder in the same folder the tracked file(s) are in. You can make
 further commits the same way.
 
-Daemon mode and instant startup (Linux)
----------------------------------------
+## Daemon mode and instant startup (Linux)
 
 Emacs can be used in daemon mode: a daemon runs in the background and
 launches clients. This way new frames launch instantly without delay.
 [Emacswiki](https://www.emacswiki.org/emacs/EmacsAsDaemon) tells more
 about the daemon and how to set it to launch automatically on startup.
 
-Swap caps lock and esc keys on your keyboard
---------------------------------------------
+## Swap caps lock and esc keys on your keyboard
 
 This is useful outside of Spacemacs as well!
 
-Troubleshooting and further info
---------------------------------
+## Troubleshooting and further info
 
 `SPC ?` shows you the key bindings in the current major mode, which is
 often helpful. For troubleshooting, please refer to the

@@ -1,16 +1,13 @@
-Description
-===========
+# Description
 
 This layer integrates an online music service into Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Support for listening to music from within Emacs via
     [Pianobar](https://6xq.net/pianobar/).
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `pianobar` to the existing
@@ -23,8 +20,7 @@ dotspacemacs-configuration-layers
    '((pianobar :variables pianobar-config t))
 ```
 
-Configure
-=========
+# Configure
 
 Below is an example configuration from MacOS:
 
@@ -44,16 +40,14 @@ Relevant links:
 -   [Arch man
     page](https://jlk.fjfi.cvut.cz/arch/manpages/man/pianobar.1)
 
-Run
-===
+# Run
 
 `M-x pianobar`
 
 With the above configuration, pianobar will login and start playing the
 autostart station.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding   | Description            |
 |---------------|------------------------|

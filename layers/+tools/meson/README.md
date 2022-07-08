@@ -1,25 +1,21 @@
 ![](img/meson.png)
 
-Description
-===========
+# Description
 
 This layer adds support [Meson](https://mesonbuild.com/) scripts.
 
-Features:
----------
+## Features:
 
 -   Support for meson build scripts through meson-mode.
 -   Syntax highlighting.
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `meson` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                              |
 |-------------|------------------------------------------|

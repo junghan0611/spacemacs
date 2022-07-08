@@ -1,13 +1,11 @@
 ![](img/debug.png)
 
-Description
-===========
+# Description
 
 This layer adds interactive debuggers for multiple languages using
 [realgud](https://github.com/realgud/realgud).
 
-Features:
----------
+## Features:
 
 -   Modern rewrite of the Emacs GUD debugger family
 -   Visual interface including breakpoint and line indicators
@@ -16,15 +14,13 @@ Features:
     [adding](https://github.com/realgud/realgud/wiki/How-to-add-a-new-debugger)
     your own external debuggers
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `debug` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Enable additional debuggers
----------------------------
+## Enable additional debuggers
 
 Language specific debuggers are added by the respective layers. If you
 want to add additional debuggers, add them to the
@@ -37,18 +33,15 @@ compatible by checking
               '((debug :variables debug-additional-debuggers '("remake"))))
 ```
 
-Key bindings
-============
+# Key bindings
 
-Major Mode
-----------
+## Major Mode
 
 | Key binding | Description     |
 |-------------|-----------------|
 | `SPC m d d` | open cmd buffer |
 
-Debugger
---------
+## Debugger
 
 | Key binding | Description          |
 |-------------|----------------------|

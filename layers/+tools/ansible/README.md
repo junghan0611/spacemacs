@@ -1,31 +1,26 @@
 ![](img/ansible.png)
 
-Description
-===========
+# Description
 
 This layer adds support for editing Ansible configuration files in
 Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting for Ansible-flavored YAML and Jinja2 templates.
 -   Auto-completion via `company-ansible`.
 -   Integration of `ansible-vault` into emacs for automatic
     encryption/decryption of files.
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `ansible` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Configuration
-=============
+# Configuration
 
-ansible-vault
--------------
+## ansible-vault
 
 ### Password
 
@@ -65,8 +60,7 @@ If you want to disable this feature then set the layer variable
 (ansible :variables ansible-auto-encrypt-decrypt t)
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                                                             |
 |-------------|-----------------------------------------------------------------------------------------|

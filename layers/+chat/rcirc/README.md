@@ -1,14 +1,12 @@
 ![](img/irc.png)
 
-Description
-===========
+# Description
 
 This layer provide support for
 [rcirc](http://www.gnu.org/software/emacs/manual/html_mono/rcirc.html)
 with optional support for authinfo and ZNC.
 
-Features:
----------
+## Features:
 
 -   Store channel logs into `~/.emacs.d/.cache/rcirc-logs/<channel>`
 -   Support for credentials stored in `~/.authinfo.gpg` (need to have
@@ -21,18 +19,15 @@ Features:
     a way of showing, either using the `emoji` layer or having a proper
     font) :clap:
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `rcirc` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Configuring authentication
---------------------------
+## Configuring authentication
 
 There are several ways to configure rcirc supported by the layer:
 
@@ -41,8 +36,7 @@ There are several ways to configure rcirc supported by the layer:
 -   By storing your credentials in `rcirc-server-alist` in your Dropbox
     (better but still not secured)
 -   By storing your credentials in authinfo (secured)
--   By using a ZNC bouncer <span class="underline">and</span> storing
-    your credentials (secured)
+-   By using a ZNC bouncer <u>and</u> storing your credentials (secured)
 
 ### Storing the credentials in your dotfile
 
@@ -119,9 +113,8 @@ configure rcirc.
 
 ### Connecting behind a ZNC bouncer and storing the credentials in authinfo
 
-This methods is also secured since it uses authinfo <span
-class="underline">but</span> you must secure your ZNC server
-configuration as well!
+This methods is also secured since it uses authinfo <u>but</u> you must
+secure your ZNC server configuration as well!
 
 ZNC is a popular bouncer which is easy to setup. A bouncer is a proxy
 that connects to your IRC channels on your behalf, instead of connecting
@@ -179,8 +172,7 @@ store the discussions in a buffer while you are not connected.
              :channels ("#jupiterbroadcasting"))))
         ```
 
-Enabling `s/foo/bar/`
----------------------
+## Enabling `s/foo/bar/`
 
 To configure rcirc to update buffers when people use `s/foo/bar/`, set
 the variable `rcirc-enable-late-fix` to `t` in your dotfile:
@@ -190,8 +182,7 @@ the variable `rcirc-enable-late-fix` to `t` in your dotfile:
   (rcirc :variables rcirc-enable-late-fix t)))
 ```
 
-Enabling emojify-mode
----------------------
+## Enabling emojify-mode
 
 To enable emojify-mode in rcirc buffers, set the variable
 `rcirc-enable-emojify` to `t` in your dotfile:
@@ -201,8 +192,7 @@ To enable emojify-mode in rcirc buffers, set the variable
   (rcirc :variables rcirc-enable-emojify t)))
 ```
 
-Enabling erc-image
-------------------
+## Enabling erc-image
 
 To enable erc-image for fetching and showing images when they are linked
 to in chat, set the variable `rcirc-enable-erc-image` to `t` in your
@@ -213,8 +203,7 @@ dotfile:
   (rcirc :variables rcirc-enable-erc-image t)))
 ```
 
-Enabling erc-tweet
-------------------
+## Enabling erc-tweet
 
 To enable erc-tweet for fetching and displaying tweets when they are
 linked in chat, set the variable `rcirc-enable-erc-tweet` to `t` in your
@@ -225,8 +214,7 @@ dotfile:
   (rcirc :variables rcirc-enable-erc-tweet t)))
 ```
 
-Enabling erc-yt
----------------
+## Enabling erc-yt
 
 To enable erc-yt for fetching and displaying previews for YouTube links
 in chat, set the variable `rcirc-enable-erc-yt` to `t` in your dotfile:
@@ -236,8 +224,7 @@ in chat, set the variable `rcirc-enable-erc-yt` to `t` in your dotfile:
   (rcirc :variables rcirc-enable-erc-yt t)))
 ```
 
-Enabling rcirc-styles
----------------------
+## Enabling rcirc-styles
 
 To enable rcirc-styles for displaying and inserting color and text
 attribute codes, set the variable `rcirc-enable-styles` to `t` in your
@@ -248,8 +235,7 @@ dotfile:
   (rcirc :variables rcirc-enable-styles t)))
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding   | Description                                                                   |
 |---------------|-------------------------------------------------------------------------------|
@@ -266,14 +252,12 @@ In normal state:
 | `C-j`       | next item in history     |
 | `C-k`       | previous item in history |
 
-Rcirc documentation
-===================
+# Rcirc documentation
 
 The rcirc documentation can be found
 [here](http://www.gnu.org/software/emacs/manual/html_mono/rcirc.html).
 
-Spacemacs Layout Support
-========================
+# Spacemacs Layout Support
 
 RCIRC buffers are added automatically to the default layout for RCIRC
 controlled by the variable `rcirc-spacemacs-layout-name` (defaults to

@@ -1,25 +1,21 @@
 ![](img/spotify.png)
 
-Description
-===========
+# Description
 
 This layer integrates an online music service into Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Support for listening to music from within Emacs via
     [Spotify](https://www.spotify.com).
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `spotify` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Spotify Web API authentication when using search with Ivy
-=========================================================
+# Spotify Web API authentication when using search with Ivy
 
 You'll need to [register an
 application](https://developer.spotify.com/my-applications) in Spotify
@@ -28,8 +24,7 @@ set the variables `counsel-spotify-client-id` and
 `counsel-spotify-client-secret` variables with your credentials to start
 using the search feature.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding   | Description              |
 |---------------|--------------------------|

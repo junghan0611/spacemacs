@@ -1,21 +1,18 @@
 ![](img/notmuch.png)
 
-Description
-===========
+# Description
 
 Notmuch offers a fast, global-search and tag-based email system to use
 within your text editor or in a terminal.
 
 This layer integrates the Notmuch Emacs package into Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Email searching
 -   Email tagging
 
-Install
-=======
+# Install
 
 In order to use this layer you must install Notmuch separately.
 
@@ -26,11 +23,9 @@ Then add this layer to your `~/.spacemacs`. You will need to add
 `notmuch` to the existing `dotspacemacs-configuration-layers` list in
 this file.
 
-Configuration
-=============
+# Configuration
 
-Sending and Receiving emails
-----------------------------
+## Sending and Receiving emails
 
 For this you will need an external program.
 
@@ -65,8 +60,7 @@ set sendmail="/usr/local/bin/msmtp"
 Configure `~/.msmtprc`
 [example](http://msmtp.sourceforge.net/doc/msmtprc.txt)
 
-Tags to apply when deleting
----------------------------
+## Tags to apply when deleting
 
 You can specifiy which tags you want to apply when you delete an email
 by setting the layer variable `notmuch-message-deleted-tags`.
@@ -79,17 +73,14 @@ Default value is to add the `deleted` tag and remove both `inbox` and
   '((notmuch :variables notmuch-message-deleted-tags '("+deleted" "-inbox" "-unread"))))
 ```
 
-See also
---------
+## See also
 
 Refer to the official notmuch website for more information:
 <https://notmuchmail.org/>
 
-Key bindings
-============
+# Key bindings
 
-Global bindings
----------------
+## Global bindings
 
 | Key binding   | Command                                      |
 |---------------|----------------------------------------------|
@@ -99,8 +90,7 @@ Global bindings
 | `SPC a e n s` | Start a notmuch search                       |
 | `SPC l o n`   | Start notmuch in a custom layout, "@Notmuch" |
 
-Show mode
----------
+## Show mode
 
 | Key binding     | Command                                                                            |
 |-----------------|------------------------------------------------------------------------------------|
@@ -124,8 +114,7 @@ Show mode
 | `SPC m s t`     | \[STASH\] Copy `To address` to kill-ring                                           |
 | `SPC m s T`     | \[STASH\] Copy `tags` to kill-ring                                                 |
 
-Evilified key bindings
-----------------------
+## Evilified key bindings
 
 ### Hello mode
 
@@ -188,8 +177,7 @@ Evilified key bindings
 | `M-d`       | \[Message\] Scroll down the message pane |
 | `M-u`       | \[Message\] Scroll up the message pane   |
 
-Spacemacs layout integration
-============================
+# Spacemacs layout integration
 
 This layer defines a [Spacemacs custom
 layout](https://github.com/syl20bnr/spacemacs/blob/develop/doc/DOCUMENTATION.org#layouts-and-workspaces)

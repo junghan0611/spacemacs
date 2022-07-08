@@ -1,27 +1,22 @@
-Description
-===========
+# Description
 
 This layer adds support for the zig programming language
 <https://ziglang.org/>
 
-Features:
----------
+## Features:
 
 -   Syntax Highlighting
 -   LSP support via `zls` (see [LSP](#lsp-zls))
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `zig` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Choosing a backend
-------------------
+## Choosing a backend
 
 You can choose between multiple language backends. This choice defines
 mainly which kind of IDE features spacemacs can deliver.
@@ -59,11 +54,9 @@ indentation and custom commands for compilation and testing.
 For more information check the [`zig-mode`
 repository](https://github.com/ziglang/zig-mode).
 
-Key bindings
-============
+# Key bindings
 
-LSP
----
+## LSP
 
 You can find an overview of all the key bindings on the [lsp layer
 description](https://github.com/syl20bnr/spacemacs/tree/develop/layers/%2Btools/lsp#key-bindings).

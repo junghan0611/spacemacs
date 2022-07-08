@@ -1,18 +1,15 @@
-Description
-===========
+# Description
 
 `xclipboard` integration layer.
 
-Features:
----------
+## Features:
 
 -   adds copy support to the X-clipboard from the terminal.
 -   adds paste support to the X-clipboard from the terminal.
 -   [cliphist](https://github.com/redguardtoo/cliphist) package:
     integration with clipboard managers on Linux and macOS.
 
-Requirements
-============
+# Requirements
 
 This layer depends on a few platform-specific command-line tools:
 
@@ -28,11 +25,9 @@ Clipboard manager integration requires
 [ClipIt](https://github.com/CristianHenzel/ClipIt) installed on Linux
 and [Flycut](https://github.com/TermiT/Flycut) installed on macOS.
 
-Usage
-=====
+# Usage
 
-Clipboard Manager Integration
------------------------------
+## Clipboard Manager Integration
 
 Clipboard manager integration can be enabled by setting
 `xclipboard-enable-cliphist` to `t`.
@@ -42,8 +37,7 @@ dotspacemacs-configuration-layers '(
   (xclipboard :variables xclipboard-enable-cliphist t))
 ```
 
-Custom Copy Paste Command
--------------------------
+## Custom Copy Paste Command
 
 Setting `xclipboard-copy-command` for copy, `xclipboard-paste-command`
 for paste.
@@ -53,8 +47,7 @@ dotspacemacs-configuration-layers '(
   (xclipboard :variables xclipboard-copy-command "utf8clip.exe"))
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                                  |
 |-------------|--------------------------------------------------------------|

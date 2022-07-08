@@ -1,13 +1,11 @@
 ![](img/node.png)
 
-Description
-===========
+# Description
 
 This layer introduces packages that target Node.js. Currently this layer
 should not be used directly, as it will be used by other layers.
 
-Features:
----------
+## Features:
 
 -   Integration of packages necessary to execute node.js modules from
     other layers.

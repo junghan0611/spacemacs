@@ -1,10 +1,8 @@
-Description
-===========
+# Description
 
 This layer adds support for the `Mu4e` email client.
 
-Features:
----------
+## Features:
 
 -   Search, read, reply, move, and delete email.
 -   Search-based: no folders, only queries.
@@ -16,8 +14,7 @@ Features:
 -   Notifications using
     [mu4e-alert](https://github.com/iqbalansari/mu4e-alert)
 
-Install
-=======
+# Install
 
 In order to use this layer you must install `mu` and `mu4e` separately.
 Typically `mu4e` will be bundled with `mu` (this is the case on many
@@ -43,11 +40,9 @@ can set the layer variable `mu4e-installation-path`, for example:
 Then add this layer to your `~/.spacemacs`. You will need to add `mu4e`
 to the existing `dotspacemacs-configuration-layers` list in this file.
 
-Commands
-========
+# Commands
 
-Global bindings
----------------
+## Global bindings
 
 | Key binding            | Command                         |
 |------------------------|---------------------------------|
@@ -56,8 +51,7 @@ Global bindings
 | `SPC m C`              | Search contacts (requires helm) |
 | `C-x m`                | Compose new message             |
 
-Headers mode
-------------
+## Headers mode
 
 | Key binding | Command                                                     |
 |-------------|-------------------------------------------------------------|
@@ -65,8 +59,7 @@ Headers mode
 | `C-j`       | Next header                                                 |
 | `C-k`       | Previous header                                             |
 
-View mode
----------
+## View mode
 
 | Key binding | Command                                                     |
 |-------------|-------------------------------------------------------------|
@@ -74,8 +67,7 @@ View mode
 | `C-j`       | Next header                                                 |
 | `C-k`       | Previous header                                             |
 
-Compose mode
-------------
+## Compose mode
 
 | Key binding            | Command                        |
 |------------------------|--------------------------------|
@@ -85,15 +77,13 @@ Compose mode
 | `SPC m f`              | Add file as attachment         |
 | `SPC m o`              | Compose in Org-mode syntax     |
 
-Configuration
-=============
+# Configuration
 
 Configuration varies too much to give precise instructions. What follows
 is one example configuration. Refer to `mu4e`'s manual for more detailed
 configuration instructions.
 
-Maildirs extension
-------------------
+## Maildirs extension
 
 The [maildirs
 extension](https://github.com/agpchil/mu4e-maildirs-extension) adds a
@@ -110,8 +100,7 @@ the variable `mu4e-use-maildirs-extension` to a non-nil value:
                       mu4e-use-maildirs-extension t)))
 ```
 
-Multiple Accounts
------------------
+## Multiple Accounts
 
 With `mu 0.9.16`, `mu4e` comes with a native contexts feature for
 managing multiple accounts.
@@ -165,8 +154,7 @@ Note: We used to have a hack to support multiple accounts with older
 version of `mu` but we removed it to encourage people to update their
 version and use the new contexts feature.
 
-Async mode
-----------
+## Async mode
 
 `mu4e` can send mails in async mode, which speeds up sending as you do
 not have to wait for the email to be sent. This is off by default but
@@ -179,8 +167,7 @@ when including the layer.
                       mu4e-enable-async-operations t)))
 ```
 
-Attachment directory
---------------------
+## Attachment directory
 
 By default `mu4e` will save attachment files to `$HOME`, but this layer
 changes that to `$HOME/Downloads` if it exists. You can override this in
@@ -190,8 +177,7 @@ your `dotspacemacs/user-config`:
 (setq mu4e-attachment-dir "~/files")
 ```
 
-Example configuration
----------------------
+## Example configuration
 
 ``` commonlisp
 ;;; Set up some common mu4e variables
@@ -223,8 +209,7 @@ Example configuration
          "All inboxes" ?i)))
 ```
 
-Notifications
--------------
+## Notifications
 
 `mu4e-alert` is an extension that provides desktop notifications and
 adds the count of unread messages to the modeline.
@@ -282,8 +267,7 @@ or use layer variables when you add the layer to
 (mu4e :variables mu4e-enable-mode-line t)
 ```
 
-Spacemacs layout integration
-----------------------------
+## Spacemacs layout integration
 
 A [Spacemacs custom
 layout](https://github.com/syl20bnr/spacemacs/blob/develop/doc/DOCUMENTATION.org#layouts-and-workspaces)
@@ -304,8 +288,7 @@ By default the values are:
                       mu4e-spacemacs-kill-layout-on-exit t)))
 ```
 
-Org-mu4e integration
---------------------
+## Org-mu4e integration
 
 ### Mu4e link support in Org mode
 
@@ -337,8 +320,7 @@ Then when composing, hit keys `SPC m o` to enable the
 `org-mu4e-convert-to-html` if you want the message to be converted
 before sending.
 
-See also
-========
+# See also
 
 Refer to the official `mu` and `mu4e` documentation for additional info.
 

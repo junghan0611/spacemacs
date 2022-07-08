@@ -1,13 +1,11 @@
 ![](img/opencl.png) ![](img/cuda.png) ![](img/shaders.png)
 
-Description
-===========
+# Description
 
 This layer adds support for GPU related languages like CUDA, OpenCL and
 various Shader formats to Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting for
     -   `.cl` (OpenCL)
@@ -31,8 +29,7 @@ Features:
     -   `.frag` (Shaders)
     -   `.comp` (Shaders)
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~.spacemacs`. You will
 need to add `gpu` to the existing `dotspacemacs-configuration-layers`

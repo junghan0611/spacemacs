@@ -1,27 +1,23 @@
 ![](img/tidalcycles.jpg)
 
-Description
-===========
+# Description
 
 This layer adds a major mode to control
 [TidalCycles](https://tidalcycles.org), a programming language for live
 coding.
 
-Features:
----------
+## Features:
 
 -   `tidal-mode` to interact with TidalCycles
 -   Spacemacs friendly key bindings
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `tidalcycles` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Usage
-=====
+# Usage
 
 After installing TidalCycles and starting SuperDirt as described [in the
 docs](https://tidalcycles.org/docs/), open a file with the `.tidal`
@@ -30,8 +26,7 @@ extension and start TidalCycles with `SPC m t s`.
 You can evaluate a piece of code with `SPC m RET` or the original key
 binding `C-RET`.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description           |
 |-------------|-----------------------|

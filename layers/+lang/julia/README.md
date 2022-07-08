@@ -1,12 +1,10 @@
 ![](img/julia.png)
 
-Description
-===========
+# Description
 
 This layer adds support for [Julia](https://julialang.org) to Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting
 -   Repl support
@@ -15,15 +13,13 @@ Features:
 -   Jump-to-definition
 -   Documentation on hover
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `julia` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-LSP
----
+## LSP
 
 This layer can be used with
 [LanguageServer.jl](https://github.com/JuliaEditorSupport/LanguageServer.jl)
@@ -50,8 +46,7 @@ case, `lsp-mode` might give up on the language server before its
 started, but regardless usage of `lsp-mode` with Julia can cause long
 delays when first opening files.
 
-Options
-=======
+# Options
 
 While `julia-mode` is perfectly usable without configuration or other
 packages, you can choose to replace the default functionality of using
@@ -66,8 +61,7 @@ with it. To do so, install this layer with:
    (julia :variables julia-mode-enable-ess t)))
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                                                            |
 |-------------|----------------------------------------------------------------------------------------|

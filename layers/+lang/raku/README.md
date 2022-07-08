@@ -1,11 +1,9 @@
-Description
-===========
+# Description
 
 This layer provides an environment for the [Raku Programming
 Language](https://www.raku.org/) that was previously known as Perl 6.
 
-Features:
----------
+## Features:
 
 -   Jump to definition & Code completion via
     [ctags-universal](https://github.com/universal-ctags/ctags)
@@ -21,18 +19,15 @@ Features:
     -   single-quotation-marks
     -   double-quotation-marks
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `raku` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Jump to definition
-------------------
+## Jump to definition
 
 Jump to definition requires
 [ctags-universal](https://github.com/universal-ctags/ctags) to be be
@@ -44,8 +39,7 @@ ctags -e -Ra lib t/
 ctags -e -Ra --language-force=Perl6 bin/ $YOUR_PERL_PATH/share/perl6/site/sources/
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                    |
 |-------------|------------------------------------------------|

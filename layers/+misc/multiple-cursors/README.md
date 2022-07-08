@@ -1,20 +1,16 @@
-Description
-===========
+# Description
 
-Features:
----------
+## Features:
 
 -   support for multiple cursors.
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `multiple-cursors` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Configuration
-=============
+# Configuration
 
 Currently supported backends are:
 
@@ -29,11 +25,9 @@ variable of the layer.
   (multiple-cursors :variables multiple-cursors-backend 'evil-mc))
 ```
 
-Key bindings
-============
+# Key bindings
 
-`evil-mc`
----------
+## `evil-mc`
 
 The `evil-mc` package provides the following key bindings:
 
@@ -82,8 +76,7 @@ For easy navigation you also have the following:
 | `C-M-j`     | evil-mc-make-cursor-move-next-line |
 | `C-M-k`     | evil-mc-make-cursor-move-prev-line |
 
-`multiple-cursors`
-------------------
+## `multiple-cursors`
 
 The `multiple-cursors` backend provides the following key bindings to
 insert new cursors:
@@ -106,11 +99,9 @@ These special bindings manipulate text under cursors:
 | `SPC s m s s` | mc/sort-regions               |
 | `SPC s m s t` | mc/reverse-regions            |
 
-Notes
-=====
+# Notes
 
-`multiple-cursors`
-------------------
+## `multiple-cursors`
 
 Some commands executed during `multiple-cursors` enabled may lead Emacs
 to go frenzy. Commands like window manipulation will be executed

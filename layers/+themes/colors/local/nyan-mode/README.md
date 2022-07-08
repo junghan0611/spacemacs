@@ -1,12 +1,10 @@
-Description
-===========
+# Description
 
 Nyan Mode - Turn your Emacs into Nyanmacs! :) The mode is an analog
 indicator of your position in the buffer. The Cat should go from left to
 right in your mode-line, as you move your point from 0% to 100%.
 
-Features:
----------
+## Features:
 
 -   Mind dumbing content included,
 -   Experimental animation (M-x nyan-start-animation, M-x
@@ -16,16 +14,14 @@ Features:
     nyan-stop-music),
 -   Customizable properties.
 
-Fork modifications
-==================
+# Fork modifications
 
 -   the starting nyan cat image has no rainbow behind it,
 -   the starting rainbow image has zigzags,
 -   the animation loop is not endless and occurs only when nyan cat
     moves.
 
-Introduction
-============
+# Introduction
 
 **WARNING, MIND DUMBING CONTENT INSIDE.**
 
@@ -37,8 +33,7 @@ Nyanmacs is expanding!! [Read the story so
 far](https://web.archive.org/web/20190506122454/http://jacek.zlydach.pl/blog/2011-08-25-introducing-nyan-mode-el-turn-your-emacs-into-nyanmacs.html)!
 :).
 
-Using Nyan Mode with custom modeline
-------------------------------------
+## Using Nyan Mode with custom modeline
 
 For those who were asking, or are planning to, [Amit Patel
 shared](http://amitp.blogspot.com/2011/08/emacs-custom-mode-line.html)
@@ -50,8 +45,7 @@ He basically changed the mode-line-format to include:
 (:eval (list (nyan-create)))
 ```
 
-Known issues
-------------
+## Known issues
 
 It's my second attempt to write a minor mode in Emacs, so there will
 definiely be some bugs.
@@ -69,8 +63,7 @@ needed, do: M-x describe-variable \<ret\> image-library-alist \<ret\>.
 
 Customizing nyan-animate-nyancat is broken; don't do it.
 
-Credits
--------
+## Credits
 
 Code and idea inspired by sml-modeline.el, written by Lennart Borgman.
 See: <https://www.emacswiki.org/emacs/sml-modeline.el>

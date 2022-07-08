@@ -1,12 +1,10 @@
 ![](img/Chinese.png)
 
-Description
-===========
+# Description
 
 This layer adds support for traditional Chinese script to Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Support for the [Pinyin
     (拼音)](https://en.wikipedia.org/wiki/Pinyin) input method via
@@ -34,18 +32,15 @@ Features:
 -   Automatic joining of consecutive Chinese lines into a single long
     line without unwanted space when exporting org-mode to html.
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `chinese` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Configuration
--------------
+## Configuration
 
 ### Configure the Default Input Method (配置默认中文输入法)
 
@@ -202,8 +197,7 @@ want to disable it. You can set `chinese-enable-avy-pinyin` to `nil`.
                                                            chinese-enable-avy-pinyin nil)))
 ```
 
-Key bindings
-============
+# Key bindings
 
 Currently, there are no built-in key bindings for this layer. You could
 define your own preference.
@@ -211,18 +205,15 @@ define your own preference.
 Here are a few suggested key bindings (remember that `SPC o` is reserved
 for personal usage, spacemacs won´t put any binding under this prefix):
 
-Youdao Dictionary
------------------
+## Youdao Dictionary
 
 Bind `SPC o y` to `youdao-dictionary-search-at-point+`.
 
-Find-by-pinyin-dired
---------------------
+## Find-by-pinyin-dired
 
 Bind `SPC o d` to `find-by-pinyin-dired`
 
-Additional Notes
-================
+# Additional Notes
 
 If default ELPA repositories are slow in your network repository, you
 may try to use mirror sites. Add the following in

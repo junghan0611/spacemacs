@@ -1,10 +1,8 @@
-Description
-===========
+# Description
 
 This layer provides support for typographic text editing in Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Modes to automatically insert and cycle among typographic characters
 -   [Typo Mode](https://github.com/jorgenschaefer/typoel) automatically
@@ -13,8 +11,7 @@ Features:
 -   Tildify Mode automatically inserts non-breaking spaces where
     required (Only available on Emacs 25).
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `typography` to the existing
@@ -32,8 +29,7 @@ This setting enables automatic insertion of non-breaking spaces where
 required and automatic insertion and cycling among of typographic quotes
 and dashes.
 
-Key bindings
-============
+# Key bindings
 
 | Key bindings | Description                                                      |
 |--------------|------------------------------------------------------------------|
@@ -43,21 +39,19 @@ Key bindings
 
 The following key bindings are available in insert state.
 
-Typo Mode
----------
+## Typo Mode
 
 | Key bindings | Description                              |
 |--------------|------------------------------------------|
-| `​"​`        | Cycle among quotation marks              |
+| `​"​`          | Cycle among quotation marks              |
 | `` ` ``      | Cycle among left single quotation marks  |
-| `​'​`        | Cycle among right single quotation marks |
+| `​'​`          | Cycle among right single quotation marks |
 | `-`          | Cycle among dashes                       |
 | `.`          | Cycle among ellipsis                     |
 | `<`          | Cycle among left angle brackets          |
 | `>`          | Cycle among right angle brackets         |
 
-Tildify Mode
-------------
+## Tildify Mode
 
 | Key bindings | Description                             |
 |--------------|-----------------------------------------|

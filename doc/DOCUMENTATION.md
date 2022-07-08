@@ -1,5 +1,4 @@
-Core Pillars
-============
+# Core Pillars
 
 Four core pillars: Mnemonic, Discoverable, Consistent and
 "Crowd-Configured".
@@ -7,33 +6,28 @@ Four core pillars: Mnemonic, Discoverable, Consistent and
 If any of these core pillars are violated, open an issue and we'll try
 our best to fix it.
 
-Mnemonic
---------
+## Mnemonic
 
 Key bindings are organized using mnemonic prefixes like `b` for buffer,
 `p` for project, `s` for search, `h` for help, etc…
 
-Discoverable
-------------
+## Discoverable
 
 Innovative real-time display of available key bindings. Simple query
 system to quickly find available layers, packages, and more.
 
-Consistent
-----------
+## Consistent
 
 Similar functionalities have the same key binding everywhere, thanks to
 a clearly defined set of conventions. Documentation is mandatory for any
 layer that ships with Spacemacs.
 
-Crowd-Configured
-----------------
+## Crowd-Configured
 
 Community-driven configuration provides curated packages tuned by power
 users and bugs are fixed quickly.
 
-Highlighted features
-====================
+# Highlighted features
 
 -   **Bring the efficiency of modal editing** to the powerful Emacs lisp
     platform. Modal UX is optional and Spacemacs can be used with only
@@ -55,8 +49,7 @@ Highlighted features
 -   **Very active and helpful community** on `Gitter` and `IRC` (via
     Gitter IRC bridge)
 
-Screenshots
-===========
+# Screenshots
 
 ![](img/spacemacs-python.png) *Python*
 
@@ -64,8 +57,7 @@ Screenshots
 evolving quickly and the screenshots may not reflect exactly the current
 state of the project.
 
-Who can benefit from this?
-==========================
+# Who can benefit from this?
 
 -   Spacemacs was initially intended to be used by **Vim users** who
     want to go to the next level by using Emacs (see
@@ -87,11 +79,9 @@ Who can benefit from this?
     dynamic switching of editing style. A Vim user and an Emacs user can
     use the same Spacemacs comfortably.
 
-Update and Rollback
-===================
+# Update and Rollback
 
-Update Spacemacs repository
----------------------------
+## Update Spacemacs repository
 
 There are several methods of updating the core files and layer
 information for Spacemacs. However afterwards you should always update
@@ -134,8 +124,7 @@ will break the automatic update of Spacemacs on the master branch. To
 fork Spacemacs code you have to use a custom branch that you manage
 manually.
 
-Update packages
----------------
+## Update packages
 
 To update the Emacs packages used by Spacemacs press RET (enter) or
 click on the link `[Update Packages]` in the startup page under the
@@ -147,16 +136,14 @@ pressing `RET` or clicking on the `[Rollback Package Update]` link in
 the startup page and choosing a rollback slot (sorted by date). This
 button uses the command `configuration-layer/rollback`.
 
-Configuration layers
-====================
+# Configuration layers
 
 This section is an overview of layers. A more extensive introduction to
 writing configuration layers can be found
 [here](https://github.com/syl20bnr/spacemacs/blob/master/doc/LAYERS.org)
 (recommended reading!).
 
-Purpose
--------
+## Purpose
 
 Layers help collect related packages together to provide features. For
 example, the `python` layer provides auto-completion, syntax checking,
@@ -166,8 +153,7 @@ them from having to think about what packages to install. To install all
 the `python` features the user has just to add the `python` layer to
 their dotfile.
 
-Structure
----------
+## Structure
 
 Configuration is organized in layers. Each layer has the following
 structure:
@@ -204,8 +190,7 @@ Where:
 -   installed from an online source using
     [quelpa](https://github.com/quelpa/quelpa).
 
-Configure packages
-------------------
+## Configure packages
 
 ### With a layer
 
@@ -291,8 +276,7 @@ For example, to install `llvm-mode` and `dts-mode`:
 If you want to add some configuration for them, do so in the
 `dotspacemacs/user-config` function, or consider creating a layer.
 
-Packages synchronization
-------------------------
+## Packages synchronization
 
 Spacemacs will only install the packages that are explicitly used by the
 user. A package is considered to be used if its layer is used (i.e.
@@ -300,8 +284,7 @@ listed in `dotspacemacs-configuration-layers`). Any package that is not
 used will be considered an orphan and will be deleted at the next
 startup of Emacs.
 
-Types of configuration layers
------------------------------
+## Types of configuration layers
 
 There are two types of configuration layers:
 
@@ -309,15 +292,13 @@ There are two types of configuration layers:
     contributions shared by the community and merged upstream)
 -   private (in the `private` directory, they are ignored by Git)
 
-Submitting a configuration layer upstream
------------------------------------------
+## Submitting a configuration layer upstream
 
 If you decide to provide a configuration layer, please check the
 contribution guidelines first in
 [CONTRIBUTING](https://github.com/syl20bnr/spacemacs/blob/develop/COMMUNITY.org).
 
-Example: Themes Megapack example
---------------------------------
+## Example: Themes Megapack example
 
 This is a simple configuration layer listing a bunch of themes which you
 can find
@@ -334,8 +315,7 @@ Adding this layer will install around 100 themes; to uninstall them
 remove the layer from the `dotspacemacs-configuration-layers` and press
 `SPC f e R`.
 
-Managing private configuration layers
--------------------------------------
+## Managing private configuration layers
 
 Spacemacs's configuration system is flexible enough to let you manage
 your private layers in different ways.
@@ -369,28 +349,24 @@ The final main way to manage your private layers is to push them in a
 personal branch that you keep up to date with upstream `master` or
 `develop`.
 
-Tips for writing layers
------------------------
+## Tips for writing layers
 
 Please refer to
 [this](https://github.com/syl20bnr/spacemacs/blob/develop/doc/LAYERS.org)
 introduction for some tips on writing layers, and how to best make them
 fit with the Spacemacs philosophy and loading strategy.
 
-Dotfile Configuration
-=====================
+# Dotfile Configuration
 
 User configuration can be stored in your `~/.spacemacs` file.
 
-Dotfile Installation
---------------------
+## Dotfile Installation
 
 The very first time Spacemacs starts up, it will ask you several
 questions and then install the `.spacemacs` file in your `HOME`
 directory.
 
-Alternative dotdirectory
-------------------------
+## Alternative dotdirectory
 
 A dotdirectory `~/.spacemacs.d/` can be used instead of a dotfile. If
 you want to use this option, move `~/.spacemacs` to
@@ -404,8 +380,7 @@ symlinks to change the location of this directory.
 `~/.spacemacs.d/init.el`, so `~/.spacemacs` must not exist for
 `~/.spacemacs.d/init.el` to be used by Spacemacs.
 
-Synchronization of dotfile changes
-----------------------------------
+## Synchronization of dotfile changes
 
 To apply the modifications made in `~/.spacemacs` press `SPC f e R`. It
 will re-execute the Spacemacs initialization process.
@@ -425,8 +400,7 @@ either use `setq` expressions instead of toggle functions, or to use the
 It is possible to *skip* the execution of `dotspacemacs/user-config`
 with the universal argument (`SPC u SPC f e R`).
 
-Testing the dotfile
--------------------
+## Testing the dotfile
 
 You can use the command `SPC SPC dotspacemacs/test-dotfile` to check if
 your `~/.spacemacs` looks correct. This will check, among other things,
@@ -434,8 +408,7 @@ whether the declared layers can be found and that the variables have
 sensible values. These tests are also run automatically when you
 synchronize with `SPC f e R`.
 
-Dotfile Contents
-----------------
+## Dotfile Contents
 
 ### Configuration functions
 
@@ -480,8 +453,7 @@ responsibility to load this file at the appropriate time. Often the best
 time to load it is just after setting the value for `custom-file` in the
 `dotspacemacs/user-init` function.
 
-Declaring Configuration layers
-------------------------------
+## Declaring Configuration layers
 
 To use a configuration layer, declare it in your dotfile by adding it to
 the `dotspacemacs-configuration-layers` variable of your `~/.spacemacs`.
@@ -632,10 +604,10 @@ For instance, to disable the `rainbow-delimiters` package:
 When you exclude a package, Spacemacs will automatically delete it for
 you the next time you launch Emacs or at the next dotfile
 synchronization. All the orphan dependencies are also deleted
-automatically. Excluding a package effectively remove <span
-class="underline">all</span> references to it in Spacemacs without
-breaking the rest of the configuration, this is a powerful feature which
-allows you to quickly remove any feature from Spacemacs.
+automatically. Excluding a package effectively remove <u>all</u>
+references to it in Spacemacs without breaking the rest of the
+configuration, this is a powerful feature which allows you to quickly
+remove any feature from Spacemacs.
 
 **Note**: A few packages are essential for Spacemacs to correctly
 operate, those packages are protected and cannot be excluded or
@@ -643,11 +615,9 @@ uninstalled even if they become orphans or are excluded. `use-package`
 is an example of a protected package that cannot be removed from
 Spacemacs.
 
-Concepts
-========
+# Concepts
 
-Editing Styles
---------------
+## Editing Styles
 
 Spacemacs comes with several editing styles which can be switched
 dynamically providing an easier way to do pair programming, for instance
@@ -757,8 +727,7 @@ Default configuration is:
 To toggle the hybrid style on and off use `SPC t E h` and `M-m t E h`.
 When off the `vim` style is enabled.
 
-States
-------
+## States
 
 Spacemacs has 10 states:
 
@@ -778,8 +747,7 @@ Spacemacs has 10 states:
 
 **Note**: Technically speaking there is also the `operator` evil state.
 
-Special mode (and its derived modes) buffers
---------------------------------------------
+## Special mode (and its derived modes) buffers
 
 Special-mode is a [basic major
 mode](https://www.gnu.org/software/emacs/manual/html_node/elisp/Basic-Major-Modes.html)
@@ -790,8 +758,7 @@ for read-only buffers, and Spacemacs opens special-mode buffers, or
 buffer with major modes derived from special-mode, in motion-state by
 default.
 
-Evilified modes
----------------
+## Evilified modes
 
 Some buffers are not for editing text and provide their own key bindings
 for certain operations. These often conflict with Vim bindings. To make
@@ -814,8 +781,7 @@ In addition to this, `C-g`, being an important escape key in Emacs, is
 skipped. So anything bound to `g` originally will be found on `C-G`,
 since `g`, `G` and `C-g` are all reserved.
 
-Evil leader
------------
+## Evil leader
 
 Spacemacs uses a leader key to bind almost all its key bindings.
 
@@ -836,8 +802,7 @@ here are a few examples:
 -   Save all opened buffers: `SPC f S`
 -   Open (switch) to a buffer: `SPC b b`
 
-Universal argument
-------------------
+## Universal argument
 
 The universal argument `C-u` is an important command in Emacs but it is
 also a very handy Vim key binding to scroll up.
@@ -845,8 +810,7 @@ also a very handy Vim key binding to scroll up.
 Spacemacs binds `C-u` to `scroll-up` and changes the universal argument
 binding to `SPC u`.
 
-Transient-states
-----------------
+## Transient-states
 
 Spacemacs defines a wide variety of `transient states` (temporary
 overlay maps) where it makes sense. This prevents one from doing
@@ -862,8 +826,7 @@ state](#text):
 
 ![](img/spacemacs-scale-transient-state.png)
 
-Toggles
--------
+## Toggles
 
 Spacemacs tries to unify the interface to handle toggles using a custom
 macro called `spacemacs|add-toggle`.
@@ -916,8 +879,7 @@ variants of this function for each supported major mode like
 (spacemacs/toggle-nameless-on-register-hook-emacs-lisp-mode)
 ```
 
-Differences between Vim, Evil and Spacemacs
-===========================================
+# Differences between Vim, Evil and Spacemacs
 
 -   The `​,​` key does repeat last `f`, `t`, `F`, or `T` command in
     opposite direction in `Vim`, but in Spacemacs it is the major mode
@@ -926,8 +888,7 @@ Differences between Vim, Evil and Spacemacs
 
 Send a PR to add the differences you found in this section.
 
-The vim-surround case
----------------------
+## The vim-surround case
 
 There is one obvious visible difference though. It is not between `Evil`
 and `Vim` but between Spacemacs and
@@ -955,8 +916,7 @@ default `Vim + vim-surround` setup (add it to your
 (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)
 ```
 
-Evil plugins
-============
+# Evil plugins
 
 Spacemacs ships with the following evil plugins:
 
@@ -973,14 +933,12 @@ Spacemacs ships with the following evil plugins:
 | [evil-visualstar](https://github.com/bling/evil-visualstar)                               | search for current selection with `*`                                     |
 | [Treemacs](https://github.com/Alexander-Miller/treemacs)                                  | a file explorer like [NERD Tree](https://github.com/scrooloose/nerdtree)  |
 
-Environment variables and PATH
-==============================
+# Environment variables and PATH
 
 Environment variables are handled by the function
 `dotspacemacs/user-env` of your dotfile.
 
-Default behavior
-----------------
+## Default behavior
 
 By default, the function `dotspacemacs/user-env` only calls the function
 `spacemacs/load-spacemacs-env` which loads the environment variables
@@ -999,8 +957,7 @@ It is possible to force a new import of system and shell environment
 variables with `SPC f e C-e`. Note that this action will overwrite
 `~/.spacemacs.env`.
 
-Managing environment variables by yourself
-------------------------------------------
+## Managing environment variables by yourself
 
 For full flexibility you can bypass the default behavior simply by
 removing the call to `spacemacs/load-spacemacs-env` from your
@@ -1016,8 +973,7 @@ opening the file `~/.spacemacs.env`. In all cases `SPC f e E` calls the
 function `dotspacemacs/user-env` so you can update your variables in
 place.
 
-Note about the function dotspacemacs/user-env
----------------------------------------------
+## Note about the function dotspacemacs/user-env
 
 It's possible that you don't have this function defined if you have an
 older dotfile. It is recommended to update your dotfile by adding this
@@ -1025,8 +981,7 @@ function, see the file `~/.emacs.d/core/template/.spacemacs.template` to
 copy it. If you don't create such function then Spacemacs assumes you
 are using the default behavior described above.
 
-Binding keys
-============
+# Binding keys
 
 To be compatible with all Spacemacs bindings, please refer to
 [Conventions](https://github.com/syl20bnr/spacemacs/blob/master/doc/CONVENTIONS.org#key-bindings-conventions).
@@ -1099,8 +1054,7 @@ prefix declaration must be include).
 There is much more to say about bindings keys, but these are the basics.
 Keys can be bound in your `~/.spacemacs` file or in individual layers.
 
-GUI Elements
-============
+# GUI Elements
 
 Spacemacs has a minimalistic and distraction free graphical UI:
 
@@ -1112,8 +1066,7 @@ Spacemacs has a minimalistic and distraction free graphical UI:
 -   [custom fringe bitmaps](#errors-handling) and error feedbacks for
     [Flycheck](https://github.com/flycheck/flycheck)
 
-Color themes
-------------
+## Color themes
 
 ### Default theme
 
@@ -1190,8 +1143,7 @@ Merrell](https://twitter.com/robmerrell).
     explanations can be found on [emacs-color-theme-solarized
     webpage](https://github.com/sellout/emacs-color-theme-solarized#important-note-for-terminal-users).
 
-Font
-----
+## Font
 
 The default font used by Spacemacs is [Source Code
 Pro](https://github.com/adobe-fonts/source-code-pro) by Adobe. It is
@@ -1255,8 +1207,7 @@ any valid property of a
     'iso8859-1'. The value should be a string or a symbol.
 -   `:script` The script that the font must support (a symbol).
 
-GUI Toggles
------------
+## GUI Toggles
 
 Some graphical UI indicators can be toggled on and off (toggles start
 with `t` and `T`):
@@ -1387,8 +1338,7 @@ non-text-mode buffers:
 (setq-default dotspacemacs-line-numbers '(:enabled-for-modes 'all))
 ```
 
-Mode-line
----------
+## Mode-line
 
 ### Mode-line themes
 
@@ -1634,8 +1584,7 @@ prefix have plain squared symbols like `🅿`.
 | `SPC t C-W`   | `Ⓦ`     | W     | automatic whitespace cleanup globally                                                                                                         |
 | `SPC t y`     | `ⓨ`     | y     | [yasnippet](https://github.com/capitaomorte/yasnippet) mode                                                                                   |
 
-Frame
------
+## Frame
 
 ### Title
 
@@ -1689,15 +1638,13 @@ In the transient state:
 | `T`           | toggle transparency on and off |
 | `q`           | quit transient state           |
 
-Layouts and workspaces
-======================
+# Layouts and workspaces
 
 Layouts are window configurations with buffer isolation. Each layout can
 define several workspaces (think of them as sub-layouts), sharing the
 same list of buffers as their parent layout.
 
-Layouts
--------
+## Layouts
 
 A layout is a window configuration associated with a list of buffers.
 The list of buffers can be an arbitrarily chosen set of buffers.
@@ -1862,8 +1809,7 @@ redefine the complete list using layer variables:
                      my-func))
 ```
 
-Workspaces
-----------
+## Workspaces
 
 Workspaces are sub-layouts, they allow to define multiple layouts into a
 given layout, those layouts share the same buffers as the parent layout.
@@ -1914,11 +1860,9 @@ workspaces:
 | `gT`        | go to previous workspace             |
 | `SPC b W`   | go to workspace and window by buffer |
 
-Commands
-========
+# Commands
 
-Vim key bindings
-----------------
+## Vim key bindings
 
 Spacemacs is based on the `Vim` modal user interface to navigate and
 edit text. If you are not familiar with the `Vim` way of editing text,
@@ -2016,8 +1960,7 @@ Additional text objects are defined in Spacemacs:
 | `%`     | text between `%`           |
 | `\vert` | text between `\vert`       |
 
-Reserved prefix command for user
---------------------------------
+## Reserved prefix command for user
 
 `SPC o` and `SPC m o` are reserved for the user. Setting key bindings
 behind these is **guaranteed** to never conflict with Spacemacs default
@@ -2027,8 +1970,7 @@ key bindings.
 `dotspacemacs/user-config` in your `~/.spacemacs` file, to be able to
 use `SPC o c` to run org mode capture.
 
-Completion
-----------
+## Completion
 
 Spacemacs is powered by one of two incremental completion and selection
 narrowing frameworks: [Helm](https://github.com/emacs-helm/helm)
@@ -2054,8 +1996,7 @@ and
 open the `spacemacs-help` menu with `SPC h SPC` and type `helm` or `ivy`
 then `return`.
 
-Discovering
------------
+## Discovering
 
 ### Key bindings
 
@@ -2252,8 +2193,7 @@ The following actions are available on selected toggle:
 
 -   default: toggle on/off
 
-Navigating
-----------
+## Navigating
 
 ### Point/Cursor
 
@@ -2829,8 +2769,7 @@ PDF, OpenDocument, and Microsoft Office documents.
 | `C-c C-c`   | toggle display text and image display    |
 | `C-c C-t`   | open new buffer with doc's text contents |
 
-Auto-saving
------------
+## Auto-saving
 
 ### Frequency of auto-saving
 
@@ -2861,8 +2800,7 @@ To disable auto-saving set the variable
 You can toggle auto-save in a buffer by calling the command
 `auto-save-mode`.
 
-Searching
----------
+## Searching
 
 ### With an external tool
 
@@ -3118,8 +3056,7 @@ bindings.
 
 To list all the symbols of a buffer press `SPC s j`
 
-Editing
--------
+## Editing
 
 ### Paste text
 
@@ -3167,7 +3104,7 @@ Text related commands (start with `x`):
 | `SPC x a ]`   | align region at \]                                            |
 | `SPC x a {`   | align region at {                                             |
 | `SPC x a }`   | align region at }                                             |
-| `SPC x a ​,​` | align region at ,                                             |
+| `SPC x a ​,​`   | align region at ,                                             |
 | `SPC x a .`   | align region at . (for numeric tables)                        |
 | `SPC x a :`   | align region at :                                             |
 | `SPC x a ;`   | align region at ;                                             |
@@ -3569,22 +3506,22 @@ structure:
 -   `SPC x r <source> <target>` convert from source to target
 -   `SPC x r` do what I mean
 
-| Key binding    | Description                                                                            |
-|----------------|----------------------------------------------------------------------------------------|
-| `SPC x r /`    | Explain the regexp around point with `rx`                                              |
+| Key binding   | Description                                                                            |
+|---------------|----------------------------------------------------------------------------------------|
+| `SPC x r /`   | Explain the regexp around point with `rx`                                              |
 | `SPC x r '​`   | Generate strings given by a regexp given this list is finite                           |
-| `SPC x r t`    | Replace regexp around point by the `rx` form or vice versa                             |
-| `SPC x r x`    | Convert regexp around point in `rx` form and display the result in the minibuffer      |
-| `SPC x r c`    | Convert regexp around point to the other form and display the result in the minibuffer |
-| `SPC x r e /`  | Explain Emacs Lisp regexp                                                              |
+| `SPC x r t`   | Replace regexp around point by the `rx` form or vice versa                             |
+| `SPC x r x`   | Convert regexp around point in `rx` form and display the result in the minibuffer      |
+| `SPC x r c`   | Convert regexp around point to the other form and display the result in the minibuffer |
+| `SPC x r e /` | Explain Emacs Lisp regexp                                                              |
 | `SPC x r e '​` | Generate strings from Emacs Lisp regexp                                                |
-| `SPC x r e p`  | Convert Emacs Lisp regexp to PCRE                                                      |
-| `SPC x r e t`  | Replace Emacs Lisp regexp by `rx` form or vice versa                                   |
-| `SPC x r e x`  | Convert Emacs Lisp regexp to `rx` form                                                 |
-| `SPC x r p /`  | Explain PCRE regexp                                                                    |
+| `SPC x r e p` | Convert Emacs Lisp regexp to PCRE                                                      |
+| `SPC x r e t` | Replace Emacs Lisp regexp by `rx` form or vice versa                                   |
+| `SPC x r e x` | Convert Emacs Lisp regexp to `rx` form                                                 |
+| `SPC x r p /` | Explain PCRE regexp                                                                    |
 | `SPC x r p '​` | Generate strings from PCRE regexp                                                      |
-| `SPC x r p e`  | Convert PCRE regexp to Emacs Lisp                                                      |
-| `SPC x r p x`  | Convert PCRE to `rx` form                                                              |
+| `SPC x r p e` | Convert PCRE regexp to Emacs Lisp                                                      |
+| `SPC x r p x` | Convert PCRE to `rx` form                                                              |
 
 ### Deleting files
 
@@ -3838,8 +3775,7 @@ shown):
 -   double click in line number margin visually select the current code
     block
 
-Comparing (diff)
-----------------
+## Comparing (diff)
 
 To compare buffers, files, directories or even windows use the prefix
 `SPC D`. Spacemacs uses the powerful embedded `ediff` to do comparisons,
@@ -3876,8 +3812,7 @@ All `ediff` commands starts with D:
 | `SPC D w l`   | compare linewise the portions of visible text of 2 windows which are selected by clicking                                         |
 | `SPC D w w`   | compare wordwise the portions of visible text of 2 windows which are selected by clicking                                         |
 
-Managing projects
------------------
+## Managing projects
 
 Projects in Spacemacs are managed with
 [projectile](https://github.com/bbatsov/projectile). In `projectile`
@@ -3891,7 +3826,7 @@ To search in a project see [project searching](#searching-in-a-project).
 
 | Key binding | Description                                                                              |
 |-------------|------------------------------------------------------------------------------------------|
-| `SPC p '​`  | open a shell in project's root (with the `shell` layer)                                  |
+| `SPC p '​`   | open a shell in project's root (with the `shell` layer)                                  |
 | `SPC p !`   | run shell command in project's root                                                      |
 | `SPC p &`   | run async shell command in project's root                                                |
 | `SPC p %`   | replace a regexp                                                                         |
@@ -3930,8 +3865,7 @@ To search in a project see [project searching](#searching-in-a-project).
 **Note for Windows Users**: To enable fast indexing the GNU `find` or
 Cygwin `find` must be in your `PATH`.
 
-Registers
----------
+## Registers
 
 Access commands to the various registers start with `r`:
 
@@ -3942,8 +3876,7 @@ Access commands to the various registers start with `r`:
 | `SPC r r`   | show helm register                 |
 | `SPC r y`   | show kill ring                     |
 
-Errors handling
----------------
+## Errors handling
 
 Spacemacs uses [Flycheck](https://github.com/flycheck/flycheck) to gives
 error feedback on the fly. The checks are only performed at save time by
@@ -3987,8 +3920,7 @@ The following key bindings are active in the error transient state:
 | ![](img/dot-warning.png) | warning     |
 | ![](img/dot-info.png)    | Info        |
 
-Compiling
----------
+## Compiling
 
 Spacemacs binds a few commands to support compiling a project.
 
@@ -4001,8 +3933,7 @@ Spacemacs binds a few commands to support compiling a project.
 | `SPC c m`   | `helm-make`                    |
 | `SPC c r`   | recompile                      |
 
-Quickrun
---------
+## Quickrun
 
 Spacemacs can execute current buffer or region.
 
@@ -4011,8 +3942,7 @@ Spacemacs can execute current buffer or region.
 | `SPC x x`   | smart `quickrun` or `quickrun-region`             |
 | `C-g`       | to dismiss a quickrun buffer without selecting it |
 
-EditorConfig
-============
+# EditorConfig
 
 Spacemacs has support for [EditorConfig](http://editorconfig.org/), a
 configuration file to "define and maintain consistent coding styles
@@ -4025,8 +3955,7 @@ To customize your editorconfig experience, read [the editorconfig-emacs
 package's
 documentation](https://github.com/editorconfig/editorconfig-emacs/blob/master/README.md#customize).
 
-Emacs Server
-============
+# Emacs Server
 
 Spacemacs provides the ability to start a server at launch, and to kill
 that server whenever you close your Emacs windows. This can be enabled
@@ -4037,8 +3966,7 @@ by setting the variable `dotspacemacs-enable-server` to `t` in your
 (setq-default dotspacemacs-enable-server t)
 ```
 
-Connecting to the Emacs server
-------------------------------
+## Connecting to the Emacs server
 
 You can open a file in Emacs from the terminal using `emacsclient`. Use
 `emacsclient -c` to open the file in Emacs GUI. Use `emacsclient -t` to
@@ -4075,8 +4003,7 @@ See [Emacs as a
 Server](https://www.gnu.org/software/emacs/manual/html_node/emacs/Emacs-Server.html)
 in the official Emacs manual for more details.
 
-Keeping the server alive
-------------------------
+## Keeping the server alive
 
 It is possible to keep the server alive when you close Emacs by setting
 the variable `dotspacemacs-persistent-server` to `t` in your
@@ -4099,11 +4026,9 @@ the server is to use the following bindings:
 | `SPC q t`   | Restart Emacs and debug with –with-timed-requires                        |
 | `SPC q T`   | Restart Emacs and debug with –adv-timers                                 |
 
-Troubleshoot
-============
+# Troubleshoot
 
-Loading fails
--------------
+## Loading fails
 
 If any errors happen during the loading the mode-line will turn red and
 the errors should appear inline in the startup buffer. Spacemacs should
@@ -4111,16 +4036,14 @@ still be usable; if it is not then restart Emacs with
 `emacs --debug-init` and open a [GitHub
 issue](https://github.com/syl20bnr/spacemacs/issues) with the backtrace.
 
-Upgrading/Downgrading Emacs version
------------------------------------
+## Upgrading/Downgrading Emacs version
 
 To ensure that packages are correctly compiled for the new Emacs version
 you installed, be sure to run the interactive command
 `spacemacs/recompile-elpa` with
 `SPC u SPC SPC spacemacs/recompile-elpa`.
 
-General layer errors
---------------------
+## General layer errors
 
 It happens from time to time that some of the layers go stale and stop
 working properly for some commands. If this happens stay calm and try to
@@ -4145,8 +4068,7 @@ page](https://github.com/syl20bnr/spacemacs/issues).
     saying that you should answer him politely and assist in testing a
     possible fix.
 
-General emacs package errors
-----------------------------
+## General emacs package errors
 
 It can also happen that your issue is not related to any layer but
 rather to a specific package in the emacs universe. In this case you
@@ -4190,11 +4112,9 @@ its ticket number so it is clear when this issue can be retested.
     required in the spacemacs issue template and add missing information
     when required from the package maintainers.
 
-Achievements
-============
+# Achievements
 
-Issues
-------
+## Issues
 
 | Achievements                                                                        | Account                                       |
 |-------------------------------------------------------------------------------------|-----------------------------------------------|
@@ -4218,8 +4138,7 @@ Issues
 | [9000th issue (bug)](https://github.com/syl20bnr/spacemacs/issues/9000)             | [shaunpatel](https://github.com/shaunpatel)   |
 | [10000th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/10000)              | [nikital](https://github.com/nikital)         |
 
-Merged Pull Requests
---------------------
+## Merged Pull Requests
 
 | Achievements                                                           | Account                                             |
 |------------------------------------------------------------------------|-----------------------------------------------------|
@@ -4233,8 +4152,7 @@ Merged Pull Requests
 | [2000th pull request](https://github.com/syl20bnr/spacemacs/pull/4089) | [channingwalton](https://github.com/channingwalton) |
 | [3000th pull request](https://github.com/syl20bnr/spacemacs/pull/6338) | [darkfeline](https://github.com/darkfeline)         |
 
-Stars, forks and watchers
--------------------------
+## Stars, forks and watchers
 
 | Achievements                         | Account                                               |
 |--------------------------------------|-------------------------------------------------------|
@@ -4263,16 +4181,14 @@ Stars, forks and watchers
 | 15000th star :star: :star:           | [missingfaktor](https://github.com/missingfaktor)     |
 | 20000th star! :scream<sub>cat</sub>: | [davehorner](https://github.com/davehorner)           |
 
-Gitter chat
------------
+## Gitter chat
 
 | Achievements                    | Account                                       |
 |---------------------------------|-----------------------------------------------|
 | First joiner on the Gitter Chat | [trishume](https://github.com/trishume)       |
 | 1000th joiner                   | [gabrielpoca](https://github.com/gabrielpoca) |
 
-First times
------------
+## First times
 
 | Achievements                                                                                                      | Account                                         |
 |-------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
@@ -4281,8 +4197,7 @@ First times
 | [First blog article on Spacemacs](http://oli.me.uk/2014/11/06/spacemacs-emacs-vim/)                               | Wolfy87                                         |
 | [First contributed banner](https://github.com/syl20bnr/spacemacs/commit/7b44a56263049482ed540ed6815a295633ffe9d1) | [chrisbarrett](https://github.com/chrisbarrett) |
 
-Special Mentions
-----------------
+## Special Mentions
 
 | Reason                                                                                           | Account                                               |
 |--------------------------------------------------------------------------------------------------|-------------------------------------------------------|
@@ -4296,8 +4211,7 @@ Special Mentions
 | Code navigation improvement (jump handlers, generalized next error)                              | [TheBB](https://github.com/TheBB)                     |
 | Better support for GUI using an Emacs daemon (after-display macro)                               | [travisbhartwell](https://github.com/travisbhartwell) |
 
-Special Titles
---------------
+## Special Titles
 
 | Achievements                                                                                                                               | Account                                           |
 |--------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -4316,8 +4230,7 @@ Special Titles
 | The Ticketmaster                                                                                                                           | [StreakyCobra](https://github.com/StreakyCobra)   |
 | The ASCII Scribe                                                                                                                           | [JAremko](https://github.com/JAremko)             |
 
-Thank you
-=========
+# Thank you
 
 Thank you Richard for this great piece of software.
 

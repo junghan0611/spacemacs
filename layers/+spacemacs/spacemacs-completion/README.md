@@ -1,5 +1,4 @@
-Description
-===========
+# Description
 
 This layer does basic setup for completion frameworks like `helm`, `ivy`
 and `ido`.
@@ -12,8 +11,7 @@ only `helm`).
 Advanced configuration of these packages can be found in their
 respective layers in `+completion` layer directory.
 
-Features:
----------
+## Features:
 
 -   Base preconfiguration of `helm` and `ivy` for other layers to use.
 -   Basic support for `ido-navigation` configuration and transient

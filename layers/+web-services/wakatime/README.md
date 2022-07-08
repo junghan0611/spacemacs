@@ -1,7 +1,6 @@
 ![](img/wakatime.png)
 
-Description
-===========
+# Description
 
 This layer adds support for Wakatime.
 
@@ -12,16 +11,13 @@ time you spend programming so you never have to manually track it again!
 
 P.S. wakati means time in Swahili
 
-Features:
----------
+## Features:
 
 -   Integration with Wakatime cloud based time tracking service
 
-Install
-=======
+# Install
 
-Wakatime Program
-----------------
+## Wakatime Program
 
 You can follow wakatime installation instructions here
 <https://github.com/wakatime/wakatime-mode>.
@@ -38,8 +34,7 @@ And for some linux users
 sudo pip install wakatime
 ```
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `wakatime` to the existing
@@ -75,8 +70,7 @@ config:
 
 Everything you set there won't appear in the bug submitting tool.
 
-API Keys
---------
+## API Keys
 
 After this go to your wakatime account and have your API key handy
 <https://wakatime.com/settings/account?apikey=true>.

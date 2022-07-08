@@ -1,11 +1,9 @@
-Description
-===========
+# Description
 
 This layer adds various adjustments to packages to create an evilified
 experience throughout the entirety of Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Add evil tutorial with `evil-tutor`
 -   Add relative line number with `linum-relative` (only in Emacs 25.x
@@ -36,14 +34,12 @@ Features:
 -   Display tildes in non-buffer area with `vi-tilde-fringe`
 -   Add `evil-collection`
 
-Install
-=======
+# Install
 
 The `spacemacs-evil` layer is included by default in the Spacemacs
 distribution.
 
-Note about evil-collection
-==========================
+# Note about evil-collection
 
 [evil-collection](https://github.com/emacs-evil/evil-collection) is a
 collection of Evil bindings for the parts of Emacs that Evil does not

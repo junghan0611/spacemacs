@@ -1,12 +1,10 @@
 ![](img/ror.png)
 
-Description
-===========
+# Description
 
 This layer aims at providing support for the Ruby on Rails framework.
 
-Features:
----------
+## Features:
 
 -   Quick file navigation with with
     [projectile-rails](https://github.com/asok/projectile-rails)
@@ -15,18 +13,15 @@ Features:
 -   Rake runner
 -   Interactive Rails console
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `ruby-on-rails` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Key bindings
-============
+# Key bindings
 
-Code Navigation
----------------
+## Code Navigation
 
 | Key binding   | Description                                                     |
 |---------------|-----------------------------------------------------------------|
@@ -69,15 +64,13 @@ Code Navigation
 | `SPC m f g z` | go to spec helper                                               |
 | `SPC m f g .` | go to file at point (faster but less powerful than `SPC m g g`) |
 
-Refactoring
------------
+## Refactoring
 
 | Key binding   | Description                 |
 |---------------|-----------------------------|
 | `SPC m f R x` | extract region into partial |
 
-RUN commands
-------------
+## RUN commands
 
 | Key binding   | Description          |
 |---------------|----------------------|
@@ -88,8 +81,7 @@ RUN commands
 | `SPC m f s r` | reload Rails project |
 | `SPC m f x s` | start rails server   |
 
-Ex-commands
------------
+## Ex-commands
 
 | Key binding | Description                             |
 |-------------|-----------------------------------------|

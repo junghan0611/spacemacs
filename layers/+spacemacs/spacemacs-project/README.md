@@ -1,10 +1,8 @@
-Description
-===========
+# Description
 
 This layer tweaks `projectile` to integrate nicely into Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Setup of `projectile` key bindings, including functions for project
     search, switching, version control and compilation.

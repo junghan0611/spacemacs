@@ -1,27 +1,22 @@
-Description
-===========
+# Description
 
 This layer adds support for tabs. Implementation is done using [Centaur
 Tabs](https://github.com/ema2159/centaur-tabs).
 
-Features:
----------
+## Features:
 
 -   Sets up tabs using Centaur tabs as backend
 -   Optionally auto hide tabs after delay
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `tabs` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Configuration
-=============
+# Configuration
 
-Selected tab bar
-----------------
+## Selected tab bar
 
 To display a bar in the given direction to the selected tab, set
 `tabs-highlight-current-tab` to one of `left` (default), `under`,
@@ -36,8 +31,7 @@ For example,
 
 Note that this has no effect when Emacs is running in daemon mode.
 
-Hide tabs after a delay
------------------------
+## Hide tabs after a delay
 
 You can set hooks for buffers in which it isn't desired to have tabs by
 customizing `centaur-tabs-hide-tabs-hooks`.
@@ -53,8 +47,7 @@ your `.spacemacs`:
                      tabs-auto-hide-delay 3))
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                           |
 |-------------|-------------------------------------------------------|

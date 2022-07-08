@@ -1,18 +1,15 @@
-Description
-===========
+# Description
 
 This layer installs around 100 themes for Emacs.
 
-Features:
----------
+## Features:
 
 -   Have access to all included themes in this [theme
     gallery](http://themegallery.robdor.com) from [Rob
     Merrell](http://www.twitter.com/robmerrell).
 -   Easily try a theme by invoking helm-themes with: `SPC T s`.
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `themes-megapack` to the existing

@@ -1,25 +1,21 @@
-Description
-===========
+# Description
 
 This layer provides a REPL-like interface for http requests.
 
-Features:
----------
+## Features:
 
 -   REPL for http requests via
     [restclient](https://github.com/pashky/restclient.el)
 -   Alternative `org` integration via
     [ob-http](http://github.com/zweifisch/ob-http)
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `restclient` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Configuration
-=============
+# Configuration
 
 By default the layer uses
 [restclient](https://github.com/pashky/restclient.el). To use `org` via
@@ -29,8 +25,7 @@ variable `restclient-use-org` to `t`.
 Note that both `restclient` and `ob-http` are always installed so you
 can choose the mode at any time.
 
-Restclient
-==========
+# Restclient
 
 Any file with an `.http` extension is opened in a `restclient` buffer.
 Full documentation and examples can be found in the package's [GitHub
@@ -41,13 +36,13 @@ There is support for `org-babel` and `restclient` code blocks, for
 instance:
 
 ``` example
+
 #+BEGIN_SRC restclient
   GET http://example.com
 #+END_SRC
 ```
 
-Key bindings
-------------
+## Key bindings
 
 | Key binding | Description                                                 |
 |-------------|-------------------------------------------------------------|
@@ -60,8 +55,7 @@ Key bindings
 | `SPC m R`   | Send and switch window (do not attempt to pretty-print)     |
 | `SPC m y`   | Copy query under the cursor as a curl command               |
 
-ob-http
-=======
+# ob-http
 
 Any file with an `.http` extension is opened in an `org` buffer with org
 babel configured to use `ob-http`. Full documentation and examples can

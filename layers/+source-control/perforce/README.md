@@ -1,18 +1,15 @@
 ![](img/p4.png)
 
-Description
-===========
+# Description
 
 This layer integrates `Perforce` SCM system into Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Support for running [Perforce](https://www.perforce.com/) (p4) SCM
     commands directly from Emacs.
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `perforce` to the existing
@@ -28,8 +25,7 @@ Don't forget to setup the environment variables:
 -   `P4_USER`
 -   `P4_PASSWD`
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                                  |
 |-------------|--------------------------------------------------------------|

@@ -1,12 +1,10 @@
 ![](img/octave.png)
 
-Description
-===========
+# Description
 
 This layer adds support for `GNU Octave` files to Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting for `.m` files via
     [octave-mode](https://www.gnu.org/software/emacs/manual/html_mono/octave-mode.html).
@@ -14,8 +12,7 @@ Features:
 -   Support for directly running `Octave` scripts from Emacs.
 -   Integration with `Octaves` documentation search function.
 
-Install
-=======
+# Install
 
 Make sure that [GNU Octave](https://www.gnu.org/software/octave/) is
 installed and in your PATH. For information about setting up $PATH,
@@ -25,11 +22,9 @@ To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `octave` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Key bindings
-============
+# Key bindings
 
-Inferior REPL process
----------------------
+## Inferior REPL process
 
 Send code to inferior process with these commands:
 
@@ -42,8 +37,7 @@ Send code to inferior process with these commands:
 | `SPC m s l` | send line                             |
 | `SPC m s r` | send region                           |
 
-Helpers
--------
+## Helpers
 
 | Key binding | Description                              |
 |-------------|------------------------------------------|

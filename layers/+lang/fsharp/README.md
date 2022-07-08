@@ -1,36 +1,31 @@
 ![](img/fsharp.png)
 
-Description
-===========
+# Description
 
-This layer adds support for F\# language using
+This layer adds support for F# language using
 [fsharpbinding](https://github.com/fsharp/fsharpbinding) and
 [fsharp-mode](https://github.com/fsharp/fsharpbinding).
 
-Features:
----------
+## Features:
 
 -   Auto-completion
 -   Syntax-checking
 -   Syntax highlighting
 -   REPL
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `fsharp` to the existing `dotspacemacs-configuration-layers`
 list in this file. In addition you require the .NET Core executable in
 your path.
 
-Configuration
-=============
+# Configuration
 
 All layer configurations can be done by setting layer variables in your
 dotfile. No custom user config lines are necessary
 
-Choosing a backend
-------------------
+## Choosing a backend
 
 This layer provides two alternative backends to choose from.
 
@@ -74,23 +69,21 @@ NOTE: Key bindings for LSP are defined in the LSP layer. Also it is
 advisable to have a look at the autocomplete layer for an optimal
 intellisense config for LSP.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description          |
 |-------------|----------------------|
 | `SPC m c c` | Build the project    |
 | `SPC m g a` | Go to alternate file |
 
-REPL
-----
+## REPL
 
-| Key binding               | Description                                                      |
-|---------------------------|------------------------------------------------------------------|
-| `SPC m s b`               | Send buffer to the REPL                                          |
-| `SPC m s B`               | Send buffer to the REPL and switch to the REPL in `insert state` |
+| Key binding              | Description                                                      |
+|--------------------------|------------------------------------------------------------------|
+| `SPC m s b`              | Send buffer to the REPL                                          |
+| `SPC m s B`              | Send buffer to the REPL and switch to the REPL in `insert state` |
 | `SPC m s i` or `SPC m '​` | Start a REPL process                                             |
-| `SPC m s p`               | Send phrase to the REPL                                          |
-| `SPC m s P`               | Send phrase to the REPL and switch to the REPL in `insert state` |
-| `SPC m s r`               | Send region to the REPL                                          |
-| `SPC m s R`               | Send region to the REPL and switch to the REPL in `insert state` |
+| `SPC m s p`              | Send phrase to the REPL                                          |
+| `SPC m s P`              | Send phrase to the REPL and switch to the REPL in `insert state` |
+| `SPC m s r`              | Send region to the REPL                                          |
+| `SPC m s R`              | Send region to the REPL and switch to the REPL in `insert state` |

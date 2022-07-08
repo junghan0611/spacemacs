@@ -1,13 +1,11 @@
 ![](img/ps.png)
 
-Description
-===========
+# Description
 
 This simple layer adds support for the Powershell scripting language as
 well as support for batch files.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting of powershell `.ps1` files via
     [powershell.el](https://github.com/jschaf/powershell.el)
@@ -16,26 +14,22 @@ Features:
 -   Auto-completion, code-navigation and refactoring capabilities of
     batch files via [bmx-mode](https://github.com/josteink/bmx-mode)
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `windows-scripts` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Key bindings
-============
+# Key bindings
 
-Powershell (powershell.el)
---------------------------
+## Powershell (powershell.el)
 
 | Key binding   | Description                      |
 |---------------|----------------------------------|
 | `SPC m r r`   | Transform marked regexp to regex |
 | `SPC a t s p` | Start powershell shell           |
 
-Bat-mode
---------
+## Bat-mode
 
 | Key binding | Description                                     |
 |-------------|-------------------------------------------------|

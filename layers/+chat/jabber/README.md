@@ -1,32 +1,27 @@
 ![](img/jabber-logo.gif)
 
-Description
-===========
+# Description
 
 This layer adds support for the Jabber (XMPP) client for Emacs
 
-Features:
----------
+## Features:
 
 -   Use Jabber without having to leave Spacemacs
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `jabber` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Key bindings
-============
+# Key bindings
 
 |             |                      |
 |-------------|----------------------|
 | Key binding | Description          |
 | `SPC a c j` | Connect all accounts |
 
-Jabber Roster
--------------
+## Jabber Roster
 
 |             |                                      |
 |-------------|--------------------------------------|
@@ -44,16 +39,15 @@ Jabber Roster
 | `SPC m v`   | Jabber get version                   |
 | `SPC m RET` | Jabber roster ret action at point    |
 
-HipChat
-=======
+# HipChat
 
-Authentication
---------------
+## Authentication
 
 To find YOUR<sub>JABBERID</sub> visit "XMPP/Jabber info" section on your
 profile page at hipchat.com
 
 ``` commonlisp
+
 (setq ssl-program-name "gnutls-cli"
       ssl-program-arguments '("--insecure" "-p" service host)
       ssl-certificate-verification-policy 1)
@@ -64,8 +58,7 @@ profile page at hipchat.com
                              (:connection-type . ssl))))
 ```
 
-Joining rooms
--------------
+## Joining rooms
 
 To simplify joining rooms, you can use something like this:
 

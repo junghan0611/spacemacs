@@ -1,12 +1,10 @@
 ![](img/puppet.png)
 
-Description
-===========
+# Description
 
 This layer provides support for the Puppet DSL to Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting via
     [puppet-mode](https://github.com/voxpupuli/puppet-mode)
@@ -14,8 +12,7 @@ Features:
 -   Navigation commands to jump between blocks
 -   Applying the content of the current manifest directly from Emacs
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `puppet` to the existing `dotspacemacs-configuration-layers`
@@ -28,8 +25,7 @@ To get syntax checking to work you will also need to install
 $ gem install puppet-lint
 ```
 
-Key bindings
-============
+# Key bindings
 
 The following key bindings are available in Puppet Mode:
 
@@ -38,7 +34,7 @@ The following key bindings are available in Puppet Mode:
 | `SPC m {`   | Move to the beginning of the current block        |
 | `SPC m }`   | Move to the end of the current block              |
 | `SPC m a`   | Align parameters in the current block             |
-| `SPC m '​`  | Toggle string quoting between single and double   |
+| `SPC m '​`   | Toggle string quoting between single and double   |
 | `SPC m ;`   | Blank the string at point                         |
 | `SPC m j`   | Jump to a `class`, `define`, variable or resource |
 | `SPC m c`   | Apply the current manifest in dry-run mode        |

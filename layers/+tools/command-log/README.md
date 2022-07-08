@@ -1,10 +1,8 @@
-Description
-===========
+# Description
 
 This layer adds handy commands for demonstrating Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Support for logging all entered keys and triggered commands in a
     designated buffer via
@@ -15,22 +13,19 @@ Features:
     keystrokes and commands in Emacs.
 -   Provides an easy way to create command logs for training classes.
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `command-log` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Command log
-===========
+# Command log
 
 This is the default way to demonstrate Spacemacs commands. It works by
 opening a new buffer which logs all executed commands in the current
 window.
 
-Keycast
-=======
+# Keycast
 
 This is an experimental addition to this layer which will show the last
 used keystroke and command in the modeline. However as we support
@@ -40,8 +35,7 @@ multiple modelines it may require some tweaking of
 If you have a working configuration for your modeline feel free to share
 it with the rest of the project.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding   | Description            |
 |---------------|------------------------|

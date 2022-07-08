@@ -18,8 +18,7 @@ going to do or just watch this video
 
 Thanks! :heart: :heart: :heart:
 
-Asking for help
-===============
+# Asking for help
 
 If you want to ask an usage question, be sure to look first into some
 places as it may hold the answer:
@@ -38,8 +37,7 @@ If your question is not answered there, then please come into our
 us :relaxed:. We will direct you to a solution, or ask you to open an
 issue if it is needed.
 
-Reporting issues
-================
+# Reporting issues
 
 Issues have to be reported on our [issues
 tracker](https://github.com/syl20bnr/spacemacs/issues). Please:
@@ -66,16 +64,14 @@ tracker](https://github.com/syl20bnr/spacemacs/issues). Please:
     -   If possible, try to include details on how to reproduce it, like
         a step by step guide.
 
-Contributing code
-=================
+# Contributing code
 
 Code contributions are welcome. Please read the following sections
 carefully. In any case, feel free to join us on the [gitter
 chat](https://gitter.im/syl20bnr/spacemacs) to ask questions about
 contributing!
 
-General contribution guidelines
--------------------------------
+## General contribution guidelines
 
 ### License
 
@@ -185,8 +181,7 @@ Further paragraphs come after blank lines.
 [Magit](https://github.com/magit/magit/) provide Emacs mode for Git
 commit messages, which helps you to comply to these guidelines.
 
-Contributing a layer
---------------------
+## Contributing a layer
 
 Please read the [layers
 documentation](https://github.com/syl20bnr/spacemacs/blob/develop/doc/LAYERS.org)
@@ -211,6 +206,7 @@ The file header for `elisp` files should look like the following
 template:
 
 ``` example
+
 ;;; FILENAME --- NAME Layer <TYPE> File for Spacemacs
 ;;
 ;; Copyright (c) 2012-<YEAR> Sylvain Benner & Contributors
@@ -292,11 +288,11 @@ to your name.
     -   When a README.org layer file doesn't have `#+TAGS:`, then the
         documentation formatting tool will insert dummy tags
         `layer|uncategorized`, and such files will be listed in
-        [LAYERS.org\#readmeorg-files-that-need-proper-tags](https://github.com/syl20bnr/spacemacs/blob/develop/layers/LAYERS.org#readmeorg-files-that-need-proper-tags).
+        [LAYERS.org#readmeorg-files-that-need-proper-tags](https://github.com/syl20bnr/spacemacs/blob/develop/layers/LAYERS.org#readmeorg-files-that-need-proper-tags).
     -   Files with tags, that have not been matched by
         [:spacetools.spacedoc.config/layers-org-query](https://github.com/syl20bnr/spacemacs/blob/develop/.ci/spacedoc-cfg.edn)
         will appear in
-        [LAYERS.org\#skipped-layers](https://github.com/syl20bnr/spacemacs/blob/develop/layers/LAYERS.org#skipped-layers)
+        [LAYERS.org#skipped-layers](https://github.com/syl20bnr/spacemacs/blob/develop/layers/LAYERS.org#skipped-layers)
     -   If
         [LAYERS.org](https://github.com/syl20bnr/spacemacs/blob/develop/layers/LAYERS.org)
         has either or both of these sections: `Skipped layers:` and/or
@@ -317,8 +313,7 @@ to your name.
 If you are contributing to an already existing layer, you should not
 modify any header file.
 
-Contributing a key binding
---------------------------
+## Contributing a key binding
 
 Key bindings are an important part of Spacemacs.
 
@@ -338,8 +333,7 @@ the relevant documentation file. It should be the layer's `README.org`
 file for layer's key bindings, or `DOCUMENTATION.org` for general
 Spacemacs key bindings.
 
-Contributing a banner
----------------------
+## Contributing a banner
 
 The startup banner is by default the Spacemacs logo but there are also
 ASCII banners available in the directory `core/banners/`.
@@ -349,8 +343,7 @@ If you have some ASCII skills you can submit your artwork!
 You are free to choose a reasonable height size but the width size
 should be around 75 characters.
 
-Reviewing Pull Requests
-=======================
+# Reviewing Pull Requests
 
 You can contribute by reviewing PRs created by others. This will help
 share the workload of the project maintainers by letting them know that
@@ -396,8 +389,7 @@ another reviewer. This is done to ensure a thorough cross-referencing in
 case of complex changes, your review is very valuable in these cases as
 well!
 
-Using Magit to quickly test PRs
--------------------------------
+## Using Magit to quickly test PRs
 
 It is possible to manage PRs directly inside the Magit status buffer
 `SPC g s`. First add the `github` layer to your dotfile which will pull
@@ -417,11 +409,9 @@ Now, from the Magit status buffer you can:
 -   switch to the develop branch by pressing `b b` and selecting it
 -   delete the PR branch and remote by doing `b x` and selecting it
 
-Additional information
-======================
+# Additional information
 
-Testing
--------
+## Testing
 
 Tests live in the `tests/` folder, with a folder structure corresponding
 to the rest of the repository.
@@ -464,8 +454,7 @@ To add tests for a layer, do the following:
 
 5.  Add the new test to list of tests in `travis/run_build.sh`.
 
-Credits
-=======
+# Credits
 
 This `CONTRIBUTING.org` file is partially based on the [Rails
 Contribution

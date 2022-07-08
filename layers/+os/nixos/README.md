@@ -1,12 +1,10 @@
 ![](img/nixos.png)
 
-Description
-===========
+# Description
 
 This layer adds tools for better integration of Emacs in NixOS.
 
-Features:
----------
+## Features:
 
 -   Nix-mode using [nix-mode](https://github.com/NixOS/nix-mode)
 -   Automatic formatting via
@@ -17,21 +15,17 @@ Features:
     [helm-nixos-options](https://github.com/travisbhartwell/nix-emacs/blob/master/helm-nixos-options.el)
 -   WIP support for LSP backend using `rnix-lsp`
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `nixos` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Configuration
-=============
+# Configuration
 
-Enabling LSP (Experimental)
----------------------------
+## Enabling LSP (Experimental)
 
 To use the *experimental* LSP backend, set variable `nix-backend` to
 `lsp` in your `~./spacemacs`. (You would also need to enable
@@ -49,8 +43,7 @@ To install [rnix-lsp](https://github.com/nix-community/rnix-lsp) from
 nix-env -i -f https://github.com/nix-community/rnix-lsp/archive/master.tar.gz
 ```
 
-Format on save
---------------
+## Format on save
 
 To enable automatic formatting on save, set the layer variable
 `nixos-format-on-save` to `t`:
@@ -60,19 +53,16 @@ To enable automatic formatting on save, set the layer variable
               (nixos :variables nixos-format-on-save t))
 ```
 
-Opt-out from `auto-complete`
-----------------------------
+## Opt-out from `auto-complete`
 
 On some systems, `company-nixos-options` may be very slow. If this is
 the case, see the section on disabling the [disabling
 auto-complete](https://github.com/syl20bnr/spacemacs/blob/develop/doc/DOCUMENTATION.org#disabling-layer-services-in-other-layers)
 for the `nixos` layer.
 
-Key bindings
-============
+# Key bindings
 
-NixOS Options
--------------
+## NixOS Options
 
 | Key binding | Description                |
 |-------------|----------------------------|

@@ -1,10 +1,8 @@
-Description
-===========
+# Description
 
 This is the default distribution for Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Easy access to the Spacemacs experience by adding below auxiliary
     layers to the base distribution.

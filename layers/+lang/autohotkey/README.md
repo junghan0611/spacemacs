@@ -1,7 +1,6 @@
 ![](img/ahk.png)
 
-Description
-===========
+# Description
 
 Syntax highlighting and Emacs functions for use with
 [AutoHotkey](https://autohotkey.com/) or
@@ -15,23 +14,20 @@ and ahk<sub>l</sub> commands found in the latest revision of
 Contributed and maintained by [Rich
 Alesi](https://www.github.com/ralesi).
 
-Features:
----------
+## Features:
 
 -   Auto-completion
 -   Documentation Lookup
 -   Execute Code Snippets
 -   Correct Indentation and Commenting
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `autohotkey` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                        |
 |-------------|------------------------------------|

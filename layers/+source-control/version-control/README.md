@@ -1,13 +1,11 @@
-Description
-===========
+# Description
 
 This layers adds general configuration for [Emacs
 VC](http://www.gnu.org/software/emacs/manual/html_node/emacs/Version-Control.html).
 It should work with all VC backends such as Git, Mercurial, Bazaar, SVN,
 etc…
 
-Features:
----------
+## Features:
 
 -   highlights uncommitted changes in the fringe or margin with
     [diff-hl](https://github.com/dgutov/diff-hl),
@@ -16,18 +14,15 @@ Features:
 -   adds vcs transient-state `SPC g.` to allow quick navigation and
     modification of buffer hunks.
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `version-control` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Configuration
-=============
+# Configuration
 
 You can choose the package to facilitate the diff transient-state and
 show margins by setting the `version-control-diff-tool` variable to one
@@ -58,8 +53,7 @@ To automatically enable diff margins in all buffers, set
                   version-control-global-margin t)
 ```
 
-Differences between margin packages
------------------------------------
+## Differences between margin packages
 
 This layer contains generalized mappings for three diff margin packages:
 `diff-hl`, `git-gutter`, and `git-gutter+`.
@@ -74,8 +68,7 @@ prefer one over the other:
 | Stage hunks from buffer             |         | X          | X           |
 | Dired support                       | X       |            |             |
 
-Key bindings
-============
+# Key bindings
 
 VC commands:
 
@@ -98,8 +91,7 @@ VC commands:
 | `SPC g v I` | Ignore file (`vc-ignore`)                              |
 | `SPC g v r` | Resolve conflicts in file                              |
 
-VC Directory buffer commands
-----------------------------
+## VC Directory buffer commands
 
 You can hit `SPC pv` from the current project to open the VC Directory
 buffer, or use `SPC g v d` for specifying a root directory. Then you may
@@ -128,15 +120,13 @@ Navigation and interaction commands in the VC Directory buffer:
 | `m`             | Mark a file        |
 | `u`             | Unmark a file      |
 
-Commit message editing buffer
------------------------------
+## Commit message editing buffer
 
 In a commit message buffer press `C-c C-c` to commit the changes with
 the entered message. Pressing `C-c C-k` will discard the commit message
 and close this buffer.
 
-Diff mode
----------
+## Diff mode
 
 | Key binding | Description                                    |
 |-------------|------------------------------------------------|
@@ -166,8 +156,7 @@ A transient buffer is also defined, start it with `SPC m .` or `, .`
 | `k`         | Previous hunk |
 | `K`         | Previous file |
 
-Log view buffer
----------------
+## Log view buffer
 
 | Key binding            | Description                                                                |
 |------------------------|----------------------------------------------------------------------------|
@@ -180,8 +169,7 @@ Log view buffer
 | `o`                    | Use for jumping to links                                                   |
 | `H`                    | Toggle hiding of the full message                                          |
 
-Annotation buffer
------------------
+## Annotation buffer
 
 | Key binding | Description                                                                    |
 |-------------|--------------------------------------------------------------------------------|
@@ -194,8 +182,7 @@ Annotation buffer
 | `d`         | Display the diff between the current line's revision and the previous revision |
 | `f`         | Show in a buffer the file revision indicated by the current line               |
 
-Version Control Transient-state
--------------------------------
+## Version Control Transient-state
 
 Use `SPC g .` to enter a transient state for quickly navigating between
 hunks in a buffer. During that state, the following bindings are active:
@@ -220,8 +207,7 @@ hunks in a buffer. During that state, the following bindings are active:
 | `l`         | Show repo log                |
 | `z`         | Recenter buffer in window    |
 
-Smerge Mode Transient-state
----------------------------
+## Smerge Mode Transient-state
 
 Movement:
 
@@ -261,8 +247,7 @@ Other:
 | `SPC g r u` | Undo                           |
 | `SPC g r q` | Quit transient state           |
 
-Toggles
--------
+## Toggles
 
 | Key binding | Description                  |
 |-------------|------------------------------|

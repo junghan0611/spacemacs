@@ -1,7 +1,6 @@
 ![](img/asm.png)
 
-Description
-===========
+# Description
 
 This layer adds support for Assembly code. The built-in major mode for
 editing assembly code in Emacs is `asm-mode`.
@@ -11,8 +10,7 @@ The layer also adds `nasm-mode` for NASM-specific syntax. Although
 variants of Assembly in general, and provides Imenu integration so you
 can jump around with `SPC s j`.
 
-Features:
----------
+## Features:
 
 -   Improved syntax highlighting.
 -   Automatic indentation.
@@ -20,18 +18,15 @@ Features:
 -   Look up documentation for current instruction at cursor.
 -   Imenu integration.
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `asm` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-PDFs
-----
+## PDFs
 
 To look up the x86 instructions, two things are required:
 
@@ -58,16 +53,15 @@ example, something like this:
 The first time you launch the command, it can take a while for indexing,
 this is a one time operation and the result is cached for later use.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                        |
 |-------------|----------------------------------------------------|
 | `SPC m h h` | Look up the documentation for instruction at point |
 | `;`         | Insert a comment                                   |
 
-<span class="underline">Note</span>: Quoted from the docstring of
-`asm-comment`, the command bound to `;`:
+<u>Note</u>: Quoted from the docstring of `asm-comment`, the command
+bound to `;`:
 
 ``` text
 Convert an empty comment to a `larger' kind, or start a new one.

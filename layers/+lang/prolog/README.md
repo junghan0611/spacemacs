@@ -1,12 +1,10 @@
-Description
-===========
+# Description
 
 This layer adds support for Prolog using the bundled Prolog mode for
 Emacs. In addition it also adds ediprolog support for better interaction
 with SWI-Prolog.
 
-Features:
----------
+## Features:
 
 -   Designed for SWI-Prolog as a default, but can be used with other
     Prologs that Prolog mode supports.
@@ -14,18 +12,15 @@ Features:
 -   Auto-formatting.
 -   Apropos and help lookup.
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `prolog` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Key bindings
-============
+# Key bindings
 
-Consulting
-----------
+## Consulting
 
 | Key binding | Description       |
 |-------------|-------------------|
@@ -34,8 +29,7 @@ Consulting
 | `SPC m s p` | Consult Predicate |
 | `SPC m s r` | Consult Region    |
 
-Compiling
----------
+## Compiling
 
 | Key binding | Description       |
 |-------------|-------------------|
@@ -44,15 +38,13 @@ Compiling
 | `SPC m c p` | Compile Predicate |
 | `SPC m c r` | Compile Region    |
 
-Formatting
-----------
+## Formatting
 
 | Key binding | Description   |
 |-------------|---------------|
 | `SPC m =`   | Indent Buffer |
 
-Inserting
----------
+## Inserting
 
 | Key binding | Description                                        |
 |-------------|----------------------------------------------------|
@@ -61,16 +53,14 @@ Inserting
 | `SPC m i p` | Insert Predicate Template for the Current Clause   |
 | `SPC m i s` | Insert Predicate Spec                              |
 
-Help
-----
+## Help
 
 | Key binding | Description                           |
 |-------------|---------------------------------------|
 | `SPC m h a` | Prolog Apropos for a Given String     |
 | `SPC m h p` | Online Help for the Atom under Cursor |
 
-Evaluating
-----------
+## Evaluating
 
 | Key binding | Description                               |
 |-------------|-------------------------------------------|

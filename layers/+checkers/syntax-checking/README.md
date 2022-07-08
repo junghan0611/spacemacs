@@ -1,23 +1,19 @@
 ![](img/flycheck.png)
 
-Description
-===========
+# Description
 
 This layer adds on the fly syntax checking to all supported language
 layers.
 
-Features:
----------
+## Features:
 
 -   Support for automatic syntax checking with
     [Flycheck](http://www.flycheck.org/) for various language layers
 -   Tooltip syntax errors with `popwin`
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `syntax-checking` to the existing
@@ -26,8 +22,7 @@ need to add `syntax-checking` to the existing
 As this is a support layer you will also have to install at least one
 supported language layer for it to have any effect.
 
-Enabling/Disabling tooltips
----------------------------
+## Enabling/Disabling tooltips
 
 By default tooltips are enabled and used whenever it is possible. You
 can disable them by setting the variable
@@ -38,8 +33,7 @@ can disable them by setting the variable
   '((syntax-checking :variables syntax-checking-enable-tooltips nil)))
 ```
 
-Disabling by default
---------------------
+## Disabling by default
 
 By default, syntax-checking is enabled in all available major modes
 (except for `emacs-lisp-mode`) and may be toggled off with `SPC t s`.
@@ -55,8 +49,7 @@ If you want more fine-grained control, you can configure the variable
 `flycheck-global-modes` instead. Note that this variable should be
 manipulated in `dotspacemacs/user-config`.
 
-Enable flycheck globally
-------------------------
+## Enable flycheck globally
 
 Normally Spacemacs goes a long mile to enable syntax checking only where
 it makes sense. If syntax checking support is missing it is normally
@@ -71,8 +64,7 @@ activating flycheck would bring any useful outcome. This may result in
 loading slow or not properly configured checkers as well as break some
 of the more advanced configuration settings of the layer system.
 
-Enable support for traditional error navigation
------------------------------------------------
+## Enable support for traditional error navigation
 
 By default spacemacs takes care to call the right function to jump to
 the next or previous error. However if wished flycheck can also override
@@ -86,8 +78,7 @@ non-nil.
   '((syntax-checking :variables syntax-checking-use-standard-error-navigation t)))
 ```
 
-Bitmaps
--------
+## Bitmaps
 
 If the original flycheck fringe bitmaps are more to your liking, you can
 set the variable `syntax-checking-use-original-bitmaps` to `t`:
@@ -97,8 +88,7 @@ set the variable `syntax-checking-use-original-bitmaps` to `t`:
   '((syntax-checking :variables syntax-checking-use-original-bitmaps t)))
 ```
 
-Auto hide tooltips
-------------------
+## Auto hide tooltips
 
 You can set time in seconds after which tooltips are automatically
 hidden by setting the variable `syntax-checking-auto-hide-tooltips` to a
@@ -112,8 +102,7 @@ that case tooltips are kept open until the cursor is moved.
   '((syntax-checking :variables syntax-checking-auto-hide-tooltips 10)))
 ```
 
-Window position and size
-------------------------
+## Window position and size
 
 You can set the frame position within the emacs window by setting the
 variable `syntax-checking-window-position`. Available values are
@@ -129,8 +118,7 @@ size by setting `syntax-checking-window-width` and
                      syntax-checking-window-height 25)))
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                                  |
 |-------------|--------------------------------------------------------------|

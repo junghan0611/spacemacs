@@ -1,12 +1,10 @@
 ![](img/ocaml.png)
 
-Description
-===========
+# Description
 
 This is a very basic layer for editing ocaml files.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting (major-mode) via
     [tuareg-mode](https://github.com/ocaml/tuareg)
@@ -22,18 +20,15 @@ Features:
 -   Automatic formatting via
     [ocamlformat](https://github.com/ocaml-ppx/ocamlformat)
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `ocaml` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Using merlin for error reporting
---------------------------------
+## Using merlin for error reporting
 
 By default [flycheck-ocaml](https://github.com/flycheck/flycheck-ocaml)
 is used for error reporting when the `syntax-checking` layer is also
@@ -47,8 +42,7 @@ excluded packages list in `.spacemacs`:
 dotspacemacs-excluded-packages '(... flycheck-ocaml ... )
 ```
 
-OPAM packages
--------------
+## OPAM packages
 
 This layer requires some [opam](http://opam.ocaml.org) packages:
 
@@ -70,8 +64,7 @@ opam init
 opam config setup -a
 ```
 
-Enabling formatting on save
----------------------------
+## Enabling formatting on save
 
 To enable automatic formatting on save with
 [ocamlformat](https://github.com/ocaml-ppx/ocamlformat), set the layer
@@ -81,8 +74,7 @@ variable `ocaml-format-on-save`, e.g.,
 (ocaml :variables ocaml-format-on-save t)
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                              |
 |-------------|----------------------------------------------------------|
@@ -108,8 +100,7 @@ Key bindings
 | `SPC m t p` | Dune run tests and promote.                              |
 | `SPC m t P` | Dune promote.                                            |
 
-REPL (utop)
------------
+## REPL (utop)
 
 | Key binding | Description                                                      |
 |-------------|------------------------------------------------------------------|
@@ -123,8 +114,7 @@ REPL (utop)
 | `SPC m s r` | Send region to the REPL                                          |
 | `SPC m s R` | Send region to the REPL and switch to the REPL in `insert state` |
 
-Dune
-----
+## Dune
 
 | Key binding | Description                    |
 |-------------|--------------------------------|
@@ -145,8 +135,7 @@ Dune
 | `SPC m t p` | Dune run tests and promote.    |
 | `SPC m t P` | Dune promote.                  |
 
-<span class="todo TODO">TODO</span> layer improvements list
-===========================================================
+# <span class="todo TODO">TODO</span> layer improvements list
 
 1.  Add more proper spacemacs key bindings for basic merlin tasks
 2.  Add proper key bindings for ocamldebug

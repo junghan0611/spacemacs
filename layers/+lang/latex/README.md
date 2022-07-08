@@ -1,13 +1,11 @@
 ![](img/latex.png)
 
-Description
-===========
+# Description
 
 This layer adds support for LaTeX files with
 [AucTeX](https://savannah.gnu.org/projects/auctex/).
 
-Features:
----------
+## Features:
 
 -   Auto-build with
     [auctex-latexmk](https://github.com/tom-tan/auctex-latexmk/)
@@ -20,30 +18,26 @@ Features:
 -   LaTeX-specific text objects and much more with
     [evil-tex](https://github.com/iyefrat/evil-tex)
 
-BibTeX
-======
+# BibTeX
 
 For more extensive support of BibTeX files than RefTeX provides, have a
 look at the [BibTeX
 layer](https://github.com/syl20bnr/spacemacs/blob/develop/layers/%2Blang/bibtex/README.org).
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `latex` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Configuration
-=============
+# Configuration
 
 Most layer configurations can be done by setting layer variables in your
 dotfile. Some however require adding lines to your user-config. If the
 `pdf` layer is used, then the layer automatically configures `pdf-tools`
 as the 'output-pdf' viewer, see [\#pdf-viewer](#pdf-viewer).
 
-Variables
----------
+## Variables
 
 A number of configuration variables have been exposed via the layer
 `config.el`. Sensible defaults have been provided, however they may all
@@ -62,8 +56,7 @@ be overridden in your .spacemacs.
 | `latex-view-with-pdf-tools`      | `t` if pdf layer is installed, else `nil`                          | When non-nil, use `pdf-tools` for viewing output pdf files                     |
 | `latex-view-pdf-in-split-window` | `nil` setting is neglected if `latex-view-with-pdf-tools` is `nil` | When non-nil, open `pdf-tools` in split window (when using `TeX-view` command) |
 
-Choosing a backend
-------------------
+## Choosing a backend
 
 This layer provides two alternative backends to choose from.
 
@@ -112,8 +105,7 @@ completion set the following in your `~/.spacemacs`:
               '((latex :packages (not company-math))))
 ```
 
-PDF viewer
-----------
+## PDF viewer
 
 If the `pdf` layer is used, then the layer automatically configures
 `pdf-tools` as the 'output-pdf' viewer, see [\#pdf-viewer](#pdf-viewer).
@@ -124,8 +116,7 @@ If, despite using the pdf layer, you prefer to use another pdf viewer to
 preview the output pdf's, set the layer variable
 `latex-view-with-pdf-tools` to `nil`.
 
-Previewing
-----------
+## Previewing
 
 `LaTex` layer support full-document previews and inline preview (via
 `SPC m p`).
@@ -142,8 +133,7 @@ To update the preview buffer whenever the compiled PDF file changes, set
 documented
 [here](https://texlab.netlify.app/docs/installation/previewing).
 
-Build command
--------------
+## Build command
 
 A build command can be specified via the layer variable
 `latex-build-command`. This variable can be set to any of the entities
@@ -161,8 +151,7 @@ To use the regular `AucTeX` command, set `latex-build-command` to
               '((latex :variables latex-build-command "LaTeX")))
 ```
 
-TeX Engine
-----------
+## TeX Engine
 
 `auctex` and `auctex-latexmk` have default rules to determine build
 command and build options according to the buffer-local variable
@@ -208,8 +197,7 @@ More information on TeX engine and languages support can be found in
 `auctex` [manual
 page](https://www.gnu.org/software/auctex/manual/auctex/Internationalization.html#Internationalization).
 
-Auto-fill
----------
+## Auto-fill
 
 To disable auto-fill (which is on by default) set the variable
 `latex-enable-auto-fill` to `nil`.
@@ -232,8 +220,7 @@ where `auto-fill-mode` will be inhibited. By default it includes:
 -   "tabu\*"
 -   "tikzpicture"
 
-Folding
--------
+## Folding
 
 Enable folding of text by setting `latex-enable-folding` to `t`. Default
 value is nil.
@@ -243,8 +230,7 @@ value is nil.
               '((latex :variables latex-enable-folding t)))
 ```
 
-Magic latex buffer
-------------------
+## Magic latex buffer
 
 To enable "magic" symbols in latex buffers, set the variable
 `latex-enable-magic` to `t`.
@@ -270,8 +256,7 @@ following variables:
 
 By default, the underlying latex code is echoed in the echo area.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding                         | Description                                |
 |-------------------------------------|--------------------------------------------|
@@ -322,8 +307,7 @@ Key bindings
 | `SPC m x f r`                       | use serif font                             |
 | `SPC m x f u`                       | use upright font                           |
 
-Folding
--------
+## Folding
 
 Available only when `latex-enable-folding` is non nil.
 
@@ -335,8 +319,7 @@ Available only when `latex-enable-folding` is non nil.
 | `SPC m z m` | fold TeX macro       |
 | `SPC m z r` | fold TeX region      |
 
-RefTeX
-------
+## RefTeX
 
 | Key binding                             | Description                           |
 |-----------------------------------------|---------------------------------------|
@@ -354,8 +337,7 @@ RefTeX
 | `SPC m r T` or with LSP `SPC m R T`     | reftex-toc-recenter                   |
 | `SPC m r v` or with LSP `SPC m R v`     | reftex-view-crossref                  |
 
-evil-tex
---------
+## evil-tex
 
 See the [evil-tex
 documentation](https://github.com/iyefrat/evil-tex/blob/master/README.org)

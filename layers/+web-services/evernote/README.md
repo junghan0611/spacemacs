@@ -1,14 +1,12 @@
 ![](img/evernote.png) with ![](img/geeknote.png)
 
-Description
-===========
+# Description
 
 This layer adds support for the famous [Evernote](https://evernote.com/)
 note taking service to Spacemacs. It does so by grouping together
 various packages to work with [Evernote](https://evernote.com/).
 
-Features:
----------
+## Features:
 
 -   Create notes in markdown and sync with
     [Evernote](https://evernote.com/) via
@@ -16,18 +14,15 @@ Features:
 -   Search for notes using keywords
 -   Move notes between notebooks
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `evernote` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Geeknote
---------
+## Geeknote
 
 This is the non official `Evernote` command line tool which allows users
 to write notes in markdown, and sync them. The command
@@ -35,8 +30,7 @@ to write notes in markdown, and sync them. The command
 `$PATH`. To obtain this utility, please refer to the official `geeknote`
 [documentation](http://www.geeknote.me/documentation/).
 
-Geeknote.el
------------
+## Geeknote.el
 
 [geeknote.el](https://github.com/avendael/emacs-geeknote) is a wrapper
 for some of the most used `geeknote` commands. By default, `geeknote.el`
@@ -57,8 +51,7 @@ the `geeknote.el`
 information about setting up `$PATH`, check out the corresponding
 section in the FAQ (`SPC h SPC $PATH RET`).
 
-Key bindings
-============
+# Key bindings
 
 | Key binding   | Description                         |
 |---------------|-------------------------------------|

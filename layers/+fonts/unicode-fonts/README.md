@@ -1,5 +1,4 @@
-Description
-===========
+# Description
 
 This layer adds support for
 [unicode-fonts](https://github.com/rolandwalker/unicode-fonts) package.
@@ -7,8 +6,7 @@ It is recommended to install the fonts listed in the
 [Quickstart](https://github.com/rolandwalker/unicode-fonts#quickstart)
 section of the unicode-fonts README.
 
-Features:
----------
+## Features:
 
 -   Display unicode glyphs using the best available font.
 -   Easily override glyphs or sections of glyphs.
@@ -18,8 +16,7 @@ Features:
 -   Enable support for font ligature in Emacs 27 + via
     [ligatures.el](https://github.com/mickeynp/ligature.el).
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `unicode-fonts` to the existing
@@ -65,8 +62,7 @@ To configure the ligature set that gets used with your font there is a
 (unicode-fonts :variables unicode-fonts-ligature-set '("==" "===" "!=" "!==" "||" "&&"))
 ```
 
-Ligature Fonts
-==============
+# Ligature Fonts
 
 -   [Fira Code](https://github.com/tonsky/FiraCode)
 -   [Cascadia Code](https://github.com/microsoft/cascadia-code)

@@ -1,12 +1,10 @@
 ![](img/python.png)
 
-Description
-===========
+# Description
 
 This layer adds support for the Python language.
 
-Features:
----------
+## Features:
 
 -   Support for the following backends:
     -   [anaconda](https://github.com/proofit404/anaconda-mode)
@@ -47,18 +45,15 @@ Features:
 -   Support for ipython notebook and MATLAB-like cells using using
     [code-cells](https://github.com/astoff/code-cells.el)
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `python` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Choosing a backend
-------------------
+## Choosing a backend
 
 To choose a default backend set the layer variable `python-backend`:
 
@@ -91,11 +86,9 @@ The available options are:
 | 'anaconda | Default                   |
 | 'lsp      | python-lsp-server package |
 
-Backends
-========
+# Backends
 
-Anaconda
---------
+## Anaconda
 
 `anaconda-mode` tries to install the dependencies itself but sometimes
 it does not work and you may encounter the following message when
@@ -123,8 +116,7 @@ If you are facing errors such as "Unable to run anaconda-mode server",
 try setting your `PYTHONPATH` as explained at
 <https://github.com/proofit404/anaconda-mode#pythonpath>
 
-Language Server Protocol
-------------------------
+## Language Server Protocol
 
 The `lsp` backend can use either of the following language server
 implementations:
@@ -218,11 +210,9 @@ yarn global add pyright
 npm install -g pyright
 ```
 
-Additional tools
-================
+# Additional tools
 
-Syntax checking
----------------
+## Syntax checking
 
 Syntax checking uses `flake8` package:
 
@@ -230,8 +220,7 @@ Syntax checking uses `flake8` package:
 pip install flake8
 ```
 
-Test runner
------------
+## Test runner
 
 Both `nose` and `pytest` are supported. By default `nose` is used. To
 choose your test runner set the layer variable `python-test-runner` to
@@ -264,8 +253,7 @@ for more information.
 The root of the project is detected with a `.git` directory or a
 `setup.cfg` file.
 
-Buffer formatting
------------------
+## Buffer formatting
 
 One of [YAPF](https://github.com/google/yapf) (the default),
 [black](https://github.com/ambv/black) or `lsp` may be selected as the
@@ -288,8 +276,7 @@ Note that a specific formatter may also be invoked unconditionally via
 `yapfify-buffer`, `blacken-buffer` or `lsp-format-buffer`, provided
 these are installed.
 
-Automatic buffer formatting on save
------------------------------------
+## Automatic buffer formatting on save
 
 To enable automatic buffer formatting on save set the variable
 `python-format-on-save` to `t`. The formatter specified by
@@ -300,8 +287,7 @@ To enable automatic buffer formatting on save set the variable
   (python :variables python-format-on-save t)))
 ```
 
-Automatic save of buffer when testing
--------------------------------------
+## Automatic save of buffer when testing
 
 By default a buffer is automatically saved before tests are executed
 upon it, you can disable this feature by setting
@@ -312,8 +298,7 @@ upon it, you can disable this feature by setting
   (python :variables python-save-before-test nil)))
 ```
 
-autoflake
----------
+## autoflake
 
 To be able to suppress unused imports easily, install
 [autoflake](https://github.com/myint/autoflake):
@@ -322,14 +307,12 @@ To be able to suppress unused imports easily, install
 pip install autoflake
 ```
 
-pylookup
---------
+## pylookup
 
 To use `pylookup` on `SPC m h H`, make sure you update the database
 first, using `SPC SPC pylookup-update`.
 
-dap-mode debugger (only for lsp backend)
-----------------------------------------
+## dap-mode debugger (only for lsp backend)
 
 To use `dap-mode` for debugging do:
 
@@ -337,8 +320,7 @@ To use `dap-mode` for debugging do:
 pip install "ptvsd>=4.2"
 ```
 
-Notebook and code cells
------------------------
+## Notebook and code cells
 
 To use `code-cells-mode` with ipython notebook automatically you should
 install [jupytext](https://github.com/mwouts/jupytext). Make sure that
@@ -349,11 +331,9 @@ Then you can evaluate the current cell in a REPL process with
 to the next cell with `SPC m g F` and to the previous cell with
 `SPC m g B`.
 
-Configuration
-=============
+# Configuration
 
-Fill column
------------
+## Fill column
 
 If you want to customize the fill column value, use something like this
 inside the `user-init` function in your `.spacemacs`:
@@ -363,8 +343,7 @@ inside the `user-init` function in your `.spacemacs`:
     (python :variables python-fill-column 99)))
 ```
 
-Sort imports
-------------
+## Sort imports
 
 If you want imports to be automatically sorted when you save a file
 (using [isort](https://pypi.python.org/pypi/isort)), set the
@@ -378,8 +357,7 @@ section:
 
 or as a directory-local variable (for per-project settings).
 
-Importmagic
------------
+## Importmagic
 
 Install importmagic and epc for importmagic functionality.
 
@@ -387,8 +365,7 @@ Install importmagic and epc for importmagic functionality.
 pip install importmagic epc
 ```
 
-Pyvenv, pyenv, pipenv and poetry
---------------------------------
+## Pyvenv, pyenv, pipenv and poetry
 
 Sometimes, it is convenient to be able to use python virtual
 environments from other modes. For this reason, the python layer
@@ -405,11 +382,9 @@ This will allow you to use [pipenv](https://github.com/pwalsh/pipenv.el)
 bindings from the mode your-mode. You can add to the other two lists
 analogously.
 
-Management of Python versions and virtual environments
-======================================================
+# Management of Python versions and virtual environments
 
-Manage virtual environments with pyvenv
----------------------------------------
+## Manage virtual environments with pyvenv
 
 A virtual environment provides isolation of your Python package
 versions. For a general overview see [this
@@ -456,8 +431,7 @@ the variable `python-auto-set-local-pyvenv-virtualenv` to:
 -   `on-project-switch` set the virtualenv when you switch projects,
 -   `nil` to disable.
 
-Manage multiple Python versions with pyenv
-------------------------------------------
+## Manage multiple Python versions with pyenv
 
 If you need multiple Python versions (e.g. Python 2 and Python 3) then
 take a look at [pyenv](https://github.com/yyuu/pyenv). It enables the
@@ -491,8 +465,7 @@ variable `python-auto-set-local-pyenv-version` to:
 -   `on-project-switch` set the version when you switch projects,
 -   `nil` to disable.
 
-Manage environments and packages with pipenv
---------------------------------------------
+## Manage environments and packages with pipenv
 
 [Pipenv](https://pipenv.kennethreitz.org/en/latest/) is the new standard
 tool to manage your virtual environments. It can act as a replacement
@@ -513,8 +486,7 @@ key bindings:
 | `SPC m v p s` | open a shell buffer in the current environment with [pipenv](https://github.com/pwalsh/pipenv.el) |
 | `SPC m v p u` | uninstall a package from a virtual environment with [pipenv](https://github.com/pwalsh/pipenv.el) |
 
-Manage environments and packages with Poetry
---------------------------------------------
+## Manage environments and packages with Poetry
 
 Poetry is a tool for dependency management and packaging in Python. It
 allows you to declare the libraries your project depends on and it will
@@ -530,11 +502,9 @@ following key bindings:
 | `SPC m v o a` | Activate the virtualenv associated to the current poetry project    |
 | `SPC m v o t` | Toggle the virtualenv associated to the current poetry project      |
 
-Key bindings
-============
+# Key bindings
 
-Inferior REPL process
----------------------
+## Inferior REPL process
 
 Start a Python or iPython inferior REPL process with `SPC m s i`. If
 `ipython` is available in system executable search paths, `ipython` will
@@ -560,8 +530,7 @@ Send code to inferior process commands:
 | `CTRL+j`    | next item in REPL history                                    |
 | `CTRL+k`    | previous item in REPL history                                |
 
-Running Python Script in shell
-------------------------------
+## Running Python Script in shell
 
 To run a Python script like you would in the shell press `SPC m c c` to
 start the Python script in comint mode. This is useful when working with
@@ -576,8 +545,7 @@ other modules.
 **Note:** With the universal argument `SPC u` you can enter a new
 compilation command.
 
-Testing
--------
+## Testing
 
 Test commands start with `m t`. To use the secondary test runner call
 the function with a prefix argument, for example `SPC u SPC m t a`.
@@ -599,8 +567,7 @@ the function with a prefix argument, for example `SPC u SPC m t a`.
 | `SPC m t S` | launch all tests of the current suite in debug mode (only with `nose`) |
 | `SPC m t T` | launch the current test (function) in debug mode                       |
 
-Refactoring
------------
+## Refactoring
 
 | Key binding | Description                                                                                 |
 |-------------|---------------------------------------------------------------------------------------------|
@@ -608,8 +575,7 @@ Refactoring
 | `SPC m r i` | remove unused imports with [autoflake](https://github.com/myint/autoflake)                  |
 | `SPC m r I` | sort imports with [isort](https://pypi.python.org/pypi/isort)                               |
 
-Pip package management
-----------------------
+## Pip package management
 
 In python buffer type `SPC m P` to open buffer listing all installed
 `pip` packages in the currently activated virtual environment.
@@ -630,8 +596,7 @@ In the package list buffer:
 | `u`         | mark for upgrade (`pippel-menu-mark-upgrade`)               |
 | `x`         | perform marked package menu actions (`pippel-menu-execute`) |
 
-Live coding
------------
+## Live coding
 
 Live coding is provided by the
 [live-py-plugin.](https://github.com/donkirkby/live-py-plugin)
@@ -640,8 +605,7 @@ Live coding is provided by the
 |-------------|---------------------|
 | `SPC m l`   | Toggle live-py-mode |
 
-Other Python commands
----------------------
+## Other Python commands
 
 | Key binding              | Description                                                                               |
 |--------------------------|-------------------------------------------------------------------------------------------|
@@ -669,8 +633,7 @@ Other Python commands
 | `SPC m v p s`            | launch pipenv shell in current project                                                    |
 | `SPC m v p u`            | uninstall module from pipenv environment                                                  |
 
-Debugger
---------
+## Debugger
 
 Using the `dap` layer you'll get access to all the DAP key bindings, see
 the complete list of key bindings on the [dap layer

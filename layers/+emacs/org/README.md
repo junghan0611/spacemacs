@@ -1,12 +1,10 @@
 ![](img/org.png)
 
-Description
-===========
+# Description
 
 This layer enables [org mode](http://orgmode.org/) for Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Vim inspired key bindings are provided by
     [evil-org-mode](https://github.com/Somelauw/evil-org-mode)
@@ -32,15 +30,13 @@ Features:
 -   Text transclusion via
     [org-transclusion](https://nobiot.github.io/org-transclusion)
 
-BibTeX
-======
+# BibTeX
 
 For more extensive support of references through BibTeX files, have a
 look at the [BibTeX
 layer](https://github.com/syl20bnr/spacemacs/blob/develop/layers/+lang/bibtex/README.org).
 
-Important Note
-==============
+# Important Note
 
 Since version 0.300, spacemacs uses the `org` version from the ELPA
 repository instead of the one shipped with emacs. Then, any `org`
@@ -67,18 +63,15 @@ If this is not done you will encounter a lot of unbind key exceptions
 while working with org. More details can be found
 [here](https://github.com/syl20bnr/spacemacs/issues/8106).
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer: in the main Spacemacs configuration
 file (`~/.spacemacs`), to the existing
 `dotspacemacs-configuration-layers` list add the `org` entry.
 
-`TODO` dependencies
--------------------
+## `TODO` dependencies
 
 If you would like to enforce dependencies in your `TODO` hierarchy, this
 layer has some sane default configurations to try via its
@@ -117,8 +110,7 @@ directly by setting `org-enforce-todo-dependencies` to `t` and writing
 your own function to register on the `org-after-todo-statistics-hook`.
 The layer implementation is a good reference.
 
-Agenda notifications
---------------------
+## Agenda notifications
 
 To enable notifications for agenda events, set the variable
 `org-enable-notifications` to `t`.
@@ -174,8 +166,7 @@ keyword (**note** that [this additionally requires a `SCHEDULED:`
 stamp)](https://github.com/akhramov/org-wild-notifier.el/issues/46).
 Properties can be added with `, i p`.
 
-Agenda recommendations
-----------------------
+## Agenda recommendations
 
 Emacs comes with its own diary package included. It is recommended not
 to use the diary directly. Instead of [creating a diary
@@ -206,8 +197,7 @@ configured, then the second appointment will also trigger a notification
 10 minutes (by default) before its due time (see [Agenda
 notifications](#agenda-notifications)).
 
-GitHub support
---------------
+## GitHub support
 
 To install GitHub related extensions like
 [ox-gfm](https://github.com/larstvei/ox-gfm) to export to GitHub
@@ -218,8 +208,7 @@ flavored markdown set the variable `org-enable-github-support` to `t`.
   (org :variables org-enable-github-support t)))
 ```
 
-Twitter Bootstrap support
--------------------------
+## Twitter Bootstrap support
 
 To enable the export to Twitter Bootstrap-formatted HTML - set the
 variable `org-enable-bootstrap-support` to `t`. This would install the
@@ -231,8 +220,7 @@ variable `org-enable-bootstrap-support` to `t`. This would install the
        org-enable-bootstrap-support t)))
 ```
 
-Gnuplot support
----------------
+## Gnuplot support
 
 Org-mode supports the plotting of data within tables through
 [Gnuplot](http://www.gnuplot.info/) as demonstrated
@@ -240,12 +228,11 @@ Org-mode supports the plotting of data within tables through
 
 Unfortunately, this is [not terribly well
 supported](https://github.com/bruceravel/gnuplot-mode/issues/15) on
-Windows, at this stage. To disable the configuration of gnuplot support
-- add the `gnuplot` package to your `dotspacemacs-excluded-packages`
-variable.
+Windows, at this stage. To disable the configuration of gnuplot
+support - add the `gnuplot` package to your
+`dotspacemacs-excluded-packages` variable.
 
-Reveal.js support
------------------
+## Reveal.js support
 
 To enable the export of org files as a
 [reveal.js](http://lab.hakim.se/reveal-js/) presentation - set the
@@ -269,8 +256,7 @@ process:
 #+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js@3.8.0
 ```
 
-Org-contacts support
---------------------
+## Org-contacts support
 
 [org-contacts](https://github.com/tkf/org-mode/blob/master/contrib/lisp/org-contacts.el)
 is a handy contacts management system. It can be used to manage (email)
@@ -319,8 +305,7 @@ Importing/exporting contacts can be done via the
 package gets installed automatically after enabling org contacts
 support.
 
-Org-journal support
--------------------
+## Org-journal support
 
 [org-journal](https://github.com/bastibe/org-journal) is a simple
 journal management system that:
@@ -406,8 +391,7 @@ For example:
 )
 ```
 
-Hugo support
-------------
+## Hugo support
 
 To install the Org exporter [ox-hugo](https://ox-hugo.scripter.co) that
 generates [Hugo](https://gohugo.io) -compatible Markdown *plus*
@@ -420,8 +404,7 @@ TOML/YAML front-matter, set the variable `org-enable-hugo-support` to
        org-enable-hugo-support t)))
 ```
 
-Trello support
---------------
+## Trello support
 
 To install Trello support set the variable `org-enable-trello-support`
 to `t`.
@@ -432,8 +415,7 @@ to `t`.
        org-enable-trello-support t)))
 ```
 
-Different bullets
------------------
+## Different bullets
 
 You can tweak the bullets displayed in the org buffer in the function
 `dotspacemacs/user-config` of your dotfile by setting the variable
@@ -451,8 +433,7 @@ You can disable the fancy bullets entirely by adding `org-superstar` to
 (dotspacemacs-excluded-packages '(org-superstar))
 ```
 
-Project support
----------------
+## Project support
 
 Set the layer variable `org-projectile-file` to the filename where you
 want to store project-specific TODOs. If this is an absolute path, all
@@ -476,8 +457,7 @@ this with the following snippet.
           (org-projectile-todo-files)))
 ```
 
-Org-brain support
------------------
+## Org-brain support
 
 For Emacs 25 or later, to install
 [org-brain](https://kungsgeten.github.io/org-brain.html) set the
@@ -487,8 +467,7 @@ See the [org-brain package
 documentation](https://github.com/Kungsgeten/org-brain) for more
 information.
 
-Org-roam support
-----------------
+## Org-roam support
 
 To install org-roam support set the variable `org-enable-roam-support`
 to `t`.
@@ -526,8 +505,7 @@ the variable `org-enable-roam-protocol` to `t`.
 And create a desktop file as described in the [org-roam
 manual](https://www.orgroam.com/manual.html#Org_002droam-Protocol).
 
-Mode line support
------------------
+## Mode line support
 
 To temporarily enable mode line display of org clock, press `SPC t m c`.
 
@@ -538,8 +516,7 @@ to your `dotspacemacs/user-config` function:
 (setq spaceline-org-clock-p t)
 ```
 
-Sticky header support
----------------------
+## Sticky header support
 
 To install sticky header support set the variable
 `org-enable-sticky-header` to `t`.
@@ -550,8 +527,7 @@ To install sticky header support set the variable
        org-enable-sticky-header t)))
 ```
 
-Epub support
-------------
+## Epub support
 
 To install the Org exporter [ox-epub](https://github.com/ofosos/ox-epub)
 that generates e-book file format
@@ -564,8 +540,7 @@ that generates e-book file format
                      org-enable-epub-support t)))
 ```
 
-Jira support
-------------
+## Jira support
 
 To bring Jira and OrgMode together over
 [org-jira](https://github.com/ahungry/org-jira) set the variable
@@ -586,8 +561,7 @@ each time you connect, add your authentication credentials to
 machine yourcompany.atlassian.net login you@example.com password yourPassword port 443
 ```
 
-Valign support
---------------
+## Valign support
 
 To install [valign](https://github.com/casouri/valign). Which provides:
 Pixel-perfect visual alignment for Org and Markdown tables. Set the
@@ -601,8 +575,7 @@ variable `org-enable-valign` to `t`:
 [Known problem: Rendering large tables (≥100 lines) is
 laggy.](https://github.com/casouri/valign#valignel)
 
-Org-appear support
-------------------
+## Org-appear support
 
 To install [org-appear](https://github.com/awth13/org-appear), which
 toggles visibility of emphasis markers, links, subscripts, and
@@ -617,8 +590,7 @@ If you set `org-appear-trigger` to `manual` and your editing style is
 `vim` or `hybrid`, `org-appear` is turned on in insert mode but not in
 normal mode.
 
-Transclusion support
---------------------
+## Transclusion support
 
 To install
 [org-transclusion](https://github.com/nobiot/org-transclusion), which
@@ -630,8 +602,7 @@ lin, set the `org-enable-transclusion-support` to `t`:
  '((org :variables org-enable-transclusion-support t)))
 ```
 
-Verb support
-------------
+## Verb support
 
 To install [Verb](https://github.com/federicotdn/verb), an HTTP client
 based on Org mode, set the `org-enable-verb-support` variable to `t`:
@@ -641,8 +612,7 @@ based on Org mode, set the `org-enable-verb-support` variable to `t`:
  '((org :variables org-enable-verb-support t)))
 ```
 
-AsciiDoc support
-----------------
+## AsciiDoc support
 
 To install Org exporter
 [ox-asciidoc](https://github.com/yashi/org-asciidoc), that generates
@@ -654,8 +624,7 @@ AsciiDoc documents, set the variable `org-enable-asciidoc-support` to
   '((org :variables org-enable-asciidoc-support t)))
 ```
 
-Spacemacs layout integration
-----------------------------
+## Spacemacs layout integration
 
 A [Spacemacs custom
 layout](https://github.com/syl20bnr/spacemacs/blob/develop/doc/DOCUMENTATION.org#layouts-and-workspaces)
@@ -669,11 +638,9 @@ behavior can be customized with the following layer variables:
     the specified (custom) org-agenda buffer, e.g.
     `(setq org-persp-startup-with-agenda "a")` opens `org-agenda-list`.
 
-Key bindings
-============
+# Key bindings
 
-Starting org-mode
------------------
+## Starting org-mode
 
 | Key binding   | Description                                                               |
 |---------------|---------------------------------------------------------------------------|
@@ -698,8 +665,7 @@ Starting org-mode
 | `SPC a o t`   | org todo list                                                             |
 | `SPC C c`     | org-capture                                                               |
 
-Toggles
--------
+## Toggles
 
 | Key binding | Description                                   |
 |-------------|-----------------------------------------------|
@@ -713,8 +679,7 @@ Toggles
 | `SPC m T V` | toggle `space-doc-mode` a read-only view mode |
 | `SPC m T x` | org-preview-latex-fragment                    |
 
-Org-mode
---------
+## Org-mode
 
 | Key binding                                  | Description                                   |
 |----------------------------------------------|-----------------------------------------------|
@@ -722,7 +687,7 @@ Org-mode
 | `SPC m *`                                    | org-ctrl-c-star                               |
 | `SPC m RET`                                  | org-ctrl-c-ret                                |
 | `SPC m -`                                    | org-ctrl-c-minus                              |
-| `SPC m '​`                                   | org-edit-special                              |
+| `SPC m '​`                                    | org-edit-special                              |
 | `SPC m a`                                    | org-agenda                                    |
 | `SPC m A`                                    | org-attach                                    |
 | `SPC m c`                                    | org-capture                                   |
@@ -755,8 +720,7 @@ Org-mode
 | `SPC m C-S-k`                                | org-shiftcontrolup                            |
 | `SPC s j`                                    | spacemacs/jump-in-buffer (jump to a heading)  |
 
-Org with evil-org-mode
-----------------------
+## Org with evil-org-mode
 
 Please see the [evil-org
 documentation](https://github.com/Somelauw/evil-org-mode/blob/master/doc/keythemes.org)
@@ -796,8 +760,7 @@ bindings are also available.
 | `T`          | Insert new TODO heading             |
 | `M-t`        | Insert new TODO sub-heading         |
 
-Tables
-------
+## Tables
 
 | Key binding   | Description                                                                  |
 |---------------|------------------------------------------------------------------------------|
@@ -831,8 +794,7 @@ Tables
 | `SPC m t t o` | Toggle the display of Row/Column numbers in tables                           |
 | `SPC m t w`   | Wrap several fields in a column like a paragraph                             |
 
-Trees
------
+## Trees
 
 | Key binding   | Description                     |
 |---------------|---------------------------------|
@@ -863,8 +825,7 @@ Trees
 | `SPC m s s`   | show sparse tree                |
 | `SPC m s S`   | sort trees                      |
 
-Element insertion
------------------
+## Element insertion
 
 | Key binding   | Description                                   |
 |---------------|-----------------------------------------------|
@@ -887,15 +848,13 @@ Element insertion
 | `SPC m i s`   | org-insert-subheading                         |
 | `SPC m i t`   | org-set-tags                                  |
 
-Links
------
+## Links
 
 | Key binding | Description       |
 |-------------|-------------------|
 | `SPC m x o` | org-open-at-point |
 
-Babel / Source Blocks
----------------------
+## Babel / Source Blocks
 
 Besides the key bindings mentioned here it is recommended to use the
 [auto-completion
@@ -946,8 +905,7 @@ active:
 | `z`         | recenter buffer in window     |
 | `q`         | leave transient state         |
 
-Emphasis
---------
+## Emphasis
 
 | Key binding | Description                |
 |-------------|----------------------------|
@@ -959,8 +917,7 @@ Emphasis
 | `SPC m x u` | make region underline      |
 | `SPC m x v` | make region verbatim       |
 
-Navigating in calendar
-----------------------
+## Navigating in calendar
 
 | Key binding | Description        |
 |-------------|--------------------|
@@ -973,8 +930,7 @@ Navigating in calendar
 | `M-J`       | One year forward   |
 | `M-K`       | One year backward  |
 
-Capture buffers and src blocks
-------------------------------
+## Capture buffers and src blocks
 
 `org-capture-mode` and `org-src-mode` both support the confirm and abort
 conventions.
@@ -982,14 +938,13 @@ conventions.
 | Key binding                                  | Description                            |
 |----------------------------------------------|----------------------------------------|
 | `SPC m <dotspacemacs-major-mode-leader-key>` | confirm in `org-capture-mode`          |
-| `SPC m '​`                                   | confirm in `org-src-mode`              |
+| `SPC m '​`                                    | confirm in `org-src-mode`              |
 | `SPC m c`                                    | confirm                                |
 | `SPC m a`                                    | abort                                  |
 | `SPC m k`                                    | abort                                  |
 | `SPC m r`                                    | org-capture-refile in org-capture-mode |
 
-Org agenda
-----------
+## Org agenda
 
 ### Key bindings
 
@@ -1085,15 +1040,13 @@ associated with each binding are listed bellow.
 | `gd`        | go to date          | org-agenda-goto-date              |
 | `gr`        | reload              | org-agenda-redo                   |
 
-Pomodoro
---------
+## Pomodoro
 
 | Key binding | Description       |
 |-------------|-------------------|
 | `SPC m C p` | starts a pomodoro |
 
-Presentation
-------------
+## Presentation
 
 org-present must be activated explicitly by typing:
 `SPC SPC org-present`
@@ -1104,15 +1057,13 @@ org-present must be activated explicitly by typing:
 | `l`         | next slide     |
 | `q`         | quit           |
 
-Helm-org-rifle
---------------
+## Helm-org-rifle
 
 | Key binding | Description                                |
 |-------------|--------------------------------------------|
 | `SPC a o /` | Search org files for keywords and headings |
 
-Org-projectile
---------------
+## Org-projectile
 
 | Key binding       | Description                                             |
 |-------------------|---------------------------------------------------------|
@@ -1120,8 +1071,7 @@ Org-projectile
 | `SPC u SPC a o p` | Capture a TODO for any given project (choose from list) |
 | `SPC p o`         | Go to the TODOs for the current project                 |
 
-Org-journal
------------
+## Org-journal
 
 | Key binding         | Description                                     |
 |---------------------|-------------------------------------------------|
@@ -1156,8 +1106,7 @@ bindings are available.
 | `SPC m n`   | Next journal entry     |
 | `SPC m p`   | Previous journal entry |
 
-Org-brain
----------
+## Org-brain
 
 ### Application bindings
 
@@ -1198,8 +1147,7 @@ Org-brain
 | `o`         | Open and edit the visualized entry                                    |
 | `r`         | Rename this, or another, entry                                        |
 
-Org-jira
---------
+## Org-jira
 
 Key binding prefixes:
 
@@ -1223,8 +1171,7 @@ Key binding prefixes:
 | `[prefix] c u` | Update the comment at point or add a new comment |
 | `[prefix] t j` | Convert the TODO item at point to a Jira ticket  |
 
-Verb
-----
+## Verb
 
 ### Verb-mode bindings
 
@@ -1254,8 +1201,7 @@ Verb
 |-------------|-----------------------------------------------------|
 | `SPC m r q` | Kill current response headers buffer and its window |
 
-Org-roam
---------
+## Org-roam
 
 Key binding prefixes:
 
@@ -1284,8 +1230,7 @@ Key binding prefixes:
 | `o`         | Follow link             |
 | `r`         | Refresh org-roam buffer |
 
-Transclusion
-------------
+## Transclusion
 
 | Key binding | Description                    |
 |-------------|--------------------------------|

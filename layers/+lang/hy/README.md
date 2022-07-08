@@ -1,12 +1,10 @@
 ![](img/hy.png)
 
-Description
-===========
+# Description
 
 This layer adds support for the Hy language based on Python.
 
-Features:
----------
+## Features:
 
 -   syntax-highlighting
 -   Auto-completion
@@ -17,11 +15,9 @@ Features:
     [pyenv](https://github.com/yyuu/pyenv)
 -   Org Babel support
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `hy` to the existing `dotspacemacs-configuration-layers`
@@ -33,8 +29,7 @@ To install `hy` globally:
 pip3 install hy
 ```
 
-Auto-completion
----------------
+## Auto-completion
 
 [hy-mode](https://github.com/hylang/hy-mode) relies on
 [jedhy](https://github.com/ekaschalk/jedhy) for auto-completion.
@@ -45,19 +40,16 @@ Auto-completion
 pip3 install jedhy
 ```
 
-Key bindings
-============
+# Key bindings
 
-Debug
------
+## Debug
 
 | Key binding | Description         |
 |-------------|---------------------|
 | `SPC m d d` | insert pdb          |
 | `SPC m d t` | insert pdb threaded |
 
-REPL
-----
+## REPL
 
 Start a Hy inferior REPL process with `SPC m s i`. If `hy` is available
 in system executable search paths, `hy` will be used to launch the
@@ -77,8 +69,7 @@ Send code to hy REPL commands:
 | `SPC m s R` | send current region to the REPL and switch to it                |
 | `SPC m s s` | start and/or swithc to REPL                                     |
 
-Tests
------
+## Tests
 
 | Key binding | Description                                          |
 |-------------|------------------------------------------------------|
@@ -87,8 +78,7 @@ Tests
 | `SPC m t m` | launch all tests of the current module               |
 | `SPC m t M` | launch all tests of the current module in debug mode |
 
-Python environments
--------------------
+## Python environments
 
 | Key binding   | Description                                                            |
 |---------------|------------------------------------------------------------------------|

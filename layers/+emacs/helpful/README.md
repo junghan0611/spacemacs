@@ -1,11 +1,9 @@
-Description
-===========
+# Description
 
 This layer replaces the existing emacs related help buffers with more
 detailed ones.
 
-Features:
----------
+## Features:
 
 -   Better help buffers with
     [helpful](https://github.com/Wilfred/helpful) for emacs related
@@ -15,18 +13,15 @@ Features:
     and key help buffers
 -   Better formatted elisp docstrings
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `helpful` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Key bindings
-============
+# Key bindings
 
-Global bindings
----------------
+## Global bindings
 
 This layer aims to silently replace the standard emacs help key bindings
 with improved versions. So it does not introduce new bindings. For the
@@ -43,8 +38,7 @@ this layer.
 | `C-h f`     | Open helpful buffer for any callable object            |
 | `C-h v`     | Open helpful buffer for variable                       |
 
-Helpful mode bindings
----------------------
+## Helpful mode bindings
 
 Additional key bindings available in the helpful-mode buffers.
 

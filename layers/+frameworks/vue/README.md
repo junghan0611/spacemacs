@@ -1,7 +1,6 @@
 ![](img/vue.png)
 
-Description
-===========
+# Description
 
 Layer for Vue, for working with `.vue` files.
 
@@ -10,8 +9,7 @@ of `web-mode` to handle vue files. It will conflict with the [vue-mode
 package](https://github.com/AdamNiederer/vue-mode), make sure you don't
 use that package together with this layer.
 
-Features:
----------
+## Features:
 
 -   Wholesome features from `web-mode`, especially on template part
 -   Better performance
@@ -24,8 +22,7 @@ Features:
 -   `evil-matchit` `%` to jump between open and close tags
 -   `emmet-mode` and `yasnippet` for code expanding with the `TAB` key
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `vue` to the existing `dotspacemacs-configuration-layers`
@@ -61,11 +58,9 @@ on node layer `dotspacemacs-configuration-layers` function:
 (node :variables node-add-modules-path t)
 ```
 
-Backends
-========
+# Backends
 
-dumb
-----
+## dumb
 
 dumb backend is light weight and fast. `dumb-jump` is used to handled go
 to definition (`gd` vim key binding). Because of the template nature of
@@ -75,8 +70,7 @@ Company backend is set to be very eager in suggestions.
 
 `eslint` is used for linting.
 
-lsp
----
+## lsp
 
 Vue language server needs to be installed
 
@@ -88,8 +82,7 @@ This backend provides all the fancy features like: jump to definition,
 references, type inference… However, `eslint` is explicitly selected for
 linting because it works better than `lsp` linter.
 
-Optional Configuration
-======================
+# Optional Configuration
 
 `web-mode-script-padding` is set to 0, so indent is zero at root level
 inside `script` tag
@@ -109,11 +102,9 @@ For example, if you wan't two space indentation, put this in your
  web-mode-attr-indent-offset 2)
 ```
 
-Key bindings
-============
+# Key bindings
 
-web-mode
---------
+## web-mode
 
 Free stuff from \`html' layer, with minor change to avoid conflict with
 `lsp` layer
@@ -152,23 +143,20 @@ A transient-state is also defined, start it with `SPC m .` or `, .`
 | `r`         | rename current element                                         |
 | `w`         | wrap current element                                           |
 
-Formatting (prettier)
----------------------
+## Formatting (prettier)
 
 | Key binding | Description               |
 |-------------|---------------------------|
 | `SPC m = =` | format code with prettier |
 
-Auto-complete and documentation (dumb)
---------------------------------------
+## Auto-complete and documentation (dumb)
 
 | Key binding | Description                                          |
 |-------------|------------------------------------------------------|
 | `SPC m g`   | jump to the definition of the thing under the cursor |
 | `SPC m G`   | jump to definition for the given name                |
 
-Lsp key bindings
-----------------
+## Lsp key bindings
 
 See the [lsp
 layer](https://github.com/syl20bnr/spacemacs/tree/develop/layers/%2Btools/lsp).

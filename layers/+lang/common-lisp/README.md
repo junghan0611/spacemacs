@@ -1,12 +1,10 @@
 ![](img/slime.png)
 
-Description
-===========
+# Description
 
 This layer provides support for Common Lisp to Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting
 -   Auto-completion using company
@@ -15,8 +13,7 @@ Features:
 -   Support for [sbcl](http://www.sbcl.org/) backend or any other
     `common-lisp` implementation
 
-Install
-=======
+# Install
 
 If you have previously installed slime in any other way, it is
 recommended that you uninstall it before proceeding. You should clean up
@@ -36,8 +33,7 @@ your `~/.spacemacs`
   (setq inferior-lisp-program "/path/to/your/lisp"))
 ```
 
-Structuraly safe editing
-========================
+# Structuraly safe editing
 
 This layer adds support for `evil-cleverparens` which allows to safely
 edit lisp code by keeping the s-expressions balanced.
@@ -60,11 +56,9 @@ or to enable it for all supported modes:
 
 When enabled the symbol `🆂` should be displayed in the mode-line.
 
-Key bindings
-============
+# Key bindings
 
-Working with lisp files (barfage, slurpage & more)
---------------------------------------------------
+## Working with lisp files (barfage, slurpage & more)
 
 Spacemacs comes with a special `lisp-state` for working with lisp code
 that supports slurpage, barfage and more tools you'll likely want when
@@ -75,8 +69,7 @@ global
 [DOCUMENTATION.org](https://github.com/syl20bnr/spacemacs/blob/master/doc/DOCUMENTATION.org#lisp-key-bindings).
 In general, use `SPC k` to interact with the lisp-state.
 
-Leader
-------
+## Leader
 
 ### Help
 

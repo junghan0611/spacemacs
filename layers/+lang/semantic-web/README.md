@@ -1,7 +1,6 @@
 ![](img/semweb.png)
 
-Description
-===========
+# Description
 
 This layer adds support for RDF files in N3 and [Turtle
 syntax](https://www.w3.org/TR/turtle/) using
@@ -15,20 +14,17 @@ defaults to <http://localhost:2020/>. Once set, it will be used for all
 subsequent queries in that buffer. Results will be displayed in another
 buffer in CSV format.
 
-Features:
----------
+## Features:
 
 -   Provides an alternative way to search the web using SPARQL queries.
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `semantic-web` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description          |
 |-------------|----------------------|

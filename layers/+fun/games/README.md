@@ -1,12 +1,10 @@
 ![](img/games.png)
 
-Description
-===========
+# Description
 
 This layer allows you to play evilified games in Spacemacs.
 
-Features:
----------
+## Features:
 
 -   2048-game
 -   Pacmacs (Pacman for Emacs)
@@ -14,15 +12,13 @@ Features:
 -   Tetris
 -   Typit
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `games` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Games instructions
-==================
+# Games instructions
 
 To run a game:
 
@@ -36,8 +32,7 @@ Possible helm actions:
 -   quit
 -   reset
 
-2048
-----
+## 2048
 
 | Key binding | Description          |
 |-------------|----------------------|
@@ -46,8 +41,7 @@ Possible helm actions:
 | `k`         | Move the tiles up    |
 | `l`         | Move the tiles right |
 
-Pacmacs
--------
+## Pacmacs
 
 | Key binding | Description |
 |-------------|-------------|
@@ -57,8 +51,7 @@ Pacmacs
 | `l`         | Move right  |
 |             |             |
 
-Sudoku
-------
+## Sudoku
 
 |              |              |
 |--------------|--------------|
@@ -74,8 +67,7 @@ Sudoku
 | `, s`        | Save puzzle  |
 | `, l`        | Load puzzle  |
 
-Tetris
-------
+## Tetris
 
 | Key binding | Description                    |
 |-------------|--------------------------------|
@@ -88,8 +80,7 @@ Tetris
 | `p`         | Pause the game                 |
 | `q`         | Quit the game                  |
 
-Typit
------
+## Typit
 
 There is no specific key bindings for this game, just launch it and
 begin typing. Use `C-g` to exit the game at any time.

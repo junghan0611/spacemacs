@@ -1,7 +1,6 @@
 ![](img/cscope.jpg)
 
-Description
-===========
+# Description
 
 This layer provides bindings for using
 [Cscope](http://cscope.sourceforge.net) and
@@ -12,26 +11,22 @@ See
 for a comparison between `Cscope` and other similar tools (such as
 gtags).
 
-Features:
----------
+## Features:
 
 -   Tag indexing and searching for C-C++ via
     [Cscope](http://cscope.sourceforge.net)
 -   Tag indexing and searching for python via
     [PyCscope](https://github.com/portante/pycscope)
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `cscope` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Cscope
-------
+## Cscope
 
 Enable `c-c++` layer in your `~/.spacemacs` file. Install `Cscope`
 through your package manager, or download it from the
@@ -54,8 +49,7 @@ make
 sudo make install
 ```
 
-PyCscope
---------
+## PyCscope
 
 Enable `python` layer in your `~/.spacemacs` file. Install PyCscope
 through pip:
@@ -64,16 +58,14 @@ through pip:
 pip install pycscope
 ```
 
-Usage
-=====
+# Usage
 
 Before using any helm-cscope commands, remember to create a Cscope index
 file. Do it by running the command `cscope-index-files` for C and C++
 projects, or the command `cscope/run-pycscope` for Python projects,
 bound to `SPC m g i`.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                   |
 |-------------|-----------------------------------------------|

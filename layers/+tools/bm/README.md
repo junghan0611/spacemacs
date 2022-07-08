@@ -1,12 +1,10 @@
-Description
-===========
+# Description
 
 [BM](https://github.com/joodland/bm/blob/master/README.md) provides
 visible, buffer local, bookmarks and the ability to jump forward and
 backward to the next bookmark.
 
-Features:
----------
+## Features:
 
 -   Auto remove bookmark after jump to it by `bm-next` or `bm-previous`
 -   Cycle through bookmarks in all open buffers in LIFO order
@@ -21,15 +19,13 @@ Features:
 -   List bookmarks (in all buffers) in a separate buffer.
 -   Cycle through bookmarks in all open buffers.
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `bm` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description        |
 |-------------|--------------------|

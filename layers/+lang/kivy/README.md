@@ -1,16 +1,13 @@
-Description
-===========
+# Description
 
 This layer adds support for Kivy, cross-platform GUI framework for
 Python.
 
-Features:
----------
+## Features:
 
 -   Syntax Highlighting
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `kivy` to the existing `dotspacemacs-configuration-layers`

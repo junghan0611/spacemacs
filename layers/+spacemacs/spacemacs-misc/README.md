@@ -1,10 +1,8 @@
-Description
-===========
+# Description
 
 This layer adds some general packages into Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Support for jumping to definitions via `dumb-jump` or
     `evil-goto-definition`.

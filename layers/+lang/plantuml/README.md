@@ -1,7 +1,6 @@
 ![](img/logo.png)
 
-Description
-===========
+# Description
 
 This layer enables support for
 [plantuml-mode](https://github.com/skuro/plantuml-mode), which provides
@@ -33,16 +32,14 @@ robbyoconnor->theOtherPerson : And they thinks it's funny? Yup, they definitely 
 
 ![](img/dia.png)
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting
 -   Diagram preview in various output formats
 -   Embedding into org documents
 -   Controlling the `Plantuml` compiler directly from emacs
 
-Install
-=======
+# Install
 
 To use this contribution add it to your `~/.spacemacs`
 
@@ -72,8 +69,7 @@ jar option instead.
 (setq-default dotspacemacs-configuration-layers '((plantuml :variables plantuml-default-exec-mode 'server)))
 ```
 
-Org-Babel Integration
-=====================
+# Org-Babel Integration
 
 To enable the execution of embedded plantuml code blocks within
 [Org-Mode](http://orgmode.org/) documents, define a value for
@@ -83,8 +79,7 @@ To enable the execution of embedded plantuml code blocks within
 (setq-default dotspacemacs-configuration-layers '((plantuml :variables plantuml-jar-path "~/plantUml.jar" org-plantuml-jar-path "~/plantUml.jar")))
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding              | Description                                           |
 |--------------------------|-------------------------------------------------------|

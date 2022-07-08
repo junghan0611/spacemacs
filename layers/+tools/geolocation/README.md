@@ -1,10 +1,8 @@
-Description
-===========
+# Description
 
 This layer offers location sensitive adjustments to Emacs.
 
-Features:
----------
+## Features:
 
 -   Supports the following adjustments:
     -   Automatic switching between light (day) and dark (night) themes
@@ -15,8 +13,7 @@ Features:
         [osx-location](https://github.com/purcell/osx-location)
     -   Manual location setting via variables in your dotfile
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `geolocation` to the existing
@@ -32,11 +29,9 @@ instead something like this:
              geolocation-enable-weather-forecast t)
 ```
 
-Configuration
-=============
+# Configuration
 
-Location
---------
+## Location
 
 Set location manually by setting the following variables in your
 dotfile:
@@ -47,8 +42,7 @@ dotfile:
       calendar-longitude 1.80)
 ```
 
-macOS Location
---------------
+## macOS Location
 
 MacOS users can take advantage of automatic geographical discovery using
 the OS's CoreLocation system service, implemented as a long running
@@ -61,8 +55,7 @@ layer is activated.
 
 ![](img/emacs-location-helper.jpg)
 
-Theme-changer
--------------
+## Theme-changer
 
 This layer implement a simple "theme changer" which, when enabled, will
 switch between first two themes the user has setup in
@@ -72,8 +65,7 @@ this layer, though they are still available for cycling, etc.
 
 Note that `theme-changer` **requires** location to be set.
 
-Sunshine (weather forecast)
----------------------------
+## Sunshine (weather forecast)
 
 Sunshine display local weather forecast.
 
@@ -120,11 +112,9 @@ this:
 
 ![](img/emacs-sunshine.jpg)
 
-Key bindings
-============
+# Key bindings
 
-Weather
--------
+## Weather
 
 | Key binding   | Description                                   |
 |---------------|-----------------------------------------------|

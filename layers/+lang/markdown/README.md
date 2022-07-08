@@ -1,12 +1,10 @@
 ![](img/markdown.png)
 
-Description
-===========
+# Description
 
 This layer adds markdown support to Spacemacs.
 
-Features:
----------
+## Features:
 
 -   markdown files support via
     [markdown-mode](http://jblevins.org/git/markdown-mode.git/)
@@ -21,25 +19,21 @@ Features:
     a way of showing, either using the `emoji` layer or having a proper
     font) :clap:
 
-BibTeX
-======
+# BibTeX
 
 For more extensive support of references with BibTeX files, have a look
 at the [BibTeX
 layer](https://github.com/syl20bnr/spacemacs/blob/develop/layers/%2Blang/bibtex/README.org).
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `markdown` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Configuration
-=============
+# Configuration
 
-Live preview
-------------
+## Live preview
 
 A live preview can be generated when one of these executables are in
 path:
@@ -87,8 +81,7 @@ Additionally there is `flymd` package in `chrome` layer that allows to
 preview markdown buffer in Chrome. Please refer to `chrome` layer
 documentation for more information.
 
-Automatic MMM-Mode Generation
------------------------------
+## Automatic MMM-Mode Generation
 
 To generate MMM-Modes for languages set the value of the variable
 `markdown-mmm-auto-modes` to a list of the languages. For languages
@@ -105,20 +98,16 @@ dotspacemacs-configuration-layers '(
 on the Spacemacs repository to add new languages instead of overriding
 the variable in your dotfile.
 
-Usage
-=====
+# Usage
 
-Generate a TOC
---------------
+## Generate a TOC
 
 To generate a table of contents type on top of the buffer:
 `SPC SPC markdown-toc-generate-toc RET`
 
-Key bindings
-============
+# Key bindings
 
-Element insertion
------------------
+## Element insertion
 
 | Key binding | Description                                                       |
 |-------------|-------------------------------------------------------------------|
@@ -152,15 +141,13 @@ Element insertion
 | `SPC m x P` | pre region                                                        |
 | `SPC m x s` | make region striked through or insert strikethrough               |
 
-Element removal
----------------
+## Element removal
 
 | Key binding | Description         |
 |-------------|---------------------|
 | `SPC m k`   | kill thing at point |
 
-Table manipulation
-------------------
+## Table manipulation
 
 | Key binding | Description             |
 |-------------|-------------------------|
@@ -177,31 +164,27 @@ Table manipulation
 | `SPC m t t` | transpose table         |
 | `SPC m t d` | convert region to table |
 
-Completion
-----------
+## Completion
 
 | Key binding | Description |
 |-------------|-------------|
 | `SPC m ]`   | complete    |
 
-Following and Jumping
----------------------
+## Following and Jumping
 
 | Key binding | Description           |
 |-------------|-----------------------|
 | `SPC m o`   | follow thing at point |
 | `RET`       | jump (markdown-do)    |
 
-Indentation
------------
+## Indentation
 
 | Key binding | Description    |
 |-------------|----------------|
 | `SPC m >`   | indent region  |
 | `SPC m <`   | outdent region |
 
-Header navigation
------------------
+## Header navigation
 
 | Key binding | Description                  |
 |-------------|------------------------------|
@@ -210,8 +193,7 @@ Header navigation
 | `gh`        | outline up one level         |
 | `gl`        | outline next visible heading |
 
-Buffer-wide commands
---------------------
+## Buffer-wide commands
 
 | Key binding | Description                                                                          |
 |-------------|--------------------------------------------------------------------------------------|
@@ -227,15 +209,13 @@ Buffer-wide commands
 | `SPC m c n` | cleanup list numbers                                                                 |
 | `SPC m c r` | render buffer                                                                        |
 
-List editing
-------------
+## List editing
 
 | Key binding | Description      |
 |-------------|------------------|
 | `SPC m l i` | insert list item |
 
-Movement
---------
+## Movement
 
 | Key binding | Description        |
 |-------------|--------------------|
@@ -244,8 +224,7 @@ Movement
 | `SPC m N`   | next link          |
 | `SPC m P`   | previous link      |
 
-Promotion, Demotion
--------------------
+## Promotion, Demotion
 
 | Key binding        | Command            |
 |--------------------|--------------------|
@@ -254,8 +233,7 @@ Promotion, Demotion
 | `M-h` or `M-left`  | markdown-promote   |
 | `M-l` or `M-right` | markdown-demote    |
 
-Toggles
--------
+## Toggles
 
 | Key binding | Description          |
 |-------------|----------------------|

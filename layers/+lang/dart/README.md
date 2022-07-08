@@ -1,13 +1,11 @@
 ![](img/dart.png)
 
-Description
-===========
+# Description
 
 This layer adds support for Dart language, and could be optionally used
 for Flutter development as well.
 
-Features:
----------
+## Features:
 
 -   Syntax Highlight
 -   Error checking with `flycheck`
@@ -15,8 +13,7 @@ Features:
 -   Dart Analyzer integration
 -   Key bindings
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `dart` to the existing `dotspacemacs-configuration-layers`
@@ -26,8 +23,7 @@ list in this file.
 (setq-default dotspacemacs-configuration-layers '(dart))
 ```
 
-Choosing a backend
-------------------
+## Choosing a backend
 
 To choose a default backend set the layer variable `dart-backend`:
 
@@ -49,11 +45,9 @@ example to use the `lsp` backend:
 ((dart-mode (dart-backend . lsp)))
 ```
 
-Backends
-========
+# Backends
 
-LSP
----
+## LSP
 
 This is the recommended backend it is a full IDE server using the
 standard language server protocol to communicate with emacs.
@@ -91,8 +85,7 @@ activate formatting on save.
 (dart :variables lsp-enable-on-type-formatting t)
 ```
 
-Dart analyzer (deprecated)
---------------------------
+## Dart analyzer (deprecated)
 
 This backend is not longer officially supported from
 [dart-server](https://github.com/bradyt/dart-server) use the LSP backend
@@ -136,11 +129,9 @@ formatting on save.
 For additional variables check the
 [dart-server](https://github.com/bradyt/dart-server) documentation.
 
-Key bindings
-============
+# Key bindings
 
-Normal mode
------------
+## Normal mode
 
 Some of the commands will instantiate a new Dart Analyzer server if
 necessary, while others work without using a Dart Analyzer connection.
@@ -158,16 +149,14 @@ commands become Async, and there might be a delay when executing them.
 | `SPC m f d`            | Find top-level declarations by name.              |
 | `SPC m =`              | Format buffer                                     |
 
-Insert mode
------------
+## Insert mode
 
 | Key binding | Description                                      |
 |-------------|--------------------------------------------------|
 | `<tab>`     | Expand previous word using Analyzer if available |
 | `C-<tab>`   | Expand including parameters                      |
 
-Popup screens
--------------
+## Popup screens
 
 | Key binding | Description                               |
 |-------------|-------------------------------------------|

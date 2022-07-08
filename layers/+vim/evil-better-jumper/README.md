@@ -1,18 +1,15 @@
-Description
-===========
+# Description
 
 This layer adds support for
 [better-jumper](https://github.com/gilbertw1/better-jumper). A
 configurable jump list implementation for Emacs that can be used to
 easily jump back to previous locations.
 
-Features:
----------
+## Features:
 
 -   jump back and forth
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `evil-better-jumper` to the existing
@@ -28,8 +25,7 @@ dotspacemacs file.
   dotspacemacs-distinguish-gui-tab t)
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                 |
 |-------------|-----------------------------|

@@ -1,30 +1,25 @@
-Description
-===========
+# Description
 
 This layer adds support for vimscript and pentadactyl config files.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting
 -   Auto-completion (with LSP)
 -   Syntax-checking (with LSP)
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `vimscript` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Configuration
-=============
+# Configuration
 
 All layer configurations can be done by setting layer variables in your
 dotfile. No custom user config lines are necessary
 
-Choosing a backend
-------------------
+## Choosing a backend
 
 This layer provides two alternative backends to choose from.
 

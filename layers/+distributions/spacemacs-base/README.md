@@ -1,10 +1,8 @@
-Description
-===========
+# Description
 
 This is the base distribution for Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Minimalistic approach to Spacemacs, contains only the core packages.
     Good starting point to make something completely new. This

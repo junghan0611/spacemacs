@@ -1,5 +1,4 @@
-Purpose of this document
-========================
+# Purpose of this document
 
 This document is intended to supplement the Spacemacs documentation by
 bridging the gap between vim and Spacemacs. While some information may
@@ -9,8 +8,7 @@ recommended that you read both files to fully understand Spacemacs.
 [Spacemacs
 Documentation](https://github.com/syl20bnr/spacemacs/blob/develop/doc/DOCUMENTATION.org)
 
-Philosophy
-==========
+# Philosophy
 
 One misconception many vim users have is that Spacemacs is an Emacs
 *clone* of vim. Spacemacs does not seek to completely mimic the behavior
@@ -21,11 +19,9 @@ understand that Spacemacs is an attempt to improve on both vim and Emacs
 using the superior modal editing of vim and the nicer configuration
 language of Emacs.
 
-Basic orientation
-=================
+# Basic orientation
 
-Terms
------
+## Terms
 
 Spacemacs uses some different terminology than vim, which can cause
 confusion for new users. This section attempts to clear up any
@@ -76,8 +72,7 @@ bottom of your window. To exit a transient-state press `q`.
 
 ![](img/spacemacs-scale-transient-state.png)
 
-Key binding conventions
------------------------
+## Key binding conventions
 
 Spacemacs uses `SPC` as its `<Leader>` key. This document will use `SPC`
 to refer to the `<Leader>` key. All key bindings are mnemonic and are
@@ -92,8 +87,7 @@ to show available key bindings after a delay:
 
 ![](img/which-key.png)
 
-Running commands
-----------------
+## Running commands
 
 Emacs commands can be run using `SPC SPC`. This will pop up a buffer
 using [Helm](https://github.com/emacs-helm/helm) which can be used to
@@ -103,8 +97,7 @@ like in vim.
 Note: You can run Emacs interactive commands using `:`, but you cannot
 run ex commands using `SPC SPC`.
 
-Buffer and window management
-----------------------------
+## Buffer and window management
 
 ### Buffers
 
@@ -142,8 +135,7 @@ files at once. All window key bindings are under the `SPC w` prefix.
 | `SPC w H/J/K/L`        | Move the current window.             |
 | `SPC w .`              | Window transient-state.              |
 
-Files
------
+## Files
 
 All file commands in Spacemacs are available under the `SPC f` prefix.
 
@@ -155,8 +147,7 @@ All file commands in Spacemacs are available under the `SPC f` prefix.
 | `:x`              | Save the current file and quit.                              |
 | `:e <file>`       | Open `<file>`                                                |
 
-The Help System
----------------
+## The Help System
 
 Emacs has an extensive help system. All key bindings under the `SPC h d`
 prefix allow convenient access to the help system. The most important of
@@ -174,8 +165,7 @@ documentation.
 Whenever, you see weird behavior or want to know what something does,
 these functions are the first thing you should refer to.
 
-Exploring
----------
+## Exploring
 
 There are a few ways to explore the functionality of Spacemacs. One is
 to read the [source code](https://github.com/syl20bnr/spacemacs) on
@@ -188,8 +178,7 @@ explore:
 | `SPC h SPC` | Lists all layers and allows you to view files from the layer. |
 | `SPC ?`     | Lists all key bindings.                                       |
 
-Regular expression syntax
--------------------------
+## Regular expression syntax
 
 One thing that might catch you off guard is the difference in regex
 syntax between Vim and Emacs. In Emacs, even when you search under
@@ -221,11 +210,9 @@ question](https://stackoverflow.com/questions/1946352/comparison-table-for-emacs
 and [this tool](https://github.com/joddie/pcre2el) which converts PCRE
 regex to Emacs regex.
 
-Customization
-=============
+# Customization
 
-The .spacemacs file
--------------------
+## The .spacemacs file
 
 When you first start spacemacs, you will be prompted to choose an
 editing style. If you are reading this, you likely want to choose the
@@ -248,8 +235,7 @@ will use the most. This is where you define any user configuration.
 | `SPC f e d` | Open your `.spacemacs`                                                   |
 | `SPC f e D` | Update your `.spacemacs` manually using a diff with the default template |
 
-Emacs Lisp
-----------
+## Emacs Lisp
 
 This section introduces a few emacs lisp functions that are needed to
 configure Spacemacs. For a more detailed look at the language, see
@@ -358,8 +344,7 @@ in the filetypes list."
 (add-hook 'before-save-hook 'clang-format-for-filetype)
 ```
 
-Activating a Layer
-------------------
+## Activating a Layer
 
 As said in the terms section, layers provide an easy way to add
 features. Activating a layer is done in the `.spacemacs` file. In the
@@ -386,8 +371,7 @@ a nice out-of-the-box experience. To add a layer, add its name to the
 list and restart Emacs or press `SPC f e R`. To view all layers and
 their documentation use `SPC h SPC`.
 
-Creating a Layer
-----------------
+## Creating a Layer
 
 To group configuration or when configuration doesn't fit well in your
 `.spacemacs` file, you can create a configuration layer. Spacemacs
@@ -451,8 +435,7 @@ A detailed description of the loading process and how layers work can be
 found in the [configuration layers
 documentation.](https://github.com/syl20bnr/spacemacs/blob/develop/doc/LAYERS.org)
 
-Installing a single package
----------------------------
+## Installing a single package
 
 Sometimes creating a layer is a bit overkill. Maybe you just want one
 package and don't want to maintain a whole layer. Spacemacs provides a
@@ -461,8 +444,7 @@ variable in the `dotspacemacs/layers` function in `.spacemacs` called
 and it will be installed when you restart. Loading the package is
 covered in the next [section](#loading-packages).
 
-Loading packages
-----------------
+## Loading packages
 
 Ever wonder how Spacemacs can load over a 100 packages in just a few
 seconds? Such low loading times must require some kind of unreadable
@@ -497,15 +479,13 @@ This is just a very basic overview of `use-package`. There are many
 other ways to control how a package loads using it that aren't covered
 here.
 
-Uninstalling a package
-----------------------
+## Uninstalling a package
 
 Spacemacs provides a variable in the `dotspacemacs/init` function in
 `.spacemacs` called `dotspacemacs-excluded-packages`. Just add a package
 name to the list and it will be uninstalled when you restart.
 
-Common tweaks
--------------
+## Common tweaks
 
 This section is for things many will want to change. All of these
 settings go in the `dotspacemacs/user-config` function in your
@@ -575,8 +555,7 @@ they are wrapped. If you want `j` and `k` to behave like `g j` and
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
 ```
 
-Other useful links
-==================
+# Other useful links
 
 -   [Emacs Manual](https://www.gnu.org/software/emacs/manual/emacs.html)
 -   [Spacemacs

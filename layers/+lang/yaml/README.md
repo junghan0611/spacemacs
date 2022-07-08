@@ -1,27 +1,22 @@
-Description
-===========
+# Description
 
 This layer provides support for the YAML file format.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting
 -   Syntax checking via
     [flycheck](http://www.flycheck.org/en/latest/languages.html#yaml)
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `yaml` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-LSP
----
+## LSP
 
 To enable LSP, install
 [yaml-language-server](https://github.com/redhat-developer/yaml-language-server):
@@ -37,8 +32,7 @@ And set the layer variable `yaml-enable-lsp` to `t` like shown below:
               '((yaml :variables yaml-enable-lsp t)))
 ```
 
-Syntax checking with flycheck
-=============================
+# Syntax checking with flycheck
 
 Flycheck checks YAML files with either:
 

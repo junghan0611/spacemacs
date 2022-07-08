@@ -1,30 +1,25 @@
 ![](img/Cat_With_Rifle.jpg)
 
-Description
-===========
+# Description
 
 This layer adds various replacements for vim's default search functions.
 
-Features:
----------
+## Features:
 
 -   Alternative implementation of vim's default search operations.
 -   Replacement of evil-surround with a two-character search.
 -   Support for alternative scopes for default search operations.
 -   Support for alternative motions based on configurable regexps.
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `evil-snipe` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Improved f and t search behavior
---------------------------------
+## Improved f and t search behavior
 
 With evil-snipe you can define your own search scope for `f` and `t`
 searches which means that you won't have to jump to the correct line
@@ -40,8 +35,7 @@ layer variable `evil-snipe-enable-alternate-f-and-t-behaviors` to `t`:
   '((evil-snipe :variables evil-snipe-enable-alternate-f-and-t-behaviors t)))
 ```
 
-Two-character search with s
----------------------------
+## Two-character search with s
 
 With the `s~/~S` keys you can do a simple search like `f~/~t`, but
 instead of searching for one character, you search for two. This makes
@@ -50,8 +44,7 @@ can search forward or backwards in the buffer with `/` and `?`, `s` /
 `S` are much easier to reach, don't require you to press enter and they
 are precise enough for many common purposes.
 
-More scopes
------------
+## More scopes
 
 Evil-snipe also adds several scope options for searches (set
 `evil-snipe-scope` and `evil-snipe-repeat-scope` to one of these, the
@@ -70,8 +63,7 @@ If you do not want to replace the regular `f` / `F` / `t` / `T`
 behavior, just remove this line from `evil-snipe/packages.el`:
 `(evil-snipe-replace-evil)`
 
-Symbol groups
--------------
+## Symbol groups
 
 With symbol groups you can let a character stand for a regex, for
 example a group of characters. By adding a pair of `(CHAR REGEX)` to the
@@ -98,8 +90,7 @@ list `evil-snipe-aliases` you can search for a regex very simply:
                 (push '(?: "def .+:") evil-snipe-aliases)))
     ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                                                             |
 |-------------|-----------------------------------------------------------------------------------------|

@@ -1,26 +1,22 @@
 ![](img/smex.png)
 
-Description
-===========
+# Description
 
 This layer provides a more traditional alternative to `helm-M-x` based
 on `ido`.
 
-Features:
----------
+## Features:
 
 -   Provides an alternative way for `helm-M-x` based on `ido` and
     [smex](https://github.com/nonsequitur/smex)
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `smex` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                |
 |-------------|--------------------------------------------|

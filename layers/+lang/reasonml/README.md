@@ -1,13 +1,11 @@
 ![](https://reasonml.github.io/img/reason.svg)
 
-Description
-===========
+# Description
 
 Spacemacs layer for ReasonML, based around
 [reason-mode](https://github.com/reasonml-editor/reason-mode).
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting / indentation
 -   Autocomplete (via `merlin`)
@@ -16,8 +14,7 @@ Features:
 -   REPL via `rtop`
 -   Auto-formatting (via `refmt`)
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `reasonml` to the existing
@@ -26,8 +23,7 @@ need to add `reasonml` to the existing
 This layer depends on the \`ocaml\` layer which should be installed
 automatically.
 
-Merlin
-------
+## Merlin
 
 You'll need merlin (binaries `ocamlmerlin` and `ocamlmerlin-reason`)
 installed on your system and on your `PATH` for errors and
@@ -42,8 +38,7 @@ opam install merlin reason
 to get `ocamlmerlin` and `ocamlmerlin-reason` on your current `opam`
 switch.
 
-Refmt
------
+## Refmt
 
 Similarly to Merlin, you'll need the `refmt` binary on your path.
 
@@ -71,8 +66,7 @@ it, add the layer variable:
 
 in your `dotspacemacs-configuration-layers`.
 
-Key bindings
-============
+# Key bindings
 
 The main key bindings, see `packages.el` for the main list.
 
@@ -89,8 +83,7 @@ The main key bindings, see `packages.el` for the main list.
 | `SPC m = m r` | Refmt: convert ml syntax to re syntax |
 | `SPC m = r m` | Refmt: convert re syntax to ml syntax |
 
-Thanks
-======
+# Thanks
 
 Special thanks to [fredyr](https://github.com/fredyr) who wrote the
 initial version of this layer.

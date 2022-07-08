@@ -1,12 +1,10 @@
 ![](img/html.png)
 
-Description
-===========
+# Description
 
 This layer adds support for editing HTML and CSS.
 
-Features:
----------
+## Features:
 
 -   Editing HTML and CSS file using [web-mode](http://web-mode.org/)
 -   Support for Sass/Scss and Less files
@@ -24,8 +22,7 @@ Features:
 -   Formatting with
     [web-beautify](https://github.com/yasuyk/web-beautify)
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `html` to the existing `dotspacemacs-configuration-layers`
@@ -39,8 +36,7 @@ gem install scss_lint_reporter_checkstyle
 gem install scss_lint
 ```
 
-LSP
----
+## LSP
 
 To enable LSP, set the layer variables below to `t`:
 
@@ -49,19 +45,16 @@ To enable LSP, set the layer variables below to `t`:
 -   `scss-enable-lsp`
 -   `html-enable-lsp`
 
-web-beautify
-------------
+## web-beautify
 
 See [web-beautify layer](../../+tools/web-beautify/README.org)
 documentation.
 
-prettier
---------
+## prettier
 
 See [prettier layer](../../+tools/prettier/README.org) documentation.
 
-Choosing a formatter
---------------------
+## Choosing a formatter
 
 To choose a formatter, set the layer variable `web-fmt-tool`:
 
@@ -83,8 +76,7 @@ example to use the `prettier` formatter:
 **Note:** you can easily add a directory local variable with
 `SPC f v d`.
 
-Activate leex support
----------------------
+## Activate leex support
 
 To activate support for `.leex` files set below config variable to a
 non-nil value.
@@ -93,11 +85,9 @@ non-nil value.
 (html :variables html-enable-leex-support t)
 ```
 
-Backends
-========
+# Backends
 
-Language Server Protocol
-------------------------
+## Language Server Protocol
 
 For css files, you have to install `vscode-css-languageserver-bin`
 
@@ -115,8 +105,7 @@ npm install -g vscode-html-languageserver-bin
 Don't forget to set the corresponding layer variables mentioned above to
 `t`
 
-Live display in browser
-=======================
+# Live display in browser
 
 Use `SPC m I` to enable impatient mode, opening a live view of a HTML
 file in your browser. You may wish to enable impatient mode in
@@ -129,11 +118,9 @@ can be found on <http://localhost:8080/imp>.
 For more information visit the [help page on
 GitHub.](https://github.com/skeeto/impatient-mode/blob/master/README.md)
 
-Key bindings
-============
+# Key bindings
 
-Web mode
---------
+## Web mode
 
 | Key binding | Description                                               |
 |-------------|-----------------------------------------------------------|
@@ -172,8 +159,7 @@ A transient-state is also defined, start it with `SPC m .` or `, .`
 | `r`         | rename current element                                         |
 | `w`         | wrap current element                                           |
 
-CSS/SCSS
---------
+## CSS/SCSS
 
 | Key binding | Description                      |
 |-------------|----------------------------------|

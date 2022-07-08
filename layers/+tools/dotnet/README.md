@@ -1,22 +1,18 @@
-Description
-===========
+# Description
 
 This layer adds support for the dotnet cli package.
 
-Features:
----------
+## Features:
 
 -   dotnet project operations
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `dotnet` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding   | Description                                   |
 |---------------|-----------------------------------------------|

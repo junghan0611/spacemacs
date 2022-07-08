@@ -1,30 +1,25 @@
 ![](img/sphinx.png)
 
-Description
-===========
+# Description
 
 The layer adds support for the documentation generation system `Sphinx`
 to the `restructuredtext` layer.
 
-Features:
----------
+## Features:
 
 -   Support for `Sphinx` project compilation
 -   Support for opening `Sphinx` project target
 -   Support for opening `Sphinx` config file
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `sphinx` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Configuration
-=============
+# Configuration
 
-Sphinx target
--------------
+## Sphinx target
 
 To use the layer's Sphinx feature, the following variables should be
 set.
@@ -48,8 +43,7 @@ define where the output folder should be for each project.
           ("project2" . (html  "project2/_build"))))
 ```
 
-Web browser
------------
+## Web browser
 
 Set the browser for viewing the HTML page of current rst file. This one
 is optional. If not set, the default browser will be used.
@@ -59,8 +53,7 @@ is optional. If not set, the default browser will be used.
         rst-slides-program "chromium")
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                             |
 |-------------|-----------------------------------------|

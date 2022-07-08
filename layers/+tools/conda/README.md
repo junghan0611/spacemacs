@@ -1,23 +1,19 @@
-Description
-===========
+# Description
 
 This layer adds support for the Anaconda python environment for
 numerical computations to Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Controlling `Anaconda` or `Miniconda` environments directly from
     emacs with [conda.el](https://github.com/necaris/conda.el)
 
-Install
-=======
+# Install
 
 To add this layer to Spacemacs, add `conda` to your
 `dotspacemacs-configuration-layers` list.
 
-Configuration
-=============
+# Configuration
 
 To use this layer you need to tell spacemacs where your anaconda
 environment can be found. By default Spacemacs will check in
@@ -31,8 +27,7 @@ dotfile:
   '((conda :variables conda-anaconda-home "/your/path/here")))
 ```
 
-Key bindings
-============
+# Key bindings
 
 |             |                                                                   |
 |-------------|-------------------------------------------------------------------|

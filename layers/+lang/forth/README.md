@@ -1,11 +1,9 @@
-Description
-===========
+# Description
 
 This layer adds basic support for the Forth family of languages to
 spacemacs.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting
 -   Showing meaning of objects in context of the current `Forth`
@@ -13,8 +11,7 @@ Features:
 -   Eval of entire files or regions in current `Forth` session.
 -   Passing interactive commands to current `Forth` session.
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `forth` to the existing `dotspacemacs-configuration-layers`
@@ -30,8 +27,7 @@ by setting the appropriate variable.
               '((forth :variables forth-executable "gforth")))
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                                       |
 |-------------|-------------------------------------------------------------------|

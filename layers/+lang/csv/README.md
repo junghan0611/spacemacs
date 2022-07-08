@@ -1,12 +1,10 @@
 ![](img/csv.png)
 
-Description
-===========
+# Description
 
 This layer adds tools for better integration of CSV files in Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Detecting of fields for various separators
 -   Aligning of fields
@@ -16,11 +14,9 @@ Features:
 -   Transposing of rows/columns
 -   Intelligent yanking of fields
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this contribution add it to your `~/.spacemacs`
 
@@ -28,8 +24,7 @@ To use this contribution add it to your `~/.spacemacs`
 (setq-default dotspacemacs-configuration-layers '(csv))
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                      |
 |-------------|----------------------------------|

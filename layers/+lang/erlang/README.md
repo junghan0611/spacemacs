@@ -1,7 +1,6 @@
 ![](img/erlang.png)
 
-Description
-===========
+# Description
 
 This layer adds support for [Erlang](https://erlang.org/).
 
@@ -9,8 +8,7 @@ Enabling [Lsp-mode](https://github.com/emacs-lsp/lsp-mode) brings IDE
 like features following `Language Server Protocol`, through
 [erlang<sub>ls</sub>](https://erlang-ls.github.io/)
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting
 -   Syntax checking via `Flycheck` integration
@@ -31,18 +29,15 @@ Features:
 -   Interactive debugger using
     [dap-mode](https://github.com/emacs-lsp/dap-mode)
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `erlang` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Choosing a backend
-------------------
+## Choosing a backend
 
 `company-erlang` uses gtags to provide a very basic working environment,
 it is the default backend.
@@ -60,11 +55,9 @@ Alternatively the `lsp` backend will be automatically chosen if the
 layer `lsp` is used and you did not specify any value for
 `erlang-backend`.
 
-Configuration
-=============
+# Configuration
 
-erlang-mode
------------
+## erlang-mode
 
 To find the manual page for the function under the cursor you can either
 set `erlang-man-root-dir` to erlang man root directory path in the layer
@@ -77,8 +70,7 @@ definition:
 or let `erlang-mode` download it by executing
 `M-x erlang-man-download-ask`.
 
-LSP
----
+## LSP
 
 The `lsp` backend uses
 [erlang<sub>ls</sub>](https://erlang-ls.github.io/) as its language
@@ -98,8 +90,7 @@ You can install it:
 make install
 ```
 
-Debugger
---------
+## Debugger
 
 The `dap` backend uses
 [erlang<sub>ls</sub>-dap](https://erlang-ls.github.io/) implementation.
@@ -127,11 +118,9 @@ make
 
 **Note:** Ensure you have `els_dap` in your `PATH`…
 
-Key bindings
-============
+# Key bindings
 
-erlang-mode
------------
+## erlang-mode
 
 | Key binding | Description                                                     |
 |-------------|-----------------------------------------------------------------|
@@ -147,14 +136,12 @@ erlang-mode
 | `C-c M-e`   | Move to the end of the current clause.                          |
 | `C-c M-h`   | Put mark at end of clause, point at beginning.                  |
 
-LSP
----
+## LSP
 
 You will find an overview of all the key bindings on the [lsp layer
 description](https://github.com/syl20bnr/spacemacs/tree/develop/layers/%2Btools/lsp#key-bindings).
 
-DAP
----
+## DAP
 
 You will find an overview of all the key bindings on the [dap layer
 description](https://github.com/syl20bnr/spacemacs/tree/develop/layers/%2Btools/dap#key-bindings).

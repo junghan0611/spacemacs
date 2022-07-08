@@ -1,13 +1,11 @@
 ![](img/racket.png)
 
-Description
-===========
+# Description
 
 Adds support for the [Racket](http://racket-lang.org/) programming
 language.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting with `racket-mode`
 -   Test runner
@@ -16,8 +14,7 @@ Features:
 -   Structurally safe editing using optional
     [evil-cleverparens](https://github.com/luxbock/evil-cleverparens)
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `racket` to the existing `dotspacemacs-configuration-layers`
@@ -29,8 +26,7 @@ following command.
 raco pkg install drracket
 ```
 
-Structurally safe editing
-=========================
+# Structurally safe editing
 
 This layer adds support for `evil-cleverparens` which allows to safely
 edit lisp code by keeping the s-expressions balanced.
@@ -53,11 +49,9 @@ or to enable it for all supported modes:
 
 When enabled the symbol `🆂` should be displayed in the mode-line.
 
-Key bindings
-============
+# Key bindings
 
-Navigation
-----------
+## Navigation
 
 | Key binding     | Description                         |
 |-----------------|-------------------------------------|
@@ -66,24 +60,21 @@ Navigation
 | `SPC m g m`     | Go to module at point               |
 | `SPC m g r`     | Open require path                   |
 
-Documentation
--------------
+## Documentation
 
 | Key binding | Description                                                   |
 |-------------|---------------------------------------------------------------|
 | `SPC m h d` | Describes the function at point in a `Racket Describe` buffer |
 | `SPC m h h` | View documentation of the identifier or string at point.      |
 
-Tests
------
+## Tests
 
 | Key binding | Description                       |
 |-------------|-----------------------------------|
 | `SPC m t b` | Run tests of buffer               |
 | `SPC m t B` | Run tests of buffer with coverage |
 
-REPL
-----
+## REPL
 
 | Key binding | Description                                                     |
 |-------------|-----------------------------------------------------------------|
@@ -98,8 +89,7 @@ REPL
 | `SPC m s R` | Send region to REPL and switch to REPL in `insert state`        |
 | `SPC m s s` | Show and switch to REPL buffer                                  |
 
-Other key bindings
-------------------
+## Other key bindings
 
 | Key binding | Description                                                                         |
 |-------------|-------------------------------------------------------------------------------------|

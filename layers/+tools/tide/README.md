@@ -1,13 +1,11 @@
-Description
-===========
+# Description
 
 This layer installs [tide](https://github.com/ananthakumaran/tide)
 package which allows communication with [standalone typescript
 server](https://github.com/Microsoft/TypeScript/wiki/Standalone-Server-%28tsserver%29)
 `tsserver` for JavaScript/TypeScript development.
 
-Features:
----------
+## Features:
 
 -   First class support from `tsserver` just like `vscode`: speed and
     accuracy
@@ -16,8 +14,7 @@ Features:
 -   Go to definition
 -   Find references
 
-Install
-=======
+# Install
 
 See [tide](https://github.com/ananthakumaran/tide) for details. First
 you must have \`tsserver\` installed in your project or globally:
@@ -68,11 +65,9 @@ create `jsconfig.json` in the root folder of your project.
 Without this file `tsserver` will pick up current folder as project
 root.
 
-Key bindings
-============
+# Key bindings
 
-Major Mode
-----------
+## Major Mode
 
 | Key binding | Description                                       |
 |-------------|---------------------------------------------------|
@@ -89,8 +84,7 @@ Major Mode
 | `SPC m S r` | restart server                                    |
 | `SPC m S j` | create a barebone `jsconfig.json` at project root |
 
-Reference Major Mode
---------------------
+## Reference Major Mode
 
 | Key binding | Description             |
 |-------------|-------------------------|

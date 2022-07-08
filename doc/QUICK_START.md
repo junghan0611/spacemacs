@@ -1,5 +1,4 @@
-Configuration layers
-====================
+# Configuration layers
 
 Spacemacs divides its configuration into self-contained units called
 `configuration layers`. These layers are stacked on top of each other to
@@ -49,8 +48,7 @@ under source control. See the section on private configuration
 management in the
 [documentation](https://github.com/syl20bnr/spacemacs/blob/develop/doc/DOCUMENTATION.org).
 
-Dotfile (.spacemacs)
-====================
+# Dotfile (.spacemacs)
 
 As mentioned `.spacemacs` controls which configuration layers to load
 and is also a means to customizing Spacemacs.
@@ -90,9 +88,8 @@ dotspacemacs-configuration-layers '(auto-completion
                                     smex)
 ```
 
-At anytime you can apply the changes made to the dotfile or layers <span
-class="underline">without restarting</span> Spacemacs by pressing
-`SPC f e R`.
+At anytime you can apply the changes made to the dotfile or layers
+<u>without restarting</u> Spacemacs by pressing `SPC f e R`.
 
 The [dotfile
 template](https://github.com/syl20bnr/spacemacs/blob/master/core/templates/.spacemacs.template)
@@ -101,8 +98,7 @@ dotfile configuration section of the
 [documentation](https://github.com/syl20bnr/spacemacs/blob/develop/doc/DOCUMENTATION.org#dotfile-configuration)
 for more details.
 
-Dotdirectory (\~/.spacemacs.d)
-==============================
+# Dotdirectory (\~/.spacemacs.d)
 
 Like `Emacs`, Spacemacs initialization can also be contained in an
 `init.el` file in a special directory `~/.spacemacs.d`. The contents of
@@ -122,18 +118,15 @@ Have a look into the FAQ for an easy workaround to maintain (your
 former) vanilla Emacs and (your new) Spacemacs configurations
 side-by-side without the need to rename and backup `~/.emacs.d/`.
 
-Learning Spacemacs
-==================
+# Learning Spacemacs
 
-Editing Styles
---------------
+## Editing Styles
 
 Spacemacs can be used by Vim users or Emacs users by setting the
 `dotspacemacs-editing-style` variable to `vim`, `emacs` or even `hybrid`
 in the dotfile `~/.spacemacs`.
 
-The leader keys
----------------
+## The leader keys
 
 Spacemacs key bindings use a leader key which is by default bound to
 `SPC` (space bar) in `vim` or `hybrid` editing styles and `M-m` in
@@ -151,21 +144,18 @@ There is a secondary leader key called the major-mode leader key which
 is set to `​,​` by default. This key is a shortcut for `SPC m` where all
 the major-mode specific commands are bound.
 
-Evil-tutor
-----------
+## Evil-tutor
 
 If you are willing to learn the Vim key bindings (highly recommended
 since you can benefit from them even in `emacs` style), press
 `SPC h T v` to begin an Evil-adapted Vimtutor.
 
-Universal argument
-------------------
+## Universal argument
 
 In `vim` editing style the universal argument defaults to `SPC u`
 instead of `C-u` because the latter is used to scroll up as in Vim.
 
-Configuration layers and Package discovery
-------------------------------------------
+## Configuration layers and Package discovery
 
 By using `helm-spacemacs-help` with `SPC h SPC` you can quickly search
 for a package and get the name of the layers using it.
@@ -173,8 +163,7 @@ for a package and get the name of the layers using it.
 You can also easily go to the `README.org` of a layer or go to the
 initialization function of a package.
 
-Key bindings discovery
-----------------------
+## Key bindings discovery
 
 Thanks to [which-key](https://github.com/justbur/emacs-which-key),
 whenever a prefix command is pressed (like `SPC`) a buffer appears after
@@ -197,8 +186,7 @@ which would list all `buffer` related bindings. **Note:** You are at the
 *HELM-Descbind* prompt, the pattern consists of 6 letters: uppercase
 `SPC`, a backslash, an actual space and a lowercase `b`.
 
-Describe functions
-------------------
+## Describe functions
 
 `Describe functions` are powerful Emacs introspection commands to get
 information about functions, variables, modes etc. These commands are
@@ -212,8 +200,7 @@ bound thusly:
 | `SPC h d v` | describe-variable   |
 | `SPC h d x` | describe-ex-command |
 
-How-To's
-========
+# How-To's
 
 Some quick `how-to's` are compiled in the
 [FAQ.](https://github.com/syl20bnr/spacemacs/blob/develop/doc/FAQ.org#how-do-i)

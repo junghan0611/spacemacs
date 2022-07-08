@@ -1,12 +1,10 @@
 ![](img/ccpp.jpg)
 
-Description
-===========
+# Description
 
 This layer adds configuration for C/C++ language.
 
-Features:
----------
+## Features:
 
 -   Multiple backends support:
     -   LSP with either `clangd` or
@@ -37,18 +35,15 @@ Features:
 -   `cscope` layer integration:
     -   code navigation
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `c-c++` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Backends
---------
+## Backends
 
 Supported backends are:
 
@@ -295,8 +290,7 @@ rtags is a well established clang-based source code indexing tool.
                            c-c++-enable-rtags-completion nil)))
     ```
 
-Default mode for header files
------------------------------
+## Default mode for header files
 
 The mode for header files is auto detected by \`c-or-c++-mode' in Emacs
 \> 26.1+. Older versions of Emacs will open header files in `c-mode` by
@@ -313,8 +307,7 @@ local variable at the root of your project. More info on directory local
 variables can be found in the manual:
 [dir-locals](http://www.gnu.org/software/emacs/manual/html_node/elisp/Directory-Local-Variables.html).
 
-Organize file header includes on save
--------------------------------------
+## Organize file header includes on save
 
 To organize the file header includes on save, set the layer variable
 `c-c++-enable-organize-includes-on-save` to `t` in the dotfile:
@@ -324,8 +317,7 @@ To organize the file header includes on save, set the layer variable
               '((c-c++ :variables c-c++-enable-organize-includes-on-save t)))
 ```
 
-clang-format
-------------
+## clang-format
 
 [clang-format](http://clang.llvm.org/docs/ClangFormat.html) allows for
 reformatting either a selected region of code (`clang-format-region`) or
@@ -342,8 +334,7 @@ To enable automatic buffer formatting on save, set the variable
               '((c-c++ :variables c-c++-enable-clang-format-on-save t)))
 ```
 
-Enable google-set-c-style
--------------------------
+## Enable google-set-c-style
 
 If you have clang enabled with `clang-format` as described earlier in
 this page you may not have a lot of need for `google-set-c-style` if you
@@ -373,8 +364,7 @@ then `` `google-make-newline-indent `` will be set as a
                   c-c++-enable-google-newline t)
 ```
 
-Newlines
---------
+## Newlines
 
 You can enable the `Auto-newline` minor mode that automatically adds
 newlines after certain characters by setting the
@@ -384,8 +374,7 @@ newlines after certain characters by setting the
 (c-c++ :variables c-c++-enable-auto-newline t)
 ```
 
-Projectile sub-project adoption
--------------------------------
+## Projectile sub-project adoption
 
 To prevent projectile from using subproject root when visiting files in
 a subproject, set `c-c++-adopt-subprojects` to `t`.
@@ -397,8 +386,7 @@ a subproject, set `c-c++-adopt-subprojects` to `t`.
 This is based on a recommendation on the `ccls` wikis, but should be
 more generally applicable.
 
-Source code documentation using Doxygen
----------------------------------------
+## Source code documentation using Doxygen
 
 The `gendoxy` package allows automatic generation of structured code
 documentation comments suitable for post-processing using
@@ -408,11 +396,9 @@ struct, enum etc.) or a group. See the [gendoxy
 documentation](https://github.com/mp81ss/gendoxy) for further
 information.
 
-Key bindings
-============
+# Key bindings
 
-LSP
----
+## LSP
 
 The default key bindings for the LSP implementations are defined and
 documented in the [LSP layer](../../+tools/lsp/README.org).
@@ -500,8 +486,7 @@ backend only.
 | `SPC m d w s` | list sessions                   |
 | `SPC m d w b` | list breakpoints                |
 
-RTags
------
+## RTags
 
 | Key binding | Description                     |
 |-------------|---------------------------------|
@@ -539,8 +524,7 @@ RTags
 | `SPC m g X` | fix fixit at point              |
 | `SPC m g Y` | cycle overlays on screen        |
 
-Doxygen
--------
+## Doxygen
 
 | Key binding | Description                                                         |
 |-------------|---------------------------------------------------------------------|
@@ -552,8 +536,7 @@ Doxygen
 | `SPC m i s` | document start of declaration group                                 |
 | `SPC m i e` | document end of declaration group                                   |
 
-Additional key bindings
------------------------
+## Additional key bindings
 
 ### Disassemble
 

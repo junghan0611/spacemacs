@@ -1,28 +1,23 @@
 ![](img/logo.png)
 
-Description
-===========
+# Description
 
 This layer adds support of sailfish-os development packages.
 
-Features:
----------
+## Features:
 
 -   [sailfish-scratchbox](https://github.com/vityafx/sailfish-scratchbox.el):
     handy sb2 interaction.
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `sailfish-developer` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Key bindings
-============
+# Key bindings
 
-sailfish-scratchbox
--------------------
+## sailfish-scratchbox
 
 | Key binding | Description              |
 |-------------|--------------------------|

@@ -1,7 +1,6 @@
 ![](img/alda.png)
 
-Description
-===========
+# Description
 
 Alda is a music composition language allowing music to easily be written
 and edited in a text file.
@@ -10,23 +9,20 @@ This layer adds key bindings for `alda-mode`'s functions, which allow
 Alda code to be interpreted and played by the running Alda server. It
 will also start the Alda server if it is not running.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting for Alda files.
 -   Play portions of a buffer, or the entire buffer, through a running
     Alda server.
 
-Install
-=======
+# Install
 
 Add `alda` to the `dotspacemacs-configuration-layers` list in
 `~/.spacemacs`. You will also want to ensure that you have installed
 [Alda](https://github.com/alda-lang/alda/releases) so that `alda-mode`
 can play your code.
 
-Key bindings
-============
+# Key bindings
 
 When alda-mode is active in an Alda file, you can use these key
 bindings:

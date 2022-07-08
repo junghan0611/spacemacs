@@ -1,5 +1,4 @@
-Description
-===========
+# Description
 
 This layer adds a new way of completion provided by the following core
 packages:
@@ -12,13 +11,11 @@ packages:
 
 This is an WIP and only supports emacs 27 or later. Please contribute.
 
-Features:
----------
+## Features:
 
 -   Same features as `ivy` or `helm`
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `compleseus` to the existing
@@ -29,8 +26,7 @@ or commented out in the `dotspacemacs-configuration-layers` list. Or add
 `compleseus` below the other completion layers. Spacemacs uses the
 completion layer that's listed last.
 
-Configuration
--------------
+## Configuration
 
 You can configure the completion engine by setting `compleseus-engine`
 to either `vertico` (default) or `selectrum` by editing the
@@ -42,8 +38,7 @@ the default of `vertico`:
             compleseus-engine 'selectrum)
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description   |
 |-------------|---------------|

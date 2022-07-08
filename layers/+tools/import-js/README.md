@@ -1,18 +1,15 @@
-Description
-===========
+# Description
 
 This layer adds support for
 [import-js](https://github.com/Galooshi/import-js)
 
-Features:
----------
+## Features:
 
 -   Import Javascript/Typescript modules to buffer
 -   Import missing modules and remove unused one
 -   Go to module location
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`.
 
@@ -39,8 +36,7 @@ example for the `javascript` layer
 Once you have set this variable other layers `react` and `typescript`
 will also enjoy this feature
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                                         |
 |-------------|---------------------------------------------------------------------|

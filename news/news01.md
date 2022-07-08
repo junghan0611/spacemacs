@@ -1,5 +1,4 @@
-Introduction
-============
+# Introduction
 
 0.200 is a huge release with more than 1700 commits since the last major
 version released in January 2016. Actually it is so big that we jumped
@@ -15,8 +14,7 @@ The (boring) complete list of changes can be found in the file
 
 Let's start with the hottest section: breaking changes!
 
-Breaking changes
-================
+# Breaking changes
 
 Before starting with the breaking changes let me begin with a few words
 about the motivation behind those changes. Spacemacs moves at an
@@ -29,8 +27,7 @@ bindings. In this release quite a few changes have been made to the key
 bindings, some of them are deep changes and anyone using the develop
 branch had to adapt to them at some point, the result seems to worth it.
 
-Support for Emacs 24.3 has been dropped
----------------------------------------
+## Support for Emacs 24.3 has been dropped
 
 The packages ecosystem moves even faster than Spacemacs and a lot of
 packages are now incompatible with the version 24.3 of Emacs which has
@@ -42,15 +39,14 @@ Emacs, if you need help in this process you can try the [Gitter
 chat](https://gitter.im/syl20bnr/spacemacs), I'm sure you'll find
 solutions there.
 
-Some modifications in the layer format
---------------------------------------
+## Some modifications in the layer format
 
 We renamed `extensions` directories in layers to `local` and the file
 `extensions.el` is now ignored, their contents must be moved to the file
 `packages.el` and their package declarations must now set the keyword
 `:location` to `local`.
 
-<span class="underline">Before:</span>
+<u>Before:</u>
 
 ``` commonlisp
 ;; in extensions.el
@@ -63,7 +59,7 @@ We renamed `extensions` directories in layers to `local` and the file
     ))
 ```
 
-<span class="underline">After:</span>
+<u>After:</u>
 
 ``` commonlisp
 ;; in packages.el
@@ -80,7 +76,7 @@ The variables `<package>-excluded-packages` are now ignored, they have
 been replaced by the `:excluded` keyword in `<layer>-packages`
 variables.
 
-<span class="underline">Before:</span>
+<u>Before:</u>
 
 ``` commonlisp
 (setq vim-empty-lines-packages
@@ -92,7 +88,7 @@ variables.
       '(vi-tilde-fringe))
 ```
 
-<span class="underline">After:</span>
+<u>After:</u>
 
 ``` commonlisp
 (setq vim-empty-lines-packages
@@ -110,8 +106,7 @@ calls to the functions `configuration-layer/declare-layer` and
 example can be found in the [spacemacs distribution
 layer](https://github.com/syl20bnr/spacemacs/blob/564cbc40eda936985325c9b79088fbcb39d9a69d/layers/%2Bdistributions/spacemacs/layers.el).
 
-Controlling downloaded packages
--------------------------------
+## Controlling downloaded packages
 
 The method to install all packages supported by Spacemacs has been
 improved. The old way was to set the variable
@@ -127,11 +122,9 @@ supported:
 -   `used-only` (default) will download only the used packages
 -   `used-but-keep-unused` will download only the used packages but
     won't uninstall them if they become unused
--   `all` will download <span class="underline">all</span> the supported
-    packages by Spacemacs.
+-   `all` will download <u>all</u> the supported packages by Spacemacs.
 
-Key bindings
-------------
+## Key bindings
 
 Here is the scary section, the one feared by most users :-) Let be
 honest, there is a rather big amount of changes for users jumping from
@@ -139,11 +132,10 @@ master 0.105 to 0.200.
 
 First of all the most visible change is for `SPC SPC` which triggers now
 `M-x` instead of `avy` to jump to a character. The `SPC` key in
-Spacemacs is a central key as it acts as the leader key for <span
-class="underline">all</span> the key bindings, it made sense to give the
-same sense of "root" key to the sequence `SPC SPC`, so now `SPC SPC` is
-the central sequence to execute <span class="underline">any</span>
-interactive function in Emacs.
+Spacemacs is a central key as it acts as the leader key for <u>all</u>
+the key bindings, it made sense to give the same sense of "root" key to
+the sequence `SPC SPC`, so now `SPC SPC` is the central sequence to
+execute <u>any</u> interactive function in Emacs.
 
 Where is the `avy` command then ? We reorganised from the ground up the
 prefix `SPC j` for all jump commands. In the conventions a doubled key
@@ -197,9 +189,8 @@ letter to manipulate windows and buffers. The result is detailed here:
 `Helm` has a new friend in this release, it is called `ivy` and it has
 more and more adopters. Since we have now a new package capable of doing
 `helm` commands we decided to remove all `helm` related command from the
-prefix `SPC h`. `SPC h` is now exclusively for <span
-class="underline">help</span> commands and the following `helm` commands
-has been moved:
+prefix `SPC h`. `SPC h` is now exclusively for <u>help</u> commands and
+the following `helm` commands has been moved:
 
 -   `SPC h b` for =helm-filetered-bookmarks\~is now `SPC f b`
 -   `SPC h l` for `helm-resume` is now `SPC r l`
@@ -234,19 +225,16 @@ popular package to define transient maps. In effect the macro
 `spacemacs|define-micro-state` is deprecated and is replaced by the new
 `hydra` powered macro `spacemacs|define-transient-state`.
 
-What's new ?
-============
+# What's new ?
 
-Startup improvments
--------------------
+## Startup improvments
 
 The layer system has been rewritten to index packages information, the
 startup time of Spacemacs should be reduced by 20\~25%. Also this
 refactoring will better scale as we add new layers and packages to the
 distribution.
 
-Improved composability
-----------------------
+## Improved composability
 
 The `spacemacs` distribution layer has been split into several layers
 under the `spacemacs` directory. Users can now easily customize their
@@ -287,8 +275,7 @@ Another example to select all the packages except `fancy-battery`:
   (spacemacs-ui-visual :packages (not fancy-battery))
 ```
 
-Improved stability
-------------------
+## Improved stability
 
 This is one of the Achilles' heel of Spacemacs. We rely on bleeding edge
 version of packages from `melpa` repository to install a fresh version
@@ -313,8 +300,7 @@ to the value `emacs-version`. By default the value of this variable is
 `nil` which means that all packages are installed in the same `elpa`
 directory.
 
-Lazy installation of layers
----------------------------
+## Lazy installation of layers
 
 A feature borrowed to [Prelude](https://github.com/bbatsov/prelude)
 distribution and adapted to the layers, it allows to install a layer and
@@ -325,9 +311,9 @@ will ask to install the `elixir` layer if it is not already used. The
 `elixir` layer is automatically added to the dotfile so it won't be
 uninstalled after a restart.
 
-By default this feature is <span class="underline">disabled</span>, you
-have to opt-in for it by setting the variable
-`dotspacemacs-enable-lazy-installation` to one of the following values:
+By default this feature is <u>disabled</u>, you have to opt-in for it by
+setting the variable `dotspacemacs-enable-lazy-installation` to one of
+the following values:
 
 -   `unused` to lazy install only layers not listed in
     `dotspacemacs-configuration-layers`
@@ -335,8 +321,7 @@ have to opt-in for it by setting the variable
     even the used layers won't be installed at startup until you open a
     file with a supported extension).
 
-A better hybrid editing style
------------------------------
+## A better hybrid editing style
 
 The Hybrid state wanders between the Emacs style and the Evil style,
 three new variables allow to fine tune the Hybrid style experience:
@@ -357,8 +342,7 @@ To define these new variables use the `:variables` keyword. For example:
                                    hybrid-mode-default-state 'normal))
 ```
 
-Support for Ivy
----------------
+## Support for Ivy
 
 The community has made a wonderful work to bring
 [ivy](https://github.com/abo-abo/swiper) support to Spacemacs.
@@ -371,8 +355,7 @@ layer, this is a fantastic work and it demonstrates all the power of a
 community-driven configuration. I'm really excited by this new feature
 and how it is so easy to enjoy it. Nice work guys!
 
-Better transient-states
------------------------
+## Better transient-states
 
 `Transient-states` replace the `micro-states`. They are powered by
 [hydra](https://github.com/abo-abo/hydra) making `hydra` part of the
@@ -382,8 +365,7 @@ supported in Spacemacs and does not require hacks to work correctly.
 We tried to get consistent `transient-states` in all the layers by
 keeping the same documentation strings format everywhere.
 
-More debugging tools
---------------------
+## More debugging tools
 
 Emacs comes with lots of tools to help the user to debug their
 configuration. Spacemacs adds several concepts which can make harder for
@@ -406,8 +388,8 @@ Along with these new key bindings, new Spacemacs specific command line
 parameters are available to help you change the scope of an issue
 investigation:
 
--   `--no-layer` deactivates all the layers <span
-    class="underline">except</span> the distribution layer
+-   `--no-layer` deactivates all the layers <u>except</u> the
+    distribution layer
 -   `--distribution x` allows to change temporarily the distribution to
     `x`.
 
@@ -419,8 +401,7 @@ specific command line parameters:
     commands
 -   `--adv-timers n` will display any load time greater than `n`.
 
-New keyboard layouts
---------------------
+## New keyboard layouts
 
 A new layer `keyboard-layout` aims to provide the tools to define more
 easily new keyboard layouts. This release ships with support for `bépo`
@@ -429,8 +410,7 @@ and `dvorak` layouts.
 Be sure to follow the `README.org` of the `keyboard-layout` layer for
 more information about layout definition.
 
-Directory and file local variables
-----------------------------------
+## Directory and file local variables
 
 [Per-directory and file local
 variables](https://www.gnu.org/software/emacs/manual/html_node/emacs/Directory-Variables.html)
@@ -450,8 +430,7 @@ to handle various types of projects. We don´t support multiple options
 for the sake of supporting them but for a more robust solution capable
 to deal easily with your day-to-day requirements.
 
-More useful abstraction
------------------------
+## More useful abstraction
 
 We have even more abstraction of useful concepts in 0.200 like jumping
 to the definition of a symbol or opening a REPL.
@@ -465,8 +444,7 @@ instance `dumb-jump`, `tags` etc…
 All supported REPLs are now registered in a list and you can run any
 registered REPL with `SPC a '`.
 
-New welcome screen
-------------------
+## New welcome screen
 
 The contents of the welcome screen are now centered, there is also a
 nice new footer. The contents are recentered when the window is resized,
@@ -489,8 +467,7 @@ screen:
 -   agenda
 -   todos
 
-About Spacemacs update notifications
-------------------------------------
+## About Spacemacs update notifications
 
 In previous versions Spacemacs checked for a new version at every
 startup of Emacs and every 6 hours. It was [stressing the GitHub
@@ -512,16 +489,14 @@ measures to reduce the `git` commands monitored by GitHub:
 If you want automatic check of new version you have now to opt-in by
 setting `dotspacemacs-check-for-update` to `t`.
 
-A new community document
-------------------------
+## A new community document
 
 At the root of the project directory the new file `COMMUNITY.org`
 describes the values of the project and the moderation rules. There is
 also an exhaustive list of the moderation actions taken by
 collaborators.
 
-The Spacemacs shop
-------------------
+## The Spacemacs shop
 
 You can now show your support for Spacemacs by buying tee-shirts and
 goodies in the new [Spacemacs
@@ -530,11 +505,9 @@ shop](https://shop.spreadshirt.com/spacemacs-shop)!
 There is a limited number of models for women but all the men tee-shirts
 will be available for women as well in the coming weeks!
 
-What's next ?
-=============
+# What's next ?
 
-Even more stability
--------------------
+## Even more stability
 
 `Elpa` mirrors are a good start but it does not fix the bleeding edge
 packages issue, especially when installing a fresh version of Spacemacs.
@@ -545,8 +518,7 @@ stable source. Users will then be able to manually trigger an upgrade of
 packages if they want the bleeding edge versions but they will always be
 able to rollback to the previous stable state if required.
 
-More consistent window behaviour
---------------------------------
+## More consistent window behaviour
 
 One of the main focus for 0.201 will be to integrate
 [emacs-purpose](https://github.com/bmag/emacs-purpose). It is a package
@@ -554,16 +526,14 @@ to display buffer in the same windows. The current pull request is very
 popular and I'm sure you'll like what it will bring to the Spacemacs
 experience.
 
-New layers
-----------
+## New layers
 
 Pull requests with new layers are low on the priority list because
 reviewing them is more time consuming. For 0.201 I'll focus on all the
 pull requests with new layers in order to speed up the merge so you can
 expect more new layers for 0.201 than 0.200.
 
-A few thanks
-============
+# A few thanks
 
 This first newsletter is a great opportunity to thanks the Emacs
 community and more specifically:

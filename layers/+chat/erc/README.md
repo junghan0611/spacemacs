@@ -1,10 +1,8 @@
-Description
-===========
+# Description
 
 Layer for [ERC IRC chat](http://www.emacswiki.org/emacs/ERC).
 
-Features:
----------
+## Features:
 
 -   Highlight nicks (using
     [erc-hl-nicks](https://github.com/leathekd/erc-hl-nicks))
@@ -25,31 +23,26 @@ Features:
     a way of showing, either using the `emoji` layer or having a proper
     font) :clap:
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `erc` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-macOS
------
+## macOS
 
 It's recommended to install the [terminal-notifier
 gem](https://github.com/alloy/terminal-notifier) so that you get
 notifications via the macOS Notification Center.
 
-Social graph
-------------
+## Social graph
 
 [erc-social-graph](https://github.com/vibhavp/erc-social-graph) needs
 graphviz to be installed on your system.
 
-Disable notifications
----------------------
+## Disable notifications
 
 By default D-BUS notifications are enabled, to disable them set the
 layer variable `erc-enable-notifications` to nil.
@@ -59,8 +52,7 @@ layer variable `erc-enable-notifications` to nil.
              '((erc :variables erc-enable-notifications nil)))
 ```
 
-Enable SASL authentication
---------------------------
+## Enable SASL authentication
 
 To enable SASL authentication set the layer variable
 `erc-enable-sasl-auth` to non nil.
@@ -70,8 +62,7 @@ To enable SASL authentication set the layer variable
              '((erc :variables erc-enable-sasl-auth t)))
 ```
 
-Default servers
----------------
+## Default servers
 
 You can define the default servers in the ERC custom layout by setting
 the variable `erc-server-list`. Setting `:ssl` non nil will connect with
@@ -110,8 +101,7 @@ You can omit `:password` in this case.
 You could also set an environment variable (or otherwise secret
 variable) and read that in `:password`.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding   | Description                                                                             |
 |---------------|-----------------------------------------------------------------------------------------|
@@ -132,8 +122,7 @@ Key bindings
 **Note:** If you want to connect securely to an IRC server, you must run
 `erc-tls` command on `SPC a i E` instead of the `erc` command.
 
-Spacemacs Layout Support
-========================
+# Spacemacs Layout Support
 
 ERC buffers are added automatically to the default layout for ERC
 controlled by the variable `erc-spacemacs-layout-name` (defaults to

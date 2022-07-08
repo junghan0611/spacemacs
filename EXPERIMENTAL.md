@@ -1,5 +1,4 @@
-Spacemacs dumps using the portable dumper
-=========================================
+# Spacemacs dumps using the portable dumper
 
 The portable dumper is a feature that will be available with Emacs 27.
 This new dumper should theoretically work on all the three major OSes:
@@ -9,8 +8,7 @@ WARNING: pdumper does not work with Native Compilation, so if you get an
 error like: `emacs: Trying to load incoherent dumped eln file`, make
 sure you disable this.
 
-Setup
------
+## Setup
 
 To test the portable dumper with Spacemacs, follow these steps:
 
@@ -267,8 +265,7 @@ label `Portable Dumper`.
 All the related issues can be found with [this
 link](https://github.com/syl20bnr/spacemacs/labels/Portable%20Dumper).
 
-Usage
------
+## Usage
 
 Once `dotspacemacs-enable-emacs-pdumper` is set to `t` and
 `dotspacemacs-emacs-pdumper-executable-file` is set to a valid file path

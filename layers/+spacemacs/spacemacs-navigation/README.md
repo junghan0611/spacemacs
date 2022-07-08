@@ -1,10 +1,8 @@
-Description
-===========
+# Description
 
 This layer adds general navigation functions to all supported layers.
 
-Features:
----------
+## Features:
 
 -   Support for ace-links in
     -   `spacemacs` buffer
@@ -18,8 +16,7 @@ Features:
 -   Shortcuts for restarting `emacs`
 -   Shortcuts for easily switching between windows
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description    |
 |-------------|----------------|

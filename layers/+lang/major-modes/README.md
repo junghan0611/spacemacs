@@ -1,11 +1,9 @@
-Description
-===========
+# Description
 
 This layer adds a number of packages for less common languages and major
 modes.
 
-Features:
----------
+## Features:
 
 -   Support for:
     -   Arch Linux PKGBUILDs
@@ -21,11 +19,9 @@ Features:
     -   Vala
     -   Wolfram Language / Mathematica
 
-Key bindings
-============
+# Key bindings
 
-Arch Linux PKGBUILDs
---------------------
+## Arch Linux PKGBUILDs
 
 | Key binding | Description                |
 |-------------|----------------------------|
@@ -37,8 +33,7 @@ Arch Linux PKGBUILDs
 | `SPC m e`   | Build ETAGS file           |
 | `SPC m a`   | Make a source tarball      |
 
-Gentoo ebuilds
---------------
+## Gentoo ebuilds
 
 | Key binding | Description            |
 |-------------|------------------------|

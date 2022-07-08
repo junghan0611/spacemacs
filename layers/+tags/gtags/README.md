@@ -1,13 +1,11 @@
-Description
-===========
+# Description
 
 `counsel-gtags`, `helm-gtags` and `ggtags` are clients for GNU Global.
 GNU Global is a source code tagging system that allows querying symbol
 locations in source code, such as definitions or references. Adding the
 `gtags` layer enables both of these modes.
 
-Features:
----------
+## Features:
 
 -   Select any tag in a project retrieved by gtags
 -   Resume previous helm-gtags session
@@ -26,11 +24,9 @@ Features:
 -   Enables `company complete` in modes that otherwise might not support
     it.
 
-Install
-=======
+# Install
 
-GNU Global (gtags)
-------------------
+## GNU Global (gtags)
 
 To use gtags, you first have to install [GNU
 Global](https://www.gnu.org/software/global/download.html).
@@ -157,8 +153,7 @@ ctags --version | grep Exuberant
 If there is no output you have the wrong `ctags` executable and you need
 to reinstall `ctags` from your package manager.
 
-Emacs Configuration
--------------------
+## Emacs Configuration
 
 To use this configuration layer, add it to your `~/.spacemacs` file. You
 will need to add `gtags` to the existing
@@ -185,8 +180,7 @@ setting the layer variable `gtags-enable-by-default` to `nil`.
 This variable can also be set as a file-local or directory-local
 variable for additional control on a per project basis.
 
-Usage
-=====
+# Usage
 
 Before using `gtags`, remember to create a GTAGS database by one of the
 following methods:
@@ -207,8 +201,7 @@ gtags --gtagslabel=pygments
 gtags
 ```
 
-Language Support
-----------------
+## Language Support
 
 ### Built-in languages
 
@@ -227,7 +220,7 @@ If you have enabled `exuberant ctags` and use that as the backend (i.e.
 `GTAGSLABEL=ctags` or `--gtagslabel=ctags`) the following additional
 languages are supported:
 
--   c\#
+-   c#
 -   erlang
 -   javascript
 -   common-lisp
@@ -272,8 +265,7 @@ additional languages will be supported:
 -   shell-scripts
 -   tex
 
-Eldoc integration
------------------
+## Eldoc integration
 
 This layer also integrates `ggtags` for its Eldoc feature. That means,
 when writing code, you can look at the minibuffer (at the bottom) and
@@ -292,15 +284,13 @@ Since these modes have better Eldoc integration already.
 In addition `gtags` commands are also supported for symbols in the
 `compile`, `shell-command` and `async-shell-command` buffers.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                      |
 |-------------|--------------------------------------------------|
 | `g d`       | jump to definition or references of selected tag |
 
-Helm
-----
+## Helm
 
 | Key binding | Description                                               |
 |-------------|-----------------------------------------------------------|
@@ -320,8 +310,7 @@ Helm
 | `SPC m g y` | find symbols                                              |
 | `SPC m g u` | manually update tag database                              |
 
-Ivy
----
+## Ivy
 
 `counsel-gtags` is currently missing a few minor features compared to
 `helm-gtags`.

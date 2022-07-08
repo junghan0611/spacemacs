@@ -1,29 +1,24 @@
 ![](img/solidity.png)
 
-Description
-===========
+# Description
 
 A layer to support Solidity development in Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting
 -   Syntax checking
 -   Gas estimation
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `solidity` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Linter
-------
+## Linter
 
 ### solc
 
@@ -63,16 +58,14 @@ DApp:
 solium --init
 ```
 
-Options
-=======
+# Options
 
 | Variable                                  | Default value | Description                                                |
 |-------------------------------------------|---------------|------------------------------------------------------------|
 | `solidity-flycheck-solc-checker-active`   | `nil`         | If non-nil, use solc flycheck checker for Solidity Mode.   |
 | `solidity-flycheck-solium-checker-active` | `nil`         | If non-nil, use solium flycheck checker for Solidity Mode. |
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description           |
 |-------------|-----------------------|

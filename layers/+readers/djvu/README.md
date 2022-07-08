@@ -1,15 +1,13 @@
 ![](img/djvu-logo.svg)
 
-Description
-===========
+# Description
 
 This layer adds support for reading djvu files with spacemacs.
 
 Because of some difficulties, the layer does not lazy load the `djvu.el`
 and `djvu3.el` packages.
 
-Features:
----------
+## Features:
 
 This layer provides a full featured djvu editor by implementing the
 [djvu.el package](https://github.com/dalanicolai/djvu2.el) along with
@@ -24,11 +22,9 @@ alternative to [djvu2.el](https://github.com/dalanicolai/djvu2.el)).
 -   remember last view with djvu-restore
 -   dark mode
 
-Install
-=======
+# Install
 
-Prerequisites
--------------
+## Prerequisites
 
 The `djvu` package requires the command `djvused` (from
 [djvulibre](http://djvu.sourceforge.net/)) to be available in
@@ -37,8 +33,7 @@ The `djvu` package requires the command `djvused` (from
 Additionally, for `dark-mode` the command `pnminvert` (from
 [netpbm](http://netpbm.sourceforge.net/)) is required.
 
-Dotfile
--------
+## Dotfile
 
 After installing the dependencies, add this to your \~/.spacemacs.
 
@@ -46,11 +41,9 @@ After installing the dependencies, add this to your \~/.spacemacs.
 (setq-default dotspacemacs-configuration-layers '(djvu))
 ```
 
-Key bindings
-============
+# Key bindings
 
-djvu-read-mode
---------------
+## djvu-read-mode
 
 | Key binding | Description                                                                      |
 |-------------|----------------------------------------------------------------------------------|
@@ -69,8 +62,7 @@ djvu-read-mode
 | `SPC j i`   | imenu navigation                                                                 |
 | `o`         | outline                                                                          |
 
-Annotations
------------
+## Annotations
 
 | Key binding        | Description                                                                |
 |--------------------|----------------------------------------------------------------------------|
@@ -83,15 +75,13 @@ Annotations
 | `C-mouse-2-drag`   | vertical line                                                              |
 | `C-S-mouse-2-drag` | arrow                                                                      |
 
-djvu-image-minor-mode
----------------------
+## djvu-image-minor-mode
 
 | Key binding | Description |
 |-------------|-------------|
 | `s`         | save-image  |
 
-djvu-occur-mode
----------------
+## djvu-occur-mode
 
 | Key binding | Description               |
 |-------------|---------------------------|

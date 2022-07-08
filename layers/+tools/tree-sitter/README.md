@@ -1,5 +1,4 @@
-Description
-===========
+# Description
 
 This layer integrates
 [`Emacs Tree-sitter`](https://github.com/emacs-tree-sitter/elisp-tree-sitter)
@@ -10,22 +9,19 @@ Language (i.e. major-mode) support is somewhat limited and varies by
 feature. Refer to the README/documentation of the package providing the
 feature for specifics.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting
 -   Indentation (experimental)
 -   Folding (experimental)
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `tree-sitter` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Configure
-=========
+# Configure
 
 **Note**: Enabled features *should* override existing mechanisms
 seamlessly. For example, there's no need to separately disable

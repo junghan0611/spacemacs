@@ -1,13 +1,11 @@
 ![](img/json.png)
 
-Description
-===========
+# Description
 
 This layer adds support for JSON files with
 [json-mode](https://github.com/joshwnj/json-mode)
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting
 -   Auto-completion
@@ -19,31 +17,26 @@ Features:
     [web-beautify](https://github.com/yasuyk/web-beautify) or
     [prettier](https://github.com/prettier/prettier)
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `json` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Configuration
-=============
+# Configuration
 
 To define the default indentation set the variable `js-indent-level`.
 
-web-beautify
-------------
+## web-beautify
 
 See [web-beautify layer](../../+tools/web-beautify/README.org)
 documentation.
 
-prettier
---------
+## prettier
 
 See [prettier layer](../../+tools/prettier/README.org) documentation.
 
-Choosing a formatter
---------------------
+## Choosing a formatter
 
 To choose a formatter, set the layer variable `json-fmt-tool`:
 
@@ -65,8 +58,7 @@ example to use the `prettier` formatter:
 **Note:** you can easily add a directory local variable with
 `SPC f v d`.
 
-Formatting on save
-------------------
+## Formatting on save
 
 To enable using the selected formatter on save, set the layer variable
 `json-fmt-on-save`:
@@ -75,8 +67,7 @@ To enable using the selected formatter on save, set the layer variable
 (json :variables json-fmt-on-save t)
 ```
 
-LSP
----
+## LSP
 
 To enable LSP, install the lsp server via npm, then set the layer
 variable `json-backend` to `'lsp` like shown below:
@@ -94,11 +85,9 @@ Installing the lsp server dependency can be done like this:
 npm install -g vscode-langservers-extracted
 ```
 
-Usage
-=====
+# Usage
 
-Reformat
---------
+## Reformat
 
 `SPC m = =` will reformat the whole buffer or the active region. Use
 numerical prefix argument to specify a different indentation than
@@ -120,16 +109,14 @@ Will be reformatted:
 }
 ```
 
-Display navigable hierarchy
----------------------------
+## Display navigable hierarchy
 
 `SPC m T h` toggle the display of a hierarchy for the whole JSON
 document or the active region. Use the universal prefix argument
 `SPC u SPC m T h` to create the hierarchy for the JSON **after** the
 point.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                    |
 |-------------|------------------------------------------------|
@@ -137,8 +124,7 @@ Key bindings
 | `SPC m h p` | Print the path to the json element under point |
 | `SPC m T h` | Toggle graphical JSON hierarchy                |
 
-JSON hierarchy
---------------
+## JSON hierarchy
 
 | Key binding | Description          |
 |-------------|----------------------|

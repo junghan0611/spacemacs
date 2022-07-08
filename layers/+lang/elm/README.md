@@ -1,15 +1,13 @@
 ![](img/elm.png)
 
-Description
-===========
+# Description
 
 This layer adds support for [Elm](http://elm-lang.org).
 
 It relies on [elm-mode](https://github.com/jcollard/elm-mode) and
 [flycheck-elm](https://github.com/bsermons/flycheck-elm).
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting.
 -   Intelligent indentation
@@ -21,18 +19,15 @@ Features:
 -   Integration with elm-reactor
 -   Integration with elm-package
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `elm` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Elm Platform
-------------
+## Elm Platform
 
 The `elm-platform` is a bundle of tools, including the `elm-compiler`,
 `elm-make`, `elm-reactor`, `elm-repl` and `elm-package`.
@@ -70,8 +65,7 @@ install or run, see this issue
 To build from source, see instructions here:
 [<https://github.com/elm-lang/elm-platform>](https://github.com/elm-lang/elm-platform)
 
-elm-format
-----------
+## elm-format
 
 `elm-format` can be used to format elm code according to a standard set
 of rules.
@@ -94,8 +88,7 @@ set in your `~/spacemacs`:
      elm-format-command "elm-format-0.17")
 ```
 
-elm-test
---------
+## elm-test
 
 `elm-test` can be used to run unit tests.
 
@@ -105,14 +98,12 @@ To install `elm-test` run below command:
 npm install --global elm-test
 ```
 
-Configuration
-=============
+# Configuration
 
 All layer configurations can be done by setting layer variables in your
 dotfile. No custom user config lines are necessary
 
-Choosing a backend
-------------------
+## Choosing a backend
 
 This layer provides two alternative backends to choose from.
 
@@ -169,18 +160,15 @@ NOTE: Key bindings for LSP are defined in the LSP layer. Also it is
 advisable to have a look at the autocomplete layer for an optimal
 intellisense config for LSP.
 
-Basic usage tips
-================
+# Basic usage tips
 
-Compilation
------------
+## Compilation
 
 To control the name of the compiled JavaScript file, use `SPC m c B`
 instead of `SPC m c b`. This will overwrite the `--output` parameter of
 `elm-make` to `[buffer-name].js` instead of the default.
 
-Reactor
--------
+## Reactor
 
 `elm-reactor` is an interactive development tool, used to develop and
 debug Elm programs. It will automatically compile an Elm program, and
@@ -205,8 +193,7 @@ server can be controlled by passing in these variables in your
      elm-reactor-address "0.0.0.0") ; default 127.0.0.1
 ```
 
-On save usage
--------------
+## On save usage
 
 ### Imports sort
 
@@ -225,8 +212,7 @@ Set `elm-format-on-save` to `t` to format current file on every save.
 (elm :variables elm-format-on-save t)
 ```
 
-Indentation
------------
+## Indentation
 
 elm-mode indentation is based on cycling: every time you insert a new
 line there will be one or more indentation levels available for you to
@@ -236,8 +222,7 @@ indentations to choose from. If the automatic indentation level was not
 the one you expected simply hit TAB to cycle through the list (note that
 hitting any other key will cancel the cycle).
 
-Test runner settings
---------------------
+## Test runner settings
 
 You may want to customize the default suffix for test files. For
 example, if you prefer to put your tests in `HelloSpec.elm` instead of
@@ -253,11 +238,9 @@ Take a look
 more settings, and remember that this can be set by project using a
 `dir-locals.el` file.
 
-Key bindings
-============
+# Key bindings
 
-elm-make
---------
+## elm-make
 
 | Key binding | Description                                  |
 |-------------|----------------------------------------------|
@@ -265,8 +248,7 @@ elm-make
 | `SPC m c B` | spacemacs/elm-compile-buffer-override-output |
 | `SPC m c m` | elm-compile-main                             |
 
-elm-repl
---------
+## elm-repl
 
 | Key binding | Description                                                |
 |-------------|------------------------------------------------------------|
@@ -276,16 +258,14 @@ elm-repl
 | `SPC m s r` | send current region to REPL                                |
 | `SPC m s R` | send current region to REPL and focus it in insert state   |
 
-elm-reactor
------------
+## elm-reactor
 
 | Key binding | Description        |
 |-------------|--------------------|
 | `SPC m R n` | elm-preview-buffer |
 | `SPC m R m` | elm-preview-main   |
 
-elm-test-runner
----------------
+## elm-test-runner
 
 | Key binding   | Description                            |
 |---------------|----------------------------------------|
@@ -296,8 +276,7 @@ elm-test-runner
 | `SPC m t w`   | elm-test-runner-watch                  |
 | `SPC m t TAB` | elm-test-runner-toggle-test-and-target |
 
-elm-package
------------
+## elm-package
 
 | Key binding | Description              |
 |-------------|--------------------------|
@@ -316,24 +295,21 @@ elm-package
 | `x`         | elm-package-install |
 | `q`         | quit-window         |
 
-elm-oracle
-----------
+## elm-oracle
 
 | Key binding | Description              |
 |-------------|--------------------------|
 | `SPC m h h` | elm-oracle-doc-at-point  |
 | `SPC m h t` | elm-oracle-type-at-point |
 
-elm-format
-----------
+## elm-format
 
 |             |                        |
 |-------------|------------------------|
 | Key binding | Description            |
 | `SPC m = b` | elm-mode-format-buffer |
 
-Refactoring
------------
+## Refactoring
 
 | Key binding | Description      |
 |-------------|------------------|

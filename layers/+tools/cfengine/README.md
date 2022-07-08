@@ -1,12 +1,10 @@
 ![](./img/agent.png)
 
-Description
-===========
+# Description
 
 This layer adds support for CFEngine policies to Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting (CFEngine DSL, Mustache)
 -   On the fly syntax checking via `flycheck` integration.
@@ -14,17 +12,14 @@ Features:
 -   Execution of `cfengine3` `SRC` blocks in `org-mode` via
     `ob-cfengine3` package.
 
-Install
-=======
+# Install
 
 Add `cfengine` to the `dotspacemacs-configuration-layers` in your
 `~/.spacemacs` to use this layer.
 
-Configuration
-=============
+# Configuration
 
-Set file permission on save
----------------------------
+## Set file permission on save
 
 Here is a function to set permissions to 600 on save, this can help
 avoid errors like:
@@ -41,8 +36,7 @@ avoid errors like:
 (add-hook 'after-save-hook 'cfengine-permissions-policy-owner-only nil 'make-it-local)
 ```
 
-Indentation
------------
+## Indentation
 
 If you like attributes to be intended from the promiser set
 `Indentation amount
@@ -59,8 +53,7 @@ bundle agent main
 }
 ```
 
-Execution of `cfengine3` SRC blocks
-===================================
+# Execution of `cfengine3` SRC blocks
 
 This layers add support for `cfengine3` source blocks in org files. With
 the insertion point inside the SRC block press `,,` or `CTRL-c Ctrl-c`
@@ -82,8 +75,7 @@ classes and controlling the `bundlesequence` using header args.
 To suppress the confirmation when executing a block set
 `(setq org-confirm-babel-evaluate nil)` in `dotspacemacs/user-config()`.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description           |
 |-------------|-----------------------|

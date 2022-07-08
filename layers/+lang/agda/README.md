@@ -1,12 +1,10 @@
-Description
-===========
+# Description
 
 This layer adds support for the
 [Agda](http://wiki.portal.chalmers.se/agda/pmwiki.php) programming
 language.
 
-Features:
----------
+## Features:
 
 -   Faces redefined to correctly play with themes.
 -   Spacemacs bindings to Agda's interactive tools.
@@ -14,18 +12,15 @@ Features:
 **This layer is in construction, it needs your contributions and bug
 reports.**
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `agda` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Agda
-----
+## Agda
 
 Quick instructions to install Agda assuming you have cabal installed:
 
@@ -48,8 +43,7 @@ to the path at which `agda2.el` can be found. For example,
 (agda :variables agda-mode-path "/some/path/to/agda2.el")
 ```
 
-Key bindings
-============
+# Key bindings
 
 The key bindings of this layer don't follow the Spacemacs conventions,
 we opted to a simple transcription of stock Agda mode key bindings to
@@ -62,7 +56,7 @@ All Agda specific bindings are prefixed with the major-mode leader
 |-------------|-------------------------------------------------------------------------------------------------------------------------------------------|
 | `SPC m =`   | Show constraints.                                                                                                                         |
 | `SPC m ?`   | Show all goals.                                                                                                                           |
-| `SPC m ​,​` | Shows the type of the goal at point and the currect context.                                                                              |
+| `SPC m ​,​`   | Shows the type of the goal at point and the currect context.                                                                              |
 | `SPC m .`   | Shows the context, the goal and the given expression's inferred type.                                                                     |
 | `SPC m a`   | Simple proof search.                                                                                                                      |
 | `SPC m b`   | Go to the previous goal, if any and activate goal-navigation transient-state.                                                             |

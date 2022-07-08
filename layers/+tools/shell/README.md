@@ -1,25 +1,21 @@
 ![](img/shell.png)
 
-Description
-===========
+# Description
 
 This layer configures the various shells available in Emacs.
 
-Features:
----------
+## Features:
 
 -   Shell integration
 -   Running external terminal emulator in current/project directory
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `shell` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Install vterm
--------------
+## Install vterm
 
 `vterm` is the latest addition to Emacs' set of terminal emulators and
 the only one to be implemented in C, leveraging `libvterm`. It is the
@@ -86,11 +82,9 @@ If the `libtool` command does not exist in your system (usually in
     Not supported at the moment, [but possibly coming
     up](https://github.com/akermu/emacs-libvterm/issues/12).
 
-Configuration
-=============
+# Configuration
 
-Default shell
--------------
+## Default shell
 
 Emacs supports five types of shells/terminals:
 
@@ -121,8 +115,7 @@ To define the default shell you can set the layer variable
 The default shell is quickly accessible via a the default shortcut key
 `SPC '​`.
 
-Default shell position, width, and height
------------------------------------------
+## Default shell position, width, and height
 
 It is possible to choose where the shell should pop up by setting the
 variable `shell-default-position` to either `top`, `bottom`, `left`,
@@ -145,8 +138,7 @@ positioned on the left or the right.
            shell-default-width 40)))
 ```
 
-External terminal emulator
---------------------------
+## External terminal emulator
 
 This layer supports opening an external terminal emulator using
 [terminal-here](https://github.com/davidshepherd7/terminal-here). By
@@ -154,8 +146,7 @@ default `terminal-here` finds an appropriate default shell for you. If
 this does not work please check the package documentation how to change
 it.
 
-Set shell for term, ansi-term and vterm
----------------------------------------
+## Set shell for term, ansi-term and vterm
 
 The default shell can be set by setting the variable
 `shell-default-term-shell`. Default value is `/bin/bash`.
@@ -165,8 +156,7 @@ The default shell can be set by setting the variable
   '((shell :variables shell-default-term-shell "/bin/bash")))
 ```
 
-Set shell for multi-term
-------------------------
+## Set shell for multi-term
 
 The default shell can be set by setting the variable
 `multi-term-program`. Default value is `/bin/bash`.
@@ -176,8 +166,7 @@ The default shell can be set by setting the variable
   '((shell :variables multi-term-program "/bin/bash")))
 ```
 
-Width of the shell popup buffers
---------------------------------
+## Width of the shell popup buffers
 
 By default the popup buffer spans the full width of the current frame,
 if you prefer to spans only the width of the current window then set the
@@ -188,8 +177,7 @@ layer variable `shell-default-full-span` to nil.
   '((shell :variables shell-default-full-span nil)))
 ```
 
-Enable em-smart in Eshell
--------------------------
+## Enable em-smart in Eshell
 
 From the `em-smart` documentation:
 
@@ -212,8 +200,7 @@ To enable `em-smart` put the following layer variable to non-nil:
   '((shell :variables shell-enable-smart-eshell t)))
 ```
 
-Protect your Eshell prompt
---------------------------
+## Protect your Eshell prompt
 
 Comint mode (Shell mode) has good support for Evil mode as it inhibits
 movement commands over the prompt. This has the added benefit that Evil
@@ -231,8 +218,7 @@ disable this protection you can set the variable
   '((shell :variables shell-protect-eshell-prompt nil)))
 ```
 
-Fish shell and ansi-term
-------------------------
+## Fish shell and ansi-term
 
 Making `fish` shell to work with `ansi-term` may be a challenge, here
 are some pointers to save you time to setup your environment correctly.
@@ -272,8 +258,7 @@ add:
 (add-hook 'term-mode-hook 'spacemacs/toggle-truncate-lines-on)
 ```
 
-Close window with terminal
---------------------------
+## Close window with terminal
 
 If you want its window to close when the terminal terminates, set the
 following layer variable to non-nil:
@@ -285,8 +270,7 @@ following layer variable to non-nil:
 
 This is only applied to `term` and `ansi-term` modes.
 
-Eshell
-======
+# Eshell
 
 Some advanced configuration is setup for `eshell` in this layer:
 
@@ -307,21 +291,20 @@ Some advanced configuration is setup for `eshell` in this layer:
     `auto-completion` layer is installed)
 -   pressing `i` in normal state will automatically jump to the prompt
 
-Key bindings
-============
+# Key bindings
 
 | Key binding   | Description                                              |
 |---------------|----------------------------------------------------------|
-| `SPC '​`      | Toggle pop-shell with your default shell                 |
-| `SPC "​`      | Open external terminal emulator in current directory     |
+| `SPC '​`       | Toggle pop-shell with your default shell                 |
+| `SPC "​`       | Open external terminal emulator in current directory     |
 | `SPC a t s e` | Toggle pop-shell with `eshell`                           |
 | `SPC a t s i` | Toggle pop-shell with `shell`                            |
 | `SPC a t s m` | Toggle pop-shell with `multi-term`                       |
 | `SPC a t s t` | Toggle pop-shell with `ansi-term`                        |
 | `SPC a t s T` | Toggle pop-shell with `term`                             |
 | `SPC a t s v` | Toggle pop-shell with `vterm`                            |
-| `SPC p '​`    | Toggle pop-shell with your default shell in project root |
-| `SPC p "​`    | Open external terminal emulator in project root          |
+| `SPC p '​`     | Toggle pop-shell with your default shell in project root |
+| `SPC p "​`     | Open external terminal emulator in project root          |
 | `SPC p $`     | Open a new buffer with default shell in project root     |
 | `TAB`         | In a shell buffer, browse completions                    |
 | `SPC m H`     | In `shell` or `eshell`, browse history                   |
@@ -335,8 +318,7 @@ the number of shell is indicated on the mode-line.
 **Note:** Use the universal prefix argument `SPC u SPC '​` to open the
 shell in the current buffer instead of a popup.
 
-Multi-term
-----------
+## Multi-term
 
 | Key binding            | Description                    |
 |------------------------|--------------------------------|
@@ -346,15 +328,13 @@ Multi-term
 | `SPC m n`              | go to next multi-term          |
 | `SPC m N` or `SPC m p` | go to previous multi-term      |
 
-Eshell
-------
+## Eshell
 
 | Key binding        | Description                  |
 |--------------------|------------------------------|
 | `SPC m H` or `M-l` | search shell command history |
 
-vterm
------
+## vterm
 
 | Key binding | Description                    |
 |-------------|--------------------------------|

@@ -1,24 +1,20 @@
-Description
-===========
+# Description
 
 This layer adds support for
 [copy-as-format](https://github.com/sshaw/copy-as-format).
 
-Features:
----------
+## Features:
 
 -   Function to copy buffer locations as GitHub/Slack/JIRA/HipChat/…
     formatted code
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `copy-as-format` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Configuration
-=============
+# Configuration
 
 You can choose default formatter.
 
@@ -41,8 +37,7 @@ asciidoc syntax highlighting.
                                                ("^.*\\.clj[cs]?$" "clojure")))
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description              |
 |-------------|--------------------------|

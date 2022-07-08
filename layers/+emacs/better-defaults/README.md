@@ -1,7 +1,6 @@
 ![](img/emacs.png)
 
-Description
-===========
+# Description
 
 This layer enhances the default commands of Emacs and is primarily
 intended to be used with the `emacs` editing style as it does not change
@@ -15,8 +14,7 @@ the evil key bindings.
 The commands defined in this layer are taken from various sources like
 [Prelude](https://github.com/bbatsov/prelude).
 
-Features:
----------
+## Features:
 
 -   Smart line navigation: Subsequent presses of `C-a` toggles between
     the beginning of the line and the first non-whitespace character.
@@ -32,15 +30,13 @@ Features:
     everywhere. Due to implementation details unfilling doesn't work
     when called twice via `M-x`.
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `better-defaults` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Configuration
-=============
+# Configuration
 
 Choose if `C-a` first brings you to the beginning of the line or the
 beginning of the code (first non-whitespace character).
@@ -58,8 +54,7 @@ the code (before or after comments).
                  better-defaults-move-to-end-of-code-first nil)
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                                                      |
 |-------------|----------------------------------------------------------------------------------|

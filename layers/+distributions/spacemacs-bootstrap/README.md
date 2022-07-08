@@ -1,10 +1,8 @@
-Description
-===========
+# Description
 
 This layer loads the necessary packages for spacemacs to start-up.
 
-Features:
----------
+## Features:
 
 -   Loads `evil` key bindings and macros for auto-evilification of maps
 -   Loads `holy` and `hybrid` modes

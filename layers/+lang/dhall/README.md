@@ -1,13 +1,11 @@
 ![](img/dhall-logo.png)
 
-Description
-===========
+# Description
 
 This layer adds support for the [Dhall Configuration
 Language](https://dhall-lang.org/), a non-repetitive alternate to YAML.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting for `.dhall` source files
 -   Automatic buffer reformatting on save (configurable)
@@ -17,11 +15,9 @@ Features:
 releases [can be found
 here](https://github.com/dhall-lang/dhall-haskell/releases).
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `dhall` to the existing `dotspacemacs-configuration-layers`

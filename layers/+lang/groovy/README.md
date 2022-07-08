@@ -1,13 +1,11 @@
 ![](img/groovy.png)
 
-Description
-===========
+# Description
 
 This layer supports [Groovy](http://www.groovy-lang.org/) development in
 Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Auto-completion
 -   Syntax-checking
@@ -16,21 +14,18 @@ Features:
 -   Groovy REPL integration
 -   Syntax highlighting
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `groovy` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Configuration
-=============
+# Configuration
 
 All layer configurations can be done by setting layer variables in your
 dotfile. No custom user config lines are necessary
 
-Choosing a backend
-------------------
+## Choosing a backend
 
 This layer provides two alternative backends to choose from.
 
@@ -75,18 +70,15 @@ NOTE: The build on <https://github.com/prominic/groovy-language-server>
 will generate two jar files. You will need the
 `groovy-language-server-all.jar` as the `groovy-lsp-jar-path`.
 
-Key bindings
-============
+# Key bindings
 
-Imports
--------
+## Imports
 
 | Key binding | Description                        |
 |-------------|------------------------------------|
 | `SPC m r i` | Add import for symbol around point |
 
-REPL
-----
+## REPL
 
 | Key binding | Description                                           |
 |-------------|-------------------------------------------------------|

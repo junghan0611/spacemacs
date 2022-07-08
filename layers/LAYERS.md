@@ -1,5 +1,4 @@
-Description
-===========
+# Description
 
 THIS FILE IS AUTO-GENERATED! Don't edit it directly. See ["README.org
 tags" section of CONTRIBUTING.org for the
@@ -9,11 +8,9 @@ This is an overview of Spacemacs configuration layers. For information
 about configuration layer development see [Configuration layers
 development](https://develop.spacemacs.org/doc/LAYERS.html).
 
-Chats
-=====
+# Chats
 
-ERC
----
+## ERC
 
 [+chat/erc/README.org](+chat/erc/README.org)
 
@@ -40,8 +37,7 @@ Features:
     a way of showing, either using the `emoji` layer or having a proper
     font) :clap:
 
-Jabber
-------
+## Jabber
 
 [+chat/jabber/README.org](+chat/jabber/README.org)
 
@@ -51,8 +47,7 @@ Features:
 
 -   Use Jabber without having to leave Spacemacs
 
-RCIRC
------
+## RCIRC
 
 [+chat/rcirc/README.org](+chat/rcirc/README.org)
 
@@ -73,8 +68,7 @@ Features:
     a way of showing, either using the `emoji` layer or having a proper
     font) :clap:
 
-Slack
------
+## Slack
 
 [+chat/slack/README.org](+chat/slack/README.org)
 
@@ -89,11 +83,9 @@ Features:
 -   Connect to multiple slack instances
 -   Notifications with [alert.el](https://github.com/jwiegley/alert)
 
-Checkers
-========
+# Checkers
 
-Spell Checking
---------------
+## Spell Checking
 
 [+checkers/spell-checking/README.org](+checkers/spell-checking/README.org)
 
@@ -111,8 +103,7 @@ Features:
     mode](https://github.com/nschum/auto-dictionary-mode) for some
     languages.
 
-Syntax Checking
----------------
+## Syntax Checking
 
 [+checkers/syntax-checking/README.org](+checkers/syntax-checking/README.org)
 
@@ -125,11 +116,9 @@ Features:
     [Flycheck](http://www.flycheck.org/) for various language layers
 -   Tooltip syntax errors with `popwin`
 
-Completion
-==========
+# Completion
 
-Auto-completion
----------------
+## Auto-completion
 
 [+completion/auto-completion/README.org](+completion/auto-completion/README.org)
 
@@ -152,8 +141,7 @@ Features:
 -   Automatic docstring tooltips are provided by
     [company-quickhelp](https://github.com/expez/company-quickhelp)
 
-Compleseus
-----------
+## Compleseus
 
 [+completion/compleseus/README.org](+completion/compleseus/README.org)
 
@@ -172,8 +160,7 @@ Features:
 
 -   Same features as `ivy` or `helm`
 
-Helm
-----
+## Helm
 
 [+completion/helm/README.org](+completion/helm/README.org)
 
@@ -197,8 +184,7 @@ Features:
 -   Detailed configuration parameters for helms appearance
 -   Intuitive `transient state`
 
-Ivy
----
+## Ivy
 
 [+completion/ivy/README.org](+completion/ivy/README.org)
 
@@ -221,8 +207,7 @@ Features:
 -   Intuitive `transient state`
 -   Advanced buffer information with `ivy-rich`
 
-Templates
----------
+## Templates
 
 [+completion/templates/README.org](+completion/templates/README.org)
 
@@ -235,11 +220,9 @@ Features:
 
 -   Auto-insert snippets when creating specific new files.
 
-E-mail
-======
+# E-mail
 
-Gnus
-----
+## Gnus
 
 [+email/gnus/README.org](+email/gnus/README.org)
 
@@ -253,8 +236,7 @@ Features:
 -   Support for beautiful HTML mails generated from any `org` buffer.
 -   Support for credential management via [GnuPG](https://gnupg.org/).
 
-Mu4e
-----
+## Mu4e
 
 [+email/mu4e/README.org](+email/mu4e/README.org)
 
@@ -272,8 +254,7 @@ Features:
 -   Notifications using
     [mu4e-alert](https://github.com/iqbalansari/mu4e-alert)
 
-Notmuch
--------
+## Notmuch
 
 [+email/notmuch/README.org](+email/notmuch/README.org)
 
@@ -287,11 +268,9 @@ Features:
 -   Email searching
 -   Email tagging
 
-Emacs
-=====
+# Emacs
 
-Better Defaults
----------------
+## Better Defaults
 
 [+emacs/better-defaults/README.org](+emacs/better-defaults/README.org)
 
@@ -323,8 +302,7 @@ Features:
     everywhere. Due to implementation details unfilling doesn't work
     when called twice via `M-x`.
 
-Helpful
--------
+## Helpful
 
 [+emacs/helpful/README.org](+emacs/helpful/README.org)
 
@@ -341,8 +319,7 @@ Features:
     and key help buffers
 -   Better formatted elisp docstrings
 
-IBuffer
--------
+## IBuffer
 
 [+emacs/ibuffer/README.org](+emacs/ibuffer/README.org)
 
@@ -353,8 +330,7 @@ Features:
 -   Grouping of buffers by major-modes
 -   Grouping of buffers by projects
 
-Org
----
+## Org
 
 [+emacs/org/README.org](+emacs/org/README.org)
 
@@ -386,8 +362,7 @@ Features:
 -   Text transclusion via
     [org-transclusion](https://nobiot.github.io/org-transclusion)
 
-Outshine
---------
+## Outshine
 
 [+emacs/outshine/README.org](+emacs/outshine/README.org)
 
@@ -402,8 +377,7 @@ Features:
     buffers
 -   Edit comments under outline headings in separate org-mode buffers
 
-Quickurl
---------
+## Quickurl
 
 [+tools/quickurl/README.org](+tools/quickurl/README.org)
 
@@ -415,8 +389,7 @@ Features:
 
 -   Key bindings to dispatch Quickurl (which is in vanilla Emacs).
 
-Semantic
---------
+## Semantic
 
 [+emacs/semantic/README.org](+emacs/semantic/README.org)
 
@@ -453,8 +426,7 @@ Features:
     page](https://github.com/tuhdo/semantic-refactor/blob/master/srefactor-demos/demos-elisp.org)
     for demonstration of Lisp formatting features.
 
-Smex
-----
+## Smex
 
 [+emacs/smex/README.org](+emacs/smex/README.org)
 
@@ -466,8 +438,7 @@ Features:
 -   Provides an alternative way for `helm-M-x` based on `ido` and
     [smex](https://github.com/nonsequitur/smex)
 
-Tabs
-----
+## Tabs
 
 [+emacs/tabs/README.org](+emacs/tabs/README.org)
 
@@ -479,8 +450,7 @@ Features:
 -   Sets up tabs using Centaur tabs as backend
 -   Optionally auto hide tabs after delay
 
-Typography
-----------
+## Typography
 
 [+emacs/typography/README.org](+emacs/typography/README.org)
 
@@ -495,11 +465,9 @@ Features:
 -   Tildify Mode automatically inserts non-breaking spaces where
     required (Only available on Emacs 25).
 
-File trees
-==========
+# File trees
 
-Neotree
--------
+## Neotree
 
 [+filetree/neotree/README.org](+filetree/neotree/README.org)
 
@@ -513,8 +481,7 @@ Features:
 -   transient state by pressing on `?`
 -   version-control integration
 
-Treemacs
---------
+## Treemacs
 
 [+filetree/treemacs/README.org](+filetree/treemacs/README.org)
 
@@ -549,11 +516,9 @@ In short, Treemacs offers:
 -   Optional `filewatch-mode` to automatically refresh the view after
     (and only after) changes to the shown filesystem.
 
-Fonts
-=====
+# Fonts
 
-Unicode-fonts
--------------
+## Unicode-fonts
 
 [+fonts/unicode-fonts/README.org](+fonts/unicode-fonts/README.org)
 
@@ -573,11 +538,9 @@ Features:
 -   Enable support for font ligature in Emacs 27 + via
     [ligatures.el](https://github.com/mickeynp/ligature.el).
 
-Fun
-===
+# Fun
 
-Emoji
------
+## Emoji
 
 [+fun/emoji/README.org](+fun/emoji/README.org)
 
@@ -592,8 +555,7 @@ Features:
 -   Completion of Emojis using
     [company-emoji](https://github.com/dunn/company-emoji)
 
-Games
------
+## Games
 
 [+fun/games/README.org](+fun/games/README.org)
 
@@ -607,8 +569,7 @@ Features:
 -   Tetris
 -   Typit
 
-Selectric
----------
+## Selectric
 
 [+fun/selectric/README.org](+fun/selectric/README.org)
 
@@ -622,8 +583,7 @@ Features:
     started with that big mechanical keyboard and the small monochrome
     display working on the latest IBM Iseries server.
 
-Xkcd
-----
+## Xkcd
 
 [+fun/xkcd/README.org](+fun/xkcd/README.org)
 
@@ -637,11 +597,9 @@ Features:
 -   Open explanation and current comic in browser
 -   Cache the comics in `.cache/xkcd`
 
-Internationalization
-====================
+# Internationalization
 
-Chinese
--------
+## Chinese
 
 [+intl/chinese/README.org](+intl/chinese/README.org)
 
@@ -675,8 +633,7 @@ Features:
 -   Automatic joining of consecutive Chinese lines into a single long
     line without unwanted space when exporting org-mode to html.
 
-Japanese
---------
+## Japanese
 
 [+intl/japanese/README.org](+intl/japanese/README.org)
 
@@ -701,8 +658,7 @@ Features:
 -   Join consecutive Japanese lines into a single long line without
     unwanted space when exporting org-mode to html.
 
-Keyboard-layout
----------------
+## Keyboard-layout
 
 [+intl/keyboard-layout/README.org](+intl/keyboard-layout/README.org)
 
@@ -716,11 +672,9 @@ Features:
 -   Remap navigation commands to the homerow of your chosen layout
 -   Remap missing commands automatically to elsewhere in the layout
 
-Miscellaneous
-=============
+# Miscellaneous
 
-Copy-as-format
---------------
+## Copy-as-format
 
 [+misc/copy-as-format/README.org](+misc/copy-as-format/README.org)
 
@@ -732,8 +686,7 @@ Features:
 -   Function to copy buffer locations as GitHub/Slack/JIRA/HipChat/…
     formatted code
 
-Dtrt-indent
------------
+## Dtrt-indent
 
 [+misc/dtrt-indent/README.org](+misc/dtrt-indent/README.org)
 
@@ -748,8 +701,7 @@ Features:
 -   Indentation style detection and automatic configuration to match
     file in open buffer.
 
-Ietf
-----
+## Ietf
 
 [+misc/ietf/README.org](+misc/ietf/README.org)
 
@@ -762,8 +714,7 @@ Features:
 -   Viewing IETF documents.
 -   Writing IETF documents.
 
-Multiple-cursors
-----------------
+## Multiple-cursors
 
 [+misc/multiple-cursors/README.org](+misc/multiple-cursors/README.org)
 
@@ -771,8 +722,7 @@ Features:
 
 -   support for multiple cursors.
 
-Nav-flash
----------
+## Nav-flash
 
 [+misc/nav-flash/README.org](+misc/nav-flash/README.org)
 
@@ -784,8 +734,7 @@ Features:
 
 -   Fancy flashing line on navigation.
 
-Parinfer
---------
+## Parinfer
 
 [+misc/parinfer/README.org](+misc/parinfer/README.org)
 
@@ -799,8 +748,7 @@ Features:
     common-lisp and scheme following the parinfer editing paradigm.
 -   Powered by a native library in the background
 
-Spacemacs-completion
---------------------
+## Spacemacs-completion
 
 [+spacemacs/spacemacs-completion/README.org](+spacemacs/spacemacs-completion/README.org)
 
@@ -821,8 +769,7 @@ Features:
 -   Basic support for `ido-navigation` configuration and transient
     state.
 
-Spacemacs-defaults
-------------------
+## Spacemacs-defaults
 
 [+spacemacs/spacemacs-defaults/README.org](+spacemacs/spacemacs-defaults/README.org)
 
@@ -866,8 +813,7 @@ Features:
     -   winner
     -   zone
 
-Spacemacs-editing
------------------
+## Spacemacs-editing
 
 [+spacemacs/spacemacs-editing/README.org](+spacemacs/spacemacs-editing/README.org)
 
@@ -922,8 +868,7 @@ Features:
 -   Support for editing strings inplace via
     [`string-edit`](https://github.com/magnars/string-edit.el)
 
-Spacemacs-editing-visual
-------------------------
+## Spacemacs-editing-visual
 
 [+spacemacs/spacemacs-editing-visual/README.org](+spacemacs/spacemacs-editing-visual/README.org)
 
@@ -940,8 +885,7 @@ Features:
 -   Automatic highlighting of parentheses
 -   Adaptive cursor shape in terminal, as it would be in GUI
 
-Spacemacs-evil
---------------
+## Spacemacs-evil
 
 [+spacemacs/spacemacs-evil/README.org](+spacemacs/spacemacs-evil/README.org)
 
@@ -979,8 +923,7 @@ Features:
 -   Display tildes in non-buffer area with `vi-tilde-fringe`
 -   Add `evil-collection`
 
-Spacemacs-language
-------------------
+## Spacemacs-language
 
 [+spacemacs/spacemacs-language/README.org](+spacemacs/spacemacs-language/README.org)
 
@@ -993,8 +936,7 @@ Features:
 -   Integration of google-translate into Emacs via
     [google-translate](https://github.com/atykhonov/google-translate).
 
-Spacemacs-layouts
------------------
+## Spacemacs-layouts
 
 [+spacemacs/spacemacs-layouts/README.org](+spacemacs/spacemacs-layouts/README.org)
 
@@ -1010,8 +952,7 @@ Features:
 -   Integration with `helm` and `ivy` to search for buffers within
     layouts
 
-Spacemacs-misc
---------------
+## Spacemacs-misc
 
 [+spacemacs/spacemacs-misc/README.org](+spacemacs/spacemacs-misc/README.org)
 
@@ -1023,8 +964,7 @@ Features:
     `evil-goto-definition`.
 -   Support for an easy http request client via `request`.
 
-Spacemacs-modeline
-------------------
+## Spacemacs-modeline
 
 [+spacemacs/spacemacs-modeline/README.org](+spacemacs/spacemacs-modeline/README.org)
 
@@ -1042,8 +982,7 @@ Features:
     -   The system clock
 -   Display of a small system monitor in a separate mode-line.
 
-Spacemacs-navigation
---------------------
+## Spacemacs-navigation
 
 [+spacemacs/spacemacs-navigation/README.org](+spacemacs/spacemacs-navigation/README.org)
 
@@ -1063,8 +1002,7 @@ Features:
 -   Shortcuts for restarting `emacs`
 -   Shortcuts for easily switching between windows
 
-Spacemacs-org
--------------
+## Spacemacs-org
 
 [+spacemacs/spacemacs-org/README.org](+spacemacs/spacemacs-org/README.org)
 
@@ -1077,8 +1015,7 @@ Features:
 -   Support for custom bullet markers via `org-superstar`.
 -   Support for a special view mode for org documents via `space-doc`.
 
-Spacemacs-project
------------------
+## Spacemacs-project
 
 [+spacemacs/spacemacs-project/README.org](+spacemacs/spacemacs-project/README.org)
 
@@ -1091,8 +1028,7 @@ Features:
 -   Additional path helper functions, to copy the location of a buffer
     relative to the project root.
 
-Spacemacs-purpose
------------------
+## Spacemacs-purpose
 
 [+spacemacs/spacemacs-purpose/README.org](+spacemacs/spacemacs-purpose/README.org)
 
@@ -1122,8 +1058,7 @@ Features:
 -   Difference from popwin: when several windows are open, popup window
     is sometimes bigger than with regular popwin in the same situation.
 
-Spacemacs-visual
-----------------
+## Spacemacs-visual
 
 [+spacemacs/spacemacs-visual/README.org](+spacemacs/spacemacs-visual/README.org)
 
@@ -1142,11 +1077,9 @@ Features:
     `popwin`.
 -   Support for text zooming via `zoom-frm`.
 
-Music
-=====
+# Music
 
-Alda Layer
-----------
+## Alda Layer
 
 [+lang/alda/README.org](+lang/alda/README.org)
 
@@ -1163,8 +1096,7 @@ Features:
 -   Play portions of a buffer, or the entire buffer, through a running
     Alda server.
 
-Extempore
----------
+## Extempore
 
 [+lang/extempore/README.org](+lang/extempore/README.org)
 
@@ -1178,8 +1110,7 @@ Features:
 -   connect to & evaluate code
 -   eldoc support
 
-Pianobar
---------
+## Pianobar
 
 [+music/pianobar/README.org](+music/pianobar/README.org)
 
@@ -1190,8 +1121,7 @@ Features:
 -   Support for listening to music from within Emacs via
     [Pianobar](https://6xq.net/pianobar/).
 
-Spotify
--------
+## Spotify
 
 [+music/spotify/README.org](+music/spotify/README.org)
 
@@ -1202,8 +1132,7 @@ Features:
 -   Support for listening to music from within Emacs via
     [Spotify](https://www.spotify.com).
 
-TidalCycles
------------
+## TidalCycles
 
 [+music/tidalcycles/README.org](+music/tidalcycles/README.org)
 
@@ -1216,11 +1145,9 @@ Features:
 -   `tidal-mode` to interact with TidalCycles
 -   Spacemacs friendly key bindings
 
-Operating systems
-=================
+# Operating systems
 
-NixOS
------
+## NixOS
 
 [+os/nixos/README.org](+os/nixos/README.org)
 
@@ -1237,8 +1164,7 @@ Features:
     [helm-nixos-options](https://github.com/travisbhartwell/nix-emacs/blob/master/helm-nixos-options.el)
 -   WIP support for LSP backend using `rnix-lsp`
 
-OSX
----
+## OSX
 
 [+os/osx/README.org](+os/osx/README.org)
 
@@ -1251,11 +1177,9 @@ Features:
 -   In `dired` use `gls` instead of `ls`
 -   Fix separator colors of Spaceline mode-line
 
-Pair programming
-================
+# Pair programming
 
-Floobits
---------
+## Floobits
 
 [+pair-programming/floobits/README.org](+pair-programming/floobits/README.org)
 
@@ -1270,11 +1194,9 @@ Features:
     current workspace
 -   Follow recent changes by other users
 
-Programming languages
-=====================
+# Programming languages
 
-Domain-specific (DSLs)
-----------------------
+## Domain-specific (DSLs)
 
 ### Lisp dialects
 
@@ -1999,8 +1921,7 @@ Features:
 -   Automatic capitalization of keywords.
 -   LSP support via [sqls](https://github.com/lighttiger2505/sqls).
 
-Frameworks
-----------
+## Frameworks
 
 ### Django
 
@@ -2150,8 +2071,7 @@ Features:
 -   `evil-matchit` `%` to jump between open and close tags
 -   `emmet-mode` and `yasnippet` for code expanding with the `TAB` key
 
-General-purpose
----------------
+## General-purpose
 
 ### Imperative
 
@@ -2272,11 +2192,11 @@ General-purpose
         -   formatting
         -   TypeScript playground integration
 
-2.  C\#
+2.  C#
 
     [+lang/csharp/README.org](+lang/csharp/README.org)
 
-    This layer adds support for the C\# language using the
+    This layer adds support for the C# language using the
     [omnisharp-roslyn](https://github.com/OmniSharp/omnisharp-roslyn)
     language server with either the
     [omnisharp-emacs](https://github.com/OmniSharp/omnisharp-emacs) or
@@ -2442,11 +2362,11 @@ General-purpose
     -   Interactive debugger using
         [dap-mode](https://github.com/emacs-lsp/dap-mode)
 
-9.  F\#
+9.  F#
 
     [+lang/fsharp/README.org](+lang/fsharp/README.org)
 
-    This layer adds support for F\# language using
+    This layer adds support for F# language using
     [fsharpbinding](https://github.com/fsharp/fsharpbinding) and
     [fsharp-mode](https://github.com/fsharp/fsharpbinding).
 
@@ -2787,8 +2707,8 @@ General-purpose
     [+lang/raku/README.org](+lang/raku/README.org)
 
     This layer provides an environment for the [Raku Programming
-    Language](https://www.raku.org/) that was previously known as
-    Perl 6.
+    Language](https://www.raku.org/) that was previously known as Perl
+    6.
 
     Features:
 
@@ -2991,8 +2911,7 @@ General-purpose
     -   Integration of the `Idris` REPL
     -   Integration of the `Idris` build system
 
-Utilities
----------
+## Utilities
 
 ### Conda Layer
 
@@ -3058,11 +2977,9 @@ Features:
 -   [sailfish-scratchbox](https://github.com/vityafx/sailfish-scratchbox.el):
     handy sb2 interaction.
 
-Readers
-=======
+# Readers
 
-Dash
-----
+## Dash
 
 [+readers/dash/README.org](+readers/dash/README.org)
 
@@ -3078,8 +2995,7 @@ Features:
 -   Support for [zeal](https://zealdocs.org/) offline API browser for
     Linux.
 
-Deft
-----
+## Deft
 
 [+readers/deft/README.org](+readers/deft/README.org)
 
@@ -3094,8 +3010,7 @@ Features:
 -   Zettelkasten system with
     [zetteldeft](https://github.com/EFLS/zetteldeft)
 
-Djvu
-----
+## Djvu
 
 [+readers/djvu/README.org](+readers/djvu/README.org)
 
@@ -3119,8 +3034,7 @@ alternative to [djvu2.el](https://github.com/dalanicolai/djvu2.el)).
 -   remember last view with djvu-restore
 -   dark mode
 
-Elfeed
-------
+## Elfeed
 
 [+readers/elfeed/README.org](+readers/elfeed/README.org)
 
@@ -3135,8 +3049,7 @@ Features:
 -   Support for displaying feed database content in the browser via [web
     interface](https://github.com/skeeto/elfeed#web-interface).
 
-Epub
-----
+## Epub
 
 [+readers/epub/README.org](+readers/epub/README.org)
 
@@ -3156,8 +3069,7 @@ Features:
 -   Metadata display
 -   Image rescaling
 
-PDF
----
+## PDF
 
 [+readers/pdf/README.org](+readers/pdf/README.org)
 
@@ -3178,8 +3090,7 @@ Features:
 -   Manipulate annotations.
 -   Fit PDF to screen.
 
-Speed Reading
--------------
+## Speed Reading
 
 [+readers/speed-reading/README.org](+readers/speed-reading/README.org)
 
@@ -3189,11 +3100,9 @@ Features:
 
 -   Support for `speed-reading` of arbitrary texts
 
-README.org files that need proper tags
-======================================
+# README.org files that need proper tags
 
-LanguageTool
-------------
+## LanguageTool
 
 [+tools/languagetool/README.org](+tools/languagetool/README.org)
 
@@ -3205,11 +3114,9 @@ Features:
 
 -   Spelling and grammar checking
 
-Source control
-==============
+# Source control
 
-Git
----
+## Git
 
 [+source-control/git/README.org](+source-control/git/README.org)
 
@@ -3238,8 +3145,7 @@ New to Magit? Checkout the [official intro](https://magit.vc/about/) and
 [Practicalli Spacemacs](https://practical.li/spacemacs/source-control/)
 guide to configuring and using the Git and version control layers.
 
-GitHub
-------
+## GitHub
 
 [+source-control/github/README.org](+source-control/github/README.org)
 
@@ -3257,8 +3163,7 @@ Features:
 -   [grip-mode](https://github.com/seagle0128/grip-mode) Github-flavored
     Markdown/Org preview using [Grip](https://github.com/joeyespo/grip).
 
-Perforce
---------
+## Perforce
 
 [+source-control/perforce/README.org](+source-control/perforce/README.org)
 
@@ -3269,8 +3174,7 @@ Features:
 -   Support for running [Perforce](https://www.perforce.com/) (p4) SCM
     commands directly from Emacs.
 
-Version-Control
----------------
+## Version-Control
 
 [+source-control/version-control/README.org](+source-control/version-control/README.org)
 
@@ -3288,11 +3192,9 @@ Features:
 -   adds vcs transient-state `SPC g.` to allow quick navigation and
     modification of buffer hunks.
 
-Spacemacs
-=========
+# Spacemacs
 
-Distributions
--------------
+## Distributions
 
 ### Spacemacs distribution
 
@@ -3350,11 +3252,9 @@ Features:
 -   Loads `bind-map` and `bind-key` which are used to realize various
     Spacemacs specific key binding commands
 
-Tagging
-=======
+# Tagging
 
-Cscope
-------
+## Cscope
 
 [+tags/cscope/README.org](+tags/cscope/README.org)
 
@@ -3374,8 +3274,7 @@ Features:
 -   Tag indexing and searching for python via
     [PyCscope](https://github.com/portante/pycscope)
 
-Helm Gtags
-----------
+## Helm Gtags
 
 [+tags/gtags/README.org](+tags/gtags/README.org)
 
@@ -3403,11 +3302,9 @@ Features:
 -   Enables `company complete` in modes that otherwise might not support
     it.
 
-Themes
-======
+# Themes
 
-Colors
-------
+## Colors
 
 [+themes/colors/README.org](+themes/colors/README.org)
 
@@ -3429,8 +3326,7 @@ Features:
 -   Display a Nyan cat progress bar in the mode-line with
     [nyan-mode](https://github.com/syl20bnr/nyan-mode).
 
-Nyan-mode
----------
+## Nyan-mode
 
 [+themes/colors/local/nyan-mode/README.org](+themes/colors/local/nyan-mode/README.org)
 
@@ -3448,8 +3344,7 @@ Features:
     nyan-stop-music),
 -   Customizable properties.
 
-Themes Megapack
----------------
+## Themes Megapack
 
 [+themes/themes-megapack/README.org](+themes/themes-megapack/README.org)
 
@@ -3462,8 +3357,7 @@ Features:
     Merrell](http://www.twitter.com/robmerrell).
 -   Easily try a theme by invoking helm-themes with: `SPC T s`.
 
-Theming
--------
+## Theming
 
 [+themes/theming/README.org](+themes/theming/README.org)
 
@@ -3475,11 +3369,9 @@ Features:
 -   Tweak face attributes and other aspects of themes.
 -   Includes three additional layer variables for tweaking headings.
 
-Tools
-=====
+# Tools
 
-Ansible
--------
+## Ansible
 
 [+tools/ansible/README.org](+tools/ansible/README.org)
 
@@ -3493,8 +3385,7 @@ Features:
 -   Integration of `ansible-vault` into emacs for automatic
     encryption/decryption of files.
 
-Bm
---
+## Bm
 
 [+tools/bm/README.org](+tools/bm/README.org)
 
@@ -3517,8 +3408,7 @@ Features:
 -   List bookmarks (in all buffers) in a separate buffer.
 -   Cycle through bookmarks in all open buffers.
 
-CFEngine
---------
+## CFEngine
 
 [+tools/cfengine/README.org](+tools/cfengine/README.org)
 
@@ -3532,8 +3422,7 @@ Features:
 -   Execution of `cfengine3` `SRC` blocks in `org-mode` via
     `ob-cfengine3` package.
 
-Chrome
-------
+## Chrome
 
 [+tools/chrome/README.org](+tools/chrome/README.org)
 
@@ -3547,8 +3436,7 @@ Features:
     [flymd](https://github.com/mola-T/flymd)
 -   gmail message mode uses standard markdown key bindings
 
-CMake
------
+## CMake
 
 [+tools/cmake/README.org](+tools/cmake/README.org)
 
@@ -3565,8 +3453,7 @@ Features:
 -   Extraction of compile parameters from `compile_commands.json` with
     [cmake-ide](https://github.com/atilaneves/cmake-ide)
 
-Command-log
------------
+## Command-log
 
 [+tools/command-log/README.org](+tools/command-log/README.org)
 
@@ -3583,8 +3470,7 @@ Features:
     keystrokes and commands in Emacs.
 -   Provides an easy way to create command logs for training classes.
 
-DAP
----
+## DAP
 
 [+tools/dap/README.org](+tools/dap/README.org)
 
@@ -3614,8 +3500,7 @@ Fully featured IDE-like debugger providing:
 -   Debug/Run configurations
 -   Debug REPL
 
-Debug
------
+## Debug
 
 [+tools/debug/README.org](+tools/debug/README.org)
 
@@ -3631,8 +3516,7 @@ Features:
     [adding](https://github.com/realgud/realgud/wiki/How-to-add-a-new-debugger)
     your own external debuggers
 
-Docker
-------
+## Docker
 
 [+tools/docker/README.org](+tools/docker/README.org)
 
@@ -3650,8 +3534,7 @@ Features:
 -   Syntax checking via [hadolint](https://github.com/hadolint/hadolint)
 -   Code-Completion via `lsp`
 
-Eww
----
+## Eww
 
 [+web/eww/README.org](+web/eww/README.org)
 
@@ -3664,8 +3547,7 @@ Features:
 -   Adds spacemacs functionality to eww-mode
 -   Adds ability to easily navigate eww buffers
 
-EXWM
-----
+## EXWM
 
 [+window-management/exwm/README.org](+window-management/exwm/README.org)
 
@@ -3677,8 +3559,7 @@ Features:
 
 -   Support for using Emacs as window manager
 
-Fasd
-----
+## Fasd
 
 [+tools/fasd/README.org](+tools/fasd/README.org)
 
@@ -3691,8 +3572,7 @@ Features:
 -   Provides `fasd` with recent open file lists from Emacs.
 -   Allows to filter `fasd` results with `helm` or `ivy`.
 
-Finance
--------
+## Finance
 
 [+tools/finance/README.org](+tools/finance/README.org)
 
@@ -3708,8 +3588,7 @@ Features:
 -   Extended support for `evil` style editing with
     [evil-ledger](https://github.com/atheriel/evil-ledger).
 
-Geolocation
------------
+## Geolocation
 
 [+tools/geolocation/README.org](+tools/geolocation/README.org)
 
@@ -3726,8 +3605,7 @@ Features:
         [osx-location](https://github.com/purcell/osx-location)
     -   Manual location setting via variables in your dotfile
 
-Imenu-list
-----------
+## Imenu-list
 
 [+tools/imenu-list/README.org](+tools/imenu-list/README.org)
 
@@ -3742,8 +3620,7 @@ Features:
 -   IDE like outline view of current buffer showing all significant
     symbols in one view
 
-Import-js
----------
+## Import-js
 
 [+tools/import-js/README.org](+tools/import-js/README.org)
 
@@ -3756,8 +3633,7 @@ Features:
 -   Import missing modules and remove unused one
 -   Go to module location
 
-Kubernetes
-----------
+## Kubernetes
 
 [+tools/kubernetes/README.org](+tools/kubernetes/README.org)
 
@@ -3775,8 +3651,7 @@ Features:
 -   Tramp support for pods
 -   Evil bindings
 
-LSP
----
+## LSP
 
 [+tools/lsp/README.org](+tools/lsp/README.org)
 
@@ -3803,8 +3678,7 @@ Features:
 -   Consistent core key bindings in LSP modes
 -   Code folding (`lsp-origami`)
 
-Meson
------
+## Meson
 
 [+tools/meson/README.org](+tools/meson/README.org)
 
@@ -3815,8 +3689,7 @@ Features:
 -   Support for meson build scripts through meson-mode.
 -   Syntax highlighting.
 
-Nginx
------
+## Nginx
 
 [+tools/nginx/README.org](+tools/nginx/README.org)
 
@@ -3829,8 +3702,7 @@ Features:
     [nginx-mode](https://github.com/ajc/nginx-mode).
 -   Syntax-aware indentation
 
-Node
-----
+## Node
 
 [+tools/node/README.org](+tools/node/README.org)
 
@@ -3842,8 +3714,7 @@ Features:
 -   Integration of packages necessary to execute node.js modules from
     other layers.
 
-Pandoc
-------
+## Pandoc
 
 [+tools/pandoc/README.org](+tools/pandoc/README.org)
 
@@ -3859,8 +3730,7 @@ Features:
 -   `Org-export` integration via
     [ox-pandoc](https://github.com/kawabata/ox-pandoc)
 
-Pass
-----
+## Pass
 
 [+tools/pass/README.org](+tools/pass/README.org)
 
@@ -3877,8 +3747,7 @@ Features:
     page](https://www.gnu.org/software/emacs/manual/html_node/auth/The-Unix-password-store.html)
     for more details on using it.
 
-Prettier
---------
+## Prettier
 
 [+tools/prettier/README.org](+tools/prettier/README.org)
 
@@ -3889,8 +3758,7 @@ Features:
 
 -   Format buffer in a consistent style
 
-Prodigy
--------
+## Prodigy
 
 [+tools/prodigy/README.org](+tools/prodigy/README.org)
 
@@ -3908,8 +3776,7 @@ Features:
 -   Showing of process output in special buffers
 -   Filtering of processes for tags or names
 
-Puppet
-------
+## Puppet
 
 [+tools/puppet/README.org](+tools/puppet/README.org)
 
@@ -3923,8 +3790,7 @@ Features:
 -   Navigation commands to jump between blocks
 -   Applying the content of the current manifest directly from Emacs
 
-Ranger
-------
+## Ranger
 
 [+tools/ranger/README.org](+tools/ranger/README.org)
 
@@ -3956,8 +3822,7 @@ Features:
 -   use ranger to display dired with ranger like preview and stacked
     parent windows.
 
-Rebox
------
+## Rebox
 
 [+tools/rebox/README.org](+tools/rebox/README.org)
 
@@ -3978,8 +3843,7 @@ Features:
 -   Apparently works well with ancient `filladpt-mode` (see authors
     video).
 
-Restclient
-----------
+## Restclient
 
 [+tools/restclient/README.org](+tools/restclient/README.org)
 
@@ -3992,8 +3856,7 @@ Features:
 -   Alternative `org` integration via
     [ob-http](http://github.com/zweifisch/ob-http)
 
-Saltstack
----------
+## Saltstack
 
 [+tools/salt/README.org](+tools/salt/README.org)
 
@@ -4004,8 +3867,7 @@ Features:
 -   Syntax highlighting
 -   Display of salt documentation
 
-Shell
------
+## Shell
 
 [+tools/shell/README.org](+tools/shell/README.org)
 
@@ -4016,8 +3878,7 @@ Features:
 -   Shell integration
 -   Running external terminal emulator in current/project directory
 
-Sphinx
-------
+## Sphinx
 
 [+tools/sphinx/README.org](+tools/sphinx/README.org)
 
@@ -4030,8 +3891,7 @@ Features:
 -   Support for opening `Sphinx` project target
 -   Support for opening `Sphinx` config file
 
-Systemd
--------
+## Systemd
 
 [+tools/systemd/README.org](+tools/systemd/README.org)
 
@@ -4046,8 +3906,7 @@ Features:
 -   Viewing systemd system and user unit via
     [journalctl-mode](https://github.com/SebastianMeisel/journalctl-mode)
 
-Tern
-----
+## Tern
 
 [+tools/tern/README.org](+tools/tern/README.org)
 
@@ -4058,8 +3917,7 @@ Features:
 
 -   TODO: list the feature of tern supported by tern package
 
-Terraform
----------
+## Terraform
 
 [+tools/terraform/README.org](+tools/terraform/README.org)
 
@@ -4072,8 +3930,7 @@ Features:
 -   Auto formatting on save via `terraform fmt`
 -   LSP support for terraform-lsp via `terraform-backend`
 
-Tide Layer
-----------
+## Tide Layer
 
 [+tools/tide/README.org](+tools/tide/README.org)
 
@@ -4091,8 +3948,7 @@ Features:
 -   Go to definition
 -   Find references
 
-Tmux
-----
+## Tmux
 
 [+tools/tmux/README.org](+tools/tmux/README.org)
 
@@ -4103,8 +3959,7 @@ Features:
 -   Calling of `tmux` navigation commands directly from Emacs via
     [evil-tmux-navigator](https://github.com/keith/evil-tmux-navigator).
 
-Translate Layer
----------------
+## Translate Layer
 
 [+tools/translate/README.org](+tools/translate/README.org)
 
@@ -4116,8 +3971,7 @@ Features:
 -   Paragraph-oriented side-by-side document translation workflow
 -   Integrate word/paragraph online translation
 
-Transmission
-------------
+## Transmission
 
 [+tools/transmission/README.org](+tools/transmission/README.org)
 
@@ -4128,8 +3982,7 @@ Features:
 -   Integration of [Transmission](https://transmissionbt.com/) into
     Emacs.
 
-Tree-sitter
------------
+## Tree-sitter
 
 [+tools/tree-sitter/README.org](+tools/tree-sitter/README.org)
 
@@ -4148,8 +4001,7 @@ Features:
 -   Indentation (experimental)
 -   Folding (experimental)
 
-Vagrant
--------
+## Vagrant
 
 [+tools/vagrant/README.org](+tools/vagrant/README.org)
 
@@ -4162,8 +4014,7 @@ Features:
 -   Manage boxes (under the `SPC a t v` prefix)
 -   Remote editing on Vagrant boxes via Tramp
 
-Web-beautify
-------------
+## Web-beautify
 
 [+tools/web-beautify/README.org](+tools/web-beautify/README.org)
 
@@ -4174,8 +4025,7 @@ Features:
 
 -   Format buffer to be beautiful
 
-Xclipboard
-----------
+## Xclipboard
 
 [+tools/xclipboard/README.org](+tools/xclipboard/README.org)
 
@@ -4188,11 +4038,9 @@ Features:
 -   [cliphist](https://github.com/redguardtoo/cliphist) package:
     integration with clipboard managers on Linux and macOS.
 
-Vim
-===
+# Vim
 
-Evil-better-jumper
-------------------
+## Evil-better-jumper
 
 [+vim/evil-better-jumper/README.org](+vim/evil-better-jumper/README.org)
 
@@ -4205,8 +4053,7 @@ Features:
 
 -   jump back and forth
 
-Evil-commentary
----------------
+## Evil-commentary
 
 [+vim/evil-commentary/README.org](+vim/evil-commentary/README.org)
 
@@ -4221,8 +4068,7 @@ Features:
 -   Provides the original vim behaviour for commenting out lines via
     [evil-commentary](https://github.com/linktohack/evil-commentary).
 
-Evil-snipe
-----------
+## Evil-snipe
 
 [+vim/evil-snipe/README.org](+vim/evil-snipe/README.org)
 
@@ -4235,8 +4081,7 @@ Features:
 -   Support for alternative scopes for default search operations.
 -   Support for alternative motions based on configurable regexps.
 
-Vim-empty-lines
----------------
+## Vim-empty-lines
 
 [+vim/vim-empty-lines/README.org](+vim/vim-empty-lines/README.org)
 
@@ -4258,8 +4103,7 @@ Features:
 -   Emulation of original vim behaviour.
 -   Brings you as close to vim as one can be without using vim itself.
 
-Vinegar
--------
+## Vinegar
 
 [+vim/vinegar/README.org](+vim/vinegar/README.org)
 
@@ -4281,11 +4125,9 @@ Features:
 -   right mouse click moves up directory if in blank space or shows
     context menu
 
-Web services
-============
+# Web services
 
-Confluence
-----------
+## Confluence
 
 [+web-services/confluence/README.org](+web-services/confluence/README.org)
 
@@ -4297,8 +4139,7 @@ Features:
 -   Creating/editing of Confluence pages
 -   Exporting of org buffers to Confluence `wiki` format
 
-Eaf
----
+## Eaf
 
 [+tools/eaf/README.org](+tools/eaf/README.org)
 
@@ -4315,8 +4156,7 @@ Features:
     documentation](https://github.com/emacs-eaf/emacs-application-framework#launch-eaf-applications)
     for many more features
 
-Evernote
---------
+## Evernote
 
 [+web-services/evernote/README.org](+web-services/evernote/README.org)
 
@@ -4332,8 +4172,7 @@ Features:
 -   Search for notes using keywords
 -   Move notes between notebooks
 
-Hacker News
------------
+## Hacker News
 
 [+web-services/hackernews/README.org](+web-services/hackernews/README.org)
 
@@ -4344,8 +4183,7 @@ Features:
 
 -   Read Hacker News
 
-Layer for reddit
-----------------
+## Layer for reddit
 
 [+web-services/reddit/README.org](+web-services/reddit/README.org)
 
@@ -4360,8 +4198,7 @@ Features:
     -   Viewing sub
     -   Viewing comments
 
-Lobsters
---------
+## Lobsters
 
 [+web-services/lobsters/README.org](+web-services/lobsters/README.org)
 
@@ -4371,8 +4208,7 @@ Features:
 
 -   Read Lobsters news
 
-Pocket
-------
+## Pocket
 
 [+web-services/pocket/README.org](+web-services/pocket/README.org)
 
@@ -4388,8 +4224,7 @@ Features:
 -   Search items by keywords, tags, favorite status, unread/archived
     status, etc.
 
-Search Engine
--------------
+## Search Engine
 
 [+web-services/search-engine/README.org](+web-services/search-engine/README.org)
 
@@ -4400,8 +4235,7 @@ Features:
 
 -   Browser search integration
 
-Streamlink
-----------
+## Streamlink
 
 [+web-services/streamlink/README.org](+web-services/streamlink/README.org)
 
@@ -4411,8 +4245,7 @@ Features:
 
 -   Open URL with streamlink
 
-Twitch
-------
+## Twitch
 
 [+web-services/twitch/README.org](+web-services/twitch/README.org)
 
@@ -4426,8 +4259,7 @@ Features:
 -   Join streamer channel
 -   Start watching stream via streamlink
 
-Twitter
--------
+## Twitter
 
 [+web-services/twitter/README.org](+web-services/twitter/README.org)
 
@@ -4457,8 +4289,7 @@ Features:
 -   Secure connection via HTTPS (cURL, GNU Wget, OpenSSL or GnuTLS is
     required)
 
-Wakatime
---------
+## Wakatime
 
 [+web-services/wakatime/README.org](+web-services/wakatime/README.org)
 

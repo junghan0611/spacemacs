@@ -1,13 +1,11 @@
 ![](img/coffee.png)
 
-Description
-===========
+# Description
 
 This layer adds support for the CoffeeScript language using
 [coffee-mode](https://github.com/defunkt/coffee-mode).
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting
 -   Auto-completion with `auto-completion` layer
@@ -15,18 +13,15 @@ Features:
 -   `Org-Babel` integration
 -   REPL support
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `coffeescript` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Configuration
-=============
+# Configuration
 
-Linting
--------
+## Linting
 
 To enable linting, install
 [CoffeeLint](https://github.com/clutchski/coffeelint) with the following
@@ -36,8 +31,7 @@ command:
 npm install -g coffeelint
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description            |
 |-------------|------------------------|
@@ -45,8 +39,7 @@ Key bindings
 | `SPC m c r` | Compile region         |
 | `SPC m T c` | Toggle compile on save |
 
-REPL
-----
+## REPL
 
 | Key binding | Description                                        |
 |-------------|----------------------------------------------------|

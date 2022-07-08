@@ -1,12 +1,10 @@
 ![](img/elfeed.png)
 
-Description
-===========
+# Description
 
 This layer integrates a web feed reader into spacemacs.
 
-Features:
----------
+## Features:
 
 -   Support for reading RSS and Atom feeds directly within emacs via
     [Elfeed](https://github.com/skeeto/elfeed).
@@ -15,11 +13,9 @@ Features:
 -   Support for displaying feed database content in the browser via [web
     interface](https://github.com/skeeto/elfeed#web-interface).
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `elfeed` to the existing `dotspacemacs-configuration-layers`
@@ -27,8 +23,7 @@ list in this file.
 
 By default, `elfeed` stores its database under `~/.elfeed`.
 
-Setup feeds
------------
+## Setup feeds
 
 ### With Org
 
@@ -83,8 +78,7 @@ variable in your `.spacemacs` file.
 Check documentation for `elfeed-feeds` for more information about this
 variable (`SPC h d v elfeed-feeds RET`).
 
-Server
-------
+## Server
 
 Elfeed comes with a simple [web
 interface](https://github.com/skeeto/elfeed#web-interface) to browse its
@@ -100,8 +94,7 @@ the default port by changing the value of `httpd-port`.
 (elfeed :variables elfeed-enable-web-interface t)
 ```
 
-Elfeed goodies
---------------
+## Elfeed goodies
 
 Elfeed layer loads a set of useful helper functions and bindings to
 improve your elfeed experience. Normally these should help you however
@@ -112,8 +105,7 @@ you can disable these by setting `elfeed-enable-goodies` to `nil`.
 (elfeed :variables elfeed-enable-goodies nil)
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description  |
 |-------------|--------------|
@@ -140,17 +132,14 @@ In `elfeed-show` mode, you can use the following bindings:
 | `C-j`       | Next entry       |
 | `C-k`       | Previous entry   |
 
-Troubleshooting
-===============
+# Troubleshooting
 
-Database empty at first start
------------------------------
+## Database empty at first start
 
 Be sure that you added some feeds first then load your feeds with `gr`
 in evilified buffer. Or `M-x elfeed-update`.
 
-Queue timeout exceeded
-----------------------
+## Queue timeout exceeded
 
 If you are getting "Queue timeout exceeded" errors, try increasing the
 value of `url-queue-timeout`.

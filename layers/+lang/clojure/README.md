@@ -1,14 +1,12 @@
 ![](img/clojure.png) ![](img/cider.png)
 
-Description
-===========
+# Description
 
 This layer adds support for [Clojure](https://clojure.org/) language
 using [CIDER](https://github.com/clojure-emacs/cider), providing Clojure
 REPL management and a full suite of tooling for Clojure development.
 
-Features:
----------
+## Features:
 
 -   REPL via [CIDER](https://github.com/clojure-emacs/cider)
 -   Code formatting via [CIDER](https://github.com/clojure-emacs/cider)
@@ -47,22 +45,19 @@ experience.
 -   [CIDER documentation](https://docs.cider.mx/cider/)
 -   [Practicalli Spacemacs](https://practicalli.github.io/spacemacs)
 
-Install
-=======
+# Install
 
 Spacemacs will prompt to install the Clojure layer automatically when
 opening a file ending in `.clj` `.cljs`, `.cljc` or `.edn`. Replying `y`
 will download all the packages for the Clojure layer. Restarting
 Spacemacs, `SPC q r`, is recommended to ensure all changes are loaded.
 
-Add the Clojure Layer manually
-------------------------------
+## Add the Clojure Layer manually
 
 Edit the `~/.spacemacs` file and add the word `clojure` to the existing
 `dotspacemacs-configuration-layers` list.
 
-Pretty Symbols
---------------
+## Pretty Symbols
 
 Pretty symbols for anonymous functions, set literals and partial, like
 `(λ [a]
@@ -82,8 +77,7 @@ Or set this variable when loading the configuration layer:
 '((clojure :variables clojure-enable-fancify-symbols t)))
 ```
 
-Optional LSP server
--------------------
+## Optional LSP server
 
 Traditionally the clojure developing environment is working exclusively
 with an external server called CIDER. This has some drawbacks especially
@@ -117,8 +111,7 @@ backend explicitly:
 '((clojure :variables clojure-backend 'cider)))
 ```
 
-Enabling Automatic Linting
---------------------------
+## Enabling Automatic Linting
 
 [clj-kondo](https://github.com/borkdude/clj-kondo),
 [joker](https://github.com/candid82/joker) and
@@ -319,8 +312,7 @@ be injected when jacking in CIDER.
 If you are experiencing issues when running a REPL, try disabling these
 packages first and restart Spacemacs to see if the error persists.
 
-Enabling Kaocha Runner
-----------------------
+## Enabling Kaocha Runner
 
 Run unit tests with Kaocha via CIDER.
 
@@ -348,15 +340,13 @@ or a Clojure CLI alias in a project deps.edn or user wide deps.edn file
 [practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn)
 contains an example `:lib/kaocha` alias
 
-Usage
-=====
+# Usage
 
 Read the key bindings section to see all the functionality available, or
 simply use the `,` or `SPC m` to open the which-key menu for the Clojure
 layer.
 
-Starting a REPL from Spacemacs
-------------------------------
+## Starting a REPL from Spacemacs
 
 Open a Clojure file (`.clj`, `.cljs`, `.cljc`, `.edn`) and start a
 Clojure REPL, choosing the REPL session type (Clojure, ClojureScript or
@@ -397,8 +387,7 @@ CIDER, and [\#spacemacs
 channel](https://clojurians.slack.com/messages/spacemacs) for Spacemacs
 specific help
 
-Connecting to a Clojure REPL outside of Emacs
----------------------------------------------
+## Connecting to a Clojure REPL outside of Emacs
 
 Start a REPL outside of Emacs that includes an nREPL server. The IP
 address and port the nREPL runs on should be printed.
@@ -489,8 +478,7 @@ More info regarding installation of nREPL middleware can be found here:
 -   clj-refactor:
     [refactor-nrepl](https://github.com/clojure-emacs/refactor-nrepl)
 
-Managing REPL connections
--------------------------
+## Managing REPL connections
 
 Sesman is used for [managing REPL
 connections](https://docs.cider.mx/cider/usage/managing_connections.html)
@@ -503,8 +491,7 @@ links files, directories and projects to an existing session.
 
 See REPL connections in the key bindings section for all the commands.
 
-Advanced help
--------------
+## Advanced help
 
 This layer installs the
 [helm-cider](https://github.com/clojure-emacs/helm-cider) package which
@@ -519,8 +506,7 @@ functions that deal with sorting maps.
 NOTE: If helm is not used, then `cider-apropos` and `cider-cheatsheet`
 are used.
 
-Structuraly safe editing
-------------------------
+## Structuraly safe editing
 
 The Clojure layer adds support for `evil-cleverparens` which allows to
 safely edit lisp code by keeping the s-expressions balanced.
@@ -543,11 +529,9 @@ Or enable safe structural editing for all supported modes:
 
 When enabled the symbol `🆂` will display in the mode-line.
 
-Key bindings
-============
+# Key bindings
 
-Working with clojure files (barfage, slurpage & more)
------------------------------------------------------
+## Working with clojure files (barfage, slurpage & more)
 
 Spacemacs comes with a special `lisp-state` for working with lisp code
 that supports slurpage, barfage and more tools you'll likely want when
@@ -558,8 +542,7 @@ global
 [DOCUMENTATION.org](https://github.com/syl20bnr/spacemacs/blob/master/doc/DOCUMENTATION.org#lisp-key-bindings).
 In general, use `SPC k` to interact with the lisp-state.
 
-Leader
-------
+## Leader
 
 ### Shortcuts
 
@@ -823,8 +806,7 @@ generally depend on a connected CIDER session.
 | `SPC m p t` | toggle profile       |
 | `SPC m p v` | is variable profiled |
 
-CIDER Buffers
--------------
+## CIDER Buffers
 
 In general, `q` should always quit the popped up buffer.
 
@@ -881,8 +863,7 @@ In general, `q` should always quit the popped up buffer.
 | `t`         | run test           |
 | `T`         | run tests          |
 
-Sayid Buffers
--------------
+## Sayid Buffers
 
 ### sayid-mode
 
@@ -931,11 +912,9 @@ Sayid Buffers
 | `n`         | enter next sibling node     |
 | `p`         | enter previous sibling node |
 
-Development Notes
-=================
+# Development Notes
 
-Indentation
------------
+## Indentation
 
 With a [Indentation
 spec](https://github.com/clojure-emacs/cider/blob/master/doc/modules/ROOT/pages/indent_spec.adoc)

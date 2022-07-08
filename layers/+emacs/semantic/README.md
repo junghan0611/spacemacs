@@ -1,5 +1,4 @@
-Description
-===========
+# Description
 
 CEDET is a \*C\*ollection of \*E\*macs \*D\*evelopment \*E\*nvironment
 \*T\*ools written with the end goal of creating an advanced development
@@ -17,8 +16,7 @@ code and uses its results to perform smart code refactoring that based
 on code structure of the analyzed language, instead of plain text
 structure. Semantic is the core of CEDET.
 
-Features:
----------
+## Features:
 
 -   Display function or variable definition at the bottom.
 -   Display current function cursor is in at the top. See [this
@@ -35,15 +33,13 @@ Features:
     page](https://github.com/tuhdo/semantic-refactor/blob/master/srefactor-demos/demos-elisp.org)
     for demonstration of Lisp formatting features.
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `semantic` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                              |
 |-------------|------------------------------------------|

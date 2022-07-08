@@ -1,12 +1,10 @@
 ![](img/php.png)
 
-Description
-===========
+# Description
 
 This layer adds PHP language support to Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Edit PHP files using [php-mode](https://github.com/ejmr/php-mode)
 -   Edit Drupal files
@@ -25,18 +23,15 @@ Features:
 The `gtags` layer is recommended to benefit from better `eldoc` and
 `helm-gtags`.
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `php` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Backends
---------
+## Backends
 
 For php you have the choice between a set of possible backends with
 different setup instructions and different capabilities.
@@ -200,19 +195,16 @@ per project basis which you can find below.
     [geben package](https://github.com/ahungry/geben). Please refer for
     details to the project page.
 
-Key bindings
-============
+# Key bindings
 
-General
--------
+## General
 
 | Key binding | Description             |
 |-------------|-------------------------|
 | `SPC m g g` | jump to define at point |
 | `C-t`       | jump back               |
 
-Refactoring for non LSP backends
---------------------------------
+## Refactoring for non LSP backends
 
 For more precise insights on the meaning of the key bindings please
 refer to [phpactor API
@@ -240,8 +232,7 @@ reference.](https://phpactor.github.io/phpactor/refactorings.html)
 | `SPC m P s`   | ask phpactor about it's status                          |
 | `SPC m P u`   | install/update phpactor package                         |
 
-Debugging for non LSP backends
-------------------------------
+## Debugging for non LSP backends
 
 XDebug client management:
 
@@ -281,14 +272,12 @@ Variable listing:
 | `TAB`       | fold/unfold variable or section |
 | `q`         | close variable listing          |
 
-LSP key bindings
-----------------
+## LSP key bindings
 
 For a detailed list of key bindings in `lsp-mode` please checkout the
 README.org file of the `lsp layer`.
 
-Debugging for LSP backends
---------------------------
+## Debugging for LSP backends
 
 See README.org file of the `dap-layer` for key bindings available in
 `dap-mode`

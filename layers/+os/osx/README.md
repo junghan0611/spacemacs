@@ -1,30 +1,25 @@
 ![](img/apple.png)
 
-Description
-===========
+# Description
 
 Spacemacs is not just Emacs plus Vim. It can have macOS key bindings
 too! This layer globally defines common macOS key bindings.
 
-Features:
----------
+## Features:
 
 -   `⌘` is set to `hyper` and `⌥` is set to `meta`
 -   In `dired` use `gls` instead of `ls`
 -   Fix separator colors of Spaceline mode-line
 
-Philosophy
-==========
+# Philosophy
 
 While this layer enables common macOS bindings, it does not implement
 macOS navigation key bindings. Spacemacs is meant to be used with Evil,
 and we encourage you to do so :)
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 Layer has been updated for new config variables. The variable
 `osx-use-option-as-meta` is still available for backwards compatibility
@@ -97,8 +92,7 @@ You can disable it by setting `osx-use-dictionary-app` variable to
    (osx :variables osx-use-dictionary-app nil)))
 ```
 
-Coreutils
----------
+## Coreutils
 
 To get `gls` install coreutils homebrew:
 
@@ -106,8 +100,7 @@ To get `gls` install coreutils homebrew:
 brew install coreutils
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                 |
 |-------------|-----------------------------|
@@ -127,8 +120,7 @@ Key bindings
 | `⌃ ⌘ f`     | Toggle fullscreen           |
 | `SPC x w d` | Define word under the point |
 
-Future Work
-===========
+# Future Work
 
 -   Allow user to choose from either `hyper` or `super` as `⌘`. This is
     an option that is supported cross-platform.

@@ -1,5 +1,4 @@
-Introduction
-============
+# Introduction
 
 This document is intended as a tutorial for users who are interested in
 writing their first configuration layer, whether for private use or for
@@ -8,8 +7,7 @@ how layers work and how Spacemacs (and Emacs) loads packages. For an
 overview of configuration layers with descriptions see [Spacemacs layers
 list](https://develop.spacemacs.org/layers/LAYERS.html).
 
-Nomenclature
-============
+# Nomenclature
 
 Layers and packages. What gives?
 
@@ -30,14 +28,12 @@ useful for the Emacs community at large? In that case, consider whether
 it wouldn't be more appropriate to write a package first, and then a
 layer that uses your package.
 
-The Emacs loading process
-=========================
+# The Emacs loading process
 
 To understand how to best implement a layer, we have to investigate how
 Emacs loads code.
 
-Emacs Lisp files
-----------------
+## Emacs Lisp files
 
 Emacs Lisp files contain code that can be evaluated. When evaluated, the
 functions, macros and modes defined in that file become available to the
@@ -65,8 +61,7 @@ not have to be in the Emacs load path (we'll get to that later). It will
 not look for a byte-compiled `.elc` file. It will simply load exactly
 what you tell it to.
 
-Features
---------
+## Features
 
 A better way to load what you need is to use *features*. A feature is a
 symbol that typically has the same name as the file it resides in. Let
@@ -110,8 +105,7 @@ Spacemacs. To add to the load path, simply add to this list, e.g.
 (add-to-list 'load-path "/some/path/")
 ```
 
-Auto-loading
-------------
+## Auto-loading
 
 Calling `require` is nothing more than a glorified way of calling
 `load-file`. It solves the problem of ensuring that files are loaded in
@@ -184,8 +178,7 @@ quite well.
 Spacemacs makes thorough use of auto-loading. Almost everything in
 Spacemacs is loaded when needed instead of right away.
 
-Eval after load
----------------
+## Eval after load
 
 Often, we will want to configure packages after loading them. We may
 want to set some variables or call some functions. This is trivial with
@@ -208,8 +201,7 @@ the code is executed immediately.
 Since `with-eval-after-load` is a macro and not a function, its argument
 does not have to be quoted.
 
-Use-package
------------
+## Use-package
 
 For *end users* who are trying to put together an efficient Emacs
 configuration, there is a very useful *package* called `use-package`
@@ -274,8 +266,7 @@ package should associate Ruby files with itself already.
 Use-package supports heaps of useful keywords. Look at the
 [documentation](https://github.com/jwiegley/use-package) for more.
 
-Anatomy of a layer
-==================
+# Anatomy of a layer
 
 A layer is simply a folder somewhere in Spacemacs's layer search path
 that usually contains these files (listed in loading order).
@@ -291,8 +282,7 @@ should be a folder `<layer>/local/<package>/` containing the source code
 for that package. Before initializing that package, Spacemacs will add
 this folder to the load path for you.
 
-layers.el
----------
+## layers.el
 
 This file is the first file to be loaded and this is the place where
 additional layers can be declared.
@@ -307,8 +297,7 @@ in the file `layers.el` of layer A, we can add:
 The effect is that B is considered a used layer and will be loaded as if
 it was added to `dotspacemacs-configuration-layers` variables.
 
-packages.el
------------
+## packages.el
 
 It contains this list of packages of the layer and the actual
 configuration for the packages included in the layer.
@@ -382,8 +371,7 @@ the `init` function does mandatory setup while the `pre-init` and
 `post-init` functions do optional setup. This can be used for managing
 cross-layer dependencies, which we will discuss later.
 
-funcs.el
---------
+## funcs.el
 
 It contains all the defined functions used in the layer.
 
@@ -401,16 +389,14 @@ package is actually used. For instance:
 By guarding these functions we avoid defining them when the package
 `my-package` is not used.
 
-config.el
----------
+## config.el
 
 This file configures the layer by declaring layer variables' default
 values and setting up some other variables related to the layer.
 
 This file is loaded after `funcs.el`.
 
-keybindings.el
---------------
+## keybindings.el
 
 It contains general key bindings.
 
@@ -424,8 +410,7 @@ generally safe, regardless of which packages are installed.
 
 More on this in the next section.
 
-The Spacemacs loading process
-=============================
+# The Spacemacs loading process
 
 The Spacemacs loading process can be summarized as follows:
 
@@ -464,8 +449,7 @@ specification in the user's dotfile, it is possible for layers to
 "seize" ownership of a package that was owned by a previously enabled
 layer.
 
-Case study: auto-completion
-===========================
+# Case study: auto-completion
 
 Spacemacs provides a layer called `auto-completion` which provides
 auto-completion features in many modes. It does this using the package
@@ -501,11 +485,9 @@ If the Python layer had defined an `init` function for `company`, that
 package would have been installed even if the `auto-completion` layer
 had been disabled, which is not what we want.
 
-Layer tips and tricks
-=====================
+# Layer tips and tricks
 
-Cross-dependencies
-------------------
+## Cross-dependencies
 
 Spacemacs provides a couple of additional useful functions you can use
 to check whether other layers or packages are included.
@@ -522,8 +504,7 @@ For layers that require another layers to be enabled, use the functions
 even if the user has not enabled them explicitly. Calls to these
 functions must go in the `layers.el` file.
 
-Shadowing
----------
+## Shadowing
 
 Shadowing is the operation of replacing a used layer by another one. For
 instance if a used layer A can shadow a used layer B and the layer A is
@@ -572,8 +553,7 @@ read `:can-be-shawdowed`):
 
 We will prefer the first form as it is more intuitive.
 
-Use-package init and config
----------------------------
+## Use-package init and config
 
 In the vast majority of cases, a package `init` function should do
 nothing but call to `use-package`. Again, in the vast majority of cases,
@@ -594,8 +574,7 @@ package. This includes key bindings, if the package should be loaded
 manually by the user, or hooks, if the package should be loaded upon
 some event. It is not unusual to have both!
 
-Use-package hooks
------------------
+## Use-package hooks
 
 Spacemacs includes a macro for adding more code to the `:init` or
 `:config` blocks of a call to `use-package`, after the fact. This is
@@ -622,8 +601,7 @@ run `before` the call to `use-package`. Further, since this call to
 calls to `spacemacs|use-package-add-hook` **always** happen in the
 `pre-init-<package>` functions, and not in `post-init-<package>`.
 
-Best practices
---------------
+## Best practices
 
 If you break any of these rules, you should know what you are doing and
 have a good reason for doing it.

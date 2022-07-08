@@ -1,12 +1,10 @@
 ![](img/sql.png)
 
-Description
-===========
+# Description
 
 This layer adds support for a wide range of SQL dialects to Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting for the following SQL dialects
     -   ANSI
@@ -31,15 +29,13 @@ Features:
 -   Automatic capitalization of keywords.
 -   LSP support via [sqls](https://github.com/lighttiger2505/sqls).
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `sql` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-External Dependencies
----------------------
+## External Dependencies
 
 Some functionality, like linting, rely on external binaries:
 
@@ -86,8 +82,7 @@ wget -q -O - https://github.com/mjibson/sqlfmt/releases/latest/download/sqlfmt_0
 }
 ```
 
-SQL Keywords Capitalization
----------------------------
+## SQL Keywords Capitalization
 
 SQL, by convention, uses upper-case keywords, although lower-case works
 just as well. As humans, the separation between upper-case and
@@ -126,8 +121,7 @@ with keywords to ignore, e.g.
 This layer is blacklisting `name` by default as it is a very common name
 for column and NAME is non-reserved SQL keyword.
 
-Auto-Indent
------------
+## Auto-Indent
 
 This mode use [sql-indent](https://github.com/alex-hhh/emacs-sql-indent)
 to indent the code. You can check the package's README to adjust the
@@ -139,18 +133,15 @@ setting the variable `sql-auto-indent` to `nil`.
   (sql :variables sql-auto-indent nil)))
 ```
 
-Key bindings
-============
+# Key bindings
 
-Highlighting
-------------
+## Highlighting
 
 | Key binding | Description                       |
 |-------------|-----------------------------------|
 | `SPC m h k` | select a SQL dialect to highlight |
 
-Inferior Process Interactions (SQLi)
-------------------------------------
+## Inferior Process Interactions (SQLi)
 
 | Key binding | Description                                          |
 |-------------|------------------------------------------------------|
@@ -176,16 +167,14 @@ Inferior Process Interactions (SQLi)
 | `SPC m s r` | Send the selected region to the SQLi buffer                                                           |
 | `SPC m s R` | Send the selected region to the SQLi buffer and switch to it in `insert state`                        |
 
-SQLi buffer
------------
+## SQLi buffer
 
 | Key binding | Description                                                  |
 |-------------|--------------------------------------------------------------|
 | `SPC m b r` | rename buffer (follow up in the SQL buffer with `SPC m b s`) |
 | `SPC m b S` | save the current connection                                  |
 
-Code Formatting
----------------
+## Code Formatting
 
 | Key binding | Description                                                  |
 |-------------|--------------------------------------------------------------|

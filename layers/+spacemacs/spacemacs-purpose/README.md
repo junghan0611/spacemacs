@@ -1,5 +1,4 @@
-Description
-===========
+# Description
 
 This layer enables
 [window-purpose](https://github.com/bmag/emacs-purpose), which provides
@@ -12,8 +11,7 @@ when window-purpose is enabled. However, the window-purpose layer
 provides a `purpose-popwin` extension, which brings popwin's behavior to
 window-purpose and solves that problem.
 
-Features:
----------
+## Features:
 
 -   Window layout is more robust and less likely to change
     unintentionally
@@ -28,8 +26,7 @@ Features:
 -   Difference from popwin: when several windows are open, popup window
     is sometimes bigger than with regular popwin in the same situation.
 
-Purposes
-========
+# Purposes
 
 window-purpose contains a configuration which assigns a purpose for each
 buffer. Later, when Emacs needs to display a buffer in a window, its
@@ -45,8 +42,7 @@ the file and window-purpose places it in the correct window.
 Additionally, you can dedicate a window to a purpose - so that window is
 reserved only for buffers that share that purpose.
 
-switch-to-buffer and display-buffer
------------------------------------
+## switch-to-buffer and display-buffer
 
 In regular Emacs, `switch-to-buffer` follows different rules than the
 other switching and popping commands, because it doesn't use
@@ -55,20 +51,17 @@ this behavior is fixed. The result is a better control over how buffers
 are displayed, since `switch-to-buffer` doesn't ignore the user's
 customizations anymore.
 
-misc
-----
+## misc
 
 -   specialized helm source similar to `helm-source-buffers-list`
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `spacemacs-purpose` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Usage
-=====
+# Usage
 
 With window-purpose layer installed, `purpose-mode` and `pupo-mode` are
 enabled. You can toggle `purpose-mode` (`SPC : purpose-mode`) at any
@@ -82,8 +75,7 @@ update purpose-popwin with those changes.
 See [window-purpose wiki](https://github.com/bmag/emacs-purpose/wiki) to
 learn more about window-purpose.
 
-Allocate purposes in layers
----------------------------
+## Allocate purposes in layers
 
 Layers may assign purposes to buffers that have been created by their
 packages. This can either be done by a simple mode mapping or according
@@ -117,8 +109,7 @@ To do so copy and adjust the following code:
 
 ```
 
-Overwrite purposes in dotfile
------------------------------
+## Overwrite purposes in dotfile
 
 With layers defining all kinds of purposes there will surely come the
 point where one wishes to change one or two of these allocations to
@@ -136,8 +127,7 @@ This can easily be achieved by adding below code in
                            :regexps '(("\\.hy$" . python)))
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                                                         |
 |-------------|-------------------------------------------------------------------------------------|
@@ -148,18 +138,15 @@ Key bindings
 | `SPC r p`   | Choose a purpose and open a buffer with that purpose.                               |
 | `SPC r P`   | Change the purpose of the selected window. Changes the window's buffer accordingly. |
 
-Caveats
-=======
+# Caveats
 
-Popwin and guide-key
---------------------
+## Popwin and guide-key
 
 If a buffer is displayed in two different windows, and only one of those
 windows is purpose-dedicated, then invoking guide-key will cause both
 windows to become purpose-dedicated.
 
-Packages that do display management
------------------------------------
+## Packages that do display management
 
 Some packages that manage how windows are displayed, such as `gdb` with
 `gdb-many-windows`, might not play nicely with `window-purpose`.

@@ -1,5 +1,4 @@
-Description
-===========
+# Description
 
 This layer adds support for distinct layouts/workspaces to Spacemacs.
 
@@ -7,15 +6,13 @@ Layouts provide an easy way to group buffers for a project or any
 arbitrary buffer grouping you wish. Layouts also restrict actions to the
 buffers in the current layout.
 
-Features:
----------
+## Features:
 
 -   Support for distinct layouts via `eyebrowse`
 -   Integration with `helm` and `ivy` to search for buffers within
     layouts
 
-Install
-=======
+# Install
 
 The `spacemacs-layouts` layer is included by default in the Spacemacs
 distribution.
@@ -24,8 +21,7 @@ To set configuration layer variables, add `spacemacs-layouts` to the
 existing `dotspacemacs-configuration-layers` list in your `~/.spacemacs`
 file.
 
-Restrict functions to the current layout's buffers
---------------------------------------------------
+## Restrict functions to the current layout's buffers
 
 Besides `helm-mini` and `ivy-switch-buffer` that are aware of a layout's
 buffers. This layer also provides a
@@ -55,8 +51,7 @@ Note that `spacemacs-layouts-restricted-functions` can only be changed
 in the `dotspacemacs-configuration-layers` variable. They can't be
 edited during the current Emacs session. A restart is required.
 
-Restrict SPC-TAB to the current layout's buffers
-------------------------------------------------
+## Restrict SPC-TAB to the current layout's buffers
 
 When the `spacemacs-layouts-restrict-spc-tab` variable is set to `t`,
 then `SPC-TAB` (`spacemacs/alternate-buffer`) will be restricted to only
@@ -79,8 +74,7 @@ fly by evaluating it like this:
 (setq spacemacs-layouts-restrict-spc-tab t)
 ```
 
-Kill buffers when killing current layout
-----------------------------------------
+## Kill buffers when killing current layout
 
 `SPC l x` kills the current layout and the buffers stay open by default.
 `persp-autokill-buffer-on-remove` controls what happens when a layout is
@@ -96,8 +90,7 @@ current layout
 If this variable is not set, then `SPC l x` kills the current layout,
 the buffers remain open and listed in the default layout.
 
-Usage
-=====
+# Usage
 
 Layout 1 is the default layout and has global scope, so `SPC b b` lists
 all open buffers. All other layouts only show the buffers associated
@@ -113,8 +106,7 @@ layout.
 
 See key bindings for more layout commands.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                               |
 |-------------|-------------------------------------------|

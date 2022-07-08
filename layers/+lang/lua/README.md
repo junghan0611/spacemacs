@@ -1,12 +1,10 @@
 ![](img/lua.gif)
 
-Description
-===========
+# Description
 
 This layer adds support for editing Lua.
 
-Features:
----------
+## Features:
 
 -   Editing lua files using
     [lua-mode](https://github.com/immerrr/lua-mode)
@@ -15,11 +13,9 @@ Features:
 -   Code linting using [Luacheck](https://github.com/mpeterv/luacheck)
 -   Cross references (definitions, references, rename…)
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `lua` to the existing `dotspacemacs-configuration-layers`
@@ -28,8 +24,7 @@ list in this file.
 In order to enable code linting, install
 [Luacheck](https://github.com/mpeterv/luacheck).
 
-Backends
---------
+## Backends
 
 Supported backends are:
 
@@ -126,17 +121,14 @@ will fallback to `lua-mode`.
          lsp-clients-luarocks-bin-dir "~/.luarocks/bin/") ; default path
     ```
 
-Key bindings
-============
+# Key bindings
 
-LSP
----
+## LSP
 
 The default key bindings for the LSP implementations are defined and
 documented in the [LSP layer](../../+tools/lsp/README.org).
 
-Commands
---------
+## Commands
 
 | Key binding | Description                                |
 |-------------|--------------------------------------------|

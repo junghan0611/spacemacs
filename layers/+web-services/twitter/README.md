@@ -1,13 +1,11 @@
 ![](img/twitter.png)
 
-Description
-===========
+# Description
 
 This layer adds Twitter support to Spacemacs via the package
 [twittering-mode](https://github.com/hayamiz/twittering-mode).
 
-Features:
----------
+## Features:
 
 -   Activities on Twitter
     -   Viewing various timelines
@@ -30,15 +28,13 @@ Features:
 -   Secure connection via HTTPS (cURL, GNU Wget, OpenSSL or GnuTLS is
     required)
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `twitter` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Configuration
-=============
+# Configuration
 
 Exhaustive configuration documentation can be found on the README page
 of the package [here](https://github.com/hayamiz/twittering-mode).
@@ -47,8 +43,7 @@ You can authenticate easily via a PIN number, or you can use GnuPG by
 setting the variable `twittering-use-master-password` to `t` in the
 `user-config` function of your dotfile.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                              |
 |-------------|------------------------------------------|

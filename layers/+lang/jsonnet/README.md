@@ -1,21 +1,18 @@
 ![](img/jsonnet.png)
 
-Description
-===========
+# Description
 
 This layer provides support for [Jsonnet template](https://jsonnet.org/)
 provided by [jsonnet-mode](https://github.com/mgyucht/jsonnet-mode).
 
-Features:
----------
+## Features:
 
 -   syntax highlighting
 -   buffer formatting
 -   jump to definition
 -   buffer evaluation
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `jsonnet` to the existing
@@ -24,8 +21,7 @@ need to add `jsonnet` to the existing
 To use some of the additional formatting and evaluation features, you'll
 need [the jsonnet binary](http://jsonnet.org/index.html)
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                              |
 |-------------|----------------------------------------------------------|

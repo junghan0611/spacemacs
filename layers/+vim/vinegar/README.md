@@ -1,5 +1,4 @@
-Description
-===========
+# Description
 
 This layer is a port of vim-vinegar for Emacs.
 
@@ -8,8 +7,7 @@ It is based on tpope's
 with a limited number of details and exposing the `-` command in all
 buffers to enter dired.
 
-Features:
----------
+## Features:
 
 -   navigation up folders with `-` key
 -   simplify dired buffer to show only file names
@@ -20,17 +18,14 @@ Features:
 -   right mouse click moves up directory if in blank space or shows
     context menu
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer add `vinegar` to the
 `dotspacemacs-configuration-layers` list.
 
-Reuse dired buffer
-------------------
+## Reuse dired buffer
 
 To reuse dired buffers set the variable `vinegar-reuse-dired-buffer` to
 `t`.
@@ -41,8 +36,7 @@ To reuse dired buffers set the variable `vinegar-reuse-dired-buffer` to
            vinegar-reuse-dired-buffer nil))
 ```
 
-Deactive hide details mode
---------------------------
+## Deactive hide details mode
 
 Per default extensive details in dired are hidden with this layer. This
 can be deactivated by setting the variable `vinegar-dired-hide-details`
@@ -54,8 +48,7 @@ to `nil`.
            vinegar-dired-hide-details t)))
 ```
 
-Mouse bindings
---------------
+## Mouse bindings
 
 | Mouse Binding | Description                                   |
 |---------------|-----------------------------------------------|
@@ -63,8 +56,7 @@ Mouse bindings
 | `mouse-2`     | (Dired) Open clicked file in other-window     |
 | `mouse-3`     | (Dired) Open context popup or go up directory |
 
-Key bindings
-------------
+## Key bindings
 
 | Key binding | Description                                        |
 |-------------|----------------------------------------------------|

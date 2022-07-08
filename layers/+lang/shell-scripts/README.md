@@ -1,7 +1,6 @@
 ![](img/fish.png)
 
-Description
-===========
+# Description
 
 This simple layer adds support for shell scripting.
 
@@ -12,8 +11,7 @@ Supported scripting files:
 
 **Note:** For Windows scripting see the layer `windows-scripts`
 
-Features:
----------
+## Features:
 
 -   Auto-completion using
     [company-shell](https://github.com/Alexander-Miller/company-shell)
@@ -24,30 +22,25 @@ Features:
     (experimental)
 -   Automatic formatting via [shfmt](https://github.com/mvdan/sh)
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `shell-scripts` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Linting
--------
+## Linting
 
 In order to enable `sh` scripts linting, install
 [shellcheck](https://www.shellcheck.net/).
 
-Style checking
---------------
+## Style checking
 
 In order to enable `sh` scripts style checking, install
 [bashate](https://github.com/openstack-dev/bashate).
 
-Format
-------
+## Format
 
 To support formatting of buffers you need to install the application
 shfmt. This can be done like shown below
@@ -56,8 +49,7 @@ shfmt. This can be done like shown below
 go install mvdan.cc/sh/v3/cmd/shfmt@latest
 ```
 
-Format on save
---------------
+## Format on save
 
 To enable automatic formatting on save, set the layer variable
 `shell-scripts-format-on-save` to `t`:
@@ -66,8 +58,7 @@ To enable automatic formatting on save, set the layer variable
 (shell-scripts :variables shell-scripts-format-on-save t)
 ```
 
-Backends
---------
+## Backends
 
 You have the choice between two different backends with different setup
 instructions and different capabilities.
@@ -111,8 +102,7 @@ explicitly. This will result in the `lsp` layer being loaded.
 (shell-scripts :variables shell-scripts-backend 'lsp)
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                               |
 |-------------|-----------------------------------------------------------|

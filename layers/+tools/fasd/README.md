@@ -1,28 +1,23 @@
-Description
-===========
+# Description
 
 This layer integrates the [fasd](https://github.com/clvv/fasd) command
 line tool into Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Adds easy shortcuts to reference recent files and directories.
 -   Provides `fasd` with recent open file lists from Emacs.
 -   Allows to filter `fasd` results with `helm` or `ivy`.
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `fasd` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-fasd
-----
+## fasd
 
 [fasd](https://github.com/clvv/fasd) must be installed on your system.
 The general installation instructions can be found in the repository
@@ -35,8 +30,7 @@ On macOS, it can be installed via
 $ brew install fasd
 ```
 
-Comment
-=======
+# Comment
 
 The fasd package has been updated to support Ivy actions (`M-o`). This
 layer adds an Ivy action to start a deep search in a directory
@@ -44,8 +38,7 @@ layer adds an Ivy action to start a deep search in a directory
 instead of enter, type `M-o` on some directory then press `s` to start a
 deep search in that directory.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                        |
 |-------------|------------------------------------|

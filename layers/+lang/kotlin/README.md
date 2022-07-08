@@ -1,13 +1,11 @@
 ![](img/kotlin.png)
 
-Description
-===========
+# Description
 
 This layer adds support for [Kotlin](http://kotlinlang.org/) to
 Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting
 -   Auto-completion
@@ -15,30 +13,25 @@ Features:
     [flycheck-kotlin](https://github.com/whirm/flycheck-kotlin)
 -   Navigation with `ggtags`
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `kotlin` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Ktlint
-------
+## Ktlint
 
 You must install [ktlint](https://github.com/shyiko/ktlint) and make
 sure that the `ktlint` binary is on Emacs `exec-path`
 
-Configuration
-=============
+# Configuration
 
 All layer configurations can be done by setting layer variables in your
 dotfile. No custom user config lines are necessary
 
-Choosing a backend
-------------------
+## Choosing a backend
 
 This layer provides two alternative backends to choose from.
 

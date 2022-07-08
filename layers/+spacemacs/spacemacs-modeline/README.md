@@ -1,10 +1,8 @@
-Description
-===========
+# Description
 
 This layer adds various mode-lines to Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Display of a vim-powerline like mode-line being able to show various
     information like
@@ -16,8 +14,7 @@ Features:
     -   The system clock
 -   Display of a small system monitor in a separate mode-line.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                            |
 |-------------|--------------------------------------------------------|

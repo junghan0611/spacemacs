@@ -1,5 +1,4 @@
-Description
-===========
+# Description
 
 This layer adds support for basic language server protocol packages
 speaking [language server
@@ -10,8 +9,7 @@ varying degrees and they may also provide extensions; check the language
 server's website for details. `M-x lsp-describe-session` in a LSP buffer
 to list capabilities of the server.
 
-Features:
----------
+## Features:
 
 -   Cross references (definitions, references, document symbol,
     workspace symbol search and others)
@@ -25,8 +23,7 @@ Features:
 -   Consistent core key bindings in LSP modes
 -   Code folding (`lsp-origami`)
 
-Configuration
-=============
+# Configuration
 
 Enabling this layer will set the used backend for all supported
 languages to `LSP` unless you explicitly set a specific backend for the
@@ -37,8 +34,7 @@ The LSP ecosystem is based on two packages:
 [lsp-ui](https://github.com/emacs-lsp/lsp-ui). Please check out their
 documentation.
 
-Variables
----------
+## Variables
 
 A number of configuration variables have been exposed via the LSP layer
 `config.el`. Sensible defaults have been provided, however they may all
@@ -63,8 +59,7 @@ added under the derived mode t prefix by
 | `lsp-ui-sideline-enable`             | t                                    | When non-nil, the symbol information overlay is displayed.                                                      |
 | `lsp-ui-sideline-show-symbol`        | nil                                  | When non-nil, the symbol information overlay includes symbol name (redundant for c-modes).                      |
 
-Code Lens
----------
+## Code Lens
 
 Code lens is a feature that displays
 `"actionable contextual information interspersed"` in your source code.
@@ -83,8 +78,7 @@ To always display code lens,
 This doesn't have any effect when code lens is not supported by current
 language server.
 
-Error statistics on modeline
-----------------------------
+## Error statistics on modeline
 
 By default, all error statistics of a project is displayed in the
 modeline. To disable this feature, set `lsp-modeline-diagnostics-enable`
@@ -106,8 +100,7 @@ To only display errors for the current file, you can set
 Alternatively, if you want to see all errors across all projects, you
 can set it to `:global`.
 
-Code actions on modeline
-------------------------
+## Code actions on modeline
 
 By default, available code actions are displayed in modeline. To disable
 this feature, set `lsp-modeline-code-actions-enable` to `nil`.
@@ -131,8 +124,7 @@ You can also customize its appearance via
                      lsp-modeline-code-actions-segments '(count icon))))
 ```
 
-Navigation mode
----------------
+## Navigation mode
 
 The `lsp-navigation` variable defined in `config.el` allows you to
 define a preference for lightweight or pretty (using `lsp-ui-peek`)
@@ -142,8 +134,7 @@ Setting `lsp-navigation` to either `'simple` or `'peek` eliminates the
 bindings under `SPC m G` and creates bindings under `SPC m g` according
 to the specified preference.
 
-Breadcrumb on headerline
-------------------------
+## Breadcrumb on headerline
 
 To display breadcrumb in the headerline, set
 `lsp-headerline-breadcrumb-enable` to `t`.
@@ -174,15 +165,13 @@ You may need to run `all-the-icons-install-fonts` if you have
 `all-the-icons` package installed, otherwise separators used by
 `lsp-headerline-breadcrumb-mode` will be garbled due to fonts missing.
 
-Key bindings
-============
+# Key bindings
 
 A number of lsp features useful for all/most modes have been bound to
 the lsp minor mode, meaning they'll be available in all language layers
 based on the lsp layer.
 
-Key binding prefixes
---------------------
+## Key binding prefixes
 
 The key bindings are grouped under the following prefixes:
 
@@ -200,8 +189,7 @@ The key bindings are grouped under the following prefixes:
 | `SPC m T l` | lsp           | Toggle LSP backend features (documentation / symbol info overlays etc.)    |
 | `SPC m x`   | text (source) | Text (source) document related bindings                                    |
 
-Core key bindings
------------------
+## Core key bindings
 
 The lsp minor mode bindings are:
 
@@ -264,8 +252,7 @@ Note 1: Your language server may not distinguish between the word and
 symbol variants of this binding. Note 2: There is a window local jump
 list dedicated to cross references.
 
-Language-specific key binding extensions
-----------------------------------------
+## Language-specific key binding extensions
 
 Some LSP server implementations provide extensions to the protocol,
 which can be leveraged using `lsp-find-custom` or
@@ -338,8 +325,7 @@ whereas with `lsp-navigation` set to `'peek`, this is equivalent to:
 
 etc.
 
-Bind to lsp upstreams
----------------------
+## Bind to lsp upstreams
 
 Alternatively, you can have `lsp-mode` handle the bindings for you, by
 setting `lsp-use-upstream-bindings` to `t`. In this case Spacemacs will
@@ -361,14 +347,12 @@ hackers should pay attention to avoid any binding collision with
 (lsp :variables lsp-use-upstream-bindings t)
 ```
 
-DAP integration
-===============
+# DAP integration
 
 `lsp-mode` integrates with `dap-mode`, which implements DAP(Debugger
 Adapter Protocol). See documentation on `DAP` layer for details.
 
-Diagnostics
-===========
+# Diagnostics
 
 If some features do not work as expected, here is a common check list.
 
@@ -379,8 +363,7 @@ If some features do not work as expected, here is a common check list.
 -   `M-: completion-at-point-functions` should be
     `(lsp-completion-at-point)` for completion
 
-References
-==========
+# References
 
 -   [lsp-mode repo](https://github.com/emacs-lsp/lsp-mode)
 -   [lsp-ui repo](https://github.com/emacs-lsp/lsp-ui)

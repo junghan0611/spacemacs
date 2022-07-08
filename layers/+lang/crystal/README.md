@@ -1,12 +1,10 @@
 ![](img/crystal.png)
 
-Description
-===========
+# Description
 
 This layer provides support for the Crystal language.
 
-Features:
----------
+## Features:
 
 -   Format on save
 -   Integration of
@@ -22,21 +20,18 @@ Features:
 -   Static code analysis using
     [ameba](https://github.com/veelenga/ameba.el)
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `crystal` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Configuration
-=============
+# Configuration
 
 All layer configurations can be done by setting layer variables in your
 dotfile. No custom user config lines are necessary
 
-Choosing a backend
-------------------
+## Choosing a backend
 
 This layer provides two alternative backends to choose from.
 
@@ -74,8 +69,7 @@ NOTE: Key bindings for LSP are defined in the LSP layer. Also it is
 advisable to have a look at the autocomplete layer for an optimal
 intellisense config for LSP.
 
-REPL
-----
+## REPL
 
 To be able to connect to
 [inf-crystal](https://github.com/brantou/inf-crystal.el), you need to
@@ -92,8 +86,7 @@ can install it with Homebrew:
 brew install crystal-icr
 ```
 
-Ameba
------
+## Ameba
 
 To be able to use [ameba.el](https://github.com/veelenga/ameba.el), you
 need to make sure that [ameba](https://github.com/veelenga/ameba) is
@@ -102,11 +95,9 @@ installed.
 Installation instructions can be found on the main page of
 [ameba](https://github.com/veelenga/ameba).
 
-Key bindings
-============
+# Key bindings
 
-Crystal commands
-----------------
+## Crystal commands
 
 | Key binding | Description                                               |
 |-------------|-----------------------------------------------------------|
@@ -125,15 +116,14 @@ Crystal commands
 | `SPC m u i` | show implementations for given call                       |
 | `SPC m a x` | run `crystal run` for the current file                    |
 
-REPL
-----
+## REPL
 
 Start a inferior crystal REPL process with `SPC m '​` or `SPC m s i`.
 Then you can send code to it with the bindings below:
 
 | Key binding | Description                                 |
 |-------------|---------------------------------------------|
-| `SPC m '​`  | start inferior REPL process                 |
+| `SPC m '​`   | start inferior REPL process                 |
 | `SPC m s B` | send buffer and switch to REPL              |
 | `SPC m s F` | send function definition and switch to REPL |
 | `SPC m s R` | send region and switch to REPL              |
@@ -143,8 +133,7 @@ Then you can send code to it with the bindings below:
 | `SPC m s r` | send region                                 |
 | `SPC m s s` | switch to REPL                              |
 
-Ameba
------
+## Ameba
 
 | Key binding   | Description                                    |
 |---------------|------------------------------------------------|

@@ -1,14 +1,12 @@
 ![](img/pocket.png)
 
-Description
-===========
+# Description
 
 This layer adds [Pocket](https://getpocket.com/) support to Spacemacs
 via the package
 [pocket-reader](https://github.com/alphapapa/pocket-reader.el).
 
-Features:
----------
+## Features:
 
 -   Manage reading list: add, remove, delete, tag, view, favorite, etc.
 -   Open links in Emacs or external browser
@@ -16,15 +14,13 @@ Features:
 -   Search items by keywords, tags, favorite status, unread/archived
     status, etc.
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `pocket` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Authentication
-==============
+# Authentication
 
 Just run the `pocket-reader` command. A URL will be copied to the
 clipboard/kill ring. Open the URL in a web browser and follow the
@@ -35,15 +31,13 @@ Pocket Web site after authorizing. Just run the `pocket-reader` command
 after authorizing, and it should work. You can verify that authorization
 completed by checking the file `~/.cache/emacs-pocket-lib-token.json`.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description               |
 |-------------|---------------------------|
 | `SPC a w p` | Open pocket-reader buffer |
 
-Bindings in pocket-reader buffer
---------------------------------
+## Bindings in pocket-reader buffer
 
 | Key binding | Description                                                       |
 |-------------|-------------------------------------------------------------------|

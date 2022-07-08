@@ -1,13 +1,11 @@
 ![](img/haskell.png)
 
-Description
-===========
+# Description
 
 This layer adds support for the [Haskell](https://www.haskell.org/)
 language.
 
-Features:
----------
+## Features:
 
 -   syntax highlighting for [haskell
     source](https://github.com/haskell/haskell-mode), [cabal
@@ -16,8 +14,7 @@ Features:
 -   auto-completion and syntax-checking with one of the selected
     backends (`dante` or `lsp`).
 
-Quick start (and how to use this README)
-========================================
+# Quick start (and how to use this README)
 
 -   Follow instructions in **Install** section to correctly install the
     layer.
@@ -39,18 +36,15 @@ After that, check the rest of the README to:
     be tweaked: Check **Syntax checking**.
 -   Find solutions to common problems in FAQ: Check **FAQ**.
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `haskell` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Dependencies
-------------
+## Dependencies
 
 This layer requires some [cabal](https://www.haskell.org/cabal/)
 packages:
@@ -67,8 +61,7 @@ To install them, use the following command (or the `stack` equivalent):
 $ cabal install apply-refact hlint stylish-haskell hasktags hoogle
 ```
 
-Setup PATH
-----------
+## Setup PATH
 
 First of all, make sure that your `$PATH` contains the installation path
 for Haskell tools like `ghc`, `ghci` etc. It depends on how you have
@@ -84,11 +77,9 @@ using `stack` then it should be `~/.local/bin`.
 For more information about setting up `$PATH`, check out the
 corresponding section in the FAQ (`SPC h SPC $PATH RET`).
 
-Configuration
-=============
+# Configuration
 
-Choosing a backend
-------------------
+## Choosing a backend
 
 Language backend is the core component of a language layer - it has the
 responsibility of compiling/parsing the actual code and reporting
@@ -194,8 +185,7 @@ provides access to all the additional `lsp-mode` key bindings.
     Check their docs for installation details and how to use it with
     emacs/spacemacs.
 
-Optional extras
----------------
+## Optional extras
 
 The Haskell layer supports some extra features, which can be enabled
 through the layer variables.
@@ -205,7 +195,7 @@ through the layer variables.
 Currently there is no support for
 [structured-haskell-mode](https://github.com/chrisdone/structured-haskell-mode),
 since it doesn't play very well with non-emacs editing styles
-([structured-haskell-mode/\#81](https://github.com/chrisdone/structured-haskell-mode/issues/81)).
+([structured-haskell-mode/#81](https://github.com/chrisdone/structured-haskell-mode/issues/81)).
 Emacs editing style users can easily enable it by adding
 `structured-haskell-mode` to the list of
 `dotspacemacs-additional-packages` in your `.spacemacs` file. For more
@@ -235,8 +225,7 @@ See examples
   '((haskell :variables haskell-enable-hindent t)))
 ```
 
-Key bindings
-============
+# Key bindings
 
 All Haskell specific bindings are prefixed with the major-mode leader
 `SPC m`.
@@ -250,8 +239,7 @@ Top-level commands are prefixed by `SPC m`:
 | `SPC m F`   | format buffer using haskell-stylish                                 |
 | `SPC m f`   | format declaration using hindent (if enabled)                       |
 
-Documentation
--------------
+## Documentation
 
 Documentation commands are prefixed by `SPC m h`
 
@@ -264,8 +252,7 @@ Documentation commands are prefixed by `SPC m h`
 | `SPC m h i` | gets information for the identifier under the cursor                       |
 | `SPC m h t` | gets the type of the identifier under the cursor                           |
 
-Debug
------
+## Debug
 
 Debug commands are prefixed by `SPC m d`:
 
@@ -283,8 +270,7 @@ Debug commands are prefixed by `SPC m d`:
 | `SPC m d s` | step into the next function                |
 | `SPC m d t` | trace the expression                       |
 
-Debug Buffer
-------------
+## Debug Buffer
 
 | Key binding | Description                                 |
 |-------------|---------------------------------------------|
@@ -299,8 +285,7 @@ Debug Buffer
 | `S`         | go to previous step to inspect the bindings |
 | `t`         | trace the expression                        |
 
-REPL
-----
+## REPL
 
 REPL commands are prefixed by `SPC m s`:
 
@@ -315,8 +300,7 @@ REPL commands are prefixed by `SPC m s`:
 | `C-k`       | switch to previous history item                 |
 | `C-l`       | clear the REPL                                  |
 
-Cabal commands
---------------
+## Cabal commands
 
 Cabal commands are prefixed by `SPC m c`:
 
@@ -327,8 +311,7 @@ Cabal commands are prefixed by `SPC m c`:
 | `SPC m c c` | compile the current project, i.e. invoke `ghc`             |
 | `SPC m c v` | visit the cabal file                                       |
 
-Cabal files
------------
+## Cabal files
 
 These commands are available in a cabal file.
 
@@ -349,8 +332,7 @@ These commands are available in a cabal file.
 | `SPC m P`   | go to previous section                      |
 | `SPC m f`   | find or create source-file under the cursor |
 
-Refactor
---------
+## Refactor
 
 Refactor commands are prefixed by `SPC m r`:
 
@@ -362,8 +344,7 @@ Refactor commands are prefixed by `SPC m r`:
 
 Only some of the HLint suggestions can be applied.
 
-Syntax checking
-===============
+# Syntax checking
 
 There are multiple components that can indicate errors and warnings in
 the code. Those components are:
@@ -379,8 +360,7 @@ ghci and hlint) are displayed in the error list and can be navigated
 between, using the standard Spacemacs key bindings (under `SPC e`) even
 though errors from other modes might highlight the actual buffer.
 
-Flycheck
---------
+## Flycheck
 
 This is the standard Spacemacs way of syntax checking, and it's also the
 most elaborate. You need to install the syntax-checking layer first,
@@ -393,8 +373,7 @@ Flycheck has different Haskell checkers: `haskell-dante`, `haskell-ghc`,
 one to use automatically, but if it doesn't work, then you can change it
 with `SPC e s`.
 
-HLint
------
+## HLint
 
 [HLint](https://github.com/ndmitchell/hlint) is a linter for Haskell. It
 doesn't detect errors (as long as it can parse the file) but bad coding
@@ -404,11 +383,9 @@ GHC checker.
 HLint can be configured per project via .hlint.yaml (check Hlint docs
 for more details).
 
-FAQ
-===
+# FAQ
 
-Dante reports missing/hidden imports for test files
----------------------------------------------------
+## Dante reports missing/hidden imports for test files
 
 The cause might be that Dante is not loading appropriate packages for
 the test suite target, instead it is loading packages for the library.
@@ -418,8 +395,7 @@ suite (usually `test/` or `tests/`) is and to put the line
 `((haskell-mode . ((dante-target . "--test"))))` into it. This tells
 Dante to use test suite target when working with test files.
 
-The REPL doesn't work
----------------------
+## The REPL doesn't work
 
 Usually `haskell-mode` is great at figuring out which interactive
 process to bring up. But if you are experiencing problems with it, then
@@ -440,8 +416,7 @@ Available options are:
 -   cabal-ghci
 -   stack-ghci
 
-The REPL is stuck
------------------
+## The REPL is stuck
 
 Make sure that there's a space between the REPL's `λ>` prompt and the
 cursor. When there is no space, then the REPL will behave as if it's
@@ -472,8 +447,7 @@ function:
         (call-interactively 'evil-insert))))
 ```
 
-Indentation doesn't reset when pressing return after an empty line
-------------------------------------------------------------------
+## Indentation doesn't reset when pressing return after an empty line
 
 This is the intended behavior in `haskell-indentation-mode`. If you want
 to reset the indentation when pressing return after an empty line, add
@@ -491,15 +465,13 @@ the following snippet into your `dotspacemacs/user-config` function.
             :after 'haskell-indentation-advice)
 ```
 
-Flycheck displays HLint warnings but not errors
------------------------------------------------
+## Flycheck displays HLint warnings but not errors
 
 The HLint checker is called **after** the normal flycheck checker, even
 if the checker fails. Check the [Flycheck doesn't
 work](#flycheck-doesnt-work) section.
 
-HLint fails with parse error
-----------------------------
+## HLint fails with parse error
 
 If HLint is not correctly configured (e.g. does not load some extensions
 that you are using in your project) it might fail while parsing the
@@ -508,15 +480,13 @@ file.
 Check [HLint](https://github.com/ndmitchell/hlint) docs for more
 details.
 
-I can see highlighted errors but they don't appear in the error list
---------------------------------------------------------------------
+## I can see highlighted errors but they don't appear in the error list
 
 The error list is only set by flycheck. You are probably seeing errors
 highlighted by haskell-mode. Check the [Flycheck doesn't
 work](#flycheck-doesnt-work) section.
 
-Flycheck doesn't work
----------------------
+## Flycheck doesn't work
 
 You can use the `flycheck-compile` command to check what's wrong with
 flycheck. This will show you the exact command line that's used, and its
@@ -525,8 +495,7 @@ output.
 If you are using `stack`, check the [Flycheck doesn't work with
 `stack`](#flycheck-doesnt-work-with-stack) section.
 
-Flycheck doesn't work with `stack`
-----------------------------------
+## Flycheck doesn't work with `stack`
 
 First check that flycheck uses the correct checker, and all the paths
 are properly configured using `flycheck-verify-setup` (`SPC e v`). You
@@ -573,8 +542,7 @@ stack $*
 Make sure you set `flycheck-haskell-stack-ghc-executable` to this
 script.
 
-haskell-mode commands don't work
---------------------------------
+## haskell-mode commands don't work
 
 Some (most) of the haskell-mode commands only work when haskell-mode is
 in interactive mode, i.e. has an interactive session associated with it.

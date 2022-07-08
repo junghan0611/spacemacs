@@ -1,7 +1,6 @@
 ![](img/pdf.png)
 
-Description
-===========
+# Description
 
 This layer enables support for PDF with the
 [pdf-tools](https://github.com/vedang/pdf-tools) package.
@@ -13,19 +12,16 @@ According to the official repository:
 > ghostscript and stored in the file-system, but rather created
 > on-demand and stored in memory."
 
-Features:
----------
+## Features:
 
 -   Searching and slicing with `occur`.
 -   Show document headings in outline buffer.
 -   Manipulate annotations.
 -   Fit PDF to screen.
 
-Install
-=======
+# Install
 
-Prerequisites
--------------
+## Prerequisites
 
 Linux is the only operating system officially supported, but it's
 possible to use `pdf-tools` on macOS as well, and possibly on other Unix
@@ -40,8 +36,7 @@ If you use a Debian based system such as Ubuntu, you can skip this step,
 as `pdf-tools` installation asks whether you want it to try to download
 automatically all dependencies using `apt-get`.
 
-Dotfile
--------
+## Dotfile
 
 After installing the dependencies, add this to your `~/.spacemacs`.
 
@@ -65,8 +60,7 @@ If the compilation does not run successfully, you should confirm whether
 all dependencies are properly installed and run the command
 `pdf-tools-install`.
 
-Usage
-=====
+# Usage
 
 Use `SPC m .` to activate the pdf-tools transient state. The key
 bindings that the transient displays can be also accessed using `SPC m`.
@@ -102,22 +96,19 @@ Alternatively you can (additionally) use Emacs its
 [bookmarks](https://www.gnu.org/software/emacs/manual/html_node/emacs/Bookmarks.html)
 system to store and revisit (`SPC f b` for both) any location manually.
 
-Known Issues
-============
+# Known Issues
 
 Due to `image-mode=’s behaviour, the =pdf-tools` buffer might go back to
 the first page after switching windows. If this happens, you can quickly
 go back to the previous page in history with `pdf-history-backward`
 (``` `` ``` in Evil state and `B` in Emacs state.)
 
-Key bindings
-============
+# Key bindings
 
 If you use Emacs editing style, check the key bindings at the [pdf-tools
 page](https://github.com/vedang/pdf-tools#some-keybindings).
 
-PDF View
---------
+## PDF View
 
 | **Key binding**      | **Description**                           |
 |----------------------|-------------------------------------------|
@@ -155,8 +146,7 @@ PDF View
 works differently from the default Evil search. To go to the next match,
 use `C-s`.
 
-Leader keys
------------
+## Leader keys
 
 | **Key binding**         | **Description**                           |
 |-------------------------|-------------------------------------------|
@@ -183,8 +173,7 @@ Leader keys
 | `SPC m s`               | Run `pdf-occur`                           |
 | `SPC m p`               | Display print version                     |
 
-Outline buffer mode
--------------------
+## Outline buffer mode
 
 | **Key binding** | **Description**                                       |
 |-----------------|-------------------------------------------------------|
@@ -201,8 +190,7 @@ Outline buffer mode
 
 Note that you can use also typical Vim keys such as `j` and `G`.
 
-Annotation list mode
---------------------
+## Annotation list mode
 
 | Key binding | Description                   |
 |-------------|-------------------------------|
@@ -211,8 +199,7 @@ Annotation list mode
 | `u`         | Unmark item                   |
 | `q`         | Quit                          |
 
-Occur mode
-----------
+## Occur mode
 
 | Key binding | Description                                       |
 |-------------|---------------------------------------------------|

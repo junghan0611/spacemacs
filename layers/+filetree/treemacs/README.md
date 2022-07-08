@@ -1,13 +1,11 @@
 ![](img/treemacs.png)
 
-Description
-===========
+# Description
 
 This layer sets up a file navigation and project explorer side-window
 via [Treemacs](https://github.com/Alexander-Miller/treemacs).
 
-Features:
----------
+## Features:
 
 A detailed overview of the features of Treemacs is available in [the
 Treemacs
@@ -35,17 +33,14 @@ In short, Treemacs offers:
 -   Optional `filewatch-mode` to automatically refresh the view after
     (and only after) changes to the shown filesystem.
 
-Install
-=======
+# Install
 
 To use this layer, add `treemacs` to `dotspacemacs-configuration-layers`
 in your `dotspacemacs` file.
 
-Configuration
-=============
+# Configuration
 
-Follow mode
------------
+## Follow mode
 
 To have Treemacs automatically sync with your current:
 
@@ -60,8 +55,7 @@ To have Treemacs automatically sync with your current:
 
 Default is `t`.
 
-File watch
-----------
+## File watch
 
 To automatically refresh the Treemacs buffer when there is a change in
 the part of the file system shown by treemacs set the layer variable
@@ -74,8 +68,7 @@ the part of the file system shown by treemacs set the layer variable
 
 Default is `t`.
 
-Scope Settings
---------------
+## Scope Settings
 
 By default treemacs buffers and their workspaces will be uniquely scoped
 within the current frame. As an alternative it is possible to scope
@@ -94,8 +87,7 @@ Note that persective-based scoping will only take effect when
 
 Default is `'Frames`.
 
-Git mode
---------
+## Git mode
 
 To enable Treemacs to check for the git status information of files and
 directories and highlight them accordingly, set the layer variable
@@ -111,8 +103,7 @@ for a more detailed explanation.
 
 Default is `nil`.
 
-Flattening of directories
--------------------------
+## Flattening of directories
 
 **This feature requires Python to be installed**.
 
@@ -128,8 +119,7 @@ number.
 
 Default is 3 (or 0 when Python is not installed).
 
-Locking width
--------------
+## Locking width
 
 To have the width of the treemacs window locked by default, so that it
 is not manually resizable, set the variable `treemacs-lock-width` to
@@ -143,8 +133,7 @@ bindings.
 
 Default is `nil`.
 
-Theme
------
+## Theme
 
 To use the \`all-the-icons\` theme rather than the default one, set the
 \`treemacs-use-all-the-icons-theme\` variable:
@@ -154,11 +143,9 @@ To use the \`all-the-icons\` theme rather than the default one, set the
   (treemacs :variables treemacs-use-all-the-icons-theme t)))
 ```
 
-Key bindings
-============
+# Key bindings
 
-Global
-------
+## Global
 
 | Key binding | Description                                                                                                                                    |
 |-------------|------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -170,8 +157,7 @@ Global
 | `SPC f M-t` | Manually focus the treemacs view on the currently selected file and tag.                                                                       |
 | `SPC p t`   | Hide/show existing treemacs buffer. Add the current project to treemacs if not already added.                                                  |
 
-Inside Treemacs
----------------
+## Inside Treemacs
 
 Treemacs will use either `j/k` or `n/p` to go to the next/previous line,
 depending on whether vim/hybrid editing style is used. Likewise refresh

@@ -1,14 +1,12 @@
 ![](img/epub.png)
 
-Description
-===========
+# Description
 
 This layer provides support for reading EPUB-formatted eBooks in
 Spacemacs using the excellent
 [nov.el](https://github.com/wasamasa/nov.el) package.
 
-Features:
----------
+## Features:
 
 -   Basic navigation (jump to TOC, previous/next chapter)
 -   Remembering and restoring the last read position
@@ -20,15 +18,13 @@ Features:
 -   Metadata display
 -   Image rescaling
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `epub` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description         |
 |-------------|---------------------|

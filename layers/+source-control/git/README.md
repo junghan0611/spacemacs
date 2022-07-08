@@ -1,13 +1,11 @@
 ![](img/git.png)
 
-Description
-===========
+# Description
 
 This layers adds extensive support for [git](http://git-scm.com/) to
 Spacemacs.
 
-Features:
----------
+## Features:
 
 -   git repository management the indispensable
     [magit](http://magit.vc/) package
@@ -29,18 +27,15 @@ New to Magit? Checkout the [official intro](https://magit.vc/about/) and
 [Practicalli Spacemacs](https://practical.li/spacemacs/source-control/)
 guide to configuring and using the Git and version control layers.
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `git` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Git
----
+## Git
 
 Of course if your OS does not ship with git (!) you'll have to install
 it on your machine. You can download it from the [download
@@ -70,8 +65,7 @@ the remote repository service.
 -   [GitLab SSH key
     documentation](https://docs.gitlab.com/ee/ssh/#add-an-ssh-key-to-your-gitlab-account)
 
-Magit status fullscreen
------------------------
+## Magit status fullscreen
 
 To display the `magit status` buffer in fullscreen set the variable
 `git-magit-status-fullscreen` to `t` in your `dotspacemacs/user-init`
@@ -82,14 +76,12 @@ function.
   (setq-default git-magit-status-fullscreen t))
 ```
 
-Magit auto-complete
--------------------
+## Magit auto-complete
 
 Magit auto-complete feature is enabled by default. For this feature to
 work best - setup [magit repository list](#repository-list).
 
-Magit Plugins
--------------
+## Magit Plugins
 
 ### magit-delta
 
@@ -153,8 +145,7 @@ To enable `magit-todos` plugin, add the following to your
               '((git :variables git-enable-magit-todos-plugin t)))
 ```
 
-Global git commit mode
-----------------------
+## Global git commit mode
 
 Spacemacs can be used as the `$EDITOR` (or `$GIT_EDITOR`) for editing
 git commits messages. This requires the entire library to be loaded
@@ -167,8 +158,7 @@ your `dotspacemacs/user-config`:
 (global-git-commit-mode t)
 ```
 
-Forge
------
+## Forge
 
 Magit Forge can view and create issues & pull requests with forges (e.g.
 GitHub, GitLab)
@@ -233,14 +223,12 @@ compiler available in your PATH) then use the
 (dotspacemacs-additional-packages '((forge :toggle t)))
 ```
 
-Org integration
----------------
+## Org integration
 
 See the commentary section of the package
 [here](https://github.com/magit/orgit/blob/master/orgit.el#L28).
 
-Working with Git
-================
+# Working with Git
 
 Git commands (start with `g`):
 
@@ -274,8 +262,7 @@ Notes:
 -   Git last commit message per line is provided by
     [git-messenger](https://github.com/syohex/emacs-git-messenger).
 
-Magit
------
+## Magit
 
 Spacemacs uses [magit](http://magit.vc/) to manage Git repositories.
 
@@ -330,8 +317,7 @@ Here are the often used bindings inside a `status buffer`:
 | `v or V`    | select multiple lines                                              |
 | `z z`       | stash changes                                                      |
 
-Staging lines
--------------
+## Staging lines
 
 Magit allows you to stage specific lines by selecting them in a diff and
 hitting `s` to stage. Due to inconsistencies between Vim and Emacs
@@ -339,8 +325,7 @@ editing styles, if you enter visual line state with `V`, you will stage
 one more line than intended. To work around this, you can use `v`
 instead (since Magit only stages whole lines, in any case).
 
-Commit message editing buffer
------------------------------
+## Commit message editing buffer
 
 In a commit message buffer the following key bindings are active:
 
@@ -354,8 +339,7 @@ In a commit message buffer the following key bindings are active:
 In addition, regular commands for saving and killing a buffer such as
 `:wq` and `ZZ` can be used to commit changes.
 
-Log selection buffer
---------------------
+## Log selection buffer
 
 A log selection buffer is presented as an interactive way of selecting a
 recent commit that is reachable from HEAD. such as when selecting the
@@ -366,8 +350,7 @@ beginning of a rebase and when selecting a commit to be squashed into.
 | `SPC m c` or `SPC m ,` | select the commit at point and act on it    |
 | `SPC m a` or `SPC m k` | abort selecting and don't act on any commit |
 
-Interactive rebase buffer
--------------------------
+## Interactive rebase buffer
 
 | Key binding | Description    |
 |-------------|----------------|
@@ -385,8 +368,7 @@ Interactive rebase buffer
 | `y`         | insert         |
 | `!`         | execute        |
 
-Quick guide for recurring use cases in Magit
---------------------------------------------
+## Quick guide for recurring use cases in Magit
 
 -   Amend a commit:
     -   `l l` to open `log buffer`
@@ -415,8 +397,7 @@ Quick guide for recurring use cases in Magit
     -   `F -r C-u F` and choose `upstream` or the name you gave to it
     -   `P P` to push the commit to `origin`
 
-Git Blame Transient State
--------------------------
+## Git Blame Transient State
 
 | Key binding | Description                                              |
 |-------------|----------------------------------------------------------|
@@ -437,8 +418,7 @@ Git Blame Transient State
 | `B`         | magit-blame (magit transient)                            |
 | `Q`         | quit transient state                                     |
 
-Git-Flow
---------
+## Git-Flow
 
 [magit-gitflow](https://github.com/jtatarik/magit-gitflow) provides
 git-flow commands in its own magit menu.
@@ -447,8 +427,7 @@ git-flow commands in its own magit menu.
 |-------------|-------------------------|
 | `%`         | open magit-gitflow menu |
 
-Git time machine
-----------------
+## Git time machine
 
 [git-timemachine](https://melpa.org/#/git-timemachine) allows to quickly
 browse the commits of the current buffer.
@@ -463,8 +442,7 @@ browse the commits of the current buffer.
 | `q`         | leave transient-state and git timemachine          |
 | `Y`         | copy current commit hash                           |
 
-Git links to web services
--------------------------
+## Git links to web services
 
 These key bindings allow to quickly construct URLs pointing to a given
 commit or lines in a file hosted on Git web services like GitHub,
@@ -487,8 +465,7 @@ GitLab, Bitbucket…
     you can override this behavior by setting the variable
     `git-link-open-in-browser` to `nil`.
 
-Repository list
----------------
+## Repository list
 
 Feature displays a status-list of git repositories. Within your
 `.spacemacs` config, in the `dotspacemacs/user-config()` stanza
@@ -500,9 +477,9 @@ to look into.
       '(("~/Development/" . 2) ("~/src/" . 2)))
 ```
 
-Where each element has the form `(DIRECTORY . DEPTH)`, when DEPTH is `0`
-- then only add DIRECTORY itself. The DIRECTORY should end up with a `/`
-to respect Emacs conventions.
+Where each element has the form `(DIRECTORY . DEPTH)`, when DEPTH is
+`0` - then only add DIRECTORY itself. The DIRECTORY should end up with a
+`/` to respect Emacs conventions.
 
 | Key binding | Description                                         |
 |-------------|-----------------------------------------------------|
@@ -511,10 +488,9 @@ to respect Emacs conventions.
 | `gr`        | refresh the project list                            |
 
 For more information, look into
-[Magit-User-Manual\#Status-Buffer](http://magit.vc/manual/magit.html#Status-Buffer)
+[Magit-User-Manual#Status-Buffer](http://magit.vc/manual/magit.html#Status-Buffer)
 
-Forge
------
+## Forge
 
 In a `magit-status` buffer (`SPC g s`):
 

@@ -1,23 +1,19 @@
-Description
-===========
+# Description
 
 This layer configures Emacs IBuffer for Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Grouping of buffers by major-modes
 -   Grouping of buffers by projects
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `ibuffer` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-Grouping buffers
-----------------
+## Grouping buffers
 
 Buffers can be grouped by major-modes or projectile projects. By default
 buffers are grouped by major-modes.
@@ -36,11 +32,9 @@ Example:
   (ibuffer :variables ibuffer-group-buffers-by 'projects)))
 ```
 
-Key bindings
-============
+# Key bindings
 
-Global
-------
+## Global
 
 | Key binding | Description                |
 |-------------|----------------------------|
@@ -48,8 +42,7 @@ Global
 
 **Note:** The layer will also replace regular `C-x C-b` with `ibuffer`.
 
-IBuffer
--------
+## IBuffer
 
 | Key binding                   | Description                   |
 |-------------------------------|-------------------------------|

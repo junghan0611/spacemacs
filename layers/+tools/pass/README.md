@@ -1,12 +1,10 @@
-Description
-===========
+# Description
 
 This layer adds integration with [pass](http://www.passwordstore.org/),
 the unix password manager. You must have `pass` installed and available
 in your path for this layer to function properly.
 
-Features:
----------
+## Features:
 
 -   Use Spacemacs as your password manager
 -   Support for OTP via (password-store-otp)
@@ -15,15 +13,13 @@ Features:
     page](https://www.gnu.org/software/emacs/manual/html_node/auth/The-Unix-password-store.html)
     for more details on using it.
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `pass` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Key bindings
-============
+# Key bindings
 
 | Key bindings    | Description                                            |
 |-----------------|--------------------------------------------------------|

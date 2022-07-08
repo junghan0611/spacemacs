@@ -1,23 +1,19 @@
 ![](img/vagrant.png)
 
-Description
-===========
+# Description
 
 This layer adds support for working with Vagrant using
 [vagrant.el](https://github.com/ottbot/vagrant.el) and
 [vagrant-tramp](https://github.com/dougm/vagrant-tramp).
 
-Features:
----------
+## Features:
 
 -   Manage boxes (under the `SPC a t v` prefix)
 -   Remote editing on Vagrant boxes via Tramp
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `vagrant` to the existing
@@ -26,8 +22,7 @@ need to add `vagrant` to the existing
 **Note:** Since vagrant files are written in `ruby` it is recommended to
 install the `ruby` layer as well.
 
-Vagrant
--------
+## Vagrant
 
 Follow the [Installing
 Vagrant](https://www.vagrantup.com/docs/installation#installing-vagrant)
@@ -35,16 +30,14 @@ and [Getting
 Started](https://learn.hashicorp.com/tutorials/vagrant/getting-started-index)
 guides in Vagrant's documentation.
 
-Testing
--------
+## Testing
 
 If you'd like to test this layer out in a simple way (for example to
 make sure you have Vagrant configured correctly) there is a
 [Vagrantfile](https://gist.github.com/anonymous/578279337caf180298cd91c61be995bc)
 in this directory.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding   | Description                                                                                    |
 |---------------|------------------------------------------------------------------------------------------------|

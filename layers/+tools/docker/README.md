@@ -1,12 +1,10 @@
 ![](img/docker.png)
 
-Description
-===========
+# Description
 
 This layer integrates basic container management into Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting for `Docker` files
 -   `Docker` build integration
@@ -18,11 +16,9 @@ Features:
 -   Syntax checking via [hadolint](https://github.com/hadolint/hadolint)
 -   Code-Completion via `lsp`
 
-Install
-=======
+# Install
 
-Docker
-------
+## Docker
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `docker` to the existing `dotspacemacs-configuration-layers`
@@ -31,8 +27,7 @@ list in this file.
 You will also need the native package [Docker](https://www.docker.com/)
 for the actual container management.
 
-Linting
--------
+## Linting
 
 For syntax checking the external library
 [hadolint](https://github.com/hadolint/hadolint) is necessary. It can
@@ -44,8 +39,7 @@ locally with stack as shown below:
 stack install hadolint
 ```
 
-LSP
----
+## LSP
 
 This layer can be enhanced with
 [`dockerfile-language-server-nodejs`](https://github.com/rcjsuen/dockerfile-language-server-nodejs)
@@ -65,11 +59,9 @@ system. This can be done via npm:
 npm i -g dockerfile-language-server-nodejs
 ```
 
-Usage
-=====
+# Usage
 
-TRAMP access to docker containers
----------------------------------
+## TRAMP access to docker containers
 
 This relies on the
 [docker-tramp](https://github.com/emacs-pe/docker-tramp.el) package
@@ -79,8 +71,7 @@ which uses `docker exec` available in docker versions \> 1.3.
 `SPC f f`, this prefix allows to access your docker containers and also
 provides auto-completion of the running containers.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                                       |
 |-------------|-------------------------------------------------------------------|

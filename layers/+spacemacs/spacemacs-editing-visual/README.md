@@ -1,11 +1,9 @@
-Description
-===========
+# Description
 
 This layer defines a lot of functions used to visually enhance the
 currently edited line in Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Adaptive wrapping
 -   Hiding of comments

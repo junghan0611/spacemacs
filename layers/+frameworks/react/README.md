@@ -1,13 +1,11 @@
 ![](img/react.png)
 
-Description
-===========
+# Description
 
 ES6 and JSX ready configuration layer for React It will automatically
 recognize `.jsx` files and files with `react` imported.
 
-Features:
----------
+## Features:
 
 -   on-the-fly syntax checking
 -   proper syntax highlight and indentation with jsx
@@ -16,8 +14,7 @@ Features:
 -   js2-refactor
 -   js-doc
 
-Install
-=======
+# Install
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `react` to the existing `dotspacemacs-configuration-layers`
@@ -89,8 +86,7 @@ here it is my configuration as an example:
 }
 ```
 
-Optional Configuration
-======================
+# Optional Configuration
 
 You may refer to the `web-mode` configuration for fine tuning the
 indenting behaviour.
@@ -120,11 +116,9 @@ concatenations and contiguous function calls:
   (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil)))
 ```
 
-Key bindings
-============
+# Key bindings
 
-rjsx-mode
----------
+## rjsx-mode
 
 The `javascript` layers keymap is set as the parent of the `react`
 layers keymap. Check the [javascript layers
@@ -138,8 +132,7 @@ for additional key bindings.
 | `SPC m r l t` | log thing at point                                                               |
 | `SPC m r r t` | rename tag at point                                                              |
 
-Formatting (web-beautify)
--------------------------
+## Formatting (web-beautify)
 
 | Key binding | Description                                                  |
 |-------------|--------------------------------------------------------------|
@@ -156,8 +149,7 @@ You can check more [here](https://github.com/mooz/js-doc/)
 | `SPC m r d t` | insert tag to comment                 |
 | `SPC m r d h` | show list of available jsdoc tags     |
 
-Documentation (tern)
---------------------
+## Documentation (tern)
 
 | Key binding   | Description                                                                              |
 |---------------|------------------------------------------------------------------------------------------|

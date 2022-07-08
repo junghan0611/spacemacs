@@ -1,13 +1,11 @@
 ![](img/r.jpg)
 
-Description
-===========
+# Description
 
 This layer adds support for statistical programming languages to
 Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Syntax highlighting
 -   Auto-completion
@@ -21,18 +19,15 @@ Features:
 -   Much more via the [ESS
     Project](https://ess.r-project.org/Manual/ess.html#Current-Features)
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `ess` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Linting
--------
+## Linting
 
 Install [lintr](https://github.com/jimhester/lintr) library via the R
 terminal to enable syntax checking. To do so start the R terminal and
@@ -42,8 +37,7 @@ type below code.
 install.packages("lintr")
 ```
 
-LSP
----
+## LSP
 
 This backend uses an external server to provide the various IDE
 integrations and a more modern UI integration in `spacemacs`.
@@ -61,8 +55,7 @@ layer variable `ess-r-backend`:
 (ess :variables ess-r-backend 'lsp)
 ```
 
-Options
-=======
+# Options
 
 Use a key binding to insert `<-`:
 
@@ -71,18 +64,16 @@ Use a key binding to insert `<-`:
                                                        ess-assign-key "\M--")))
 ```
 
-Key bindings
-============
+# Key bindings
 
-Inferior REPL process
----------------------
+## Inferior REPL process
 
 Send code to inferior process with these commands:
 
 | Key binding | Description                                          |
 |-------------|------------------------------------------------------|
-| `SPC m '​`  | start REPL                                           |
-| `SPC m ,​`  | send region, current function, or paragraph and step |
+| `SPC m '​`   | start REPL                                           |
+| `SPC m ,​`   | send region, current function, or paragraph and step |
 | `SPC m s i` | start REPL                                           |
 | `SPC m s s` | switch between file and REPL                         |
 | `SPC m s S` | switch the process associate with file               |
@@ -98,8 +89,7 @@ Send code to inferior process with these commands:
 | `SPC m s r` | send region and keep code buffer focused             |
 | `SPC m s R` | send region and focus REPL                           |
 
-Help
-----
+## Help
 
 Get help and helpers for inspecting objects at point are available in R
 buffers only.
@@ -121,8 +111,7 @@ buffers only.
 | `C-j`       | next item in REPL history                                          |
 | `C-k`       | previous item in REPL history                                      |
 
-More interaction with the REPL
-------------------------------
+## More interaction with the REPL
 
 Helpers that provide further interaction with the REPL.
 
@@ -139,8 +128,7 @@ Helpers that provide further interaction with the REPL.
 | `SPC m E t`   | build tags for directory                              |
 | `SPC m E w`   | set "width" option                                    |
 
-R devtools
-----------
+## R devtools
 
 Interaction with the `R` `devtools` package.
 
@@ -157,8 +145,7 @@ Interaction with the `R` `devtools` package.
 | `SPC m D t`   | interface for `devtools::tests()`        |
 | `SPC m D u`   | interface for `devtools::unload()`       |
 
-Debugging
----------
+## Debugging
 
 Tools for debugging
 

@@ -1,22 +1,18 @@
 ![](img/languagetool.png)
 
-Description
-===========
+# Description
 
 This layer adds grammar checking using
 [LanguageTool](https://www.languagetool.org/). LanguageTool will use the
 language set using `SPC S d` if the `spell-checking` layer is enabled.
 
-Features:
----------
+## Features:
 
 -   Spelling and grammar checking
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `languagetool` to the existing
@@ -40,8 +36,7 @@ a` and `] a` by setting `languagetool-show-error-on-jump`:
                               languagetool-show-error-on-jump t)))
 ```
 
-LanguageTool
-------------
+## LanguageTool
 
 LanguageTool and JRE 8+ are required to use this layer. You can install
 LanguageTool using your system's package manager or by extracting the
@@ -70,8 +65,7 @@ server:
                               langtool-http-server-port 8081)))
 ```
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                                |
 |-------------|--------------------------------------------|

@@ -1,10 +1,8 @@
-Description
-===========
+# Description
 
 This layer adds a search driven note taking system into Spacemacs.
 
-Features:
----------
+## Features:
 
 -   Browsing and creating notes with a powerful search function via
     [Deft](http://jblevins.org/projects/deft/).
@@ -13,18 +11,15 @@ Features:
 -   Zettelkasten system with
     [zetteldeft](https://github.com/EFLS/zetteldeft)
 
-Install
-=======
+# Install
 
-Layer
------
+## Layer
 
 To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `deft` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-Zetteldeft
-----------
+## Zetteldeft
 
 Zetteldeft support is included with the layer. To enable it, set the
 layer variable `deft-zetteldeft` to `t`:
@@ -33,8 +28,7 @@ layer variable `deft-zetteldeft` to `t`:
 (deft :variables deft-zetteldeft t)
 ```
 
-Configuration
--------------
+## Configuration
 
 By default deft tries to put notes in `~/.deft` but you can change this
 in your `dotspacemacs/user-config` function:
@@ -54,8 +48,7 @@ notes discovery can be configured in your `dotfile`:
 
 Just add or substitute your preferred extension.
 
-Key bindings
-============
+# Key bindings
 
 | Key binding | Description                      |
 |-------------|----------------------------------|
@@ -70,8 +63,7 @@ Key bindings
 | `SPC m r`   | Rename selected note             |
 | `SPC m q`   | quit deft window                 |
 
-Zetteldeft key bindings
------------------------
+## Zetteldeft key bindings
 
 Zetteldeft key bindings will appear in a few different places as
 follows:
