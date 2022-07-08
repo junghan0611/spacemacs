@@ -44,7 +44,7 @@ Install
 
 To use the ietf layer add it to your `~/.spacemacs`
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(ietf))
 ```
 
@@ -52,7 +52,7 @@ By default fetched IETF documents are stored in a subdirectory of the
 `spacemacs-cache-directory`. To override this location you can set the
 `ietf-docs-cache` variable.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (ietf :variables
         ietf-docs-cache "~/Downloads/ietf-docs-cache")))
@@ -61,6 +61,6 @@ By default fetched IETF documents are stored in a subdirectory of the
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -----------------------------------------------------
-  `SPC f I`     Opens IETF document based on the text at the point.
+| Key binding | Description                                         |
+|-------------|-----------------------------------------------------|
+| `SPC f I`   | Opens IETF document based on the text at the point. |

@@ -25,7 +25,7 @@ is commonly available on Unix systems via the package manager. To bypass
 the query when calling `run-forth`, the default Forth can be configured
 by setting the appropriate variable.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((forth :variables forth-executable "gforth")))
 ```
@@ -33,12 +33,12 @@ by setting the appropriate variable.
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -------------------------------------------------------------------
-  `SPC m d s`   See definition (show decompiled body)
-  `SPC m e E`   Evaluate expression in minibuffer
-  `SPC m e e`   Evaluate last expression
-  `SPC m e r`   Evaluate region
-  `SPC m s b`   Load file in interactive Forth
-  `SPC m s i`   Start interactive Forth (prompts for Forth executable if not set)
-  `SPC m s k`   Kill interactive Forth
+| Key binding | Description                                                       |
+|-------------|-------------------------------------------------------------------|
+| `SPC m d s` | See definition (show decompiled body)                             |
+| `SPC m e E` | Evaluate expression in minibuffer                                 |
+| `SPC m e e` | Evaluate last expression                                          |
+| `SPC m e r` | Evaluate region                                                   |
+| `SPC m s b` | Load file in interactive Forth                                    |
+| `SPC m s i` | Start interactive Forth (prompts for Forth executable if not set) |
+| `SPC m s k` | Kill interactive Forth                                            |

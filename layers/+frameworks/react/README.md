@@ -32,7 +32,7 @@ layer.
 To use the on-the-fly syntax checking, install `eslint` with babel and
 react support:
 
-``` {.bash org-language="sh"}
+``` bash
 $ npm install -g eslint babel-eslint eslint-plugin-react
 ```
 
@@ -40,7 +40,7 @@ If your project do not use a custom `.eslintrc` file I strongly advice
 you to try out this one by Airbnb:
 [.eslintrc](https://github.com/airbnb/javascript/blob/master/linters/.eslintrc)
 
-When `lsp` is set as the backend, but you don\'t want to use lsp as the
+When `lsp` is set as the backend, but you don't want to use lsp as the
 linter, set the variable `javascript-lsp-linter` to `nil` in the
 Javascript layer.
 
@@ -48,21 +48,21 @@ React layer uses the same formatter defined in javascript layer. Options
 are `web-beautify` and `prettier`. To use automatic code formatting you
 need to install `js-beautify` or `prettier` with:
 
-``` {.bash org-language="sh"}
+``` bash
 $ npm install -g js-beautify prettier
 ```
 
 If you install these in non-standard locations, then add the following
 to your `dotspacemacs/user-init` function:
 
-``` {.elisp}
+``` elisp
 (add-to-list 'exec-path "/path/to/node/bins" t)
 ```
 
 Be sure to have the `e4x` option set to `true` on your `.jsbeautifyrc`
 here it is my configuration as an example:
 
-``` {.json}
+``` json
 {
   "indent_size": 2,
   "indent_char": " ",
@@ -98,7 +98,7 @@ indenting behaviour.
 For example to have a consistent 2 spaces indenting both on `js` and
 `jsx` you may use these settings:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default
  ;; js2-mode
  js2-basic-offset 2
@@ -110,10 +110,10 @@ For example to have a consistent 2 spaces indenting both on `js` and
  web-mode-attr-indent-offset 2)
 ```
 
-And if you want to have 2 space indent also for element\'s attributes,
+And if you want to have 2 space indent also for element's attributes,
 concatenations and contiguous function calls:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (with-eval-after-load 'web-mode
   (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
   (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
@@ -131,39 +131,39 @@ layers keymap. Check the [javascript layers
 documentation](https://github.com/syl20bnr/spacemacs/blob/develop/layers/+lang/javascript/README.org#key-bindings)
 for additional key bindings.
 
-  Key binding     Description
-  --------------- ----------------------------------------------------------------------------------
-  `<`             inserts \</\> whenever it would start a new JSX node
-  `>`             right before the slash in a self-closing tag automatically inserts a closing tag
-  `SPC m r l t`   log thing at point
-  `SPC m r r t`   rename tag at point
+| Key binding   | Description                                                                      |
+|---------------|----------------------------------------------------------------------------------|
+| `<`           | inserts \</\> whenever it would start a new JSX node                             |
+| `>`           | right before the slash in a self-closing tag automatically inserts a closing tag |
+| `SPC m r l t` | log thing at point                                                               |
+| `SPC m r r t` | rename tag at point                                                              |
 
 Formatting (web-beautify)
 -------------------------
 
-  Key binding   Description
-  ------------- --------------------------------------------------------------
-  `SPC m =`     beautify code in js2-mode, json-mode, web-mode, and css-mode
+| Key binding | Description                                                  |
+|-------------|--------------------------------------------------------------|
+| `SPC m =`   | beautify code in js2-mode, json-mode, web-mode, and css-mode |
 
 ### Documentation (js-doc)
 
 You can check more [here](https://github.com/mooz/js-doc/)
 
-  Key binding     Description
-  --------------- ---------------------------------------
-  `SPC m r d b`   insert JSDoc comment for current file
-  `SPC m r d f`   insert JSDoc comment for function
-  `SPC m r d t`   insert tag to comment
-  `SPC m r d h`   show list of available jsdoc tags
+| Key binding   | Description                           |
+|---------------|---------------------------------------|
+| `SPC m r d b` | insert JSDoc comment for current file |
+| `SPC m r d f` | insert JSDoc comment for function     |
+| `SPC m r d t` | insert tag to comment                 |
+| `SPC m r d h` | show list of available jsdoc tags     |
 
 Documentation (tern)
 --------------------
 
-  Key binding     Description
-  --------------- ------------------------------------------------------------------------------------------
-  `SPC m C-g`     brings you back to last place you were when you pressed M-..
-  `SPC m g g`     jump to the definition of the thing under the cursor
-  `SPC m g G`     jump to definition for the given name
-  `SPC m h d`     find docs of the thing under the cursor. Press again to open the associated URL (if any)
-  `SPC m h t`     find the type of the thing under the cursor
-  `SPC m r r V`   rename variable under the cursor using tern
+| Key binding   | Description                                                                              |
+|---------------|------------------------------------------------------------------------------------------|
+| `SPC m C-g`   | brings you back to last place you were when you pressed M-..                             |
+| `SPC m g g`   | jump to the definition of the thing under the cursor                                     |
+| `SPC m g G`   | jump to definition for the given name                                                    |
+| `SPC m h d`   | find docs of the thing under the cursor. Press again to open the associated URL (if any) |
+| `SPC m h t`   | find the type of the thing under the cursor                                              |
+| `SPC m r r V` | rename variable under the cursor using tern                                              |

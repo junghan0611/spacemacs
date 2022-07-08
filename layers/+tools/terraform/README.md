@@ -32,7 +32,7 @@ Auto-format on save
 If you want `terraform fmt` to be applied automatically on save then set
 the layer variable `terraform-auto-format-on-save` to `t`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (terraform :variables terraform-auto-format-on-save t)
 ```
 
@@ -43,7 +43,7 @@ To enable LSP, install
 [terraform-lsp](https://github.com/juliosueiras/terraform-lsp). Then set
 the layer variable `terraform-backend` to `'lsp` like shown below:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (terraform :variables terraform-backend 'lsp)
 ```
 

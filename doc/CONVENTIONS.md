@@ -32,7 +32,7 @@ Use-package
     `:init` or `:config` keywords.
 -   If there is only one line of code then try to keep `:init` or
     `:config` keywords on the same line.
--   Don\'t nest multiple `use-package` calls unless you have a very good
+-   Don't nest multiple `use-package` calls unless you have a very good
     reason to do it.
 
 Key bindings conventions
@@ -88,7 +88,7 @@ map to:
 -   add incremental search with `/`, `n` and `N`
 -   enabling `evil-ex` on `:`
 -   add `visual state` and `visual line state` on `v` and `V`
--   add yank on `y` [in visual state only]{.underline}
+-   add yank on `y` <span class="underline">in visual state only</span>
 -   activate evil-leader key on `SPC`
 
 Setting the `evilified state` to a mode is done by calling the macro
@@ -124,15 +124,15 @@ the
 
 The prefix for going to something is `SPC m g`.
 
-  Key       Description
-  --------- -------------------------------------------------
-  `m g a`   go to alternate file (i.e. `.h <--> .cpp`)
-  `m g b`   go back to previous location (before last jump)
-  `m g g`   go to things under point
-  `m g G`   go to things under point in other window
-  `m g i`   go to imports
-  `m g t`   go to corresponding test file if any
-  `m g u`   go/find usage of thing under point
+| Key     | Description                                     |
+|---------|-------------------------------------------------|
+| `m g a` | go to alternate file (i.e. `.h <--> .cpp`)      |
+| `m g b` | go back to previous location (before last jump) |
+| `m g g` | go to things under point                        |
+| `m g G` | go to things under point in other window        |
+| `m g i` | go to imports                                   |
+| `m g t` | go to corresponding test file if any            |
+| `m g u` | go/find usage of thing under point              |
 
 ### `insert state` buffers
 
@@ -140,10 +140,10 @@ Navigation in buffers like `Helm` and `ido` which are in `insert state`
 should be performed with `C-j` and `C-k` bindings for vertical
 movements.
 
-  Key     Description
-  ------- -------------
-  `C-j`   go down
-  `C-k`   go up
+| Key   | Description |
+|-------|-------------|
+| `C-j` | go down     |
+| `C-k` | go up       |
 
 Confirm and Abort
 -----------------
@@ -151,10 +151,10 @@ Confirm and Abort
 Confirming and aborting actions which are bound to `C-c C-c` and
 `C-c C-k` in raw Emacs are mirrored in Spacemacs to:
 
-  Key                         Description
-  --------------------------- ---------------------------
-  `SPC m ​,​` and `SPC m c`   Valid/Confirm the message
-  `SPC m a` and `SPC m k`     Abort/Discard the message
+| Key                       | Description               |
+|---------------------------|---------------------------|
+| `SPC m ​,​` and `SPC m c` | Valid/Confirm the message |
+| `SPC m a` and `SPC m k`   | Abort/Discard the message |
 
 Some example of these modes are `magit` commit messages, `message-mode`
 for mails or `org-mode` notes.
@@ -164,14 +164,14 @@ Evaluation
 
 Live evaluation of code is under the prefix `SPC m e`.
 
-  Key       Description
-  --------- -----------------------------------------------
-  `m e $`   put point at the end of the line and evaluate
-  `m e b`   evaluate buffer
-  `m e e`   evaluate last expression
-  `m e f`   evaluate function
-  `m e l`   evaluate line
-  `m e r`   evaluate region
+| Key     | Description                                   |
+|---------|-----------------------------------------------|
+| `m e $` | put point at the end of the line and evaluate |
+| `m e b` | evaluate buffer                               |
+| `m e e` | evaluate last expression                      |
+| `m e f` | evaluate function                             |
+| `m e l` | evaluate line                                 |
+| `m e r` | evaluate region                               |
 
 REPLs
 -----
@@ -187,47 +187,47 @@ should be followed:
 -   lower case key bindings keep the focus on the current buffer
 -   upper case key bindings move the focus to the REPL buffer
 
-  Key       Description
-  --------- --------------------------------------------------------------
-  `m s b`   send buffer
-  `m s B`   send buffer and switch to REPL
-  `m s d`   first key to send buffer and switch to REPL to debug (step)
-  `m s D`   second key to send buffer and switch to REPL to debug (step)
-  `m s f`   send function
-  `m s F`   send function and switch to REPL
-  `m s i`   start/switch to REPL inferior process
-  `m s l`   send line
-  `m s L`   send line and switch to REPL
-  `m s r`   send region
-  `m s R`   send region and switch to REPL
+| Key     | Description                                                  |
+|---------|--------------------------------------------------------------|
+| `m s b` | send buffer                                                  |
+| `m s B` | send buffer and switch to REPL                               |
+| `m s d` | first key to send buffer and switch to REPL to debug (step)  |
+| `m s D` | second key to send buffer and switch to REPL to debug (step) |
+| `m s f` | send function                                                |
+| `m s F` | send function and switch to REPL                             |
+| `m s i` | start/switch to REPL inferior process                        |
+| `m s l` | send line                                                    |
+| `m s L` | send line and switch to REPL                                 |
+| `m s r` | send region                                                  |
+| `m s R` | send region and switch to REPL                               |
 
-Note: we don\'t distinguish between the file and the buffer.
+Note: we don't distinguish between the file and the buffer.
 
 ### In terminal
 
 History navigation in shells or REPLs buffers should be bound as well to
 `C-j` and `C-k`.
 
-  Key     Description
-  ------- ----------------------------
-  `C-j`   next item in history
-  `C-k`   previous item in history
-  `C-l`   clear screen
-  `C-r`   search backward in history
+| Key   | Description                |
+|-------|----------------------------|
+| `C-j` | next item in history       |
+| `C-k` | previous item in history   |
+| `C-l` | clear screen               |
+| `C-r` | search backward in history |
 
 Building and Compilation
 ------------------------
 
 The base prefix for major mode specific compilation is `SPC m c`.
 
-  Key binding   Description
-  ------------- -------------------
-  `m c b`       compile buffer
-  `m c c`       compile
-  `m c C`       clean
-  `m c r`       clean and compile
+| Key binding | Description       |
+|-------------|-------------------|
+| `m c b`     | compile buffer    |
+| `m c c`     | compile           |
+| `m c C`     | clean             |
+| `m c r`     | clean and compile |
 
-Note: we don\'t distinguish between the file and the buffer. We can
+Note: we don't distinguish between the file and the buffer. We can
 implement an auto-save of the buffer before compiling the buffer.
 
 Debugging
@@ -235,19 +235,19 @@ Debugging
 
 The base prefix for debugging commands is `SPC m d`.
 
-  Key binding   Description
-  ------------- -------------------------
-  `m d a`       abandon current process
-  `m d b`       toggle a breakpoint
-  `m d B`       clear all breakpoints
-  `m d c`       continue
-  `m d d`       start debug session
-  `m d i`       step in
-  `m d l`       local variables
-  `m d o`       step out
-  `m d r`       run
-  `m d s`       next step
-  `m d v`       inspect value at point
+| Key binding | Description             |
+|-------------|-------------------------|
+| `m d a`     | abandon current process |
+| `m d b`     | toggle a breakpoint     |
+| `m d B`     | clear all breakpoints   |
+| `m d c`     | continue                |
+| `m d d`     | start debug session     |
+| `m d i`     | step in                 |
+| `m d l`     | local variables         |
+| `m d o`     | step out                |
+| `m d r`     | run                     |
+| `m d s`     | next step               |
+| `m d v`     | inspect value at point  |
 
 Notes:
 
@@ -262,11 +262,11 @@ Errors
 
 Management of errors should be put under `SPC m E`.
 
-  Key binding   Description
-  ------------- -------------------------------------
-  `m E e`       fix error around point
-  `m E l`       show errors
-  `m E L`       show errors and jump to errors list
+| Key binding | Description                         |
+|-------------|-------------------------------------|
+| `m E e`     | fix error around point              |
+| `m E l`     | show errors                         |
+| `m E L`     | show errors and jump to errors list |
 
 Plain Text Markup Languages
 ---------------------------
@@ -278,51 +278,51 @@ keybindings whenever applicable.
 
 All header functionality should be grouped under `SPC m h`
 
-  Key binding   Description
-  ------------- --------------------------------------------------
-  `m h i`       Insert a header
-  `m h I`       Insert a header alternative method (if existing)
-  `m h 1..10`   Insert a header of level 1..10 (if possible)
+| Key binding | Description                                      |
+|-------------|--------------------------------------------------|
+| `m h i`     | Insert a header                                  |
+| `m h I`     | Insert a header alternative method (if existing) |
+| `m h 1..10` | Insert a header of level 1..10 (if possible)     |
 
 ### Insertion of common elements
 
 Insertion of common elements like links or footnotes should be grouped
 under `SPC m i`
 
-  Key binding   Description
-  ------------- ------------------
-  `m i f`       Insert footnote
-  `m i i`       Insert image
-  `m i l`       Insert link
-  `m i u`       Insert url
-  `m i w`       Insert wiki-link
+| Key binding | Description      |
+|-------------|------------------|
+| `m i f`     | Insert footnote  |
+| `m i i`     | Insert image     |
+| `m i l`     | Insert link      |
+| `m i u`     | Insert url       |
+| `m i w`     | Insert wiki-link |
 
 ### Text manipulation
 
 Manipulation of text regions should be grouped under `SPC m x`
 
-  Key binding   Description
-  ------------- -------------------------------
-  `m x b`       Make region bold
-  `m x c`       Make region code
-  `m x i`       Make region italic
-  `m x q`       Quote a region
-  `m x r`       Remove formatting from region
-  `m x s`       Make region strike-through
-  `m x u`       Make region underlined
-  `m x v`       Make region verbatim
+| Key binding | Description                   |
+|-------------|-------------------------------|
+| `m x b`     | Make region bold              |
+| `m x c`     | Make region code              |
+| `m x i`     | Make region italic            |
+| `m x q`     | Quote a region                |
+| `m x r`     | Remove formatting from region |
+| `m x s`     | Make region strike-through    |
+| `m x u`     | Make region underlined        |
+| `m x v`     | Make region verbatim          |
 
 ### Movement in normal mode
 
 In normal mode Vim style movement should be enabled with these key
 bindings:
 
-  Key binding   Description
-  ------------- ----------------------------------------
-  `g h`         Move up one level in headings
-  `g j`         Move to next heading on same level
-  `g k`         Move to previous heading on same level
-  `g l`         Move down one level in headings
+| Key binding | Description                            |
+|-------------|----------------------------------------|
+| `g h`       | Move up one level in headings          |
+| `g j`       | Move to next heading on same level     |
+| `g k`       | Move to previous heading on same level |
+| `g l`       | Move down one level in headings        |
 
 ### Promotion, Demotion and element movement
 
@@ -330,22 +330,22 @@ Promotion, demotion and movement of headings or list elements (whatever
 is possible) should be enabled with the following keys when in Vim style
 or Hybrid with hjkl movements enabled:
 
-  Key binding   Description
-  ------------- ------------------------------
-  `M-h`         Promote heading by one level
-  `M-j`         Move element down
-  `M-k`         Move element up
-  `M-l`         Demote heading by one level
+| Key binding | Description                  |
+|-------------|------------------------------|
+| `M-h`       | Promote heading by one level |
+| `M-j`       | Move element down            |
+| `M-k`       | Move element up              |
+| `M-l`       | Demote heading by one level  |
 
 In all editing styles promotion and demotion can be done with the
 following keys:
 
-  Key binding   Description
-  ------------- ------------------------------
-  `M-down`      Move element down
-  `M-left`      Promote heading by one level
-  `M-right`     Demote heading by one level
-  `M-up`        Move element up
+| Key binding | Description                  |
+|-------------|------------------------------|
+| `M-down`    | Move element down            |
+| `M-left`    | Promote heading by one level |
+| `M-right`   | Demote heading by one level  |
+| `M-up`      | Move element up              |
 
 ### Table editing
 
@@ -365,28 +365,28 @@ share common actions that we can unite under the same key bindings:
 
 ### All languages
 
-  Key       Description
-  --------- --------------------------------------------------------------
-  `m t a`   execute all the tests of the current project
-  `m t A`   execute all the tests of the current project in debug
-  `m t b`   execute all the tests of the current buffer
-  `m t B`   execute all the tests of the current buffer in debug
-  `m t l`   execute the last executed test again
-  `m t t`   execute the current test (thing at point, function)
-  `m t T`   execute the current test in debug (thing at point, function)
+| Key     | Description                                                  |
+|---------|--------------------------------------------------------------|
+| `m t a` | execute all the tests of the current project                 |
+| `m t A` | execute all the tests of the current project in debug        |
+| `m t b` | execute all the tests of the current buffer                  |
+| `m t B` | execute all the tests of the current buffer in debug         |
+| `m t l` | execute the last executed test again                         |
+| `m t t` | execute the current test (thing at point, function)          |
+| `m t T` | execute the current test in debug (thing at point, function) |
 
-Note: we don\'t distinguish between the file and the buffer. We can
+Note: we don't distinguish between the file and the buffer. We can
 implement an auto-save of the buffer before executing the tests of
 buffer.
 
 ### Language specific
 
-  Key       Description
-  --------- --------------------------------------------------
-  `m t m`   execute the tests of the current module
-  `m t M`   execute the tests of the current module in debug
-  `m t s`   execute the tests of the current suite
-  `m t S`   execute the tests of the current suite in debug
+| Key     | Description                                      |
+|---------|--------------------------------------------------|
+| `m t m` | execute the tests of the current module          |
+| `m t M` | execute the tests of the current module in debug |
+| `m t s` | execute the tests of the current suite           |
+| `m t S` | execute the tests of the current suite in debug  |
 
 Note that there are overlaps, depending on the language we will choose
 one or more bindings for the same thing
@@ -408,22 +408,22 @@ Imports
 When `import` management is supported the following key bindings should
 be used:
 
-  Key binding   Description
-  ------------- ------------------------------------
-  `m i i`       add import for symbol around point
-  `m i f`       fix/format imports
-  `m g i`       go to imports
+| Key binding | Description                        |
+|-------------|------------------------------------|
+| `m i i`     | add import for symbol around point |
+| `m i f`     | fix/format imports                 |
+| `m g i`     | go to imports                      |
 
 Code Formatting
 ---------------
 
 Major-mode code formatting is under prefix `SPC m =`.
 
-  Key binding   Description
-  ------------- --------------------------
-  `m = =`       format thing under point
-  `m = b`       format current buffer
-  `m = f`       format current function
+| Key binding | Description              |
+|-------------|--------------------------|
+| `m = =`     | format thing under point |
+| `m = b`     | format current buffer    |
+| `m = f`     | format current function  |
 
 Web frameworks
 --------------
@@ -436,10 +436,10 @@ Help or Documentation
 The base prefix for help commands is `SPC m h`. Documentation is
 considered as an help command.
 
-  Key       Description
-  --------- ------------------------------------
-  `m h h`   documentation of thing under point
-  `m h r`   documentation of selected region
+| Key     | Description                        |
+|---------|------------------------------------|
+| `m h h` | documentation of thing under point |
+| `m h r` | documentation of selected region   |
 
 Writing documentation
 =====================
@@ -459,4 +459,4 @@ Spacing in documentation
     -   Note: Many layer `READMEs` do not follow this convention yet.
         Please fix them if you can.
 -   To keep things readable only mention the prefix `SPC` when
-    documenting key bindings, you don\'t need to mention `M-m`.
+    documenting key bindings, you don't need to mention `M-m`.

@@ -41,6 +41,6 @@ website](http://joostkremers.github.io/pandoc-mode/).
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ---------------------------------
-  `SPC P /`     Start pandoc-mode and open menu
+| Key binding | Description                     |
+|-------------|---------------------------------|
+| `SPC P /`   | Start pandoc-mode and open menu |

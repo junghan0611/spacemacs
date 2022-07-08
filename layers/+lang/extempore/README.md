@@ -23,12 +23,12 @@ Configuration
 -------------
 
 The only configuration variable you might want to set out-of-the-box is
-`extempore-path`, so that you don\'t have to answer the \"which
-directory?\" prompt every time you call `switch-to-extempore`. You can
+`extempore-path`, so that you don't have to answer the "which
+directory?" prompt every time you call `switch-to-extempore`. You can
 set it when you add `extempore` to your
 `dotspacemacs-configuration-layers` like so:
 
-``` {.elisp}
+``` elisp
 (extempore :variables extempore-path "/path/to/extempore/")
 ```
 
@@ -36,17 +36,17 @@ Alternately, you could set it elsewhere in your init file, or through
 the `customize` interface.
 
 There are a few other config variables to tweak, but in most cases the
-defaults will be ok if you\'re just starting out. If you want to see
-them all, open up `M-x customize` and look in the `extempore` group.
+defaults will be ok if you're just starting out. If you want to see them
+all, open up `M-x customize` and look in the `extempore` group.
 
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -------------------------
-  `SPC m c c`   Switch to Extempore
-  `SPC m c j`   Connect to Extempore
-  `SPC m e f`   Eval current definition
-  `SPC m e e`   Eval last sexp
-  `SPC m e r`   Eval region
-  `SPC m e b`   Eval buffer
+| Key binding | Description             |
+|-------------|-------------------------|
+| `SPC m c c` | Switch to Extempore     |
+| `SPC m c j` | Connect to Extempore    |
+| `SPC m e f` | Eval current definition |
+| `SPC m e e` | Eval last sexp          |
+| `SPC m e r` | Eval region             |
+| `SPC m e b` | Eval buffer             |

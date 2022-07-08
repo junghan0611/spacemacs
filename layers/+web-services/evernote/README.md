@@ -40,13 +40,13 @@ Geeknote.el
 
 [geeknote.el](https://github.com/avendael/emacs-geeknote) is a wrapper
 for some of the most used `geeknote` commands. By default, `geeknote.el`
-doesn\'t have any key bindings defined. This layer provides key bindings
+doesn't have any key bindings defined. This layer provides key bindings
 for all of `geeknote.el's` exposed features. `geeknote.el` relies on
 having a correctly setup `geeknote` editor. To set this up, run the
 following command in your terminal after successfully installing
 `geeknote`:
 
-``` {.bash org-language="sh"}
+``` bash
 $ geeknote settings --editor "emacsclient"
 ```
 
@@ -60,11 +60,11 @@ section in the FAQ (`SPC h SPC $PATH RET`).
 Key bindings
 ============
 
-  Key binding     Description
-  --------------- -------------------------------------
-  `SPC a w e c`   create a new note
-  `SPC a w e e`   edit an existing note
-  `SPC a w e f`   find a note using a keyword
-  `SPC a w e s`   show an existing note
-  `SPC a w e r`   remove an existing note
-  `SPC a w e m`   move a note to a different notebook
+| Key binding   | Description                         |
+|---------------|-------------------------------------|
+| `SPC a w e c` | create a new note                   |
+| `SPC a w e e` | edit an existing note               |
+| `SPC a w e f` | find a note using a keyword         |
+| `SPC a w e s` | show an existing note               |
+| `SPC a w e r` | remove an existing note             |
+| `SPC a w e m` | move a note to a different notebook |

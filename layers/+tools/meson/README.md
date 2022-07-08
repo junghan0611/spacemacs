@@ -21,6 +21,6 @@ list in this file.
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ------------------------------------------
-  `SPC m h h`   Lookup documentation for thing at point.
+| Key binding | Description                              |
+|-------------|------------------------------------------|
+| `SPC m h h` | Lookup documentation for thing at point. |

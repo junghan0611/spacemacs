@@ -38,7 +38,7 @@ Install [lintr](https://github.com/jimhester/lintr) library via the R
 terminal to enable syntax checking. To do so start the R terminal and
 type below code.
 
-``` {.r org-language="R"}
+``` r
 install.packages("lintr")
 ```
 
@@ -50,14 +50,14 @@ integrations and a more modern UI integration in `spacemacs`.
 
 It requires installing the external server via:
 
-``` {.r org-language="R"}
+``` r
 install.packages('languageserver')
 ```
 
 Enable the `lsp` layer to activate this backend as well as setting the
 layer variable `ess-r-backend`:
 
-``` {.elisp}
+``` elisp
 (ess :variables ess-r-backend 'lsp)
 ```
 
@@ -66,7 +66,7 @@ Options
 
 Use a key binding to insert `<-`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '((ess :variables
                                                        ess-assign-key "\M--")))
 ```
@@ -79,24 +79,24 @@ Inferior REPL process
 
 Send code to inferior process with these commands:
 
-  Key binding   Description
-  ------------- ------------------------------------------------------
-  `SPC m '​`    start REPL
-  `SPC m ,​`    send region, current function, or paragraph and step
-  `SPC m s i`   start REPL
-  `SPC m s s`   switch between file and REPL
-  `SPC m s S`   switch the process associate with file
-  `SPC m s b`   send buffer and keep code buffer focused
-  `SPC m s B`   send buffer and switch to REPL in insert mode
-  `SPC m s d`   send region or line and step
-  `SPC m s D`   send function or paragraph and step
-  `SPC m s f`   send function and keep code buffer focused
-  `SPC m s F`   send function and focus REPL
-  `SPC m s l`   send line and keep code buffer focused
-  `SPC m s L`   send line and focus REPL
-  `SPC m s Q`   quit REPL
-  `SPC m s r`   send region and keep code buffer focused
-  `SPC m s R`   send region and focus REPL
+| Key binding | Description                                          |
+|-------------|------------------------------------------------------|
+| `SPC m '​`  | start REPL                                           |
+| `SPC m ,​`  | send region, current function, or paragraph and step |
+| `SPC m s i` | start REPL                                           |
+| `SPC m s s` | switch between file and REPL                         |
+| `SPC m s S` | switch the process associate with file               |
+| `SPC m s b` | send buffer and keep code buffer focused             |
+| `SPC m s B` | send buffer and switch to REPL in insert mode        |
+| `SPC m s d` | send region or line and step                         |
+| `SPC m s D` | send function or paragraph and step                  |
+| `SPC m s f` | send function and keep code buffer focused           |
+| `SPC m s F` | send function and focus REPL                         |
+| `SPC m s l` | send line and keep code buffer focused               |
+| `SPC m s L` | send line and focus REPL                             |
+| `SPC m s Q` | quit REPL                                            |
+| `SPC m s r` | send region and keep code buffer focused             |
+| `SPC m s R` | send region and focus REPL                           |
 
 Help
 ----
@@ -104,82 +104,82 @@ Help
 Get help and helpers for inspecting objects at point are available in R
 buffers only.
 
-  Key binding   Description
-  ------------- --------------------------------------------------------------------
-  `SPC m h a`   help apropos
-  `SPC m h d`   display help on object
-  `SPC m h e`   describe object
-  `SPC m h h`   display help on object
-  `SPC m h i`   display index for package
-  `SPC m h m`   manual lookup
-  `SPC m h o`   display demos
-  `SPC m h p`   view data under point using \[ess-R-data-view\]\[ess-R-data-view\]
-  `SPC m h r`   lookup reference
-  `SPC m h t`   view table using \[ess-R-data-view\]\[ess-R-data-view\]
-  `SPC m h v`   display vignettes
-  `SPC m h w`   help web search
-  `C-j`         next item in REPL history
-  `C-k`         previous item in REPL history
+| Key binding | Description                                                        |
+|-------------|--------------------------------------------------------------------|
+| `SPC m h a` | help apropos                                                       |
+| `SPC m h d` | display help on object                                             |
+| `SPC m h e` | describe object                                                    |
+| `SPC m h h` | display help on object                                             |
+| `SPC m h i` | display index for package                                          |
+| `SPC m h m` | manual lookup                                                      |
+| `SPC m h o` | display demos                                                      |
+| `SPC m h p` | view data under point using \[ess-R-data-view\]\[ess-R-data-view\] |
+| `SPC m h r` | lookup reference                                                   |
+| `SPC m h t` | view table using \[ess-R-data-view\]\[ess-R-data-view\]            |
+| `SPC m h v` | display vignettes                                                  |
+| `SPC m h w` | help web search                                                    |
+| `C-j`       | next item in REPL history                                          |
+| `C-k`       | previous item in REPL history                                      |
 
 More interaction with the REPL
 ------------------------------
 
 Helpers that provide further interaction with the REPL.
 
-  Key binding     Description
-  --------------- -------------------------------------------------------
-  `SPC m E /`     set working directory
-  `SPC m E TAB`   install package
-  `SPC m E d`     edit object source or dump() object into a new buffer
-  `SPC m E e`     execute a command in the ESS process
-  `SPC m E i`     install package
-  `SPC m E l`     load installed package
-  `SPC m E r`     reload ESS process
-  `SPC m E s`     set source style
-  `SPC m E t`     build tags for directory
-  `SPC m E w`     set \"width\" option
+| Key binding   | Description                                           |
+|---------------|-------------------------------------------------------|
+| `SPC m E /`   | set working directory                                 |
+| `SPC m E TAB` | install package                                       |
+| `SPC m E d`   | edit object source or dump() object into a new buffer |
+| `SPC m E e`   | execute a command in the ESS process                  |
+| `SPC m E i`   | install package                                       |
+| `SPC m E l`   | load installed package                                |
+| `SPC m E r`   | reload ESS process                                    |
+| `SPC m E s`   | set source style                                      |
+| `SPC m E t`   | build tags for directory                              |
+| `SPC m E w`   | set "width" option                                    |
 
 R devtools
 ----------
 
 Interaction with the `R` `devtools` package.
 
-  Key binding     Description
-  --------------- ------------------------------------------
-  `SPC m D TAB`   interface for `devtools::install()`
-  `SPC m D a`     ask for a devtools command and runs it
-  `SPC m D c`     interface for `devtools::check()`
-  `SPC m D d`     interface for `devtools::document()`
-  `SPC m D i`     interface for `devtools::install()`
-  `SPC m D l`     interface for `devtools::load_all()`
-  `SPC m D r`     interface for `devtools::revdep_check()`
-  `SPC m D s`     set a package for ESS r-package commands
-  `SPC m D t`     interface for `devtools::tests()`
-  `SPC m D u`     interface for `devtools::unload()`
+| Key binding   | Description                              |
+|---------------|------------------------------------------|
+| `SPC m D TAB` | interface for `devtools::install()`      |
+| `SPC m D a`   | ask for a devtools command and runs it   |
+| `SPC m D c`   | interface for `devtools::check()`        |
+| `SPC m D d`   | interface for `devtools::document()`     |
+| `SPC m D i`   | interface for `devtools::install()`      |
+| `SPC m D l`   | interface for `devtools::load_all()`     |
+| `SPC m D r`   | interface for `devtools::revdep_check()` |
+| `SPC m D s`   | set a package for ESS r-package commands |
+| `SPC m D t`   | interface for `devtools::tests()`        |
+| `SPC m D u`   | interface for `devtools::unload()`       |
 
 Debugging
 ---------
 
 Tools for debugging
 
-  Key binding       Description
-  ----------------- -------------------------------------------------------------------
-  `SPC m d ?`       `ess-tracebug-show-help`
-  `` SPC m d ` ``   show traceback and last error message
-  `SPC m d \~`      display call current call stack
-  `SPC m d b`       set breakpoint
-  `SPC m d B`       set conditional breakpoint
-  `SPC m d d`       set debugging flag for function
-  `SPC m d e`       toggle the `on-error` action
-  `SPC m d i`       jump to point where the last debugger or traceback event occurred
-  `SPC m d k`       kill breakpoint
-  `SPC m d K`       kill all breakpoints in buffer
-  `SPC m d l`       Set breakpoint logger
-  `SPC m d n`       go to next breakpoint
-  `SPC m d N`       go to previous breakpoint
-  `SPC m d p`       go to previous breakpoint
-  `SPC m d o`       toggle breakpoint state
-  `SPC m d s`       set environment for evaluation
-  `SPC m d t`       toggle tracebug
-  `SPC m d u`       unflag function for debug
-  `SPC m d w`       trigger ESS watch mode
+| Key binding     | Description                                                       |
+|-----------------|-------------------------------------------------------------------|
+| `SPC m d ?`     | `ess-tracebug-show-help`                                          |
+| `` SPC m d ` `` | show traceback and last error message                             |
+| `SPC m d \~`    | display call current call stack                                   |
+| `SPC m d b`     | set breakpoint                                                    |
+| `SPC m d B`     | set conditional breakpoint                                        |
+| `SPC m d d`     | set debugging flag for function                                   |
+| `SPC m d e`     | toggle the `on-error` action                                      |
+| `SPC m d i`     | jump to point where the last debugger or traceback event occurred |
+| `SPC m d k`     | kill breakpoint                                                   |
+| `SPC m d K`     | kill all breakpoints in buffer                                    |
+| `SPC m d l`     | Set breakpoint logger                                             |
+| `SPC m d n`     | go to next breakpoint                                             |
+| `SPC m d N`     | go to previous breakpoint                                         |
+| `SPC m d p`     | go to previous breakpoint                                         |
+| `SPC m d o`     | toggle breakpoint state                                           |
+| `SPC m d s`     | set environment for evaluation                                    |
+| `SPC m d t`     | toggle tracebug                                                   |
+| `SPC m d u`     | unflag function for debug                                         |
+| `SPC m d w`     | trigger ESS watch mode                                            |

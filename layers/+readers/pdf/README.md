@@ -8,10 +8,10 @@ This layer enables support for PDF with the
 
 According to the official repository:
 
-> \"PDF Tools is, among other things, a replacement of DocView for PDF
+> "PDF Tools is, among other things, a replacement of DocView for PDF
 > files. The key difference is, that pages are not pre-rendered by e.g.
 > ghostscript and stored in the file-system, but rather created
-> on-demand and stored in memory.\"
+> on-demand and stored in memory."
 
 Features:
 ---------
@@ -27,11 +27,11 @@ Install
 Prerequisites
 -------------
 
-Linux is the only operating system officially supported, but it\'s
+Linux is the only operating system officially supported, but it's
 possible to use `pdf-tools` on macOS as well, and possibly on other Unix
 flavors.
 
-You\'ll need to install a few libraries. Check the
+You'll need to install a few libraries. Check the
 [instructions](https://github.com/vedang/pdf-tools#server-prerequisites)
 on `pdf-tools` page. Note that compiling from source might not be
 necessary, as the documentation states.
@@ -45,14 +45,14 @@ Dotfile
 
 After installing the dependencies, add this to your `~/.spacemacs`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(pdf))
 ```
 
 After that, syncronize your configuration with `SPC f e R`. This will
 pop up a window showing the compilation process.
 
-If everything goes right, the compilation won\'t display any error and
+If everything goes right, the compilation won't display any error and
 you will be able to see *PDFView* (instead of *DocView*) on the
 spaceline after opening a pdf file.
 
@@ -83,7 +83,7 @@ Searching with `occur` can be done by using `pdf-occur` (`SPC m s s`).
 
 Tips:
 
--   You\'ll probably want to use `pdf-view-set-slice-from-bounding-box`
+-   You'll probably want to use `pdf-view-set-slice-from-bounding-box`
     (bound to `SPC m s b`) This command trims the blank parts of the
     lateral margins, making the useful portion larger.
 -   The layer uses the package
@@ -119,37 +119,37 @@ page](https://github.com/vedang/pdf-tools#some-keybindings).
 PDF View
 --------
 
-  **Key binding**        **Description**
-  ---------------------- -------------------------------------------
-  **Navigation**         
-  `M-SPC` or `s-M-SPC`   pdf-tools transient state
-  `0/$`                  Left/right full scroll
-  `J`                    Move to next page
-  `K`                    Move to previous page
-  `u`                    Scroll page up
-  `d`                    Scroll page down
-  `gg`                   Go to the first page
-  `G`                    Go to the last page
-  `gt`                   Go to page
-  `gl`                   Go to label (usually the line as printed)
-  `C-u`                  Scroll up
-  `C-d`                  Scroll down
-  ``` `` ```             Go to last page in the history
-  `[`                    History back
-  `]`                    History forward
-  `m`                    Set mark
-  `'`                    Go to mark
-  `y`                    Yank selected region
-  **Search**             
-  `/`                    Search forward
-  `?`                    Search backward
-  **Actions**            
-  `o`                    Follow link
-  `O`                    Show outline
-  `r`                    Refresh file
-  **Zoom**               
-  `+/-`                  Zoom in/out
-  `zr`                   Reset zoom
+| **Key binding**      | **Description**                           |
+|----------------------|-------------------------------------------|
+| **Navigation**       |                                           |
+| `M-SPC` or `s-M-SPC` | pdf-tools transient state                 |
+| `0/$`                | Left/right full scroll                    |
+| `J`                  | Move to next page                         |
+| `K`                  | Move to previous page                     |
+| `u`                  | Scroll page up                            |
+| `d`                  | Scroll page down                          |
+| `gg`                 | Go to the first page                      |
+| `G`                  | Go to the last page                       |
+| `gt`                 | Go to page                                |
+| `gl`                 | Go to label (usually the line as printed) |
+| `C-u`                | Scroll up                                 |
+| `C-d`                | Scroll down                               |
+| ``` `` ```           | Go to last page in the history            |
+| `[`                  | History back                              |
+| `]`                  | History forward                           |
+| `m`                  | Set mark                                  |
+| `'`                  | Go to mark                                |
+| `y`                  | Yank selected region                      |
+| **Search**           |                                           |
+| `/`                  | Search forward                            |
+| `?`                  | Search backward                           |
+| **Actions**          |                                           |
+| `o`                  | Follow link                               |
+| `O`                  | Show outline                              |
+| `r`                  | Refresh file                              |
+| **Zoom**             |                                           |
+| `+/-`                | Zoom in/out                               |
+| `zr`                 | Reset zoom                                |
 
 *For evil users*: Note that the search keys activate `isearch`, which
 works differently from the default Evil search. To go to the next match,
@@ -158,65 +158,65 @@ use `C-s`.
 Leader keys
 -----------
 
-  **Key binding**           **Description**
-  ------------------------- -------------------------------------------
-  **Slicing**               
-  `SPC m s m`               Set slice using mouse
-  `SPC m s b`               Set slice from bounding box
-  `SPC m s r`               Reset slice
-  **Annotations**           
-  `SPC m a D`               Delete annotation (select it with mouse)
-  `SPC m a a`               List all attachments in a dired buffer
-  `SPC m a h`               Highlight visual selection
-  `SPC m a l`               List all annotations
-  `SPC m a m`               Add markup annotation to visual selection
-  `SPC m a o`               Strikeout visual selection
-  `SPC m a s`               Add squiggly to visual selection
-  `SPC m a t`               Add annotation text
-  `SPC m a u`               Underline to visual selection
-  **Fit image to window**   
-  `SPC m f w`               Fit width to window
-  `SPC m f h`               Fit height to window
-  `SPC m f p`               Fit page to window
-  **Other**                 
-  `SPC m n`                 Toggle night view mode
-  `SPC m s`                 Run `pdf-occur`
-  `SPC m p`                 Display print version
+| **Key binding**         | **Description**                           |
+|-------------------------|-------------------------------------------|
+| **Slicing**             |                                           |
+| `SPC m s m`             | Set slice using mouse                     |
+| `SPC m s b`             | Set slice from bounding box               |
+| `SPC m s r`             | Reset slice                               |
+| **Annotations**         |                                           |
+| `SPC m a D`             | Delete annotation (select it with mouse)  |
+| `SPC m a a`             | List all attachments in a dired buffer    |
+| `SPC m a h`             | Highlight visual selection                |
+| `SPC m a l`             | List all annotations                      |
+| `SPC m a m`             | Add markup annotation to visual selection |
+| `SPC m a o`             | Strikeout visual selection                |
+| `SPC m a s`             | Add squiggly to visual selection          |
+| `SPC m a t`             | Add annotation text                       |
+| `SPC m a u`             | Underline to visual selection             |
+| **Fit image to window** |                                           |
+| `SPC m f w`             | Fit width to window                       |
+| `SPC m f h`             | Fit height to window                      |
+| `SPC m f p`             | Fit page to window                        |
+| **Other**               |                                           |
+| `SPC m n`               | Toggle night view mode                    |
+| `SPC m s`               | Run `pdf-occur`                           |
+| `SPC m p`               | Display print version                     |
 
 Outline buffer mode
 -------------------
 
-  **Key binding**   **Description**
-  ----------------- -------------------------------------------------------
-  `S-tab`           Expand all trees (Cycle trees for \>= Emacs 28)
-  `RET`             Follow link
-  `M-RET`           Follow link and close outline window
-  `o`               Go to pdf view window
-  ``` `` ```        Move to the heading correspondent to the current page
-  `''`              Move to the heading correspondent to the current page
-  `f`               Go to selected heading without leaving outline buffer
-  `F`               Enable follow mode
-  `q`               Quit
-  `Q`               Quit and kill outline buffer
+| **Key binding** | **Description**                                       |
+|-----------------|-------------------------------------------------------|
+| `S-tab`         | Expand all trees (Cycle trees for \>= Emacs 28)       |
+| `RET`           | Follow link                                           |
+| `M-RET`         | Follow link and close outline window                  |
+| `o`             | Go to pdf view window                                 |
+| ``` `` ```      | Move to the heading correspondent to the current page |
+| `''`            | Move to the heading correspondent to the current page |
+| `f`             | Go to selected heading without leaving outline buffer |
+| `F`             | Enable follow mode                                    |
+| `q`             | Quit                                                  |
+| `Q`             | Quit and kill outline buffer                          |
 
 Note that you can use also typical Vim keys such as `j` and `G`.
 
 Annotation list mode
 --------------------
 
-  Key binding   Description
-  ------------- -------------------------------
-  `d`           Mark for deletion
-  `x`           Apply action for marked items
-  `u`           Unmark item
-  `q`           Quit
+| Key binding | Description                   |
+|-------------|-------------------------------|
+| `d`         | Mark for deletion             |
+| `x`         | Apply action for marked items |
+| `u`         | Unmark item                   |
+| `q`         | Quit                          |
 
 Occur mode
 ----------
 
-  Key binding   Description
-  ------------- ---------------------------------------------------
-  `q`           Quit
-  `g`           Refresh buffer
-  `r`           Refresh buffer
-  `SPC m t f`   Toggle follow mode (next-error-follow-minor-mode)
+| Key binding | Description                                       |
+|-------------|---------------------------------------------------|
+| `q`         | Quit                                              |
+| `g`         | Refresh buffer                                    |
+| `r`         | Refresh buffer                                    |
+| `SPC m t f` | Toggle follow mode (next-error-follow-minor-mode) |

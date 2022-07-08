@@ -37,7 +37,7 @@ Adding news sources
 Adding news sources can be done in your `.spacemacs` file by adding the
 following:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ;; Get email, and store in nnml
 (setq gnus-secondary-select-methods
   '(
@@ -58,7 +58,7 @@ Configuring gmail
 To configure Gnus with gmail support you can add the following to your
 `.spacemacs` file.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ;; Get email, and store in nnml
 (setq gnus-secondary-select-methods
 '(
@@ -92,7 +92,7 @@ To configure Gnus with gmail support you can add the following to your
 Authentication for your gmail account is best stored in an `authinfo` or
 `authinfo.pgp` file. It must be of the form:
 
-``` {.example}
+``` example
 machine smtp.gmail.com login name@gmail.com password SUPER_SECRET_PASS
 machine imap.gmail.com login name@gmail.com port 993 password SUPER_SECRET_PASS
 ```
@@ -115,7 +115,7 @@ Setup variables
 
 The Gnus layer defines the following variables like this:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 gnus-summary-line-format "%U%R%z %(%&user-date;  %-15,15f  %B (%c) %s%)\n"
 gnus-user-date-format-alist '((t . "%Y-%m-%d %H:%M"))
 gnus-group-line-format "%M%S%p%P%5y:%B %G\n";;"%B%(%g%)"
@@ -150,16 +150,16 @@ Gnus has very modal default keybindings. Please see the
 Basic and Spacemacs specific key bindings can be found in the following
 table.
 
-  Key binding            Gnus mode - Description
-  ---------------------- -----------------------------------------------------
-  `SPC a e g`            Starts Gnus
-  `m`                    New Message
-  `O R`, `G R` (emacs)   Group Buffer - Add RSS feed
-  `g r`                  Group Buffer - Check for new mail
-  `^`                    Open Server Buffer. Browse Newsgroups.
-  `T n`                  Group Buffer - new Topic
-  `T m`                  Group Buffer - Move Group to Topic
-  `K`                    Article Buffer - Previous article
-  `J`                    Article Buffer - Next article
-  `RET`                  Summary Buffer(RSS) - Open article Link in browser
-  `TAB`                  Summary Buffer(RSS) - Open article and switch to it
+| Key binding          | Gnus mode - Description                             |
+|----------------------|-----------------------------------------------------|
+| `SPC a e g`          | Starts Gnus                                         |
+| `m`                  | New Message                                         |
+| `O R`, `G R` (emacs) | Group Buffer - Add RSS feed                         |
+| `g r`                | Group Buffer - Check for new mail                   |
+| `^`                  | Open Server Buffer. Browse Newsgroups.              |
+| `T n`                | Group Buffer - new Topic                            |
+| `T m`                | Group Buffer - Move Group to Topic                  |
+| `K`                  | Article Buffer - Previous article                   |
+| `J`                  | Article Buffer - Next article                       |
+| `RET`                | Summary Buffer(RSS) - Open article Link in browser  |
+| `TAB`                | Summary Buffer(RSS) - Open article and switch to it |

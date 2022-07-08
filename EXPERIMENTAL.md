@@ -20,7 +20,7 @@ In case you are using `d12frosted/emacs-plus` on macOS, you can skip
 manual Emacs installation instructions and just use `--HEAD` option
 passed to `brew`.
 
-``` {.shell}
+``` shell
 brew install emacs-plus --HEAD
 ```
 
@@ -28,7 +28,7 @@ brew install emacs-plus --HEAD
 
 Clone Emacs from <https://git.savannah.gnu.org/git/emacs.git>:
 
-``` {.shell}
+``` shell
 git clone https://git.savannah.gnu.org/git/emacs.git
 cd emacs
 ```
@@ -36,7 +36,7 @@ cd emacs
 Note: On windows make sure that autocrlf is disabled in git before
 cloning or else the `autoconf.sh` script will fail later on:
 
-``` {.shell}
+``` shell
 git config --global core.autocrlf false
 ```
 
@@ -48,7 +48,7 @@ it in the guide.**
 We need to increase the number of `remembered_data` slots in
 `src/pdumper.c`, we double the number of slots by replacing 32 with 64:
 
-``` {.c org-language="C"}
+``` c
 static struct
 {
   void *mem;
@@ -66,7 +66,7 @@ for your OS).
     In the root directory of your freshly cloned Emacs repository in the
     `master` branch as the current branch:
 
-    ``` {.shell}
+    ``` shell
     ./autogen.sh
     ./configure --with-ns --with-dbus --with-gnutls --with-imagemagick --with-rsvg  --with-mailutils --with-xml2 --with-modules
     make
@@ -79,7 +79,7 @@ for your OS).
     In the root directory of your freshly cloned Emacs repository in the
     `master` branch as the current branch:
 
-    ``` {.shell}
+    ``` shell
     ./autogen.sh
     # Pick one. The first one will install Emacs locally and the second one will install it globally.
     ./configure --with-dbus --with-gnutls --with-imagemagick --with-rsvg  --with-mailutils --with-xml2 --with-modules --prefix="$HOME/.local"
@@ -90,7 +90,7 @@ for your OS).
     If you have never compiled Emacs from source on your machine then
     you probably need to install the following packages:
 
-    ``` {.shell}
+    ``` shell
     sudo apt-get install build-essential automake texinfo libjpeg-dev libncurses5-dev
     sudo apt-get install libtiff5-dev libgif-dev libpng-dev libxpm-dev libgtk-3-dev libgnutls28-dev
     ```
@@ -99,12 +99,12 @@ for your OS).
 
     *Note: This is tested on Windows 10*
 
-    Install MSYS2 x86~64~ from
+    Install MSYS2 x86<sub>64</sub> from
     [here](http://repo.msys2.org/distrib/x86_64/).
 
-    Run msys2~shell~.bat and in the msys2 prompt run:
+    Run msys2<sub>shell</sub>.bat and in the msys2 prompt run:
 
-    ``` {.shell}
+    ``` shell
     pacman -S base-devel mingw-w64-x86_64-toolchain \
     mingw-w64-x86_64-xpm-nox mingw-w64-x86_64-libtiff \
     mingw-w64-x86_64-giflib mingw-w64-x86_64-jbigkit \
@@ -117,7 +117,7 @@ for your OS).
     directory. In the mingw prompt navigate to the emacs source checkout
     (`cd /c/` will get you to the root of the c drive) and run:
 
-    ``` {.shell}
+    ``` shell
     ./autogen.sh
     ./configure --without-ns --without-dbus --with-gnutls --with-imagemagick --with-rsvg  --with-mailutils --with-xml2 --with-modules
     make
@@ -131,7 +131,7 @@ for your OS).
 After the compiliation finished successfully, you may need to install
 Emacs.
 
-``` {.shell}
+``` shell
 make install       # if you configure Emacs to install locally
 sudo make install  # if globally
 ```
@@ -140,7 +140,7 @@ sudo make install  # if globally
 
     In the mingw shell run:
 
-    ``` {.shell}
+    ``` shell
     make install prefix=/c/emacs
     cp /mingw64/bin/{libwinpthread-*.dll,libXpm-noX*.dll,libdbus-*.dll} /c/emacs/bin
     cp /mingw64/bin/{libgomp-*.dll,libgcc_s_seh-*.dll,libglib-*.dll} /c/emacs/bin
@@ -161,9 +161,9 @@ sudo make install  # if globally
 ### Update your dotfile
 
 In the function `dotspacemacs/init` add the following variables if you
-don\'t have them already and initialize them:
+don't have them already and initialize them:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dotspacemacs/init ()
  "Initialization:
   This function is called at the very beginning of Spacemacs startup,
@@ -193,12 +193,12 @@ don\'t have them already and initialize them:
 
 A new user dotfile function has been added which is called before doing
 the dump. The function name is `dotspacemacs/user-load`. You can require
-additional libraries before the dump so they won\'t need to be lazy
+additional libraries before the dump so they won't need to be lazy
 loaded.
 
-Add this to your dotfile if you don\'t have it already.
+Add this to your dotfile if you don't have it already.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dotspacemacs/user-load ()
   "Library to load while dumping.
 This function is called while dumping Spacemacs configuration. You can
@@ -213,7 +213,7 @@ possible side effects.
 
 For instance to load my-mode:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (spacemacs/dump-modes '(my-mode))
 ```
 
@@ -231,7 +231,7 @@ layer.
 
 Example for the org layer:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ;; Dumper
 
 (defun org/pre-dump ()
@@ -255,7 +255,7 @@ To actually start Spacemacs with the compiled Emacs 27 and the Spacemacs
 dump, on the command line in the `src` directory of the cloned Emacs
 source:
 
-``` {.shell}
+``` shell
 ./emacs --dump-file=/Users/sylvain/.emacs.d/.cache/dumps/spacemacs.pdmp &
 ```
 
@@ -279,7 +279,7 @@ the command line.
 To use the created dump file, open a shell in the `src` directory of the
 cloned Emacs source and type:
 
-``` {.shell}
+``` shell
 ./emacs --dump-file=/Users/sylvain/.emacs.d/.cache/dumps/spacemacs.pdmp &
 ```
 
@@ -295,6 +295,6 @@ After you can generate a portable dumper of your Emacs and you can start
 that pdumper file successfully, you can alias the way you usually start
 Emacs to the command:
 
-``` {.shell}
+``` shell
 ./emacs --dump-file=/Users/sylvain/.emacs.d/.cache/dumps/spacemacs.pdmp &
 ```

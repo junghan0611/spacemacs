@@ -29,8 +29,8 @@ Introduction
 
 **WARNING, MIND DUMBING CONTENT INSIDE.**
 
-\"Nyan-mode. It\'s things like this that make me proud to be an emacs
-user.\" -
+"Nyan-mode. It's things like this that make me proud to be an emacs
+user." -
 [mitchellh](http://twitter.com/#!/mitchellh/status/104931263479156736)
 
 Nyanmacs is expanding!! [Read the story so
@@ -46,19 +46,19 @@ some tips on how to make nyan-mode work with custom modeline.
 
 He basically changed the mode-line-format to include:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (:eval (list (nyan-create)))
 ```
 
 Known issues
 ------------
 
-It\'s my second attempt to write a minor mode in Emacs, so there will
+It's my second attempt to write a minor mode in Emacs, so there will
 definiely be some bugs.
 
 This version uses XPM images, which should be supported by default by
-most Emacs 23 installations, Windows included. In case it doesn\'t work,
-try switching to master-png branch. This branch, however, may have it\'s
+most Emacs 23 installations, Windows included. In case it doesn't work,
+try switching to master-png branch. This branch, however, may have it's
 own issues:
 
 There was a problem with displaying PNG images, which require libpng to
@@ -67,7 +67,7 @@ installation). To make it work on Windows, one needs to download a
 proper DLL and put it into emacs bin/ folder. To see which DLL is
 needed, do: M-x describe-variable \<ret\> image-library-alist \<ret\>.
 
-Customizing nyan-animate-nyancat is broken; don\'t do it.
+Customizing nyan-animate-nyancat is broken; don't do it.
 
 Credits
 -------

@@ -38,7 +38,7 @@ the following:
 To enable language server functionality with this layer, follow the
 instructions for installation, and then install this layer with:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default
  dotspacemacs-configuration-layers
  '(
@@ -55,11 +55,11 @@ Options
 
 While `julia-mode` is perfectly usable without configuration or other
 packages, you can choose to replace the default functionality of using
-[julia-repl](https://github.com/tpapp/julia-repl/) as the layer\'s
+[julia-repl](https://github.com/tpapp/julia-repl/) as the layer's
 interactive REPL with the ess REPL and other functionality that comes
 with it. To do so, install this layer with:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default
  dotspacemacs-configuration-layers
  '(
@@ -69,35 +69,35 @@ with it. To do so, install this layer with:
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ----------------------------------------------------------------------------------------
-  `TAB`         Expands latex macro (e.g. `\delta`).
-  `SPC m l`     Expands latex macro (e.g. `\delta`).
-  `SPC m = =`   Indent line
-  `SPC m = d`   Deindent line
-  `SPC m = q`   Indent Sexp
-  `SPC m '`     Brings up Julia Repl (starts new one or focuses existing).
-  `SPC m r`     Brings up Julia Repl (starts new one or focuses existing).
-  `SPC m h h`   Calls `@doc` macro on symbol under cursor.
-  `SPC m s a`   Activate the project of the current buffer (call with prefix to activate home project)
-  `SPC m s d`   `cd` into the buffer directory
-  `SPC m s i`   Brings up Julia Repl (starts new one or focuses existing).
-  `SPC m s b`   Sends buffer to REPL.
-  `SPC m s t`   Sends buffer to REPL via `Revise.includet`.
-  `SPC m s l`   Sends line to REPL.
-  `SPC m s s`   Sends line to REPL.
-  `SPC m s r`   Sends region or line to REPL.
-  `SPC m s m`   Call `@macroexpand` on an expression
-  `SPC m s e`   Call `@edit` on an expression
-  `SPC m s v`   Prompt and set a Julia REPL inferior buffer name for the current buffer
-  `SPC m e a`   Activate the project of the current buffer (call with prefix to activate home project)
-  `SPC m e d`   `cd` into the buffer directory
-  `SPC m e i`   Brings up Julia Repl (starts new one or focuses existing).
-  `SPC m e b`   Sends buffer to REPL.
-  `SPC m e t`   Sends buffer to REPL via `Revise.includet`.
-  `SPC m e l`   Sends line to REPL.
-  `SPC m e s`   Sends line to REPL.
-  `SPC m e r`   Sends region or line to REPL.
-  `SPC m e m`   Call `@macroexpand` on an expression
-  `SPC m e e`   Call `@edit` on an expression
-  `SPC m e v`   Prompt and set a Julia REPL inferior buffer name for the current buffer
+| Key binding | Description                                                                            |
+|-------------|----------------------------------------------------------------------------------------|
+| `TAB`       | Expands latex macro (e.g. `\delta`).                                                   |
+| `SPC m l`   | Expands latex macro (e.g. `\delta`).                                                   |
+| `SPC m = =` | Indent line                                                                            |
+| `SPC m = d` | Deindent line                                                                          |
+| `SPC m = q` | Indent Sexp                                                                            |
+| `SPC m '`   | Brings up Julia Repl (starts new one or focuses existing).                             |
+| `SPC m r`   | Brings up Julia Repl (starts new one or focuses existing).                             |
+| `SPC m h h` | Calls `@doc` macro on symbol under cursor.                                             |
+| `SPC m s a` | Activate the project of the current buffer (call with prefix to activate home project) |
+| `SPC m s d` | `cd` into the buffer directory                                                         |
+| `SPC m s i` | Brings up Julia Repl (starts new one or focuses existing).                             |
+| `SPC m s b` | Sends buffer to REPL.                                                                  |
+| `SPC m s t` | Sends buffer to REPL via `Revise.includet`.                                            |
+| `SPC m s l` | Sends line to REPL.                                                                    |
+| `SPC m s s` | Sends line to REPL.                                                                    |
+| `SPC m s r` | Sends region or line to REPL.                                                          |
+| `SPC m s m` | Call `@macroexpand` on an expression                                                   |
+| `SPC m s e` | Call `@edit` on an expression                                                          |
+| `SPC m s v` | Prompt and set a Julia REPL inferior buffer name for the current buffer                |
+| `SPC m e a` | Activate the project of the current buffer (call with prefix to activate home project) |
+| `SPC m e d` | `cd` into the buffer directory                                                         |
+| `SPC m e i` | Brings up Julia Repl (starts new one or focuses existing).                             |
+| `SPC m e b` | Sends buffer to REPL.                                                                  |
+| `SPC m e t` | Sends buffer to REPL via `Revise.includet`.                                            |
+| `SPC m e l` | Sends line to REPL.                                                                    |
+| `SPC m e s` | Sends line to REPL.                                                                    |
+| `SPC m e r` | Sends region or line to REPL.                                                          |
+| `SPC m e m` | Call `@macroexpand` on an expression                                                   |
+| `SPC m e e` | Call `@edit` on an expression                                                          |
+| `SPC m e v` | Prompt and set a Julia REPL inferior buffer name for the current buffer                |

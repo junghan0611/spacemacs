@@ -29,7 +29,7 @@ places as it may hold the answer:
     Some of the most frequently asked questions are answered there.
 -   [The
     documentation](https://github.com/syl20bnr/spacemacs/blob/develop/doc/DOCUMENTATION.org).
-    It\'s the general documentation of Spacemacs.
+    It's the general documentation of Spacemacs.
 -   You may also read the `README.org` of the [relevant
     layer(s)](https://github.com/syl20bnr/spacemacs/blob/develop/doc/LAYERS.org).
 
@@ -62,7 +62,7 @@ tracker](https://github.com/syl20bnr/spacemacs/issues). Please:
     -   The output of `SPC h d s` (`M-m h d s` in Emacs style), which
         gives the versions information about your installation.
     -   If relevant, include the mode in which the problem arise (e.g.
-        javascript files, `org-mode`, etc...).
+        javascript files, `org-mode`, etc…).
     -   If possible, try to include details on how to reproduce it, like
         a step by step guide.
 
@@ -114,7 +114,7 @@ Submit your contribution against the `develop` branch. You should not
 use your `master` branch to modify Spacemacs, this branch is considered
 to be read-only.
 
-You may want to [read our beginner\'s guide for Pull
+You may want to [read our beginner's guide for Pull
 Requests](https://github.com/syl20bnr/spacemacs/wiki/Beginner%27s-Guide-to-Contributing-a-Pull-Request-to-Spacemacs).
 
 *PR = Pull Request*
@@ -127,7 +127,7 @@ Requests](https://github.com/syl20bnr/spacemacs/wiki/Beginner%27s-Guide-to-Contr
     -   If you have several commits on different topics, close the PR
         and create one PR per topic
     -   If you still have several commits, squash them into only one
-        commit ([here\'s a
+        commit ([here's a
         guide](https://github.com/syl20bnr/spacemacs/pull/13381#pullrequestreview-380313280))
     -   Rebase your PR branch on top of upstream `develop` before
         submitting the PR
@@ -137,18 +137,18 @@ Requests](https://github.com/syl20bnr/spacemacs/wiki/Beginner%27s-Guide-to-Contr
 2.  For complex PRs (big refactoring, etc):
 
     -   Squash only the commits with uninteresting changes like typos,
-        syntax fixes, etc... and keep the important and *isolated* steps
+        syntax fixes, etc… and keep the important and *isolated* steps
         in different commits.
 
     Those PRs are *merged* and explicitly *not fast-forwarded*.
 
 ### Commit messages
 
-Write commit messages according to adapted [Tim Pope\'s
+Write commit messages according to adapted [Tim Pope's
 guidelines](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html):
 
--   Use present tense and write in the imperative: \"Fix bug\", not
-    \"fixed bug\" or \"fixes bug\".
+-   Use present tense and write in the imperative: "Fix bug", not "fixed
+    bug" or "fixes bug".
 -   Start with a capitalized, short (72 characters or less) summary,
     followed by a blank line.
 -   If necessary, add one or more paragraphs with details, wrapped at 72
@@ -157,7 +157,7 @@ guidelines](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 
 This is a model commit message:
 
-``` {.example}
+``` example
 Capitalized, short (72 chars or less) summary
 
 More detailed explanatory text, if necessary.  Wrap it to about 72
@@ -210,7 +210,7 @@ of the variable `dotspacemacs-additional-packages`.
 The file header for `elisp` files should look like the following
 template:
 
-``` {.example}
+``` example
 ;;; FILENAME --- NAME Layer <TYPE> File for Spacemacs
 ;;
 ;; Copyright (c) 2012-<YEAR> Sylvain Benner & Contributors
@@ -236,7 +236,7 @@ template:
 
 You should replace `FILENAME` by the name of the file (e.g.
 `packages.el`), and `NAME` by the name of the layer you are creating.
-`TYPE` should match the `FILENAME` (e.g. `funcs` for `funcs.el`). Don\'t
+`TYPE` should match the `FILENAME` (e.g. `funcs` for `funcs.el`). Don't
 forget to replace `YEAR`, `YOUR_NAME`, and `YOUR_EMAIL` also. Some files
 already have a template inside `core/templates/`, so look in there
 first. Note that if you use `configuration-layer/create-layer`,
@@ -251,7 +251,7 @@ to your name.
 
     Every README.org file of a layer should have `#+TAGS:` line:
 
-    ``` {.example}
+    ``` example
     #+TITLE: My layer
 
     #+TAGS: layer|web service
@@ -260,12 +260,12 @@ to your name.
     ...
     ```
 
-    Individual tags are separated with \"\|\" character. Example above
-    has 2 tags: \"layer\" and \"web service\". Tags are listed in
-    [\<spacemacs~root~\>/.ci/spacedoc-cfg.edn](https://github.com/syl20bnr/spacemacs/blob/develop/.ci/spacedoc-cfg.edn)
+    Individual tags are separated with "\|" character. Example above has
+    2 tags: "layer" and "web service". Tags are listed in
+    [\<spacemacs<sub>root</sub>\>/.ci/spacedoc-cfg.edn](https://github.com/syl20bnr/spacemacs/blob/develop/.ci/spacedoc-cfg.edn)
     configuration file.
 
-    ``` {.clojure}
+    ``` clojure
     :spacetools.spacedoc.config/valid-tags
     {"chat" "Chats"
     ...
@@ -280,16 +280,16 @@ to your name.
     [:spacetools.spacedoc.config/layers-org-query](https://github.com/syl20bnr/spacemacs/blob/develop/.ci/spacedoc-cfg.edn)
     defines structure of the file by chaining tags into a tree where
     every leaf turns into a list of descriptions pulled out of
-    README.org files which tags match leaf\'s path in the tree. You can
+    README.org files which tags match leaf's path in the tree. You can
     see how the shape of
-    [\<spacemacs~root~\>/.ci/spacedoc-cfg.edn](https://github.com/syl20bnr/spacemacs/blob/develop/.ci/spacedoc-cfg.edn)
+    [\<spacemacs<sub>root</sub>\>/.ci/spacedoc-cfg.edn](https://github.com/syl20bnr/spacemacs/blob/develop/.ci/spacedoc-cfg.edn)
     repeats in [TOC of
     LAYERS.org](https://github.com/syl20bnr/spacemacs/blob/develop/layers/LAYERS.org#table-of-contents).
 
     Important details:
 
     -   Every layer description will be displayed exactly one time.
-    -   When a README.org layer file doesn\'t have `#+TAGS:`, then the
+    -   When a README.org layer file doesn't have `#+TAGS:`, then the
         documentation formatting tool will insert dummy tags
         `layer|uncategorized`, and such files will be listed in
         [LAYERS.org\#readmeorg-files-that-need-proper-tags](https://github.com/syl20bnr/spacemacs/blob/develop/layers/LAYERS.org#readmeorg-files-that-need-proper-tags).
@@ -305,7 +305,7 @@ to your name.
 
     If you want to experiment with the tool locally:
 
-    ``` {.shell}
+    ``` shell
     docker run --rm \
       -v <SPACEMACS_REPO_ROOT>:/tmp/docs \
       -v <PATH_TO_CONFIG_FILE>:/opt/spacetools/spacedoc-cfg.edn \
@@ -325,8 +325,8 @@ Key bindings are an important part of Spacemacs.
 First if you want to have some personal key bindings, you can freely
 bind them inside the `SPC o` and `SPC m o` prefixes which are reserved
 for the user. This can be done from the `dotspacemacs/user-config`
-function of your `.spacemacs` file and don\'t require any contribution
-to Spacemacs.
+function of your `.spacemacs` file and don't require any contribution to
+Spacemacs.
 
 If you think it worth contributing a new key bindings then be sure to
 read the
@@ -334,8 +334,8 @@ read the
 file to find the best key bindings, then create a PR with your changes.
 
 **ALWAYS** document your new key bindings or key bindings changes inside
-the relevant documentation file. It should be the layer\'s `README.org`
-file for layer\'s key bindings, or `DOCUMENTATION.org` for general
+the relevant documentation file. It should be the layer's `README.org`
+file for layer's key bindings, or `DOCUMENTATION.org` for general
 Spacemacs key bindings.
 
 Contributing a banner
@@ -386,7 +386,7 @@ Please report explicitly how you tested the PR for bugs, and confirm
 that you have checked its compliance with the code conventions. Copy the
 following line to your approving review to notify the collaborators:
 
-``` {.example}
+``` example
 Ready to be merged! (@syl20bnr @TheBB @d12frosted @bmag @JAremko)
 ```
 
@@ -452,7 +452,7 @@ To add tests for a layer, do the following:
 
     See existing tests for examples.
 
-    ``` {.makefile}
+    ``` makefile
     TEST_DIR := $(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
     LOAD_FILES = ...

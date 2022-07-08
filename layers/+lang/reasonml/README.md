@@ -29,13 +29,13 @@ automatically.
 Merlin
 ------
 
-You\'ll need merlin (binaries `ocamlmerlin` and `ocamlmerlin-reason`)
+You'll need merlin (binaries `ocamlmerlin` and `ocamlmerlin-reason`)
 installed on your system and on your `PATH` for errors and
 auto-completion.
 
-If you\'re familiar with `opam` you can
+If you're familiar with `opam` you can
 
-``` {.bash org-language="sh"}
+``` bash
 opam install merlin reason
 ```
 
@@ -45,11 +45,11 @@ switch.
 Refmt
 -----
 
-Similarly to Merlin, you\'ll need the `refmt` binary on your path.
+Similarly to Merlin, you'll need the `refmt` binary on your path.
 
-If you\'re familiar with `opam` you can
+If you're familiar with `opam` you can
 
-``` {.bash org-language="sh"}
+``` bash
 opam install reason
 ```
 
@@ -65,7 +65,7 @@ project-local of `node_modules`.
 You can toggle `refmt` on save with `SPC m r t`. To permanently enable
 it, add the layer variable:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (reasonml :variables reason-auto-refmt t)
 ```
 
@@ -76,18 +76,18 @@ Key bindings
 
 The main key bindings, see `packages.el` for the main list.
 
-  Key binding     Description
-  --------------- ---------------------------------------
-  `SPC m g g`     Jump to definition
-  `SPC m g G`     Jump to definition (other window)
-  `SPC m g b`     Jump back
-  `SPC m h t`     Show type
-  `SPC m h h`     Show docs
-  `SPC m r d`     Merlin destruct
-  `SPC m = =`     Refmt
-  `SPC m t r`     Toggle auto-refmt on save
-  `SPC m = m r`   Refmt: convert ml syntax to re syntax
-  `SPC m = r m`   Refmt: convert re syntax to ml syntax
+| Key binding   | Description                           |
+|---------------|---------------------------------------|
+| `SPC m g g`   | Jump to definition                    |
+| `SPC m g G`   | Jump to definition (other window)     |
+| `SPC m g b`   | Jump back                             |
+| `SPC m h t`   | Show type                             |
+| `SPC m h h`   | Show docs                             |
+| `SPC m r d`   | Merlin destruct                       |
+| `SPC m = =`   | Refmt                                 |
+| `SPC m t r`   | Toggle auto-refmt on save             |
+| `SPC m = m r` | Refmt: convert ml syntax to re syntax |
+| `SPC m = r m` | Refmt: convert re syntax to ml syntax |
 
 Thanks
 ======

@@ -28,11 +28,11 @@ layer also.
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -------------------------------
-  `SPC m = =`   graphql-edit-headers
-  `SPC m e`     graphql-select-endpoint
-  `SPC m g G`   jump to definition new window
-  `SPC m g g`   jump to definition
-  `SPC m h`     graphql-edit-headers
-  `SPC m s`     graphql-send-query
+| Key binding | Description                   |
+|-------------|-------------------------------|
+| `SPC m = =` | graphql-edit-headers          |
+| `SPC m e`   | graphql-select-endpoint       |
+| `SPC m g G` | jump to definition new window |
+| `SPC m g g` | jump to definition            |
+| `SPC m h`   | graphql-edit-headers          |
+| `SPC m s`   | graphql-send-query            |

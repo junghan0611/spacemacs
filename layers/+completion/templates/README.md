@@ -26,7 +26,7 @@ Drop your templates in `~/.emacs.d/private/templates`.
 You can also specify a different location with
 `templates-private-directory`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((templates :variables templates-private-directory "~/.spacemacs.d/templates")))
 ```
@@ -37,7 +37,7 @@ The prefix `XXX` can be used to enforce an ordering (templates that come
 first will have priority). It is not part of the final regexp.
 Therefore, more specific templates should come first. For example,
 
-``` {.example}
+``` example
 00:test_.*.py
 01:.*.py
 ```
@@ -54,7 +54,7 @@ Note that Emacs ships with some default templates. If these are not to
 your liking, set the layer variable `templates-use-default-templates` to
 `nil`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((templates :variables templates-use-default-templates nil)))
 ```
@@ -65,6 +65,6 @@ Querying
 To disable the automatic querying each time a new file is opened, set
 `auto-insert-query` to `nil`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq auto-insert-query nil)
 ```

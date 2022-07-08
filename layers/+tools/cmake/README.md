@@ -42,7 +42,7 @@ in your dotfile. This mode only provides very limited IDE capabilities.
 Used best if only small scripts are edited. To set explicitly set the
 following in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (cmake :variables cmake-backend 'company-cmake)
 ```
 
@@ -56,7 +56,7 @@ in all modes.
 
 To set explicitly do the following in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (cmake :variables
         cmake-backend 'lsp)
 ```
@@ -67,7 +67,7 @@ lsp server from
 
 You can also simply install it with pip:
 
-``` {.bash org-language="sh"}
+``` bash
 pip install cmake-language-server
 ```
 
@@ -81,7 +81,7 @@ CMake-ide
 To enable CMake projects support set the layer variable
 `cmake-enable-cmake-ide-support` to `t` in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((cmake :variables cmake-enable-cmake-ide-support t)))
 ```
@@ -99,10 +99,10 @@ Here is a sample configuration. This configuration forces `cmake-ide` to
 use the local directory and pass that directory to `helm-make`. Such
 config allows to build your project with `SPC c c` key binding.
 
-Additionally it\'s possible to configure `helm-ctest` in the same way
-via defining `helm-ctest-dir`. Trailing slash is required.
+Additionally it's possible to configure `helm-ctest` in the same way via
+defining `helm-ctest-dir`. Trailing slash is required.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ((nil .
       ((cmake-ide-project-dir . "~/Project")
        (cmake-ide-build-dir . "~/Project/build")
@@ -113,9 +113,9 @@ via defining `helm-ctest-dir`. Trailing slash is required.
        )))
 ```
 
-In case of projectile it\'s possible to configure project like:
+In case of projectile it's possible to configure project like:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ((nil . ((eval . (setq
                   projectile-project-test-cmd #'helm-ctest
                   projectile-project-compilation-cmd #'helm-make-projectile
@@ -132,9 +132,9 @@ In case of projectile it\'s possible to configure project like:
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -------------------------------------------------------------------------
-  `SPC m p c`   Run CMake and set compiler flags for auto-completion and flycheck
-  `SPC m p C`   Run CMake if compilation database JSON file is not found
-  `SPC m p d`   Remove file connected to current buffer and kill buffer, then run CMake
-  `SPC m p t`   Run CTest
+| Key binding | Description                                                             |
+|-------------|-------------------------------------------------------------------------|
+| `SPC m p c` | Run CMake and set compiler flags for auto-completion and flycheck       |
+| `SPC m p C` | Run CMake if compilation database JSON file is not found                |
+| `SPC m p d` | Remove file connected to current buffer and kill buffer, then run CMake |
+| `SPC m p t` | Run CTest                                                               |

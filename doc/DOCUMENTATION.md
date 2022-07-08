@@ -2,16 +2,16 @@ Core Pillars
 ============
 
 Four core pillars: Mnemonic, Discoverable, Consistent and
-\"Crowd-Configured\".
+"Crowd-Configured".
 
-If any of these core pillars are violated, open an issue and we\'ll try
+If any of these core pillars are violated, open an issue and we'll try
 our best to fix it.
 
 Mnemonic
 --------
 
 Key bindings are organized using mnemonic prefixes like `b` for buffer,
-`p` for project, `s` for search, `h` for help, etc...
+`p` for project, `s` for search, `h` for help, etc…
 
 Discoverable
 ------------
@@ -112,7 +112,7 @@ old.
 
 To update manually close Emacs and update the git repository:
 
-``` {.bash org-language="sh"}
+``` bash
 $ git pull --rebase
 ```
 
@@ -125,7 +125,7 @@ updating. ![](img/powerline-update.png) *Update Button*
 
 ### Updating from the Spacemacs Buffer (for master)
 
-Use the button labeled \"Update Spacemacs\" in the Spacemacs buffer. You
+Use the button labeled "Update Spacemacs" in the Spacemacs buffer. You
 will be prompted for the version you would like to use.
 
 **Note**: The master branch is considered to be immutable in the sense
@@ -172,7 +172,7 @@ Structure
 Configuration is organized in layers. Each layer has the following
 structure:
 
-``` {.example}
+``` example
 [layer_name]
   |__ [local]
   | |__ [package 1]
@@ -189,18 +189,18 @@ structure:
 
 Where:
 
-  File             Usage
-  ---------------- --------------------------------------------------------------------------------------------------
-  layers.el        The place to declare additional layers
-  packages.el      The list of packages and their configuration functions (init, post-init, etc...)
-  funcs.el         All functions defined in the layer (used in package configuration for instance)
-  config.el        Layer configuration (defines the layer variables default values and setup some config variables)
-  keybindings.el   General key bindings not tied to a specific package configuration
+| File           | Usage                                                                                            |
+|----------------|--------------------------------------------------------------------------------------------------|
+| layers.el      | The place to declare additional layers                                                           |
+| packages.el    | The list of packages and their configuration functions (init, post-init, etc…)                   |
+| funcs.el       | All functions defined in the layer (used in package configuration for instance)                  |
+| config.el      | Layer configuration (defines the layer variables default values and setup some config variables) |
+| keybindings.el | General key bindings not tied to a specific package configuration                                |
 
 `Packages` can be:
 
 -   `ELPA` packages installed from an `ELPA` compliant repository
--   local packages in a layer\'s `local` folder
+-   local packages in a layer's `local` folder
 -   installed from an online source using
     [quelpa](https://github.com/quelpa/quelpa).
 
@@ -216,16 +216,16 @@ Configure packages
 
     Example:
 
-    ``` {.commonlisp org-language="emacs-lisp"}
+    ``` commonlisp
     (setq <layer>-packages '(package1 package2 ...)
     ```
 
     All packages from all layers are processed in alphabetical order so
-    sometimes you\'ll have to use some `with-eval-after-load` black
-    magic to configure them properly. For instance, if package `A`
-    depends on `B` then you can configure `A` with:
+    sometimes you'll have to use some `with-eval-after-load` black magic
+    to configure them properly. For instance, if package `A` depends on
+    `B` then you can configure `A` with:
 
-    ``` {.commonlisp org-language="emacs-lisp"}
+    ``` commonlisp
     (with-eval-after-load 'B ...)
     ```
 
@@ -238,7 +238,7 @@ Configure packages
     To initialize a package `xxx`, define a function with this format in
     `packages.el`:
 
-    ``` {.commonlisp org-language="emacs-lisp"}
+    ``` commonlisp
     (defun <layer>/init-xxx () ...body )
     ```
 
@@ -256,14 +256,14 @@ Configure packages
 
     Example:
 
-    ``` {.commonlisp org-language="emacs-lisp"}
+    ``` commonlisp
     (setq <layer>-excluded-packages '(package1 package2 ...)
     ```
 
 4.  Overriding a layer package
 
     See [this answer in the
-    FAQ\'s](https://develop.spacemacs.org/doc/FAQ.html#how-to-override-a-layer-package).
+    FAQ's](https://develop.spacemacs.org/doc/FAQ.html#how-to-override-a-layer-package).
 
 ### Without a layer
 
@@ -278,7 +278,7 @@ function in your dotfile.
 
 For example, to install `llvm-mode` and `dts-mode`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dotspacemacs/layers ()
   "Configuration Layers declaration..."
   (setq-default
@@ -326,7 +326,7 @@ can find
 To install it, just add `themes-megapack` to your `~/.spacemacs` like
 so:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(themes-megapack))
 ```
 
@@ -337,7 +337,7 @@ remove the layer from the `dotspacemacs-configuration-layers` and press
 Managing private configuration layers
 -------------------------------------
 
-Spacemacs\'s configuration system is flexible enough to let you manage
+Spacemacs's configuration system is flexible enough to let you manage
 your private layers in different ways.
 
 ### Using the private directory
@@ -493,7 +493,7 @@ layer`.
 For instance, [RMS](#thank-you) can add his private configuration layer
 like this:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '(
                 ;; other layers
@@ -511,7 +511,7 @@ them. This is done by setting the list
 instance to add some layers in `~/.myconfig`, set the variable like
 this:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layer-path '("~/.myconfig/"))
 ```
 
@@ -523,7 +523,7 @@ layer](https://github.com/syl20bnr/spacemacs/blob/develop/layers/%2Bsource-contr
 has several configuration variables, they can be set directly in the
 `dotspacemacs-configuration-layers` like this:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dotspacemacs/layers ()
   ;; List of configuration layers to load.
   (setq-default dotspacemacs-configuration-layers
@@ -549,7 +549,7 @@ Sometimes you may want to disable a service added by a layer in some
 specific layers. Say you want to disable `auto-completion` in `org` and
 `git` layers, you can do it with the following layer declaration.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dotspacemacs/layers ()
   ;; List of configuration layers to load.
   (setq-default dotspacemacs-configuration-layers
@@ -560,7 +560,7 @@ specific layers. Say you want to disable `auto-completion` in `org` and
 You can also use the `:enabled-for` construct to disable it for *all*
 layers *except* those explicitly identified.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dotspacemacs/layers ()
   ;; List of configuration layers to load.
   (setq-default dotspacemacs-configuration-layers
@@ -570,7 +570,7 @@ layers *except* those explicitly identified.
 
 Note that `:enabled-for` may be an empty list.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dotspacemacs/layers ()
   ;; List of configuration layers to load.
   (setq-default dotspacemacs-configuration-layers
@@ -590,7 +590,7 @@ them. This is possible with the `:packages` keyword.
 For instance to ignore the `treemacs` and `fancy-battery` packages from
 `spacemacs-ui-visual` layer:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dotspacemacs/layers ()
   ;; List of configuration layers to load.
   (setq-default dotspacemacs-configuration-layers
@@ -601,7 +601,7 @@ For instance to ignore the `treemacs` and `fancy-battery` packages from
 The opposite would be to ignore all packages except `treemacs` and
 `fancy-battery`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dotspacemacs/layers ()
   ;; List of configuration layers to load.
   (setq-default dotspacemacs-configuration-layers
@@ -619,23 +619,23 @@ unused by Spacemacs).
 
 ### Excluding packages
 
-You can exclude packages you don\'t want to install with the variable
+You can exclude packages you don't want to install with the variable
 `dotspacemacs-excluded-packages` (see [Configuration
 layers](#configuration-layers) for more info on packages).
 
 For instance, to disable the `rainbow-delimiters` package:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-excluded-packages '(rainbow-delimiters))
 ```
 
 When you exclude a package, Spacemacs will automatically delete it for
 you the next time you launch Emacs or at the next dotfile
 synchronization. All the orphan dependencies are also deleted
-automatically. Excluding a package effectively remove [all]{.underline}
-references to it in Spacemacs without breaking the rest of the
-configuration, this is a powerful feature which allows you to quickly
-remove any feature from Spacemacs.
+automatically. Excluding a package effectively remove <span
+class="underline">all</span> references to it in Spacemacs without
+breaking the rest of the configuration, this is a powerful feature which
+allows you to quickly remove any feature from Spacemacs.
 
 **Note**: A few packages are essential for Spacemacs to correctly
 operate, those packages are protected and cannot be excluded or
@@ -674,7 +674,7 @@ in the dotfile.
 
 To bind keys in Vim editing style (`insert state`):
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (define-key evil-insert-state-map (kbd "C-]") 'forward-char)
 ```
 
@@ -682,17 +682,17 @@ When setting the Vim style you can pass any variable supported by
 `evil-mode` with the keyword `:variables`. Spacemacs also supports the
 following editing style variables for Vim:
 
-  Variables                                  Description
-  ------------------------------------------ -------------------------------------------------------------------------
-  `vim-style-visual-feedback`                If non-nil then objects are briefly highlighted
-  `vim-style-remap-Y-to-y$`                  If non-nil `Y` is remapped to `y$` in Evil states
-  `vim-style-retain-visual-state-on-shift`   If non-nil, the shift mappings `<` and `>` retain visual state
-  `vim-style-visual-line-move-text`          If non-nil, `J` and `K` move lines up and down when in visual mode
-  `vim-style-ex-substitute-global`           If non-nil, inverse the meaning of `g` in `:substitute` Evil ex-command
+| Variables                                | Description                                                             |
+|------------------------------------------|-------------------------------------------------------------------------|
+| `vim-style-visual-feedback`              | If non-nil then objects are briefly highlighted                         |
+| `vim-style-remap-Y-to-y$`                | If non-nil `Y` is remapped to `y$` in Evil states                       |
+| `vim-style-retain-visual-state-on-shift` | If non-nil, the shift mappings `<` and `>` retain visual state          |
+| `vim-style-visual-line-move-text`        | If non-nil, `J` and `K` move lines up and down when in visual mode      |
+| `vim-style-ex-substitute-global`         | If non-nil, inverse the meaning of `g` in `:substitute` Evil ex-command |
 
 Default configuration is:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-editing-style '(vim :variables
                                                vim-style-visual-feedback nil
                                                vim-style-remap-Y-to-y$ nil
@@ -713,7 +713,7 @@ toggle it on and off with `SPC t E e` and `M-m t E e`. When off the
 
 To bind keys in Emacs editing style (`emacs state`):
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (define-key evil-emacs-state-map (kbd "C-]") 'forward-char)
 ```
 
@@ -727,7 +727,7 @@ isolated key map `evil-hybrid-state-map`.
 
 To bind keys in Hybrid editing style (`hybrid state`):
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (define-key evil-hybrid-state-map (kbd "C-]") 'forward-char)
 ```
 
@@ -735,17 +735,17 @@ This style can be tweaked to be more like Emacs or more like Vim
 depending on the user preferences. The following variables are available
 to change the style configuration:
 
-  Variables                               Description
-  --------------------------------------- ----------------------------------------------------------------------------------------
-  `hybrid-style-visual-feedback`          If non-nil then objects are briefly highlighted
-  `hybrid-style-default-state`            The default state when opening a new buffer. Set it to `emacs` for a more emacsy style
-  `hybrid-style-enable-hjkl-bindings`     If non-nil then packages will configure `h j k l` key bindings for navigation
-  `hybrid-style-enable-evilified-state`   If non-nil buffer are `evilified` when supported, if nil then `emacs` state is enabled
-  `hybrid-style-use-evil-search-module`   If non-nil then use evil own search module which is closer to Vim search behavior
+| Variables                             | Description                                                                            |
+|---------------------------------------|----------------------------------------------------------------------------------------|
+| `hybrid-style-visual-feedback`        | If non-nil then objects are briefly highlighted                                        |
+| `hybrid-style-default-state`          | The default state when opening a new buffer. Set it to `emacs` for a more emacsy style |
+| `hybrid-style-enable-hjkl-bindings`   | If non-nil then packages will configure `h j k l` key bindings for navigation          |
+| `hybrid-style-enable-evilified-state` | If non-nil buffer are `evilified` when supported, if nil then `emacs` state is enabled |
+| `hybrid-style-use-evil-search-module` | If non-nil then use evil own search module which is closer to Vim search behavior      |
 
 Default configuration is:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-editing-style '(hybrid :variables
                                                   hybrid-style-visual-feedback nil
                                                   hybrid-style-enable-evilified-state t
@@ -762,19 +762,19 @@ States
 
 Spacemacs has 10 states:
 
-  State          Default Color   Description
-  -------------- --------------- -----------------------------------------------------------------------------------------------------------------------------------
-  normal         orange          like the `normal mode of Vim`, used to execute and combine commands
-  insert         green           like the `insert mode of Vim`, used to actually insert text
-  visual         gray            like the `visual mode of Vim`, used to make text selection
-  motion         purple          exclusive to `Evil`, used to navigate read only buffers
-  emacs          blue            exclusive to `Evil`, using this state is like using a regular Emacs without Vim
-  replace        chocolate       like `replace mode of Vim`, overwrites the character under point instead of inserting a new one
-  hybrid         blue            exclusive to Spacemacs, this is like the insert state except that all the emacs key bindings are available
-  evilified      light brown     exclusive to Spacemacs, this is an `emacs state` modified to bring Vim navigation, selection and search.
-  lisp           pink            exclusive to Spacemacs, used to navigate Lisp code and modify it (more [info](#editing-lisp-code))
-  iedit          red             exclusive to Spacemacs, used to navigate between multiple regions of text using `iedit` (more [info](#replacing-text-with-iedit))
-  iedit-insert   red             exclusive to Spacemacs, used to replace multiple regions of text using `iedit` (more [info](#replacing-text-with-iedit))
+| State        | Default Color | Description                                                                                                                       |
+|--------------|---------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| normal       | orange        | like the `normal mode of Vim`, used to execute and combine commands                                                               |
+| insert       | green         | like the `insert mode of Vim`, used to actually insert text                                                                       |
+| visual       | gray          | like the `visual mode of Vim`, used to make text selection                                                                        |
+| motion       | purple        | exclusive to `Evil`, used to navigate read only buffers                                                                           |
+| emacs        | blue          | exclusive to `Evil`, using this state is like using a regular Emacs without Vim                                                   |
+| replace      | chocolate     | like `replace mode of Vim`, overwrites the character under point instead of inserting a new one                                   |
+| hybrid       | blue          | exclusive to Spacemacs, this is like the insert state except that all the emacs key bindings are available                        |
+| evilified    | light brown   | exclusive to Spacemacs, this is an `emacs state` modified to bring Vim navigation, selection and search.                          |
+| lisp         | pink          | exclusive to Spacemacs, used to navigate Lisp code and modify it (more [info](#editing-lisp-code))                                |
+| iedit        | red           | exclusive to Spacemacs, used to navigate between multiple regions of text using `iedit` (more [info](#replacing-text-with-iedit)) |
+| iedit-insert | red           | exclusive to Spacemacs, used to replace multiple regions of text using `iedit` (more [info](#replacing-text-with-iedit))          |
 
 **Note**: Technically speaking there is also the `operator` evil state.
 
@@ -899,18 +899,18 @@ Globally available toggles can be turned on and off using the functions
 `NAME` corresponds to the name of the toggle, for instance `which-key`
 for the toggle to turn on and off the `which-key` minor mode.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (spacemacs/toggle-which-key-on)
 ```
 
 Major mode specific toggles can be turned on by registering a hook on
-them to call the \"toggle on\" function automatically whenever a buffer
+them to call the "toggle on" function automatically whenever a buffer
 using this major mode is opened. It can be done conveniently using the
 function `spacemacs/toggle-NAME-on-register-hooks`. It also exists
 variants of this function for each supported major mode like
 `spacemacs/toggle-NAME-on-register-hook-MODE`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (spacemacs/toggle-nameless-on-register-hooks)
 ;; or to enable it for emacs-lips buffers only
 (spacemacs/toggle-nameless-on-register-hook-emacs-lisp-mode)
@@ -950,7 +950,7 @@ If you are not convinced, then here is the snippet to revert back to the
 default `Vim + vim-surround` setup (add it to your
 `dotspacemacs/user-config`):
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (evil-define-key 'visual evil-surround-mode-map "s" 'evil-substitute)
 (evil-define-key 'visual evil-surround-mode-map "S" 'evil-surround-region)
 ```
@@ -960,18 +960,18 @@ Evil plugins
 
 Spacemacs ships with the following evil plugins:
 
-  Mode                                                                                        Description
-  ------------------------------------------------------------------------------------------- ---------------------------------------------------------------------------
-  [evil-args](https://github.com/wcsmith/evil-args)                                           motions and text objects for arguments
-  [evil-exchange](https://github.com/Dewdrops/evil-exchange)                                  port of [vim-exchange](https://github.com/tommcdo/vim-exchange)
-  [evil-indent-textobject](https://github.com/cofi/evil-indent-textobject)                    add text object based on indentation level
-  [evil-matchit](https://github.com/redguardtoo/evil-matchit)                                 port of [matchit.vim](http://www.vim.org/scripts/script.php?script_id=39)
-  [evil-nerd-commenter](https://github.com/redguardtoo/evil-nerd-commenter)                   port of [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
-  [evil-numbers](https://github.com/cofi/evil-numbers)                                        like `C-a` and `C-x` in vim
-  [evil-search-highlight-persist](https://github.com/juanjux/evil-search-highlight-persist)   emulation of hlsearch behavior
-  [evil-surround](https://github.com/timcharper/evil-surround)                                port of [vim-surround](https://github.com/tpope/vim-surround)
-  [evil-visualstar](https://github.com/bling/evil-visualstar)                                 search for current selection with `*`
-  [Treemacs](https://github.com/Alexander-Miller/treemacs)                                    a file explorer like [NERD Tree](https://github.com/scrooloose/nerdtree)
+| Mode                                                                                      | Description                                                               |
+|-------------------------------------------------------------------------------------------|---------------------------------------------------------------------------|
+| [evil-args](https://github.com/wcsmith/evil-args)                                         | motions and text objects for arguments                                    |
+| [evil-exchange](https://github.com/Dewdrops/evil-exchange)                                | port of [vim-exchange](https://github.com/tommcdo/vim-exchange)           |
+| [evil-indent-textobject](https://github.com/cofi/evil-indent-textobject)                  | add text object based on indentation level                                |
+| [evil-matchit](https://github.com/redguardtoo/evil-matchit)                               | port of [matchit.vim](http://www.vim.org/scripts/script.php?script_id=39) |
+| [evil-nerd-commenter](https://github.com/redguardtoo/evil-nerd-commenter)                 | port of [nerdcommenter](https://github.com/scrooloose/nerdcommenter)      |
+| [evil-numbers](https://github.com/cofi/evil-numbers)                                      | like `C-a` and `C-x` in vim                                               |
+| [evil-search-highlight-persist](https://github.com/juanjux/evil-search-highlight-persist) | emulation of hlsearch behavior                                            |
+| [evil-surround](https://github.com/timcharper/evil-surround)                              | port of [vim-surround](https://github.com/tpope/vim-surround)             |
+| [evil-visualstar](https://github.com/bling/evil-visualstar)                               | search for current selection with `*`                                     |
+| [Treemacs](https://github.com/Alexander-Miller/treemacs)                                  | a file explorer like [NERD Tree](https://github.com/scrooloose/nerdtree)  |
 
 Environment variables and PATH
 ==============================
@@ -1019,10 +1019,10 @@ place.
 Note about the function dotspacemacs/user-env
 ---------------------------------------------
 
-It\'s possible that you don\'t have this function defined if you have an
+It's possible that you don't have this function defined if you have an
 older dotfile. It is recommended to update your dotfile by adding this
 function, see the file `~/.emacs.d/core/template/.spacemacs.template` to
-copy it. If you don\'t create such function then Spacemacs assumes you
+copy it. If you don't create such function then Spacemacs assumes you
 are using the default behavior described above.
 
 Binding keys
@@ -1038,7 +1038,7 @@ most basic map is the `global-map`. Setting a key binding in the
 `global-map` is achieved with the function `global-set-key`. Example to
 bind a key to the command `forward-char`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (global-set-key (kbd "C-]") 'forward-char)
 ```
 
@@ -1049,7 +1049,7 @@ is an example that creates the same binding as above but only in
 `insert state` (`define-key` is a built-in function. `Evil-mode` has its
 own functions for defining keys).
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (define-key evil-insert-state-map (kbd "C-]") 'forward-char)
 ```
 
@@ -1059,7 +1059,7 @@ Spacemacs bindings live. Binding keys behind the leader key is achieved
 with the functions `spacemacs/set-leader-keys` and
 `spacemacs/set-leader-keys-for-major-mode`, example:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (spacemacs/set-leader-keys "C-]" 'forward-char)
 (spacemacs/set-leader-keys-for-major-mode 'emacs-lisp-mode "C-]" 'forward-char)
 ```
@@ -1073,10 +1073,10 @@ mode is `emacs-lisp`.
 Finally, one should be aware of prefix keys. Essentially, all keymaps
 can be nested. Nested keymaps are used extensively in spacemacs, and in
 vanilla Emacs for that matter. For example, `SPC a` points to key
-bindings for \"applications\", like `SPC a c` for `calc-dispatch`.
-Nesting bindings is easy.
+bindings for "applications", like `SPC a c` for `calc-dispatch`. Nesting
+bindings is easy.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (spacemacs/declare-prefix "o" "custom")
 (spacemacs/set-leader-keys "oc" 'my-custom-command)
 ```
@@ -1088,13 +1088,13 @@ prefix a name that key-discovery tools can use (e.g., which-key).
 
 Example to create binding in major mode:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (spacemacs/declare-prefix-for-mode 'org-mode "mo" "custom")
 (spacemacs/set-leader-keys-for-major-mode 'org-mode "oi" 'org-id-get-create)
 ```
 
-This would add binding as `, oi` and `SPC moi` (note that the \"m\" in
-the prefix declaration must be include).
+This would add binding as `, oi` and `SPC moi` (note that the "m" in the
+prefix declaration must be include).
 
 There is much more to say about bindings keys, but these are the basics.
 Keys can be bound in your `~/.spacemacs` file or in individual layers.
@@ -1133,7 +1133,7 @@ It is possible to define your default themes in your `~/.spacemacs` with
 the variable `dotspacemacs-themes`. For instance, to specify
 `spacemacs-light`, `leuven` and `zenburn`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-themes '(spacemacs-light leuven zenburn))
 ```
 
@@ -1143,7 +1143,7 @@ So it is possible to fetch a package from a specific location. For
 example, you could fetch `zenburn` theme directly from the GitHub
 repository with the following declaration:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-themes
               '(spacemacs-light
                 leuven
@@ -1164,11 +1164,11 @@ You can cycle between the themes declared in `dotspacemacs-themes` with
 
 1.  Themes Transient State
 
-      Key binding        Description
-      ------------------ -----------------------------------------------
-      `n` or `<right>`   change to the next theme
-      `p` or `<left>`    change to the previous theme
-      `t` or `<up>`      open helm-themes to select an installed theme
+    | Key binding      | Description                                   |
+    |------------------|-----------------------------------------------|
+    | `n` or `<right>` | change to the next theme                      |
+    | `p` or `<left>`  | change to the previous theme                  |
+    | `t` or `<up>`    | open helm-themes to select an installed theme |
 
 ### Browsing themes
 
@@ -1178,7 +1178,7 @@ Merrell](https://twitter.com/robmerrell).
 
 ### Notes
 
--   You don\'t need to explicitly list in a layer the theme packages you
+-   You don't need to explicitly list in a layer the theme packages you
     are defining in `dotspacemacs-themes`, Spacemacs is smart enough to
     remove those packages from the list of orphans.
 -   Due to the inner working of themes in Emacs, switching theme during
@@ -1200,7 +1200,7 @@ recommended to install it on your system if you wish to use it.
 To change the default font set the variable `dotspacemacs-default-font`
 in your `.spacemacs` file. By default its value is:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-default-font '("Source Code Pro"
                                           :size 10.0
                                           :weight normal
@@ -1250,9 +1250,9 @@ any valid property of a
     the pixel size, or a floating-point number that specifies the point
     size.
 -   `:adstyle` Additional typographic style information for the font,
-    such as \'sans\'. The value should be a string or a symbol.
+    such as 'sans'. The value should be a string or a symbol.
 -   `:registry` The charset registry and encoding of the font, such as
-    \'iso8859-1\'. The value should be a string or a symbol.
+    'iso8859-1'. The value should be a string or a symbol.
 -   `:script` The script that the font must support (a symbol).
 
 GUI Toggles
@@ -1261,34 +1261,34 @@ GUI Toggles
 Some graphical UI indicators can be toggled on and off (toggles start
 with `t` and `T`):
 
-  Key binding   Description
-  ------------- -------------------------------------------------------------------
-  `SPC t 8`     highlight any character past the 80th column
-  `SPC t f`     display the fill column (by default the fill column is set to 80)
-  `SPC t h h`   toggle highlight of the current line
-  `SPC t h i`   toggle highlight indentation levels
-  `SPC t h c`   toggle highlight indentation current column
-  `SPC t h s`   toggle syntax highlighting
-  `SPC t i`     toggle indentation guide at point
-  `SPC t l`     toggle truncate lines
-  `SPC t L`     toggle visual lines
-  `SPC t n`     toggle line numbers
-  `SPC t n n`   toggle line numbers as configured in .spacemacs
-  `SPC t n a`   toggle absolute line numbers
-  `SPC t n r`   toggle relative line numbers
-  `SPC t n v`   toggle smooth scrolling
-  `SPC t V`     toggle visual line numbers
-  `SPC t z`     toggle 0/1 based column indexing
+| Key binding | Description                                                       |
+|-------------|-------------------------------------------------------------------|
+| `SPC t 8`   | highlight any character past the 80th column                      |
+| `SPC t f`   | display the fill column (by default the fill column is set to 80) |
+| `SPC t h h` | toggle highlight of the current line                              |
+| `SPC t h i` | toggle highlight indentation levels                               |
+| `SPC t h c` | toggle highlight indentation current column                       |
+| `SPC t h s` | toggle syntax highlighting                                        |
+| `SPC t i`   | toggle indentation guide at point                                 |
+| `SPC t l`   | toggle truncate lines                                             |
+| `SPC t L`   | toggle visual lines                                               |
+| `SPC t n`   | toggle line numbers                                               |
+| `SPC t n n` | toggle line numbers as configured in .spacemacs                   |
+| `SPC t n a` | toggle absolute line numbers                                      |
+| `SPC t n r` | toggle relative line numbers                                      |
+| `SPC t n v` | toggle smooth scrolling                                           |
+| `SPC t V`   | toggle visual line numbers                                        |
+| `SPC t z`   | toggle 0/1 based column indexing                                  |
 
-  Key binding   Description
-  ------------- ------------------------------------------------------------------
-  `SPC T ~`     display `~` in the fringe on empty lines
-  `SPC T F`     toggle frame fullscreen
-  `SPC T f`     toggle display of the fringe
-  `SPC T m`     toggle menu bar
-  `SPC T M`     toggle frame maximize
-  `SPC T t`     toggle tool bar
-  `SPC T T`     toggle frame transparency and enter transparency transient state
+| Key binding | Description                                                      |
+|-------------|------------------------------------------------------------------|
+| `SPC T ~`   | display `~` in the fringe on empty lines                         |
+| `SPC T F`   | toggle frame fullscreen                                          |
+| `SPC T f`   | toggle display of the fringe                                     |
+| `SPC T m`   | toggle menu bar                                                  |
+| `SPC T M`   | toggle frame maximize                                            |
+| `SPC T t`   | toggle tool bar                                                  |
+| `SPC T T`   | toggle frame transparency and enter transparency transient state |
 
 **Note**: These toggles are all available via the `spacemacs-help`
 interfaces (press `SPC h SPC` to display the `spacemacs-help` buffer).
@@ -1299,20 +1299,20 @@ Line numbers can be toggled on in all `prog-mode` and `text-mode`
 buffers by setting the `dotspacemacs-line-numbers` variable in your
 `~/.spacemacs` to `t`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-line-numbers t)
 ```
 
 If it is set to `relative`, line numbers are show in a relative way:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-line-numbers 'relative)
 ```
 
 If it is set to `visual`, line numbers are shown in a relative way, but
 wrapped lines will be treated as multiple lines:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-line-numbers 'visual)
 ```
 
@@ -1321,18 +1321,18 @@ control over line numbers activation.
 
 Available properties:
 
-  Property                Description
-  ----------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  `:disabled-for-modes`   list of major modes where line numbering is inhibited
-  `:enabled-for-modes`    disable for all major modes except those listed. Takes precedence over `:disabled-for-modes`
-  `:relative`             if non-nil, line numbers are relative to the position of the cursor
-  `:visual`               if non-nil, line numbers are relative to the position of the cursor, but lines are separated by visual state - a wrapped line, for example, will be treated as more than one line. When set to t, this option takes precedence over `:relative`
-  `:size-limit-kb`        size limit in kilobytes after which line numbers are not activated
+| Property              | Description                                                                                                                                                                                                                                     |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `:disabled-for-modes` | list of major modes where line numbering is inhibited                                                                                                                                                                                           |
+| `:enabled-for-modes`  | disable for all major modes except those listed. Takes precedence over `:disabled-for-modes`                                                                                                                                                    |
+| `:relative`           | if non-nil, line numbers are relative to the position of the cursor                                                                                                                                                                             |
+| `:visual`             | if non-nil, line numbers are relative to the position of the cursor, but lines are separated by visual state - a wrapped line, for example, will be treated as more than one line. When set to t, this option takes precedence over `:relative` |
+| `:size-limit-kb`      | size limit in kilobytes after which line numbers are not activated                                                                                                                                                                              |
 
 Note that if `:enabled-for-modes` is `nil` or not specified, then the
 default is to enable line numbers in any `prog-mode` and `text-mode`
-that wasn\'t explicitly disabled via `:disabled-for-modes`. To enable
-line numbers in a major mode that doesn\'t derive from `prog-mode` or
+that wasn't explicitly disabled via `:disabled-for-modes`. To enable
+line numbers in a major mode that doesn't derive from `prog-mode` or
 `text-mode`, you must specify it directly in `:enabled-for-modes`. To
 enable line numbers even in non-prog-mode and non-text-mode buffers, set
 `:enabled-for-modes` to `all`.
@@ -1342,7 +1342,7 @@ Examples:
 Disable **line numbers** in dired-mode, doc-view-mode, markdown-mode,
 org-mode, pdf-view-mode, text-mode as well as buffers over 1Mb:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-line-numbers '(:relative nil
                                            :disabled-for-modes dired-mode
                                                                doc-view-mode
@@ -1356,7 +1356,7 @@ org-mode, pdf-view-mode, text-mode as well as buffers over 1Mb:
 Enable **relative line numbers** only in c-mode and c++ mode with a size
 limit of `dotspacemacs-large-file-size`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-line-numbers '(:relative t
                                            :enabled-for-modes c-mode
                                                               c++-mode
@@ -1365,7 +1365,7 @@ limit of `dotspacemacs-large-file-size`:
 
 Enable **line numbers** everywhere, except for buffers over 1Mb:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-line-numbers '(:relative nil
                                            :size-limit-kb 1000))
 ```
@@ -1373,7 +1373,7 @@ Enable **line numbers** everywhere, except for buffers over 1Mb:
 Enable **line numbers** only in programming modes, except for c-mode and
 c++ mode:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-line-numbers '(:relative nil
                                            :enabled-for-modes prog-mode
                                            :disabled-for-modes c-mode c++-mode
@@ -1383,7 +1383,7 @@ c++ mode:
 Enable **line numbers** everywhere, even in non-prog-mode and
 non-text-mode buffers:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-line-numbers '(:enabled-for-modes 'all))
 ```
 
@@ -1420,35 +1420,35 @@ Vim powerline.
 For `spacemacs`, `all-the-icons` and `custom` themes you can specify the
 type of separator you want with the property `:separator`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq dotspacemacs-mode-line-theme '(all-the-icons :separator slant))
 ```
 
 Supported separators and preview:
 
-  Separator      Spacemacs   All-the-icons   Screenshot
-  -------------- ----------- --------------- -----------------------------------
-  `alternate`    X                           ![](img/powerline-alternate.png)
-  `arrow`        X           X               ![](img/powerline-arrow.png)
-  `arrow-fade`   X                           ![](img/powerline-arrow-fade.png)
-  `bar`          X                           ![](img/powerline-bar.png)
-  `box`          X                           ![](img/powerline-box.png)
-  `brace`        X                           ![](img/powerline-brace.png)
-  `butt`         X                           ![](img/powerline-butt.png)
-  `chamfer`      X                           ![](img/powerline-chamfer.png)
-  `contour`      X                           ![](img/powerline-contour.png)
-  `cup`                      X               
-  `curve`        X                           ![](img/powerline-curve.png)
-  `rounded`      X                           ![](img/powerline-rounded.png)
-  `roundstub`    X                           ![](img/powerline-roundstub.png)
-  `slant`        X           X               ![](img/powerline-slant.png)
-  `wave`         X           X               ![](img/powerline-wave.png)
-  `zigzag`       X                           ![](img/powerline-zigzag.png)
-  `nil`          X                           ![](img/powerline-nil.png)
-  `none`                     X               
+| Separator    | Spacemacs | All-the-icons | Screenshot                        |
+|--------------|-----------|---------------|-----------------------------------|
+| `alternate`  | X         |               | ![](img/powerline-alternate.png)  |
+| `arrow`      | X         | X             | ![](img/powerline-arrow.png)      |
+| `arrow-fade` | X         |               | ![](img/powerline-arrow-fade.png) |
+| `bar`        | X         |               | ![](img/powerline-bar.png)        |
+| `box`        | X         |               | ![](img/powerline-box.png)        |
+| `brace`      | X         |               | ![](img/powerline-brace.png)      |
+| `butt`       | X         |               | ![](img/powerline-butt.png)       |
+| `chamfer`    | X         |               | ![](img/powerline-chamfer.png)    |
+| `contour`    | X         |               | ![](img/powerline-contour.png)    |
+| `cup`        |           | X             |                                   |
+| `curve`      | X         |               | ![](img/powerline-curve.png)      |
+| `rounded`    | X         |               | ![](img/powerline-rounded.png)    |
+| `roundstub`  | X         |               | ![](img/powerline-roundstub.png)  |
+| `slant`      | X         | X             | ![](img/powerline-slant.png)      |
+| `wave`       | X         | X             | ![](img/powerline-wave.png)       |
+| `zigzag`     | X         |               | ![](img/powerline-zigzag.png)     |
+| `nil`        | X         |               | ![](img/powerline-nil.png)        |
+| `none`       |           | X             |                                   |
 
 A last special separator is supported, it is `utf-8` which uses actual
-font glyphs so it can be rendered in a terminal. You\'ll need a font
+font glyphs so it can be rendered in a terminal. You'll need a font
 patched for the Vim powerline to be able to use it. The default font
 used by Spacemacs `Source
 Code Pro` already contains the glyphs.
@@ -1464,11 +1464,11 @@ screenshot.
 
 Example:
 
-``` {.elisp}
+``` elisp
 (setq dotspacemacs-mode-line-theme '(all-the-icons :separator-scale 1.5))
 ```
 
-Note that this setting won\'t work correctly when the separator is
+Note that this setting won't work correctly when the separator is
 `utf-8`, if you use this separator then it is recommended to set
 `:separator-scale` to `1.0`.
 
@@ -1488,33 +1488,33 @@ capabilities among others:
 
 Reminder of the color codes for the states:
 
-  Evil State           Color
-  -------------------- -----------
-  Normal               Orange
-  Insert               Green
-  Visual               Grey
-  Emacs                Blue
-  Motion               Purple
-  Replace              Chocolate
-  Lisp                 Pink
-  Iedit/Iedit-Insert   Red
+| Evil State         | Color     |
+|--------------------|-----------|
+| Normal             | Orange    |
+| Insert             | Green     |
+| Visual             | Grey      |
+| Emacs              | Blue      |
+| Motion             | Purple    |
+| Replace            | Chocolate |
+| Lisp               | Pink      |
+| Iedit/Iedit-Insert | Red       |
 
 Some elements can be dynamically toggled:
 
-  Key binding   Description
-  ------------- -----------------------------------------------------------------
-  `SPC t m b`   toggle the battery status
-  `SPC t m c`   toggle the `org` task clock (available in `org` layer)
-  `SPC t m m`   toggle the minor mode lighters
-  `SPC t m M`   toggle the major mode
-  `SPC t m n`   toggle the cat! (if `colors` layer is declared in your dotfile)
-  `SPC t m p`   toggle the point character position
-  `SPC t m r`   toggle responsivness of the mode-line
-  `SPC t m s`   toggle system monitor (displayed in the minibuffer)
-  `SPC t m t`   toggle the time
-  `SPC t m T`   toggle the mode line itself
-  `SPC t m v`   toggle the version control info
-  `SPC t m V`   toggle the new version lighter
+| Key binding | Description                                                     |
+|-------------|-----------------------------------------------------------------|
+| `SPC t m b` | toggle the battery status                                       |
+| `SPC t m c` | toggle the `org` task clock (available in `org` layer)          |
+| `SPC t m m` | toggle the minor mode lighters                                  |
+| `SPC t m M` | toggle the major mode                                           |
+| `SPC t m n` | toggle the cat! (if `colors` layer is declared in your dotfile) |
+| `SPC t m p` | toggle the point character position                             |
+| `SPC t m r` | toggle responsivness of the mode-line                           |
+| `SPC t m s` | toggle system monitor (displayed in the minibuffer)             |
+| `SPC t m t` | toggle the time                                                 |
+| `SPC t m T` | toggle the mode line itself                                     |
+| `SPC t m v` | toggle the version control info                                 |
+| `SPC t m V` | toggle the new version lighter                                  |
 
 1.  Flycheck integration
 
@@ -1541,11 +1541,11 @@ Some elements can be dynamically toggled:
 
     A color code is used for the battery status:
 
-      Battery State   Color
-      --------------- --------
-      Charging        Green
-      Discharging     Orange
-      Critical        Red
+    | Battery State | Color  |
+    |---------------|--------|
+    | Charging      | Green  |
+    | Discharging   | Orange |
+    | Critical      | Red    |
 
     **Note**: These colors may vary depending on your theme.
 
@@ -1562,11 +1562,11 @@ You can create your own Spaceline theme by setting the variable
 `spaceline-custom-theme` in your `dotspacemacs/user-init` function of
 your dotfile. This function must accept a variadic number of arguments
 which are additional segments added by Spacemacs (like a segment to
-notify about available updates etc...).
+notify about available updates etc…).
 
 Example:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun spaceline-custom-theme (&rest additional-segments)
     "My custom spaceline theme."
     (spaceline-compile
@@ -1601,38 +1601,38 @@ Additionally all globally available toggles have a circled unicode
 symbols like `ⓟ`. Toggles specific to a major mode under the `SPC m T`
 prefix have plain squared symbols like `🅿`.
 
-  Key binding     Unicode   ASCII   Mode
-  --------------- --------- ------- -----------------------------------------------------------------------------------------------------------------------------------------------
-  `SPC t -`       `⊝`       \-      [centered-cursor](https://github.com/emacsmirror/centered-cursor-mode) mode
-  `SPC t 8`       `⑧`       8       toggle highlight of characters for long lines
-  `SPC t C-8`     `⑧`       8       global toggle highlight of characters for long lines
-  `SPC t C--`     `⊝`       \-      global centered cursor
-  `SPC t a`       `ⓐ`       a       auto-completion
-  `SPC t c`       `ⓒ`       c       camel case motion with subword mode
-  `none`          `ⓔ`       e       [evil-org](https://github.com/Somelauw/evil-org-mode) mode
-  `SPC t E e`     `Ⓔe`      Ee      emacs editing style (holy mode)
-  `SPC t E h`     `Ⓔh`      Eh      hybrid editing style (hybrid mode)
-  `SPC t f`       `ⓕ`       f       fill-column-indicator mode
-  `SPC t F`       `Ⓕ`       F       auto-fill mode
-  `SPC t G`       `Ⓖ`       G       [ggtags](http://spacemacs.org/layers/+tags/gtags/README.html) mode
-  `SPC t g`       `ⓖ`       g       [golden-ratio](https://github.com/roman/golden-ratio.el) mode
-  `SPC t h i`     `ⓗi`      hi      toggle highlight indentation levels
-  `SPC t h c`     `ⓗc`      hc      toggle highlight indentation current column
-  `SPC t i`       `ⓘ`       i       indentation guide
-  `SPC t C-i`     `ⓘ`       i       global indentation guide
-  `SPC t I`       `Ⓘ`       I       aggressive indent mode
-  `SPC t K`       `Ⓚ`       K       which-key mode
-  `SPC t L`       `Ⓛ`       L       visual line navigation
-  `SPC t C-S-l`   `Ⓛ`       L       visual line navigation globally
-  `SPC t p`       `ⓟ`       p       [smartparens](https://github.com/Fuco1/smartparens) mode
-  `SPC t C-p`     `ⓟ`       p       global smartparens
-  `SPC t s`       `ⓢ`       s       syntax checking (flycheck)
-  `SPC t S`       `Ⓢ`       S       enabled in [spell checking layer](https://github.com/syl20bnr/spacemacs/blob/develop/layers/%2Bcheckers/spell-checking/README.org) (flyspell)
-  `SPC t w`       `ⓦ`       w       whitespace mode
-  `SPC t C-w`     `ⓦ`       w       global whitespace
-  `SPC t W`       `Ⓦ`       W       automatic whitespace cleanup (see `dotspacemacs-whitespace-cleanup`)
-  `SPC t C-W`     `Ⓦ`       W       automatic whitespace cleanup globally
-  `SPC t y`       `ⓨ`       y       [yasnippet](https://github.com/capitaomorte/yasnippet) mode
+| Key binding   | Unicode | ASCII | Mode                                                                                                                                          |
+|---------------|---------|-------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| `SPC t -`     | `⊝`     | \-    | [centered-cursor](https://github.com/emacsmirror/centered-cursor-mode) mode                                                                   |
+| `SPC t 8`     | `⑧`     | 8     | toggle highlight of characters for long lines                                                                                                 |
+| `SPC t C-8`   | `⑧`     | 8     | global toggle highlight of characters for long lines                                                                                          |
+| `SPC t C--`   | `⊝`     | \-    | global centered cursor                                                                                                                        |
+| `SPC t a`     | `ⓐ`     | a     | auto-completion                                                                                                                               |
+| `SPC t c`     | `ⓒ`     | c     | camel case motion with subword mode                                                                                                           |
+| `none`        | `ⓔ`     | e     | [evil-org](https://github.com/Somelauw/evil-org-mode) mode                                                                                    |
+| `SPC t E e`   | `Ⓔe`    | Ee    | emacs editing style (holy mode)                                                                                                               |
+| `SPC t E h`   | `Ⓔh`    | Eh    | hybrid editing style (hybrid mode)                                                                                                            |
+| `SPC t f`     | `ⓕ`     | f     | fill-column-indicator mode                                                                                                                    |
+| `SPC t F`     | `Ⓕ`     | F     | auto-fill mode                                                                                                                                |
+| `SPC t G`     | `Ⓖ`     | G     | [ggtags](http://spacemacs.org/layers/+tags/gtags/README.html) mode                                                                            |
+| `SPC t g`     | `ⓖ`     | g     | [golden-ratio](https://github.com/roman/golden-ratio.el) mode                                                                                 |
+| `SPC t h i`   | `ⓗi`    | hi    | toggle highlight indentation levels                                                                                                           |
+| `SPC t h c`   | `ⓗc`    | hc    | toggle highlight indentation current column                                                                                                   |
+| `SPC t i`     | `ⓘ`     | i     | indentation guide                                                                                                                             |
+| `SPC t C-i`   | `ⓘ`     | i     | global indentation guide                                                                                                                      |
+| `SPC t I`     | `Ⓘ`     | I     | aggressive indent mode                                                                                                                        |
+| `SPC t K`     | `Ⓚ`     | K     | which-key mode                                                                                                                                |
+| `SPC t L`     | `Ⓛ`     | L     | visual line navigation                                                                                                                        |
+| `SPC t C-S-l` | `Ⓛ`     | L     | visual line navigation globally                                                                                                               |
+| `SPC t p`     | `ⓟ`     | p     | [smartparens](https://github.com/Fuco1/smartparens) mode                                                                                      |
+| `SPC t C-p`   | `ⓟ`     | p     | global smartparens                                                                                                                            |
+| `SPC t s`     | `ⓢ`     | s     | syntax checking (flycheck)                                                                                                                    |
+| `SPC t S`     | `Ⓢ`     | S     | enabled in [spell checking layer](https://github.com/syl20bnr/spacemacs/blob/develop/layers/%2Bcheckers/spell-checking/README.org) (flyspell) |
+| `SPC t w`     | `ⓦ`     | w     | whitespace mode                                                                                                                               |
+| `SPC t C-w`   | `ⓦ`     | w     | global whitespace                                                                                                                             |
+| `SPC t W`     | `Ⓦ`     | W     | automatic whitespace cleanup (see `dotspacemacs-whitespace-cleanup`)                                                                          |
+| `SPC t C-W`   | `Ⓦ`     | W     | automatic whitespace cleanup globally                                                                                                         |
+| `SPC t y`     | `ⓨ`     | y     | [yasnippet](https://github.com/capitaomorte/yasnippet) mode                                                                                   |
 
 Frame
 -----
@@ -1646,23 +1646,23 @@ name of current project etc) by setting
 
 Following format short codes are available:
 
-  Code   Description
-  ------ ------------------------------------------------------------------------------
-  `%a`   the `abbreviated-file-name`, or `buffer-name`
-  `%t`   `projectile-project-name`
-  `%I`   `invocation-name`
-  `%S`   `system-name`
-  `%U`   contents of \$USER
-  `%b`   buffer name
-  `%f`   visited file name
-  `%F`   frame name
-  `%s`   process status
-  `%p`   percent of buffer above top of window, or Top, Bot or All
-  `%P`   percent of buffer above bottom of window, perhaps plus Top, or Bottom or All
-  `%m`   mode name
-  `%n`   Narrow if appropriate
-  `%z`   mnemonics of buffer, terminal, and keyboard coding systems
-  `%Z`   like %z, but including the end-of-line format\"
+| Code | Description                                                                  |
+|------|------------------------------------------------------------------------------|
+| `%a` | the `abbreviated-file-name`, or `buffer-name`                                |
+| `%t` | `projectile-project-name`                                                    |
+| `%I` | `invocation-name`                                                            |
+| `%S` | `system-name`                                                                |
+| `%U` | contents of $USER                                                            |
+| `%b` | buffer name                                                                  |
+| `%f` | visited file name                                                            |
+| `%F` | frame name                                                                   |
+| `%s` | process status                                                               |
+| `%p` | percent of buffer above top of window, or Top, Bot or All                    |
+| `%P` | percent of buffer above bottom of window, perhaps plus Top, or Bottom or All |
+| `%m` | mode name                                                                    |
+| `%n` | Narrow if appropriate                                                        |
+| `%z` | mnemonics of buffer, terminal, and keyboard coding systems                   |
+| `%Z` | like %z, but including the end-of-line format"                               |
 
 1.  Iconified (tabified) title
 
@@ -1682,12 +1682,12 @@ This also opens the Frame Transparency Transient State.
 
 In the transient state:
 
-  Key binding     Description
-  --------------- --------------------------------
-  `+`, `=`, `k`   increase transparency
-  `-`, `_`, `j`   decrease transparency
-  `T`             toggle transparency on and off
-  `q`             quit transient state
+| Key binding   | Description                    |
+|---------------|--------------------------------|
+| `+`, `=`, `k` | increase transparency          |
+| `-`, `_`, `j` | decrease transparency          |
+| `T`           | toggle transparency on and off |
+| `q`           | quit transient state           |
 
 Layouts and workspaces
 ======================
@@ -1717,7 +1717,7 @@ The `default` layout (the layout created at the startup of Emacs) is not
 displayed in the mode-line but it is possible to display it by setting
 the variable `dotspacemacs-display-default-layout` to `t`.
 
-Its name is \"default\" by default but it can be changed by setting the
+Its name is "default" by default but it can be changed by setting the
 variable `dotspacemacs-default-layout-name`.
 
 The `default` layout is special because it has a global scope which
@@ -1740,7 +1740,7 @@ By convention the name of a custom layout should start with `@`.
 
 Example of custom layout definition for `ERC` buffers:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (spacemacs|define-custom-layout "@ERC"
   :binding "E"
   :body
@@ -1760,14 +1760,14 @@ buffer will be part of the custom layout.
 
 Some custom layouts that ship with Spacemacs:
 
-  Name         Key binding   Description
-  ------------ ------------- ---------------------------------------------------------------------------------
-  @Spacemacs   `e`           Custom perspective containing all buffers of `~/.emacs.d`
-  @Mu4e        `m`           Custom perspective containing all mu4e buffers (needs the mu4e layer enabled)
-  @ERC         `E`           Custom perspective containing all ERC buffers (needs the erc layer enabled)
-  @RCIRC       `i`           Custom perspective containing all RCIRC buffers (needs the rcirc layer enabled)
-  @Slack       `s`           Custom perspective containing all Slack buffers (needs the slack layer enabled)
-  @Org         `o`           Custom perspective containing all the `org-agenda` buffers
+| Name       | Key binding | Description                                                                     |
+|------------|-------------|---------------------------------------------------------------------------------|
+| @Spacemacs | `e`         | Custom perspective containing all buffers of `~/.emacs.d`                       |
+| @Mu4e      | `m`         | Custom perspective containing all mu4e buffers (needs the mu4e layer enabled)   |
+| @ERC       | `E`         | Custom perspective containing all ERC buffers (needs the erc layer enabled)     |
+| @RCIRC     | `i`         | Custom perspective containing all RCIRC buffers (needs the rcirc layer enabled) |
+| @Slack     | `s`         | Custom perspective containing all Slack buffers (needs the slack layer enabled) |
+| @Org       | `o`         | Custom perspective containing all the `org-agenda` buffers                      |
 
 ### Save/Load layouts into a file
 
@@ -1791,37 +1791,37 @@ will activate the previously selected layout.
 
 Press `?` to toggle the full help.
 
-  Key binding           Description
-  --------------------- ------------------------------------------------------------
-  `SPC l`               initiate transient state
-  `?`                   toggle the documentation
-  `[0..9]`              switch to nth layout
-  `[C-0..C-9]`          switch to nth layout and keep the transient state active
-  `<tab>`               switch to the latest layout
-  `a`                   add a buffer to the current layout
-  `A`                   add all the buffers from another layout in the current one
-  `b`                   select a buffer in the current layout
-  `d`                   delete the current layout and keep its buffers
-  `D`                   delete the other layouts and keep their buffers
-  `h`                   go to default layout
-  `l`                   select/create a layout
-  `L`                   load layouts from file
-  `n` or `C-l`          next layout in list
-  `N` or `p` or `C-h`   previous layout in list
-  `o`                   open a custom layout
-  `r`                   remove current buffer from layout
-  `R`                   rename current layout
-  `s`                   save layouts
-  `t`                   display a buffer without adding it to the current layout
-  `w`                   workspaces transient state (needs eyebrowse layer enabled)
-  `x`                   kill current layout with its buffers
-  `X`                   kill other layouts with their buffers
+| Key binding         | Description                                                |
+|---------------------|------------------------------------------------------------|
+| `SPC l`             | initiate transient state                                   |
+| `?`                 | toggle the documentation                                   |
+| `[0..9]`            | switch to nth layout                                       |
+| `[C-0..C-9]`        | switch to nth layout and keep the transient state active   |
+| `<tab>`             | switch to the latest layout                                |
+| `a`                 | add a buffer to the current layout                         |
+| `A`                 | add all the buffers from another layout in the current one |
+| `b`                 | select a buffer in the current layout                      |
+| `d`                 | delete the current layout and keep its buffers             |
+| `D`                 | delete the other layouts and keep their buffers            |
+| `h`                 | go to default layout                                       |
+| `l`                 | select/create a layout                                     |
+| `L`                 | load layouts from file                                     |
+| `n` or `C-l`        | next layout in list                                        |
+| `N` or `p` or `C-h` | previous layout in list                                    |
+| `o`                 | open a custom layout                                       |
+| `r`                 | remove current buffer from layout                          |
+| `R`                 | rename current layout                                      |
+| `s`                 | save layouts                                               |
+| `t`                 | display a buffer without adding it to the current layout   |
+| `w`                 | workspaces transient state (needs eyebrowse layer enabled) |
+| `x`                 | kill current layout with its buffers                       |
+| `X`                 | kill other layouts with their buffers                      |
 
 ### Behavior of SPC TAB with layouts
 
 By default `SPC TAB` which switches to last opened buffer is restricted
 to the current layout. If there is only one opened buffer for a given
-layout then `SPC TAB` won\'t do anything and the following message is
+layout then `SPC TAB` won't do anything and the following message is
 displayed in the minibuffer:
 
 > Last buffer not found.
@@ -1830,13 +1830,13 @@ To allow `SPC TAB` to switch to the last opened buffer from another
 layout set this variable `spacemacs-layouts-restrict-spc-tab` to `nil`.
 For instance in your used layer list with layer variables:
 
-``` {.example}
+``` example
 (spacemacs-layouts :variables spacemacs-layouts-restrict-spc-tab t)
 ```
 
 ### Restrict a given function to the current layout
 
-You can make any function \"layout aware\" by adding it to the list
+You can make any function "layout aware" by adding it to the list
 `spacemacs-layouts-restricted-functions`. It is not possible to change
 this variable when Emacs is running. You have to define it using layer
 variables. If you change this variable then Emacs must be restarted for
@@ -1844,7 +1844,7 @@ the change to take effect.
 
 Default value for this variable is:
 
-``` {.example}
+``` example
 '(spacemacs/window-split-double-columns
   spacemacs/window-split-triple-columns
   spacemacs/window-split-grid)
@@ -1853,7 +1853,7 @@ Default value for this variable is:
 If you want to add the function `my-func` to this list you need to
 redefine the complete list using layer variables:
 
-``` {.example}
+``` example
 (spacemacs-layouts :variables
                    spacemacs-layouts-restricted-functions
                    '(spacemacs/window-split-double-columns
@@ -1869,7 +1869,7 @@ Workspaces are sub-layouts, they allow to define multiple layouts into a
 given layout, those layouts share the same buffers as the parent layout.
 
 The currently active workspace number is displayed before the window
-number, for instance \"➊\|➍\" or \"1\|4\" means the fourth window of the
+number, for instance "➊\|➍" or "1\|4" means the fourth window of the
 first workspace.
 
 Any new layout comes with a default workspace which is the workspace 1.
@@ -1892,27 +1892,27 @@ possible to just preview a workspace with `Ctrl-<number>`. Pressing
 
 Press `?` to toggle the full help.
 
-  Key binding         Description
-  ------------------- -------------------------------------------------------------
-  `SPC l w`           initiate transient state
-  `?`                 toggle the documentation
-  `[0..9]`            switch to nth workspace
-  `[C-0..C-9]`        switch to nth workspace and keep the transient state active
-  `TAB`               switch to last active workspace
-  `d`                 close current workspace
-  `n` or `l`          switch to next workspace
-  `N` or `p` or `h`   switch to previous workspace
-  `R`                 set a tag to the current workspace
-  `w`                 switched to tagged workspace
+| Key binding       | Description                                                 |
+|-------------------|-------------------------------------------------------------|
+| `SPC l w`         | initiate transient state                                    |
+| `?`               | toggle the documentation                                    |
+| `[0..9]`          | switch to nth workspace                                     |
+| `[C-0..C-9]`      | switch to nth workspace and keep the transient state active |
+| `TAB`             | switch to last active workspace                             |
+| `d`               | close current workspace                                     |
+| `n` or `l`        | switch to next workspace                                    |
+| `N` or `p` or `h` | switch to previous workspace                                |
+| `R`               | set a tag to the current workspace                          |
+| `w`               | switched to tagged workspace                                |
 
 There are also some handy globally available key bindings related to
 workspaces:
 
-  Key binding   Description
-  ------------- --------------------------------------
-  `gt`          go to next workspace
-  `gT`          go to previous workspace
-  `SPC b W`     go to workspace and window by buffer
+| Key binding | Description                          |
+|-------------|--------------------------------------|
+| `gt`        | go to next workspace                 |
+| `gT`        | go to previous workspace             |
+| `SPC b W`   | go to workspace and window by buffer |
 
 Commands
 ========
@@ -1933,7 +1933,7 @@ easily switch between `insert state` and `normal state` by quickly
 pressing the `fd` keys.
 
 The choice of `fd` was made to be able to use the same sequence to
-escape from \"everything\" in Emacs:
+escape from "everything" in Emacs:
 
 -   escape from all stock evil states to normal state
 -   escape from evil-lisp-state to normal state
@@ -1952,14 +1952,14 @@ escape from \"everything\" in Emacs:
 -   hide neotree buffer
 
 If you find yourself in a buffer where the Spacemacs (`SPC`) or Vim
-keybindings don\'t work you can use this to get back to `normal state`
+keybindings don't work you can use this to get back to `normal state`
 (for example in `SPC
 SPC customize` press `fd` to make `SPC b b` work again).
 
 This sequence can be customized in your `~/.spacemacs`. Example to set
 it to `jj`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dotspacemacs/user-config ()
   (setq-default evil-escape-key-sequence "jj"))
 ```
@@ -1971,10 +1971,10 @@ state` to press quickly `jj` and inadvertently escape to `normal state`.
 
 ### Executing Vim and Emacs ex/M-x commands
 
-  Command            Key binding
-  ------------------ -------------
-  Vim (ex-command)   `:`
-  Emacs (M-x)        `SPC SPC`
+| Command          | Key binding |
+|------------------|-------------|
+| Vim (ex-command) | `:`         |
+| Emacs (M-x)      | `SPC SPC`   |
 
 The emacs command key `SPC` (executed after the leader key) can be
 changed with the variable `dotspacemacs-emacs-command-key` of your
@@ -1997,7 +1997,7 @@ It is possible to change the major mode leader key by defining the
 variable `dotspacemacs-major-mode-leader-key` in your `~/.spacemacs`.
 For example to setup the key on tabulation:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-major-mode-leader-key "<tab>")
 ```
 
@@ -2005,16 +2005,16 @@ For example to setup the key on tabulation:
 
 Additional text objects are defined in Spacemacs:
 
-  Object    Description
-  --------- ----------------------------
-  `a`       an argument
-  `g`       the entire buffer
-  `l`       a line
-  `$`       text between `$`
-  `*`       text between `*`
-  `8`       text between `/*` and `*/`
-  `%`       text between `%`
-  `\vert`   text between `\vert`
+| Object  | Description                |
+|---------|----------------------------|
+| `a`     | an argument                |
+| `g`     | the entire buffer          |
+| `l`     | a line                     |
+| `$`     | text between `$`           |
+| `*`     | text between `*`           |
+| `8`     | text between `/*` and `*/` |
+| `%`     | text between `%`           |
+| `\vert` | text between `\vert`       |
 
 Reserved prefix command for user
 --------------------------------
@@ -2040,7 +2040,7 @@ you choose Ivy.)
 
 These completion systems are the central control towers of Spacemacs,
 they are used to manage buffers, projects, search results, configuration
-layers, toggles and more...
+layers, toggles and more…
 
 Mastering your choice of completion system will make you a Spacemacs
 power user.
@@ -2080,12 +2080,12 @@ Discovering
     some specific keymaps, dedicated key bindings are also available
     behind the `SPC t k` prefix:
 
-      Key binding   Description
-      ------------- ---------------------------------------------------------------------
-      `SPC t k k`   toggle which-key persistent state
-      `SPC t k m`   show persistent major-mode keymap. Toggle off with `SPC t k k`
-      `SPC t k M`   show persistent full-major-mode keymap. Toggle off with `SPC t k k`
-      `SPC t k t`   show persistent top-level keymap. Toggle off with `SPC t k k`
+    | Key binding | Description                                                         |
+    |-------------|---------------------------------------------------------------------|
+    | `SPC t k k` | toggle which-key persistent state                                   |
+    | `SPC t k m` | show persistent major-mode keymap. Toggle off with `SPC t k k`      |
+    | `SPC t k M` | show persistent full-major-mode keymap. Toggle off with `SPC t k k` |
+    | `SPC t k t` | show persistent top-level keymap. Toggle off with `SPC t k k`       |
 
     The key bindings just set the `which-key-persistent-popup` to `t`,
     hence the which-key buffer will keep updating. Therefore the latter
@@ -2109,68 +2109,68 @@ Discovering
 information about functions, variables, modes etc. These commands are
 bound thusly:
 
-  Key binding   Description
-  ------------- -----------------------------------------------------------
-  `SPC h d a`   describe current expression under point
-  `SPC h d b`   describe bindings
-  `SPC h d c`   describe current character under point
-  `SPC h d f`   describe a function
-  `SPC h d F`   describe a face
-  `SPC h d k`   describe a key
-  `SPC h d K`   describe a keymap
-  `SPC h d l`   copy last pressed keys that you can paste in gitter chat
-  `SPC h d m`   describe current modes
-  `SPC h d p`   describe a package (Emacs built-in function)
-  `SPC h d P`   describe a package (Spacemacs layer information)
-  `SPC h d s`   copy system information that you can paste in gitter chat
-  `SPC h d t`   describe text properties
-  `SPC h d T`   describe a theme
-  `SPC h d v`   describe a variable
-  `SPC h d x`   describe an evil ex-command
+| Key binding | Description                                               |
+|-------------|-----------------------------------------------------------|
+| `SPC h d a` | describe current expression under point                   |
+| `SPC h d b` | describe bindings                                         |
+| `SPC h d c` | describe current character under point                    |
+| `SPC h d f` | describe a function                                       |
+| `SPC h d F` | describe a face                                           |
+| `SPC h d k` | describe a key                                            |
+| `SPC h d K` | describe a keymap                                         |
+| `SPC h d l` | copy last pressed keys that you can paste in gitter chat  |
+| `SPC h d m` | describe current modes                                    |
+| `SPC h d p` | describe a package (Emacs built-in function)              |
+| `SPC h d P` | describe a package (Spacemacs layer information)          |
+| `SPC h d s` | copy system information that you can paste in gitter chat |
+| `SPC h d t` | describe text properties                                  |
+| `SPC h d T` | describe a theme                                          |
+| `SPC h d v` | describe a variable                                       |
+| `SPC h d x` | describe an evil ex-command                               |
 
 Other help key bindings:
 
-  Key binding   Description
-  ------------- -------------------------------------------------------
-  `SPC h SPC`   discover Spacemacs documentation, layers and packages
-  `SPC h .`     search dotfile variables
-  `SPC h f`     discover the `FAQ`
-  `SPC h i`     search in info pages with the symbol at point
-  `SPC h k`     show top-level bindings with `which-key`
-  `SPC h l`     search layers
-  `SPC h m`     search available man pages
-  `SPC h n`     browse emacs news
-  `SPC h p`     search packages
-  `SPC h r`     search documentation files
-  `SPC h t`     search toggles
+| Key binding | Description                                           |
+|-------------|-------------------------------------------------------|
+| `SPC h SPC` | discover Spacemacs documentation, layers and packages |
+| `SPC h .`   | search dotfile variables                              |
+| `SPC h f`   | discover the `FAQ`                                    |
+| `SPC h i`   | search in info pages with the symbol at point         |
+| `SPC h k`   | show top-level bindings with `which-key`              |
+| `SPC h l`   | search layers                                         |
+| `SPC h m`   | search available man pages                            |
+| `SPC h n`   | browse emacs news                                     |
+| `SPC h p`   | search packages                                       |
+| `SPC h r`   | search documentation files                            |
+| `SPC h t`   | search toggles                                        |
 
 The `Profiler` is a tool that helps you identify why your editor is
 running slowly or consumes a lot of memory. Here are key bindings relate
 to it:
 
-  Key binding   Description
-  ------------- -----------------------------
-  `SPC h P k`   stop the profiler
-  `SPC h P r`   display the profiler report
-  `SPC h P s`   start the profiler
-  `SPC h P w`   write the report to file
+| Key binding | Description                 |
+|-------------|-----------------------------|
+| `SPC h P k` | stop the profiler           |
+| `SPC h P r` | display the profiler report |
+| `SPC h P s` | start the profiler          |
+| `SPC h P w` | write the report to file    |
 
 Navigation key bindings in `help-mode`:
 
-  Key binding    Description
-  -------------- -----------------------------------------------------
-  `J`            scroll up (or next node)
-  `K`            scroll down (or next node)
-  `g b` or `[`   go back (same as clicking on `[back]` button)
-  `g f` or `]`   go forward (same as clicking on `[forward]` button)
-  `g h`          go to help for symbol under point
+| Key binding  | Description                                         |
+|--------------|-----------------------------------------------------|
+| `J`          | scroll up (or next node)                            |
+| `K`          | scroll down (or next node)                          |
+| `g b` or `[` | go back (same as clicking on `[back]` button)       |
+| `g f` or `]` | go forward (same as clicking on `[forward]` button) |
+| `g h`        | go to help for symbol under point                   |
 
 Reporting an issue:
 
-  Key binding       Description
-  ----------------- ------------------------------------------------------------------------------------------
-  `SPC h I`         Open Spacemacs GitHub issue page with pre-filled information
-  `SPC u SPC h I`   Open Spacemacs GitHub issue page with pre-filled information - include last pressed keys
+| Key binding     | Description                                                                              |
+|-----------------|------------------------------------------------------------------------------------------|
+| `SPC h I`       | Open Spacemacs GitHub issue page with pre-filled information                             |
+| `SPC u SPC h I` | Open Spacemacs GitHub issue page with pre-filled information - include last pressed keys |
 
 **Note**: To be able to report an issue you need to be logged into
 GitHub
@@ -2192,7 +2192,7 @@ The following actions on the selected candidate are available:
 
     `spacemacs-help` also lists all the packages available in Spacemacs.
     The entry format is `(layer) packages`. If you type `flycheck`
-    you\'ll be able to see all the layers where `flycheck` is used.
+    you'll be able to see all the layers where `flycheck` is used.
 
     The following actions are available on selected package:
 
@@ -2211,37 +2211,37 @@ The following actions on the selected candidate are available:
     filters and GitHub information like the number of stars. Optionally
     you can also star packages directly in the buffer.
 
-    **Important Note 1**: Installing a new package from `Paradox` won\'t
+    **Important Note 1**: Installing a new package from `Paradox` won't
     make it persistent. To install a package persistently you have to
     add it explicitly to a configuration layer.
 
-    **Important Note 2**: Don\'t *update* your packages from `Paradox`
-    or `package-list-packages` because they don\'t support the rollback
+    **Important Note 2**: Don't *update* your packages from `Paradox` or
+    `package-list-packages` because they don't support the rollback
     feature of Spacemacs.
 
-      Key binding   Description
-      ------------- -------------------------------------------------------
-      `SPC a k`     launch `paradox`
-      `/`           evil-search
-      `f k`         filter by keywords
-      `f r`         filter by regexp
-      `f u`         display only installed package with updates available
-      `h`           go left
-      `H`           show help (not accurate)
-      `j`           go down
-      `k`           go up
-      `l`           go right
-      `L`           show last commits
-      `n`           next search occurrence
-      `N`           previous search occurrence
-      `o`           open package homepage
-      `r`           refresh
-      `S P`         sort by package name
-      `S S`         sort by status (installed, available, etc...)
-      `S *`         sort by GitHub stars
-      `v`           `visual state`
-      `V`           `visual-line state`
-      `x`           execute (action flags)
+    | Key binding | Description                                           |
+    |-------------|-------------------------------------------------------|
+    | `SPC a k`   | launch `paradox`                                      |
+    | `/`         | evil-search                                           |
+    | `f k`       | filter by keywords                                    |
+    | `f r`       | filter by regexp                                      |
+    | `f u`       | display only installed package with updates available |
+    | `h`         | go left                                               |
+    | `H`         | show help (not accurate)                              |
+    | `j`         | go down                                               |
+    | `k`         | go up                                                 |
+    | `l`         | go right                                              |
+    | `L`         | show last commits                                     |
+    | `n`         | next search occurrence                                |
+    | `N`         | previous search occurrence                            |
+    | `o`         | open package homepage                                 |
+    | `r`         | refresh                                               |
+    | `S P`       | sort by package name                                  |
+    | `S S`       | sort by status (installed, available, etc…)           |
+    | `S *`       | sort by GitHub stars                                  |
+    | `v`         | `visual state`                                        |
+    | `V`         | `visual-line state`                                   |
+    | `x`         | execute (action flags)                                |
 
 ### Toggles
 
@@ -2259,17 +2259,17 @@ Navigating
 
 Navigation is performed using the Vi key bindings `hjkl`.
 
-  Key binding   Description
-  ------------- -----------------------------------------------------------------------------------
-  `h`           move cursor left
-  `j`           move cursor down
-  `k`           move cursor up
-  `l`           move cursor right
-  `H`           move cursor to the top of the screen
-  `L`           move cursor to the bottom of the screen
-  `SPC j 0`     go to the beginning of line (and set a mark at the previous location in the line)
-  `SPC j $`     go to the end of line (and set a mark at the previous location in the line)
-  `SPC t -`     lock the cursor at the center of the screen
+| Key binding | Description                                                                       |
+|-------------|-----------------------------------------------------------------------------------|
+| `h`         | move cursor left                                                                  |
+| `j`         | move cursor down                                                                  |
+| `k`         | move cursor up                                                                    |
+| `l`         | move cursor right                                                                 |
+| `H`         | move cursor to the top of the screen                                              |
+| `L`         | move cursor to the bottom of the screen                                           |
+| `SPC j 0`   | go to the beginning of line (and set a mark at the previous location in the line) |
+| `SPC j $`   | go to the end of line (and set a mark at the previous location in the line)       |
+| `SPC t -`   | lock the cursor at the center of the screen                                       |
 
 1.  Smooth scrolling
 
@@ -2281,7 +2281,7 @@ Navigation is performed using the Vi key bindings `hjkl`.
     scrolling set the `dotspacemacs-smooth-scrolling` variable in your
     `~/.spacemacs` to `nil`:
 
-    ``` {.commonlisp org-language="emacs-lisp"}
+    ``` commonlisp
     (setq-default dotspacemacs-smooth-scrolling nil)
     ```
 
@@ -2297,12 +2297,12 @@ For instance, it is useful for deleting a set of visual lines from the
 current line. Try the following sequence in a buffer containing some
 text: `d SPC j l`, followed by selecting an avy candidate.
 
-  Key binding   Description
-  ------------- ----------------------------------------------------
-  `SPC j b`     go back to the previous location (before the jump)
-  `SPC j j`     initiate avy jump char
-  `SPC j w`     initiate avy jump word
-  `SPC j l`     initiate avy jump line
+| Key binding | Description                                        |
+|-------------|----------------------------------------------------|
+| `SPC j b`   | go back to the previous location (before the jump) |
+| `SPC j j`   | initiate avy jump char                             |
+| `SPC j w`   | initiate avy jump word                             |
+| `SPC j l`   | initiate avy jump line                             |
 
 1.  ace-link mode
 
@@ -2310,41 +2310,41 @@ text: `d SPC j l`, followed by selecting an avy candidate.
     allows one to jump to any link in `help-mode`, `woman-mode` and
     `info-mode`.
 
-      Key binding   Description
-      ------------- -----------------------------------------------------------
-      `o`           initiate ace link mode in `help`, `info` and `woman-mode`
+    | Key binding | Description                                               |
+    |-------------|-----------------------------------------------------------|
+    | `o`         | initiate ace link mode in `help`, `info` and `woman-mode` |
 
 ### Unimpaired bindings
 
-Spacemacs comes with a built-in port of [tpope\'s
+Spacemacs comes with a built-in port of [tpope's
 vim-unimpaired](https://github.com/tpope/vim-unimpaired).
 
 This plugin provides several pairs of bracket maps using `[` to denote
 previous, and `]` as next.
 
-  Key bindings   Description
-  -------------- ----------------------------------
-  `[ SPC`        Insert space above
-  `] SPC`        Insert space below
-  `[ b`          Go to previous buffer
-  `] b`          Go to next buffer
-  `[ f`          Go to previous file in directory
-  `] f`          Go to next file in directory
-  `[ l`          Go to the previous error
-  `] l`          Go to the next error
-  `[ h`          Go to the previous vcs hunk
-  `] h`          Go to the next vcs hunk
-  `[ q`          Go to the previous error
-  `] q`          Go to the next error
-  `[ t`          Go to the previous frame
-  `] t`          Go to the next frame
-  `[ w`          Go to the previous window
-  `] w`          Go to the next window
-  `[ e`          Move line up
-  `] e`          Move line down
-  `[ p`          Paste above current line
-  `] p`          Paste below current line
-  `g p`          Select pasted text
+| Key bindings | Description                      |
+|--------------|----------------------------------|
+| `[ SPC`      | Insert space above               |
+| `] SPC`      | Insert space below               |
+| `[ b`        | Go to previous buffer            |
+| `] b`        | Go to next buffer                |
+| `[ f`        | Go to previous file in directory |
+| `] f`        | Go to next file in directory     |
+| `[ l`        | Go to the previous error         |
+| `] l`        | Go to the next error             |
+| `[ h`        | Go to the previous vcs hunk      |
+| `] h`        | Go to the next vcs hunk          |
+| `[ q`        | Go to the previous error         |
+| `] q`        | Go to the next error             |
+| `[ t`        | Go to the previous frame         |
+| `] t`        | Go to the next frame             |
+| `[ w`        | Go to the previous window        |
+| `] w`        | Go to the next window            |
+| `[ e`        | Move line up                     |
+| `] e`        | Move line down                   |
+| `[ p`        | Paste above current line         |
+| `] p`        | Paste below current line         |
+| `g p`        | Select pasted text               |
 
 ### Jumping, Joining and Splitting
 
@@ -2352,38 +2352,38 @@ The `SPC j` prefix is for jumping, joining and splitting.
 
 1.  Jumping
 
-      Key binding   Description
-      ------------- -----------------------------------------------------------------------------------
-      `SPC j 0`     go to the beginning of line (and set a mark at the previous location in the line)
-      `SPC j (`     jump to first unbalanced parentheses
-      `SPC j $`     go to the end of line (and set a mark at the previous location in the line)
-      `SPC j b`     undo a jump (go back to previous location)
-      `SPC j c`     go to last change
-      `SPC j d`     jump to a listing of the current directory
-      `SPC j D`     jump to a listing of the current directory (other window)
-      `SPC j f`     jump to the definition of an Emacs Lisp function
-      `SPC j i`     jump to a definition in buffer (imenu)
-      `SPC j I`     jump to a definition in any buffer (imenu)
-      `SPC j j`     jump to one or more characters in the buffer (works as an evil motion)
-      `SPC j k`     jump to next line and indent it using auto-indent rules
-      `SPC j l`     jump to a line with avy (works as an evil motion)
-      `SPC j u`     jump to a URL in the current buffer
-      `SPC j U`     select a URL in the current buffer and follow it
-      `SPC j v`     jump to the definition/declaration of an Emacs Lisp variable
-      `SPC j w`     jump to a word in the current buffer (works as an evil motion)
+    | Key binding | Description                                                                       |
+    |-------------|-----------------------------------------------------------------------------------|
+    | `SPC j 0`   | go to the beginning of line (and set a mark at the previous location in the line) |
+    | `SPC j (`   | jump to first unbalanced parentheses                                              |
+    | `SPC j $`   | go to the end of line (and set a mark at the previous location in the line)       |
+    | `SPC j b`   | undo a jump (go back to previous location)                                        |
+    | `SPC j c`   | go to last change                                                                 |
+    | `SPC j d`   | jump to a listing of the current directory                                        |
+    | `SPC j D`   | jump to a listing of the current directory (other window)                         |
+    | `SPC j f`   | jump to the definition of an Emacs Lisp function                                  |
+    | `SPC j i`   | jump to a definition in buffer (imenu)                                            |
+    | `SPC j I`   | jump to a definition in any buffer (imenu)                                        |
+    | `SPC j j`   | jump to one or more characters in the buffer (works as an evil motion)            |
+    | `SPC j k`   | jump to next line and indent it using auto-indent rules                           |
+    | `SPC j l`   | jump to a line with avy (works as an evil motion)                                 |
+    | `SPC j u`   | jump to a URL in the current buffer                                               |
+    | `SPC j U`   | select a URL in the current buffer and follow it                                  |
+    | `SPC j v`   | jump to the definition/declaration of an Emacs Lisp variable                      |
+    | `SPC j w`   | jump to a word in the current buffer (works as an evil motion)                    |
 
 2.  Joining and splitting
 
-      Key binding   Description
-      ------------- --------------------------------------------------------------------------
-      `J`           join the current line with the next line
-      `SPC j k`     go to next line and indent it using auto-indent rules
-      `SPC j n`     split the current line at point, insert a new line and auto-indent
-      `SPC j o`     split the current line at point but let point on current line
-      `SPC j s`     split a quoted string or s-expression in place
-      `SPC j S`     split a quoted string or s-expression, insert a new line and auto-indent
-      `SPC j =`     format the marked region or entire buffer
-      `SPC j +`     format the marked region or entire buffer also cleanup whitespace
+    | Key binding | Description                                                              |
+    |-------------|--------------------------------------------------------------------------|
+    | `J`         | join the current line with the next line                                 |
+    | `SPC j k`   | go to next line and indent it using auto-indent rules                    |
+    | `SPC j n`   | split the current line at point, insert a new line and auto-indent       |
+    | `SPC j o`   | split the current line at point but let point on current line            |
+    | `SPC j s`   | split a quoted string or s-expression in place                           |
+    | `SPC j S`   | split a quoted string or s-expression, insert a new line and auto-indent |
+    | `SPC j =`   | format the marked region or entire buffer                                |
+    | `SPC j +`   | format the marked region or entire buffer also cleanup whitespace        |
 
 ### Window manipulation
 
@@ -2392,17 +2392,17 @@ The `SPC j` prefix is for jumping, joining and splitting.
     Every window has a number displayed at the start of the mode-line
     and can be quickly accessed using `SPC number`.
 
-      Key binding   Description
-      ------------- -----------------------
-      `SPC 1`       go to window number 1
-      `SPC 2`       go to window number 2
-      `SPC 3`       go to window number 3
-      `SPC 4`       go to window number 4
-      `SPC 5`       go to window number 5
-      `SPC 6`       go to window number 6
-      `SPC 7`       go to window number 7
-      `SPC 8`       go to window number 8
-      `SPC 9`       go to window number 9
+    | Key binding | Description           |
+    |-------------|-----------------------|
+    | `SPC 1`     | go to window number 1 |
+    | `SPC 2`     | go to window number 2 |
+    | `SPC 3`     | go to window number 3 |
+    | `SPC 4`     | go to window number 4 |
+    | `SPC 5`     | go to window number 5 |
+    | `SPC 6`     | go to window number 6 |
+    | `SPC 7`     | go to window number 7 |
+    | `SPC 8`     | go to window number 8 |
+    | `SPC 9`     | go to window number 9 |
 
     Window number 0 is a special case and selects sidebar windows, like
     treemacs. If there is no window number 0, `SPC 0` attempts to select
@@ -2410,85 +2410,85 @@ The `SPC j` prefix is for jumping, joining and splitting.
 
     Windows manipulation commands (start with `w`):
 
-      Key binding              Description
-      ------------------------ --------------------------------------------------------------------------------------------------------
-      `SPC w TAB`              switch to alternate window in the current frame (switch back and forth)
-      `SPC w =`                balance split windows
-      `SPC w _`                maximize window horizontally
-      `SPC w \vert`            maximize window vertically
-      `SPC w b`                force the focus back to the minibuffer
-      `SPC w c c`              toggle visual centering of the current buffer
-      `SPC w c C`              toggle visual distraction free mode
-      `SPC w c .`              center buffer and enable centering transient state
-      `SPC w d`                delete a window
-      `SPC u SPC w d`          delete a window and its current buffer (does not delete the file)
-      `SPC w D`                delete another window using [ace-window](https://github.com/abo-abo/ace-window)
-      `SPC u SPC w D`          delete another window and its current buffer using [ace-window](https://github.com/abo-abo/ace-window)
-      `SPC w t`                toggle window dedication (dedicated window cannot be reused by a mode)
-      `SPC w f`                toggle follow mode
-      `SPC w F`                create new frame
-      `SPC w h`                move to window on the left
-      `SPC w H`                move window to the left
-      `SPC w j`                move to window below
-      `SPC w J`                move window to the bottom
-      `SPC w k`                move to window above
-      `SPC w K`                move window to the top
-      `SPC w l`                move to window on the right
-      `SPC w L`                move window to the right
-      `SPC w m`                maximize/minimize a window (maximize is equivalent to delete other windows)
-      `SPC w M`                swap windows using [ace-window](https://github.com/abo-abo/ace-window)
-      `SPC w o`                cycle and focus between frames
-      `SPC w p m`              open messages buffer in a popup window
-      `SPC w p p`              close the current sticky popup window
-      `SPC w r`                rotate windows forward
-      `SPC w R`                rotate windows backward
-      `SPC w s` or `SPC w -`   horizontal split
-      `SPC w S`                horizontal split and focus new window
-      `SPC w u`                undo window layout (used to effectively undo a closed window)
-      `SPC w U`                redo window layout
-      `SPC w v` or `SPC w /`   vertical split
-      `SPC w V`                vertical split and focus new window
-      `SPC w w`                cycle and focus between windows
-      `SPC w W`                select window using [ace-window](https://github.com/abo-abo/ace-window)
-      `SPC w x`                delete a window and its current buffer (does not delete the file)
-      `SPC w [`                shrink window horizontally (enter transient state)
-      `SPC w ]`                enlarge window horizontally (enter transient state)
-      `SPC w {`                shrink window vertically (enter transient state)
-      `SPC w }`                enlarge window vertically (enter transient state)
+    | Key binding            | Description                                                                                            |
+    |------------------------|--------------------------------------------------------------------------------------------------------|
+    | `SPC w TAB`            | switch to alternate window in the current frame (switch back and forth)                                |
+    | `SPC w =`              | balance split windows                                                                                  |
+    | `SPC w _`              | maximize window horizontally                                                                           |
+    | `SPC w \vert`          | maximize window vertically                                                                             |
+    | `SPC w b`              | force the focus back to the minibuffer                                                                 |
+    | `SPC w c c`            | toggle visual centering of the current buffer                                                          |
+    | `SPC w c C`            | toggle visual distraction free mode                                                                    |
+    | `SPC w c .`            | center buffer and enable centering transient state                                                     |
+    | `SPC w d`              | delete a window                                                                                        |
+    | `SPC u SPC w d`        | delete a window and its current buffer (does not delete the file)                                      |
+    | `SPC w D`              | delete another window using [ace-window](https://github.com/abo-abo/ace-window)                        |
+    | `SPC u SPC w D`        | delete another window and its current buffer using [ace-window](https://github.com/abo-abo/ace-window) |
+    | `SPC w t`              | toggle window dedication (dedicated window cannot be reused by a mode)                                 |
+    | `SPC w f`              | toggle follow mode                                                                                     |
+    | `SPC w F`              | create new frame                                                                                       |
+    | `SPC w h`              | move to window on the left                                                                             |
+    | `SPC w H`              | move window to the left                                                                                |
+    | `SPC w j`              | move to window below                                                                                   |
+    | `SPC w J`              | move window to the bottom                                                                              |
+    | `SPC w k`              | move to window above                                                                                   |
+    | `SPC w K`              | move window to the top                                                                                 |
+    | `SPC w l`              | move to window on the right                                                                            |
+    | `SPC w L`              | move window to the right                                                                               |
+    | `SPC w m`              | maximize/minimize a window (maximize is equivalent to delete other windows)                            |
+    | `SPC w M`              | swap windows using [ace-window](https://github.com/abo-abo/ace-window)                                 |
+    | `SPC w o`              | cycle and focus between frames                                                                         |
+    | `SPC w p m`            | open messages buffer in a popup window                                                                 |
+    | `SPC w p p`            | close the current sticky popup window                                                                  |
+    | `SPC w r`              | rotate windows forward                                                                                 |
+    | `SPC w R`              | rotate windows backward                                                                                |
+    | `SPC w s` or `SPC w -` | horizontal split                                                                                       |
+    | `SPC w S`              | horizontal split and focus new window                                                                  |
+    | `SPC w u`              | undo window layout (used to effectively undo a closed window)                                          |
+    | `SPC w U`              | redo window layout                                                                                     |
+    | `SPC w v` or `SPC w /` | vertical split                                                                                         |
+    | `SPC w V`              | vertical split and focus new window                                                                    |
+    | `SPC w w`              | cycle and focus between windows                                                                        |
+    | `SPC w W`              | select window using [ace-window](https://github.com/abo-abo/ace-window)                                |
+    | `SPC w x`              | delete a window and its current buffer (does not delete the file)                                      |
+    | `SPC w [`              | shrink window horizontally (enter transient state)                                                     |
+    | `SPC w ]`              | enlarge window horizontally (enter transient state)                                                    |
+    | `SPC w {`              | shrink window vertically (enter transient state)                                                       |
+    | `SPC w }`              | enlarge window vertically (enter transient state)                                                      |
 
     Split the current window into multiple ones, deleting all others
     using the following commands:
 
-      Key binding   Description
-      ------------- -------------------------------------------
-      `SPC w 1`     make 1 window layout
-      `SPC w 2`     make 2 windows layout (split vertically)
-      `SPC w 3`     make 3 windows layout (split vertically)
-      `SPC w 4`     make 4 windows layout (split in 2x2 grid)
+    | Key binding | Description                               |
+    |-------------|-------------------------------------------|
+    | `SPC w 1`   | make 1 window layout                      |
+    | `SPC w 2`   | make 2 windows layout (split vertically)  |
+    | `SPC w 3`   | make 3 windows layout (split vertically)  |
+    | `SPC w 4`   | make 4 windows layout (split in 2x2 grid) |
 
     By default, the commands above ignore some windows, like the
     filetrees (treemacs and neotree) but you can use a prefix argument
     to force delete them.
 
-      Key binding       Description
-      ----------------- -------------------------------------------------------------
-      `SPC u SPC w 1`   make 1 window layout with force delete
-      `SPC u SPC w 2`   make 2 windows layout (split vertically) with force delete
-      `SPC u SPC w 3`   make 3 windows layout (split vertically) with force delete
-      `SPC u SPC w 4`   make 4 windows layout (split in 2x2 grid) with force delete
+    | Key binding     | Description                                                 |
+    |-----------------|-------------------------------------------------------------|
+    | `SPC u SPC w 1` | make 1 window layout with force delete                      |
+    | `SPC u SPC w 2` | make 2 windows layout (split vertically) with force delete  |
+    | `SPC u SPC w 3` | make 3 windows layout (split vertically) with force delete  |
+    | `SPC u SPC w 4` | make 4 windows layout (split in 2x2 grid) with force delete |
 
     You can also configure which windows get ignored when executing the
     above commands by adding a prefix to the
     `spacemacs-window-split-ignore-prefixes` list:
 
-    ``` {.commonlisp org-language="emacs-lisp"}
+    ``` commonlisp
     (add-to-list 'spacemacs-window-split-ignore-prefixes "My Favourite Window")
     ```
 
     Or if you want a certain ignored window to always be deleted you can
     remote it from the list:
 
-    ``` {.commonlisp org-language="emacs-lisp"}
+    ``` commonlisp
     (setq spacemacs-window-split-ignore-prefixes
       (remove treemacs--buffer-name-prefix spacemacs-window-split-ignore-prefixes))
     ```
@@ -2496,7 +2496,7 @@ The `SPC j` prefix is for jumping, joining and splitting.
     And if you want even more control over the way windows are removed
     you can define your own deletion function:
 
-    ``` {.commonlisp org-language="emacs-lisp"}
+    ``` commonlisp
     (defun my-delete-other-windows () (delete-other-windows))
     (setq spacemacs-window-split-delete-function 'my-delete-other-windows)
     ```
@@ -2506,51 +2506,51 @@ The `SPC j` prefix is for jumping, joining and splitting.
     A convenient window transient state allows for performing most of
     the actions listed above. For example window resizing.
 
-      Key binding       Description
-      ----------------- ---------------------------------------------------------------
-      `SPC w .`         initiate transient state
-      `?`               display the full documentation in minibuffer
-      `0`               go to window number 0
-      `1`               go to window number 1
-      `2`               go to window number 2
-      `3`               go to window number 3
-      `4`               go to window number 4
-      `5`               go to window number 5
-      `6`               go to window number 6
-      `7`               go to window number 7
-      `8`               go to window number 8
-      `9`               go to window number 9
-      `/`               vertical split
-      `-`               horizontal split
-      `\vert`           maximize window vertically
-      `_`               maximize window horizontally
-      `[`               shrink window horizontally
-      `]`               enlarge window horizontally
-      `{`               shrink window vertically
-      `}`               enlarge window vertically
-      `d`               delete window
-      `D`               delete other windows
-      `g`               toggle `golden-ratio` on and off
-      `h` `<left>`      go to window on the left
-      `j` `<down>`      go to window below
-      `k` `<up>`        go to window above
-      `l` `<right>`     go to window on the right
-      `H` `<S-left>`    move window to the left
-      `J` `<S-down>`    move window to the bottom
-      `K` `<S-up>`      move bottom to the top
-      `L` `<S-right>`   move window to the right
-      `m`               toggle maximization of current window
-      `o`               focus other frame
-      `a`               call ace window mode
-      `r`               rotate windows forward
-      `R`               rotate windows backward
-      `s`               horizontal split
-      `S`               horizontal split and focus new window
-      `u`               undo window layout (used to effectively undo a closed window)
-      `U`               redo window layout
-      `v`               vertical split
-      `V`               vertical split and focus new window
-      `w`               focus other window
+    | Key binding     | Description                                                   |
+    |-----------------|---------------------------------------------------------------|
+    | `SPC w .`       | initiate transient state                                      |
+    | `?`             | display the full documentation in minibuffer                  |
+    | `0`             | go to window number 0                                         |
+    | `1`             | go to window number 1                                         |
+    | `2`             | go to window number 2                                         |
+    | `3`             | go to window number 3                                         |
+    | `4`             | go to window number 4                                         |
+    | `5`             | go to window number 5                                         |
+    | `6`             | go to window number 6                                         |
+    | `7`             | go to window number 7                                         |
+    | `8`             | go to window number 8                                         |
+    | `9`             | go to window number 9                                         |
+    | `/`             | vertical split                                                |
+    | `-`             | horizontal split                                              |
+    | `\vert`         | maximize window vertically                                    |
+    | `_`             | maximize window horizontally                                  |
+    | `[`             | shrink window horizontally                                    |
+    | `]`             | enlarge window horizontally                                   |
+    | `{`             | shrink window vertically                                      |
+    | `}`             | enlarge window vertically                                     |
+    | `d`             | delete window                                                 |
+    | `D`             | delete other windows                                          |
+    | `g`             | toggle `golden-ratio` on and off                              |
+    | `h` `<left>`    | go to window on the left                                      |
+    | `j` `<down>`    | go to window below                                            |
+    | `k` `<up>`      | go to window above                                            |
+    | `l` `<right>`   | go to window on the right                                     |
+    | `H` `<S-left>`  | move window to the left                                       |
+    | `J` `<S-down>`  | move window to the bottom                                     |
+    | `K` `<S-up>`    | move bottom to the top                                        |
+    | `L` `<S-right>` | move window to the right                                      |
+    | `m`             | toggle maximization of current window                         |
+    | `o`             | focus other frame                                             |
+    | `a`             | call ace window mode                                          |
+    | `r`             | rotate windows forward                                        |
+    | `R`             | rotate windows backward                                       |
+    | `s`             | horizontal split                                              |
+    | `S`             | horizontal split and focus new window                         |
+    | `u`             | undo window layout (used to effectively undo a closed window) |
+    | `U`             | redo window layout                                            |
+    | `v`             | vertical split                                                |
+    | `V`             | vertical split and focus new window                           |
+    | `w`             | focus other window                                            |
 
 3.  Golden ratio
 
@@ -2568,66 +2568,66 @@ The `SPC j` prefix is for jumping, joining and splitting.
 
     With few exceptions, buffer manipulation commands (start with `b`):
 
-      Key binding       Description
-      ----------------- ------------------------------------------------------------------------------------------------
-      `SPC TAB`         switch to alternate buffer in the current window (switch back and forth)
-      `C-TAB/C-S tab`   cycle backward/forward through previous visited buffers (i.e. scroll helm buffer list)
-      `SPC b b`         switch to a buffer
-      `SPC b d`         kill the current buffer (does not delete the visited file)
-      `SPC u SPC b d`   kill the current buffer and window (does not delete the visited file)
-      `SPC b D`         kill a visible buffer using [ace-window](https://github.com/abo-abo/ace-window)
-      `SPC u SPC b D`   kill a visible buffer and its window using [ace-window](https://github.com/abo-abo/ace-window)
-      `SPC b C-d`       kill other buffers
-      `SPC b C-D`       kill buffers using a regular expression
-      `SPC b e`         erase the content of the buffer (ask for confirmation)
-      `SPC b h`         open `*spacemacs*` home buffer
-      `SPC b H`         open or select the `*Help*` buffer
-      `SPC b n`         switch to next buffer avoiding buffers matching `spacemacs-useless-buffers-regexp`
-      `SPC b m`         open `*Messages*` buffer
-      `SPC u SPC b m`   kill all buffers and windows except the current one
-      `SPC b M`         kill all buffers matching the regexp
-      `SPC b p`         switch to previous buffer avoiding buffers matching `spacemacs-useless-buffers-regexp`
-      `SPC b P`         copy clipboard and replace buffer (useful when pasting from a browser)
-      `SPC b R`         revert the current buffer (reload from disk)
-      `SPC b s`         switch to the `*scratch*` buffer (create it if needed)
-      `SPC b u`         reopen the most recently killed file buffer
-      `SPC b w`         toggle read-only (writable state)
-      `SPC b x`         kill the current buffer and window (does not delete the visited file)
-      `SPC b Y`         copy whole buffer to clipboard (useful when copying to a browser)
-      `z f`             Make current function or comments visible in buffer as much as possible
+    | Key binding     | Description                                                                                    |
+    |-----------------|------------------------------------------------------------------------------------------------|
+    | `SPC TAB`       | switch to alternate buffer in the current window (switch back and forth)                       |
+    | `C-TAB/C-S tab` | cycle backward/forward through previous visited buffers (i.e. scroll helm buffer list)         |
+    | `SPC b b`       | switch to a buffer                                                                             |
+    | `SPC b d`       | kill the current buffer (does not delete the visited file)                                     |
+    | `SPC u SPC b d` | kill the current buffer and window (does not delete the visited file)                          |
+    | `SPC b D`       | kill a visible buffer using [ace-window](https://github.com/abo-abo/ace-window)                |
+    | `SPC u SPC b D` | kill a visible buffer and its window using [ace-window](https://github.com/abo-abo/ace-window) |
+    | `SPC b C-d`     | kill other buffers                                                                             |
+    | `SPC b C-D`     | kill buffers using a regular expression                                                        |
+    | `SPC b e`       | erase the content of the buffer (ask for confirmation)                                         |
+    | `SPC b h`       | open `*spacemacs*` home buffer                                                                 |
+    | `SPC b H`       | open or select the `*Help*` buffer                                                             |
+    | `SPC b n`       | switch to next buffer avoiding buffers matching `spacemacs-useless-buffers-regexp`             |
+    | `SPC b m`       | open `*Messages*` buffer                                                                       |
+    | `SPC u SPC b m` | kill all buffers and windows except the current one                                            |
+    | `SPC b M`       | kill all buffers matching the regexp                                                           |
+    | `SPC b p`       | switch to previous buffer avoiding buffers matching `spacemacs-useless-buffers-regexp`         |
+    | `SPC b P`       | copy clipboard and replace buffer (useful when pasting from a browser)                         |
+    | `SPC b R`       | revert the current buffer (reload from disk)                                                   |
+    | `SPC b s`       | switch to the `*scratch*` buffer (create it if needed)                                         |
+    | `SPC b u`       | reopen the most recently killed file buffer                                                    |
+    | `SPC b w`       | toggle read-only (writable state)                                                              |
+    | `SPC b x`       | kill the current buffer and window (does not delete the visited file)                          |
+    | `SPC b Y`       | copy whole buffer to clipboard (useful when copying to a browser)                              |
+    | `z f`           | Make current function or comments visible in buffer as much as possible                        |
 
 2.  Create a new empty buffer
 
-      Key binding     Description
-      --------------- -------------------------------------------------------------------------------------------------
-      `SPC b N h`     create new empty buffer in a new window on the left
-      `SPC b N C-i`   create an indirect buffer from an existing opened buffer
-      `SPC b N i`     create an indirect buffer that is clone of currently opened buffer
-      `SPC b N I`     create an indirect buffer that is clone of currently opened buffer, and open it in other window
-      `SPC b N j`     create new empty buffer in a new window at the bottom
-      `SPC b N k`     create new empty buffer in a new window above
-      `SPC b N l`     create new empty buffer in a new window below
-      `SPC b N n`     create new empty buffer in current window
+    | Key binding   | Description                                                                                     |
+    |---------------|-------------------------------------------------------------------------------------------------|
+    | `SPC b N h`   | create new empty buffer in a new window on the left                                             |
+    | `SPC b N C-i` | create an indirect buffer from an existing opened buffer                                        |
+    | `SPC b N i`   | create an indirect buffer that is clone of currently opened buffer                              |
+    | `SPC b N I`   | create an indirect buffer that is clone of currently opened buffer, and open it in other window |
+    | `SPC b N j`   | create new empty buffer in a new window at the bottom                                           |
+    | `SPC b N k`   | create new empty buffer in a new window above                                                   |
+    | `SPC b N l`   | create new empty buffer in a new window below                                                   |
+    | `SPC b N n`   | create new empty buffer in current window                                                       |
 
 3.  Buffers transient state
 
     A convenient buffer transient state allows for quickly cycling
     through the open buffers and closing them.
 
-      Key binding              Description
-      ------------------------ --------------------------------------------------------------------------------------------
-      `SPC b .`                initiate transient state
-      `[1..9]`                 move current buffer to nth window
-      `[C-1..C-9]`             switch focus to nth window
-      `[M-1..M-9]`             swap current buffer with nth window
-      `b`                      list all buffers with helm/ivy (avoid buffers matching `spacemacs-useless-buffers-regexp`)
-      `d`                      kill current buffer
-      `C-d`                    bury current buffer
-      `n` or `<right>`         go to next buffer (avoid buffers matching `spacemacs-useless-buffers-regexp`)
-      `N` or `p` or `<left>`   go to previous buffer (avoid buffers matching `spacemacs-useless-buffers-regexp`)
-      `o`                      switch focus to other window
-      `z`                      recenter buffer in window
-      `q`                      quit transient state
+    | Key binding            | Description                                                                                |
+    |------------------------|--------------------------------------------------------------------------------------------|
+    | `SPC b .`              | initiate transient state                                                                   |
+    | `[1..9]`               | move current buffer to nth window                                                          |
+    | `[C-1..C-9]`           | switch focus to nth window                                                                 |
+    | `[M-1..M-9]`           | swap current buffer with nth window                                                        |
+    | `b`                    | list all buffers with helm/ivy (avoid buffers matching `spacemacs-useless-buffers-regexp`) |
+    | `d`                    | kill current buffer                                                                        |
+    | `C-d`                  | bury current buffer                                                                        |
+    | `n` or `<right>`       | go to next buffer (avoid buffers matching `spacemacs-useless-buffers-regexp`)              |
+    | `N` or `p` or `<left>` | go to previous buffer (avoid buffers matching `spacemacs-useless-buffers-regexp`)          |
+    | `o`                    | switch focus to other window                                                               |
+    | `z`                    | recenter buffer in window                                                                  |
+    | `q`                    | quit transient state                                                                       |
 
     Unlike vim, emacs creates many buffers that most people do not need
     to see. Some examples are the `*Messages*` and `*Compile-Log*`
@@ -2640,72 +2640,72 @@ The `SPC j` prefix is for jumping, joining and splitting.
 
     File manipulation commands (start with `f`):
 
-      Key binding   Description
-      ------------- --------------------------------------------------------------------------------------------------------
-      `SPC f A`     open a file and replace the current buffer with the new file
-      `SPC f b`     go to file bookmarks
-      `SPC f c`     copy current file to a different location
-      `SPC f C d`   convert file from unix to dos encoding
-      `SPC f C u`   convert file from dos to unix encoding
-      `SPC f D`     delete a file and the associated buffer (ask for confirmation)
-      `SPC f E`     open a file with elevated privileges (sudo edit)
-      `SPC f f`     open file
-      `SPC f F`     try to open the file under point
-      `SPC f h`     open binary file with `hexl` (a hex editor)
-      `SPC f j`     jump to the current buffer file in dired
-      `SPC f J`     open a junk file, in mode determined by the file extension provided (defaulting to `fundamental mode`)
-      `SPC f l`     open file literally in `fundamental mode`
-      `SPC f L`     Locate a file (using `locate`)
-      `SPC f o`     open a file using the default external program
-      `SPC f R`     rename the current file
-      `SPC f s`     save a file
-      `SPC f S`     save all files
-      `SPC f r`     open a recent file
-      `SPC f t`     toggle file tree side bar using [Treemacs](https://github.com/Alexander-Miller/treemacs)
-      `SPC f v d`   add a directory variable
-      `SPC f v f`   add a local variable to the current file
-      `SPC f v p`   add a local variable to the first line of the current file
-      `SPC f y c`   show and copy current file absolute path with line and column number in the minibuffer
-      `SPC f y d`   show and copy current directory absolute path in the minibuffer
-      `SPC f y l`   show and copy current file absolute path with line number in the minibuffer
-      `SPC f y n`   show and copy current file name with extension in the minibuffer
-      `SPC f y N`   show and copy current file name without extension in the minibuffer
-      `SPC f y y`   show and copy current file absolute path in the minibuffer
+    | Key binding | Description                                                                                            |
+    |-------------|--------------------------------------------------------------------------------------------------------|
+    | `SPC f A`   | open a file and replace the current buffer with the new file                                           |
+    | `SPC f b`   | go to file bookmarks                                                                                   |
+    | `SPC f c`   | copy current file to a different location                                                              |
+    | `SPC f C d` | convert file from unix to dos encoding                                                                 |
+    | `SPC f C u` | convert file from dos to unix encoding                                                                 |
+    | `SPC f D`   | delete a file and the associated buffer (ask for confirmation)                                         |
+    | `SPC f E`   | open a file with elevated privileges (sudo edit)                                                       |
+    | `SPC f f`   | open file                                                                                              |
+    | `SPC f F`   | try to open the file under point                                                                       |
+    | `SPC f h`   | open binary file with `hexl` (a hex editor)                                                            |
+    | `SPC f j`   | jump to the current buffer file in dired                                                               |
+    | `SPC f J`   | open a junk file, in mode determined by the file extension provided (defaulting to `fundamental mode`) |
+    | `SPC f l`   | open file literally in `fundamental mode`                                                              |
+    | `SPC f L`   | Locate a file (using `locate`)                                                                         |
+    | `SPC f o`   | open a file using the default external program                                                         |
+    | `SPC f R`   | rename the current file                                                                                |
+    | `SPC f s`   | save a file                                                                                            |
+    | `SPC f S`   | save all files                                                                                         |
+    | `SPC f r`   | open a recent file                                                                                     |
+    | `SPC f t`   | toggle file tree side bar using [Treemacs](https://github.com/Alexander-Miller/treemacs)               |
+    | `SPC f v d` | add a directory variable                                                                               |
+    | `SPC f v f` | add a local variable to the current file                                                               |
+    | `SPC f v p` | add a local variable to the first line of the current file                                             |
+    | `SPC f y c` | show and copy current file absolute path with line and column number in the minibuffer                 |
+    | `SPC f y d` | show and copy current directory absolute path in the minibuffer                                        |
+    | `SPC f y l` | show and copy current file absolute path with line number in the minibuffer                            |
+    | `SPC f y n` | show and copy current file name with extension in the minibuffer                                       |
+    | `SPC f y N` | show and copy current file name without extension in the minibuffer                                    |
+    | `SPC f y y` | show and copy current file absolute path in the minibuffer                                             |
 
 5.  Frame manipulation key bindings
 
     Frame manipulation commands (start with `F`):
 
-      Key binding   Description
-      ------------- ------------------------------------------------------
-      `SPC F f`     open a file in another frame
-      `SPC F d`     delete the current frame (unless it\'s the only one)
-      `SPC F D`     delete all other frames
-      `SPC F b`     open a buffer in another frame
-      `SPC F B`     open a buffer in another frame (but don\'t switch)
-      `SPC F o`     cycle focus between frames
-      `SPC F O`     open a dired buffer in another frame
-      `SPC F n`     create a new frame
+    | Key binding | Description                                         |
+    |-------------|-----------------------------------------------------|
+    | `SPC F f`   | open a file in another frame                        |
+    | `SPC F d`   | delete the current frame (unless it's the only one) |
+    | `SPC F D`   | delete all other frames                             |
+    | `SPC F b`   | open a buffer in another frame                      |
+    | `SPC F B`   | open a buffer in another frame (but don't switch)   |
+    | `SPC F o`   | cycle focus between frames                          |
+    | `SPC F O`   | open a dired buffer in another frame                |
+    | `SPC F n`   | create a new frame                                  |
 
 6.  Emacs and Spacemacs files
 
     Convenient key bindings are located under the prefix `SPC f e` to
     quickly navigate between `Emacs` and Spacemacs specific files.
 
-      Key binding     Description
-      --------------- ---------------------------------------------------------------------------------------------------------
-      `SPC f e d`     open the spacemacs dotfile (`~/.spacemacs`)
-      `SPC f e D`     open `ediff` buffer of `~/.spacemacs` and `.spacemacs.template`
-      `SPC f e e`     open the `~/.spacemacs.env` file where environment variables are set or goes to `dotspacemacs/user-env`
-      `SPC f e E`     reload the environment variables by executing the function `dotspacemacs/user-env`
-      `SPC f e C-e`   reinitialize the `~/.spacemacs.env` file by importing system and shell environment variables
-      `SPC f e i`     open the all mighty `init.el`
-      `SPC f e I`     open the `early-init.el`
-      `SPC f e l`     locate an Emacs library
-      `SPC f e R`     resync the dotfile with spacemacs
-      `SPC f e U`     update packages
-      `SPC f e v`     display and copy the spacemacs version
-      `SPC f e c`     recompile all elpa packages
+    | Key binding   | Description                                                                                             |
+    |---------------|---------------------------------------------------------------------------------------------------------|
+    | `SPC f e d`   | open the spacemacs dotfile (`~/.spacemacs`)                                                             |
+    | `SPC f e D`   | open `ediff` buffer of `~/.spacemacs` and `.spacemacs.template`                                         |
+    | `SPC f e e`   | open the `~/.spacemacs.env` file where environment variables are set or goes to `dotspacemacs/user-env` |
+    | `SPC f e E`   | reload the environment variables by executing the function `dotspacemacs/user-env`                      |
+    | `SPC f e C-e` | reinitialize the `~/.spacemacs.env` file by importing system and shell environment variables            |
+    | `SPC f e i`   | open the all mighty `init.el`                                                                           |
+    | `SPC f e I`   | open the `early-init.el`                                                                                |
+    | `SPC f e l`   | locate an Emacs library                                                                                 |
+    | `SPC f e R`   | resync the dotfile with spacemacs                                                                       |
+    | `SPC f e U`   | update packages                                                                                         |
+    | `SPC f e v`   | display and copy the spacemacs version                                                                  |
+    | `SPC f e c`   | recompile all elpa packages                                                                             |
 
 7.  Browsing files in completion buffer
 
@@ -2713,13 +2713,13 @@ The `SPC j` prefix is for jumping, joining and splitting.
     `hybrid-mode-enable-hjkl-bindings` set to `t`, you can navigate with
     `hjkl`.
 
-      Key binding   Description
-      ------------- -----------------------------------
-      `C-h`         go up one level (parent directory
-      `C-H`         describe key (replace `C-h`)
-      `C-j`         go to previous candidate
-      `C-k`         go to next candidate
-      `C-l`         enter current directory
+    | Key binding | Description                       |
+    |-------------|-----------------------------------|
+    | `C-h`       | go up one level (parent directory |
+    | `C-H`       | describe key (replace `C-h`)      |
+    | `C-j`       | go to previous candidate          |
+    | `C-k`       | go to next candidate              |
+    | `C-l`       | enter current directory           |
 
 8.  Popup buffers
 
@@ -2735,25 +2735,25 @@ Spacemacs displays the `ido` minibuffer vertically thanks to the
 
 Basic `ido` operations can be done with `Ctrl` key:
 
-  Key binding          Description
-  -------------------- ---------------------------------------------------
-  `C-RET`              open a `dired buffer`
-  `M-RET`              select the buffer or file named by the prompt
-  `C-d`                delete selected file (ask for confirmation)
-  `C-h`                go to parent directory
-  `C-j`                select next file or directory
-  `C-k`                select previous file or directory
-  `C-l`                open the selected file
-  `C-n`                select next file or directory
-  `C-o`                open selected file in other window
-  `C-p`                select previous file or directory
-  `C-s`                open selected file in a vertically split window
-  `C-t`                open selected file in a new frame
-  `C-v`                open selected file in a horizontally split window
-  `C-S-h`              go to previous directory
-  `C-S-j` or `C-S-n`   next history element
-  `C-S-k` or `C-S-p`   previous history element
-  `C-S-l`              go to next directory
+| Key binding        | Description                                       |
+|--------------------|---------------------------------------------------|
+| `C-RET`            | open a `dired buffer`                             |
+| `M-RET`            | select the buffer or file named by the prompt     |
+| `C-d`              | delete selected file (ask for confirmation)       |
+| `C-h`              | go to parent directory                            |
+| `C-j`              | select next file or directory                     |
+| `C-k`              | select previous file or directory                 |
+| `C-l`              | open the selected file                            |
+| `C-n`              | select next file or directory                     |
+| `C-o`              | open selected file in other window                |
+| `C-p`              | select previous file or directory                 |
+| `C-s`              | open selected file in a vertically split window   |
+| `C-t`              | open selected file in a new frame                 |
+| `C-v`              | open selected file in a horizontally split window |
+| `C-S-h`            | go to previous directory                          |
+| `C-S-j` or `C-S-n` | next history element                              |
+| `C-S-k` or `C-S-p` | previous history element                          |
+| `C-S-l`            | go to next directory                              |
 
 ### Ido transient state
 
@@ -2762,24 +2762,24 @@ Spacemacs defines a [transient state](#transient-states) for `ido`.
 Initiate the transient state with `M-SPC` or `s-M-SPC` while in an `ido`
 buffer.
 
-  Key binding            Description
-  ---------------------- ---------------------------------------
-  `M-SPC` or `s-M-SPC`   initiate or leave the transient state
-  `?`                    display help
-  `e`                    open dired
-  `h`                    delete backward or parent directory
-  `j`                    next match
-  `J`                    sub directory
-  `k`                    previous match
-  `K`                    parent directory
-  `l`                    select match
-  `n`                    next directory in history
-  `o`                    open in other window
-  `p`                    previous directory in history
-  `q`                    quit transient state
-  `s`                    open in a new horizontal split
-  `t`                    open in other frame
-  `v`                    open in a new vertical split
+| Key binding          | Description                           |
+|----------------------|---------------------------------------|
+| `M-SPC` or `s-M-SPC` | initiate or leave the transient state |
+| `?`                  | display help                          |
+| `e`                  | open dired                            |
+| `h`                  | delete backward or parent directory   |
+| `j`                  | next match                            |
+| `J`                  | sub directory                         |
+| `k`                  | previous match                        |
+| `K`                  | parent directory                      |
+| `l`                  | select match                          |
+| `n`                  | next directory in history             |
+| `o`                  | open in other window                  |
+| `p`                  | previous directory in history         |
+| `q`                  | quit transient state                  |
+| `s`                  | open in a new horizontal split        |
+| `t`                  | open in other frame                   |
+| `v`                  | open in a new vertical split          |
 
 ### Bookmarks
 
@@ -2788,12 +2788,12 @@ are very useful to jump to/open a known project.
 
 Open the bookmark completion window by pressing= `SPC f b`
 
-  Key binding   Description
-  ------------- ----------------------------------------------
-  `C-d`         delete the selected bookmark
-  `C-e`         edit the selected bookmark
-  `C-f`         toggle filename location
-  `C-o`         open the selected bookmark in another window
+| Key binding | Description                                  |
+|-------------|----------------------------------------------|
+| `C-d`       | delete the selected bookmark                 |
+| `C-e`       | edit the selected bookmark                   |
+| `C-f`       | toggle filename location                     |
+| `C-o`       | open the selected bookmark in another window |
 
 To save a new bookmark, just type the name of the bookmark and press
 `RET`.
@@ -2803,31 +2803,31 @@ To save a new bookmark, just type the name of the bookmark and press
 `doc-view-mode` is a built-in major mode to view DVI, PostScript (PS),
 PDF, OpenDocument, and Microsoft Office documents.
 
-  Key binding   Description
-  ------------- -------------------------------------------
-  `/`           search forward
-  `?`           search backward
-  `+`           enlarge
-  `-`           shrink
-  `gg`          go to first page
-  `G`           go to last page
-  `gt`          go to page number
-  `h`           previous page
-  `H`           adjust to height
-  `j`           next line
-  `k`           previous line
-  `K`           kill proc and buffer
-  `l`           next page
-  `n`           go to next search occurrence
-  `N`           go to previous search occurrence
-  `P`           fit page to window
-  `r`           revert
-  `W`           adjust to width
-  `C-d`         scroll down
-  `C-k`         kill proc
-  `C-u`         scroll up
-  `C-c C-c`     toggle display text and image display
-  `C-c C-t`     open new buffer with doc\'s text contents
+| Key binding | Description                              |
+|-------------|------------------------------------------|
+| `/`         | search forward                           |
+| `?`         | search backward                          |
+| `+`         | enlarge                                  |
+| `-`         | shrink                                   |
+| `gg`        | go to first page                         |
+| `G`         | go to last page                          |
+| `gt`        | go to page number                        |
+| `h`         | previous page                            |
+| `H`         | adjust to height                         |
+| `j`         | next line                                |
+| `k`         | previous line                            |
+| `K`         | kill proc and buffer                     |
+| `l`         | next page                                |
+| `n`         | go to next search occurrence             |
+| `N`         | go to previous search occurrence         |
+| `P`         | fit page to window                       |
+| `r`         | revert                                   |
+| `W`         | adjust to width                          |
+| `C-d`       | scroll down                              |
+| `C-k`       | kill proc                                |
+| `C-u`       | scroll up                                |
+| `C-c C-c`   | toggle display text and image display    |
+| `C-c C-t`   | open new buffer with doc's text contents |
 
 Auto-saving
 -----------
@@ -2892,21 +2892,21 @@ found on the system.
 
 The tool keys are:
 
-  Tool   Key
-  ------ -----
-  ag     a
-  grep   g
-  ack    k
-  rg     r
-  pt     t
+| Tool | Key |
+|------|-----|
+| ag   | a   |
+| grep | g   |
+| ack  | k   |
+| rg   | r   |
+| pt   | t   |
 
 The available scopes and corresponding keys are:
 
-  Scope                        Key
-  ---------------------------- -----
-  opened buffers               b
-  files in a given directory   f
-  current project              p
+| Scope                      | Key |
+|----------------------------|-----|
+| opened buffers             | b   |
+| files in a given directory | f   |
+| current project            | p   |
 
 It is possible to search in the current file by double tapping the
 second key of the sequence, for instance `SPC s a a` will search in the
@@ -2925,97 +2925,97 @@ also install a command line tool called `pt`.
 
 1.  Useful key bindings
 
-      Key binding              Description
-      ------------------------ --------------------------------------------------------------
-      `F3`                     in a completion buffer, save results to a regular buffer
-      `SPC r l`                resume the last `completion` buffer
-      `SPC r s` or `SPC s l`   resume search buffer (completion or converted search buffer)
-      `` SPC s ` ``            go back to the previous place before jump
-      Prefix argument          will ask for file extensions
+    | Key binding            | Description                                                  |
+    |------------------------|--------------------------------------------------------------|
+    | `F3`                   | in a completion buffer, save results to a regular buffer     |
+    | `SPC r l`              | resume the last `completion` buffer                          |
+    | `SPC r s` or `SPC s l` | resume search buffer (completion or converted search buffer) |
+    | `` SPC s ` ``          | go back to the previous place before jump                    |
+    | Prefix argument        | will ask for file extensions                                 |
 
     When results have been saved in a regular buffer with `F3`, that
-    buffer supports browsing through the matches with Spacemacs\'
+    buffer supports browsing through the matches with Spacemacs'
     `next-error` and `previous-error` bindings (`SPC e n` and `SPC e p`)
     as well as the error transient state (`SPC e .`).
 
 2.  Searching in current file
 
-      Key binding   Description
-      ------------- -----------------------------------------------------
-      `SPC s s`     search with the first found tool
-      `SPC s S`     search with the first found tool with default input
-      `SPC s a a`   `ag`
-      `SPC s a A`   `ag` with default input
-      `SPC s g g`   `grep`
-      `SPC s g G`   `grep` with default input
-      `SPC s r r`   `rg`
-      `SPC s r R`   `rg` with default input
+    | Key binding | Description                                         |
+    |-------------|-----------------------------------------------------|
+    | `SPC s s`   | search with the first found tool                    |
+    | `SPC s S`   | search with the first found tool with default input |
+    | `SPC s a a` | `ag`                                                |
+    | `SPC s a A` | `ag` with default input                             |
+    | `SPC s g g` | `grep`                                              |
+    | `SPC s g G` | `grep` with default input                           |
+    | `SPC s r r` | `rg`                                                |
+    | `SPC s r R` | `rg` with default input                             |
 
 3.  Searching in all open buffers visiting files
 
-      Key binding   Description
-      ------------- -----------------------------------------------------
-      `SPC s b`     search with the first found tool
-      `SPC s B`     search with the first found tool with default input
-      `SPC s a b`   `ag`
-      `SPC s a B`   `ag` with default text
-      `SPC s g b`   `grep`
-      `SPC s g B`   `grep` with default text
-      `SPC s k b`   `ack`
-      `SPC s k B`   `ack` with default text
-      `SPC s r b`   `rg`
-      `SPC s r B`   `rg` with default text
-      `SPC s t b`   `pt`
-      `SPC s t B`   `pt` with default text
+    | Key binding | Description                                         |
+    |-------------|-----------------------------------------------------|
+    | `SPC s b`   | search with the first found tool                    |
+    | `SPC s B`   | search with the first found tool with default input |
+    | `SPC s a b` | `ag`                                                |
+    | `SPC s a B` | `ag` with default text                              |
+    | `SPC s g b` | `grep`                                              |
+    | `SPC s g B` | `grep` with default text                            |
+    | `SPC s k b` | `ack`                                               |
+    | `SPC s k B` | `ack` with default text                             |
+    | `SPC s r b` | `rg`                                                |
+    | `SPC s r B` | `rg` with default text                              |
+    | `SPC s t b` | `pt`                                                |
+    | `SPC s t B` | `pt` with default text                              |
 
 4.  Searching in files in an arbitrary directory
 
-      Key binding   Description
-      ------------- -----------------------------------------------------
-      `SPC s f`     search with the first found tool
-      `SPC s F`     search with the first found tool with default input
-      `SPC s a f`   `ag`
-      `SPC s a F`   `ag` with default text
-      `SPC s g f`   `grep`
-      `SPC s g F`   `grep` with default text
-      `SPC s k f`   `ack`
-      `SPC s k F`   `ack` with default text
-      `SPC s r f`   `rg`
-      `SPC s r F`   `rg` with default text
-      `SPC s t f`   `pt`
-      `SPC s t F`   `pt` with default text
+    | Key binding | Description                                         |
+    |-------------|-----------------------------------------------------|
+    | `SPC s f`   | search with the first found tool                    |
+    | `SPC s F`   | search with the first found tool with default input |
+    | `SPC s a f` | `ag`                                                |
+    | `SPC s a F` | `ag` with default text                              |
+    | `SPC s g f` | `grep`                                              |
+    | `SPC s g F` | `grep` with default text                            |
+    | `SPC s k f` | `ack`                                               |
+    | `SPC s k F` | `ack` with default text                             |
+    | `SPC s r f` | `rg`                                                |
+    | `SPC s r F` | `rg` with default text                              |
+    | `SPC s t f` | `pt`                                                |
+    | `SPC s t F` | `pt` with default text                              |
 
 5.  Searching in current directory
 
-      Key binding            Description
-      ---------------------- -----------------------------------------------------
-      `SPC /` or `SPC s d`   search with the first found tool
-      `SPC *` or `SPC s D`   search with the first found tool with default input
-      `SPC s a d`            `ag`
-      `SPC s a D`            `ag` with default text
-      `SPC s g d`            `grep` with default text
-      `SPC s k d`            `ack`
-      `SPC s k D`            `ack` with default text
-      `SPC s t d`            `pt`
-      `SPC s t D`            `pt` with default text
-      `SPC s r d`            `rg`
-      `SPC s r D`            `rg` with default text
+    | Key binding          | Description                                         |
+    |----------------------|-----------------------------------------------------|
+    | `SPC /` or `SPC s d` | search with the first found tool                    |
+    | `SPC *` or `SPC s D` | search with the first found tool with default input |
+    | `SPC s a d`          | `ag`                                                |
+    | `SPC s a D`          | `ag` with default text                              |
+    | `SPC s g d`          | `grep` with default text                            |
+    | `SPC s k d`          | `ack`                                               |
+    | `SPC s k D`          | `ack` with default text                             |
+    | `SPC s t d`          | `pt`                                                |
+    | `SPC s t D`          | `pt` with default text                              |
+    | `SPC s r d`          | `rg`                                                |
+    | `SPC s r D`          | `rg` with default text                              |
 
 6.  Searching in a project
 
-      Key binding            Description
-      ---------------------- -----------------------------------------------------
-      `SPC /` or `SPC s p`   search with the first found tool
-      `SPC *` or `SPC s P`   search with the first found tool with default input
-      `SPC s a p`            `ag`
-      `SPC s a P`            `ag` with default text
-      `SPC s g p`            `grep` with default text
-      `SPC s k p`            `ack`
-      `SPC s k P`            `ack` with default text
-      `SPC s t p`            `pt`
-      `SPC s t P`            `pt` with default text
-      `SPC s r p`            `rg`
-      `SPC s r P`            `rg` with default text
+    | Key binding          | Description                                         |
+    |----------------------|-----------------------------------------------------|
+    | `SPC /` or `SPC s p` | search with the first found tool                    |
+    | `SPC *` or `SPC s P` | search with the first found tool with default input |
+    | `SPC s a p`          | `ag`                                                |
+    | `SPC s a P`          | `ag` with default text                              |
+    | `SPC s g p`          | `grep` with default text                            |
+    | `SPC s k p`          | `ack`                                               |
+    | `SPC s k P`          | `ack` with default text                             |
+    | `SPC s t p`          | `pt`                                                |
+    | `SPC s t P`          | `pt` with default text                              |
+    | `SPC s r p`          | `rg`                                                |
+    | `SPC s r P`          | `rg` with default text                              |
 
     **Hint**: It is also possible to search in a project without needing
     to open a file beforehand. To do so use `SPC p p` and then `C-s` on
@@ -3023,9 +3023,9 @@ also install a command line tool called `pt`.
 
 7.  Searching the web
 
-      Key binding   Description
-      ------------- -------------------------------------------------------------------
-      `SPC s w g`   Get Google suggestions in emacs. Opens Google results in Browser.
+    | Key binding | Description                                                       |
+    |-------------|-------------------------------------------------------------------|
+    | `SPC s w g` | Get Google suggestions in emacs. Opens Google results in Browser. |
 
 ### Persistent highlighting
 
@@ -3054,32 +3054,32 @@ To initiate the highlighting of the current symbol under point press
 Navigation between the highlighted symbols can be done with the
 commands:
 
-  Key binding   Description
-  ------------- ------------------------------------------------------------------------------------
-  `*`           initiate navigation transient state on current symbol and jump forwards
-  `#`           initiate navigation transient state on current symbol and jump backwards
-  `SPC s e`     edit all occurrences of the current symbol(/)
-  `SPC s h`     highlight the current symbol and all its occurrence within the current range
-  `SPC s H`     go to the last searched occurrence of the last highlighted symbol
-  `SPC t h a`   toggle automatic highlight of symbol under point after `ahs-idle-interval` seconds
+| Key binding | Description                                                                        |
+|-------------|------------------------------------------------------------------------------------|
+| `*`         | initiate navigation transient state on current symbol and jump forwards            |
+| `#`         | initiate navigation transient state on current symbol and jump backwards           |
+| `SPC s e`   | edit all occurrences of the current symbol(/)                                      |
+| `SPC s h`   | highlight the current symbol and all its occurrence within the current range       |
+| `SPC s H`   | go to the last searched occurrence of the last highlighted symbol                  |
+| `SPC t h a` | toggle automatic highlight of symbol under point after `ahs-idle-interval` seconds |
 
 During the symbol highlight transient state, the following bindings are
 active:
 
-  Key binding   Description
-  ------------- ---------------------------------------------------------------
-  `e`           edit occurrences (\*)
-  `n`           go to next occurrence
-  `N` or `p`    go to previous occurrence
-  `d`           go to next definition occurrence
-  `D`           go to previous definition occurrence
-  `r`           change range (`function`, `display area`, `whole buffer`)
-  `R`           go to home occurrence (reset position to starting occurrence)
-  `s`           search current buffer for symbol using ivy / helm
-  `b`           search all open buffers for symbol using ivy / helm
-  `f`           search files for symbol
-  `/`           search current project for symbol
-  `z`           recenter buffer in window
+| Key binding | Description                                                   |
+|-------------|---------------------------------------------------------------|
+| `e`         | edit occurrences (\*)                                         |
+| `n`         | go to next occurrence                                         |
+| `N` or `p`  | go to previous occurrence                                     |
+| `d`         | go to next definition occurrence                              |
+| `D`         | go to previous definition occurrence                          |
+| `r`         | change range (`function`, `display area`, `whole buffer`)     |
+| `R`         | go to home occurrence (reset position to starting occurrence) |
+| `s`         | search current buffer for symbol using ivy / helm             |
+| `b`         | search all open buffers for symbol using ivy / helm           |
+| `f`         | search files for symbol                                       |
+| `/`         | search current project for symbol                             |
+| `z`         | recenter buffer in window                                     |
 
 (\*) using [iedit](https://github.com/tsdh/iedit) or the default
 implementation of `auto-highlight-symbol`
@@ -3087,7 +3087,7 @@ implementation of `auto-highlight-symbol`
 The minibuffer displays the following information during the transient
 state:
 
-``` {.example}
+``` example
 Buffer [6/11]*
 ```
 
@@ -3136,11 +3136,11 @@ Editing
     For example if you copy `foo` and `bar` then press `p` the text
     `bar` will be pasted, pressing `C-j` will replace `bar` with `foo`.
 
-      Key binding   Description
-      ------------- -------------------------------------------------------------------------------
-      `p` or `P`    paste the text before or after point and initiate the `paste` transient state
-      `C-j`         in transient state: replace paste text with the previously copied one
-      `C-k`         in transient state: replace paste text with the next copied one
+    | Key binding | Description                                                                   |
+    |-------------|-------------------------------------------------------------------------------|
+    | `p` or `P`  | paste the text before or after point and initiate the `paste` transient state |
+    | `C-j`       | in transient state: replace paste text with the previously copied one         |
+    | `C-k`       | in transient state: replace paste text with the next copied one               |
 
 2.  Auto-indent pasted text
 
@@ -3156,103 +3156,103 @@ Editing
 
 Text related commands (start with `x`):
 
-  Key binding     Description
-  --------------- ---------------------------------------------------------------
-  `SPC x .`       enter the drag stuff transient state
-  `SPC x TAB`     indent or dedent a region rigidly
-  `SPC x a &`     align region at &
-  `SPC x a (`     align region at (
-  `SPC x a )`     align region at )
-  `SPC x a [`     align region at \[
-  `SPC x a ]`     align region at \]
-  `SPC x a {`     align region at {
-  `SPC x a }`     align region at }
-  `SPC x a ​,​`   align region at ,
-  `SPC x a .`     align region at . (for numeric tables)
-  `SPC x a :`     align region at :
-  `SPC x a ;`     align region at ;
-  `SPC x a =`     align region at =
-  `SPC x a a`     align region (or guessed section) using default rules
-  `SPC x a c`     align current indentation region using default rules
-  `SPC x a l`     left-align with evil-lion
-  `SPC x a L`     right-align with evil-lion
-  `SPC x a r`     align region using user-specified regexp
-  `SPC x a m`     align region at arithmetic operators (+-\*/)
-  `SPC x a ¦`     align region at ¦
-  `SPC x A`       Open all visible links
-  `SPC x c`       count the number of chars/words/lines in the selection region
-  `SPC x d l`     delete blank lines but one or the single blank line
-  `SPC x d w`     delete trailing whitespaces
-  `SPC x d SPC`   Delete all spaces and tabs around point, leaving one space
-  `SPC x e`       Edit strings in place
-  `SPC x g l`     set languages used by translate commands
-  `SPC x g t`     translate current word using Google Translate
-  `SPC x g T`     reverse source and target languages
-  `SPC x i c`     change symbol style to `lowerCamelCase`
-  `SPC x i C`     change symbol style to `UpperCamelCase`
-  `SPC x i i`     cycle symbol naming styles (`i` to keep cycling)
-  `SPC x i -`     change symbol style to `kebab-case`
-  `SPC x i k`     change symbol style to `kebab-case`
-  `SPC x i _`     change symbol style to `under_score`
-  `SPC x i u`     change symbol style to `under_score`
-  `SPC x i U`     change symbol style to `UP_CASE`
-  `SPC x j c`     set the justification to center
-  `SPC x j f`     set the justification to full
-  `SPC x j l`     set the justification to left
-  `SPC x j n`     set the justification to none
-  `SPC x j r`     set the justification to right
-  `SPC x J`       drag down a line of text (enter drag stuff transient state)
-  `SPC x K`       drag up a line of text (enter drag stuff transient state)
-  `SPC x l d`     duplicate line or region
-  `SPC x l r`     randomize lines in region
-  `SPC x l s`     sort lines
-  `SPC x l u`     uniquify lines
-  `SPC x o`       use avy to select a link in the frame and open it
-  `SPC x O`       use avy to select multiple links in the frame and open them
-  `SPC x t c`     swap (transpose) the current character with the previous one
-  `SPC x t e`     swap (transpose) the current sexp with the previous one
-  `SPC x t l`     swap (transpose) the current line with the previous one
-  `SPC x t p`     swap (transpose) the current paragraph with the previous one
-  `SPC x t s`     swap (transpose) the current sentence with the previous one
-  `SPC x t w`     swap (transpose) the current word with the previous one
-  `SPC x u`       set the selected text to lower case
-  `SPC x U`       set the selected text to upper case
-  `SPC x w c`     count the number of occurrences per word in the select region
-  `SPC x w d`     show dictionary entry of word from wordnik.com
-  `SPC x w r`     randomize words in region
-  `SPC x y`       use avy to copy a link in the frame
-  `SPC x Y`       use avy to copy multiple links in the frame
+| Key binding   | Description                                                   |
+|---------------|---------------------------------------------------------------|
+| `SPC x .`     | enter the drag stuff transient state                          |
+| `SPC x TAB`   | indent or dedent a region rigidly                             |
+| `SPC x a &`   | align region at &                                             |
+| `SPC x a (`   | align region at (                                             |
+| `SPC x a )`   | align region at )                                             |
+| `SPC x a [`   | align region at \[                                            |
+| `SPC x a ]`   | align region at \]                                            |
+| `SPC x a {`   | align region at {                                             |
+| `SPC x a }`   | align region at }                                             |
+| `SPC x a ​,​` | align region at ,                                             |
+| `SPC x a .`   | align region at . (for numeric tables)                        |
+| `SPC x a :`   | align region at :                                             |
+| `SPC x a ;`   | align region at ;                                             |
+| `SPC x a =`   | align region at =                                             |
+| `SPC x a a`   | align region (or guessed section) using default rules         |
+| `SPC x a c`   | align current indentation region using default rules          |
+| `SPC x a l`   | left-align with evil-lion                                     |
+| `SPC x a L`   | right-align with evil-lion                                    |
+| `SPC x a r`   | align region using user-specified regexp                      |
+| `SPC x a m`   | align region at arithmetic operators (+-\*/)                  |
+| `SPC x a ¦`   | align region at ¦                                             |
+| `SPC x A`     | Open all visible links                                        |
+| `SPC x c`     | count the number of chars/words/lines in the selection region |
+| `SPC x d l`   | delete blank lines but one or the single blank line           |
+| `SPC x d w`   | delete trailing whitespaces                                   |
+| `SPC x d SPC` | Delete all spaces and tabs around point, leaving one space    |
+| `SPC x e`     | Edit strings in place                                         |
+| `SPC x g l`   | set languages used by translate commands                      |
+| `SPC x g t`   | translate current word using Google Translate                 |
+| `SPC x g T`   | reverse source and target languages                           |
+| `SPC x i c`   | change symbol style to `lowerCamelCase`                       |
+| `SPC x i C`   | change symbol style to `UpperCamelCase`                       |
+| `SPC x i i`   | cycle symbol naming styles (`i` to keep cycling)              |
+| `SPC x i -`   | change symbol style to `kebab-case`                           |
+| `SPC x i k`   | change symbol style to `kebab-case`                           |
+| `SPC x i _`   | change symbol style to `under_score`                          |
+| `SPC x i u`   | change symbol style to `under_score`                          |
+| `SPC x i U`   | change symbol style to `UP_CASE`                              |
+| `SPC x j c`   | set the justification to center                               |
+| `SPC x j f`   | set the justification to full                                 |
+| `SPC x j l`   | set the justification to left                                 |
+| `SPC x j n`   | set the justification to none                                 |
+| `SPC x j r`   | set the justification to right                                |
+| `SPC x J`     | drag down a line of text (enter drag stuff transient state)   |
+| `SPC x K`     | drag up a line of text (enter drag stuff transient state)     |
+| `SPC x l d`   | duplicate line or region                                      |
+| `SPC x l r`   | randomize lines in region                                     |
+| `SPC x l s`   | sort lines                                                    |
+| `SPC x l u`   | uniquify lines                                                |
+| `SPC x o`     | use avy to select a link in the frame and open it             |
+| `SPC x O`     | use avy to select multiple links in the frame and open them   |
+| `SPC x t c`   | swap (transpose) the current character with the previous one  |
+| `SPC x t e`   | swap (transpose) the current sexp with the previous one       |
+| `SPC x t l`   | swap (transpose) the current line with the previous one       |
+| `SPC x t p`   | swap (transpose) the current paragraph with the previous one  |
+| `SPC x t s`   | swap (transpose) the current sentence with the previous one   |
+| `SPC x t w`   | swap (transpose) the current word with the previous one       |
+| `SPC x u`     | set the selected text to lower case                           |
+| `SPC x U`     | set the selected text to upper case                           |
+| `SPC x w c`   | count the number of occurrences per word in the select region |
+| `SPC x w d`   | show dictionary entry of word from wordnik.com                |
+| `SPC x w r`   | randomize words in region                                     |
+| `SPC x y`     | use avy to copy a link in the frame                           |
+| `SPC x Y`     | use avy to copy multiple links in the frame                   |
 
 1.  Drag stuff transient state
 
     The drag stuff transient state is opened with `SPC x .`:
 
-      Key binding         Description
-      ------------------- -----------------------------
-      `k`, `K`, `Up`      drag up
-      `j`, `J`, `Down`    drag down
-      `h`, `H`, `Left`    drag left (word or region)
-      `l`, `L`, `Right`   drag right (word or region)
-      `q`                 quit transient state
+    | Key binding       | Description                 |
+    |-------------------|-----------------------------|
+    | `k`, `K`, `Up`    | drag up                     |
+    | `j`, `J`, `Down`  | drag down                   |
+    | `h`, `H`, `Left`  | drag left (word or region)  |
+    | `l`, `L`, `Right` | drag right (word or region) |
+    | `q`               | quit transient state        |
 
 ### Text insertion commands
 
 Text insertion commands (start with `i`):
 
-  Key binding   Description
-  ------------- -----------------------------------------------------------------------
-  `SPC i l l`   insert lorem-ipsum list
-  `SPC i l p`   insert lorem-ipsum paragraph
-  `SPC i l s`   insert lorem-ipsum sentence
-  `SPC i p 1`   insert simple password
-  `SPC i p 2`   insert stronger password
-  `SPC i p 3`   insert password for paranoids
-  `SPC i p p`   insert a phonetically easy password
-  `SPC i p n`   insert a numerical password
-  `SPC i u`     Search for Unicode characters and insert them into the active buffer.
-  `SPC i U 1`   insert UUIDv1 (use universal argument to insert with CID format)
-  `SPC i U 4`   insert UUIDv4 (use universal argument to insert with CID format)
-  `SPC i U U`   insert UUIDv4 (use universal argument to insert with CID format)
+| Key binding | Description                                                           |
+|-------------|-----------------------------------------------------------------------|
+| `SPC i l l` | insert lorem-ipsum list                                               |
+| `SPC i l p` | insert lorem-ipsum paragraph                                          |
+| `SPC i l s` | insert lorem-ipsum sentence                                           |
+| `SPC i p 1` | insert simple password                                                |
+| `SPC i p 2` | insert stronger password                                              |
+| `SPC i p 3` | insert password for paranoids                                         |
+| `SPC i p p` | insert a phonetically easy password                                   |
+| `SPC i p n` | insert a numerical password                                           |
+| `SPC i u`   | Search for Unicode characters and insert them into the active buffer. |
+| `SPC i U 1` | insert UUIDv1 (use universal argument to insert with CID format)      |
+| `SPC i U 4` | insert UUIDv4 (use universal argument to insert with CID format)      |
+| `SPC i U U` | insert UUIDv4 (use universal argument to insert with CID format)      |
 
 **Hint:** You can change the length of the inserted password with a
 numerical prefix argument, for instance `24 SPC i p p` will insert a
@@ -3269,7 +3269,7 @@ by default.
 It is possible to enable it easily for *all programming modes* with the
 variable `dotspacemacs-smartparens-strict-mode` of you `~/.spacemacs`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-smartparens-strict-mode t)
 ```
 
@@ -3280,20 +3280,20 @@ variable `dotspacemacs-smartparens-strict-mode` of you `~/.spacemacs`.
     The font size of the current buffer can be adjusted with the
     commands:
 
-      Key binding                             Description
-      --------------------------------------- --------------------------------------------------------------------------------
-      `SPC z x +`, `SPC z x =`, `SPC z x k`   scale up the font and initiate the font scaling transient state
-      `SPC z x -`, `SPC z x _`, `SPC z x j`   scale down the font and initiate the font scaling transient state
-      `SPC z x 0`                             reset the font size (no scaling) and initiate the font scaling transient state
+    | Key binding                           | Description                                                                    |
+    |---------------------------------------|--------------------------------------------------------------------------------|
+    | `SPC z x +`, `SPC z x =`, `SPC z x k` | scale up the font and initiate the font scaling transient state                |
+    | `SPC z x -`, `SPC z x _`, `SPC z x j` | scale down the font and initiate the font scaling transient state              |
+    | `SPC z x 0`                           | reset the font size (no scaling) and initiate the font scaling transient state |
 
     In the transient state:
 
-      Key binding     Description
-      --------------- ------------------------
-      `+`, `=`, `k`   increase the font size
-      `-`, `_`, `j`   decrease the font size
-      `0`             reset the font size
-      `q`             quit transient state
+    | Key binding   | Description            |
+    |---------------|------------------------|
+    | `+`, `=`, `k` | increase the font size |
+    | `-`, `_`, `j` | decrease the font size |
+    | `0`           | reset the font size    |
+    | `q`           | quit transient state   |
 
     Note that *only* the text of the current buffer is scaled, the other
     buffers, the mode-line and the minibuffer are not affected. To zoom
@@ -3305,39 +3305,39 @@ variable `dotspacemacs-smartparens-strict-mode` of you `~/.spacemacs`.
     You can zoom in and out the whole content of the frame with the
     commands:
 
-      Key binding                             Description
-      --------------------------------------- -----------------------------------------------------------------------------
-      `SPC z f +`, `SPC z f =`, `SPC z f k`   zoom in the frame content and initiate the frame scaling transient state
-      `SPC z f -`, `SPC z f _`, `SPC z f j`   zoom out the frame content and initiate the frame scaling transient state
-      `SPC z f 0`                             reset the frame content size and initiate the frame scaling transient state
+    | Key binding                           | Description                                                                 |
+    |---------------------------------------|-----------------------------------------------------------------------------|
+    | `SPC z f +`, `SPC z f =`, `SPC z f k` | zoom in the frame content and initiate the frame scaling transient state    |
+    | `SPC z f -`, `SPC z f _`, `SPC z f j` | zoom out the frame content and initiate the frame scaling transient state   |
+    | `SPC z f 0`                           | reset the frame content size and initiate the frame scaling transient state |
 
     In the transient state:
 
-      Key binding     Description
-      --------------- ----------------------
-      `+`, `=`, `k`   zoom frame in
-      `-`, `_`, `j`   zoom frame out
-      `0`             reset frame zoom
-      `q`             quit transient state
+    | Key binding   | Description          |
+    |---------------|----------------------|
+    | `+`, `=`, `k` | zoom frame in        |
+    | `-`, `_`, `j` | zoom frame out       |
+    | `0`           | reset frame zoom     |
+    | `q`           | quit transient state |
 
 ### Increase/Decrease numbers
 
 Spacemacs uses [evil-numbers](https://github.com/cofi/evil-numbers) to
 easily increase or decrease numbers.
 
-  Key binding            Description
-  ---------------------- ---------------------------------------------------------------------
-  `SPC n +`, `SPC n =`   increase the number under point by one and initiate transient state
-  `SPC n -`, `SPC n _`   decrease the number under point by one and initiate transient state
+| Key binding          | Description                                                         |
+|----------------------|---------------------------------------------------------------------|
+| `SPC n +`, `SPC n =` | increase the number under point by one and initiate transient state |
+| `SPC n -`, `SPC n _` | decrease the number under point by one and initiate transient state |
 
 In the transient state:
 
-  Key binding     Description
-  --------------- ----------------------------------------
-  `+`, `=`, `k`   increase the number under point by one
-  `-`, `_`, `j`   decrease the number under point by one
-  `0..9`          add a number prefix argument
-  `q`             quit transient state
+| Key binding   | Description                            |
+|---------------|----------------------------------------|
+| `+`, `=`, `k` | increase the number under point by one |
+| `-`, `_`, `j` | decrease the number under point by one |
+| `0..9`        | add a number prefix argument           |
+| `q`           | quit transient state                   |
 
 **Tips:** You can increase or decrease a number by more than one at a
 time, by using a prefix argument (i.e. `10 SPC n +` will add `10` to the
@@ -3360,13 +3360,13 @@ Vi `Visual` modes are all supported by `evil`.
     Spacemacs adds another `Visual` mode via the
     [expand-region](https://github.com/magnars/expand-region.el) mode.
 
-      Key binding   Description
-      ------------- ------------------------------------------
-      `SPC v`       initiate expand-region mode then...
-      `v`           expand the region by one semantic unit
-      `V`           contract the region by one semantic unit
-      `r`           reset the region to initial selection
-      `ESC`         leave expand-region mode
+    | Key binding | Description                              |
+    |-------------|------------------------------------------|
+    | `SPC v`     | initiate expand-region mode then…        |
+    | `v`         | expand the region by one semantic unit   |
+    | `V`         | contract the region by one semantic unit |
+    | `r`         | reset the region to initial selection    |
+    | `ESC`       | leave expand-region mode                 |
 
 2.  Indent text object
 
@@ -3385,7 +3385,7 @@ Vi `Visual` modes are all supported by `evil`.
     -   There are also `a` variants that include whitespace. Example
         (`|` indicates point):
 
-        ``` {.commonlisp org-language="emacs-lisp"}
+        ``` commonlisp
         (while (not done)
           (messa|ge "All work and no play makes Jack a dull boy."))
         (1+ 41)
@@ -3402,15 +3402,15 @@ Vi `Visual` modes are all supported by `evil`.
 The displayed text of a buffer can be narrowed with the commands (start
 with `n`):
 
-  Key binding   Description
-  ------------- ------------------------------------------------------
-  `SPC n f`     narrow the buffer to the current function
-  `SPC n p`     narrow the buffer to the visible page
-  `SPC n r`     narrow the buffer to the selected text
-  `SPC n w`     widen, i.e. show the whole buffer again
-  `SPC n F`     narrow to the current function in an indirect buffer
-  `SPC n P`     narrow to the visible page in an indirect buffer
-  `SPC n R`     narrow to the selected text in an indirect buffer
+| Key binding | Description                                          |
+|-------------|------------------------------------------------------|
+| `SPC n f`   | narrow the buffer to the current function            |
+| `SPC n p`   | narrow the buffer to the visible page                |
+| `SPC n r`   | narrow the buffer to the selected text               |
+| `SPC n w`   | widen, i.e. show the whole buffer again              |
+| `SPC n F`   | narrow to the current function in an indirect buffer |
+| `SPC n P`   | narrow to the visible page in an indirect buffer     |
+| `SPC n R`   | narrow to the selected text in an indirect buffer    |
 
 Narrowing in an indirect buffer overcomes the problem that a buffer can
 only be narrowed in one place at a given time.
@@ -3436,16 +3436,16 @@ editing of the currently selected text by pressing `e`.
 
     1.  State transitions
 
-          Key binding   From               To
-          ------------- ------------------ --------
-          `SPC s e`     normal or visual   iedit
-          `e`           expand-region      iedit
-          `ESC`         iedit              normal
-          `C-g`         iedit              normal
-          `fd`          iedit              normal
-          `ESC`         iedit-insert       iedit
-          `C-g`         iedit-insert       normal
-          `fd`          iedit-insert       normal
+        | Key binding | From             | To     |
+        |-------------|------------------|--------|
+        | `SPC s e`   | normal or visual | iedit  |
+        | `e`         | expand-region    | iedit  |
+        | `ESC`       | iedit            | normal |
+        | `C-g`       | iedit            | normal |
+        | `fd`        | iedit            | normal |
+        | `ESC`       | iedit-insert     | iedit  |
+        | `C-g`       | iedit-insert     | normal |
+        | `fd`        | iedit-insert     | normal |
 
         To sum-up, in `iedit-insert state` you have to press ESC twice
         to go back to the `normal state`. You can also at any time press
@@ -3460,39 +3460,39 @@ editing of the currently selected text by pressing `e`.
         `iedit state` inherits from `normal state`, the following key
         bindings are specific to `iedit state`.
 
-          Key binding   Description
-          ------------- -----------------------------------------------------------------------------------------
-          `ESC`         go back to `normal state`
-          `TAB`         toggle current occurrence
-          `0`           go to the beginning of the current occurrence
-          `$`           go to the end of the current occurrence
-          `#`           prefix all occurrences with an increasing number (SPC u to choose the starting number).
-          `A`           go to the end of the current occurrence and switch to `iedit-insert state`
-          `D`           delete the occurrences
-          `F`           restrict the scope to the function
-          `gg`          go to first occurrence
-          `G`           go to last occurrence
-          `I`           go to the beginning of the current occurrence and switch to `iedit-insert state`
-          `J`           increase the editing scope by one line below
-          `K`           increase the editing scope by one line above
-          `L`           restrict the scope to the current line
-          `n`           go to next occurrence
-          `N`           go to previous occurrence
-          `p`           replace occurrences with last yanked (copied) text
-          `S`           (substitute) delete the occurrences and switch to `iedit-insert state`
-          `V`           toggle visibility of lines with no occurrence
-          `U`           Up-case the occurrences
-          `C-U`         down-case the occurrences
+        | Key binding | Description                                                                             |
+        |-------------|-----------------------------------------------------------------------------------------|
+        | `ESC`       | go back to `normal state`                                                               |
+        | `TAB`       | toggle current occurrence                                                               |
+        | `0`         | go to the beginning of the current occurrence                                           |
+        | `$`         | go to the end of the current occurrence                                                 |
+        | `#`         | prefix all occurrences with an increasing number (SPC u to choose the starting number). |
+        | `A`         | go to the end of the current occurrence and switch to `iedit-insert state`              |
+        | `D`         | delete the occurrences                                                                  |
+        | `F`         | restrict the scope to the function                                                      |
+        | `gg`        | go to first occurrence                                                                  |
+        | `G`         | go to last occurrence                                                                   |
+        | `I`         | go to the beginning of the current occurrence and switch to `iedit-insert state`        |
+        | `J`         | increase the editing scope by one line below                                            |
+        | `K`         | increase the editing scope by one line above                                            |
+        | `L`         | restrict the scope to the current line                                                  |
+        | `n`         | go to next occurrence                                                                   |
+        | `N`         | go to previous occurrence                                                               |
+        | `p`         | replace occurrences with last yanked (copied) text                                      |
+        | `S`         | (substitute) delete the occurrences and switch to `iedit-insert state`                  |
+        | `V`         | toggle visibility of lines with no occurrence                                           |
+        | `U`         | Up-case the occurrences                                                                 |
+        | `C-U`       | down-case the occurrences                                                               |
 
         **Note**: `0`, `$`, `A` and `I` have the default Vim behavior
         when used outside of an `occurrence`.
 
     3.  In iedit-insert state
 
-          Key binding   Description
-          ------------- ---------------------------
-          `ESC`         go back to `iedit state`
-          `C-g`         go back to `normal state`
+        | Key binding | Description               |
+        |-------------|---------------------------|
+        | `ESC`       | go back to `iedit state`  |
+        | `C-g`       | go back to `normal state` |
 
 2.  Examples
 
@@ -3537,20 +3537,20 @@ an `helm` session:
 
 Comments are handled by
 [evil-nerd-commenter](https://github.com/redguardtoo/evil-nerd-commenter),
-it\'s bound to the following keys.
+it's bound to the following keys.
 
-  Key binding   Description
-  ------------- ---------------------------
-  `SPC ;`       comment operator
-  `SPC c h`     hide/show comments
-  `SPC c l`     comment lines
-  `SPC c L`     invert comment lines
-  `SPC c p`     comment paragraphs
-  `SPC c P`     invert comment paragraphs
-  `SPC c t`     comment to line
-  `SPC c T`     invert comment to line
-  `SPC c y`     comment and yank
-  `SPC c Y`     invert comment and yank
+| Key binding | Description               |
+|-------------|---------------------------|
+| `SPC ;`     | comment operator          |
+| `SPC c h`   | hide/show comments        |
+| `SPC c l`   | comment lines             |
+| `SPC c L`   | invert comment lines      |
+| `SPC c p`   | comment paragraphs        |
+| `SPC c P`   | invert comment paragraphs |
+| `SPC c t`   | comment to line           |
+| `SPC c T`   | invert comment to line    |
+| `SPC c y`   | comment and yank          |
+| `SPC c Y`   | invert comment and yank   |
 
 **Tips:** To comment efficiently a block of line use the combo
 `SPC ; SPC j l`
@@ -3561,7 +3561,7 @@ Spacemacs uses the packages [pcre2el](https://github.com/joddie/pcre2el)
 to manipulate regular expressions. It is useful when working with
 `Emacs Lisp` buffers since it allows to easily converts `PCRE` (Perl
 Compatible RegExp) to Emacs RegExp or `rx`. It can also be used to
-\"explain\" a PCRE RegExp around point in `rx` form.
+"explain" a PCRE RegExp around point in `rx` form.
 
 The key bindings start with `SPC x r` and have the following mnemonic
 structure:
@@ -3569,22 +3569,22 @@ structure:
 -   `SPC x r <source> <target>` convert from source to target
 -   `SPC x r` do what I mean
 
-  Key binding      Description
-  ---------------- ----------------------------------------------------------------------------------------
-  `SPC x r /`      Explain the regexp around point with `rx`
-  `SPC x r '​`     Generate strings given by a regexp given this list is finite
-  `SPC x r t`      Replace regexp around point by the `rx` form or vice versa
-  `SPC x r x`      Convert regexp around point in `rx` form and display the result in the minibuffer
-  `SPC x r c`      Convert regexp around point to the other form and display the result in the minibuffer
-  `SPC x r e /`    Explain Emacs Lisp regexp
-  `SPC x r e '​`   Generate strings from Emacs Lisp regexp
-  `SPC x r e p`    Convert Emacs Lisp regexp to PCRE
-  `SPC x r e t`    Replace Emacs Lisp regexp by `rx` form or vice versa
-  `SPC x r e x`    Convert Emacs Lisp regexp to `rx` form
-  `SPC x r p /`    Explain PCRE regexp
-  `SPC x r p '​`   Generate strings from PCRE regexp
-  `SPC x r p e`    Convert PCRE regexp to Emacs Lisp
-  `SPC x r p x`    Convert PCRE to `rx` form
+| Key binding    | Description                                                                            |
+|----------------|----------------------------------------------------------------------------------------|
+| `SPC x r /`    | Explain the regexp around point with `rx`                                              |
+| `SPC x r '​`   | Generate strings given by a regexp given this list is finite                           |
+| `SPC x r t`    | Replace regexp around point by the `rx` form or vice versa                             |
+| `SPC x r x`    | Convert regexp around point in `rx` form and display the result in the minibuffer      |
+| `SPC x r c`    | Convert regexp around point to the other form and display the result in the minibuffer |
+| `SPC x r e /`  | Explain Emacs Lisp regexp                                                              |
+| `SPC x r e '​` | Generate strings from Emacs Lisp regexp                                                |
+| `SPC x r e p`  | Convert Emacs Lisp regexp to PCRE                                                      |
+| `SPC x r e t`  | Replace Emacs Lisp regexp by `rx` form or vice versa                                   |
+| `SPC x r e x`  | Convert Emacs Lisp regexp to `rx` form                                                 |
+| `SPC x r p /`  | Explain PCRE regexp                                                                    |
+| `SPC x r p '​` | Generate strings from PCRE regexp                                                      |
+| `SPC x r p e`  | Convert PCRE regexp to Emacs Lisp                                                      |
+| `SPC x r p x`  | Convert PCRE to `rx` form                                                              |
 
 ### Deleting files
 
@@ -3593,7 +3593,7 @@ Deletion is configured to send deleted files to system trash.
 On macOS the `trash` program is required. It can be installed with
 [homebrew](https://brew.sh/) with the following command:
 
-``` {.bash org-language="sh"}
+``` bash
 $ brew install trash
 ```
 
@@ -3626,103 +3626,103 @@ out.
 
         Navigation:
 
-          Key binding   Description
-          ------------- -------------------------------------------------------------------------
-                        Forward + Backward pairs
-          `SPC k j`     go forward to next closing parenthesis
-          `SPC k k`     go backward to previous opening parenthesis
-          `SPC k l`     go forward to next symbol
-          `SPC k h`     go backward to previous symbol
-          `SPC k L`     go forward to next sexp
-          `SPC k H`     go backward to previous sexp
-          `SPC k $`     go forward to the end of current sexp
-          `SPC k 0`     go backward to the beginning of current sexp
-                        Other
-          `SPC k U`     go \"up\": to parent sexp backward
-          `SPC k %`     go to other paren of the same pair
-          `SPC k I`     go back to beginning of current expression and switch to `insert` state
+        | Key binding | Description                                                             |
+        |-------------|-------------------------------------------------------------------------|
+        |             | Forward + Backward pairs                                                |
+        | `SPC k j`   | go forward to next closing parenthesis                                  |
+        | `SPC k k`   | go backward to previous opening parenthesis                             |
+        | `SPC k l`   | go forward to next symbol                                               |
+        | `SPC k h`   | go backward to previous symbol                                          |
+        | `SPC k L`   | go forward to next sexp                                                 |
+        | `SPC k H`   | go backward to previous sexp                                            |
+        | `SPC k $`   | go forward to the end of current sexp                                   |
+        | `SPC k 0`   | go backward to the beginning of current sexp                            |
+        |             | Other                                                                   |
+        | `SPC k U`   | go "up": to parent sexp backward                                        |
+        | `SPC k %`   | go to other paren of the same pair                                      |
+        | `SPC k I`   | go back to beginning of current expression and switch to `insert` state |
 
         Manipulation:
 
-          Key binding       Description
-          ----------------- ----------------------------------------------------------------
-          `SPC k s`         slurp forward: `a (bs) c` -\> `a (bs c)`
-          `SPC k S`         slurp backward: `a (bs) c` -\> `(a bs) c`
-          `SPC k b`         barf forward: `(a bs c)` -\> `(a bs) c`
-          `SPC k B`         barf backward: `(a bs c)` -\> `a (bs c)`
-          `SPC k a`         absorb: `(a (bs <point> ..))` -\> `((bs a <point> ..))`
-          `SPC k c`         convolute: `(as (bs <point> ..))` -\> `(bs (as <point> ..))`
-          `SPC k t`         transpose: `(as <point> bs)` -\> `(bs <point> as)`
-          `SPC k J`         join: `(as) <point> (bs)` -\> `(as <point> bs)`
-                            Hybrid (= better for non-Lisp languages) commands
-          `` SPC k ` s ``   hybrid slurp forward
-          `` SPC k ` p ``   hybrid push: `<point>as bs` -\> `<point>bs as`
-          `` SPC k ` t ``   hybrid transpose: `as <point> bs` -\> `bs <point> as`
-          Note 1:           `xs` is one or multiple sexp, `x` is a single sexp
-          Note 2:           point is at \<point\> when presented, or in the list otherwise
+        | Key binding     | Description                                                    |
+        |-----------------|----------------------------------------------------------------|
+        | `SPC k s`       | slurp forward: `a (bs) c` -\> `a (bs c)`                       |
+        | `SPC k S`       | slurp backward: `a (bs) c` -\> `(a bs) c`                      |
+        | `SPC k b`       | barf forward: `(a bs c)` -\> `(a bs) c`                        |
+        | `SPC k B`       | barf backward: `(a bs c)` -\> `a (bs c)`                       |
+        | `SPC k a`       | absorb: `(a (bs <point> ..))` -\> `((bs a <point> ..))`        |
+        | `SPC k c`       | convolute: `(as (bs <point> ..))` -\> `(bs (as <point> ..))`   |
+        | `SPC k t`       | transpose: `(as <point> bs)` -\> `(bs <point> as)`             |
+        | `SPC k J`       | join: `(as) <point> (bs)` -\> `(as <point> bs)`                |
+        |                 | Hybrid (= better for non-Lisp languages) commands              |
+        | `` SPC k ` s `` | hybrid slurp forward                                           |
+        | `` SPC k ` p `` | hybrid push: `<point>as bs` -\> `<point>bs as`                 |
+        | `` SPC k ` t `` | hybrid transpose: `as <point> bs` -\> `bs <point> as`          |
+        | Note 1:         | `xs` is one or multiple sexp, `x` is a single sexp             |
+        | Note 2:         | point is at \<point\> when presented, or in the list otherwise |
 
         Insertion:
 
-          Key binding   Description
-          ------------- --------------------------------
-          `SPC k (`     insert sexp before current one
-          `SPC k )`     insert sexp after current one
-          `SPC k w`     wrap a symbol with parenthesis
+        | Key binding | Description                    |
+        |-------------|--------------------------------|
+        | `SPC k (`   | insert sexp before current one |
+        | `SPC k )`   | insert sexp after current one  |
+        | `SPC k w`   | wrap a symbol with parenthesis |
 
         Deletion:
 
-          Key binding       Description
-          ----------------- ----------------------------------------------------------------------
-          `SPC k ds`        delete symbol
-          `SPC k Ds`        delete symbol backward
-          `SPC k dw`        delete word
-          `SPC k Dw`        delete word backward
-          `SPC k dx`        delete sexp: `(as <point> a ..)` -\> `(as <point> ..)`
-          `SPC k Dx`        delete sexp backward: `(as a <point> ..)` -\> `(as <point> ..)`
-          `SPC k e`         splice, killing forward: `(as (bs <point> cs) ds)` -\> `(as bs ds)`
-          `SPC k E`         splice, killing backward: `(as (bs <point> cs) ds)` -\> `(as cs ds)`
-          `SPC k r`         raise: `(as <point> b ..)` -\> `<point>b`
-          `SPC k W`         unwrap sexp: `(as)` -\> `as`
-                            Hybrid (= better for non-Lisp languages) commands
-          `` SPC k ` k ``   hybrid delete sexp
-          Note 1:           `xs` is one or multiple sexp, `x` is a single sexp
-          Note 2:           point is at `<point>` when presented, or in the list otherwise
+        | Key binding     | Description                                                          |
+        |-----------------|----------------------------------------------------------------------|
+        | `SPC k ds`      | delete symbol                                                        |
+        | `SPC k Ds`      | delete symbol backward                                               |
+        | `SPC k dw`      | delete word                                                          |
+        | `SPC k Dw`      | delete word backward                                                 |
+        | `SPC k dx`      | delete sexp: `(as <point> a ..)` -\> `(as <point> ..)`               |
+        | `SPC k Dx`      | delete sexp backward: `(as a <point> ..)` -\> `(as <point> ..)`      |
+        | `SPC k e`       | splice, killing forward: `(as (bs <point> cs) ds)` -\> `(as bs ds)`  |
+        | `SPC k E`       | splice, killing backward: `(as (bs <point> cs) ds)` -\> `(as cs ds)` |
+        | `SPC k r`       | raise: `(as <point> b ..)` -\> `<point>b`                            |
+        | `SPC k W`       | unwrap sexp: `(as)` -\> `as`                                         |
+        |                 | Hybrid (= better for non-Lisp languages) commands                    |
+        | `` SPC k ` k `` | hybrid delete sexp                                                   |
+        | Note 1:         | `xs` is one or multiple sexp, `x` is a single sexp                   |
+        | Note 2:         | point is at `<point>` when presented, or in the list otherwise       |
 
         Bindings from normal state:
 
         For convenience, a number of normal state evil binding are
         available in lisp state as well:
 
-          Key binding   Description
-          ------------- -------------------------------------------------------------
-          `SPC k :`     ex command
-          `SPC k i`     switch to `insert` state
-          `SPC k I`     switch to `insert` state at beginning of current line
-          `SPC k v`     switch to `visual` state and begin character-wise selection
-          `SPC k V`     switch to `visual` state and begin line-wise selection
-          `SPC k C-v`   switch to `visual` state and begin block-wise selection
-          `SPC k u`     undo
-          `SPC k C-r`   redo
-          `SPC k y`     copy expression
-          `SPC k p`     paste after
-          `SPC k P`     paste before
+        | Key binding | Description                                                 |
+        |-------------|-------------------------------------------------------------|
+        | `SPC k :`   | ex command                                                  |
+        | `SPC k i`   | switch to `insert` state                                    |
+        | `SPC k I`   | switch to `insert` state at beginning of current line       |
+        | `SPC k v`   | switch to `visual` state and begin character-wise selection |
+        | `SPC k V`   | switch to `visual` state and begin line-wise selection      |
+        | `SPC k C-v` | switch to `visual` state and begin block-wise selection     |
+        | `SPC k u`   | undo                                                        |
+        | `SPC k C-r` | redo                                                        |
+        | `SPC k y`   | copy expression                                             |
+        | `SPC k p`   | paste after                                                 |
+        | `SPC k P`   | paste before                                                |
 
     2.  Emacs lisp specific key bindings
 
-          Key binding   Description
-          ------------- ----------------------------------------------------
-          `SPC m e $`   go to end of line and evaluate last sexp
-          `SPC m e b`   evaluate buffer
-          `SPC m e c`   evaluate current form (a `def` or a `set`)
-          `SPC m e e`   evaluate last sexp
-          `SPC m e f`   evaluate current defun
-          `SPC m e l`   go to end of line and evaluate last sexp
-          `SPC m e r`   evaluate region
-          `SPC m g g`   go to definition
-          `SPC m g G`   go to definition in another window
-          `SPC m h h`   describe elisp thing at point (show documentation)
-          `SPC m t b`   execute buffer tests
-          `SPC m t q`   ask for test function to execute
+        | Key binding | Description                                        |
+        |-------------|----------------------------------------------------|
+        | `SPC m e $` | go to end of line and evaluate last sexp           |
+        | `SPC m e b` | evaluate buffer                                    |
+        | `SPC m e c` | evaluate current form (a `def` or a `set`)         |
+        | `SPC m e e` | evaluate last sexp                                 |
+        | `SPC m e f` | evaluate current defun                             |
+        | `SPC m e l` | go to end of line and evaluate last sexp           |
+        | `SPC m e r` | evaluate region                                    |
+        | `SPC m g g` | go to definition                                   |
+        | `SPC m g G` | go to definition in another window                 |
+        | `SPC m h h` | describe elisp thing at point (show documentation) |
+        | `SPC m t b` | execute buffer tests                               |
+        | `SPC m t q` | ask for test function to execute                   |
 
 ### Keyboard macros
 
@@ -3741,10 +3741,10 @@ in macros.
 
     To record a keyboard macro:
 
-    -   Press `q` (there\'s no visual indicator, but it\'s waiting for a
+    -   Press `q` (there's no visual indicator, but it's waiting for a
         letter key to be pressed).
     -   Press a letter key to start recording to that letter register.
-        (the minibuffer shows: Defining kbd macro...)
+        (the minibuffer shows: Defining kbd macro…)
     -   Perform the actions that will be recorded.
     -   Press `q` to stop recording the macro. (the minibuffer shows:
         Keyboard macro defined).
@@ -3783,32 +3783,32 @@ in macros.
         can also set it to a specific value), then each time the counter
         is inserted, it is incremented by 1 afterwards.
 
-        When recording a macro it\'s possible to insert the current
-        value by pressing: `SPC K k`
+        When recording a macro it's possible to insert the current value
+        by pressing: `SPC K k`
 
     2.  Key bindings
 
-          Key binding   Description
-          ------------- ---------------------------------------------------------------------------
-          `SPC K c a`   increment macro counter
-          `SPC K c c`   insert the current value of the macro counter
-          `SPC K c C`   set the macro counter
-          `SPC K c f`   set the display format for the macro counter
-          `SPC K e b`   assign a key binding to the last macro
-          `SPC K e e`   edit last macro in a buffer
-          `SPC K e l`   edit a macro from lossage information (last 300 executed commands)
-          `SPC K e n`   give a name to the last macro
-          `SPC K e r`   write the last macro to a register (use `SPC r r` to call it)
-          `SPC K e s`   step by step edit of the last macro
-          `SPC K k`     start recording macro, if already recording then insert the macro counter
-          `SPC K K`     stop recording macro, if no macro is recording then run last macro
-          `SPC K r L`   view head macro in ring
-          `SPC K r d`   delete head macro in ring
-          `SPC K r l`   run second macro in ring
-          `SPC K r n`   cycle to next macro in ring
-          `SPC K r p`   cycle to previous macro in ring
-          `SPC K r s`   swap the first two macros in ring
-          `SPC K v`     view last macro string in minibuffer
+        | Key binding | Description                                                               |
+        |-------------|---------------------------------------------------------------------------|
+        | `SPC K c a` | increment macro counter                                                   |
+        | `SPC K c c` | insert the current value of the macro counter                             |
+        | `SPC K c C` | set the macro counter                                                     |
+        | `SPC K c f` | set the display format for the macro counter                              |
+        | `SPC K e b` | assign a key binding to the last macro                                    |
+        | `SPC K e e` | edit last macro in a buffer                                               |
+        | `SPC K e l` | edit a macro from lossage information (last 300 executed commands)        |
+        | `SPC K e n` | give a name to the last macro                                             |
+        | `SPC K e r` | write the last macro to a register (use `SPC r r` to call it)             |
+        | `SPC K e s` | step by step edit of the last macro                                       |
+        | `SPC K k`   | start recording macro, if already recording then insert the macro counter |
+        | `SPC K K`   | stop recording macro, if no macro is recording then run last macro        |
+        | `SPC K r L` | view head macro in ring                                                   |
+        | `SPC K r d` | delete head macro in ring                                                 |
+        | `SPC K r l` | run second macro in ring                                                  |
+        | `SPC K r n` | cycle to next macro in ring                                               |
+        | `SPC K r p` | cycle to previous macro in ring                                           |
+        | `SPC K r s` | swap the first two macros in ring                                         |
+        | `SPC K v`   | view last macro string in minibuffer                                      |
 
 ### Scratch buffer
 
@@ -3847,34 +3847,34 @@ help for `ediff` can be opened using `SPC D h`.
 
 All `ediff` commands starts with D:
 
-  Key binding     Description
-  --------------- -----------------------------------------------------------------------------------------------------------------------------------
-  `SPC D b 3`     ask for 3 opened buffers and start an ediff session with them
-  `SPC D b b`     ask for 2 opened buffers and start an ediff session with them
-  `SPC D b p`     ask for a buffer or file that contains a patch to apply to a buffer and start an ediff session with the result
-  `SPC D B`       ask for a file and run ediff with its backup file
-  `SPC D d 3`     ask for 3 directories and run ediff on them comparing files that have the same name in all of them
-  `SPC D d d`     ask for 2 directories and run ediff on them comparing files that have the same name in both
-  `SPC D d r`     run ediff on a directory comparing its files with their revisions if under version control
-  `SPC D f .`     start an ediff session between your `.spacemacs` and its default template in Spacemacs `core`
-  `SPC D f 3`     ask for 3 files and start an ediff session with them
-  `SPC D f f`     ask for 2 files and start an ediff session with them
-  `SPC D f p`     ask for a buffer or file that contains a patch to apply to a file and start an ediff session with the result
-  `SPC D f v`     start ediff between versions of a file
-  `SPC D h`       open ediff documentation within Emacs
-  `SPC D m b 3`   start an ediff merge session between 2 buffers and their ancestor
-  `SPC D m b b`   start an ediff merge session between 2 buffers
-  `SPC D m d 3`   start an ediff merge session between files with the same name in 2 directories and with a 3rd directory containing their ancestor
-  `SPC D m d d`   start an ediff merge session between files with the same name in 2 directories
-  `SPC D m f 3`   start an ediff merge session between 2 files and their ancestor
-  `SPC D m f f`   start an ediff merge session between 2 files
-  `SPC D m r 3`   start an ediff merge session between two revisions of a file with a common ancestor
-  `SPC D m r r`   start an ediff merge session between two revisions of a file
-  `SPC D r l`     start an ediff session between two regions to perform a linewise diff (use this for large regions)
-  `SPC D r w`     start an ediff session between two regions to perform a wordwise diff (use this for small regions)
-  `SPC D s`       display ediff registries
-  `SPC D w l`     compare linewise the portions of visible text of 2 windows which are selected by clicking
-  `SPC D w w`     compare wordwise the portions of visible text of 2 windows which are selected by clicking
+| Key binding   | Description                                                                                                                       |
+|---------------|-----------------------------------------------------------------------------------------------------------------------------------|
+| `SPC D b 3`   | ask for 3 opened buffers and start an ediff session with them                                                                     |
+| `SPC D b b`   | ask for 2 opened buffers and start an ediff session with them                                                                     |
+| `SPC D b p`   | ask for a buffer or file that contains a patch to apply to a buffer and start an ediff session with the result                    |
+| `SPC D B`     | ask for a file and run ediff with its backup file                                                                                 |
+| `SPC D d 3`   | ask for 3 directories and run ediff on them comparing files that have the same name in all of them                                |
+| `SPC D d d`   | ask for 2 directories and run ediff on them comparing files that have the same name in both                                       |
+| `SPC D d r`   | run ediff on a directory comparing its files with their revisions if under version control                                        |
+| `SPC D f .`   | start an ediff session between your `.spacemacs` and its default template in Spacemacs `core`                                     |
+| `SPC D f 3`   | ask for 3 files and start an ediff session with them                                                                              |
+| `SPC D f f`   | ask for 2 files and start an ediff session with them                                                                              |
+| `SPC D f p`   | ask for a buffer or file that contains a patch to apply to a file and start an ediff session with the result                      |
+| `SPC D f v`   | start ediff between versions of a file                                                                                            |
+| `SPC D h`     | open ediff documentation within Emacs                                                                                             |
+| `SPC D m b 3` | start an ediff merge session between 2 buffers and their ancestor                                                                 |
+| `SPC D m b b` | start an ediff merge session between 2 buffers                                                                                    |
+| `SPC D m d 3` | start an ediff merge session between files with the same name in 2 directories and with a 3rd directory containing their ancestor |
+| `SPC D m d d` | start an ediff merge session between files with the same name in 2 directories                                                    |
+| `SPC D m f 3` | start an ediff merge session between 2 files and their ancestor                                                                   |
+| `SPC D m f f` | start an ediff merge session between 2 files                                                                                      |
+| `SPC D m r 3` | start an ediff merge session between two revisions of a file with a common ancestor                                               |
+| `SPC D m r r` | start an ediff merge session between two revisions of a file                                                                      |
+| `SPC D r l`   | start an ediff session between two regions to perform a linewise diff (use this for large regions)                                |
+| `SPC D r w`   | start an ediff session between two regions to perform a wordwise diff (use this for small regions)                                |
+| `SPC D s`     | display ediff registries                                                                                                          |
+| `SPC D w l`   | compare linewise the portions of visible text of 2 windows which are selected by clicking                                         |
+| `SPC D w w`   | compare wordwise the portions of visible text of 2 windows which are selected by clicking                                         |
 
 Managing projects
 -----------------
@@ -3889,43 +3889,43 @@ To search in a project see [project searching](#searching-in-a-project).
 
 `projectile` commands start with p:
 
-  Key binding   Description
-  ------------- ------------------------------------------------------------------------------------------
-  `SPC p '​`    open a shell in project\'s root (with the `shell` layer)
-  `SPC p !`     run shell command in project\'s root
-  `SPC p &`     run async shell command in project\'s root
-  `SPC p %`     replace a regexp
-  `SPC p a`     toggle between implementation and test
-  `SPC p b`     switch to project buffer
-  `SPC p c`     compile project using `projectile`
-  `SPC p d`     find directory
-  `SPC p D`     open project root in `dired`
-  `SPC p e`     edit dir-locals.el
-  `SPC p f`     find file
-  `SPC p F`     find file based on path around point
-  `SPC p g`     find tags
-  `SPC p G`     regenerate the project\'s `etags` / `gtags`
-  `SPC p h`     find file
-  `SPC p I`     invalidate the projectile cache
-  `SPC p k`     kill all project buffers
-  `SPC p o`     run `multi-occur`
-  `SPC p p`     switch project
-  `SPC p r`     open a recent file
-  `SPC p R`     replace a string
-  `SPC p t`     open `Treemacs` and add current `projectile` root to its list of projects
-  `SPC p T`     test project
-  `SPC p v`     open project root in `vc-dir` or `magit`
-  `SPC /`       search in project with the best search tool available
-  `SPC s p`     see [searching in a project](#searching-in-a-project)
-  `SPC s a p`   run `ag`
-  `SPC s g p`   run `grep`
-  `SPC s k p`   run `ack`
-  `SPC s t p`   run `pt`
-  `SPC s r p`   run `rg`
-  `SPC f y C`   show and copy current file path relative to the project root with line and column number
-  `SPC f y D`   show and copy current directory path relative to the project root
-  `SPC f y L`   show and copy current file path relative to the project root with line number
-  `SPC f y Y`   show and copy current file path relative to the project root
+| Key binding | Description                                                                              |
+|-------------|------------------------------------------------------------------------------------------|
+| `SPC p '​`  | open a shell in project's root (with the `shell` layer)                                  |
+| `SPC p !`   | run shell command in project's root                                                      |
+| `SPC p &`   | run async shell command in project's root                                                |
+| `SPC p %`   | replace a regexp                                                                         |
+| `SPC p a`   | toggle between implementation and test                                                   |
+| `SPC p b`   | switch to project buffer                                                                 |
+| `SPC p c`   | compile project using `projectile`                                                       |
+| `SPC p d`   | find directory                                                                           |
+| `SPC p D`   | open project root in `dired`                                                             |
+| `SPC p e`   | edit dir-locals.el                                                                       |
+| `SPC p f`   | find file                                                                                |
+| `SPC p F`   | find file based on path around point                                                     |
+| `SPC p g`   | find tags                                                                                |
+| `SPC p G`   | regenerate the project's `etags` / `gtags`                                               |
+| `SPC p h`   | find file                                                                                |
+| `SPC p I`   | invalidate the projectile cache                                                          |
+| `SPC p k`   | kill all project buffers                                                                 |
+| `SPC p o`   | run `multi-occur`                                                                        |
+| `SPC p p`   | switch project                                                                           |
+| `SPC p r`   | open a recent file                                                                       |
+| `SPC p R`   | replace a string                                                                         |
+| `SPC p t`   | open `Treemacs` and add current `projectile` root to its list of projects                |
+| `SPC p T`   | test project                                                                             |
+| `SPC p v`   | open project root in `vc-dir` or `magit`                                                 |
+| `SPC /`     | search in project with the best search tool available                                    |
+| `SPC s p`   | see [searching in a project](#searching-in-a-project)                                    |
+| `SPC s a p` | run `ag`                                                                                 |
+| `SPC s g p` | run `grep`                                                                               |
+| `SPC s k p` | run `ack`                                                                                |
+| `SPC s t p` | run `pt`                                                                                 |
+| `SPC s r p` | run `rg`                                                                                 |
+| `SPC f y C` | show and copy current file path relative to the project root with line and column number |
+| `SPC f y D` | show and copy current directory path relative to the project root                        |
+| `SPC f y L` | show and copy current file path relative to the project root with line number            |
+| `SPC f y Y` | show and copy current file path relative to the project root                             |
 
 **Note for Windows Users**: To enable fast indexing the GNU `find` or
 Cygwin `find` must be in your `PATH`.
@@ -3935,12 +3935,12 @@ Registers
 
 Access commands to the various registers start with `r`:
 
-  Key binding   Description
-  ------------- ------------------------------------
-  `SPC r e`     show evil yank and named registers
-  `SPC r m`     show marks register
-  `SPC r r`     show helm register
-  `SPC r y`     show kill ring
+| Key binding | Description                        |
+|-------------|------------------------------------|
+| `SPC r e`   | show evil yank and named registers |
+| `SPC r m`   | show marks register                |
+| `SPC r r`   | show helm register                 |
+| `SPC r y`   | show kill ring                     |
 
 Errors handling
 ---------------
@@ -3951,78 +3951,78 @@ default.
 
 Errors management commands (start with `e`):
 
-  Key binding   Description
-  ------------- -----------------------------------------------------------------------
-  `SPC t s`     toggle flycheck
-  `SPC e c`     clear all errors
-  `SPC e h`     describe a flycheck checker
-  `SPC e l`     toggle the display of the `flycheck` list of errors/warnings
-  `SPC e n`     go to the next error
-  `SPC e p`     go to the previous error
-  `SPC e y`     copy each error at cursor position into kill ring
-  `SPC e v`     verify flycheck setup (useful to debug 3rd party tools configuration)
-  `SPC e .`     error transient state
+| Key binding | Description                                                           |
+|-------------|-----------------------------------------------------------------------|
+| `SPC t s`   | toggle flycheck                                                       |
+| `SPC e c`   | clear all errors                                                      |
+| `SPC e h`   | describe a flycheck checker                                           |
+| `SPC e l`   | toggle the display of the `flycheck` list of errors/warnings          |
+| `SPC e n`   | go to the next error                                                  |
+| `SPC e p`   | go to the previous error                                              |
+| `SPC e y`   | copy each error at cursor position into kill ring                     |
+| `SPC e v`   | verify flycheck setup (useful to debug 3rd party tools configuration) |
+| `SPC e .`   | error transient state                                                 |
 
 The next/previous error bindings and the error transient state can be
 used to browse errors from flycheck as well as errors from compilation
-buffers, and indeed anything that supports Emacs\' `next-error` API.
-This includes for example search results that have been saved to a
-separate buffer.
+buffers, and indeed anything that supports Emacs' `next-error` API. This
+includes for example search results that have been saved to a separate
+buffer.
 
 ### Error transient state
 
 The following key bindings are active in the error transient state:
 
-  Key binding   Description
-  ------------- ---------------------------
-  `n`           jump to next error
-  `N` or `p`    jump to previous error
-  `z`           recenter buffer in window
+| Key binding | Description               |
+|-------------|---------------------------|
+| `n`         | jump to next error        |
+| `N` or `p`  | jump to previous error    |
+| `z`         | recenter buffer in window |
 
 ### Custom fringe bitmaps
 
-  Symbol                     Description
-  -------------------------- -------------
-  ![](img/dot-error.png)     Error
-  ![](img/dot-warning.png)   warning
-  ![](img/dot-info.png)      Info
+| Symbol                   | Description |
+|--------------------------|-------------|
+| ![](img/dot-error.png)   | Error       |
+| ![](img/dot-warning.png) | warning     |
+| ![](img/dot-info.png)    | Info        |
 
 Compiling
 ---------
 
 Spacemacs binds a few commands to support compiling a project.
 
-  Key binding   Description
-  ------------- --------------------------------
-  `SPC c c`     use `helm-make` via projectile
-  `SPC c C`     compile
-  `SPC c d`     close compilation window
-  `SPC c k`     kill compilation
-  `SPC c m`     `helm-make`
-  `SPC c r`     recompile
+| Key binding | Description                    |
+|-------------|--------------------------------|
+| `SPC c c`   | use `helm-make` via projectile |
+| `SPC c C`   | compile                        |
+| `SPC c d`   | close compilation window       |
+| `SPC c k`   | kill compilation               |
+| `SPC c m`   | `helm-make`                    |
+| `SPC c r`   | recompile                      |
 
 Quickrun
 --------
 
 Spacemacs can execute current buffer or region.
 
-  Key binding   Description
-  ------------- ---------------------------------------------------
-  `SPC x x`     smart `quickrun` or `quickrun-region`
-  `C-g`         to dismiss a quickrun buffer without selecting it
+| Key binding | Description                                       |
+|-------------|---------------------------------------------------|
+| `SPC x x`   | smart `quickrun` or `quickrun-region`             |
+| `C-g`       | to dismiss a quickrun buffer without selecting it |
 
 EditorConfig
 ============
 
 Spacemacs has support for [EditorConfig](http://editorconfig.org/), a
-configuration file to \"define and maintain consistent coding styles
-between different editors and IDEs.\"
+configuration file to "define and maintain consistent coding styles
+between different editors and IDEs."
 
 To enable this feature, [install the editorconfig
 command](https://github.com/editorconfig/editorconfig-core-c/blob/master/INSTALL.md).
 
 To customize your editorconfig experience, read [the editorconfig-emacs
-package\'s
+package's
 documentation](https://github.com/editorconfig/editorconfig-emacs/blob/master/README.md#customize).
 
 Emacs Server
@@ -4033,7 +4033,7 @@ that server whenever you close your Emacs windows. This can be enabled
 by setting the variable `dotspacemacs-enable-server` to `t` in your
 `~./spacemacs`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-enable-server t)
 ```
 
@@ -4050,14 +4050,14 @@ If you want your Linux or macOS system to use Emacs by default for any
 prompt, you need to set it in your shell configuration, e.g. `~/.bashrc`
 or `~/.zshrc`:
 
-``` {.sh-mode}
+``` sh-mode
 export EDITOR="emacsclient -c"
 ```
 
-Note that if you\'re using macOS, you may have to refer to the
+Note that if you're using macOS, you may have to refer to the
 emacsclient that comes with your GUI Emacs, e.g.:
 
-``` {.sh-mode}
+``` sh-mode
 export EDITOR="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c"
 ```
 
@@ -4067,7 +4067,7 @@ file in Emacs.
 You can set the location of the Emacs server socket by setting
 `dotspacemacs-server-socket-dir` in your `~./spacemacs`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-server-socket-dir "~/.emacs/server")
 ```
 
@@ -4082,22 +4082,22 @@ It is possible to keep the server alive when you close Emacs by setting
 the variable `dotspacemacs-persistent-server` to `t` in your
 `~/.spacemacs`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-persistent-server t)
 ```
 
 When this variable is set to `t`, the only way to quit Emacs *and* kill
 the server is to use the following bindings:
 
-  Key binding   Description
-  ------------- --------------------------------------------------------------------------
-  `SPC q q`     Quit Emacs and kill the server, prompt for changed buffers to save
-  `SPC q Q`     Quit Emacs and kill the server, lose all unsaved changes.
-  `SPC q r`     Restart both Emacs and the server, prompting to save any changed buffers
-  `SPC q s`     Save the buffers, quit Emacs and kill the server
-  `SPC q f`     Kill the current frame
-  `SPC q t`     Restart Emacs and debug with --with-timed-requires
-  `SPC q T`     Restart Emacs and debug with --adv-timers
+| Key binding | Description                                                              |
+|-------------|--------------------------------------------------------------------------|
+| `SPC q q`   | Quit Emacs and kill the server, prompt for changed buffers to save       |
+| `SPC q Q`   | Quit Emacs and kill the server, lose all unsaved changes.                |
+| `SPC q r`   | Restart both Emacs and the server, prompting to save any changed buffers |
+| `SPC q s`   | Save the buffers, quit Emacs and kill the server                         |
+| `SPC q f`   | Kill the current frame                                                   |
+| `SPC q t`   | Restart Emacs and debug with –with-timed-requires                        |
+| `SPC q T`   | Restart Emacs and debug with –adv-timers                                 |
 
 Troubleshoot
 ============
@@ -4135,7 +4135,7 @@ page](https://github.com/syl20bnr/spacemacs/issues).
     backtrace when encountering a lisp error.
 -   Reproduce the error. Note down the steps and backtrace.
 -   Press `SPC h I` and fill in the place holders enclosed in `<<` and
-    `>>` signs. Don\'t forget the reproduction guide and backtrace.
+    `>>` signs. Don't forget the reproduction guide and backtrace.
 -   Press `C-c C-c` or `, ,` to transfer your buffers content to the
     github issue creation page.
 -   Enter a meaningfull title for your issue, stating in short words
@@ -4164,7 +4164,7 @@ its ticket number so it is clear when this issue can be retested.
 
 -   Add initialization code for your package there
 
-    ``` {.elisp}
+    ``` elisp
     ;; Load the package
     (require 'package)
 
@@ -4196,125 +4196,125 @@ Achievements
 Issues
 ------
 
-  Achievements                                                                          Account
-  ------------------------------------------------------------------------------------- -----------------------------------------------
-  [100th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/100)                    [danielwuz](https://github.com/danielwuz)
-  [200th issue (question)](https://github.com/syl20bnr/spacemacs/issues/200)            [justrajdeep](https://github.com/justrajdeep)
-  [300th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/300)                    [danielwuz](https://github.com/danielwuz)
-  [400th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/400)                    [CestDiego](https://github.com/CestDiego)
-  [500th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/500)                    [bjarkevad](https://github.com/bjarkevad)
-  [600th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/600)                    [bjarkevad](https://github.com/bjarkevad)
-  [700th issue (enhancement)](https://github.com/syl20bnr/spacemacs/pull/700)           [jcpetkovich](https://github.com/jcpetkovich)
-  [800th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/800)                    [ryansroberts](https://github.com/laat)
-  [900th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/900)                    [jcpetkovich](https://github.com/jcpetkovich)
-  [1000th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/1000)                  [tuhdo](https://github.com/tuhdo)
-  [2000th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/2000)                  [IvanMalison](https://github.com/IvanMalison)
-  [3000th issue (bug)](https://github.com/syl20bnr/spacemacs/issues/3000)               [malchmih](https://github.com/malchmih)
-  [4000th issue (bug)](https://github.com/syl20bnr/spacemacs/issues/4000)               [icymist](https://github.com/icymist)
-  [5000th issue (too many issues)](https://github.com/syl20bnr/spacemacs/issues/5000)   [justbur](https://github.com/justbur)
-  [6000th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/6000)                  [d12frosted](https://github.com/d12frosted)
-  [7000th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/7000)                  [deb0ch](https://github.com/deb0ch)
-  [8000th issue (bug)](https://github.com/syl20bnr/spacemacs/issues/8000)               jonbash
-  [9000th issue (bug)](https://github.com/syl20bnr/spacemacs/issues/9000)               [shaunpatel](https://github.com/shaunpatel)
-  [10000th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/10000)                [nikital](https://github.com/nikital)
+| Achievements                                                                        | Account                                       |
+|-------------------------------------------------------------------------------------|-----------------------------------------------|
+| [100th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/100)                  | [danielwuz](https://github.com/danielwuz)     |
+| [200th issue (question)](https://github.com/syl20bnr/spacemacs/issues/200)          | [justrajdeep](https://github.com/justrajdeep) |
+| [300th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/300)                  | [danielwuz](https://github.com/danielwuz)     |
+| [400th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/400)                  | [CestDiego](https://github.com/CestDiego)     |
+| [500th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/500)                  | [bjarkevad](https://github.com/bjarkevad)     |
+| [600th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/600)                  | [bjarkevad](https://github.com/bjarkevad)     |
+| [700th issue (enhancement)](https://github.com/syl20bnr/spacemacs/pull/700)         | [jcpetkovich](https://github.com/jcpetkovich) |
+| [800th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/800)                  | [ryansroberts](https://github.com/laat)       |
+| [900th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/900)                  | [jcpetkovich](https://github.com/jcpetkovich) |
+| [1000th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/1000)                | [tuhdo](https://github.com/tuhdo)             |
+| [2000th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/2000)                | [IvanMalison](https://github.com/IvanMalison) |
+| [3000th issue (bug)](https://github.com/syl20bnr/spacemacs/issues/3000)             | [malchmih](https://github.com/malchmih)       |
+| [4000th issue (bug)](https://github.com/syl20bnr/spacemacs/issues/4000)             | [icymist](https://github.com/icymist)         |
+| [5000th issue (too many issues)](https://github.com/syl20bnr/spacemacs/issues/5000) | [justbur](https://github.com/justbur)         |
+| [6000th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/6000)                | [d12frosted](https://github.com/d12frosted)   |
+| [7000th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/7000)                | [deb0ch](https://github.com/deb0ch)           |
+| [8000th issue (bug)](https://github.com/syl20bnr/spacemacs/issues/8000)             | jonbash                                       |
+| [9000th issue (bug)](https://github.com/syl20bnr/spacemacs/issues/9000)             | [shaunpatel](https://github.com/shaunpatel)   |
+| [10000th issue (PR)](https://github.com/syl20bnr/spacemacs/pull/10000)              | [nikital](https://github.com/nikital)         |
 
 Merged Pull Requests
 --------------------
 
-  Achievements                                                             Account
-  ------------------------------------------------------------------------ -----------------------------------------------------
-  [100th pull request](https://github.com/syl20bnr/spacemacs/pull/228)     [bru](https://github.com/bru)
-  [200th pull request](https://github.com/syl20bnr/spacemacs/pull/418)     [smt](https://github.com/smt)
-  [300th pull request](https://github.com/syl20bnr/spacemacs/pull/617)     [BrianHicks](https://github.com/BrianHicks)
-  [400th pull request](https://github.com/syl20bnr/spacemacs/pull/806)     [cpaulik](https://github.com/cpaulik)
-  [500th pull request](https://github.com/syl20bnr/spacemacs/pull/993)     [tuhdo](https://github.com/tuhdo)
-  [600th pull request](https://github.com/syl20bnr/spacemacs/pull/1205)    [trishume](https://github.com/trishume)
-  [1000th pull request](https://github.com/syl20bnr/spacemacs/pull/1995)   [justbur](https://github.com/justbur)
-  [2000th pull request](https://github.com/syl20bnr/spacemacs/pull/4089)   [channingwalton](https://github.com/channingwalton)
-  [3000th pull request](https://github.com/syl20bnr/spacemacs/pull/6338)   [darkfeline](https://github.com/darkfeline)
+| Achievements                                                           | Account                                             |
+|------------------------------------------------------------------------|-----------------------------------------------------|
+| [100th pull request](https://github.com/syl20bnr/spacemacs/pull/228)   | [bru](https://github.com/bru)                       |
+| [200th pull request](https://github.com/syl20bnr/spacemacs/pull/418)   | [smt](https://github.com/smt)                       |
+| [300th pull request](https://github.com/syl20bnr/spacemacs/pull/617)   | [BrianHicks](https://github.com/BrianHicks)         |
+| [400th pull request](https://github.com/syl20bnr/spacemacs/pull/806)   | [cpaulik](https://github.com/cpaulik)               |
+| [500th pull request](https://github.com/syl20bnr/spacemacs/pull/993)   | [tuhdo](https://github.com/tuhdo)                   |
+| [600th pull request](https://github.com/syl20bnr/spacemacs/pull/1205)  | [trishume](https://github.com/trishume)             |
+| [1000th pull request](https://github.com/syl20bnr/spacemacs/pull/1995) | [justbur](https://github.com/justbur)               |
+| [2000th pull request](https://github.com/syl20bnr/spacemacs/pull/4089) | [channingwalton](https://github.com/channingwalton) |
+| [3000th pull request](https://github.com/syl20bnr/spacemacs/pull/6338) | [darkfeline](https://github.com/darkfeline)         |
 
 Stars, forks and watchers
 -------------------------
 
-  Achievements                  Account
-  ----------------------------- -------------------------------------------------------
-  100th watcher                 [adouzzy](https://github.com/adouzzy)
-  100th fork                    [balajisivaraman](https://github.com/balajisivaraman)
-  200th fork                    [alcol80](https://github.com/alcol80)
-  300th fork                    [mlopes](https://github.com/mlopes)
-  2000th fork                   [Gameguykiler](https://github.com/Gameguykiler)
-  100th star                    [Jackneill](https://github.com/Jackneill)
-  200th star                    [jb55](https://github.com/jb55)
-  400th star                    [dbohdan](https://github.com/dbohdan)
-  600th star                    [laat](https://github.com/laat)
-  700th star                    [kendall](https://github.com/kendall)
-  800th star                    [urso](https://github.com/urso)
-  900th star                    [luisgerhorst](https://github.com/luisgerhorst)
-  1000th star!                  [rashly](https://github.com/rashly)
-  2000th star!!                 [stshine](https://github.com/stshine)
-  3000th star!!!                [TheBB](https://github.com/TheBB)
-  4000th star!!!!               [nixmaniack](https://github.com/nixmaniack)
-  5000th star!!!!!              [StreakyCobra](https://github.com/StreakyCobra)
-  6000th star!!!!!!             [NJBS](https://github.com/NJBS)
-  7000th star!!!!!!!            [mukhali](https://github.com/mukhali)
-  8000th star!!!!!!!!           [shsteven](https://github.com/shsteven)
-  9000th star!!!!!!!!!          [deb0ch](https://github.com/deb0ch)
-  10000th star :star:           [colt365](https://github.com/colt365)
-  15000th star :star: :star:    [missingfaktor](https://github.com/missingfaktor)
-  20000th star! :scream~cat~:   [davehorner](https://github.com/davehorner)
+| Achievements                         | Account                                               |
+|--------------------------------------|-------------------------------------------------------|
+| 100th watcher                        | [adouzzy](https://github.com/adouzzy)                 |
+| 100th fork                           | [balajisivaraman](https://github.com/balajisivaraman) |
+| 200th fork                           | [alcol80](https://github.com/alcol80)                 |
+| 300th fork                           | [mlopes](https://github.com/mlopes)                   |
+| 2000th fork                          | [Gameguykiler](https://github.com/Gameguykiler)       |
+| 100th star                           | [Jackneill](https://github.com/Jackneill)             |
+| 200th star                           | [jb55](https://github.com/jb55)                       |
+| 400th star                           | [dbohdan](https://github.com/dbohdan)                 |
+| 600th star                           | [laat](https://github.com/laat)                       |
+| 700th star                           | [kendall](https://github.com/kendall)                 |
+| 800th star                           | [urso](https://github.com/urso)                       |
+| 900th star                           | [luisgerhorst](https://github.com/luisgerhorst)       |
+| 1000th star!                         | [rashly](https://github.com/rashly)                   |
+| 2000th star!!                        | [stshine](https://github.com/stshine)                 |
+| 3000th star!!!                       | [TheBB](https://github.com/TheBB)                     |
+| 4000th star!!!!                      | [nixmaniack](https://github.com/nixmaniack)           |
+| 5000th star!!!!!                     | [StreakyCobra](https://github.com/StreakyCobra)       |
+| 6000th star!!!!!!                    | [NJBS](https://github.com/NJBS)                       |
+| 7000th star!!!!!!!                   | [mukhali](https://github.com/mukhali)                 |
+| 8000th star!!!!!!!!                  | [shsteven](https://github.com/shsteven)               |
+| 9000th star!!!!!!!!!                 | [deb0ch](https://github.com/deb0ch)                   |
+| 10000th star :star:                  | [colt365](https://github.com/colt365)                 |
+| 15000th star :star: :star:           | [missingfaktor](https://github.com/missingfaktor)     |
+| 20000th star! :scream<sub>cat</sub>: | [davehorner](https://github.com/davehorner)           |
 
 Gitter chat
 -----------
 
-  Achievements                      Account
-  --------------------------------- -----------------------------------------------
-  First joiner on the Gitter Chat   [trishume](https://github.com/trishume)
-  1000th joiner                     [gabrielpoca](https://github.com/gabrielpoca)
+| Achievements                    | Account                                       |
+|---------------------------------|-----------------------------------------------|
+| First joiner on the Gitter Chat | [trishume](https://github.com/trishume)       |
+| 1000th joiner                   | [gabrielpoca](https://github.com/gabrielpoca) |
 
 First times
 -----------
 
-  Achievements                                                                                                        Account
-  ------------------------------------------------------------------------------------------------------------------- -------------------------------------------------
-  [First contribution](https://github.com/syl20bnr/spacemacs/pull/19)                                                 [trishume](https://github.com/trishume)
-  [First contributed layer](https://github.com/syl20bnr/spacemacs/commit/e802027d75d0c0aed55539b0da2dfa0df94dfd39)    [trishume](https://github.com/trishume)
-  [First blog article on Spacemacs](http://oli.me.uk/2014/11/06/spacemacs-emacs-vim/)                                 Wolfy87
-  [First contributed banner](https://github.com/syl20bnr/spacemacs/commit/7b44a56263049482ed540ed6815a295633ffe9d1)   [chrisbarrett](https://github.com/chrisbarrett)
+| Achievements                                                                                                      | Account                                         |
+|-------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
+| [First contribution](https://github.com/syl20bnr/spacemacs/pull/19)                                               | [trishume](https://github.com/trishume)         |
+| [First contributed layer](https://github.com/syl20bnr/spacemacs/commit/e802027d75d0c0aed55539b0da2dfa0df94dfd39)  | [trishume](https://github.com/trishume)         |
+| [First blog article on Spacemacs](http://oli.me.uk/2014/11/06/spacemacs-emacs-vim/)                               | Wolfy87                                         |
+| [First contributed banner](https://github.com/syl20bnr/spacemacs/commit/7b44a56263049482ed540ed6815a295633ffe9d1) | [chrisbarrett](https://github.com/chrisbarrett) |
 
 Special Mentions
 ----------------
 
-  Reason                                                                                             Account
-  -------------------------------------------------------------------------------------------------- -------------------------------------------------------
-  Autumnal Cleanup 2015 ([wiki](https://github.com/syl20bnr/spacemacs/wiki/Autumnal-Cleanup-2015))   [StreakyCobra](https://github.com/StreakyCobra)
-  Test and debug tools                                                                               [justbur](https://github.com/justbur)
-  Integration of Ivy                                                                                 [justbur](https://github.com/justbur)
-  Transient States                                                                                   [justbur](https://github.com/justbur)
-  Integration of Persp-mode                                                                          [CestDiego](https://github.com/CestDiego)
-  Cleanest PR ([PR \#5545](https://github.com/syl20bnr/spacemacs/pull/5545))                         [JAremko](https://github.com/JAremko)
-  Documentation tools and GitHub support                                                             [JAremko](https://github.com/JAremko)
-  Code navigation improvement (jump handlers, generalized next error)                                [TheBB](https://github.com/TheBB)
-  Better support for GUI using an Emacs daemon (after-display macro)                                 [travisbhartwell](https://github.com/travisbhartwell)
+| Reason                                                                                           | Account                                               |
+|--------------------------------------------------------------------------------------------------|-------------------------------------------------------|
+| Autumnal Cleanup 2015 ([wiki](https://github.com/syl20bnr/spacemacs/wiki/Autumnal-Cleanup-2015)) | [StreakyCobra](https://github.com/StreakyCobra)       |
+| Test and debug tools                                                                             | [justbur](https://github.com/justbur)                 |
+| Integration of Ivy                                                                               | [justbur](https://github.com/justbur)                 |
+| Transient States                                                                                 | [justbur](https://github.com/justbur)                 |
+| Integration of Persp-mode                                                                        | [CestDiego](https://github.com/CestDiego)             |
+| Cleanest PR ([PR \#5545](https://github.com/syl20bnr/spacemacs/pull/5545))                       | [JAremko](https://github.com/JAremko)                 |
+| Documentation tools and GitHub support                                                           | [JAremko](https://github.com/JAremko)                 |
+| Code navigation improvement (jump handlers, generalized next error)                              | [TheBB](https://github.com/TheBB)                     |
+| Better support for GUI using an Emacs daemon (after-display macro)                               | [travisbhartwell](https://github.com/travisbhartwell) |
 
 Special Titles
 --------------
 
-  Achievements                                                                                                                                 Account
-  -------------------------------------------------------------------------------------------------------------------------------------------- ---------------------------------------------------
-  The Gunner (18 PRs in a row)                                                                                                                 [ralesi](https://github.com/ralesi)
-  The Saint (unlocked the holy-mode)                                                                                                           [trishume](https://github.com/trishume)
-  The Artist ([logo](https://github.com/nashamri/spacemacs-logo) and [theme](https://github.com/nashamri/spacemacs-theme))                     [nashamri](https://github.com/nashamri)
-  The Meme Master (doge banner)                                                                                                                [chrisbarrett](https://github.com/chrisbarrett)
-  The Helm captain ([helm guide](https://tuhdo.github.io/helm-intro.html))                                                                     [tuhdo](https://github.com/tuhdo)
-  The Master of the Keys ([which-key](https://github.com/justbur/emacs-which-key) and [bind-map](https://github.com/justbur/emacs-bind-map))   [justbur](https://github.com/justbur)
-  The PR Patrol Officer                                                                                                                        [robbyoconnor](https://github.com/robbyoconnor)
-  The Expert in Latin Language ([PR](https://github.com/syl20bnr/spacemacs/pull/4043))                                                         [vijaykiran](https://github.com/vijaykiran)
-  The Tiler ([eyebrowse integration](https://github.com/syl20bnr/spacemacs/pull/4068))                                                         [bmag](https://github.com/bmag)
-  The Geometer ([spaceline](https://github.com/TheBB/spaceline))                                                                               [TheBB](https://github.com/TheBB)
-  The Librarian (doc-fmt tool and space-doc mode)                                                                                              [JAremko](https://github.com/JAremko)
-  The Orgonaut ([fixed most of the Org READMEs](https://github.com/syl20bnr/spacemacs/issues/9476))                                            [smile13241324](https://github.com/smile13241324)
-  The Ticketmaster                                                                                                                             [StreakyCobra](https://github.com/StreakyCobra)
-  The ASCII Scribe                                                                                                                             [JAremko](https://github.com/JAremko)
+| Achievements                                                                                                                               | Account                                           |
+|--------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
+| The Gunner (18 PRs in a row)                                                                                                               | [ralesi](https://github.com/ralesi)               |
+| The Saint (unlocked the holy-mode)                                                                                                         | [trishume](https://github.com/trishume)           |
+| The Artist ([logo](https://github.com/nashamri/spacemacs-logo) and [theme](https://github.com/nashamri/spacemacs-theme))                   | [nashamri](https://github.com/nashamri)           |
+| The Meme Master (doge banner)                                                                                                              | [chrisbarrett](https://github.com/chrisbarrett)   |
+| The Helm captain ([helm guide](https://tuhdo.github.io/helm-intro.html))                                                                   | [tuhdo](https://github.com/tuhdo)                 |
+| The Master of the Keys ([which-key](https://github.com/justbur/emacs-which-key) and [bind-map](https://github.com/justbur/emacs-bind-map)) | [justbur](https://github.com/justbur)             |
+| The PR Patrol Officer                                                                                                                      | [robbyoconnor](https://github.com/robbyoconnor)   |
+| The Expert in Latin Language ([PR](https://github.com/syl20bnr/spacemacs/pull/4043))                                                       | [vijaykiran](https://github.com/vijaykiran)       |
+| The Tiler ([eyebrowse integration](https://github.com/syl20bnr/spacemacs/pull/4068))                                                       | [bmag](https://github.com/bmag)                   |
+| The Geometer ([spaceline](https://github.com/TheBB/spaceline))                                                                             | [TheBB](https://github.com/TheBB)                 |
+| The Librarian (doc-fmt tool and space-doc mode)                                                                                            | [JAremko](https://github.com/JAremko)             |
+| The Orgonaut ([fixed most of the Org READMEs](https://github.com/syl20bnr/spacemacs/issues/9476))                                          | [smile13241324](https://github.com/smile13241324) |
+| The Ticketmaster                                                                                                                           | [StreakyCobra](https://github.com/StreakyCobra)   |
+| The ASCII Scribe                                                                                                                           | [JAremko](https://github.com/JAremko)             |
 
 Thank you
 =========

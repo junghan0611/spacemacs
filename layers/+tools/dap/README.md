@@ -47,7 +47,7 @@ may do the following:
 
 For instance the `java` layer:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun java/pre-init-dap-mode ()
   (when (eq java-backend 'lsp)
      (add-to-list 'spacemacs--dap-supported-modes 'java-mode))
@@ -60,9 +60,9 @@ correctly
 Variables
 ---------
 
-  Variable name                Default   Description
-  ---------------------------- --------- ------------------------------
-  `dap-enable-mouse-support`   t         Enable/disable mouse support
+| Variable name              | Default | Description                  |
+|----------------------------|---------|------------------------------|
+| `dap-enable-mouse-support` | t       | Enable/disable mouse support |
 
 Key bindings
 ============
@@ -72,16 +72,16 @@ Declared prefixes
 
 The following prefixes have been declared:
 
-  prefix      name
-  ----------- -------------------
-  `SPC d`     debug
-  `SPC d b`   breakpoints
-  `SPC d d`   debugging
-  `SPC d e`   eval
-  `SPC d I`   inspect
-  `SPC d w`   debug windows
-  `SPC d S`   context switching
-  `SPC d T`   toggles
+| prefix    | name              |
+|-----------|-------------------|
+| `SPC d`   | debug             |
+| `SPC d b` | breakpoints       |
+| `SPC d d` | debugging         |
+| `SPC d e` | eval              |
+| `SPC d I` | inspect           |
+| `SPC d w` | debug windows     |
+| `SPC d S` | context switching |
+| `SPC d T` | toggles           |
 
 Transient state
 ---------------
@@ -89,73 +89,73 @@ Transient state
 Most of the DAP functions can be easily repeated using the built-in DAP
 transient state which can be initiate with `SPC m d .`.
 
-  Key binding   Description
-  ------------- -----------------------
-  `SPC m d .`   debug transient state
+| Key binding | Description           |
+|-------------|-----------------------|
+| `SPC m d .` | debug transient state |
 
 Start/Stop
 ----------
 
-  Key binding   Description
-  ------------- ----------------------------
-  `SPC d A`     abandon all process
-  `SPC d a`     abandon current session
-  `SPC d d d`   start debugging
-  `SPC d d e`   edit debug template
-  `SPC d d l`   debug last configuration
-  `SPC d d r`   debug recent configuration
+| Key binding | Description                |
+|-------------|----------------------------|
+| `SPC d A`   | abandon all process        |
+| `SPC d a`   | abandon current session    |
+| `SPC d d d` | start debugging            |
+| `SPC d d e` | edit debug template        |
+| `SPC d d l` | debug last configuration   |
+| `SPC d d r` | debug recent configuration |
 
 Breakpoints
 -----------
 
-  Key binding   Description
-  ------------- ---------------------------------
-  `SPC d b b`   toggle a breakpoint
-  `SPC d b c`   change breakpoint condition
-  `SPC d b l`   change breakpoint log condition
-  `SPC d b h`   change breakpoint hit count
-  `SPC d b a`   add a breakpoint
-  `SPC d b d`   delete a breakpoint
-  `SPC d b D`   clear all breakpoints
-  `SPC d w b`   list breakpoints
+| Key binding | Description                     |
+|-------------|---------------------------------|
+| `SPC d b b` | toggle a breakpoint             |
+| `SPC d b c` | change breakpoint condition     |
+| `SPC d b l` | change breakpoint log condition |
+| `SPC d b h` | change breakpoint hit count     |
+| `SPC d b a` | add a breakpoint                |
+| `SPC d b d` | delete a breakpoint             |
+| `SPC d b D` | clear all breakpoints           |
+| `SPC d w b` | list breakpoints                |
 
 Navigation
 ----------
 
-  Key binding   Description
-  ------------- -------------------------------
-  `SPC d c`     continue
-  `SPC d i`     step in
-  `SPC d o`     step out
-  `SPC d s`     next step
-  `SPC d r`     restart frame
-  `SPC d S f`   switch frame
-  `SPC d S s`   switch session
-  `SPC d S t`   switch thread
-  `SPC d w o`   goto output buffer if present
-  `SPC d w s`   list sessions
+| Key binding | Description                   |
+|-------------|-------------------------------|
+| `SPC d c`   | continue                      |
+| `SPC d i`   | step in                       |
+| `SPC d o`   | step out                      |
+| `SPC d s`   | next step                     |
+| `SPC d r`   | restart frame                 |
+| `SPC d S f` | switch frame                  |
+| `SPC d S s` | switch session                |
+| `SPC d S t` | switch thread                 |
+| `SPC d w o` | goto output buffer if present |
+| `SPC d w s` | list sessions                 |
 
 Evaluation and REPL
 -------------------
 
-  Key binding   Description
-  ------------- ---------------------
-  `SPC d '_`    Run debug REPL
-  `SPC d e e`   eval
-  `SPC d e r`   eval region
-  `SPC d e t`   eval value at point
+| Key binding | Description         |
+|-------------|---------------------|
+| `SPC d '_`  | Run debug REPL      |
+| `SPC d e e` | eval                |
+| `SPC d e r` | eval region         |
+| `SPC d e t` | eval value at point |
 
 Inspection
 ----------
 
-  Key binding   Description
-  ------------- -------------------------------------------
-  `SPC d I i`   inspect
-  `SPC d I r`   inspect region
-  `SPC d I t`   inspect value at point
-  `SPC d v`     inspect value at point
-  `SPC d w l`   list local variables
-  `SPC d T m`   toggle mouse support for value inspection
+| Key binding | Description                               |
+|-------------|-------------------------------------------|
+| `SPC d I i` | inspect                                   |
+| `SPC d I r` | inspect region                            |
+| `SPC d I t` | inspect value at point                    |
+| `SPC d v`   | inspect value at point                    |
+| `SPC d w l` | list local variables                      |
+| `SPC d T m` | toggle mouse support for value inspection |
 
 References
 ==========

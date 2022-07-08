@@ -1,8 +1,8 @@
 Description
 ===========
 
-THIS FILE IS AUTO-GENERATED! Don\'t edit it directly. See [\"README.org
-tags\" section of CONTRIBUTING.org for the
+THIS FILE IS AUTO-GENERATED! Don't edit it directly. See ["README.org
+tags" section of CONTRIBUTING.org for the
 instructions](https://github.com/syl20bnr/spacemacs/blob/develop/CONTRIBUTING.org#readmeorg-tags).
 
 This is an overview of Spacemacs configuration layers. For information
@@ -183,7 +183,7 @@ Helm.
 
 These completion systems are the central control towers of Spacemacs,
 they are used to manage buffers, projects, search results, configuration
-layers, toggles and more...
+layers, toggles and more…
 
 Mastering your choice of completion system will make you a Spacemacs
 power user.
@@ -207,7 +207,7 @@ completion by [Helm](https://github.com/emacs-helm/helm).
 
 These completion systems are the central control towers of Spacemacs,
 they are used to manage buffers, projects, search results, configuration
-layers, toggles and more...
+layers, toggles and more…
 
 Mastering your choice of completion system will make you a Spacemacs
 power user.
@@ -315,13 +315,13 @@ Features:
     of the code and the end of the comments.
 -   `spacemacs/backward-kill-word-or-region`: A combination of
     `kill-region` and `backward-kill-word`, depending on whether there
-    is an active region. If there\'s an active region kill that. If not
+    is an active region. If there's an active region kill that. If not
     kill the preceding word.
 -   Fill or unfill paragraph: Pressing `M-q` for the first time fills
     current paragraph and pressing `M-q` for the second time unfills it.
-    Note that some modes override this key binding so it\'s not
-    available everywhere. Due to implementation details unfilling
-    doesn\'t work when called twice via `M-x`.
+    Note that some modes override this key binding so it's not available
+    everywhere. Due to implementation details unfilling doesn't work
+    when called twice via `M-x`.
 
 Helpful
 -------
@@ -538,7 +538,7 @@ In short, Treemacs offers:
     so nearly every filetype is supported.
 -   Mouse interface for single and double left clicks in line with
     modern GUI standards (clicking on an icon will also display the
-    file\'s tags).
+    file's tags).
 -   Location awareness: commands like `find-file` or `magit-status` will
     use the location of the node at point (with `$HOME` as fallback).
 -   Optional fontifying of files based on their git status.
@@ -614,7 +614,7 @@ Selectric
 
 This layer makes your Emacs sound like an IBM Selectric typewriter, for
 those moments when your loud, clicky mechanical keyboard is not at hand,
-yet, you\'d still wish to enjoy the sound.
+yet, you'd still wish to enjoy the sound.
 
 Features:
 
@@ -729,7 +729,7 @@ This layer adds support for
 
 Features:
 
--   Function to copy buffer locations as GitHub/Slack/JIRA/HipChat/...
+-   Function to copy buffer locations as GitHub/Slack/JIRA/HipChat/…
     formatted code
 
 Dtrt-indent
@@ -1099,13 +1099,13 @@ Spacemacs-purpose
 This layer enables
 [window-purpose](https://github.com/bmag/emacs-purpose), which provides
 an alternative, purpose-based window manager for Emacs. With this layer,
-your window layout should be robust and shouldn\'t change too much when
+your window layout should be robust and shouldn't change too much when
 opening all sorts of buffers.
 
 Regular [popwin](https://github.com/m2ym/popwin-el) is not triggered
 when window-purpose is enabled. However, the window-purpose layer
-provides a `purpose-popwin` extension, which brings popwin\'s behavior
-to window-purpose and solves that problem.
+provides a `purpose-popwin` extension, which brings popwin's behavior to
+window-purpose and solves that problem.
 
 Features:
 
@@ -1117,7 +1117,7 @@ Features:
 -   Empty `purpose-mode-map`, to avoid conflicts with other key maps
 -   Replicate popwin behavior for purpose-mode - almost no regression in
     popup behavior from using window-purpose.
--   Reuses popwin\'s settings: `popwin:special-display-config`,
+-   Reuses popwin's settings: `popwin:special-display-config`,
     `popwin:popup-window-height` and `popwin:popup-window-width`.
 -   Difference from popwin: when several windows are open, popup window
     is sometimes bigger than with regular popwin in the same situation.
@@ -1153,7 +1153,7 @@ Alda Layer
 Alda is a music composition language allowing music to easily be written
 and edited in a text file.
 
-This layer adds key bindings for `alda-mode`\'s functions, which allow
+This layer adds key bindings for `alda-mode`'s functions, which allow
 Alda code to be interpreted and played by the running Alda server. It
 will also start the Alda server if it is not running.
 
@@ -1609,7 +1609,7 @@ Domain-specific (DSLs)
 
     For example, the following diagram can be defined as follows:
 
-    ``` {.plantuml}
+    ``` plantuml
     @startuml
     JAremko->robbyoconnor : I think the docs can benefit from some kind of illustration
     JAremko<-robbyoconnor : I'm too lazy -- I have actual work to do. I link to the docs. If you can write me a diagram in plantuml, I'll gladly compile and add it.
@@ -1698,12 +1698,12 @@ Domain-specific (DSLs)
 
     Syntax highlighting and Emacs functions for use with
     [AutoHotkey](https://autohotkey.com/) or
-    [AutoHotkey~L~](http://ahkscript.org).
+    [AutoHotkey<sub>L</sub>](http://ahkscript.org).
 
-    Using a combined implementation of ahk-mode from Xah Lee\'s
-    `xahk-mode` and Robert Widhopf-Fenk\'s `autohotkey-mode`. Updated
-    with the latest ahk and ahk~l~ commands found in the latest revision
-    of [SciTE4AutoHotkey](http://fincs.ahk4.net/scite4ahk/).
+    Using a combined implementation of ahk-mode from Xah Lee's
+    `xahk-mode` and Robert Widhopf-Fenk's `autohotkey-mode`. Updated
+    with the latest ahk and ahk<sub>l</sub> commands found in the latest
+    revision of [SciTE4AutoHotkey](http://fincs.ahk4.net/scite4ahk/).
 
     Contributed and maintained by [Rich
     Alesi](https://www.github.com/ralesi).
@@ -2034,7 +2034,7 @@ the README for ember-yansippets for the snippet keys.
 To use this, you need to add add a `.dir-locals.el` file with the
 following in the root of your ember project:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ((nil . ((mode . ember))))
 ```
 
@@ -2047,7 +2047,7 @@ disabled.
 
 Add the following to your `dotspacemacs/user-config`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 (setq create-lockfiles nil)
@@ -2064,7 +2064,7 @@ Features:
 [+frameworks/phoenix/README.org](+frameworks/phoenix/README.org)
 
 This layer adds key bindings for
-[Alchemist](https://github.com/tonini/alchemist.el)\'s already built in
+[Alchemist](https://github.com/tonini/alchemist.el)'s already built in
 phoenix mode.
 
 Features:
@@ -2111,7 +2111,7 @@ Layer for Svelte, for working with `.svelte` files.
 Note: This layer creates a derived mode called `svelte-mode` on the fly
 out of `web-mode` to handle svelte files. It will conflict with the
 [svelte-mode package](https://github.com/AdamNiederer/svelte-mode), make
-sure you don\'t use that package together with this layer.
+sure you don't use that package together with this layer.
 
 Features:
 
@@ -2134,7 +2134,7 @@ Layer for Vue, for working with `.vue` files.
 
 Note: This layer creates a derived mode called `vue-mode` on the fly out
 of `web-mode` to handle vue files. It will conflict with the [vue-mode
-package](https://github.com/AdamNiederer/vue-mode), make sure you don\'t
+package](https://github.com/AdamNiederer/vue-mode), make sure you don't
 use that package together with this layer.
 
 Features:
@@ -2419,7 +2419,7 @@ General-purpose
 
     Enabling [Lsp-mode](https://github.com/emacs-lsp/lsp-mode) brings
     IDE like features following `Language Server Protocol`, through
-    [erlang~ls~](https://erlang-ls.github.io/)
+    [erlang<sub>ls</sub>](https://erlang-ls.github.io/)
 
     Features:
 
@@ -2493,7 +2493,7 @@ General-purpose
         [godoctor](https://github.com/godoctor/godoctor)
     -   Edit struct field tags with
         [gomodifytags](https://github.com/fatih/gomodifytags)
-    -   Syntax checking with flycheck\'s built-in checkers or
+    -   Syntax checking with flycheck's built-in checkers or
         [golangci-lint](https://github.com/golangci/golangci-lint) (see
         [Linting](+lang/go/README.org))
     -   Test generation via
@@ -2621,7 +2621,7 @@ General-purpose
     -   Sending code to a lua REPL
     -   Code linting using
         [Luacheck](https://github.com/mpeterv/luacheck)
-    -   Cross references (definitions, references, rename...)
+    -   Cross references (definitions, references, rename…)
 
 19. Nim
 
@@ -2898,8 +2898,8 @@ General-purpose
 
     [+lang/swift/README.org](+lang/swift/README.org)
 
-    This layer adds support for Apple\'s Swift programming language,
-    used as a general purpose scripting language.
+    This layer adds support for Apple's Swift programming language, used
+    as a general purpose scripting language.
 
     Features:
 
@@ -2935,7 +2935,7 @@ General-purpose
     Features:
 
     -   Faces redefined to correctly play with themes.
-    -   Spacemacs bindings to Agda\'s interactive tools.
+    -   Spacemacs bindings to Agda's interactive tools.
 
     **This layer is in construction, it needs your contributions and bug
     reports.**
@@ -2972,7 +2972,7 @@ General-purpose
 
     -   syntax highlighting for [haskell
         source](https://github.com/haskell/haskell-mode), [cabal
-        files](https://github.com/haskell/haskell-mode), [C--
+        files](https://github.com/haskell/haskell-mode), [C–
         source](https://github.com/bgamari/cmm-mode)
     -   auto-completion and syntax-checking with one of the selected
         backends (`dante` or `lsp`).
@@ -3071,7 +3071,7 @@ for macOS, Linux and Windows.
 
 Features:
 
--   Searching for word at point in offline API browser\'s UI.
+-   Searching for word at point in offline API browser's UI.
 -   Integration of offline API browser search results in Helm and Ivy.
 -   Support for [dash](https://kapeli.com/dash) offline API browser for
     macOS.
@@ -3166,10 +3166,10 @@ This layer enables support for PDF with the
 
 According to the official repository:
 
-> \"PDF Tools is, among other things, a replacement of DocView for PDF
+> "PDF Tools is, among other things, a replacement of DocView for PDF
 > files. The key difference is, that pages are not pre-rendered by e.g.
 > ghostscript and stored in the file-system, but rather created
-> on-demand and stored in memory.\"
+> on-demand and stored in memory."
 
 Features:
 
@@ -3277,7 +3277,7 @@ Version-Control
 This layers adds general configuration for [Emacs
 VC](http://www.gnu.org/software/emacs/manual/html_node/emacs/Version-Control.html).
 It should work with all VC backends such as Git, Mercurial, Bazaar, SVN,
-etc...
+etc…
 
 Features:
 
@@ -3722,7 +3722,7 @@ Features:
         via [theme-changer](https://github.com/hadronzoo/theme-changer)
     -   Local weather forecast via
         [sunshine](https://github.com/aaronbieber/sunshine.el/blob/master/sunshine.el)
-    -   Integration with macOS\'s CoreLocation service via
+    -   Integration with macOS's CoreLocation service via
         [osx-location](https://github.com/purcell/osx-location)
     -   Manual location setting via variables in your dotfile
 
@@ -3732,7 +3732,7 @@ Imenu-list
 [+tools/imenu-list/README.org](+tools/imenu-list/README.org)
 
 This layer uses [imenu-list](https://github.com/bmag/imenu-list) to show
-the current buffer\'s index in a side bar.
+the current buffer's index in a side bar.
 
 This is similar to \`SPC j i\` but displayed in a persistent sidebar
 instead of a completion buffer.
@@ -3770,7 +3770,7 @@ Features:
 -   Live-updating lists of kubernetes resources
 -   Viewing and deleting pods, configmaps and secrets
 -   Switching contexts and namespaces.
--   Showing logs and exec\'ing into containers
+-   Showing logs and exec'ing into containers
 -   Describing pods
 -   Tramp support for pods
 -   Evil bindings
@@ -3786,8 +3786,8 @@ protocol](https://microsoft.github.io/language-server-protocol/specification).
 
 Different language servers may support the language server protocol to
 varying degrees and they may also provide extensions; check the language
-server\'s website for details. `M-x lsp-describe-session` in a LSP
-buffer to list capabilities of the server.
+server's website for details. `M-x lsp-describe-session` in a LSP buffer
+to list capabilities of the server.
 
 Features:
 
@@ -3896,7 +3896,7 @@ Prodigy
 
 This layer adds support for the
 [prodigy](https://github.com/rejeep/prodigy.el) package to manage
-external services from within Emacs, check the package\'s documentation
+external services from within Emacs, check the package's documentation
 for more details.
 
 It is recommended to put your prodigy services in the
@@ -3944,7 +3944,7 @@ work). To default with preview enabled when entering ranger set
 can set both variables at once via the
 `dotspacemacs-configuration-layers` of your dotfiles as follows:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '(ranger :variables
                        ranger-override-dired 'ranger
@@ -4226,12 +4226,11 @@ Evil-snipe
 
 [+vim/evil-snipe/README.org](+vim/evil-snipe/README.org)
 
-This layer adds various replacements for vim\'s default search
-functions.
+This layer adds various replacements for vim's default search functions.
 
 Features:
 
--   Alternative implementation of vim\'s default search operations.
+-   Alternative implementation of vim's default search operations.
 -   Replacement of evil-surround with a two-character search.
 -   Support for alternative scopes for default search operations.
 -   Support for alternative motions based on configurable regexps.
@@ -4242,13 +4241,13 @@ Vim-empty-lines
 [+vim/vim-empty-lines/README.org](+vim/vim-empty-lines/README.org)
 
 This layer is a drop-in replacement for the `vi-tilde-fringe` mode, for
-those who desire behaviour closer to `vim`\'s.
+those who desire behaviour closer to `vim`'s.
 
 It has better compatibility with retina displays, as it uses a text
 overlay using your font, rather than a pixel-art tilde. The empty line
 indicators are overlaid in within the buffer as in `vim`, and not in the
 fringe. The indicator behaviour with trailing empty lines matches
-`vim`\'s behaviour.
+`vim`'s behaviour.
 
 For details, see the
 [vim-empty-lines-mode](https://github.com/jmickelin/vim-empty-lines-mode)
@@ -4266,7 +4265,7 @@ Vinegar
 
 This layer is a port of vim-vinegar for Emacs.
 
-It is based on tpope\'s
+It is based on tpope's
 [vinegar.vim](https://github.com/tpope/vim-vinegar), simplifying `dired`
 with a limited number of details and exposing the `-` command in all
 buffers to enter dired.
@@ -4441,7 +4440,7 @@ Features:
     -   Viewing various timelines
         -   Home timeline
         -   Replies
-        -   User\'s timeline
+        -   User's timeline
         -   Public timeline
         -   Favorites timeline
         -   Retweets timeline

@@ -18,6 +18,6 @@ need to add `streamlink` to the existing
 Key bindings
 ============
 
-  Key binding     Description
-  --------------- --------------------------
-  `SPC a w s s`   Open URL with streamlink
+| Key binding   | Description              |
+|---------------|--------------------------|
+| `SPC a w s s` | Open URL with streamlink |

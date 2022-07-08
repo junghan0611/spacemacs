@@ -27,51 +27,51 @@ Key bindings
 Consulting
 ----------
 
-  Key binding   Description
-  ------------- -------------------
-  `SPC m s b`   Consult Buffer
-  `SPC m s f`   Consult File
-  `SPC m s p`   Consult Predicate
-  `SPC m s r`   Consult Region
+| Key binding | Description       |
+|-------------|-------------------|
+| `SPC m s b` | Consult Buffer    |
+| `SPC m s f` | Consult File      |
+| `SPC m s p` | Consult Predicate |
+| `SPC m s r` | Consult Region    |
 
 Compiling
 ---------
 
-  Key binding   Description
-  ------------- -------------------
-  `SPC m c b`   Compile Buffer
-  `SPC m c c`   Compile File
-  `SPC m c p`   Compile Predicate
-  `SPC m c r`   Compile Region
+| Key binding | Description       |
+|-------------|-------------------|
+| `SPC m c b` | Compile Buffer    |
+| `SPC m c c` | Compile File      |
+| `SPC m c p` | Compile Predicate |
+| `SPC m c r` | Compile Region    |
 
 Formatting
 ----------
 
-  Key binding   Description
-  ------------- ---------------
-  `SPC m =`     Indent Buffer
+| Key binding | Description   |
+|-------------|---------------|
+| `SPC m =`   | Indent Buffer |
 
 Inserting
 ---------
 
-  Key binding   Description
-  ------------- ----------------------------------------------------
-  `SPC m i m`   Insert a Modeline for Module Specification
-  `SPC m i n`   Insert Newline and the Name for the Current Clause
-  `SPC m i p`   Insert Predicate Template for the Current Clause
-  `SPC m i s`   Insert Predicate Spec
+| Key binding | Description                                        |
+|-------------|----------------------------------------------------|
+| `SPC m i m` | Insert a Modeline for Module Specification         |
+| `SPC m i n` | Insert Newline and the Name for the Current Clause |
+| `SPC m i p` | Insert Predicate Template for the Current Clause   |
+| `SPC m i s` | Insert Predicate Spec                              |
 
 Help
 ----
 
-  Key binding   Description
-  ------------- ---------------------------------------
-  `SPC m h a`   Prolog Apropos for a Given String
-  `SPC m h p`   Online Help for the Atom under Cursor
+| Key binding | Description                           |
+|-------------|---------------------------------------|
+| `SPC m h a` | Prolog Apropos for a Given String     |
+| `SPC m h p` | Online Help for the Atom under Cursor |
 
 Evaluating
 ----------
 
-  Key binding   Description
-  ------------- -------------------------------------------
-  `SPC m e e`   Context Sensitive SWI-Prolog Interaction.
+| Key binding | Description                               |
+|-------------|-------------------------------------------|
+| `SPC m e e` | Context Sensitive SWI-Prolog Interaction. |

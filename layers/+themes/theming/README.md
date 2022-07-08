@@ -24,7 +24,7 @@ To use this layer, set the value of `theming-modifications` (a good
 place is inside your `.spacemacs` in `dotspacemacs/user-init()`). It
 should be a list of the following form:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ((theme1 (face1 attributes...)
          (face2 attributes...)
          ...)
@@ -37,7 +37,7 @@ should be a list of the following form:
 Example
 -------
 
-``` {.commonlisp org-language="lisp"}
+``` commonlisp
 (defun dotspacemacs/user-init ()
   (setq theming-modifications
         '((monokai
@@ -68,27 +68,27 @@ attributes](http://www.gnu.org/software/emacs/manual/html_node/elisp/Face-Attrib
 in the Emacs manual for more information. Some of the more common
 attributes you might want to tweak are the following:
 
-`:inherit`
-:   the name of a face to inherit attributes from
+`:inherit`  
+the name of a face to inherit attributes from
 
-`:foreground` and `:background`
-:   Hexadecimal color strings
+`:foreground` and `:background`  
+Hexadecimal color strings
 
-`:height`
-:   typically a floating point number (1.0 gives the same height as the
-    underlying face)
+`:height`  
+typically a floating point number (1.0 gives the same height as the
+underlying face)
 
-`:weight`
-:   typically `bold` or `normal`
+`:weight`  
+typically `bold` or `normal`
 
-`:underline`
-:   typically `nil` or `t`
+`:underline`  
+typically `nil` or `t`
 
-`:slant`
-:   typically `oblique`, `italic` or `normal`
+`:slant`  
+typically `oblique`, `italic` or `normal`
 
-`:box`
-:   set to `t` to draw a box around characters in the foreground
+`:box`  
+set to `t` to draw a box around characters in the foreground
 
 Faces
 =====
@@ -129,16 +129,16 @@ This layer includes three additional layer variables for tweaking
 headings. Allowed values are a list of themes in which the given effect
 should happen, or the symbol `all` to apply it on all themes.
 
-`theming-headings-inherit-from-default`
-:   inherits all headings from the default face to avoid non-monospaced
-    fonts
+`theming-headings-inherit-from-default`  
+inherits all headings from the default face to avoid non-monospaced
+fonts
 
-`theming-headings-same-size`
-:   sets the `:height` attribute to one on all headings to give them the
-    same size as the rest of the text
+`theming-headings-same-size`  
+sets the `:height` attribute to one on all headings to give them the
+same size as the rest of the text
 
-`theming-headings-bold`
-:   sets the `:weight` attribute to bold on all headings
+`theming-headings-bold`  
+sets the `:weight` attribute to bold on all headings
 
 Example
 =======
@@ -146,7 +146,7 @@ Example
 An example of how to set the default font colour to be black in a custom
 theme leuven:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dotspacemacs/user-init ()
 
   ; custom theme modification - overriding default font colour

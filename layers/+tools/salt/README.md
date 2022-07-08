@@ -25,6 +25,6 @@ being edited.
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ----------------------------------------------
-  `SPC m p b`   mmm-mode parse buffer via `mmm-parse-buffer`
+| Key binding | Description                                  |
+|-------------|----------------------------------------------|
+| `SPC m p b` | mmm-mode parse buffer via `mmm-parse-buffer` |

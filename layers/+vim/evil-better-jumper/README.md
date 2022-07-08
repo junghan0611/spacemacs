@@ -22,7 +22,7 @@ like `TAB` instead of `better-jumper-jump-forward`, please use
 `dotspacemacs-distinguish-gui-tab` and ensure it is set to `t` in the
 dotspacemacs file.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dotspacemacs/init ()
   ;; ...
   dotspacemacs-distinguish-gui-tab t)
@@ -31,7 +31,7 @@ dotspacemacs file.
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -----------------------------
-  `C-o`         better-jumper-jump-backward
-  `C-i`         better-jumper-jump-forward
+| Key binding | Description                 |
+|-------------|-----------------------------|
+| `C-o`       | better-jumper-jump-backward |
+| `C-i`       | better-jumper-jump-forward  |

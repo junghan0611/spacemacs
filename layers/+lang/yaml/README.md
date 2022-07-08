@@ -26,13 +26,13 @@ LSP
 To enable LSP, install
 [yaml-language-server](https://github.com/redhat-developer/yaml-language-server):
 
-``` {.bash org-language="sh"}
+``` bash
 npm i -g yaml-language-server
 ```
 
 And set the layer variable `yaml-enable-lsp` to `t` like shown below:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((yaml :variables yaml-enable-lsp t)))
 ```

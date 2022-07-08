@@ -18,12 +18,12 @@ need to add `speed-reading` to the existing
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ---------------
-  `SPC a r s`   Start Spray
-  `SPC`         Pause Spray
-  `h`           Backward word
-  `l`           Forward word
-  `f`           Faster speed
-  `s`           Slower speed
-  `q`           Quit Spray
+| Key binding | Description   |
+|-------------|---------------|
+| `SPC a r s` | Start Spray   |
+| `SPC`       | Pause Spray   |
+| `h`         | Backward word |
+| `l`         | Forward word  |
+| `f`         | Faster speed  |
+| `s`         | Slower speed  |
+| `q`         | Quit Spray    |

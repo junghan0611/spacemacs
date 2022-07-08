@@ -40,7 +40,7 @@ Configuration
 Most layer configurations can be done by setting layer variables in your
 dotfile. Some however require adding lines to your user-config. If the
 `pdf` layer is used, then the layer automatically configures `pdf-tools`
-as the \'output-pdf\' viewer, see [\#pdf-viewer](#pdf-viewer).
+as the 'output-pdf' viewer, see [\#pdf-viewer](#pdf-viewer).
 
 Variables
 ---------
@@ -49,18 +49,18 @@ A number of configuration variables have been exposed via the layer
 `config.el`. Sensible defaults have been provided, however they may all
 be overridden in your .spacemacs.
 
-  Variable Name                      Default                                                               Description
-  ---------------------------------- --------------------------------------------------------------------- --------------------------------------------------------------------------------
-  `latex-backend`                    `nil`                                                                 Use LSP backend, unless it\'s \`company-auctex\` or `LSP` layer isn\'t enabled
-  `latex-build-command`              `'latexmk` if it\'s found                                             Default command to use with `SPC m b`
-  `latex-build-engine`               `'xetex` if it\'s found and `chinese` / `japanese` layer is enabled   Default TeX engine to use with `SPC m b`
-  `latex-enable-auto-fill`           `t`                                                                   When non-nil, enable `auto-fill-mode`
-  `latex-enable-folding`             `nil`                                                                 When non-nil, enable `TeX-fold-mode`
-  `latex-enable-magic`               `nil`                                                                 When non-nil, enable magic symbols
-  `latex-nofill-env`                 See [details below](#auto-fill)                                       A list of LaTeX environment name where `auto-fill-mode` is disabled
-  `latex-refresh-preview`            `nil`                                                                 When non-nil, enable refresh preview buffer when file changes
-  `latex-view-with-pdf-tools`        `t` if pdf layer is installed, else `nil`                             When non-nil, use `pdf-tools` for viewing output pdf files
-  `latex-view-pdf-in-split-window`   `nil` setting is neglected if `latex-view-with-pdf-tools` is `nil`    When non-nil, open `pdf-tools` in split window (when using `TeX-view` command)
+| Variable Name                    | Default                                                            | Description                                                                    |
+|----------------------------------|--------------------------------------------------------------------|--------------------------------------------------------------------------------|
+| `latex-backend`                  | `nil`                                                              | Use LSP backend, unless it's \`company-auctex\` or `LSP` layer isn't enabled   |
+| `latex-build-command`            | `'latexmk` if it's found                                           | Default command to use with `SPC m b`                                          |
+| `latex-build-engine`             | `'xetex` if it's found and `chinese` / `japanese` layer is enabled | Default TeX engine to use with `SPC m b`                                       |
+| `latex-enable-auto-fill`         | `t`                                                                | When non-nil, enable `auto-fill-mode`                                          |
+| `latex-enable-folding`           | `nil`                                                              | When non-nil, enable `TeX-fold-mode`                                           |
+| `latex-enable-magic`             | `nil`                                                              | When non-nil, enable magic symbols                                             |
+| `latex-nofill-env`               | See [details below](#auto-fill)                                    | A list of LaTeX environment name where `auto-fill-mode` is disabled            |
+| `latex-refresh-preview`          | `nil`                                                              | When non-nil, enable refresh preview buffer when file changes                  |
+| `latex-view-with-pdf-tools`      | `t` if pdf layer is installed, else `nil`                          | When non-nil, use `pdf-tools` for viewing output pdf files                     |
+| `latex-view-pdf-in-split-window` | `nil` setting is neglected if `latex-view-with-pdf-tools` is `nil` | When non-nil, open `pdf-tools` in split window (when using `TeX-view` command) |
 
 Choosing a backend
 ------------------
@@ -79,7 +79,7 @@ You also need to enable `LSP` layer in your `~/.spacemacs`.
 
 To explicitly choose LSP backend for `LaTeX` layer, add the following:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((latex :variables latex-backend 'lsp)))
 ```
@@ -95,7 +95,7 @@ recommended best for infrequent LaTeX editing needs.
 To explicitly choose `company-auctex` as the backend, set the following
 in your `~/.spacemacs`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((latex :variables latex-backend 'company-auctex)))
 ```
@@ -107,7 +107,7 @@ have a better coverage of latex symbols than the default counter-part in
 `company-auctex`. If you prefer to use `company-auctex` for math symbols
 completion set the following in your `~/.spacemacs`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((latex :packages (not company-math))))
 ```
@@ -116,13 +116,12 @@ PDF viewer
 ----------
 
 If the `pdf` layer is used, then the layer automatically configures
-`pdf-tools` as the \'output-pdf\' viewer, see
-[\#pdf-viewer](#pdf-viewer). To additionally make `pdf-tools` open in a
-split window, set the layer variable `latex-view-pdf-in-split-window` to
-`t`.
+`pdf-tools` as the 'output-pdf' viewer, see [\#pdf-viewer](#pdf-viewer).
+To additionally make `pdf-tools` open in a split window, set the layer
+variable `latex-view-pdf-in-split-window` to `t`.
 
 If, despite using the pdf layer, you prefer to use another pdf viewer to
-preview the output pdf\'s, set the layer variable
+preview the output pdf's, set the layer variable
 `latex-view-with-pdf-tools` to `nil`.
 
 Previewing
@@ -134,7 +133,7 @@ Previewing
 To update the preview buffer whenever the compiled PDF file changes, set
 `latex-refresh-preview` to `t` in your `~/.spacemacs`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((latex :variables latex-refresh-preview t)))
 ```
@@ -152,12 +151,12 @@ in `TeX-command-list`, including any custom entries you may have added
 there.
 
 If `latexmk` is found on your system `PATH`, `LatexMk` will be chosen as
-your `latex-build-command`, unless if it\'s not set.
+your `latex-build-command`, unless if it's not set.
 
 To use the regular `AucTeX` command, set `latex-build-command` to
 `LaTeX` as shown below.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((latex :variables latex-build-command "LaTeX")))
 ```
@@ -178,21 +177,21 @@ default valid symbols are:
 -   `xetex`
 
 An appropriate `TeX-engine` is required for high-quality typesetting in
-certain languages. For convenience, `xetex` is chosen when it\'s found
-on PATH and when either `chinese` or `japanese` layer is enabled.
+certain languages. For convenience, `xetex` is chosen when it's found on
+PATH and when either `chinese` or `japanese` layer is enabled.
 
 You can choose the engine on a per file basis, by setting file-local
 variable. For example, you can append these code to the end of a `.tex`
 file:
 
-``` {.tex}
+``` tex
 %%% Local Variables:
 %%% TeX-engine: xetex
 %%% End:
 ```
 
-Should you use AUCTeX\'s keystroke `C-c C-c` for compilation instead of
-Spacemacs\' `SPC m b`, the minibuffer will still show `LaTeX` as
+Should you use AUCTeX's keystroke `C-c C-c` for compilation instead of
+Spacemacs' `SPC m b`, the minibuffer will still show `LaTeX` as
 compilation command, however `xetex` will be used on the background and
 no specific `Xe(La)TeX` command is needed. Likewise for the other
 engines.
@@ -200,7 +199,7 @@ engines.
 If you predominantly work with one specific engine, you can set it as a
 layer variable.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((latex :variables latex-build-engine 'xetex)))
 ```
@@ -215,7 +214,7 @@ Auto-fill
 To disable auto-fill (which is on by default) set the variable
 `latex-enable-auto-fill` to `nil`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((latex :variables latex-enable-auto-fill nil)))
 ```
@@ -223,15 +222,15 @@ To disable auto-fill (which is on by default) set the variable
 The variable `latex-nofill-env` provides the list of environment names
 where `auto-fill-mode` will be inhibited. By default it includes:
 
--   \"equation\"
--   \"equation\*\"
--   \"align\"
--   \"align\*\"
--   \"tabular\"
--   \"tabular\*\"
--   \"tabu\"
--   \"tabu\*\"
--   \"tikzpicture\"
+-   "equation"
+-   "equation\*"
+-   "align"
+-   "align\*"
+-   "tabular"
+-   "tabular\*"
+-   "tabu"
+-   "tabu\*"
+-   "tikzpicture"
 
 Folding
 -------
@@ -239,7 +238,7 @@ Folding
 Enable folding of text by setting `latex-enable-folding` to `t`. Default
 value is nil.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((latex :variables latex-enable-folding t)))
 ```
@@ -247,10 +246,10 @@ value is nil.
 Magic latex buffer
 ------------------
 
-To enable \"magic\" symbols in latex buffers, set the variable
+To enable "magic" symbols in latex buffers, set the variable
 `latex-enable-magic` to `t`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((latex :variables latex-enable-magic t)))
 ```
@@ -274,86 +273,86 @@ By default, the underlying latex code is echoed in the echo area.
 Key bindings
 ============
 
-  Key binding                           Description
-  ------------------------------------- --------------------------------------------
-  `SPC m -`                             recenter output buffer
-  `SPC m ,`                             TeX command on master file
-  `SPC m .`                             mark LaTeX environment
-  `SPC m *`                             mark LaTeX section
-  `SPC m %`                             comment or uncomment a paragraph
-  `SPC m ;`                             comment or uncomment a region
-  `SPC m a` or with LSP `SPC m a u`     run all commands (compile and open viewer)
-  `SPC m b` or with LSP `SPC m c`       build the document (compile)
-  `SPC m c` or with LSP `SPC m i c`     close LaTeX environment
-  `SPC m i c` or with LSP `SPC m i C`   insert cite key
-  `SPC m e` or with LSP `SPC m i e`     insert LaTeX environment
-  `SPC m i i`                           insert `\item`
-  `SPC m k`                             kill TeX job
-  `SPC m l`                             recenter output buffer
-  `SPC m m`                             insert LaTeX macro
-  `SPC m n`                             goto next error
-  `SPC m N`                             goto previous error
-  `SPC m s`                             insert LaTeX section
-  `SPC m v`                             view output
-  `SPC m h d`                           TeX documentation, can be very slow
-  `SPC m f e`                           fill LaTeX environment
-  `SPC m f p`                           fill LaTeX paragraph
-  `SPC m f r`                           fill LaTeX region
-  `SPC m f s`                           fill LaTeX section
-  `SPC m p r`                           preview region
-  `SPC m p b`                           preview buffer
-  `SPC m p d`                           preview document
-  `SPC m p e`                           preview environment
-  `SPC m p s`                           preview section
-  `SPC m p p`                           preview at point
-  `SPC m p f`                           cache preamble for preview
-  `SPC m p c`                           clear previews
-  `SPC m v`                             view
-  `SPC m x b`                           make font bold
-  `SPC m x B`                           make font medium weight
-  `SPC m x c`                           make font monospaced (for code)
-  `SPC m x e`                           make font emphasised
-  `SPC m x i`                           make font italic
-  `SPC m x o`                           make font oblique
-  `SPC m x r`                           remove font properties
-  `SPC m x f a`                         use calligraphic font
-  `SPC m x f c`                         use small-caps font
-  `SPC m x f f`                         use sans serif font
-  `SPC m x f n`                         use normal font
-  `SPC m x f r`                         use serif font
-  `SPC m x f u`                         use upright font
+| Key binding                         | Description                                |
+|-------------------------------------|--------------------------------------------|
+| `SPC m -`                           | recenter output buffer                     |
+| `SPC m ,`                           | TeX command on master file                 |
+| `SPC m .`                           | mark LaTeX environment                     |
+| `SPC m *`                           | mark LaTeX section                         |
+| `SPC m %`                           | comment or uncomment a paragraph           |
+| `SPC m ;`                           | comment or uncomment a region              |
+| `SPC m a` or with LSP `SPC m a u`   | run all commands (compile and open viewer) |
+| `SPC m b` or with LSP `SPC m c`     | build the document (compile)               |
+| `SPC m c` or with LSP `SPC m i c`   | close LaTeX environment                    |
+| `SPC m i c` or with LSP `SPC m i C` | insert cite key                            |
+| `SPC m e` or with LSP `SPC m i e`   | insert LaTeX environment                   |
+| `SPC m i i`                         | insert `\item`                             |
+| `SPC m k`                           | kill TeX job                               |
+| `SPC m l`                           | recenter output buffer                     |
+| `SPC m m`                           | insert LaTeX macro                         |
+| `SPC m n`                           | goto next error                            |
+| `SPC m N`                           | goto previous error                        |
+| `SPC m s`                           | insert LaTeX section                       |
+| `SPC m v`                           | view output                                |
+| `SPC m h d`                         | TeX documentation, can be very slow        |
+| `SPC m f e`                         | fill LaTeX environment                     |
+| `SPC m f p`                         | fill LaTeX paragraph                       |
+| `SPC m f r`                         | fill LaTeX region                          |
+| `SPC m f s`                         | fill LaTeX section                         |
+| `SPC m p r`                         | preview region                             |
+| `SPC m p b`                         | preview buffer                             |
+| `SPC m p d`                         | preview document                           |
+| `SPC m p e`                         | preview environment                        |
+| `SPC m p s`                         | preview section                            |
+| `SPC m p p`                         | preview at point                           |
+| `SPC m p f`                         | cache preamble for preview                 |
+| `SPC m p c`                         | clear previews                             |
+| `SPC m v`                           | view                                       |
+| `SPC m x b`                         | make font bold                             |
+| `SPC m x B`                         | make font medium weight                    |
+| `SPC m x c`                         | make font monospaced (for code)            |
+| `SPC m x e`                         | make font emphasised                       |
+| `SPC m x i`                         | make font italic                           |
+| `SPC m x o`                         | make font oblique                          |
+| `SPC m x r`                         | remove font properties                     |
+| `SPC m x f a`                       | use calligraphic font                      |
+| `SPC m x f c`                       | use small-caps font                        |
+| `SPC m x f f`                       | use sans serif font                        |
+| `SPC m x f n`                       | use normal font                            |
+| `SPC m x f r`                       | use serif font                             |
+| `SPC m x f u`                       | use upright font                           |
 
 Folding
 -------
 
 Available only when `latex-enable-folding` is non nil.
 
-  Key binding   Description
-  ------------- ----------------------
-  `SPC m z =`   fold TeX math
-  `SPC m z b`   fold TeX buffer
-  `SPC m z e`   fold TeX environment
-  `SPC m z m`   fold TeX macro
-  `SPC m z r`   fold TeX region
+| Key binding | Description          |
+|-------------|----------------------|
+| `SPC m z =` | fold TeX math        |
+| `SPC m z b` | fold TeX buffer      |
+| `SPC m z e` | fold TeX environment |
+| `SPC m z m` | fold TeX macro       |
+| `SPC m z r` | fold TeX region      |
 
 RefTeX
 ------
 
-  Key binding                               Description
-  ----------------------------------------- ---------------------------------------
-  `SPC m r c` or with LSP `SPC m R c`       reftex-citation
-  `SPC m r g` or with LSP `SPC m R g`       reftex-grep-document
-  `SPC m r i` or with LSP `SPC m R i`       reftex-index-selection-or-word
-  `SPC m r I` or with LSP `SPC m R I`       reftex-display-index
-  `SPC m r TAB` or with LSP `SPC m R TAB`   reftex-index
-  `SPC m r l` or with LSP `SPC m R l`       reftex-label
-  `SPC m r p` or with LSP `SPC m R p`       reftex-index-phrase-selection-or-word
-  `SPC m r P` or with LSP `SPC m R P`       reftex-index-visit-phrases-buffer
-  `SPC m r r` or with LSP `SPC m R r`       reftex-reference
-  `SPC m r s` or with LSP `SPC m R s`       reftex-search-document
-  `SPC m r t` or with LSP `SPC m R t`       reftex-toc
-  `SPC m r T` or with LSP `SPC m R T`       reftex-toc-recenter
-  `SPC m r v` or with LSP `SPC m R v`       reftex-view-crossref
+| Key binding                             | Description                           |
+|-----------------------------------------|---------------------------------------|
+| `SPC m r c` or with LSP `SPC m R c`     | reftex-citation                       |
+| `SPC m r g` or with LSP `SPC m R g`     | reftex-grep-document                  |
+| `SPC m r i` or with LSP `SPC m R i`     | reftex-index-selection-or-word        |
+| `SPC m r I` or with LSP `SPC m R I`     | reftex-display-index                  |
+| `SPC m r TAB` or with LSP `SPC m R TAB` | reftex-index                          |
+| `SPC m r l` or with LSP `SPC m R l`     | reftex-label                          |
+| `SPC m r p` or with LSP `SPC m R p`     | reftex-index-phrase-selection-or-word |
+| `SPC m r P` or with LSP `SPC m R P`     | reftex-index-visit-phrases-buffer     |
+| `SPC m r r` or with LSP `SPC m R r`     | reftex-reference                      |
+| `SPC m r s` or with LSP `SPC m R s`     | reftex-search-document                |
+| `SPC m r t` or with LSP `SPC m R t`     | reftex-toc                            |
+| `SPC m r T` or with LSP `SPC m R T`     | reftex-toc-recenter                   |
+| `SPC m r v` or with LSP `SPC m R v`     | reftex-view-crossref                  |
 
 evil-tex
 --------
@@ -363,15 +362,15 @@ documentation](https://github.com/iyefrat/evil-tex/blob/master/README.org)
 for more comprehensive explanation of text objects it provides and its
 other features, including its integration with `evil-surround`.
 
-  Key binding   Description
-  ------------- ------------------------------------------------------------------------------------
-  `]]` / `[[`   jump between section headings
-  `M-n`         Move between braces, similar to `TAB` in `cd-latex`
-  `SPC m q`     Prefix for [evil-tex toggle commands](https://github.com/iyefrat/evil-tex#toggles)
+| Key binding | Description                                                                        |
+|-------------|------------------------------------------------------------------------------------|
+| `]]` / `[[` | jump between section headings                                                      |
+| `M-n`       | Move between braces, similar to `TAB` in `cd-latex`                                |
+| `SPC m q`   | Prefix for [evil-tex toggle commands](https://github.com/iyefrat/evil-tex#toggles) |
 
 In order to [preserve both the precious `t` mark and the indispensable
 `ts` motion](https://github.com/iyefrat/evil-tex#user-options), the
-[evil-tex \"magnificent
-toggles\"](https://github.com/iyefrat/evil-tex/blob/master/README.org#toggles)
+[evil-tex "magnificent
+toggles"](https://github.com/iyefrat/evil-tex/blob/master/README.org#toggles)
 are bound under `SPC m q` rather than `mt` or `ts`. This binding can be
-remembered with mnemonic \"quite magnificent toggle\".
+remembered with mnemonic "quite magnificent toggle".

@@ -26,15 +26,15 @@ Wakatime Program
 You can follow wakatime installation instructions here
 <https://github.com/wakatime/wakatime-mode>.
 
-In short it\'s just:
+In short it's just:
 
-``` {.bash org-language="sh"}
+``` bash
 pip install wakatime
 ```
 
 And for some linux users
 
-``` {.bash org-language="sh"}
+``` bash
 sudo pip install wakatime
 ```
 
@@ -47,7 +47,7 @@ need to add `wakatime` to the existing
 
 Example:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '(
                 ;; ...
@@ -65,15 +65,15 @@ If you use the built-in Spacemacs bug submission tool it will include
 all of your layer configs including your secret api key. Please remove
 it before submitting.
 
-Even better don\'t store your key directly in the layer config. Instead
+Even better don't store your key directly in the layer config. Instead
 put the following code in your user-config which is set after your layer
 config:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq wakatime-api-key "your-api-key")
 ```
 
-Everything you set there won\'t appear in the bug submitting tool.
+Everything you set there won't appear in the bug submitting tool.
 
 API Keys
 --------
@@ -83,17 +83,17 @@ After this go to your wakatime account and have your API key handy
 
 Restart emacs and it will prompt you for the location of the wakatime
 installer (just put in whatever `which wakatime` gives you in the
-terminal e.g. `/usr/bin/wakatime` for example) and that\'s it.
+terminal e.g. `/usr/bin/wakatime` for example) and that's it.
 
 ### Note to `venv-workon` users:
 
 Right now wakatime uses `python` as python bin executable, so if you use
 `venv-workon` because you have python projects which need to have a
 virtual env., then wakatime, which is installed system-wide will have
-trouble locating wakatime files, so it\'s best to define by yourself the
-python path where wakatime can always find it\'s stuff, via this
+trouble locating wakatime files, so it's best to define by yourself the
+python path where wakatime can always find it's stuff, via this
 variable:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq wakatime-python-bin "/path/to/python")
 ```

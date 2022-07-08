@@ -22,9 +22,9 @@ on your system.
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -----------------
-  `C-h`         Call tmux left
-  `C-j`         Call tmux right
-  `C-k`         Call tmux up
-  `C-l`         Call tmux down
+| Key binding | Description     |
+|-------------|-----------------|
+| `C-h`       | Call tmux left  |
+| `C-j`       | Call tmux right |
+| `C-k`       | Call tmux up    |
+| `C-l`       | Call tmux down  |

@@ -26,7 +26,7 @@ environment can be found. By default Spacemacs will check in
 If it is installed somewhere else just set `conda-anaconda-home` in your
 dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((conda :variables conda-anaconda-home "/your/path/here")))
 ```
@@ -34,11 +34,11 @@ dotfile:
 Key bindings
 ============
 
-  ------------- -------------------------------------------------------------------
-  Key binding   Description
-  `SPC m n a`   Open a `helm` buffer to select an environment
-  `SPC m n A`   Toggle automatic activation of environments
-  `SPC m n b`   Activate environment for buffer based on `conda-project-env-name`
-  `SPC m n d`   Deactivate current environment
-  `SPC m n l`   Open a help buffer that lists envs
-  ------------- -------------------------------------------------------------------
+|             |                                                                   |
+|-------------|-------------------------------------------------------------------|
+| Key binding | Description                                                       |
+| `SPC m n a` | Open a `helm` buffer to select an environment                     |
+| `SPC m n A` | Toggle automatic activation of environments                       |
+| `SPC m n b` | Activate environment for buffer based on `conda-project-env-name` |
+| `SPC m n d` | Deactivate current environment                                    |
+| `SPC m n l` | Open a help buffer that lists envs                                |

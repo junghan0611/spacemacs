@@ -21,6 +21,6 @@ Features:
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ----------------
-  `SPC h j`     jump to manual
+| Key binding | Description    |
+|-------------|----------------|
+| `SPC h j`   | jump to manual |

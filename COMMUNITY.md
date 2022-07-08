@@ -40,7 +40,7 @@ instead of telling people how to behave. The golden rules of the
 community are to have good intentions and stay focused on the project,
 for anything else that requires moderation any future user or
 contributor can refer to this section to know about our past moderation
-actions. So readers won\'t find any example or definition of what
+actions. So readers won't find any example or definition of what
 collaborators judge offending or outrageous, instead they will find at
 the end of this section a log of all major moderation actions taken by
 the collaborators since the beginning of the project which started
@@ -65,9 +65,10 @@ These guidelines apply to all collaborators of the project, namely
 
 ### Issues
 
--   Issues can be locked if their contents are judged
-    [inappropriate]{.underline}, [offending]{.underline} or if they
-    deviate [dangerously]{.underline} from the project.
+-   Issues can be locked if their contents are judged <span
+    class="underline">inappropriate</span>, <span
+    class="underline">offending</span> or if they deviate <span
+    class="underline">dangerously</span> from the project.
 
 ### Pull requests and Commmits
 
@@ -82,7 +83,7 @@ These guidelines apply to all collaborators of the project, namely
 ### Messages
 
 -   Only the form of a message can be edited, not its meaning, except if
-    this meaning is [outrageous]{.underline}.
+    this meaning is <span class="underline">outrageous</span>.
 
 -   Moderators can add information to a message to improve its accuracy
     without altering its meaning,
@@ -90,22 +91,24 @@ These guidelines apply to all collaborators of the project, namely
 -   Any edition of a message is logged in the `edits log` located at the
     end of the edited message with the following format:
 
-    ``` {.example}
+    ``` example
     EDIT: [@moderator] action (reason: xxx)
     ```
 
--   The reason is added only when needed (for instance we won\'t add a
+-   The reason is added only when needed (for instance we won't add a
     reason for formatting edits)
 
 Interpretation
 --------------
 
-Words used in these guidelines like [good]{.underline},
-[inappropriate]{.underline}, [offending]{.underline},
-[dangerously]{.underline} and [outrageous]{.underline} are used without
-any explanation, their meanings and interpretations are left solely to
-the discretion of the collaborators who are educated persons working in
-the interest of the community.
+Words used in these guidelines like <span class="underline">good</span>,
+<span class="underline">inappropriate</span>, <span
+class="underline">offending</span>, <span
+class="underline">dangerously</span> and <span
+class="underline">outrageous</span> are used without any explanation,
+their meanings and interpretations are left solely to the discretion of
+the collaborators who are educated persons working in the interest of
+the community.
 
 Collaborators privacy
 ---------------------
@@ -133,7 +136,7 @@ For transparency and future reference any major moderation actions are
 recorded here. As of Sunday, April 10th 2016, 7200 issues have been
 opened and 2 major moderation actions have been taken:
 
-  Date         Moderator   Action   Issue    Reason
-  ------------ ----------- -------- -------- -----------------------------------------------------------------
-  2016/01/27   syl20bnr    lock     \#3484   comments judged to be offending towards the Spacemacs community
-  2016/01/27   syl20bnr    unlock   \#3484   let\'s make it happen, i.e. this document
+| Date       | Moderator | Action | Issue  | Reason                                                          |
+|------------|-----------|--------|--------|-----------------------------------------------------------------|
+| 2016/01/27 | syl20bnr  | lock   | \#3484 | comments judged to be offending towards the Spacemacs community |
+| 2016/01/27 | syl20bnr  | unlock | \#3484 | let's make it happen, i.e. this document                        |

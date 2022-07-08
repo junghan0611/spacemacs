@@ -56,14 +56,14 @@ install [C/Migemo for Windows
 64bit](https://www.kaoriya.net/software/cmigemo/) in the directory
 `c:\app\cmigemo-default-win64`, you should add:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (with-eval-after-load "migemo"
   (setq migemo-dictionary "c:/app/cmigemo-default-win64/dict/utf-8/migemo-dict"))
 ```
 
 inside `dotspacemacs/user-config`, or
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (japanese :variables
           migemo-dictionary "c:/app/cmigemo-default-win64/dict/utf-8/migemo-dict")
 ```
@@ -74,14 +74,14 @@ inside `dotspacemacs-configuration-layers`.
 
 If you want to use helm with migemo, you should add:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (with-eval-after-load "migemo"
   (helm-migemo-mode 1))
 ```
 
 inside `dotspacemacs/user-config`, or
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (japanese :variables
            helm-migemo-mode 1)
 ```
@@ -99,7 +99,7 @@ instead.
 By default, you can use `avy-migemo` for `helm-mode`. For `ivy-mode`,
 you should add:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (with-eval-after-load "migemo"
   (require 'avy-migemo-e.g.ivy)
   (require 'avy-migemo-e.g.swiper)
@@ -119,7 +119,7 @@ configuration, see some
 By default, `pangu-spacing-mode` is applied to `text-mode`. If you
 prefer the mode globally, add:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (global-pangu-spacing-mode 1)
 ```
 

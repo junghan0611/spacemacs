@@ -20,29 +20,29 @@ list in this file.
 Key bindings
 ============
 
-  ------------- ----------------------
-  Key binding   Description
-  `SPC a c j`   Connect all accounts
-  ------------- ----------------------
+|             |                      |
+|-------------|----------------------|
+| Key binding | Description          |
+| `SPC a c j` | Connect all accounts |
 
 Jabber Roster
 -------------
 
-  ------------- --------------------------------------
-  Key binding   Description
-  `SPC m a`     Jabber send presence
-  `SPC m b`     Jabber get browse
-  `SPC m d`     Jabber disconnect
-  `SPC m e`     Jabber roster edit action at point
-  `SPC m g`     Jabber display roster
-  `SPC m i`     Jabber get disco items
-  `SPC m j`     Jabber muc join
-  `SPC m q`     bury buffer
-  `SPC m r`     Jabber roster toggle offline display
-  `SPC m s`     Jabber send subscription request
-  `SPC m v`     Jabber get version
-  `SPC m RET`   Jabber roster ret action at point
-  ------------- --------------------------------------
+|             |                                      |
+|-------------|--------------------------------------|
+| Key binding | Description                          |
+| `SPC m a`   | Jabber send presence                 |
+| `SPC m b`   | Jabber get browse                    |
+| `SPC m d`   | Jabber disconnect                    |
+| `SPC m e`   | Jabber roster edit action at point   |
+| `SPC m g`   | Jabber display roster                |
+| `SPC m i`   | Jabber get disco items               |
+| `SPC m j`   | Jabber muc join                      |
+| `SPC m q`   | bury buffer                          |
+| `SPC m r`   | Jabber roster toggle offline display |
+| `SPC m s`   | Jabber send subscription request     |
+| `SPC m v`   | Jabber get version                   |
+| `SPC m RET` | Jabber roster ret action at point    |
 
 HipChat
 =======
@@ -50,10 +50,10 @@ HipChat
 Authentication
 --------------
 
-To find YOUR~JABBERID~ visit \"XMPP/Jabber info\" section on your
+To find YOUR<sub>JABBERID</sub> visit "XMPP/Jabber info" section on your
 profile page at hipchat.com
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq ssl-program-name "gnutls-cli"
       ssl-program-arguments '("--insecure" "-p" service host)
       ssl-certificate-verification-policy 1)
@@ -69,7 +69,7 @@ Joining rooms
 
 To simplify joining rooms, you can use something like this:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defvar hipchat-room-list '(
                             ("HIPCHAT NAME" . "XMPP/JABBER NAME")
                             ))

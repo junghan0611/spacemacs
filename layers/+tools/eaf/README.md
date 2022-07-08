@@ -23,7 +23,7 @@ need to add `eaf` to the existing `dotspacemacs-configuration-layers`
 list in this file. Then after (re-)loading the dotfile, run
 `M-x eaf-install` to automatically install required dependencies, and to
 select the eaf applications you would like to get installed. The script
-let\'s you select from the following list of applications:
+let's you select from the following list of applications:
 
 -   eaf-jupyter
 -   eaf-browser
@@ -96,52 +96,52 @@ Global
 
 ### All EAF-applications
 
-  Key binding   Description
-  ------------- ------------------------------------------------------------------------------------------------------------------------------------------
-  `SPC a a f`   EAF open file ([see EAF doc for supported file types](https://github.com/emacs-eaf/emacs-application-framework#launch-eaf-applications))
-  `SPC a a s`   EAF open system monitor
-  `SPC a a M`   EAF open musik player
-  `SPC t k m`   Show available key commands in which-key (read [here](https://develop.spacemacs.org/doc/DOCUMENTATION.html#which-key) for more details)
-  `SPC m d`     toggle dark-mode (or in browser press `M-d` and in pdf-viewer just press `d`)
+| Key binding | Description                                                                                                                              |
+|-------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| `SPC a a f` | EAF open file ([see EAF doc for supported file types](https://github.com/emacs-eaf/emacs-application-framework#launch-eaf-applications)) |
+| `SPC a a s` | EAF open system monitor                                                                                                                  |
+| `SPC a a M` | EAF open musik player                                                                                                                    |
+| `SPC t k m` | Show available key commands in which-key (read [here](https://develop.spacemacs.org/doc/DOCUMENTATION.html#which-key) for more details)  |
+| `SPC m d`   | toggle dark-mode (or in browser press `M-d` and in pdf-viewer just press `d`)                                                            |
 
 ### Browser
 
-  Key binding     Description
-  --------------- --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  `SPC a a b o`   Open url in new buffer
-  `SPC a a b s`   Search with [your favorite search engine](https://github.com/emacs-eaf/emacs-application-framework/wiki/Customization#default-search-engine). Defaults to symbol at point or region string
-  `SPC a a b b`   Open bookmark in new buffer
-  `SPC a a b h`   Search and open buffer from history
+| Key binding   | Description                                                                                                                                                                                |
+|---------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `SPC a a b o` | Open url in new buffer                                                                                                                                                                     |
+| `SPC a a b s` | Search with [your favorite search engine](https://github.com/emacs-eaf/emacs-application-framework/wiki/Customization#default-search-engine). Defaults to symbol at point or region string |
+| `SPC a a b b` | Open bookmark in new buffer                                                                                                                                                                |
+| `SPC a a b h` | Search and open buffer from history                                                                                                                                                        |
 
 Local
 -----
 
 ### All EAF-applications
 
-  Key binding   Description
-  ------------- ----------------
-  `j/k`         Scroll up/down
+| Key binding | Description    |
+|-------------|----------------|
+| `j/k`       | Scroll up/down |
 
 ### Browser
 
-  Key binding   Description
-  ------------- ---------------------------------------------------------------------------------------------------------------------------------------------
-  `J/K`         Scroll (half) page up/down
-  `e`           Edit url
-  `m`           Bookmark page
-  `C-s`         Search/search find next (to enter new search prefix with `C-g`
-  `C-r`         Search find previous
-  `SPC m h`     Open new buffer from history
-  `SPC m s`     Search web with [favorite search engine](https://github.com/emacs-eaf/emacs-application-framework/wiki/Customization#default-search-engine)
+| Key binding | Description                                                                                                                                 |
+|-------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| `J/K`       | Scroll (half) page up/down                                                                                                                  |
+| `e`         | Edit url                                                                                                                                    |
+| `m`         | Bookmark page                                                                                                                               |
+| `C-s`       | Search/search find next (to enter new search prefix with `C-g`                                                                              |
+| `C-r`       | Search find previous                                                                                                                        |
+| `SPC m h`   | Open new buffer from history                                                                                                                |
+| `SPC m s`   | Search web with [favorite search engine](https://github.com/emacs-eaf/emacs-application-framework/wiki/Customization#default-search-engine) |
 
 ### PDF-viewer
 
-  Key binding   Description
-  ------------- ------------------
-  `d`           toggle dark-mode
+| Key binding | Description      |
+|-------------|------------------|
+| `d`         | toggle dark-mode |
 
 ### pdf-view-mode (pdf-tools)
 
-  Key binding   Description
-  ------------- ------------------------
-  `SPC m e`     open in eaf pdf-viewer
+| Key binding | Description            |
+|-------------|------------------------|
+| `SPC m e`   | open in eaf pdf-viewer |

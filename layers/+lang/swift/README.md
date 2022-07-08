@@ -3,7 +3,7 @@
 Description
 ===========
 
-This layer adds support for Apple\'s Swift programming language, used as
+This layer adds support for Apple's Swift programming language, used as
 a general purpose scripting language.
 
 Features:
@@ -23,7 +23,7 @@ First check that you are able to run this from the command line:
 
 On macOS:
 
-``` {.bash org-language="sh"}
+``` bash
 xcrun swift
 ```
 
@@ -46,11 +46,11 @@ Key bindings
 swift-mode
 ----------
 
-  Key bindings   Description
-  -------------- ------------------------
-  `SPC m s s`    swift-mode-run-repl
-  `SPC m s b`    swift-mode-send-buffer
-  `SPC m s r`    swift-mode-send-region
+| Key bindings | Description            |
+|--------------|------------------------|
+| `SPC m s s`  | swift-mode-run-repl    |
+| `SPC m s b`  | swift-mode-send-buffer |
+| `SPC m s r`  | swift-mode-send-region |
 
 Notes:
 
@@ -61,6 +61,6 @@ Notes:
 swift-repl-mode
 ---------------
 
-  Key bindings   Description
-  -------------- -----------------------------
-  `SPC m s s`    swift-repl-mode-switch-back
+| Key bindings | Description                 |
+|--------------|-----------------------------|
+| `SPC m s s`  | swift-repl-mode-switch-back |

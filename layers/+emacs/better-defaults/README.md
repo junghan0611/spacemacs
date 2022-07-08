@@ -24,13 +24,13 @@ Features:
     of the code and the end of the comments.
 -   `spacemacs/backward-kill-word-or-region`: A combination of
     `kill-region` and `backward-kill-word`, depending on whether there
-    is an active region. If there\'s an active region kill that. If not
+    is an active region. If there's an active region kill that. If not
     kill the preceding word.
 -   Fill or unfill paragraph: Pressing `M-q` for the first time fills
     current paragraph and pressing `M-q` for the second time unfills it.
-    Note that some modes override this key binding so it\'s not
-    available everywhere. Due to implementation details unfilling
-    doesn\'t work when called twice via `M-x`.
+    Note that some modes override this key binding so it's not available
+    everywhere. Due to implementation details unfilling doesn't work
+    when called twice via `M-x`.
 
 Install
 =======
@@ -45,7 +45,7 @@ Configuration
 Choose if `C-a` first brings you to the beginning of the line or the
 beginning of the code (first non-whitespace character).
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (better-defaults :variables
                  better-defaults-move-to-beginning-of-code-first t)
 ```
@@ -53,7 +53,7 @@ beginning of the code (first non-whitespace character).
 Choose if `C-e` first brings you to the end of the line or the end of
 the code (before or after comments).
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (better-defaults :variables
                  better-defaults-move-to-end-of-code-first nil)
 ```
@@ -61,10 +61,10 @@ the code (before or after comments).
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ----------------------------------------------------------------------------------
-  `C-a`         move to beginning of line or code
-  `C-e`         move to end of line or code
-  `C-w`         backward kill word or region
-  `C-y`         Automatically indenting after pasting. With prefix argument, paste text as it is
-  `M-q`         fill or unfill current paragraph
+| Key binding | Description                                                                      |
+|-------------|----------------------------------------------------------------------------------|
+| `C-a`       | move to beginning of line or code                                                |
+| `C-e`       | move to end of line or code                                                      |
+| `C-w`       | backward kill word or region                                                     |
+| `C-y`       | Automatically indenting after pasting. With prefix argument, paste text as it is |
+| `M-q`       | fill or unfill current paragraph                                                 |

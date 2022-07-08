@@ -25,7 +25,7 @@ list in this file.
 Linux user could install [Symbola](https://zhm.github.io/symbola/) font
 to get company-emoji support with `apt-get`
 
-``` {.shell}
+``` shell
 apt-get install ttf-ancient-fonts
 ```
 
@@ -38,7 +38,7 @@ By default, company-emoji is configured only for `text-mode` and inserts
 unicode. To insert short-names set `company-emoji-insert-unicode` to
 `nil` as follows:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (auto-completion :variables
                  company-emoji-insert-unicode nil)
 ```
@@ -46,15 +46,15 @@ unicode. To insert short-names set `company-emoji-insert-unicode` to
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -----------------------------------------
-  `SPC a f e`   open a dedicated buffer to browse Emoji
-  `SPC i e`     insert Emoji via a helm buffer
+| Key binding | Description                             |
+|-------------|-----------------------------------------|
+| `SPC a f e` | open a dedicated buffer to browse Emoji |
+| `SPC i e`   | insert Emoji via a helm buffer          |
 
 Emoji dedicated buffer
 ----------------------
 
-  Key binding   Description
-  ------------- -------------------------
-  `RET`         copy current Emoji code
-  `q`           quit
+| Key binding | Description             |
+|-------------|-------------------------|
+| `RET`       | copy current Emoji code |
+| `q`         | quit                    |

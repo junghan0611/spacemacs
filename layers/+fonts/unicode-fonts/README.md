@@ -29,7 +29,7 @@ If using
 [emacs-plus](https://github.com/d12frosted/homebrew-emacs-plus/), you
 can set `unicode-fonts-force-multi-color-on-mac` to enable color emoji.
 
-``` {.elisp}
+``` elisp
 (unicode-fonts :variables unicode-fonts-force-multi-color-on-mac t)
 ```
 
@@ -39,7 +39,7 @@ ligature font must be installed and configured you can see the
 docs for a full list of requirements. By default this is not enabled you
 can enable it with `unicode-fonts-enable-ligatures`.
 
-``` {.elisp}
+``` elisp
 (unicode-fonts :variables unicode-fonts-enable-ligatures t)
 ```
 
@@ -47,13 +47,13 @@ By default ligatures will be enabled in all programing modes. You can
 enable ligatures for specific modes with `unicode-fonts-ligature-modes`
 variable.
 
-``` {.elisp}
+``` elisp
 (unicode-fonts :variables unicode-fonts-ligature-modes '(php-mode js-mode))
 ```
 
 To enable only for text modes you can use `text-mode`
 
-``` {.elisp}
+``` elisp
 (unicode-fonts :variables unicode-fonts-ligature-modes '(text-mode))
 ```
 
@@ -61,7 +61,7 @@ To configure the ligature set that gets used with your font there is a
 `unicode-fonts-ligature-set` variable. To only enable the ligatures in
 `if` statements you can limit the `unicode-fonts-ligature-set`
 
-``` {.elisp}
+``` elisp
 (unicode-fonts :variables unicode-fonts-ligature-set '("==" "===" "!=" "!==" "||" "&&"))
 ```
 

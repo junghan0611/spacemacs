@@ -42,19 +42,19 @@ for many languages. We recommend installing from source.
 
 ### Install on Ubuntu
 
-``` {.bash org-language="sh"}
+``` bash
 sudo apt-get install global
 ```
 
 ### Install on Arch Linux
 
-``` {.bash org-language="sh"}
+``` bash
 yay -S global
 ```
 
 ### Install on macOS using Homebrew
 
-``` {.bash org-language="sh"}
+``` bash
 brew install global
 ```
 
@@ -66,13 +66,13 @@ brew install global
     in addition to global: pygments and ctags (exuberant). You can do
     this using your normal OS package manager, e.g. on Ubuntu
 
-    ``` {.bash org-language="sh"}
+    ``` bash
     sudo apt-get install exuberant-ctags python-pygments
     ```
 
     or e.g. Archlinux:
 
-    ``` {.bash org-language="sh"}
+    ``` bash
     sudo pacman -S ctags python-pygments
     ```
 
@@ -84,13 +84,13 @@ brew install global
     Also check which version of gcc your system is using by default as
     this will influence the next steps:
 
-    ``` {.bash org-language="sh"}
+    ``` bash
     gcc --version
     ```
 
     Then run these commands:
 
-    ``` {.bash org-language="sh"}
+    ``` bash
     tar xvf global-<version>.tar.gz
     cd global-<version>
     ```
@@ -98,19 +98,19 @@ brew install global
     If you have gcc version 10 then you will have to force building with
     an earlier version of gcc like so:
 
-    ``` {.bash org-language="sh"}
+    ``` bash
     ./configure CC=gcc-8 --with-exuberant-ctags=/usr/bin/ctags
     ```
 
     Otherwise do not need to specify a CC flag
 
-    ``` {.bash org-language="sh"}
+    ``` bash
     ./configure --with-exuberant-ctags=/usr/bin/ctags
     ```
 
     And finally:
 
-    ``` {.bash org-language="sh"}
+    ``` bash
     make
     sudo make install
     ```
@@ -121,36 +121,36 @@ brew install global
     sample `gtags.conf` either to `/etc/gtags.conf` or
     `$HOME/.globalrc`. For example:
 
-    ``` {.bash org-language="sh"}
+    ``` bash
     cp gtags.conf ~/.globalrc
     ```
 
     Additionally you should define GTAGSLABEL in your shell startup file
     e.g. with sh/ksh:
 
-    ``` {.bash org-language="sh"}
+    ``` bash
     echo export GTAGSLABEL=pygments >> .profile
     ```
 
     With fish:
 
-    ``` {.bash org-language="sh"}
+    ``` bash
     echo export set -x GTAGSLABEL pygments >> ${HOME}/.config/fish/config.fish
     ```
 
-### Conflict between `ctags` and emacs\'s `etags` binary
+### Conflict between `ctags` and emacs's `etags` binary
 
 If you installed `emacs` from source after `ctags`, your original
-`ctags` binary is probably replaced by emacs\'s `etags`. To get around
+`ctags` binary is probably replaced by emacs's `etags`. To get around
 this you will need to configure `emacs` as following before installing:
 
-``` {.bash org-language="sh"}
+``` bash
 ./configure --program-transform-name='s/^ctags$/ctags.emacs/'
 ```
 
 To check if you have the correct version of `ctags` execute:
 
-``` {.bash org-language="sh"}
+``` bash
 ctags --version | grep Exuberant
 ```
 
@@ -164,7 +164,7 @@ To use this configuration layer, add it to your `~/.spacemacs` file. You
 will need to add `gtags` to the existing
 `dotspacemacs-configuration-layers`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq dotspacemacs-configuration-layers
       '( ;; ...
         gtags
@@ -177,7 +177,7 @@ will need to add `gtags` to the existing
 If `ggtags-mode` is too intrusive you can disable it by default, by
 setting the layer variable `gtags-enable-by-default` to `nil`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((gtags :variables gtags-enable-by-default t)))
 ```
@@ -197,7 +197,7 @@ following methods:
     `ctags` or `pygments` as a backend to generate the database.
 -   From inside a terminal:
 
-``` {.bash org-language="sh"}
+``` bash
 cd /path/to/project/root
 
 # If the language is not directly supported and GTAGSLABEL is not set
@@ -244,7 +244,7 @@ languages are supported:
 
 If you have installed [universal
 ctags](https://github.com/universal-ctags/ctags) and use that as the
-backend (i.e. GTAGSLABEL=ctags or --gtagslabel=ctags) the following
+backend (i.e. GTAGSLABEL=ctags or –gtagslabel=ctags) the following
 additional languages are supported:
 
 -   clojure
@@ -257,7 +257,7 @@ additional languages are supported:
 In order to look up symbol references for any language not in the built
 in parser you must use the pygments backend. When this backend is used
 global actually uses both ctags and pygments to find the definitions and
-uses of functions and variables as well as \"other symbols\".
+uses of functions and variables as well as "other symbols".
 
 If you enabled pygments (the best choice) and use that as the backend
 (i.e. `GTAGSLABEL=pygments` or `--gtagslabel=pygments`) the following
@@ -295,30 +295,30 @@ In addition `gtags` commands are also supported for symbols in the
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- --------------------------------------------------
-  `g d`         jump to definition or references of selected tag
+| Key binding | Description                                      |
+|-------------|--------------------------------------------------|
+| `g d`       | jump to definition or references of selected tag |
 
 Helm
 ----
 
-  Key binding   Description
-  ------------- -----------------------------------------------------------
-  `SPC m g C`   create a tag database
-  `SPC m g f`   jump to a file in tag database
-  `SPC m g g`   jump to a location based on context
-  `SPC m g G`   jump to a location based on context (open another window)
-  `SPC m g d`   find definitions
-  `SPC m g i`   present tags in current function only
-  `SPC m g l`   jump to definitions in file
-  `SPC m g n`   jump to next location in context stack
-  `SPC m g p`   jump to previous location in context stack
-  `SPC m g r`   find references
-  `SPC m g R`   resume previous helm-gtags session
-  `SPC m g s`   select any tag in a project retrieved by gtags
-  `SPC m g S`   show stack of visited locations
-  `SPC m g y`   find symbols
-  `SPC m g u`   manually update tag database
+| Key binding | Description                                               |
+|-------------|-----------------------------------------------------------|
+| `SPC m g C` | create a tag database                                     |
+| `SPC m g f` | jump to a file in tag database                            |
+| `SPC m g g` | jump to a location based on context                       |
+| `SPC m g G` | jump to a location based on context (open another window) |
+| `SPC m g d` | find definitions                                          |
+| `SPC m g i` | present tags in current function only                     |
+| `SPC m g l` | jump to definitions in file                               |
+| `SPC m g n` | jump to next location in context stack                    |
+| `SPC m g p` | jump to previous location in context stack                |
+| `SPC m g r` | find references                                           |
+| `SPC m g R` | resume previous helm-gtags session                        |
+| `SPC m g s` | select any tag in a project retrieved by gtags            |
+| `SPC m g S` | show stack of visited locations                           |
+| `SPC m g y` | find symbols                                              |
+| `SPC m g u` | manually update tag database                              |
 
 Ivy
 ---
@@ -326,15 +326,15 @@ Ivy
 `counsel-gtags` is currently missing a few minor features compared to
 `helm-gtags`.
 
-  Key binding   Description
-  ------------- ------------------------------------------------
-  `SPC m g C`   create a tag database
-  `SPC m g f`   jump to a file in tag database
-  `SPC m g g`   jump to a location based on context
-  `SPC m g d`   find definitions
-  `SPC m g n`   jump to next location in context stack
-  `SPC m g p`   jump to previous location in context stack
-  `SPC m g r`   find references
-  `SPC m g s`   select any tag in a project retrieved by gtags
-  `SPC m g y`   find symbols
-  `SPC m g u`   manually update tag database
+| Key binding | Description                                    |
+|-------------|------------------------------------------------|
+| `SPC m g C` | create a tag database                          |
+| `SPC m g f` | jump to a file in tag database                 |
+| `SPC m g g` | jump to a location based on context            |
+| `SPC m g d` | find definitions                               |
+| `SPC m g n` | jump to next location in context stack         |
+| `SPC m g p` | jump to previous location in context stack     |
+| `SPC m g r` | find references                                |
+| `SPC m g s` | select any tag in a project retrieved by gtags |
+| `SPC m g y` | find symbols                                   |
+| `SPC m g u` | manually update tag database                   |

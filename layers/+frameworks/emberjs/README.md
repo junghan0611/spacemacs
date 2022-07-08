@@ -12,7 +12,7 @@ the README for ember-yansippets for the snippet keys.
 To use this, you need to add add a `.dir-locals.el` file with the
 following in the root of your ember project:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ((nil . ((mode . ember))))
 ```
 
@@ -25,7 +25,7 @@ disabled.
 
 Add the following to your `dotspacemacs/user-config`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq backup-directory-alist `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 (setq create-lockfiles nil)
@@ -43,7 +43,7 @@ Install
 
 To use this contribution add it to your `~/.spacemacs`
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(emberjs))
 ```
 
@@ -53,7 +53,7 @@ Completion System
 By default this will use `ido`, but it may be configured to use helm by
 adding the following in your `dotspacemacs/user-config` function:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq ember-completion-system 'helm)
 ```
 
@@ -63,61 +63,61 @@ Key bindings
 File key bindings
 -----------------
 
-  Key binding   Description
-  ------------- ------------------------
-  SPC m f f c   ember-open-controller
-  SPC m f f m   ember-open-model
-  SPC m f f o   ember-open-router
-  SPC m f f p   ember-open-component
-  SPC m f f r   ember-open-route
-  SPC m f f j   ember-open-javascript
-  SPC m f f t   ember-open-template
-  SPC m f f x   ember-open-mixin
-  SPC m f f i   ember-open-initializer
-  SPC m f f u   ember-open-util
-  SPC m f f s   ember-open-service
+| Key binding | Description            |
+|-------------|------------------------|
+| SPC m f f c | ember-open-controller  |
+| SPC m f f m | ember-open-model       |
+| SPC m f f o | ember-open-router      |
+| SPC m f f p | ember-open-component   |
+| SPC m f f r | ember-open-route       |
+| SPC m f f j | ember-open-javascript  |
+| SPC m f f t | ember-open-template    |
+| SPC m f f x | ember-open-mixin       |
+| SPC m f f i | ember-open-initializer |
+| SPC m f f u | ember-open-util        |
+| SPC m f f s | ember-open-service     |
 
 Generator key bindings
 ----------------------
 
-  Key binding   Description
-  ------------- ----------------------------
-  SPC m f g c   ember-generate-controller
-  SPC m f g m   ember-generate-model
-  SPC m f g o   ember-generate-router
-  SPC m f g p   ember-generate-component
-  SPC m f g r   ember-generate-route
-  SPC m f g j   ember-generate-javascript
-  SPC m f g t   ember-generate-template
-  SPC m f g x   ember-generate-mixin
-  SPC m f g i   ember-generate-initializer
-  SPC m f g u   ember-generate-util
-  SPC m f g s   ember-generate-service
-  SPC m f g g   ember-generate
+| Key binding | Description                |
+|-------------|----------------------------|
+| SPC m f g c | ember-generate-controller  |
+| SPC m f g m | ember-generate-model       |
+| SPC m f g o | ember-generate-router      |
+| SPC m f g p | ember-generate-component   |
+| SPC m f g r | ember-generate-route       |
+| SPC m f g j | ember-generate-javascript  |
+| SPC m f g t | ember-generate-template    |
+| SPC m f g x | ember-generate-mixin       |
+| SPC m f g i | ember-generate-initializer |
+| SPC m f g u | ember-generate-util        |
+| SPC m f g s | ember-generate-service     |
+| SPC m f g g | ember-generate             |
 
 Destroy (the inverse of generate) key bindings
 ----------------------------------------------
 
-  Key binding   Description
-  ------------- ---------------------------
-  SPC m f d c   ember-destroy-controller
-  SPC m f d m   ember-destroy-model
-  SPC m f d o   ember-destroy-router
-  SPC m f d p   ember-destroy-component
-  SPC m f d r   ember-destroy-route
-  SPC m f d j   ember-destroy-javascript
-  SPC m f d t   ember-destroy-template
-  SPC m f d x   ember-destroy-mixin
-  SPC m f d i   ember-destroy-initializer
-  SPC m f d u   ember-destroy-util
-  SPC m f d s   ember-destroy-service
-  SPC m f d d   ember-destroy
+| Key binding | Description               |
+|-------------|---------------------------|
+| SPC m f d c | ember-destroy-controller  |
+| SPC m f d m | ember-destroy-model       |
+| SPC m f d o | ember-destroy-router      |
+| SPC m f d p | ember-destroy-component   |
+| SPC m f d r | ember-destroy-route       |
+| SPC m f d j | ember-destroy-javascript  |
+| SPC m f d t | ember-destroy-template    |
+| SPC m f d x | ember-destroy-mixin       |
+| SPC m f d i | ember-destroy-initializer |
+| SPC m f d u | ember-destroy-util        |
+| SPC m f d s | ember-destroy-service     |
+| SPC m f d d | ember-destroy             |
 
 Key bindings to build, start the server and run tests
 -----------------------------------------------------
 
-  Key binding   Description
-  ------------- ------------------------
-  SPC m f r b   ember-build
-  SPC m f r s   ember-serve-or-display
-  SPC m f r t   ember-test
+| Key binding | Description            |
+|-------------|------------------------|
+| SPC m f r b | ember-build            |
+| SPC m f r s | ember-serve-or-display |
+| SPC m f r t | ember-test             |

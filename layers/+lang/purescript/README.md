@@ -23,9 +23,9 @@ To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `purescript` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-You\'ll also need to make sure the PureScript compiler and its
-associated binaries (psc-ide-server, psci,...) are on your path.
-Installation instructions can be found
+You'll also need to make sure the PureScript compiler and its associated
+binaries (psc-ide-server, psci,…) are on your path. Installation
+instructions can be found
 [here](https://github.com/purescript/documentation/blob/master/guides/Getting-Started.md).
 
 Configuration
@@ -42,7 +42,7 @@ The following formatting tools are currently supported:
 You can choose the formatting tool by setting `purescript-fmt-tool`
 variable in your `purescript` config section:
 
-``` {.elisp}
+``` elisp
 (setq-default dotspacemacs-configuration-layers '(
   (purescript :variables
               purescript-fmt-tool 'purs-tidy)))
@@ -54,7 +54,7 @@ spacemacs/purescript-format\` or with the shortcut \`SPC m =\`.
 To enable automatic formatting of the buffer on save, enable
 `purescript-fmt-on-save` variable in your `purescript` config section:
 
-``` {.elisp}
+``` elisp
 (setq-default dotspacemacs-configuration-layers '(
   (purescript :variables
               purescript-fmt-on-save t)))
@@ -75,7 +75,7 @@ installations, set the `node-add-modules-path` variable in the
 `purescript` config section. Note that doing this [introduces a security
 risk](https://stackoverflow.com/questions/9679932#comment33532258_9683472):
 
-``` {.elisp}
+``` elisp
 (setq-default dotspacemacs-configuration-layers
   '((purescript :variables node-add-modules-path t)))
 ```
@@ -99,7 +99,7 @@ the same in all modes.
 
 To set explicitly do the following in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (purescript :variables
         purescript-backend 'lsp)
 ```
@@ -107,7 +107,7 @@ To set explicitly do the following in your dotfile:
 For this to work you will also need to install the lsp server and
 separate dependencies with below command:
 
-``` {.bash org-language="sh"}
+``` bash
 npm i -g purescript-language-server
 ```
 
@@ -123,34 +123,34 @@ Purescript
 
 ### Imports
 
-  Key binding   Description
-  ------------- ---------------------------------------------------------------
-  `SPC m i =`   Format imports
-  `SPC m i \`   Return to where you were editing before navigating to imports
-  `SPC m i a`   Align imports
-  `SPC m i n`   Navigate to the imports
+| Key binding | Description                                                   |
+|-------------|---------------------------------------------------------------|
+| `SPC m i =` | Format imports                                                |
+| `SPC m i \` | Return to where you were editing before navigating to imports |
+| `SPC m i a` | Align imports                                                 |
+| `SPC m i n` | Navigate to the imports                                       |
 
 ### psc-ide
 
-  Key binding     Description
-  --------------- ---------------------------------------------------------------------------
-  `SPC m m s`     Start psc-ide-server
-  `SPC m m q`     Quit the current psc-ide-server
-  `SPC m m l`     Load definitions for the modules inside your project
-  `SPC m m b`     Rebuilds the current file and displays any warnings or errors
-  `SPC m m t`     Add a new clause for the function signature at point
-  `SPC m m c`     Casesplits on the identifier at the current cursor position
-  `SPC m m L`     Load a specific module (This is mostly used for troubleshooting)
-  `SPC m m i a`   Add an import for the identifier at the current cursor position
-  `SPC m m i s`   Inserts a suggestion for the warning/error at the current cursor position
-  `SPC m h t`     Show type at point
-  `SPC m g g`     Goto definition for identifier at point
+| Key binding   | Description                                                               |
+|---------------|---------------------------------------------------------------------------|
+| `SPC m m s`   | Start psc-ide-server                                                      |
+| `SPC m m q`   | Quit the current psc-ide-server                                           |
+| `SPC m m l`   | Load definitions for the modules inside your project                      |
+| `SPC m m b`   | Rebuilds the current file and displays any warnings or errors             |
+| `SPC m m t`   | Add a new clause for the function signature at point                      |
+| `SPC m m c`   | Casesplits on the identifier at the current cursor position               |
+| `SPC m m L`   | Load a specific module (This is mostly used for troubleshooting)          |
+| `SPC m m i a` | Add an import for the identifier at the current cursor position           |
+| `SPC m m i s` | Inserts a suggestion for the warning/error at the current cursor position |
+| `SPC m h t`   | Show type at point                                                        |
+| `SPC m g g`   | Goto definition for identifier at point                                   |
 
 ### Formatting
 
-  Key binding   Description
-  ------------- -------------------
-  `SPC m =`     Format the buffer
+| Key binding | Description       |
+|-------------|-------------------|
+| `SPC m =`   | Format the buffer |
 
 REPL
 ----
@@ -158,9 +158,9 @@ REPL
 [psci](https://github.com/ardumont/emacs-psci) provides a very basic
 REPL for purescript. The following key bindings are available:
 
-  Key binding   Description
-  ------------- ------------------------------------------------------------------------------------
-  `SPC m s b`   Equivalent of `:m /path/to/current/module/file.purs` - Load \<file\> for importing
-  `SPC m s i`   Launch a psci console buffer
-  `SPC m s m`   Equivalent of `:i your.current.module.name` - Import \<module\> for use in PSCI
-  `SPC m s p`   Load or reload files defined in the project file .psci
+| Key binding | Description                                                                        |
+|-------------|------------------------------------------------------------------------------------|
+| `SPC m s b` | Equivalent of `:m /path/to/current/module/file.purs` - Load \<file\> for importing |
+| `SPC m s i` | Launch a psci console buffer                                                       |
+| `SPC m s m` | Equivalent of `:i your.current.module.name` - Import \<module\> for use in PSCI    |
+| `SPC m s p` | Load or reload files defined in the project file .psci                             |

@@ -23,11 +23,11 @@ need to add `evil-commentary` to the existing
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ------------------------------------
-  `SPC ;`       comment operator
-  `gcc`         comment current line
-  `gcap`        comment paragraphs
-  `gc`          comment out the target of a motion
-  `gc SPC y`    comment up to a line with avy
-  `gy`          comment and yank
+| Key binding | Description                        |
+|-------------|------------------------------------|
+| `SPC ;`     | comment operator                   |
+| `gcc`       | comment current line               |
+| `gcap`      | comment paragraphs                 |
+| `gc`        | comment out the target of a motion |
+| `gc SPC y`  | comment up to a line with avy      |
+| `gy`        | comment and yank                   |

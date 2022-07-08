@@ -7,8 +7,8 @@ protocol](https://microsoft.github.io/language-server-protocol/specification).
 
 Different language servers may support the language server protocol to
 varying degrees and they may also provide extensions; check the language
-server\'s website for details. `M-x lsp-describe-session` in a LSP
-buffer to list capabilities of the server.
+server's website for details. `M-x lsp-describe-session` in a LSP buffer
+to list capabilities of the server.
 
 Features:
 ---------
@@ -46,22 +46,22 @@ be overridden in your .spacemacs, or dynamically using the bindings
 added under the derived mode t prefix by
 `(spacemacs/lsp-bind-keys-for-mode mode)`
 
-  Variable name                          Default                                Description
-  -------------------------------------- -------------------------------------- -----------------------------------------------------------------------------------------------------------------
-  `lsp-headerline-breadcrumb-enable`     t                                      When non-nil, shows breadcrumb on headerline.
-  `lsp-headerline-breadcrumb-segments`   `'(path-up-to-project file symbols)`   Display the path to the root of project, the name of the current file, and also its symbols. See details below.
-  `lsp-lens-enable`                      nil                                    When non-nil, shows code lens when it\'s supported.
-  `lsp-modeline-diagnostics-enable`      t                                      When non-nil, shows error diagnostics in modeline.
-  `lsp-modeline-diagnostics-scope`       `:project`                             Displays all error statistcs per projects. See details below.
-  `lsp-modeline-code-actions-enable`     t                                      When non-nil, shows available code actions in modeline.
-  `lsp-modeline-code-actions-segments`   `'(count icon)`                        Display the number of available code actions and an icon. See details below.
-  `lsp-navigation`                       `'both`                                `'simple` or `'peek` to bind only xref OR lsp-ui-peek navigation functions.
-  `lsp-use-lsp-ui`                       nil                                    When non-nil, install lsp-ui package
-  `lsp-ui-remap-xref-keybindings`        nil                                    When non-nil, xref key bindings remapped to lsp-ui-peek-find-{definition,references}.
-  `lsp-ui-doc-enable`                    t                                      When non-nil, the documentation overlay is displayed.
-  `lsp-ui-doc-include-signature`         nil                                    When nil, signature omitted from lsp-ui-doc overlay (this is usually redundant).
-  `lsp-ui-sideline-enable`               t                                      When non-nil, the symbol information overlay is displayed.
-  `lsp-ui-sideline-show-symbol`          nil                                    When non-nil, the symbol information overlay includes symbol name (redundant for c-modes).
+| Variable name                        | Default                              | Description                                                                                                     |
+|--------------------------------------|--------------------------------------|-----------------------------------------------------------------------------------------------------------------|
+| `lsp-headerline-breadcrumb-enable`   | t                                    | When non-nil, shows breadcrumb on headerline.                                                                   |
+| `lsp-headerline-breadcrumb-segments` | `'(path-up-to-project file symbols)` | Display the path to the root of project, the name of the current file, and also its symbols. See details below. |
+| `lsp-lens-enable`                    | nil                                  | When non-nil, shows code lens when it's supported.                                                              |
+| `lsp-modeline-diagnostics-enable`    | t                                    | When non-nil, shows error diagnostics in modeline.                                                              |
+| `lsp-modeline-diagnostics-scope`     | `:project`                           | Displays all error statistcs per projects. See details below.                                                   |
+| `lsp-modeline-code-actions-enable`   | t                                    | When non-nil, shows available code actions in modeline.                                                         |
+| `lsp-modeline-code-actions-segments` | `'(count icon)`                      | Display the number of available code actions and an icon. See details below.                                    |
+| `lsp-navigation`                     | `'both`                              | `'simple` or `'peek` to bind only xref OR lsp-ui-peek navigation functions.                                     |
+| `lsp-use-lsp-ui`                     | nil                                  | When non-nil, install lsp-ui package                                                                            |
+| `lsp-ui-remap-xref-keybindings`      | nil                                  | When non-nil, xref key bindings remapped to lsp-ui-peek-find-{definition,references}.                           |
+| `lsp-ui-doc-enable`                  | t                                    | When non-nil, the documentation overlay is displayed.                                                           |
+| `lsp-ui-doc-include-signature`       | nil                                  | When nil, signature omitted from lsp-ui-doc overlay (this is usually redundant).                                |
+| `lsp-ui-sideline-enable`             | t                                    | When non-nil, the symbol information overlay is displayed.                                                      |
+| `lsp-ui-sideline-show-symbol`        | nil                                  | When non-nil, the symbol information overlay includes symbol name (redundant for c-modes).                      |
 
 Code Lens
 ---------
@@ -75,12 +75,12 @@ for running/debugging the program.
 
 To always display code lens,
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((lsp :variables lsp-lens-enable t)))
 ```
 
-This doesn\'t have any effect when code lens is not supported by current
+This doesn't have any effect when code lens is not supported by current
 language server.
 
 Error statistics on modeline
@@ -90,7 +90,7 @@ By default, all error statistics of a project is displayed in the
 modeline. To disable this feature, set `lsp-modeline-diagnostics-enable`
 to `nil`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((lsp :variables lsp-modeline-diagnostics-enable nil)))
 ```
@@ -98,7 +98,7 @@ to `nil`.
 To only display errors for the current file, you can set
 `lsp-modeline-diagnostics-scope` to `:file`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((lsp :variables lsp-modeline-diagnostics-scope :file)))
 ```
@@ -112,7 +112,7 @@ Code actions on modeline
 By default, available code actions are displayed in modeline. To disable
 this feature, set `lsp-modeline-code-actions-enable` to `nil`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((lsp :variables lsp-modeline-code-actions-enable nil)))
 ```
@@ -124,7 +124,7 @@ You can also customize its appearance via
 -   `name` shows the name of the preferred code action.
 -   `count` shows the how many code actions are available.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((lsp :variables
                      ;; default segments
@@ -158,14 +158,14 @@ You can customize the breadcrumb segments via
 
 For example, to display only the symbols,
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((lsp :variables lsp-headerline-breadcrumb-segments '(symbols))))
 ```
 
 To display the current project, current file, and document symbols,
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((lsp :variables lsp-headerline-breadcrumb-segments '(project file symbols))))
 ```
@@ -178,7 +178,7 @@ Key bindings
 ============
 
 A number of lsp features useful for all/most modes have been bound to
-the lsp minor mode, meaning they\'ll be available in all language layers
+the lsp minor mode, meaning they'll be available in all language layers
 based on the lsp layer.
 
 Key binding prefixes
@@ -186,79 +186,79 @@ Key binding prefixes
 
 The key bindings are grouped under the following prefixes:
 
-  prefix        name            functional area
-  ------------- --------------- ----------------------------------------------------------------------------
-  `SPC m a`     action          Code actions
-  `SPC m =`     format          Source formatting
-  `SPC m g`     goto            Source navigation
-  `SPC m G`     peek            Source navigation (lsp-ui-peek overlay)
-  `SPC m F`     folder          Add/remove folders from workspace
-  `SPC m h`     help            Help
-  `SPC m b`     lsp/backend     Catchall. Restart LSP backend, other implementation-specific functionality
-  `SPC m r`     refactor        What it says on the tin
-  `SPC m T`     toggle          Toggle mode specific features
-  `SPC m T l`   lsp             Toggle LSP backend features (documentation / symbol info overlays etc.)
-  `SPC m x`     text (source)   Text (source) document related bindings
+| prefix      | name          | functional area                                                            |
+|-------------|---------------|----------------------------------------------------------------------------|
+| `SPC m a`   | action        | Code actions                                                               |
+| `SPC m =`   | format        | Source formatting                                                          |
+| `SPC m g`   | goto          | Source navigation                                                          |
+| `SPC m G`   | peek          | Source navigation (lsp-ui-peek overlay)                                    |
+| `SPC m F`   | folder        | Add/remove folders from workspace                                          |
+| `SPC m h`   | help          | Help                                                                       |
+| `SPC m b`   | lsp/backend   | Catchall. Restart LSP backend, other implementation-specific functionality |
+| `SPC m r`   | refactor      | What it says on the tin                                                    |
+| `SPC m T`   | toggle        | Toggle mode specific features                                              |
+| `SPC m T l` | lsp           | Toggle LSP backend features (documentation / symbol info overlays etc.)    |
+| `SPC m x`   | text (source) | Text (source) document related bindings                                    |
 
 Core key bindings
 -----------------
 
 The lsp minor mode bindings are:
 
-  binding         function
-  --------------- ----------------------------------------------------------------------------------
-  `SPC m = b`     format buffer (`lsp-mode`)
-  `SPC m = r`     format region (`lsp-mode`)
-  `SPC m = o`     format (organise) imports
-  Note            *The `f`, `r` and `s` actions are placeholders for imminent `lsp-mode` features*
-  `SPC m a a`     Execute code action
-  `SPC m a f`     Execute fix action
-  `SPC m a r`     Execute refactor action
-  `SPC m a s`     Execute source action
-  `SPC m g t`     goto type-definition (`lsp-mode`)
-  `SPC m g k`     goto viewport word (`avy`) (See Note 1)
-  `SPC m g K`     goto viewport symbol (`avy`) (See Note 1)
-  `SPC m g e`     browse flycheck errors (`lsp-treemacs`)
-  `SPC m g M`     browse file symbols (`lsp-ui-imenu`)
-  `SPC m g h`     goto call hierachy (`lsp-treemacs`)
-  `SPC m g T`     goto type hierachy (`lsp-treemacs`)
-  Note            /Replaced by the lsp-ui-peek equivalents when `lsp-navigation` is `'peek` /
-  `SPC m g b`     jump back (`xref` / `lsp`)
-  `SPC m g i`     find implementations (`lsp-mode`)
-  `SPC m g d`     find definitions (`xref` / `lsp-mode`)
-  `SPC m g r`     find references (`xref` / `lsp`)
-  `SPC m g s`     find symbol in project (`helm-lsp`)
-  `SPC m g S`     find symbol in all projects (`helm-lsp`)
-  `SPC m g p`     goto previous (`xref-pop-marker-stack`)
-  Note            /Omitted when `lsp-navigation` is `'peek` or `'simple` /
-                  *Bound under `SPC m g` rather than `SPC m G` when `lsp-navigation` == `'peek`*
-  `SPC m G b`     jump back (`lsp-ui-peek`)
-  `SPC m G i`     find implementation (`lsp-ui-peek`)
-  `SPC m G d`     find definitions (`lsp-ui-peek`)
-  `SPC m G r`     find references (`lsp-ui-peek`)
-  `SPC m G s`     find workspace symbol (`lsp-ui-peek`)
-  `SPC m G S`     goto workspace symbol (`lsp-treemacs-symbols`)
-  `SPC m G p`     goto previous (`lsp-ui-peek` stack - see Note 2)
-  `SPC m G n`     goto next (`lsp-ui-peek stack` - see Note 2)
-  `SPC m G E`     browse flycheck errors (`lsp-ui`)
-  `SPC m h h`     describe thing at point
-  `SPC m b s`     `lsp-workspace-shutdown`
-  `SPC m b r`     `lsp-workspace-restart`
-  `SPC m b d`     `lsp-describe-session`
-  `SPC m b v`     `lsp-version`
-  `SPC m r r`     rename
-  `SPC m T l d`   toggle documentation overlay
-  `SPC m T l F`   toggle documentation overlay function signature
-  `SPC m T l s`   toggle symbol info overlay
-  `SPC m T l S`   toggle symbol info overlay symbol name
-  `SPC m T l I`   toggle symbol info overlay duplicates
-  `SPC m T l l`   toggle lenses
-  `SPC m F r`     Remove workspace folder
-  `SPC m F a`     Add workspace folder
-  `SPC m F s`     Switch workspace folder
-  `SPC m x h`     Highlight all instances of symbol under point
-  `SPC m x l`     Show code lenses
-  `SPC m x L`     Hide code lenses
+| binding       | function                                                                         |
+|---------------|----------------------------------------------------------------------------------|
+| `SPC m = b`   | format buffer (`lsp-mode`)                                                       |
+| `SPC m = r`   | format region (`lsp-mode`)                                                       |
+| `SPC m = o`   | format (organise) imports                                                        |
+| Note          | *The `f`, `r` and `s` actions are placeholders for imminent `lsp-mode` features* |
+| `SPC m a a`   | Execute code action                                                              |
+| `SPC m a f`   | Execute fix action                                                               |
+| `SPC m a r`   | Execute refactor action                                                          |
+| `SPC m a s`   | Execute source action                                                            |
+| `SPC m g t`   | goto type-definition (`lsp-mode`)                                                |
+| `SPC m g k`   | goto viewport word (`avy`) (See Note 1)                                          |
+| `SPC m g K`   | goto viewport symbol (`avy`) (See Note 1)                                        |
+| `SPC m g e`   | browse flycheck errors (`lsp-treemacs`)                                          |
+| `SPC m g M`   | browse file symbols (`lsp-ui-imenu`)                                             |
+| `SPC m g h`   | goto call hierachy (`lsp-treemacs`)                                              |
+| `SPC m g T`   | goto type hierachy (`lsp-treemacs`)                                              |
+| Note          | /Replaced by the lsp-ui-peek equivalents when `lsp-navigation` is `'peek` /      |
+| `SPC m g b`   | jump back (`xref` / `lsp`)                                                       |
+| `SPC m g i`   | find implementations (`lsp-mode`)                                                |
+| `SPC m g d`   | find definitions (`xref` / `lsp-mode`)                                           |
+| `SPC m g r`   | find references (`xref` / `lsp`)                                                 |
+| `SPC m g s`   | find symbol in project (`helm-lsp`)                                              |
+| `SPC m g S`   | find symbol in all projects (`helm-lsp`)                                         |
+| `SPC m g p`   | goto previous (`xref-pop-marker-stack`)                                          |
+| Note          | /Omitted when `lsp-navigation` is `'peek` or `'simple` /                         |
+|               | *Bound under `SPC m g` rather than `SPC m G` when `lsp-navigation` == `'peek`*   |
+| `SPC m G b`   | jump back (`lsp-ui-peek`)                                                        |
+| `SPC m G i`   | find implementation (`lsp-ui-peek`)                                              |
+| `SPC m G d`   | find definitions (`lsp-ui-peek`)                                                 |
+| `SPC m G r`   | find references (`lsp-ui-peek`)                                                  |
+| `SPC m G s`   | find workspace symbol (`lsp-ui-peek`)                                            |
+| `SPC m G S`   | goto workspace symbol (`lsp-treemacs-symbols`)                                   |
+| `SPC m G p`   | goto previous (`lsp-ui-peek` stack - see Note 2)                                 |
+| `SPC m G n`   | goto next (`lsp-ui-peek stack` - see Note 2)                                     |
+| `SPC m G E`   | browse flycheck errors (`lsp-ui`)                                                |
+| `SPC m h h`   | describe thing at point                                                          |
+| `SPC m b s`   | `lsp-workspace-shutdown`                                                         |
+| `SPC m b r`   | `lsp-workspace-restart`                                                          |
+| `SPC m b d`   | `lsp-describe-session`                                                           |
+| `SPC m b v`   | `lsp-version`                                                                    |
+| `SPC m r r`   | rename                                                                           |
+| `SPC m T l d` | toggle documentation overlay                                                     |
+| `SPC m T l F` | toggle documentation overlay function signature                                  |
+| `SPC m T l s` | toggle symbol info overlay                                                       |
+| `SPC m T l S` | toggle symbol info overlay symbol name                                           |
+| `SPC m T l I` | toggle symbol info overlay duplicates                                            |
+| `SPC m T l l` | toggle lenses                                                                    |
+| `SPC m F r`   | Remove workspace folder                                                          |
+| `SPC m F a`   | Add workspace folder                                                             |
+| `SPC m F s`   | Switch workspace folder                                                          |
+| `SPC m x h`   | Highlight all instances of symbol under point                                    |
+| `SPC m x l`   | Show code lenses                                                                 |
+| `SPC m x L`   | Hide code lenses                                                                 |
 
 Note 1: Your language server may not distinguish between the word and
 symbol variants of this binding. Note 2: There is a window local jump
@@ -278,7 +278,7 @@ with the `lsp-navigation` setting.
 Use this to define an extension to the lsp find functions. An example
 from the c-c++ layer:
 
-``` {.elisp}
+``` elisp
 (spacemacs/lsp-define-extensions "c-c++" 'refs-address
                                  "textDocument/references"
                                  '(plist-put (lsp--text-document-position-params) :context '(:role 128)))
@@ -295,7 +295,7 @@ Use this to bind one or more extensions under `SPC m g` and/or
 `SPC m G`, as dictated by the value of `lsp-navigation`. Using another
 example from the c-c++ layer:
 
-``` {.elisp}
+``` elisp
 (spacemacs/lsp-bind-extensions-for-mode mode "c-c++"
                                         "&" 'refs-address
                                         "R" 'refs-read
@@ -308,7 +308,7 @@ example from the c-c++ layer:
 With `lsp-navigation` set to `'both` (the default), this is equivalent
 to:
 
-``` {.elisp}
+``` elisp
 (spacemacs/set-leader-keys-for-major-mode mode
   "g&" 'c-c++/find-refs-address
   "gR" 'c-c++/find-refs-read
@@ -326,7 +326,7 @@ to:
 
 whereas with `lsp-navigation` set to `'peek`, this is equivalent to:
 
-``` {.elisp}
+``` elisp
 (spacemacs/set-leader-keys-for-major-mode mode
   "g&" 'c-c++/peek-refs-address
   "gR" 'c-c++/peek-refs-read
@@ -349,15 +349,15 @@ The detailed bindings can be found
 [here](https://emacs-lsp.github.io/lsp-mode/page/keybindings/) where
 Spacemacs only replaces the prefix `s-l` with `SPC m`.
 
-  lsp binding   Spacemacs binding
-  ------------- -------------------------------------
-  `s-l w s`     `SPC m w s` or `, w s` or `M-m w s`
+| lsp binding | Spacemacs binding                   |
+|-------------|-------------------------------------|
+| `s-l w s`   | `SPC m w s` or `, w s` or `M-m w s` |
 
 As `lsp-mode` and has a deep integration into `Spacemacs`. `Spacemacs`
 hackers should pay attention to avoid any binding collision with
 `lsp-mode`.
 
-``` {.elisp}
+``` elisp
 (lsp :variables lsp-use-upstream-bindings t)
 ```
 

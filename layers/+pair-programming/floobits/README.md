@@ -28,16 +28,16 @@ need to add `floobits` to the existing
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ------------------------------------------------------------------------------------------
-  `SPC P c`     Clears all mirrored highlights.
-  `SPC P d`     Load the .floorc.json file for floobits configuration.
-  `SPC P f`     Follow a users changes. This also toggles follow mode.
-  `SPC P j`     Join an existing floobits workspace.
-  `SPC P l`     Leave the current workspace.
-  `SPC P R`     Create a workspace and populate it with the contents of the directory, DIR (or make it).
-                The workspace will be shared privately.
-  `SPC P s`     Summon everyone in the workspace to your cursor position.
-  `SPC P t`     Toggle following of recent changes.
-  `SPC P U`     Create a workspace and populate it with the contents of the directory, DIR (or make it).
-                The workspace will be shared publicly.
+| Key binding | Description                                                                              |
+|-------------|------------------------------------------------------------------------------------------|
+| `SPC P c`   | Clears all mirrored highlights.                                                          |
+| `SPC P d`   | Load the .floorc.json file for floobits configuration.                                   |
+| `SPC P f`   | Follow a users changes. This also toggles follow mode.                                   |
+| `SPC P j`   | Join an existing floobits workspace.                                                     |
+| `SPC P l`   | Leave the current workspace.                                                             |
+| `SPC P R`   | Create a workspace and populate it with the contents of the directory, DIR (or make it). |
+|             | The workspace will be shared privately.                                                  |
+| `SPC P s`   | Summon everyone in the workspace to your cursor position.                                |
+| `SPC P t`   | Toggle following of recent changes.                                                      |
+| `SPC P U`   | Create a workspace and populate it with the contents of the directory, DIR (or make it). |
+|             | The workspace will be shared publicly.                                                   |

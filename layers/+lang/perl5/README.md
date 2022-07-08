@@ -43,7 +43,7 @@ in your dotfile. This mode only provides very limited IDE capabilities.
 Used best if only small files are edited. To set explicitly set the
 following in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (perl5 :variables perl5-backend 'company-plsense)
 ```
 
@@ -62,7 +62,7 @@ in all modes.
 
 To set explicitly do the following in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (perl5 :variables
        perl5-backend 'lsp)
 ```
@@ -73,7 +73,7 @@ lsp server from
 
 Alternatively the server can be installed with:
 
-``` {.bash org-language="sh"}
+``` bash
 cpan Perl::LanguageServer
 ```
 
@@ -89,35 +89,35 @@ Perldoc
 
 Browse formatted perldocs.
 
-  Key binding   Description
-  ------------- ---------------------------------
-  `SPC m h h`   view perldoc of symbol at point
-  `SPC m h d`   view perldoc of any symbol
+| Key binding | Description                     |
+|-------------|---------------------------------|
+| `SPC m h h` | view perldoc of symbol at point |
+| `SPC m h d` | view perldoc of any symbol      |
 
 POD and HERE doc
 ----------------
 
 Select a POD or HERE doc.
 
-  Key binding   Description
-  ------------- ----------------------------------------
-  `SPC m v`     select entire POD or HERE doc at point
+| Key binding | Description                            |
+|-------------|----------------------------------------|
+| `SPC m v`   | select entire POD or HERE doc at point |
 
 Find Symbol
 -----------
 
 Jump to symbol definition.
 
-  Key binding   Description
-  ------------- -------------------------------------------
-  `SPC m g g`   jump to symbol definition
-  `SPC m g G`   jump to symbol definition in other window
+| Key binding | Description                               |
+|-------------|-------------------------------------------|
+| `SPC m g g` | jump to symbol definition                 |
+| `SPC m g G` | jump to symbol definition in other window |
 
 Formatting Code
 ---------------
 
-  Key binding   Description
-  ------------- -------------------------------
-  `SPC m = =`   format current line or region
-  `SPC m = b`   format current buffer
-  `SPC m = f`   format current function
+| Key binding | Description                   |
+|-------------|-------------------------------|
+| `SPC m = =` | format current line or region |
+| `SPC m = b` | format current buffer         |
+| `SPC m = f` | format current function       |

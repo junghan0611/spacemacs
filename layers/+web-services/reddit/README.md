@@ -29,7 +29,7 @@ and replace `SPC` with `_`.
 
 Example:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (reddit :variables
         reddigg-subs '(spacemacs
                        trymacs_discord))
@@ -38,7 +38,7 @@ Example:
 Key bindings
 ============
 
-  Key binding     Description
-  --------------- -------------
-  `SPC a w r m`   View main
-  `SPC a w r s`   View sub
+| Key binding   | Description |
+|---------------|-------------|
+| `SPC a w r m` | View main   |
+| `SPC a w r s` | View sub    |

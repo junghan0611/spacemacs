@@ -40,7 +40,7 @@ either be downloaded from
 [`here`](https://github.com/hadolint/hadolint/releases/latest) or build
 locally with stack as shown below:
 
-``` {.bash org-language="sh"}
+``` bash
 stack install hadolint
 ```
 
@@ -53,15 +53,15 @@ and emacs [`lsp-mode`](https://github.com/emacs-lsp/lsp-mode) to provide
 richer, IDE-like capabilities. To do so set the layer variable
 `docker-dockerfile-backend` to `lsp` like shown below:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((docker :variables docker-dockerfile-backend 'lsp)))
 ```
 
-In addition you need to install the lsp server\'s executable in your
+In addition you need to install the lsp server's executable in your
 system. This can be done via npm:
 
-``` {.bash org-language="sh"}
+``` bash
 npm i -g dockerfile-language-server-nodejs
 ```
 
@@ -82,8 +82,8 @@ provides auto-completion of the running containers.
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -------------------------------------------------------------------
-  `SPC m c b`   build current buffer
-  `SPC m c B`   build current buffer without cache
-  `SPC a t d`   entry point to interact with dockers, after that use `?` for help
+| Key binding | Description                                                       |
+|-------------|-------------------------------------------------------------------|
+| `SPC m c b` | build current buffer                                              |
+| `SPC m c B` | build current buffer without cache                                |
+| `SPC a t d` | entry point to interact with dockers, after that use `?` for help |

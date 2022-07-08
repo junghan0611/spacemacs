@@ -27,21 +27,21 @@ Key bindings
 Tell me how to spawn the xkcd greatness!!
 -----------------------------------------
 
-  Key binding   Description
-  ------------- ----------------
-  `SPC a f x`   Open xkcd mode
+| Key binding | Description    |
+|-------------|----------------|
+| `SPC a f x` | Open xkcd mode |
 
 Okay, what now
 --------------
 
 You can now move through the comics with these
 
-  Key binding   Description
-  ------------- -------------------------------------
-  `e`           Open explanation in the browser
-  `j` or `l`    Next comic
-  `k` or `h`    Previous comic
-  `o`           Open the browser
-  `q`           Quit the buffer
-  `r`           Random comic
-  `t`           Show alternate text in the modeline
+| Key binding | Description                         |
+|-------------|-------------------------------------|
+| `e`         | Open explanation in the browser     |
+| `j` or `l`  | Next comic                          |
+| `k` or `h`  | Previous comic                      |
+| `o`         | Open the browser                    |
+| `q`         | Quit the buffer                     |
+| `r`         | Random comic                        |
+| `t`         | Show alternate text in the modeline |

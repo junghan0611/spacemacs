@@ -13,7 +13,7 @@ Features:
 -   Live-updating lists of kubernetes resources
 -   Viewing and deleting pods, configmaps and secrets
 -   Switching contexts and namespaces.
--   Showing logs and exec\'ing into containers
+-   Showing logs and exec'ing into containers
 -   Describing pods
 -   Tramp support for pods
 -   Evil bindings
@@ -44,6 +44,6 @@ containers and also provides auto-completion of the running containers.
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -----------------------------
-  `SPC a t k`   Opens `kubernetes-overview`
+| Key binding | Description                 |
+|-------------|-----------------------------|
+| `SPC a t k` | Opens `kubernetes-overview` |

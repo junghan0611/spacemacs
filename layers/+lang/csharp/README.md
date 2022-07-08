@@ -43,10 +43,10 @@ the `csharp-backend` variable when configuring the layer:
 -   `lsp` (testing)
 -   `nil` (to not use any language server)
 
-To use the lsp backend, add \`csharp\' layer with `csharp-backend`
-variable set to \'lsp:
+To use the lsp backend, add \`csharp' layer with `csharp-backend`
+variable set to 'lsp:
 
-``` {.elisp}
+``` elisp
 (csharp :variables csharp-backend 'lsp)
 ```
 
@@ -89,55 +89,55 @@ layers/languages using the `lsp` layer.
 Navigation
 ----------
 
-  Key binding   Description
-  ------------- -----------------------------------------------
-  `SPC m g c`   Go to member in current file
-  `SPC m g e`   List errors and warnings in solution
-  `SPC m g f`   Go to solution file
-  `SPC m g F`   Go to solution file then member
-  `SPC m g g`   Go to definition
-  `SPC m g G`   Go to definition in other window
-  `SPC m g i`   Find implementations
-  `SPC m g I`   Find implementations using ido
-  `SPC m g m`   Go to solution member
-  `SPC m g M`   Go to solution member in other window
-  `SPC m g r`   Go to region
-  `SPC m g s`   Find symbols using Helm
-  `SPC m g u`   Find usages of symbol under cursor using Helm
-  `SPC m g U`   Find usages of symbol under cursor using ido
+| Key binding | Description                                   |
+|-------------|-----------------------------------------------|
+| `SPC m g c` | Go to member in current file                  |
+| `SPC m g e` | List errors and warnings in solution          |
+| `SPC m g f` | Go to solution file                           |
+| `SPC m g F` | Go to solution file then member               |
+| `SPC m g g` | Go to definition                              |
+| `SPC m g G` | Go to definition in other window              |
+| `SPC m g i` | Find implementations                          |
+| `SPC m g I` | Find implementations using ido                |
+| `SPC m g m` | Go to solution member                         |
+| `SPC m g M` | Go to solution member in other window         |
+| `SPC m g r` | Go to region                                  |
+| `SPC m g s` | Find symbols using Helm                       |
+| `SPC m g u` | Find usages of symbol under cursor using Helm |
+| `SPC m g U` | Find usages of symbol under cursor using ido  |
 
 Helpers (documentation, info)
 -----------------------------
 
-  Key binding   Description
-  ------------- ------------------------------------------------------------------------
-  `SPC m h t`   Get type information for symbol under cursor
-  `SPC m h T`   Get type information for symbol under cursor and put it into kill-ring
+| Key binding | Description                                                            |
+|-------------|------------------------------------------------------------------------|
+| `SPC m h t` | Get type information for symbol under cursor                           |
+| `SPC m h T` | Get type information for symbol under cursor and put it into kill-ring |
 
 Refactoring
 -----------
 
-  Key binding   Description
-  ------------- ------------------------------------------
-  `SPC m r m`   Rename symbol under cursor
-  `SPC m r M`   Rename symbol under cursor interactively
-  `SPC m r r`   Refactor under cursor
+| Key binding | Description                              |
+|-------------|------------------------------------------|
+| `SPC m r m` | Rename symbol under cursor               |
+| `SPC m r M` | Rename symbol under cursor interactively |
+| `SPC m r r` | Refactor under cursor                    |
 
 OmniSharp server interaction
 ----------------------------
 
-  Key binding   Description
-  ------------- ----------------------------
-  `SPC m s i`   Install OmniSharp server
-  `SPC m s r`   Reload the solution
-  `SPC m s s`   Start the OmniSharp server
-  `SPC m s S`   Stop the OmniSharp server
+| Key binding | Description                |
+|-------------|----------------------------|
+| `SPC m s i` | Install OmniSharp server   |
+| `SPC m s r` | Reload the solution        |
+| `SPC m s s` | Start the OmniSharp server |
+| `SPC m s S` | Stop the OmniSharp server  |
 
 Tests
 -----
 
-  Key binding   Description
-  ------------- ----------------------------------
-  `SPC m t b`   Run tests in current buffer
-  `SPC m t t`   Run the last executed test again
-  `SPC m t t`   Run the test around point
+| Key binding | Description                      |
+|-------------|----------------------------------|
+| `SPC m t b` | Run tests in current buffer      |
+| `SPC m t t` | Run the last executed test again |
+| `SPC m t t` | Run the test around point        |

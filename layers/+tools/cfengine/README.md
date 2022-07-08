@@ -31,7 +31,7 @@ avoid errors like:
 
 `File ./example.cf (owner 1000) is writable by others (security exception)`
 
-``` {.elisp}
+``` elisp
 (defun cfengine-permissions-policy-owner-only ()
   "If file starts with a shebang, make `buffer-file-name' executable"
   (save-excursion
@@ -48,7 +48,7 @@ If you like attributes to be intended from the promiser set
 `Indentation amount
 from anchor` to `2`. For example:
 
-``` {.cfengine3}
+``` cfengine3
 bundle agent main
 {
   vars:
@@ -65,7 +65,7 @@ Execution of `cfengine3` SRC blocks
 This layers add support for `cfengine3` source blocks in org files. With
 the insertion point inside the SRC block press `,,` or `CTRL-c Ctrl-c`
 
-``` {.cfengine3}
+``` cfengine3
 bundle agent main
 {
   reports:
@@ -85,6 +85,6 @@ To suppress the confirmation when executing a block set
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -----------------------
-  `SPC m j`     Reformats JSON string
+| Key binding | Description           |
+|-------------|-----------------------|
+| `SPC m j`   | Reformats JSON string |

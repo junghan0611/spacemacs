@@ -5,7 +5,7 @@ Description
 
 This layer adds support for the
 [prodigy](https://github.com/rejeep/prodigy.el) package to manage
-external services from within Emacs, check the package\'s documentation
+external services from within Emacs, check the package's documentation
 for more details.
 
 It is recommended to put your prodigy services in the
@@ -33,31 +33,31 @@ Spawn prodigy
 
 You start prodigy with this:
 
-  Key binding   Description
-  ------------- -------------------------
-  `SPC a t p`   Open the prodigy buffer
+| Key binding | Description             |
+|-------------|-------------------------|
+| `SPC a t p` | Open the prodigy buffer |
 
 Navigate through it
 -------------------
 
-  Key binding   Description
-  ------------- ---------------------------------
-  `c`           Clear buffer
-  `h`           First service
-  `j`           Next service
-  `k`           Previous service
-  `l`           Last service
-  `H`           Display current process
-  `J`           Next service with status
-  `K`           Previous service with status
-  `L`           Start prodigy
-  `S`           Stop prodigy
-  `r`           restart prodigy
-  `R`           revert buffer (refresh list)
-  `d`           Jump to the dired of service
-  `g`           Jump to magit-status of service
-  `Y`           Copy prodigy command
-  `o`           Browse the service
-  `f t`         Add tag filter
-  `f n`         Add name filter
-  `F`           Clear filters
+| Key binding | Description                     |
+|-------------|---------------------------------|
+| `c`         | Clear buffer                    |
+| `h`         | First service                   |
+| `j`         | Next service                    |
+| `k`         | Previous service                |
+| `l`         | Last service                    |
+| `H`         | Display current process         |
+| `J`         | Next service with status        |
+| `K`         | Previous service with status    |
+| `L`         | Start prodigy                   |
+| `S`         | Stop prodigy                    |
+| `r`         | restart prodigy                 |
+| `R`         | revert buffer (refresh list)    |
+| `d`         | Jump to the dired of service    |
+| `g`         | Jump to magit-status of service |
+| `Y`         | Copy prodigy command            |
+| `o`         | Browse the service              |
+| `f t`       | Add tag filter                  |
+| `f n`       | Add name filter                 |
+| `F`         | Clear filters                   |

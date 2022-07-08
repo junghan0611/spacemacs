@@ -39,7 +39,7 @@ in your dotfile. This mode only provides very limited IDE capabilities.
 Used best if only small scripts are edited. To set explicitly set the
 following in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (nim :variables nim-backend 'company-nim)
 ```
 
@@ -53,7 +53,7 @@ all modes.
 
 To set explicitly do the following in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (nim :variables
       nim-backend 'lsp)
 ```
@@ -61,7 +61,7 @@ To set explicitly do the following in your dotfile:
 For this to work you will also need to install the latest version of the
 lsp server by running:
 
-``` {.bash org-language="sh"}
+``` bash
 nimble install nimlsp
 ```
 
@@ -75,8 +75,8 @@ intellisense config for LSP.
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ------------------------------
-  `SPC m c r`   `nim compile --run main.nim`
-  `SPC m g b`   Jump back
-  `SPC m h h`   Show symbol\'s documentation
+| Key binding | Description                  |
+|-------------|------------------------------|
+| `SPC m c r` | `nim compile --run main.nim` |
+| `SPC m g b` | Jump back                    |
+| `SPC m h h` | Show symbol's documentation  |

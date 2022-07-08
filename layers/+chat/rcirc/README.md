@@ -41,8 +41,8 @@ There are several ways to configure rcirc supported by the layer:
 -   By storing your credentials in `rcirc-server-alist` in your Dropbox
     (better but still not secured)
 -   By storing your credentials in authinfo (secured)
--   By using a ZNC bouncer [and]{.underline} storing your credentials
-    (secured)
+-   By using a ZNC bouncer <span class="underline">and</span> storing
+    your credentials (secured)
 
 ### Storing the credentials in your dotfile
 
@@ -55,7 +55,7 @@ crypted. This is convenient but not recommended.
 
 1.  Example:
 
-    ``` {.commonlisp org-language="emacs-lisp"}
+    ``` commonlisp
     (setq rcirc-server-alist
       '(("irc.freenode.net"
           :user-name "spacemacs_user" :encryption tls
@@ -77,7 +77,7 @@ recommended.
 
 1.  Example:
 
-    ``` {.commonlisp org-language="emacs-lisp"}
+    ``` commonlisp
     (setq rcirc-server-alist
       '(("irc.freenode.net"
           :user-name "spacemacs_user"
@@ -95,21 +95,21 @@ configure rcirc.
     it by setting `rcirc-enable-authinfo-support` to `t` in your
     dotfile:
 
-    ``` {.commonlisp org-language="emacs-lisp"}
+    ``` commonlisp
     (setq-default dotspacemacs-configuration-layers '(
       (rcirc :variables rcirc-enable-authinfo-support t)))
     ```
 
 2.  In your `~/.authinfo.gpg` file store your credentials like this:
 
-    ``` {.example}
+    ``` example
     machine irc.freenode.net port nickserv user <user> password <passwd>
     ```
 
 3.  At last you need to provide your servers configuration in the
     `dotspacemacs/user-config` function of your dotfile:
 
-    ``` {.commonlisp org-language="emacs-lisp"}
+    ``` commonlisp
     (setq rcirc-server-alist
     '(("irc.freenode.net"
         :user-name "spacemacs_user"
@@ -119,8 +119,9 @@ configure rcirc.
 
 ### Connecting behind a ZNC bouncer and storing the credentials in authinfo
 
-This methods is also secured since it uses authinfo [but]{.underline}
-you must secure your ZNC server configuration as well!
+This methods is also secured since it uses authinfo <span
+class="underline">but</span> you must secure your ZNC server
+configuration as well!
 
 ZNC is a popular bouncer which is easy to setup. A bouncer is a proxy
 that connects to your IRC channels on your behalf, instead of connecting
@@ -142,14 +143,14 @@ store the discussions in a buffer while you are not connected.
     1.  To enable ZNC support set the variable
         `rcirc-enable-znc-support` to `t` in your dotfile:
 
-        ``` {.commonlisp org-language="emacs-lisp"}
+        ``` commonlisp
         (setq-default dotspacemacs-configuration-layers '(
           (rcirc :variables rcirc-enable-znc-support t)))
         ```
 
     2.  In your `~/.authinfo.gpg` file store your credentials like this:
 
-        ``` {.example}
+        ``` example
         machine freenode.spacemacsserver.me port irc user spacemacs_user/freenode password ZNC_PASSWORD
         machine geekshed.spacemacsserver.me port irc user spacemacs_user/geekshed password ZNC_PASSWORD
         ```
@@ -163,7 +164,7 @@ store the discussions in a buffer while you are not connected.
         keyword arguments will be replaced by the credentials stored in
         your `~/.authinfo.gpg`.
 
-        ``` {.commonlisp org-language="emacs-lisp"}
+        ``` commonlisp
         (setq rcirc-server-alist
          ;; This will replace :auth with the correct thing, see the doc for that function
          '(("freenode"
@@ -184,7 +185,7 @@ Enabling `s/foo/bar/`
 To configure rcirc to update buffers when people use `s/foo/bar/`, set
 the variable `rcirc-enable-late-fix` to `t` in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (rcirc :variables rcirc-enable-late-fix t)))
 ```
@@ -195,7 +196,7 @@ Enabling emojify-mode
 To enable emojify-mode in rcirc buffers, set the variable
 `rcirc-enable-emojify` to `t` in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (rcirc :variables rcirc-enable-emojify t)))
 ```
@@ -207,7 +208,7 @@ To enable erc-image for fetching and showing images when they are linked
 to in chat, set the variable `rcirc-enable-erc-image` to `t` in your
 dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (rcirc :variables rcirc-enable-erc-image t)))
 ```
@@ -219,7 +220,7 @@ To enable erc-tweet for fetching and displaying tweets when they are
 linked in chat, set the variable `rcirc-enable-erc-tweet` to `t` in your
 dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (rcirc :variables rcirc-enable-erc-tweet t)))
 ```
@@ -230,7 +231,7 @@ Enabling erc-yt
 To enable erc-yt for fetching and displaying previews for YouTube links
 in chat, set the variable `rcirc-enable-erc-yt` to `t` in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (rcirc :variables rcirc-enable-erc-yt t)))
 ```
@@ -242,7 +243,7 @@ To enable rcirc-styles for displaying and inserting color and text
 attribute codes, set the variable `rcirc-enable-styles` to `t` in your
 dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (rcirc :variables rcirc-enable-styles t)))
 ```
@@ -250,20 +251,20 @@ dotfile:
 Key bindings
 ============
 
-  Key binding     Description
-  --------------- ---------------------------------------------------------------------------------
-  `SPC a c i r`   Open rcirc
-  `SPC l o i`     Open rcirc in a custom perspective \"@RICRC\" (need perspectives layer enabled)
-  `SPC m i a`     Interactively insert a color code (if rcirc-styles is enabled)
-  `SPC m i c`     Interactively insert a text attribute code (if rcirc-styles is enabled)
-  `SPC m i p`     Toggle preview in input line (if rcirc-styles is enabled)
+| Key binding   | Description                                                                   |
+|---------------|-------------------------------------------------------------------------------|
+| `SPC a c i r` | Open rcirc                                                                    |
+| `SPC l o i`   | Open rcirc in a custom perspective "@RICRC" (need perspectives layer enabled) |
+| `SPC m i a`   | Interactively insert a color code (if rcirc-styles is enabled)                |
+| `SPC m i c`   | Interactively insert a text attribute code (if rcirc-styles is enabled)       |
+| `SPC m i p`   | Toggle preview in input line (if rcirc-styles is enabled)                     |
 
 In normal state:
 
-  Key binding   Description
-  ------------- --------------------------
-  `C-j`         next item in history
-  `C-k`         previous item in history
+| Key binding | Description              |
+|-------------|--------------------------|
+| `C-j`       | next item in history     |
+| `C-k`       | previous item in history |
 
 Rcirc documentation
 ===================
@@ -276,5 +277,5 @@ Spacemacs Layout Support
 
 RCIRC buffers are added automatically to the default layout for RCIRC
 controlled by the variable `rcirc-spacemacs-layout-name` (defaults to
-\"@RCIRC\") and the default binding (\"i\") is controlled by
+"@RCIRC") and the default binding ("i") is controlled by
 `rcirc-spacemacs-layout-binding`

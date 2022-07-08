@@ -29,7 +29,7 @@ Idris
 
 Idris can be installed using `Haskell's cabal`:
 
-``` {.bash org-language="sh"}
+``` bash
 cabal install idris
 ```
 
@@ -45,72 +45,72 @@ Shorthands
 Several (but not all) of the evil-leader shorthands that `idris-mode`
 provides are reproduced under the local leader.
 
-  Key binding   Description
-  ------------- ---------------------------------------------------------------------------------
-  `SPC m c`     Case split the pattern variable under point, or make it into a case expression.
-  `SPC m d`     Create an initial pattern match clause for a type declaration.
-  `SPC m l`     Extract lemma from hole
-  `SPC m p`     Attempt to solve a metavariable automatically.
-  `SPC m r`     Load current buffer into Idris.
-  `SPC m t`     Get the type for the identifier under point.
-  `SPC m w`     Add a with block for the pattern-match clause under point.
+| Key binding | Description                                                                     |
+|-------------|---------------------------------------------------------------------------------|
+| `SPC m c`   | Case split the pattern variable under point, or make it into a case expression. |
+| `SPC m d`   | Create an initial pattern match clause for a type declaration.                  |
+| `SPC m l`   | Extract lemma from hole                                                         |
+| `SPC m p`   | Attempt to solve a metavariable automatically.                                  |
+| `SPC m r`   | Load current buffer into Idris.                                                 |
+| `SPC m t`   | Get the type for the identifier under point.                                    |
+| `SPC m w`   | Add a with block for the pattern-match clause under point.                      |
 
 Interactive editing
 -------------------
 
-  Key binding   Description
-  ------------- --------------------------------------------------------------------------------------------
-  `SPC m i a`   Attempt to solve a metavariable automatically.
-  `SPC m i c`   Case split the pattern variable under point, or make it into a case expression.
-  `SPC m i e`   Extract a metavariable or provisional definition name to an explicit top level definition.
-  `SPC m i m`   Add missing pattern-match cases to an existing definition.
-  `SPC m i r`   Refine by name, without recursive proof search.
-  `SPC m i s`   Create an initial pattern match clause for a type declaration.
-  `SPC m i w`   Add a with block for the pattern-match clause under point.
+| Key binding | Description                                                                                |
+|-------------|--------------------------------------------------------------------------------------------|
+| `SPC m i a` | Attempt to solve a metavariable automatically.                                             |
+| `SPC m i c` | Case split the pattern variable under point, or make it into a case expression.            |
+| `SPC m i e` | Extract a metavariable or provisional definition name to an explicit top level definition. |
+| `SPC m i m` | Add missing pattern-match cases to an existing definition.                                 |
+| `SPC m i r` | Refine by name, without recursive proof search.                                            |
+| `SPC m i s` | Create an initial pattern match clause for a type declaration.                             |
+| `SPC m i w` | Add a with block for the pattern-match clause under point.                                 |
 
 Documentation
 -------------
 
-  Key binding   Description
-  ------------- -------------------------------------------------------
-  `SPC m h a`   Search the documentation for a string.
-  `SPC m h d`   Search the documentation for the name under point.
-  `SPC m h s`   Search the documentation regarding a particular type.
-  `SPC m h t`   Get the type for the identifier under point.
+| Key binding | Description                                           |
+|-------------|-------------------------------------------------------|
+| `SPC m h a` | Search the documentation for a string.                |
+| `SPC m h d` | Search the documentation for the name under point.    |
+| `SPC m h s` | Search the documentation regarding a particular type. |
+| `SPC m h t` | Get the type for the identifier under point.          |
 
 REPL
 ----
 
-  Key binding   Description
-  ------------- ----------------------------------------------------------------------------------------
-  `SPC m s b`   Load the current buffer into Idris.
-  `SPC m s B`   Load the current buffer into Idris and switch to REPL in insert state
-  `SPC m s i`   Start Idris inferior process
-  `SPC m s n`   Extend the region to be loaded one line at a time.
-  `SPC m s N`   Extend the region to be loaded one line at a time and switch to REPL in insert state
-  `SPC m s p`   Contract the region to be loaded one line at a time
-  `SPC m s P`   Contract the region to be loaded one line at a time and switch to REPL in insert state
-  `SPC m s s`   Switch to REPL buffer
-  `SPC m s q`   Quit the Idris process
+| Key binding | Description                                                                            |
+|-------------|----------------------------------------------------------------------------------------|
+| `SPC m s b` | Load the current buffer into Idris.                                                    |
+| `SPC m s B` | Load the current buffer into Idris and switch to REPL in insert state                  |
+| `SPC m s i` | Start Idris inferior process                                                           |
+| `SPC m s n` | Extend the region to be loaded one line at a time.                                     |
+| `SPC m s N` | Extend the region to be loaded one line at a time and switch to REPL in insert state   |
+| `SPC m s p` | Contract the region to be loaded one line at a time                                    |
+| `SPC m s P` | Contract the region to be loaded one line at a time and switch to REPL in insert state |
+| `SPC m s s` | Switch to REPL buffer                                                                  |
+| `SPC m s q` | Quit the Idris process                                                                 |
 
 Active term manipulations
 -------------------------
 
-  Key binding   Description
-  ------------- -----------------------------------------------
-  `SPC m m c`   Show the core language for the term at point.
-  `SPC m m i`   Show implicits for the term at point.
-  `SPC m m h`   Hide implicits for the term at point.
-  `SPC m m n`   Normalize the term at point.
+| Key binding | Description                                   |
+|-------------|-----------------------------------------------|
+| `SPC m m c` | Show the core language for the term at point. |
+| `SPC m m i` | Show implicits for the term at point.         |
+| `SPC m m h` | Hide implicits for the term at point.         |
+| `SPC m m n` | Normalize the term at point.                  |
 
 Build system
 ------------
 
-  Key binding   Description
-  ------------- -----------------------------------------------------------------------------
-  `SPC m b c`   Build the package.
-  `SPC m b C`   Clean the package, removing `.ibc` files
-  `SPC m b i`   Install the package to the user\'s repository, building first if necessary.
-  `SPC m b p`   Open package file.
+| Key binding | Description                                                                |
+|-------------|----------------------------------------------------------------------------|
+| `SPC m b c` | Build the package.                                                         |
+| `SPC m b C` | Clean the package, removing `.ibc` files                                   |
+| `SPC m b i` | Install the package to the user's repository, building first if necessary. |
+| `SPC m b p` | Open package file.                                                         |
 
 When inside a package file, you can insert a field with `SPC m f`.

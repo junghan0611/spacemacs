@@ -43,7 +43,7 @@ If you want to colorize all identifiers using the more universal
 rainbow-identifiers method instead, set the layer variable
 `colors-colorize-identifiers` to `all`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (colors :variables colors-colorize-identifiers 'all)))
 ```
@@ -63,7 +63,7 @@ Two handy built-in functions makes both of those steps very easy.
 
 Example:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dotspacemacs/user-config ()
   ;; add per-theme sat&light overrides and refresh values for your current theme
   (colors/add-theme-sat&light 'mytheme '(50 50))
@@ -78,7 +78,7 @@ and lightness. You can configure your own defaults via
 `colors-default-rainbow-identifiers-light`, which can be set via
 `variables`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (colors :variables
     colors-colorize-identifiers 'all
@@ -93,7 +93,7 @@ Enable Nyan cat
 To enable the package `nyan-mode` just set the variable
 `colors-enable-nyan-cat-progress-bar` to `t`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (colors :variables colors-enable-nyan-cat-progress-bar t)))
 ```
@@ -101,7 +101,7 @@ To enable the package `nyan-mode` just set the variable
 It may be handy to enable it only when Emacs is running in a GUI. You
 can do that by using a quasi-quoted list which checks the Emacs mode:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (colors :variables
           colors-enable-nyan-cat-progress-bar (display-graphic-p))))
@@ -113,24 +113,24 @@ Key bindings
 Colorize Identifiers
 --------------------
 
-  Key binding     Description
-  --------------- -----------------------------------------------------------------------
-  `SPC t C a`     colorize all identifiers in current buffer (rainbow-identifiers mode)
-  `SPC t C C-a`   globally colorize all identifiers and all subsequent buffers
-  `SPC t C v`     colorize only variables in current buffer (color-identifiers mode)
-  `SPC t C C-v`   globally colorize only variables and all subsequent buffers
+| Key binding   | Description                                                           |
+|---------------|-----------------------------------------------------------------------|
+| `SPC t C a`   | colorize all identifiers in current buffer (rainbow-identifiers mode) |
+| `SPC t C C-a` | globally colorize all identifiers and all subsequent buffers          |
+| `SPC t C v`   | colorize only variables in current buffer (color-identifiers mode)    |
+| `SPC t C C-v` | globally colorize only variables and all subsequent buffers           |
 
-The `saturation` and `lightness` of rainbow-identifier mode\'s colors
-can be adjusted live via the following transient-state:
+The `saturation` and `lightness` of rainbow-identifier mode's colors can
+be adjusted live via the following transient-state:
 
-  Key binding       Description
-  ----------------- ------------------------------------------
-  `SPC C i s`       initiate change `saturation` mini-mode
-  `SPC C i l`       initiate change `lightness` mini-mode
-  `+`               increase the `saturation` or `lightness`
-  `-`               decrease the `saturation` or `lightness`
-  `=`               reset the `saturation` or `lightness`
-  `Any other key`   leave the change mini-mode
+| Key binding     | Description                              |
+|-----------------|------------------------------------------|
+| `SPC C i s`     | initiate change `saturation` mini-mode   |
+| `SPC C i l`     | initiate change `lightness` mini-mode    |
+| `+`             | increase the `saturation` or `lightness` |
+| `-`             | decrease the `saturation` or `lightness` |
+| `=`             | reset the `saturation` or `lightness`    |
+| `Any other key` | leave the change mini-mode               |
 
 Rainbow Mode
 ------------
@@ -143,7 +143,7 @@ identifier colorizers.
 
 All detected color codes in the current buffer will be be highlighted as
 their actual color. However, for accurate display, this mode requires
-that you use GUI Emacs and that you haven\'t disabled sRGB mode (if your
+that you use GUI Emacs and that you haven't disabled sRGB mode (if your
 platform uses that).
 
 To enable, you must manually toggle it on and off on a per-buffer basis

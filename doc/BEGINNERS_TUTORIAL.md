@@ -3,7 +3,7 @@ Why Spacemacs?
 
 -   Unparallelled text and structure editing for all types of writing
     tasks: creative writing, blogging, note-taking, todo-lists,
-    scientific papers...
+    scientific papers…
 -   Powerful modes for programming in dozens of programming languages
 -   Deeply customizable yet beginner-friendly
 
@@ -30,7 +30,7 @@ The most important modifier keys are:
 -   `SPC` = `Space`, used as the leader key in Vim editing style.
 -   `RET` = `Return` (also known as `Enter`)
 -   `C-` = `Ctrl`
--   `M-` (for \"meta\") = `Alt`
+-   `M-` (for "meta") = `Alt`
 -   `S-` = `Shift`
 
 The modifier keys can be used either in a sequence or as key chords by
@@ -38,12 +38,11 @@ pressing two keys at the same time. `SPC 1` is notation for a key
 sequence and means pressing `Space` first and pressing `1` after it. Key
 chords are notated by writing a `-` between the keys. Thus `C-c` means
 pressing `Ctrl` and the letter `c` simultaneously. Key chords and
-sequences can also be combined: `C-c a` means \"First press `Ctrl` and
-`c` simultaneously, then press `a`\". `C-c C-a` means \"First press
-`Ctrl` and `c` simultaneously, then press `Ctrl` and `a`
-simultaneously\".
+sequences can also be combined: `C-c a` means "First press `Ctrl` and
+`c` simultaneously, then press `a`". `C-c C-a` means "First press `Ctrl`
+and `c` simultaneously, then press `Ctrl` and `a` simultaneously".
 
-This document assumes you chose the \"Vim\" editing style and notates
+This document assumes you chose the "Vim" editing style and notates
 accordingly. If you chose the Emacs editing style, just substitute `SPC`
 with `M-m` in all the commands that begin with `SPC`.
 
@@ -80,7 +79,7 @@ sound complicated at first, in practice it can be learned quickly and
 once learned is unparallelled in speed and ergonomy. Our earlier example
 of deleting a certain line of text (a very common edit task) can be
 achieved in Spacemacs by simply navigating to the line in question with
-the keys `j` and `k` (navigation keys) and pressing `d` (for \"delete\")
+the keys `j` and `k` (navigation keys) and pressing `d` (for "delete")
 two times!
 
 You might have noticed that this was achieved entirely without moving
@@ -100,7 +99,7 @@ Using the spacebar to launch commands
 -------------------------------------
 
 Now that you are familiar with writing and editing text it is time to
-put the \"Space\" into Spacemacs. Because the spacebar is the most
+put the "Space" into Spacemacs. Because the spacebar is the most
 accessible key on the keyboard and is pressed by the strongest fingers
 (the thumbs), it is a natural choice for launching commands. You can
 think of it as the start menu of Spacemacs.
@@ -109,39 +108,39 @@ A short instant after the spacebar is pressed a menu pops up. This
 interactive menu shows you what submenus and commands can be accessed by
 subsequent keypresses. Browsing around this menu is a great way of
 finding new features in Spacemacs, so keep an eye on the different
-options! `ESC` usually breaks the combination you don\'t want to use.
+options! `ESC` usually breaks the combination you don't want to use.
 
 Buffers, windows and frames
 ---------------------------
 
 Because Emacs (the extension of which Spacemacs is) was developed in the
-\'80s before the advent of modern graphical user interfaces, Emacs has a
-different name of what we normally call \"windows\": in Emacs these are
-called \"frames\". A frame is what pops up when you launch Spacemacs
-from your desktop shortcut. A frame contains windows and buffers.
+'80s before the advent of modern graphical user interfaces, Emacs has a
+different name of what we normally call "windows": in Emacs these are
+called "frames". A frame is what pops up when you launch Spacemacs from
+your desktop shortcut. A frame contains windows and buffers.
 
 Windows are the visual spaces a frame is divided into. The default is
 one, but windows can be split to allow editing multiple files in one
-frame. Let\'s try this. Press `SPC` to bring up the menu. You can see
+frame. Let's try this. Press `SPC` to bring up the menu. You can see
 different letters having different submenus associated with them,
 usually with a mnemonic for easier recall. The letter w is assigned for
-\"windows\": press it. A new menu opens with further options. Write the
+"windows": press it. A new menu opens with further options. Write the
 character / to split the currently active window vertically into two.
 
 Now you should see two windows of this tutorial, and the one on the left
 should be active, as can be seen from the modeline in the bottom or by
-moving the cursor around using the navigation keys. This isn\'t very
+moving the cursor around using the navigation keys. This isn't very
 useful, as we would probably want to see a different file on the right.
 
 First, activate the window on the right with `SPC 2`. Now that the
 window on the right is active, we can open a different buffer for a
-different file. We\'ll use the scratch buffer, which can be used like a
-notepad. Be warned, unlike other buffers it doesn\'t prompt you whether
-you want to save the changes you\'ve made when quitting the program!
+different file. We'll use the scratch buffer, which can be used like a
+notepad. Be warned, unlike other buffers it doesn't prompt you whether
+you want to save the changes you've made when quitting the program!
 Press `SPC b` to open the buffers menu and then switch to the scratch
 buffer by pressing s. Now you have two different buffers in two
 different windows open, great! You can write something on the scratch
-buffer, and when you\'re done, make sure that the scratch window is
+buffer, and when you're done, make sure that the scratch window is
 active and close it by pressing `SPC w d`.
 
 Now the tutorial window fills the whole frame. But you only closed the
@@ -175,14 +174,14 @@ which layers to load. Within this file you can also configure certain
 features. First, split the window vertically to view both this tutorial
 and the dotfile simultaneously (`SPC w /`). Open the dotfile by pressing
 `SPC f e d`. Navigate to the line starting with
-\"dotspacemacs-configuration-layers\". The following lines have further
+"dotspacemacs-configuration-layers". The following lines have further
 instructions: uncomment `org` and `git` layers if you want to be
 familiarized with them. More
 [layers](https://github.com/syl20bnr/spacemacs/blob/develop/doc/LAYERS.org)
 for different languages and tools can be found by pressing `SPC h SPC`.
 The added layers will be installed upon restart of Spacemacs.
 
-Some layers require third-party tools that you\'ll have to install via
+Some layers require third-party tools that you'll have to install via
 your favorite package manager. The layer readme will tell if this is the
 case.
 
@@ -203,9 +202,9 @@ Editing the `dotspacemacs-maximized-at-startup` variable from `nil` to
 Quitting
 --------
 
-Save the changes you\'ve made to the dotfile with `SPC f s` and then
-quit emacs by `SPC q q`. You can return to this tutorial by clicking it
-on the home screen!
+Save the changes you've made to the dotfile with `SPC f s` and then quit
+emacs by `SPC q q`. You can return to this tutorial by clicking it on
+the home screen!
 
 Additional features, tips and troubleshooting
 =============================================
@@ -214,14 +213,14 @@ Org mode
 --------
 
 Org mode is one of the best features of Spacemacs and enough reason to
-warrant its use. Org mode\'s official description tells that it is \"for
+warrant its use. Org mode's official description tells that it is "for
 keeping notes, maintaining todo lists, planning projects, and authoring
-documents with a fast and effective plain-text system\", but this gives
+documents with a fast and effective plain-text system", but this gives
 only a small inkling of its versatility. If you do any kind of writing
 at all, chances are that Org mode will make it easier and more fun. This
 tutorial was written in Org mode.
 
-To test some of it\'s features. Install the Org layer and open this
+To test some of it's features. Install the Org layer and open this
 tutorial. Make a copy named `test.org` with `SPC f c` somewhere outside
 of the `.emacs.d` directory. Press `SPC SPC`, write `org-mode` and press
 `RET` to switch to `org-mode` from the write-only documentation mode.
@@ -246,26 +245,26 @@ Version control - the intelligent way
 
 Version control means keeping track of the changes and edits you have
 made to your document. Often version control is done by saving different
-versions of the document with different names, such as \"document
-version 13\" and so on. This is crude in many ways: if you want to, for
-example, re-add something you deleted, you have to manually open several
-past versions of the document to find the one with the deleted part, and
-then copy-paste it to the most recent file. More complicated edits will
-be harder still. Fortunately, there is a much better way. Git is the
-most popular version control system for programmers, but it can be as
-useful for people that are writing school or scientific papers, fiction
-or blog posts as well.
+versions of the document with different names, such as "document version
+13" and so on. This is crude in many ways: if you want to, for example,
+re-add something you deleted, you have to manually open several past
+versions of the document to find the one with the deleted part, and then
+copy-paste it to the most recent file. More complicated edits will be
+harder still. Fortunately, there is a much better way. Git is the most
+popular version control system for programmers, but it can be as useful
+for people that are writing school or scientific papers, fiction or blog
+posts as well.
 
 Install the git layer, restart Spacemacs and open a file you want to
 version control. You can check the status of your file by pressing
 `SPC g s`. Select the folder your file is in. You will be prompted
 whether you want to create a repository in the folder. Select yes. You
-will see a list of \"Untracked files\": navigate to the file you want to
-track and press s to \"stage changes\". You might be prompted to save
-the file: save it if necessary. Now the new file needs to be committed:
-press c and c again. Two windows pop up: one showing the changes you\'ve
+will see a list of "Untracked files": navigate to the file you want to
+track and press s to "stage changes". You might be prompted to save the
+file: save it if necessary. Now the new file needs to be committed:
+press c and c again. Two windows pop up: one showing the changes you've
 made since the last edit (in this case, the whole document) and another
-prompting for a commit message. Write \"Initial commit\", press ESC to
+prompting for a commit message. Write "Initial commit", press ESC to
 exit back to normal mode and press `, c` confirm and quit the commit
 message. To abort, press `, a`.
 
@@ -298,7 +297,7 @@ including this tutorial and the layer documents.
 
 The [Gitter chat](https://gitter.im/syl20bnr/spacemacs) can be used to
 ask questions if the answer cannot be found in the documentation. For a
-detailed review of Spacemacs\'s features one can also watch the
+detailed review of Spacemacs's features one can also watch the
 [Spacemacs ABC
 series](https://www.youtube.com/playlist?list=PLrJ2YN5y27KLhd3yNs2dR8_inqtEiEweE)
 by Eivind Fonn on Youtube. Some of the keybindings have changed since

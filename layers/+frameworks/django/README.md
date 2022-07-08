@@ -36,67 +36,67 @@ prefix `SPC m j` in `Python-mode`.
 General Managment
 -----------------
 
-  Key binding   Description
-  ------------- ---------------------------------------
-  `SPC m j m`   Start a `pony-mode` managment session
+| Key binding | Description                           |
+|-------------|---------------------------------------|
+| `SPC m j m` | Start a `pony-mode` managment session |
 
 Fabric
 ------
 
-  Key binding     Description
-  --------------- ----------------------------------
-  `SPC m j a f`   Run a fabric command
-  `SPC m j a d`   Deploy project with `fab deploy`
+| Key binding   | Description                      |
+|---------------|----------------------------------|
+| `SPC m j a f` | Run a fabric command             |
+| `SPC m j a d` | Deploy project with `fab deploy` |
 
 Files
 -----
 
-  Key binding     Description
-  --------------- ---------------------------------------------------------------
-  `SPC m j f s`   Open the `settings.py` for this project
-  `SPC m j f c`   Interactively display a setting value in the minibuffer
-  `SPC m j f t`   Jump to template at point
-  `SPC m j f r`   Jump to the view file that the URL resolves to (experimental)
+| Key binding   | Description                                                   |
+|---------------|---------------------------------------------------------------|
+| `SPC m j f s` | Open the `settings.py` for this project                       |
+| `SPC m j f c` | Interactively display a setting value in the minibuffer       |
+| `SPC m j f t` | Jump to template at point                                     |
+| `SPC m j f r` | Jump to the view file that the URL resolves to (experimental) |
 
 Interactive
 -----------
 
-  Key binding     Description
-  --------------- -----------------------------------------------------------------------------
-  `SPC m j i d`   Run interpreter for this project\'s default database as an inferior process
-  `SPC m j i s`   Open a Python shell with the current pony project\'s context loaded.
-                  If the project has the django~extras~ package installed, then use the
-                  excellent `shell_plus` command. Otherwise, fall back to `manage.py shell`
+| Key binding   | Description                                                                    |
+|---------------|--------------------------------------------------------------------------------|
+| `SPC m j i d` | Run interpreter for this project's default database as an inferior process     |
+| `SPC m j i s` | Open a Python shell with the current pony project's context loaded.            |
+|               | If the project has the django<sub>extras</sub> package installed, then use the |
+|               | excellent `shell_plus` command. Otherwise, fall back to `manage.py shell`      |
 
 Server
 ------
 
-  Key binding     Description
-  --------------- --------------------------------------------------------------------
-  `SPC m j r d`   Stop the dev server
-  `SPC m j r o`   Open a tab at the dev server
-  `SPC m j r r`   Restart the dev server (works better with django~extras~/werkzeug)
-  `SPC m j r u`   Start or open the dev server
-  `SPC m j r t`   Open a second server with a \"throwaway\" host/port
+| Key binding   | Description                                                                 |
+|---------------|-----------------------------------------------------------------------------|
+| `SPC m j r d` | Stop the dev server                                                         |
+| `SPC m j r o` | Open a tab at the dev server                                                |
+| `SPC m j r r` | Restart the dev server (works better with django<sub>extras</sub>/werkzeug) |
+| `SPC m j r u` | Start or open the dev server                                                |
+| `SPC m j r t` | Open a second server with a "throwaway" host/port                           |
 
 South/Syncdb
 ------------
 
-  Key binding     Description
-  --------------- --------------------------------------------
-  `SPC m j s c`   Convert an existing app to south
-  `SPC m j s h`   Create migration for modification
-  `SPC m j s i`   Run the initial south migration for an app
-  `SPC m j s m`   Migrate an app
-  `SPC m j s s`   Run syncdb on the current project
+| Key binding   | Description                                |
+|---------------|--------------------------------------------|
+| `SPC m j s c` | Convert an existing app to south           |
+| `SPC m j s h` | Create migration for modification          |
+| `SPC m j s i` | Run the initial south migration for an app |
+| `SPC m j s m` | Migrate an app                             |
+| `SPC m j s s` | Run syncdb on the current project          |
 
 Test
 ----
 
-  Key binding     Description
-  --------------- ------------------------------------------------------------------
-  `SPC m j t d`   Move down the traceback one level
-  `SPC m j t e`   Go to the file and line of the last stack trace in a test buffer
-  `SPC m j t o`   Open the file in a traceback at the line specified
-  `SPC m j t t`   Run the test(s) given by `command`
-  `SPC m j t u`   Move up the traceback one level
+| Key binding   | Description                                                      |
+|---------------|------------------------------------------------------------------|
+| `SPC m j t d` | Move down the traceback one level                                |
+| `SPC m j t e` | Go to the file and line of the last stack trace in a test buffer |
+| `SPC m j t o` | Open the file in a traceback at the line specified               |
+| `SPC m j t t` | Run the test(s) given by `command`                               |
+| `SPC m j t u` | Move up the traceback one level                                  |

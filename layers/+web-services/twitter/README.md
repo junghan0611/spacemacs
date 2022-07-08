@@ -13,7 +13,7 @@ Features:
     -   Viewing various timelines
         -   Home timeline
         -   Replies
-        -   User\'s timeline
+        -   User's timeline
         -   Public timeline
         -   Favorites timeline
         -   Retweets timeline
@@ -50,34 +50,34 @@ setting the variable `twittering-use-master-password` to `t` in the
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ------------------------------------------
-  `SPC a w t`   Open twitter buffer
-  `?`           Open/Quit transient state
-  `/`           Search
-  `a`           Toggle auto-refresh
-  `b`           Heart
-  `B`           Unheart
-  `d`           Direct message to user around point
-  `e`           Edit tweet
-  `f`           Follow user around point
-  `F`           Unfollow user around point
-  `g`           First tweet
-  `G`           Last tweet
-  `i`           View user profile around point
-  `I`           toggle user icons
-  `q`           Quit transient state
-  `Q`           Quit twittering mode
-  `j`           Next tweet
-  `J`           Next tweet of same user around point
-  `k`           Previous tweet
-  `K`           Previous tweet of same user around point
-  `n`           New tweet
-  `o`           Open URL
-  `r`           Retweet (native)
-  `R`           Retweet (organic)
-  `t`           View tweet replies
-  `u`           Update timeline
-  `X`           Delete tweet
-  `y`           Copy tweet URI
-  `Y`           Copy tweet content
+| Key binding | Description                              |
+|-------------|------------------------------------------|
+| `SPC a w t` | Open twitter buffer                      |
+| `?`         | Open/Quit transient state                |
+| `/`         | Search                                   |
+| `a`         | Toggle auto-refresh                      |
+| `b`         | Heart                                    |
+| `B`         | Unheart                                  |
+| `d`         | Direct message to user around point      |
+| `e`         | Edit tweet                               |
+| `f`         | Follow user around point                 |
+| `F`         | Unfollow user around point               |
+| `g`         | First tweet                              |
+| `G`         | Last tweet                               |
+| `i`         | View user profile around point           |
+| `I`         | toggle user icons                        |
+| `q`         | Quit transient state                     |
+| `Q`         | Quit twittering mode                     |
+| `j`         | Next tweet                               |
+| `J`         | Next tweet of same user around point     |
+| `k`         | Previous tweet                           |
+| `K`         | Previous tweet of same user around point |
+| `n`         | New tweet                                |
+| `o`         | Open URL                                 |
+| `r`         | Retweet (native)                         |
+| `R`         | Retweet (organic)                        |
+| `t`         | View tweet replies                       |
+| `u`         | Update timeline                          |
+| `X`         | Delete tweet                             |
+| `y`         | Copy tweet URI                           |
+| `Y`         | Copy tweet content                       |

@@ -9,7 +9,7 @@ Helm.
 
 These completion systems are the central control towers of Spacemacs,
 they are used to manage buffers, projects, search results, configuration
-layers, toggles and more...
+layers, toggles and more…
 
 Mastering your choice of completion system will make you a Spacemacs
 power user.
@@ -27,8 +27,8 @@ Features:
 Install
 =======
 
-Helm is part of the standard distribution of Spacemacs so you don\'t
-have to do anything to install it if you chose this distribution.
+Helm is part of the standard distribution of Spacemacs so you don't have
+to do anything to install it if you chose this distribution.
 
 If you want/need to explicitly install Helm then add it to your
 `~/.spacemacs`. You will need to add `helm` to the existing
@@ -37,7 +37,7 @@ If you want/need to explicitly install Helm then add it to your
 Make sure that the other completion layers: `compleseus` and `ivy` are
 removed or commented out in the `dotspacemacs-configuration-layers`
 list. Or add `helm` below the other completion layers. Spacemacs uses
-the completion layer that\'s listed last.
+the completion layer that's listed last.
 
 Alternative layers
 ------------------
@@ -65,7 +65,7 @@ length of the candidate list. By default the buffer size is fixed, to
 enable automatic resizing set the layer variable
 `helm-enable-auto-resize` to non-nil.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (helm :variables helm-enable-auto-resize t)))
 ```
@@ -78,7 +78,7 @@ Disable Helm header
 To hide the header in the Helm buffer set the layer variable
 `helm-no-header` to non-nil.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (helm :variables helm-no-header t)))
 ```
@@ -93,7 +93,7 @@ To set the position of the Helm buffer add the layer variable
 
 The supported values are `bottom`, `top`, `left` and `right`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (helm :variables helm-position 'top)))
 ```
@@ -110,7 +110,7 @@ value to `'source`.
 
 In this case please open an issue so that this can be fixed.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (helm :variables helm-use-fuzzy 'source)))
 ```
@@ -123,7 +123,7 @@ Ripgrep: maximum number of column
 If you use `ripgrep` the default value for `--max-columns` is `512`. To
 change if set the layer variable `spacemacs-helm-rg-max-column-number`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (helm :variables spacemacs-helm-rg-max-column-number 1024)))
 ```
@@ -138,92 +138,92 @@ When using the Vim style or Hybrid style with the variable
 `hybrid-style-enable-hjkl-bindings` set to `t`, Spacemacs adds
 navigation in the Helm buffers with `hjkl`.
 
-  Key binding   Description
-  ------------- ------------------------------
-  `C-h`         go to next source
-  `C-H`         describe key (replace `C-h`)
-  `C-j`         go to previous candidate
-  `C-k`         go to next candidate
-  `C-l`         same as `<return>`
+| Key binding | Description                  |
+|-------------|------------------------------|
+| `C-h`       | go to next source            |
+| `C-H`       | describe key (replace `C-h`) |
+| `C-j`       | go to previous candidate     |
+| `C-k`       | go to next candidate         |
+| `C-l`       | same as `<return>`           |
 
 Transient state
 ---------------
 
 Spacemacs defines a transient state for `Helm` to make it work like
-[Vim\'s Unite](https://github.com/Shougo/unite.vim) plugin.
+[Vim's Unite](https://github.com/Shougo/unite.vim) plugin.
 
 Initiate the transient state with `M-SPC` or `s-M-SPC` while in a `Helm`
 buffer.
 
-  Key binding            Description
-  ---------------------- ------------------------------------------------------
-  `M-SPC` or `s-M-SPC`   initiate the transient state
-  `q`                    quit transient state
-  `TAB`                  switch to actions page and leave the transient state
-  `1`                    execute action 0
-  `2`                    execute action 1
-  `3`                    execute action 2
-  `4`                    execute action 3
-  `5`                    execute action 4
-  `6`                    execute action 5
-  `7`                    execute action 6
-  `8`                    execute action 7
-  `9`                    execute action 8
-  `0`                    execute action 9
-  `a`                    switch to actions page
-  `g`                    go to first candidate
-  `G`                    go to last candidate
-  `h`                    go to previous source
-  `j`                    select next candidate
-  `k`                    select previous candidate
-  `l`                    go to next source
-  `t`                    mark current candidate
-  `T`                    mark all candidates
-  `v`                    execute persistent action
+| Key binding          | Description                                          |
+|----------------------|------------------------------------------------------|
+| `M-SPC` or `s-M-SPC` | initiate the transient state                         |
+| `q`                  | quit transient state                                 |
+| `TAB`                | switch to actions page and leave the transient state |
+| `1`                  | execute action 0                                     |
+| `2`                  | execute action 1                                     |
+| `3`                  | execute action 2                                     |
+| `4`                  | execute action 3                                     |
+| `5`                  | execute action 4                                     |
+| `6`                  | execute action 5                                     |
+| `7`                  | execute action 6                                     |
+| `8`                  | execute action 7                                     |
+| `9`                  | execute action 8                                     |
+| `0`                  | execute action 9                                     |
+| `a`                  | switch to actions page                               |
+| `g`                  | go to first candidate                                |
+| `G`                  | go to last candidate                                 |
+| `h`                  | go to previous source                                |
+| `j`                  | select next candidate                                |
+| `k`                  | select previous candidate                            |
+| `l`                  | go to next source                                    |
+| `t`                  | mark current candidate                               |
+| `T`                  | mark all candidates                                  |
+| `v`                  | execute persistent action                            |
 
 Files
 -----
 
 In the `helm-files` buffer:
 
-  Key binding    Description
-  -------------- ----------------------------------------
-  `S-<return>`   open the selected file in other window
+| Key binding  | Description                            |
+|--------------|----------------------------------------|
+| `S-<return>` | open the selected file in other window |
 
 Buffers
 -------
 
 In the `helm-buffers` buffer:
 
-  Key binding    Description
-  -------------- ------------------------------------------
-  `S-<return>`   open the selected buffer in other window
+| Key binding  | Description                              |
+|--------------|------------------------------------------|
+| `S-<return>` | open the selected buffer in other window |
 
 Bookmarks
 ---------
 
 In the `helm-bookmarks` buffer:
 
-  Key binding    Description
-  -------------- --------------------------------------------
-  `C-d`          delete the selected bookmark
-  `C-e`          edit the selected bookmark
-  `C-f`          toggle filename location
-  `S-<return>`   open the selected bookmark in other window
+| Key binding  | Description                                |
+|--------------|--------------------------------------------|
+| `C-d`        | delete the selected bookmark               |
+| `C-e`        | edit the selected bookmark                 |
+| `C-f`        | toggle filename location                   |
+| `S-<return>` | open the selected bookmark in other window |
 
 Colors/Faces
 ------------
 
-  Key binding   Description
-  ------------- ------------------------
-  `SPC C l`     `helm-colors`
-  `SPC h d F`   `spacemacs/helm-faces`
+| Key binding | Description            |
+|-------------|------------------------|
+| `SPC C l`   | `helm-colors`          |
+| `SPC h d F` | `spacemacs/helm-faces` |
 
 C-z and Tab switch
 ------------------
 
 The command bound to `C-z` is much more useful than the one bound to
-Tab, so it makes sense to swap them. It\'s also recommended
+Tab, so it makes sense to swap them. It's also recommended
 [here](http://tuhdo.github.io/helm-intro.html).
 
 Helm focus
@@ -244,12 +244,12 @@ query in real-time and navigate between them easily.
 You can even edit the occurrences directly in the `helm` buffer and
 apply the modifications to the buffer.
 
-  Key binding   Description
-  ------------- --------------------------------
-  `SPC s C`     clear `helm-swoop` own cache
-  `SPC s s`     execute `helm-swoop`
-  `SPC s S`     execute `helm-multi-swoop`
-  `SPC s C-s`   execute `helm-multi-swoop-all`
+| Key binding | Description                    |
+|-------------|--------------------------------|
+| `SPC s C`   | clear `helm-swoop` own cache   |
+| `SPC s s`   | execute `helm-swoop`           |
+| `SPC s S`   | execute `helm-multi-swoop`     |
+| `SPC s C-s` | execute `helm-multi-swoop-all` |
 
 Universal argument
 ------------------

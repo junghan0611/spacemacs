@@ -47,7 +47,7 @@ initialization function based on `edit-server-url`, or fall back to
 `edit-server-default-major-mode` that has a current value of
 `markdown-mode`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dotspacemacs/user-config ()
 ;; Open github text areas as org buffers
 ;; currently they are opened as markdown
@@ -58,7 +58,7 @@ initialization function based on `edit-server-url`, or fall back to
 To change frame defaults (width, height, etc. use
 `edit-server-new-frame-alist`)
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (add-to-list 'edit-server-new-frame-alist '(width  . 140))
 (add-to-list 'edit-server-new-frame-alist '(height . 60))
 ```
@@ -71,16 +71,16 @@ use some sort of command line window manager like `wmctrl`.
 
 The following example works on macOS:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (add-hook 'edit-server-done-hook (lambda () (shell-command "open -a \"Google Chrome\"")))
 ```
 
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -------------
-  `SPC a t c`   flymd-flyit
+| Key binding | Description |
+|-------------|-------------|
+| `SPC a t c` | flymd-flyit |
 
 **Note:** You need to kill all google chrome process before using
 `flymd-flyit`. For details, see the upstream [flymd browser

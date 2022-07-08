@@ -32,26 +32,26 @@ To enable linting, install
 [CoffeeLint](https://github.com/clutchski/coffeelint) with the following
 command:
 
-``` {.bash org-language="sh"}
+``` bash
 npm install -g coffeelint
 ```
 
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ------------------------
-  `SPC m c c`   Compile buffer
-  `SPC m c r`   Compile region
-  `SPC m T c`   Toggle compile on save
+| Key binding | Description            |
+|-------------|------------------------|
+| `SPC m c c` | Compile buffer         |
+| `SPC m c r` | Compile region         |
+| `SPC m T c` | Toggle compile on save |
 
 REPL
 ----
 
-  Key binding   Description
-  ------------- ----------------------------------------------------
-  `SPC m '`     Create or go to REPL
-  `SPC m s b`   Send buffer to REPL
-  `SPC m s i`   Create or go to REPL
-  `SPC m s l`   Send line to REPL
-  `SPC m s r`   send current region to the REPL and stay in buffer
+| Key binding | Description                                        |
+|-------------|----------------------------------------------------|
+| `SPC m '`   | Create or go to REPL                               |
+| `SPC m s b` | Send buffer to REPL                                |
+| `SPC m s i` | Create or go to REPL                               |
+| `SPC m s l` | Send line to REPL                                  |
+| `SPC m s r` | send current region to the REPL and stay in buffer |

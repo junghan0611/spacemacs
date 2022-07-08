@@ -36,9 +36,9 @@ reverting the buffer.
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- --------------------------------------
-  `SPC m ,`     Preview file
-  `SPC m =`     Indent graph
-  `SPC m t`     Toggle live-preview
-  `SPC m c`     Set compile command and compile file
+| Key binding | Description                          |
+|-------------|--------------------------------------|
+| `SPC m ,`   | Preview file                         |
+| `SPC m =`   | Indent graph                         |
+| `SPC m t`   | Toggle live-preview                  |
+| `SPC m c`   | Set compile command and compile file |

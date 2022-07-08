@@ -31,7 +31,7 @@ To change how buffers are grouped set the layer variable
 
 Example:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (ibuffer :variables ibuffer-group-buffers-by 'projects)))
 ```
@@ -42,17 +42,17 @@ Key bindings
 Global
 ------
 
-  Key binding   Description
-  ------------- ----------------------------
-  `SPC b I`     open IBuffer menu (global)
+| Key binding | Description                |
+|-------------|----------------------------|
+| `SPC b I`   | open IBuffer menu (global) |
 
 **Note:** The layer will also replace regular `C-x C-b` with `ibuffer`.
 
 IBuffer
 -------
 
-  Key binding                     Description
-  ------------------------------- -------------------------------
-  `g r`                           update IBuffer (\"refresh\")
-  `g j` / `]` / `TAB` / `M-n`     move to next filter group
-  `g k` / `[` / `S-TAB` / `M-p`   move to previous filter group
+| Key binding                   | Description                   |
+|-------------------------------|-------------------------------|
+| `g r`                         | update IBuffer ("refresh")    |
+| `g j` / `]` / `TAB` / `M-n`   | move to next filter group     |
+| `g k` / `[` / `S-TAB` / `M-p` | move to previous filter group |

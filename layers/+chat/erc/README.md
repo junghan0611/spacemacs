@@ -38,7 +38,7 @@ list in this file.
 macOS
 -----
 
-It\'s recommended to install the [terminal-notifier
+It's recommended to install the [terminal-notifier
 gem](https://github.com/alloy/terminal-notifier) so that you get
 notifications via the macOS Notification Center.
 
@@ -54,7 +54,7 @@ Disable notifications
 By default D-BUS notifications are enabled, to disable them set the
 layer variable `erc-enable-notifications` to nil.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
              '((erc :variables erc-enable-notifications nil)))
 ```
@@ -65,7 +65,7 @@ Enable SASL authentication
 To enable SASL authentication set the layer variable
 `erc-enable-sasl-auth` to non nil.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
              '((erc :variables erc-enable-sasl-auth t)))
 ```
@@ -78,7 +78,7 @@ the variable `erc-server-list`. Setting `:ssl` non nil will connect with
 `erc-tls`. You can also use `<leader>aiD` to connect to your default
 servers outside the custom layout.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
              '((erc :variables
                     erc-server-list
@@ -101,7 +101,7 @@ number of ways of protecting this information.
 
 First, ERC will check your `~/.authinfo.gpg`, looking for lines like
 
-``` {.shell}
+``` shell
 machine <irc.server.url> login <yournick> password <yourpassword> port <portnumber>
 ```
 
@@ -113,21 +113,21 @@ variable) and read that in `:password`.
 Key bindings
 ============
 
-  Key binding     Description
-  --------------- -----------------------------------------------------------------------------------------
-  `SPC a c i e`   Starts ERC
-  `SPC a c i E`   Starts ERC via TLS/SSL
-  `SPC a c i i`   Switch to next active ERC buffer
-  `SPC a c i D`   Start ERC with default servers
-  `SPC m c`       Open the log file of the current channel
-  `SPC m b`       Switch between ERC buffers
-  `SPC m d`       Interactively input a user action and send it to IRC.
-  `SPC m D`       Draw Social Graph using [erc-social-graph](https://github.com/vibhavp/erc-social-graph)
-  `SPC m j`       Join a channel, executes the /join command
-  `SPC m n`       Run \"/names \#channel\" in the current channel.
-  `SPC m l`       Run the /list command
-  `SPC m p`       Part from the channel
-  `SPC m q`       Quit server
+| Key binding   | Description                                                                             |
+|---------------|-----------------------------------------------------------------------------------------|
+| `SPC a c i e` | Starts ERC                                                                              |
+| `SPC a c i E` | Starts ERC via TLS/SSL                                                                  |
+| `SPC a c i i` | Switch to next active ERC buffer                                                        |
+| `SPC a c i D` | Start ERC with default servers                                                          |
+| `SPC m c`     | Open the log file of the current channel                                                |
+| `SPC m b`     | Switch between ERC buffers                                                              |
+| `SPC m d`     | Interactively input a user action and send it to IRC.                                   |
+| `SPC m D`     | Draw Social Graph using [erc-social-graph](https://github.com/vibhavp/erc-social-graph) |
+| `SPC m j`     | Join a channel, executes the /join command                                              |
+| `SPC m n`     | Run "/names \#channel" in the current channel.                                          |
+| `SPC m l`     | Run the /list command                                                                   |
+| `SPC m p`     | Part from the channel                                                                   |
+| `SPC m q`     | Quit server                                                                             |
 
 **Note:** If you want to connect securely to an IRC server, you must run
 `erc-tls` command on `SPC a i E` instead of the `erc` command.
@@ -137,5 +137,5 @@ Spacemacs Layout Support
 
 ERC buffers are added automatically to the default layout for ERC
 controlled by the variable `erc-spacemacs-layout-name` (defaults to
-\"@ERC\") and the default binding (\"E\") is controlled by
+"@ERC") and the default binding ("E") is controlled by
 `erc-spacemacs-layout-binding`

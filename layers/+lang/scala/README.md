@@ -48,7 +48,7 @@ following commands, where `0.9.8` can be replaced with the current
 version of
 [Metals](https://scalameta.org/metals/docs/editors/emacs.html):
 
-``` {.bash}
+``` bash
 ./coursier bootstrap \
   --java-opt -Xss4m \
   --java-opt -Xms100m \
@@ -82,7 +82,7 @@ To use scalastyle, it must be present as an executable in your `PATH`.
 To test if `scalastyle` executable is in your path, run `scalastyle` in
 a new terminal, it should output something like:
 
-``` {.bash}
+``` bash
 $ scalastyle
 scalastyle 0.8.0
 Usage: scalastyle [options] <source directory>
@@ -92,7 +92,7 @@ Usage: scalastyle [options] <source directory>
 Finally, enable the `syntax-checking` layer and set the
 `flycheck-scalastylerc` variable to a valid location.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default flycheck-scalastylerc "/usr/local/etc/scalastyle_config.xml")
 ```
 
@@ -108,7 +108,7 @@ Use Java doc-style
 To enable `java-doc-style`, set the variable
 `scala-indent:use-javadoc-style` to `t`
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (scala :variables scala-indent:use-javadoc-style t)))
 ```
@@ -125,7 +125,7 @@ Automatically insert asterisk in multiline comments
 To insert a leading asterisk in multiline comments automatically, set
 the variable `scala-auto-insert-asterisk-in-comments` to `t`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (scala :variables scala-auto-insert-asterisk-in-comments t)))
 ```
@@ -136,7 +136,7 @@ Enable GTags as a fallback navigation utility
 To enable gtags when in `scala-mode` set the variable
 `scala-enable-gtags` to `t`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (scala :variables scala-enable-gtags t)))
 ```
@@ -149,12 +149,12 @@ Additional major mode key bindings are populated by LSP and DAP.
 sbt
 ---
 
-  Key binding   Description
-  ------------- -----------------------------
-  `SPC m b .`   SBT transient state
-  `SPC m b b`   SBT command
-  `SPC m b c`   Run `compile` in SBT
-  `SPC m b t`   Run `test` in SBT
-  `SPC m b I`   Run `It / compile` in SBT
-  `SPC m b T`   Run `Test / compile` in SBT
-  `SPC m b =`   Run `scalafmtAll` in SBT
+| Key binding | Description                 |
+|-------------|-----------------------------|
+| `SPC m b .` | SBT transient state         |
+| `SPC m b b` | SBT command                 |
+| `SPC m b c` | Run `compile` in SBT        |
+| `SPC m b t` | Run `test` in SBT           |
+| `SPC m b I` | Run `It / compile` in SBT   |
+| `SPC m b T` | Run `Test / compile` in SBT |
+| `SPC m b =` | Run `scalafmtAll` in SBT    |

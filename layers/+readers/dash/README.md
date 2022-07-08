@@ -11,7 +11,7 @@ for macOS, Linux and Windows.
 Features:
 ---------
 
--   Searching for word at point in offline API browser\'s UI.
+-   Searching for word at point in offline API browser's UI.
 -   Integration of offline API browser search results in Helm and Ivy.
 -   Support for [dash](https://kapeli.com/dash) offline API browser for
     macOS.
@@ -53,14 +53,14 @@ By default, the dash layer will initialize all installed docsets to be
 active in all buffers. To disable this and opt-in to specific docsets
 for specific buffers, set:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (dash :variables
       dash-autoload-common-docsets nil)
 ```
 
 To change the location of the installed docsets, set:
 
-``` {.elisp}
+``` elisp
 (dash :variables
       helm-dash-docset-newpath "~/.docsets")
 ```
@@ -70,7 +70,7 @@ Word at point
 
 `dash-at-point` and `zeal-at-point` will search for the word at point in
 the respective offline API browser. The result will be displayed in the
-offline browser\'s UI.
+offline browser's UI.
 
 However having to leave emacs to have a look at the search results may
 be a bit awkward. To help with this it is also possible to integrate the
@@ -82,7 +82,7 @@ can be used for `helm` and
 To get them working it is necessary to set `dash-docs-docset-newpath` to
 the location of your docsets.
 
-``` {.elisp}
+``` elisp
 (dash :variables
       dash-docs-docset-newpath "~/.local/share/Zeal/Zeal/docsets")
 ```
@@ -94,9 +94,9 @@ For more details please check
 Key bindings
 ============
 
-  Key binding     Description
-  --------------- -----------------------------------------------------------------
-  `SPC a r z d`   Lookup thing at point in Dash or Zeal
-  `SPC a r z D`   Lookup thing at point in Dash or Zeal within a specified Docset
-  `SPC a r z h`   Lookup thing at point in helm-dash or counsel-dash
-  `SPC a r z H`   Lookup in helm-dash or counsel-dash within a specified Docset
+| Key binding   | Description                                                     |
+|---------------|-----------------------------------------------------------------|
+| `SPC a r z d` | Lookup thing at point in Dash or Zeal                           |
+| `SPC a r z D` | Lookup thing at point in Dash or Zeal within a specified Docset |
+| `SPC a r z h` | Lookup thing at point in helm-dash or counsel-dash              |
+| `SPC a r z H` | Lookup in helm-dash or counsel-dash within a specified Docset   |

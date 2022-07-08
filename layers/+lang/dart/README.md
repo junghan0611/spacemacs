@@ -22,7 +22,7 @@ To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `dart` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(dart))
 ```
 
@@ -31,7 +31,7 @@ Choosing a backend
 
 To choose a default backend set the layer variable `dart-backend`:
 
-``` {.elisp}
+``` elisp
 (setq-default dotspacemacs-configuration-layers '(
   (dart :variables dart-backend 'lsp)))
 ```
@@ -43,7 +43,7 @@ Backend can be chosen on a per project basis using directory local
 variables (files named `.dir-locals.el` at the root of a project), an
 example to use the `lsp` backend:
 
-``` {.elisp}
+``` elisp
 ;;; Directory Local Variables
 ;;; For more information see (info "(emacs) Directory Variables")
 ((dart-mode (dart-backend . lsp)))
@@ -69,7 +69,7 @@ Emacs will look in the standard SDK location for the lsp server. If this
 is not working for you, please set the custom path via
 `lsp-dart-sdk-dir`.
 
-``` {.elisp}
+``` elisp
 (dart :variables lsp-dart-sdk-dir "~/path/to/dart-sdk/")
 ```
 
@@ -78,7 +78,7 @@ is not working for you, please set the custom path via
 Flutter comes with a internal Dart SDK, which can be used to provide all
 the integration tools.
 
-``` {.elisp}
+``` elisp
 (dart :variables lsp-dart-sdk-dir "<flutter-path>/bin/cache/dart-sdk/")
 ```
 
@@ -87,7 +87,7 @@ the integration tools.
 Set the layer variable `lsp-enable-on-type-formatting` to `t` to
 activate formatting on save.
 
-``` {.elisp}
+``` elisp
 (dart :variables lsp-enable-on-type-formatting t)
 ```
 
@@ -102,7 +102,7 @@ Dart analyzer supported via
 [dart-server](https://github.com/bradyt/dart-server). You need to enable
 `dart-server-enable-analysis-server` to use analyzer features.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (dart :variables dart-server-enable-analysis-server t)
 ```
 
@@ -111,7 +111,7 @@ executable location if available on the path, but it is possible to
 define the location manually. It should point to the folder and end with
 `/`.
 
-``` {.elisp}
+``` elisp
 (dart :variables dart-server-sdk-path "~/path/to/dart-sdk/")
 ```
 
@@ -120,7 +120,7 @@ define the location manually. It should point to the folder and end with
 Flutter comes with a internal Dart SDK, which can be used to provide all
 the integration tools.
 
-``` {.elisp}
+``` elisp
 (dart :variables dart-server-sdk-path "<flutter-path>/bin/cache/dart-sdk/")
 ```
 
@@ -129,7 +129,7 @@ the integration tools.
 Set the layer variable `dart-server-format-on-save` to `t` to activate
 formatting on save.
 
-``` {.elisp}
+``` elisp
 (dart :variables dart-server-format-on-save t)
 ```
 
@@ -148,28 +148,28 @@ necessary, while others work without using a Dart Analyzer connection.
 When `dart-server-enable-analysis-server` is enabled, most of the
 commands become Async, and there might be a delay when executing them.
 
-  Key binding              Description
-  ------------------------ ---------------------------------------------------
-  `SPC m h h`, `SPC m ?`   Displays hover information for the current point.
-  `SPC m h b`              Displays information at point on a new buffer.
-  `gd`, `SPC m g`          Go to definition.
-  `SPC m f d`              Find members declarations by name.
-  `SPC m f r`              Find members references by name.
-  `SPC m f d`              Find top-level declarations by name.
-  `SPC m =`                Format buffer
+| Key binding            | Description                                       |
+|------------------------|---------------------------------------------------|
+| `SPC m h h`, `SPC m ?` | Displays hover information for the current point. |
+| `SPC m h b`            | Displays information at point on a new buffer.    |
+| `gd`, `SPC m g`        | Go to definition.                                 |
+| `SPC m f d`            | Find members declarations by name.                |
+| `SPC m f r`            | Find members references by name.                  |
+| `SPC m f d`            | Find top-level declarations by name.              |
+| `SPC m =`              | Format buffer                                     |
 
 Insert mode
 -----------
 
-  Key binding   Description
-  ------------- --------------------------------------------------
-  `<tab>`       Expand previous word using Analyzer if available
-  `C-<tab>`     Expand including parameters
+| Key binding | Description                                      |
+|-------------|--------------------------------------------------|
+| `<tab>`     | Expand previous word using Analyzer if available |
+| `C-<tab>`   | Expand including parameters                      |
 
 Popup screens
 -------------
 
-  Key binding   Description
-  ------------- -------------------------------------------
-  `q`           Close popup
-  `gr`          Execute last command to repopulate buffer
+| Key binding | Description                               |
+|-------------|-------------------------------------------|
+| `q`         | Close popup                               |
+| `gr`        | Execute last command to repopulate buffer |

@@ -39,7 +39,7 @@ Jump to definition requires
 installed. Then you can generate the `TAGS` file for your projects like
 this:
 
-``` {.shell}
+``` shell
 ctags -e -Ra lib t/
 ctags -e -Ra --language-force=Perl6 bin/ $YOUR_PERL_PATH/share/perl6/site/sources/
 ```
@@ -47,6 +47,6 @@ ctags -e -Ra --language-force=Perl6 bin/ $YOUR_PERL_PATH/share/perl6/site/source
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ------------------------------------------------
-  `SPC m g g`   Jump to definition (requires `ctags-universal`
+| Key binding | Description                                    |
+|-------------|------------------------------------------------|
+| `SPC m g g` | Jump to definition (requires `ctags-universal` |

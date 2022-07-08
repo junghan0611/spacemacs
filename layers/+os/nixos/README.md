@@ -37,7 +37,7 @@ To use the *experimental* LSP backend, set variable `nix-backend` to
 `lsp` in your `~./spacemacs`. (You would also need to enable
 [LSP](../../+tools/lsp/README.org) layer).
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               (nixos :variables nix-backend 'lsp))
 ```
@@ -45,7 +45,7 @@ To use the *experimental* LSP backend, set variable `nix-backend` to
 To install [rnix-lsp](https://github.com/nix-community/rnix-lsp) from
 `nix`, run the following command in shell:
 
-``` {.shell}
+``` shell
 nix-env -i -f https://github.com/nix-community/rnix-lsp/archive/master.tar.gz
 ```
 
@@ -55,7 +55,7 @@ Format on save
 To enable automatic formatting on save, set the layer variable
 `nixos-format-on-save` to `t`:
 
-``` {.elisp}
+``` elisp
 (setq-default dotspacemacs-configuration-layers
               (nixos :variables nixos-format-on-save t))
 ```
@@ -74,7 +74,7 @@ Key bindings
 NixOS Options
 -------------
 
-  Key binding   Description
-  ------------- ----------------------------
-  `SPC h >`     Call helm-nixos-options
-  `SPC m = =`   Format buffer using nixfmt
+| Key binding | Description                |
+|-------------|----------------------------|
+| `SPC h >`   | Call helm-nixos-options    |
+| `SPC m = =` | Format buffer using nixfmt |

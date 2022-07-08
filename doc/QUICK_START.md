@@ -16,7 +16,7 @@ For example to get python support, simply add `python` to the list of
 layer, reload it with `SPC f e R`. Now open a `.py` file (`SPC f f`) to
 find the python environment has been fully configured. Some extra
 configuration might make the environment even more powerful, which is
-very well described in the [layer\'s
+very well described in the [layer's
 documentation](https://develop.spacemacs.org/layers/+lang/python/README.html)
 that can be accessed by pressing `SPC h l` and selecting the `python`
 layer entry. For configuration of specific packages within a layer,
@@ -37,7 +37,7 @@ your own layer.
 
 The following command creates a layer in the `private` directory:
 
-``` {.example}
+``` example
 SPC SPC configuration-layer/create-layer RET
 ```
 
@@ -58,20 +58,20 @@ and is also a means to customizing Spacemacs.
 The following command will create a `.spacemacs` file in your home
 directory:
 
-``` {.example}
+``` example
 SPC SPC dotspacemacs/install RET
 ```
 
 To open the installed dotfile:
 
-``` {.example}
+``` example
 SPC f e d
 ```
 
 To load some configuration layers using the variable
 `dotspacemacs-configuration-layers`:
 
-``` {.elisp}
+``` elisp
 ;; List of configuration layers to load.
 dotspacemacs-configuration-layers '(auto-completion smex)
 ```
@@ -82,7 +82,7 @@ layer](https://github.com/syl20bnr/spacemacs/blob/develop/layers/+source-control
 being one such example. Variables can be directly set within
 `dotspacemacs-configuration-layers` like so:
 
-``` {.elisp}
+``` elisp
 ;; List of configuration layers to load.
 dotspacemacs-configuration-layers '(auto-completion
                                     (git :variables
@@ -90,8 +90,9 @@ dotspacemacs-configuration-layers '(auto-completion
                                     smex)
 ```
 
-At anytime you can apply the changes made to the dotfile or layers
-[without restarting]{.underline} Spacemacs by pressing `SPC f e R`.
+At anytime you can apply the changes made to the dotfile or layers <span
+class="underline">without restarting</span> Spacemacs by pressing
+`SPC f e R`.
 
 The [dotfile
 template](https://github.com/syl20bnr/spacemacs/blob/master/core/templates/.spacemacs.template)
@@ -181,14 +182,14 @@ one second listing the possible keys for this prefix.
 
 It is also possible to search for specific key bindings by pressing:
 
-``` {.example}
+``` example
 SPC ?
 ```
 
 To narrow the bindings list to those prefixed with `SPC`, type a pattern
 like this regular expression:
 
-``` {.example}
+``` example
 SPC\ b
 ```
 
@@ -203,16 +204,16 @@ Describe functions
 information about functions, variables, modes etc. These commands are
 bound thusly:
 
-  Key binding   Description
-  ------------- ---------------------
-  `SPC h d f`   describe-function
-  `SPC h d k`   describe-key
-  `SPC h d m`   describe-mode
-  `SPC h d v`   describe-variable
-  `SPC h d x`   describe-ex-command
+| Key binding | Description         |
+|-------------|---------------------|
+| `SPC h d f` | describe-function   |
+| `SPC h d k` | describe-key        |
+| `SPC h d m` | describe-mode       |
+| `SPC h d v` | describe-variable   |
+| `SPC h d x` | describe-ex-command |
 
-How-To\'s
-=========
+How-To's
+========
 
 Some quick `how-to's` are compiled in the
 [FAQ.](https://github.com/syl20bnr/spacemacs/blob/develop/doc/FAQ.org#how-do-i)

@@ -25,60 +25,60 @@ Key binding
 Editing
 -------
 
-  Key binding   Description
-  ------------- -------------------------
-  `SPC m RET`   upcase line and newline
-  `SPC m x U`   upcase line
-  `SPC m c d`   add continued dialog
-  `SPC m c D`   remove continued dialog
-  `SPC m i n`   insert note
-  `SPC m i s`   insert synopsis
-  `SPC m i i`   auto insert header
-  `SPC m c n`   add scene numbers
-  `SPC m c N`   remove scene numbers
-  `SPC m i b`   insert page break
-  `SPC m ]`     update completion
-  `SPC m T m`   toggle emphasis markup
-  `SPC m T e`   toggle element markup
+| Key binding | Description             |
+|-------------|-------------------------|
+| `SPC m RET` | upcase line and newline |
+| `SPC m x U` | upcase line             |
+| `SPC m c d` | add continued dialog    |
+| `SPC m c D` | remove continued dialog |
+| `SPC m i n` | insert note             |
+| `SPC m i s` | insert synopsis         |
+| `SPC m i i` | auto insert header      |
+| `SPC m c n` | add scene numbers       |
+| `SPC m c N` | remove scene numbers    |
+| `SPC m i b` | insert page break       |
+| `SPC m ]`   | update completion       |
+| `SPC m T m` | toggle emphasis markup  |
+| `SPC m T e` | toggle element markup   |
 
 Navigation
 ----------
 
-  Key binding   Description
-  ------------- -------------
-  `SPC m j s`   goto scene
-  `SPC m j p`   goto page
+| Key binding | Description |
+|-------------|-------------|
+| `SPC m j s` | goto scene  |
+| `SPC m j p` | goto page   |
 
 Block editing
 -------------
 
-  Key binding   Description
-  ------------- -------------------
-  `<M-down>`    move section down
-  `<M-up>`      move section up
+| Key binding | Description       |
+|-------------|-------------------|
+| `<M-down>`  | move section down |
+| `<M-up>`    | move section up   |
 
 Outline
 -------
 
-  Key binding   Description
-  ------------- ----------------------------
-  `SPC m TAB`   cycle outline
-  `S-TAB`       cycle outlines for buffer
-  `SPC m o`     outline to indirect buffer
-  `SPC m i h`   insert section heading
+| Key binding | Description                |
+|-------------|----------------------------|
+| `SPC m TAB` | cycle outline              |
+| `S-TAB`     | cycle outlines for buffer  |
+| `SPC m o`   | outline to indirect buffer |
+| `SPC m i h` | insert section heading     |
 
 Pagination
 ----------
 
-  Key binding   Description
-  ------------- -------------------
-  `SPC m c p`   count pages
-  `SPC m c u`   pagination update
+| Key binding | Description       |
+|-------------|-------------------|
+| `SPC m c p` | count pages       |
+| `SPC m c u` | pagination update |
 
 Exporting
 ---------
 
-  Key binding   Description
-  ------------- ----------------
-  `SPC m e e`   export command
-  `SPC m e v`   export view
+| Key binding | Description    |
+|-------------|----------------|
+| `SPC m e e` | export command |
+| `SPC m e v` | export view    |

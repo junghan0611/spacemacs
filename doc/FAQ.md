@@ -10,12 +10,13 @@ screen. You may also just type `SPC f e v`.
 What is the official pronunciation of Spacemacs?
 ------------------------------------------------
 
-It\'s [space]{.underline} then [macs]{.underline}.
+It's <span class="underline">space</span> then <span
+class="underline">macs</span>.
 
-Why do you call this a \"distribution\", I don\'t see any \"Spacemacs\" executable?
------------------------------------------------------------------------------------
+Why do you call this a "distribution", I don't see any "Spacemacs" executable?
+------------------------------------------------------------------------------
 
-Although we could do it we don\'t package Emacs with Spacemacs. We allow
+Although we could do it we don't package Emacs with Spacemacs. We allow
 users to choose whatever build of Emacs they want that works with their
 OS, this is more flexible and it saves us tons of issues. Spacemacs is
 more than a configuration of Emacs it comes with advanced feature,
@@ -49,7 +50,7 @@ for more info.
 Environment variables or PATH are not set properly
 --------------------------------------------------
 
-If you use Emacs GUI and don\'t launch if from a terminal then edit the
+If you use Emacs GUI and don't launch if from a terminal then edit the
 environment variables in the `env` file. You can open this file with
 `SPC f e e`. More information in the `Environment variables` section of
 the
@@ -70,7 +71,7 @@ How to fix `Symbol's value as variable is void` errors on startup?
 
 If Emacs reports an error that the symbol `closed` or `-` is unbound as
 a variable, it is probably because you are using HTTPS to download
-packages, but you shouldn\'t be. Try deleting your packages (the
+packages, but you shouldn't be. Try deleting your packages (the
 `.emacs.d/elpa` folder), and restart Emacs without HTTPS to download the
 packages again. There are two ways to do this:
 
@@ -113,7 +114,7 @@ powerline section in the font section of the
 Why is after-init-hook not executed?
 ------------------------------------
 
-Don\'t launch Spacemacs with `emacs -q -l init.el` command. This command
+Don't launch Spacemacs with `emacs -q -l init.el` command. This command
 will run the hooked functions in `after-init-hook` before the evaluation
 of the passed `-l init.el` file.
 
@@ -137,7 +138,7 @@ Any variable that layer configuration code will **read** and **act on**
 must be set in `user-init`, and any variable that Spacemacs explicitly
 sets but you wish to **override** must be set in `user-config`.
 
-Anything that isn\'t just setting a variable should 99% be in
+Anything that isn't just setting a variable should 99% be in
 `user-config`.
 
 Note that at time of writing files supplied as command line arguments to
@@ -157,7 +158,7 @@ loading up of the `org` shipped with emacs which will induce conflicts.
 One way to avoid conflict is to wrap your `org` config code in a
 `with-eval-after-load` block like this:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (with-eval-after-load 'org
   ;; Org config goes here
   ;; ....
@@ -174,7 +175,7 @@ redirecting non-existing addresses to their own servers.
 Try using these settings in the `user-init` function in your
 `.spacemacs` configuration:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq tramp-ssh-controlmaster-options
       "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
 ```
@@ -186,7 +187,7 @@ and [helm issue
 for details. If for any reason this code is not working, you can try to
 put these settings directly in `~/.ssh/config`:
 
-``` {.ssh}
+``` ssh
 Host *
 ControlMaster auto
 ControlPath ~/.ssh/master -%r@%h:%p
@@ -199,7 +200,7 @@ Why does `helm-M-x` (`SPC SPC`) not accept the prefix argument?
 If you try to run `helm-M-x` with the prefix argument (i.e.
 `SPC u SPC SPC`) it will fail with this message:
 
-| Error: Specifying a prefix arg before calling helm-M-x
+Error: Specifying a prefix arg before calling helm-M-x
 
 Instead, call `helm-M-x` first, select the command you want to run, and
 press `C-u` before pressing `RETURN`. For instance:
@@ -224,7 +225,7 @@ The sequence of characters used can be customized. See the
 [documentation](http://spacemacs.org/doc/DOCUMENTATION.html#escaping)
 for more information.
 
-If you don\'t like this feature, you can deactivate it by adding
+If you don't like this feature, you can deactivate it by adding
 `evil-escape` to `dotspacemacs-excluded-packages` in your init file.
 
 Why do I get files starting with .\#?
@@ -234,25 +235,25 @@ These are lockfiles, created by Emacs to prevent editing conflicts which
 occur when the same file is edited simultaneously by two different
 programs. To disable this behaviour:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq create-lockfiles nil)
 ```
 
-Why do I get \'4m\' characters inside ansi-term?
-------------------------------------------------
+Why do I get '4m' characters inside ansi-term?
+----------------------------------------------
 
 Ansi-term only has a subset of capabilities supported by xterm256. Your
 shell (e.g. fish shell) might ignore `$TERMINFO` information and require
 you to set the `~/.terminfo` yourself.
 
-``` {.fish}
+``` fish
 tic -o ~/.terminfo $TERMINFO/e/eterm-color.ti
 ```
 
 Note that `eterm-color.ti` may be at a different location, to find out
 the exact location you may try to use `locate`:
 
-``` {.fish}
+``` fish
 locate eterm-color.ti
 ```
 
@@ -261,7 +262,7 @@ Why are my font settings not being respected?
 
 The settings of `dotspacemacs-default-font` (such as size, weight, etc.)
 will only be applied if the name of the font exists on your system.
-Check to make sure that this is the case. If Spacemacs can\'t find the
+Check to make sure that this is the case. If Spacemacs can't find the
 font, there should be a warning to this effect in the `*Messages*`
 buffer.
 
@@ -279,7 +280,7 @@ sourced only for interactive shells, such as `.bashrc` or `.zshrc`. If
 you are willing to neglect this advice, you may disable the warning,
 e.g. from `dotspacemacs/user-init`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq exec-path-from-shell-check-startup-files nil)
 ```
 
@@ -316,11 +317,11 @@ How to override a layer package?
 --------------------------------
 
 To replace a package that is installed and configured by a layer,
-without losing the layer\'s configuration for that package, add the
+without losing the layer's configuration for that package, add the
 package to your `dotspacemacs-additional-packages` with the `:location`
 keyword set to the value `local`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (package-name :location local)
 ```
 
@@ -348,7 +349,7 @@ it is part of your used layers, look for the variable
 `dotspacemacs-excluded-packages` in your dotfile and add the package
 name to it:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-excluded-packages '(package1 package2 ...))
 ```
 
@@ -359,7 +360,7 @@ This is done by removing the hook added by Spacemacs. For example to
 remove `flycheck` support in python buffers, look for the function
 `dotspacemacs/user-config` in your dotfile and add the following code:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (remove-hook 'python-mode-hook 'flycheck-mode)
 ```
 
@@ -376,7 +377,7 @@ macro `spacemacs|disable-company` in the function
 `dotspacemacs/user-config` of your dotfile. The following snippet
 disables company for `python-mode`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (spacemacs|disable-company python-mode)
 ```
 
@@ -391,7 +392,7 @@ the same way.
 
 Examples:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ;; Only mark helm buffers as useless
 (setq spacemacs-useless-buffers-regexp '("\\*helm\.\+\\*"))
 
@@ -404,7 +405,7 @@ Enable navigation by visual lines?
 
 Add the following snippet to your `dotspacemacs/user-config` function:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (spacemacs/toggle-visual-line-navigation-globally-on)
 ```
 
@@ -414,7 +415,7 @@ Disable evilification of a mode?
 You can ensure a mode opens in emacs state by using
 `evil-set-initial-state`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (evil-set-initial-state 'magit-status-mode 'emacs)
 ```
 
@@ -422,15 +423,15 @@ You can also do this using buffer name regular expressions. E.g. for
 magit, which has a number of different major modes, you can catch them
 all with
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (push '("magit*" . emacs) evil-buffer-regexps)
 ```
 
 This should make all original magit bindings work in the major modes in
 question. To enable the leader key in this case, you may have to define
-a binding in the mode\'s map, e.g. for `magit-status-mode`,
+a binding in the mode's map, e.g. for `magit-status-mode`,
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (with-eval-after-load 'magit
   (define-key magit-status-mode-map
     (kbd dotspacemacs-leader-key) spacemacs-default-map))
@@ -446,7 +447,7 @@ part of a word, add `(setq-default evil-symbol-word-search t)` to your
 For other motions, you can modify the syntax table of the mode in
 question by also adding the following.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ;; For python
 (add-hook 'python-mode-hook #'(lambda () (modify-syntax-entry ?_ "w")))
 ;; For ruby
@@ -472,10 +473,10 @@ and want them to be available in Spacemacs, you need to add
 `~/.local/bin` to your `$PATH`.
 
 Users of `bash`, `zsh`, `sh` and other similar shells should add
-following line to their `.bashrc` (`.zshrc`, `.profile` or your shell\'s
+following line to their `.bashrc` (`.zshrc`, `.profile` or your shell's
 equivalent). Note that the `export` part is very important.
 
-``` {.bash org-language="sh"}
+``` bash
 export PATH=~/.local/bin:$PATH
 ```
 
@@ -483,7 +484,7 @@ Users of `fish` should add following line to their `config.fish` file
 (should be in `$XDG_CONFIG_HOME` or its default value -
 `~/.config/fish`). Note that `-x` part is very important.
 
-``` {.fish}
+``` fish
 set -x PATH ~/.local/bin $PATH
 ```
 
@@ -495,7 +496,7 @@ verify this by calling `echo $PATH`. But you also should verify that
 `$PATH` is set properly in your environment. To do so call following
 command in your terminal.
 
-``` {.bash org-language="sh"}
+``` bash
 env | grep "PATH"
 ```
 
@@ -505,14 +506,14 @@ This is the value that will be used by Emacs. So it must contain
 After that you can run Spacemacs and check that it properly gets the
 value of `$PATH` by running `M-: (getenv "PATH")`.
 
-Note that having `~/.local/bin` in your `$PATH` also means that it\'s
+Note that having `~/.local/bin` in your `$PATH` also means that it's
 possible to run terminal and call tools from `~/.local/bin` without
 specifying their full path. Under certain conditions you might want to
 avoid modifying your `$PATH`. In that case you have the option of
 updating the value of `exec-path` in the `dotspacemacs/user-config`
 function of your `.spacemacs` file.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (add-to-list 'exec-path "~/.local/bin/")
 ```
 
@@ -523,7 +524,7 @@ It is possible to change a leader key by binding its keymap to another
 sequence. For instance, if you want to switch `SPC S` (spelling) with
 `SPC d` (used by dash) to make the former easier to reach, you can use:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dear-leader/swap-keys (key1 key2)
   (let ((map1 (lookup-key spacemacs-default-map key1))
         (map2 (lookup-key spacemacs-default-map key2)))
@@ -531,11 +532,11 @@ sequence. For instance, if you want to switch `SPC S` (spelling) with
 (dear-leader/swap-keys "S" "d")
 ```
 
-If you want to define your own alias, like using `SPC é` (because it\'s
-a not used key on your keyboard-layout for instance) for accessing
-`SPC w` (windows management), you can use this:
+If you want to define your own alias, like using `SPC é` (because it's a
+not used key on your keyboard-layout for instance) for accessing `SPC w`
+(windows management), you can use this:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dear-leader/alias-of (key1 key2)
   (let ((map (lookup-key spacemacs-default-map key2)))
     (spacemacs/set-leader-keys key1 map)))
@@ -548,7 +549,7 @@ Restore the sentence delimiter to two spaces?
 To restore the sentence delimiter to two spaces, add the following code
 to the `dotspacemacs/user-config` function of your `.spacemacs`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq sentence-end-double-space t)
 ```
 
@@ -557,12 +558,12 @@ Prevent the visual selection overriding my system clipboard?
 
 On some operating systems, there is only one clipboard for both
 **copied** and **selected** texts. This has the consequence that visual
-**selection** -- which should normally be saved to the *PRIMARY*
-clipboard -- overrides the *SYSTEM* clipboard, where normally goes the
+**selection** – which should normally be saved to the *PRIMARY*
+clipboard – overrides the *SYSTEM* clipboard, where normally goes the
 **copied** text. This can be corrected by adding the following code to
 the `dotspacemacs/user-config` of your `.spacemacs`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (fset 'evil-visual-update-x-selection 'ignore)
 ```
 
@@ -574,7 +575,7 @@ you need to add a new entry to `ispell-local-dictionary-alist`, by
 adding for example the following code in the `dotspacemacs/user-config`
 of your `.spacemacs`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (add-to-list 'ispell-local-dictionary-alist
   (quote ("my_english" "[[:alpha:]]" "[^[:alpha:]]" "['’]" t ("-d" "en_US") nil utf-8)))
 ```
@@ -593,26 +594,26 @@ Spacemacs can be used as the `$EDITOR` (or `$GIT_EDITOR`) for editing
 git commits messages. To enable this you have to add the following line
 to your `dotspacemacs/user-config`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (global-git-commit-mode t)
 ```
 
 Try Spacemacs without modifying my existing Emacs configuration?
 ----------------------------------------------------------------
 
-Emacs\'s ability to use any directory as the home for launching it
-allows us to try out Spacemacs (or any other Emacs configuration we
-desire) without having to go through the trouble of backing up our
-`~/.emacs.d` directory and then cloning the new configuration. This can
-be achieved easily using the following steps:
+Emacs's ability to use any directory as the home for launching it allows
+us to try out Spacemacs (or any other Emacs configuration we desire)
+without having to go through the trouble of backing up our `~/.emacs.d`
+directory and then cloning the new configuration. This can be achieved
+easily using the following steps:
 
-``` {.bash org-language="sh"}
+``` bash
 mkdir ~/spacemacs
 git clone https://github.com/syl20bnr/spacemacs.git ~/spacemacs/.emacs.d
 HOME=~/spacemacs emacs
 ```
 
-If you\'re on Fish shell, you will need to modify the last command to:
+If you're on Fish shell, you will need to modify the last command to:
 `env HOME=$HOME/spacemacs emacs`
 
 Make copy/paste working with the mouse in X11 terminals?
@@ -622,7 +623,7 @@ It is possible to disable the mouse support in X11 terminals in order to
 enable copying/pasting with the mouse. You need to add this line to your
 `dotspacemacs/user-config`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (xterm-mouse-mode -1)
 ```
 
@@ -639,7 +640,7 @@ this, both by appending some expressions to the search input:
 -   By using a flag like `--python` which should be self-explaining. The
     list of available flags could be accessed from terminal with:
 
-    ``` {.shell}
+    ``` shell
     ag --list-file-types
     ```
 
@@ -652,7 +653,7 @@ Modify spacemacs documentation look (space-doc-mode)
 You can modify the list of visual enhancements applied by the
 `space-doc-mode`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq spacemacs-space-doc-modificators
       '(center-buffer-mode
         org-indent-mode
@@ -667,8 +668,8 @@ You can modify the list of visual enhancements applied by the
 ```
 
 By default only `center-buffer-mode` is disabled. Both `space-doc-mode`
-and `center-buffer-mode` can be customized with \"Easy Customization
-Interface\".
+and `center-buffer-mode` can be customized with "Easy Customization
+Interface".
 
 Remap paste key to be able to paste copied text multiple times
 --------------------------------------------------------------
@@ -678,7 +679,7 @@ making it impossible to paste the same text multiple times.
 
 To fix this, add the following snippet to your `user-config`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun evil-paste-after-from-0 ()
   (interactive)
   (let ((evil-this-register ?0))
@@ -697,12 +698,12 @@ If you see the an error message when either Spacemacs is trying to
 delete an orphaned package, or when you are trying to a package
 manually:
 
-``` {.example}
+``` example
 Package ‘PACKAGE-NAME’ is a system package, not deleting
 ```
 
-it means this package comes with your distribution\'s package manager
-and is not installed by Spacemacs. You can suppress this by adding the
+it means this package comes with your distribution's package manager and
+is not installed by Spacemacs. You can suppress this by adding the
 package to `dotspacemacs-additional-packages` in your `.spacemacs` file.
 
 In addition, you also need to add the said package to
@@ -734,7 +735,7 @@ Why are all packages unavailable?
 
 Check if your Emacs has HTTPS capabilities by doing `M-:` and then:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (gnutls-available-p)
 ```
 
@@ -743,8 +744,8 @@ same directory as Emacs. See
 [here](https://www.gnu.org/software/emacs/manual/html_mono/emacs-gnutls.html#Help-For-Users)
 for instructions.
 
-The powerline isn\'t shown correctly when Spacemacs is used within `PuTTY`
---------------------------------------------------------------------------
+The powerline isn't shown correctly when Spacemacs is used within `PuTTY`
+-------------------------------------------------------------------------
 
 You can follow [this
 explanation](http://mschulte.nl/posts/using-powerline-in-PuTTY.html)

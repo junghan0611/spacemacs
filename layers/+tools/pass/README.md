@@ -25,22 +25,22 @@ list in this file.
 Key bindings
 ============
 
-  Key bindings      Description
-  ----------------- --------------------------------------------------------
-  `SPC a t P /`     copy password using `helm-pass` or `ivy-pass`
-  `SPC a t P y`     copy password
-  `SPC a t P Y`     copy and describe password
-  `SPC a t P ?`     describe password
-  `SPC a t P g`     generate new password
-  `SPC a t P i`     insert new password
-  `SPC a t P c`     edit password
-  `SPC a t P r`     rename password
-  `SPC a t P d`     remove from password store
-  `SPC a t P D`     clear the password store
-  `SPC a t P I`     initialize the password store
-  `SPC a t P w`     open url
-  `SPC a t P o y`   copy OTP token
-  `SPC a t P o Y`   copy OTP URI
-  `SPC a t P o i`   insert new OTP
-  `SPC a t P o a`   append OTP to an entry
-  `SPC a t P o A`   append OTP to an entry from QR code image in clipboard
+| Key bindings    | Description                                            |
+|-----------------|--------------------------------------------------------|
+| `SPC a t P /`   | copy password using `helm-pass` or `ivy-pass`          |
+| `SPC a t P y`   | copy password                                          |
+| `SPC a t P Y`   | copy and describe password                             |
+| `SPC a t P ?`   | describe password                                      |
+| `SPC a t P g`   | generate new password                                  |
+| `SPC a t P i`   | insert new password                                    |
+| `SPC a t P c`   | edit password                                          |
+| `SPC a t P r`   | rename password                                        |
+| `SPC a t P d`   | remove from password store                             |
+| `SPC a t P D`   | clear the password store                               |
+| `SPC a t P I`   | initialize the password store                          |
+| `SPC a t P w`   | open url                                               |
+| `SPC a t P o y` | copy OTP token                                         |
+| `SPC a t P o Y` | copy OTP URI                                           |
+| `SPC a t P o i` | insert new OTP                                         |
+| `SPC a t P o a` | append OTP to an entry                                 |
+| `SPC a t P o A` | append OTP to an entry from QR code image in clipboard |

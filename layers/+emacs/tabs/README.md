@@ -29,7 +29,7 @@ To display a bar in the given direction to the selected tab, set
 
 For example,
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '(tabs :variables tabs-highlight-current-tab 'left))
 ```
@@ -39,14 +39,14 @@ Note that this has no effect when Emacs is running in daemon mode.
 Hide tabs after a delay
 -----------------------
 
-You can set hooks for buffers in which it isn\'t desired to have tabs by
+You can set hooks for buffers in which it isn't desired to have tabs by
 customizing `centaur-tabs-hide-tabs-hooks`.
 
 Alternatively you can set `tabs-auto-hide` to `t` to auto hide tabs
 after some delay `tabs-auto-hide-delay` via the :variables keyword in
 your `.spacemacs`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '(tabs :variables
                      tabs-auto-hide t
@@ -56,12 +56,12 @@ your `.spacemacs`:
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -------------------------------------------------------
-  `g t`         Select the next available tab
-  `g T`         Select the previous available tab
-  `g C-t`       Move current tabe to right
-  `g C-T`       Move current tabe to left
-  `C-c t s`     Display a list of current buffer groups using Counsel
-  `C-c t p`     Group buffer tabs by projectile
-  `C-c t g`     Group buffer tabs by groups
+| Key binding | Description                                           |
+|-------------|-------------------------------------------------------|
+| `g t`       | Select the next available tab                         |
+| `g T`       | Select the previous available tab                     |
+| `g C-t`     | Move current tabe to right                            |
+| `g C-T`     | Move current tabe to left                             |
+| `C-c t s`   | Display a list of current buffer groups using Counsel |
+| `C-c t p`   | Group buffer tabs by projectile                       |
+| `C-c t g`   | Group buffer tabs by groups                           |

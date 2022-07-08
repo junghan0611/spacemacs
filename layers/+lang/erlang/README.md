@@ -7,7 +7,7 @@ This layer adds support for [Erlang](https://erlang.org/).
 
 Enabling [Lsp-mode](https://github.com/emacs-lsp/lsp-mode) brings IDE
 like features following `Language Server Protocol`, through
-[erlang~ls~](https://erlang-ls.github.io/)
+[erlang<sub>ls</sub>](https://erlang-ls.github.io/)
 
 Features:
 ---------
@@ -52,7 +52,7 @@ to do so, first add the `lsp` layer to
 `dotspacemacs-configuration-layers`, then, set the layer variable
 `erlang-backend`:
 
-``` {.elisp}
+``` elisp
 (erlang :variables erlang-backend 'lsp)
 ```
 
@@ -70,7 +70,7 @@ To find the manual page for the function under the cursor you can either
 set `erlang-man-root-dir` to erlang man root directory path in the layer
 definition:
 
-``` {.elisp}
+``` elisp
 (erlang :variables erlang-man-root-dir "*path_to_folder*/otp_22/lib/erlang/man")
 ```
 
@@ -80,29 +80,30 @@ or let `erlang-mode` download it by executing
 LSP
 ---
 
-The `lsp` backend uses [erlang~ls~](https://erlang-ls.github.io/) as its
-language server implementation.
+The `lsp` backend uses
+[erlang<sub>ls</sub>](https://erlang-ls.github.io/) as its language
+server implementation.
 
 Clone the project to your system and compile it:
 
-``` {.bash}
+``` bash
 make
 ```
 
-**Note:** Ensure you have `erlang_ls` in your `PATH`...
+**Note:** Ensure you have `erlang_ls` in your `PATH`…
 
 You can install it:
 
-``` {.bash}
+``` bash
 make install
 ```
 
 Debugger
 --------
 
-The `dap` backend uses [erlang~ls~-dap](https://erlang-ls.github.io/)
-implementation. Information about configuring a project to use the
-debugger can be found
+The `dap` backend uses
+[erlang<sub>ls</sub>-dap](https://erlang-ls.github.io/) implementation.
+Information about configuring a project to use the debugger can be found
 [here](https://erlang-ls.github.io/articles/tutorial-debugger/).
 
 If you are using `erlang_ls` backend, probably you have `els_dap`
@@ -111,19 +112,20 @@ already installed, otherwise, follow the instructions.
 Clone the project to your system and compile it to produce the `els_dap`
 escript:
 
-``` {.bash}
+``` bash
 rebar3 as dap escriptize
 ```
 
 or
 
-``` {.bash}
+``` bash
 make
 ```
 
-`els_dap` will be found at \"erlang~ls~/~build~/dap/bin/\"
+`els_dap` will be found at
+"erlang<sub>ls</sub>/<sub>build</sub>/dap/bin/"
 
-**Note:** Ensure you have `els_dap` in your `PATH`...
+**Note:** Ensure you have `els_dap` in your `PATH`…
 
 Key bindings
 ============
@@ -131,19 +133,19 @@ Key bindings
 erlang-mode
 -----------
 
-  Key binding   Description
-  ------------- -----------------------------------------------------------------
-  `C-c C-a`     Align arrows (\"-\>\")
-  `C-c C-c`     Comment region
-  `C-c C-d`     Display function manual at point
-  `C-c C-j`     Generate a new clause
-  `C-c C-q`     Indent function
-  `C-c C-u`     Uncomment region
-  `C-c C-y`     Insert, at the point, the argument list of the previous clause.
-  `C-c C-z`     Display the erlang-shell or start a new
-  `C-c M-a`     Move backward to previous start of clause.
-  `C-c M-e`     Move to the end of the current clause.
-  `C-c M-h`     Put mark at end of clause, point at beginning.
+| Key binding | Description                                                     |
+|-------------|-----------------------------------------------------------------|
+| `C-c C-a`   | Align arrows ("-\>")                                            |
+| `C-c C-c`   | Comment region                                                  |
+| `C-c C-d`   | Display function manual at point                                |
+| `C-c C-j`   | Generate a new clause                                           |
+| `C-c C-q`   | Indent function                                                 |
+| `C-c C-u`   | Uncomment region                                                |
+| `C-c C-y`   | Insert, at the point, the argument list of the previous clause. |
+| `C-c C-z`   | Display the erlang-shell or start a new                         |
+| `C-c M-a`   | Move backward to previous start of clause.                      |
+| `C-c M-e`   | Move to the end of the current clause.                          |
+| `C-c M-h`   | Put mark at end of clause, point at beginning.                  |
 
 LSP
 ---

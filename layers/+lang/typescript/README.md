@@ -27,7 +27,7 @@ To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `typescript` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(typescript))
 ```
 
@@ -36,7 +36,7 @@ Formatting
 
 If you need formatting on save:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (typescript :variables
               typescript-fmt-on-save t)))
@@ -48,7 +48,7 @@ You can choose formatting tool:
 -   `'prettier`
 -   `'typescript-formatter`
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (typescript :variables
               typescript-fmt-tool 'typescript-formatter)))
@@ -56,7 +56,7 @@ You can choose formatting tool:
 
 You can choose either tslint (default) or eslint for linting:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (typescript :variables
               typescript-linter 'tslint)))
@@ -69,13 +69,13 @@ You will need `node.js v0.12.0` or greater.
 
 If you want linting with tslint run:
 
-``` {.shell}
+``` shell
 npm install -g typescript tslint
 ```
 
 If you want linting with eslint run:
 
-``` {.shell}
+``` shell
 npm install eslint
 ```
 
@@ -89,7 +89,7 @@ details).
 
 If you want to use typescript-formatter for formatting run:
 
-``` {.shell}
+``` shell
 npm install -g typescript-formatter
 ```
 
@@ -101,7 +101,7 @@ Choosing a backend
 
 To choose a default backend set the layer variable `typescript-backend`:
 
-``` {.elisp}
+``` elisp
 (setq-default dotspacemacs-configuration-layers '(
   (typescript :variables typescript-backend 'tide)))
 ```
@@ -114,7 +114,7 @@ Backend can be chosen on a per project basis using directory local
 variables (files named `.dir-locals.el` at the root of a project), an
 example to use the `lsp` backend:
 
-``` {.elisp}
+``` elisp
 ;;; Directory Local Variables
 ;;; For more information see (info "(emacs) Directory Variables")
 ((typescript-mode (typescript-backend . lsp)))
@@ -135,7 +135,7 @@ the server intalled by `npm` instead. To do so set the variable
 
 For example:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (typescript :variables
               tide-tsserver-executable "/usr/local/bin/tsserver")))
@@ -154,7 +154,7 @@ error.
 
 Send to playground requires browser.
 
-Currently tsserver doesn\'t pickup tsconfig.json file changes. You might
+Currently tsserver doesn't pickup tsconfig.json file changes. You might
 need to restart server after editing it.
 
 Language Server Protocol
@@ -164,10 +164,10 @@ You also need to install the Typescript Language Server. Consult the
 installation command for the desired language server found at
 [lsp-mode](https://www.github.com/emacs-lsp/lsp-mode/) for instructions.
 
-By default lsp will explicitly set itself as the linter, if you don\'t
+By default lsp will explicitly set itself as the linter, if you don't
 want that, then set the variable `typescript-lsp-linter` to `nil`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (typescript :variables
               typescript-backend 'lsp
@@ -180,28 +180,28 @@ Key bindings
 Typescript Major Mode
 ---------------------
 
-  Key binding                                     Description
-  ----------------------------------------------- --------------------------------------------------------------
-  `SPC m =` or `SPC m = =` if using lsp backend   reformat the buffer
-  `SPC m E d`                                     add `tslint:disable-next-line` at point
-  `SPC m E e`                                     fix thing at point
-  `SPC m g b`                                     jump back
-  `SPC m g g`                                     jump to entity\'s definition
-  `SPC m g t`                                     jump to entity\'s type definition
-  `SPC m g r`                                     references
-  `SPC m h h`                                     documentation at point
-  `SPC m p`                                       send selected region or current buffer to the web playground
-  `SPC m r i`                                     organize imports
-  `SPC m r r`                                     rename symbol
-  `SPC m r f`                                     rename file
-  `SPC m S r`                                     restart server
-  `SPC m S j`                                     create a barebone `jsconfig.json` at project root
+| Key binding                                   | Description                                                  |
+|-----------------------------------------------|--------------------------------------------------------------|
+| `SPC m =` or `SPC m = =` if using lsp backend | reformat the buffer                                          |
+| `SPC m E d`                                   | add `tslint:disable-next-line` at point                      |
+| `SPC m E e`                                   | fix thing at point                                           |
+| `SPC m g b`                                   | jump back                                                    |
+| `SPC m g g`                                   | jump to entity's definition                                  |
+| `SPC m g t`                                   | jump to entity's type definition                             |
+| `SPC m g r`                                   | references                                                   |
+| `SPC m h h`                                   | documentation at point                                       |
+| `SPC m p`                                     | send selected region or current buffer to the web playground |
+| `SPC m r i`                                   | organize imports                                             |
+| `SPC m r r`                                   | rename symbol                                                |
+| `SPC m r f`                                   | rename file                                                  |
+| `SPC m S r`                                   | restart server                                               |
+| `SPC m S j`                                   | create a barebone `jsconfig.json` at project root            |
 
 Reference Major Mode
 --------------------
 
-  Key binding   Description
-  ------------- -------------------------
-  `C-j`         find previous reference
-  `C-k`         find next reference
-  `C-l`         goto reference
+| Key binding | Description             |
+|-------------|-------------------------|
+| `C-j`       | find previous reference |
+| `C-k`       | find next reference     |
+| `C-l`       | goto reference          |

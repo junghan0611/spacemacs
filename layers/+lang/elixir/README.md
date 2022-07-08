@@ -46,7 +46,7 @@ Choosing a backend
 
 To choose a default backend set the layer variable `elixir-backend`:
 
-``` {.elisp}
+``` elisp
 (elixir :variables elixir-backend 'alchemist)
 ```
 
@@ -58,7 +58,7 @@ Backend can be chosen on a per project basis using directory local
 variables (files named `.dir-locals.el` at the root of a project), an
 example to use the `lsp` backend:
 
-``` {.elisp}
+``` elisp
 ;;; Directory Local Variables
 ;;; For more information see (info "(emacs) Directory Variables")
 
@@ -70,25 +70,25 @@ example to use the `lsp` backend:
 
 The available options are:
 
-  symbol        description
-  ------------- -------------------
-  \'alchemist   Default
-  \'lsp         elixir-ls package
+| symbol     | description       |
+|------------|-------------------|
+| 'alchemist | Default           |
+| 'lsp       | elixir-ls package |
 
 ### Feature comparison in backends
 
-  features                             Alchemist   Lsp
-  ------------------------------------ ----------- -----
-  Powerful IEx integration             yes         no
-  Mix integration                      yes         no
-  Compile & Execution of Elixir code   yes         no
-  Inline code evaluation               yes         no
-  Documentation lookup                 yes         yes
-  Definition lookup                    yes         yes
-  Smart code completion                yes         yes
-  Elixir project management            yes         no
-  Integration with `company-mode`      yes         yes
-  Flycheck support                     yes         yes
+| features                           | Alchemist | Lsp |
+|------------------------------------|-----------|-----|
+| Powerful IEx integration           | yes       | no  |
+| Mix integration                    | yes       | no  |
+| Compile & Execution of Elixir code | yes       | no  |
+| Inline code evaluation             | yes       | no  |
+| Documentation lookup               | yes       | yes |
+| Definition lookup                  | yes       | yes |
+| Smart code completion              | yes       | yes |
+| Elixir project management          | yes       | no  |
+| Integration with `company-mode`    | yes       | yes |
+| Flycheck support                   | yes       | yes |
 
 Configuration
 =============
@@ -105,23 +105,22 @@ You need to install [credo](https://github.com/rrrene/credo) into your
 project. For this, add the following snippet to dependencies of your
 project (in file `mix.exs`):
 
-``` {.elixir}
+``` elixir
 {:credo, "~> 0.5", only: [:dev, :test]}
 ```
 
 Then run in your shell:
 
-``` {.shell}
+``` shell
 $ mix deps.get
 ```
 
 For more info about mix
 [see](http://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html).
 
-You can tell flycheck-credo to call credo with the \'--strict\'
-argument.
+You can tell flycheck-credo to call credo with the '–strict' argument.
 
-``` {.elisp}
+``` elisp
 (setq flycheck-elixir-credo-strict t)
 ```
 
@@ -131,13 +130,13 @@ In order to lint your code, you also need to install
 [dogma](https://github.com/lpil/dogma) into your project. For this, add
 the following snippet to the dependencies in your `mix.exs` file:
 
-``` {.elixir}
+``` elixir
 {:dogma, "~> 0.1", only: [:dev]}
 ```
 
 Then run in your shell:
 
-``` {.shell}
+``` shell
 $ mix deps.get
 ```
 
@@ -155,13 +154,13 @@ actively maintained as well
 set the `elixir-ls-path` to the release folder of `elixir-ls` in
 .spacemacs `dotspacemacs/user-config`
 
-``` {.elisp}
+``` elisp
 (setq elixir-ls-path "*path to folder*/elixir-ls/release")
 ```
 
 or in the layer definition
 
-``` {.elisp}
+``` elisp
 (elixir :variables elixir-backend 'lsp elixir-ls-path "*path to folder*/elixir-ls/release")
 ```
 
@@ -192,135 +191,135 @@ You find and overview of all the key bindings on the
 
 ### Help
 
-  Key binding   Description
-  ------------- -------------------------------------
-  `SPC m h :`   Run custom search for help
-  `SPC m h h`   Show help of the current expression
-  `SPC m h H`   Toggle through search history
-  `SPC m h r`   Show help for current region
+| Key binding | Description                         |
+|-------------|-------------------------------------|
+| `SPC m h :` | Run custom search for help          |
+| `SPC m h h` | Show help of the current expression |
+| `SPC m h H` | Toggle through search history       |
+| `SPC m h r` | Show help for current region        |
 
 ### Mix
 
-  Key binding   Description
-  ------------- ------------------------------------------------------------
-  `SPC m m :`   Prompt for a `mix` command
-  `SPC m m c`   Compile the whole application
-  `SPC m m h`   Show help for a specific `mix` command
-  `SPC m m x`   Run the given expression in the Elixir application context
+| Key binding | Description                                                |
+|-------------|------------------------------------------------------------|
+| `SPC m m :` | Prompt for a `mix` command                                 |
+| `SPC m m c` | Compile the whole application                              |
+| `SPC m m h` | Show help for a specific `mix` command                     |
+| `SPC m m x` | Run the given expression in the Elixir application context |
 
 ### Project
 
-  Key binding   Description
-  ------------- ------------------------------------------------------------
-  `SPC m g t`   Toggle between a file and its tests in the current window.
-  `SPC m g T`   Toggle between a file and its tests in other window.
+| Key binding | Description                                                |
+|-------------|------------------------------------------------------------|
+| `SPC m g t` | Toggle between a file and its tests in the current window. |
+| `SPC m g T` | Toggle between a file and its tests in other window.       |
 
 ### Evaluation in place
 
-  Key binding   Description
-  ------------- -----------------------------------------
-  `SPC m e b`   Evaluate buffer
-  `SPC m e B`   Evaluate buffer and insert result
-  `SPC m e l`   Evaluate current line
-  `SPC m e L`   Evaluate current line and insert result
-  `SPC m e r`   Evaluate region
-  `SPC m e R`   Evaluate region and insert result
+| Key binding | Description                             |
+|-------------|-----------------------------------------|
+| `SPC m e b` | Evaluate buffer                         |
+| `SPC m e B` | Evaluate buffer and insert result       |
+| `SPC m e l` | Evaluate current line                   |
+| `SPC m e L` | Evaluate current line and insert result |
+| `SPC m e r` | Evaluate region                         |
+| `SPC m e R` | Evaluate region and insert result       |
 
 ### REPL interactions
 
-  Key binding   Description
-  ------------- -----------------------------------------------------------------
-  `SPC m s c`   Compiles the current buffer in the IEx process.
-  `SPC m s i`   Start an `iex` inferior process
-  `SPC m s I`   Start an IEx process with mix (`iex -S mix`)
-  `SPC m s l`   Send current line to REPL buffer
-  `SPC m s L`   Send current line to REPL buffer and focus it in `insert state`
-  `SPC m s m`   Reloads the module in the current buffer in your IEx process
-  `SPC m s r`   Send region to REPL buffer
-  `SPC m s R`   Send region to REPL buffer and focus it in `insert state`
+| Key binding | Description                                                     |
+|-------------|-----------------------------------------------------------------|
+| `SPC m s c` | Compiles the current buffer in the IEx process.                 |
+| `SPC m s i` | Start an `iex` inferior process                                 |
+| `SPC m s I` | Start an IEx process with mix (`iex -S mix`)                    |
+| `SPC m s l` | Send current line to REPL buffer                                |
+| `SPC m s L` | Send current line to REPL buffer and focus it in `insert state` |
+| `SPC m s m` | Reloads the module in the current buffer in your IEx process    |
+| `SPC m s r` | Send region to REPL buffer                                      |
+| `SPC m s R` | Send region to REPL buffer and focus it in `insert state`       |
 
 ### Tests
 
-  Key binding   Description
-  ------------- ---------------------------------------------------------------------------------------
-  `SPC m g t`   Open the test file for current buffer
-  `SPC m t a`   Run all the tests
-  `SPC m t b`   Run all the tests from current buffer
-  `SPC m t B`   Run all the tests from current file; if test file not found, after confirm, create it
-  `SPC m t f`   Choose test file to run
-  `SPC m t t`   Run test under point
-  `SPC m t r`   Rerun the last test
-  `SPC m t n`   Jump to next test
-  `SPC m t N`   Jump to previous test
-  `SPC m t s`   Run stale tests (`mix test --stale`)
-  `SPC m t R`   Toggle test report window
-  `SPC m t F`   Open project test directory and list all test files.
+| Key binding | Description                                                                           |
+|-------------|---------------------------------------------------------------------------------------|
+| `SPC m g t` | Open the test file for current buffer                                                 |
+| `SPC m t a` | Run all the tests                                                                     |
+| `SPC m t b` | Run all the tests from current buffer                                                 |
+| `SPC m t B` | Run all the tests from current file; if test file not found, after confirm, create it |
+| `SPC m t f` | Choose test file to run                                                               |
+| `SPC m t t` | Run test under point                                                                  |
+| `SPC m t r` | Rerun the last test                                                                   |
+| `SPC m t n` | Jump to next test                                                                     |
+| `SPC m t N` | Jump to previous test                                                                 |
+| `SPC m t s` | Run stale tests (`mix test --stale`)                                                  |
+| `SPC m t R` | Toggle test report window                                                             |
+| `SPC m t F` | Open project test directory and list all test files.                                  |
 
 ### Compile
 
-  Key binding   Description
-  ------------- ----------------------------------------------------
-  `SPC m c :`   Run a custom compile command with `elixirc`
-  `SPC m c b`   Compile the current buffer with elixirc. `elixirc`
-  `SPC m c f`   Compile the given filename with `elixirc`
+| Key binding | Description                                        |
+|-------------|----------------------------------------------------|
+| `SPC m c :` | Run a custom compile command with `elixirc`        |
+| `SPC m c b` | Compile the current buffer with elixirc. `elixirc` |
+| `SPC m c f` | Compile the given filename with `elixirc`          |
 
 ### Execute
 
-  Key binding   Description
-  ------------- --------------------------------------------
-  `SPC m x :`   Run a custom execute command with `elixir`
-  `SPC m x b`   Run the current buffer through `elixir`
-  `SPC m x f`   Run `elixir` with the given filename
+| Key binding | Description                                |
+|-------------|--------------------------------------------|
+| `SPC m x :` | Run a custom execute command with `elixir` |
+| `SPC m x b` | Run the current buffer through `elixir`    |
+| `SPC m x f` | Run `elixir` with the given filename       |
 
 ### Code Definition Jump
 
-  Key binding   Description
-  ------------- ----------------------------------------------------
-  `SPC m g g`   Jump to the elixir expression definition at point.
-  `SPC m .`     Jump to the elixir expression definition at point.
-  `SPC m g b`   Pop back to where `SPC m g g` was last invoked.
-  `SPC m ,`     Pop back to where `SPC m g g` was last invoked.
-  `SPC m g n`   Jump to next symbol definition
-  `SPC m g N`   Jump to previous symbol definition
-  `SPC m g j`   Choose which symbol definition to jump to
+| Key binding | Description                                        |
+|-------------|----------------------------------------------------|
+| `SPC m g g` | Jump to the elixir expression definition at point. |
+| `SPC m .`   | Jump to the elixir expression definition at point. |
+| `SPC m g b` | Pop back to where `SPC m g g` was last invoked.    |
+| `SPC m ,`   | Pop back to where `SPC m g g` was last invoked.    |
+| `SPC m g n` | Jump to next symbol definition                     |
+| `SPC m g N` | Jump to previous symbol definition                 |
+| `SPC m g j` | Choose which symbol definition to jump to          |
 
 ### Hex (packages)
 
 Hex is the package manager for Elixir & Erlang ecosystem. See
 <https://hex.pm>.
 
-  Key binding   Description
-  ------------- ----------------------------------------------------------
-  `SPC m X i`   Display Hex package information for the package at point
-  `SPC m X r`   Display Hex package releases for the package at point
-  `SPC m X R`   Display Hex package releases for a certain package
-  `SPC m X I`   Display Hex package info for a certain package
-  `SPC m X s`   Search for Hex packages
+| Key binding | Description                                              |
+|-------------|----------------------------------------------------------|
+| `SPC m X i` | Display Hex package information for the package at point |
+| `SPC m X r` | Display Hex package releases for the package at point    |
+| `SPC m X R` | Display Hex package releases for a certain package       |
+| `SPC m X I` | Display Hex package info for a certain package           |
+| `SPC m X s` | Search for Hex packages                                  |
 
 ### Macro expand
 
-  Key binding   Description
-  ------------- -----------------------------------------------------------------------------------
-  `SPC m o l`   Macro expand once the Elixir code on the current line
-  `SPC m o L`   Macro expand once the Elixir code on the current line and insert the result
-  `SPC m o k`   Macro expand completely the Elixir code on the current line
-  `SPC m o K`   Macro expand completely the Elixir code on the current line and insert the result
-  `SPC m o i`   Macro expand once the Elixir code on marked region
-  `SPC m o I`   Macro expand once the Elixir code on marked region once and insert the result
-  `SPC m o r`   Macro expand completely the Elixir code on marked region
-  `SPC m o R`   Macro expand completely the Elixir code on marked region and insert the result
+| Key binding | Description                                                                       |
+|-------------|-----------------------------------------------------------------------------------|
+| `SPC m o l` | Macro expand once the Elixir code on the current line                             |
+| `SPC m o L` | Macro expand once the Elixir code on the current line and insert the result       |
+| `SPC m o k` | Macro expand completely the Elixir code on the current line                       |
+| `SPC m o K` | Macro expand completely the Elixir code on the current line and insert the result |
+| `SPC m o i` | Macro expand once the Elixir code on marked region                                |
+| `SPC m o I` | Macro expand once the Elixir code on marked region once and insert the result     |
+| `SPC m o r` | Macro expand completely the Elixir code on marked region                          |
+| `SPC m o R` | Macro expand completely the Elixir code on marked region and insert the result    |
 
 ### Formatting
 
-  Key binding   Description
-  ------------- ---------------------------
-  `SPC m =`     Format the current buffer
+| Key binding | Description               |
+|-------------|---------------------------|
+| `SPC m =`   | Format the current buffer |
 
 ### Debugging
 
-  Key binding   Description
-  ------------- ---------------------------
-  `SPC m d b`   Toggle IEx.pry breakpoint
+| Key binding | Description               |
+|-------------|---------------------------|
+| `SPC m d b` | Toggle IEx.pry breakpoint |
 
 LSP
 ---
@@ -330,6 +329,6 @@ description](https://github.com/syl20bnr/spacemacs/tree/develop/layers/%2Btools/
 
 ### Debugging
 
-Using the `dap` layer you\'ll get access to all the DAP key bindings,
-see the complete list of key bindings on the [dap layer
+Using the `dap` layer you'll get access to all the DAP key bindings, see
+the complete list of key bindings on the [dap layer
 description](https://github.com/syl20bnr/spacemacs/tree/develop/layers/%2Btools/dap#key-bindings).

@@ -4,13 +4,13 @@ Description
 This layer enables
 [window-purpose](https://github.com/bmag/emacs-purpose), which provides
 an alternative, purpose-based window manager for Emacs. With this layer,
-your window layout should be robust and shouldn\'t change too much when
+your window layout should be robust and shouldn't change too much when
 opening all sorts of buffers.
 
 Regular [popwin](https://github.com/m2ym/popwin-el) is not triggered
 when window-purpose is enabled. However, the window-purpose layer
-provides a `purpose-popwin` extension, which brings popwin\'s behavior
-to window-purpose and solves that problem.
+provides a `purpose-popwin` extension, which brings popwin's behavior to
+window-purpose and solves that problem.
 
 Features:
 ---------
@@ -23,7 +23,7 @@ Features:
 -   Empty `purpose-mode-map`, to avoid conflicts with other key maps
 -   Replicate popwin behavior for purpose-mode - almost no regression in
     popup behavior from using window-purpose.
--   Reuses popwin\'s settings: `popwin:special-display-config`,
+-   Reuses popwin's settings: `popwin:special-display-config`,
     `popwin:popup-window-height` and `popwin:popup-window-width`.
 -   Difference from popwin: when several windows are open, popup window
     is sometimes bigger than with regular popwin in the same situation.
@@ -39,7 +39,7 @@ For example, consider the following case: Emacs frame shows three
 windows - one for code, one for a terminal and one general-purpose
 window. The general window is selected and you want to open a code file.
 How do you ensure that the code file will be displayed in the code
-window? With window-purpose you don\'t need to worry about it - you open
+window? With window-purpose you don't need to worry about it - you open
 the file and window-purpose places it in the correct window.
 
 Additionally, you can dedicate a window to a purpose - so that window is
@@ -49,10 +49,10 @@ switch-to-buffer and display-buffer
 -----------------------------------
 
 In regular Emacs, `switch-to-buffer` follows different rules than the
-other switching and popping commands, because it doesn\'t use
+other switching and popping commands, because it doesn't use
 `display-buffer` (which the other commands do). With window-purpose,
 this behavior is fixed. The result is a better control over how buffers
-are displayed, since `switch-to-buffer` doesn\'t ignore the user\'s
+are displayed, since `switch-to-buffer` doesn't ignore the user's
 customizations anymore.
 
 misc
@@ -87,8 +87,8 @@ Allocate purposes in layers
 
 Layers may assign purposes to buffers that have been created by their
 packages. This can either be done by a simple mode mapping or according
-to the buffer\'s name. This follows the same idea as the autocomplete
-and syntax-checking layers.
+to the buffer's name. This follows the same idea as the autocomplete and
+syntax-checking layers.
 
 This means the configuration is not centralised in this layer but spread
 among the individual language layers. To ensure that users can still
@@ -97,7 +97,7 @@ Spacemacs.
 
 To do so copy and adjust the following code:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ;; This will only be called if `window-purpose` is listed
 ;; among the layer packages.
 ;; This code also takes care that the right loading
@@ -127,7 +127,7 @@ match ones own personal needs.
 This can easily be achieved by adding below code in
 \`dotspacemacs/user-config\`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ;; This will add user allocations with a higher
 ;; priority than the ones from the layers.
 ;; With this allocations can be completely
@@ -139,14 +139,14 @@ This can easily be achieved by adding below code in
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- --------------------------------------------------------------------------------------
-  `SPC r b`     Open a buffer. Only buffers with the same purpose as the current buffer are listed.
-  `SPC r B`     Open any buffer and ignore window-purpose when displaying the buffer.
-  `SPC r d`     Toggle dedication of selected window to its current purpose.
-  `SPC r D`     Delete all non-dedicated windows.
-  `SPC r p`     Choose a purpose and open a buffer with that purpose.
-  `SPC r P`     Change the purpose of the selected window. Changes the window\'s buffer accordingly.
+| Key binding | Description                                                                         |
+|-------------|-------------------------------------------------------------------------------------|
+| `SPC r b`   | Open a buffer. Only buffers with the same purpose as the current buffer are listed. |
+| `SPC r B`   | Open any buffer and ignore window-purpose when displaying the buffer.               |
+| `SPC r d`   | Toggle dedication of selected window to its current purpose.                        |
+| `SPC r D`   | Delete all non-dedicated windows.                                                   |
+| `SPC r p`   | Choose a purpose and open a buffer with that purpose.                               |
+| `SPC r P`   | Change the purpose of the selected window. Changes the window's buffer accordingly. |
 
 Caveats
 =======

@@ -22,7 +22,7 @@ Install
 See [tide](https://github.com/ananthakumaran/tide) for details. First
 you must have \`tsserver\` installed in your project or globally:
 
-``` {.bash org-language="sh"}
+``` bash
 npm install -g typescript
 ```
 
@@ -31,7 +31,7 @@ Next enable this layer in your `~/.spacemacs`. You will need to add
 file. Then set the backend variables for JavaScript layer, React layer
 and TypeScript layer to `tide` in `dotspacemacs-configuration-layers`
 
-``` {.elisp}
+``` elisp
 (javascript :variables
              javascript-backend 'tide)
 
@@ -52,7 +52,7 @@ Example from emacs tide package: For JavaScript projects you may want to
 create `jsconfig.json` in the root folder of your project.
 `jsconfig.json` is `tsconfig.json` with allowjs attribute set to true.
 
-``` {.json}
+``` json
 {
   "compilerOptions": {
     "target": "es2017",
@@ -74,26 +74,26 @@ Key bindings
 Major Mode
 ----------
 
-  Key binding   Description
-  ------------- ---------------------------------------------------
-  `SPC m E d`   add `tslint:disable-next-line` at point
-  `SPC m E e`   fix thing at point
-  `SPC m g b`   jump back
-  `SPC m g g`   jump to entity\'s definition
-  `SPC m g t`   jump to entity\'s type definition
-  `SPC m g r`   references
-  `SPC m h h`   documentation at point
-  `SPC m r i`   organize imports
-  `SPC m r r`   rename symbol
-  `SPC m r f`   rename file
-  `SPC m S r`   restart server
-  `SPC m S j`   create a barebone `jsconfig.json` at project root
+| Key binding | Description                                       |
+|-------------|---------------------------------------------------|
+| `SPC m E d` | add `tslint:disable-next-line` at point           |
+| `SPC m E e` | fix thing at point                                |
+| `SPC m g b` | jump back                                         |
+| `SPC m g g` | jump to entity's definition                       |
+| `SPC m g t` | jump to entity's type definition                  |
+| `SPC m g r` | references                                        |
+| `SPC m h h` | documentation at point                            |
+| `SPC m r i` | organize imports                                  |
+| `SPC m r r` | rename symbol                                     |
+| `SPC m r f` | rename file                                       |
+| `SPC m S r` | restart server                                    |
+| `SPC m S j` | create a barebone `jsconfig.json` at project root |
 
 Reference Major Mode
 --------------------
 
-  Key binding   Description
-  ------------- -------------------------
-  `C-j`         find previous reference
-  `C-k`         find next reference
-  `C-l`         goto reference
+| Key binding | Description             |
+|-------------|-------------------------|
+| `C-j`       | find previous reference |
+| `C-k`       | find next reference     |
+| `C-l`       | goto reference          |

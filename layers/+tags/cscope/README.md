@@ -40,13 +40,13 @@ source.
 
 From package manager (for example, Ubuntu):
 
-``` {.bash org-language="sh"}
+``` bash
 sudo apt-get install cscope
 ```
 
 From source:
 
-``` {.bash org-language="sh"}
+``` bash
 tar xvf cscope-15.8b
 cd cscope-15.8b
 ./configure
@@ -60,7 +60,7 @@ PyCscope
 Enable `python` layer in your `~/.spacemacs` file. Install PyCscope
 through pip:
 
-``` {.bash org-language="sh"}
+``` bash
 pip install pycscope
 ```
 
@@ -75,15 +75,15 @@ bound to `SPC m g i`.
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -----------------------------------------------
-  `SPC m g =`   Find assignments to a symbol
-  `SPC m g c`   find which functions are called by a function
-  `SPC m g C`   find where a function is called
-  `SPC m g d`   find global definition of a symbol
-  `SPC m g e`   search regular expression
-  `SPC m g f`   find a file
-  `SPC m g F`   find which files include a file
-  `SPC m g i`   create Cscope index
-  `SPC m g r`   find references of a symbol
-  `SPC m g x`   search text
+| Key binding | Description                                   |
+|-------------|-----------------------------------------------|
+| `SPC m g =` | Find assignments to a symbol                  |
+| `SPC m g c` | find which functions are called by a function |
+| `SPC m g C` | find where a function is called               |
+| `SPC m g d` | find global definition of a symbol            |
+| `SPC m g e` | search regular expression                     |
+| `SPC m g f` | find a file                                   |
+| `SPC m g F` | find which files include a file               |
+| `SPC m g i` | create Cscope index                           |
+| `SPC m g r` | find references of a symbol                   |
+| `SPC m g x` | search text                                   |

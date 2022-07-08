@@ -26,21 +26,21 @@ Key bindings
 Form Completion
 ---------------
 
-  Key binding   Description
-  ------------- -------------------------------------------------------------------------------------------
-  `M-SPC`       Inserts a space and completes the form before the cursor.
-  `\vert{}`     Inserts a pipe and adds a double arrow or copies the function name. Generally just works.
+| Key binding | Description                                                                               |
+|-------------|-------------------------------------------------------------------------------------------|
+| `M-SPC`     | Inserts a space and completes the form before the cursor.                                 |
+| `\vert{}`   | Inserts a pipe and adds a double arrow or copies the function name. Generally just works. |
 
 REPL
 ----
 
-  Key binding   Description
-  ------------- -------------------------------------------------------------------
-  `SPC m s b`   Send buffer to REPL
-  `SPC m s B`   Send buffer to REPL and switch to REPL buffer in `insert state`
-  `SPC m s f`   Send function to REPL
-  `SPC m s F`   Send function to REPL and switch to REPL buffer in `insert state`
-  `SPC m s i`   Run the sml REPL or switch to it if the REPL is already running
-  `SPC m s r`   Send region to REPL
-  `SPC m s R`   Send region to REPL and switch to REPL buffer in `insert state`
-  `SPC m s s`   Run the sml REPL or switch to it if the REPL is already running
+| Key binding | Description                                                       |
+|-------------|-------------------------------------------------------------------|
+| `SPC m s b` | Send buffer to REPL                                               |
+| `SPC m s B` | Send buffer to REPL and switch to REPL buffer in `insert state`   |
+| `SPC m s f` | Send function to REPL                                             |
+| `SPC m s F` | Send function to REPL and switch to REPL buffer in `insert state` |
+| `SPC m s i` | Run the sml REPL or switch to it if the REPL is already running   |
+| `SPC m s r` | Send region to REPL                                               |
+| `SPC m s R` | Send region to REPL and switch to REPL buffer in `insert state`   |
+| `SPC m s s` | Run the sml REPL or switch to it if the REPL is already running   |

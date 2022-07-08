@@ -71,13 +71,13 @@ Pretty symbols for anonymous functions, set literals and partial, like
 To enable this feature, add the following snippet to the
 `dotspacemacs/user-config` section of your `~/.spacemacs` file:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq clojure-enable-fancify-symbols t)
 ```
 
 Or set this variable when loading the configuration layer:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
 '((clojure :variables clojure-enable-fancify-symbols t)))
 ```
@@ -96,7 +96,7 @@ The server is automatically activated when you have the `lsp-layer`
 installed in your dotfile. Alternatively you can force a certain backend
 by setting the `clojure-backend` variable in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
 '((clojure :variables clojure-backend 'lsp)))
 ```
@@ -112,7 +112,7 @@ work it can also be installed manually from
 You can also explicitly disable lsp support by setting `cider` as
 backend explicitly:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
 '((clojure :variables clojure-backend 'cider)))
 ```
@@ -148,7 +148,7 @@ instructions](https://github.com/borkdude/clj-kondo/blob/master/doc/install.md)
 Enable the clj-kondo automatic linter in Spacemacs by adding a
 `:variables` option to your Spacemacs configuration:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ;; Witout any variables your configuration would just include clojure
 dotspacemacs-configuration-layers
 '(...
@@ -175,7 +175,7 @@ instructions](https://github.com/candid82/joker#installation)
 Enable the joker automatic linter in Spacemacs by adding a `:variables`
 option to your Spacemacs configuration:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ;; Witout any variables your configuration would just include clojure
 dotspacemacs-configuration-layers
 '(...
@@ -209,7 +209,7 @@ Enable the squiggly (eastwood, kibit and core.typed) automatic linter in
 Spacemacs by adding a `:variables` option to your Spacemacs
 configuration:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ;; Without any variables your configuration would just include Clojure
 dotspacemacs-configuration-layers
 '(...
@@ -234,19 +234,19 @@ project](https://github.com/clojure-emacs/squiggly-clojure/tree/master/sample-pr
 ### Enable multiple linters
 
 You can choose to enable multiple linters and have them all run
-together. This gives you better linting coverage, as they don\'t catch
+together. This gives you better linting coverage, as they don't catch
 all the same issues.
 
 You will need to follow their individual install instructions first, to
 get all their necessary binaries and configs on the system PATH that
-`spacemacs.env` includes. Please refer to their individual Enable ...
+`spacemacs.env` includes. Please refer to their individual Enable …
 linter section respectively.
 
 Once all the linters you want to enable are installed, you simply need
 to specify a list of them in the `:variables` option to your Spacemacs
 configuration:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ;; Witout any variables your configuration would just include clojure
 dotspacemacs-configuration-layers
 '(...
@@ -274,13 +274,13 @@ Fancify symbols re-writes your code and displays symbols for:
 To enable this feature, add the following snippet to the
 `dotspacemacs/user-config` section of your `~/.spacemacs` file:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq clojure-enable-fancify-symbols t)
 ```
 
 Or set this variable when loading the configuration layer:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
 '((clojure :variables clojure-enable-fancify-symbols t)))
 ```
@@ -297,7 +297,7 @@ layer, specifying `clojure-enable-sayid`, or
 
 In your Spacemacs configuration:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ;; before
 dotspacemacs-configuration-layers
 '(...
@@ -327,7 +327,7 @@ Run unit tests with Kaocha via CIDER.
 Enable the Kaocha feature via setting the `clojure-enable-kaocha-runner`
 variable in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
 '((clojure :variables clojure-enable-kaocha-runner t)))
 ```
@@ -335,13 +335,13 @@ variable in your dotfile:
 The kaocha library must be included when starting a REPL, either through
 Leiningen dev profile dependency
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 :profiles {:dev {:dependencies [[lambdaisland/kaocha "1.60.977"]]}}
 ```
 
 or a Clojure CLI alias in a project deps.edn or user wide deps.edn file
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 :lib/kaocha {:extra-deps {lambdaisland/kaocha {:mvn/version "1.60.977"}}}
 ```
 
@@ -431,7 +431,7 @@ necessary nREPL middlewares are enabled.
 
 -   Create a file `~/.boot/profile.boot` with the following content:
 
-    ``` {.clojure}
+    ``` clojure
     (require 'boot.repl)
 
     (swap! boot.repl/*default-dependencies* conj
@@ -459,7 +459,7 @@ necessary nREPL middlewares are enabled.
 
 -   Create a file `~/.lein/profiles.clj` with the following content:
 
-    ``` {.clojure}
+    ``` clojure
     {:repl
      {:plugins [;; When running an older version of CIDER (pre 0.18), use the
                 ;; version that best matches M-x cider-version. For versions since
@@ -513,8 +513,8 @@ cheatsheet.
 
 Type `SPC m h a` to display advanced apropos window. Type `SPC m h c` to
 display the cheatsheet then type in some terms (space separated) to
-narrow down the list. For example, try typing in \"sort map\" to see
-some functions that deal with sorting maps.
+narrow down the list. For example, try typing in "sort map" to see some
+functions that deal with sorting maps.
 
 NOTE: If helm is not used, then `cider-apropos` and `cider-cheatsheet`
 are used.
@@ -531,13 +531,13 @@ Enable safe structural editing for all `clojure` buffers using the
 following in the `dotspacemacs/user-config` function of your .spacemacs
 file
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-clojure-mode)
 ```
 
 Or enable safe structural editing for all supported modes:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hooks)
 ```
 
@@ -550,7 +550,7 @@ Working with clojure files (barfage, slurpage & more)
 -----------------------------------------------------
 
 Spacemacs comes with a special `lisp-state` for working with lisp code
-that supports slurpage, barfage and more tools you\'ll likely want when
+that supports slurpage, barfage and more tools you'll likely want when
 working with lisp.
 
 As this state works the same for all files, the documentation is in
@@ -565,263 +565,263 @@ Leader
 
 Shortcut key bindings for regularly used commands.
 
-  Key binding   Description
-  ------------- ----------------------------------------------------------
-  `SPC m '`     start a REPL - prompted for REPL type (sesman-start)
-  `SPC m ,`     command menu in REPL buffer (cider-repl-handle-shortcut)
+| Key binding | Description                                              |
+|-------------|----------------------------------------------------------|
+| `SPC m '`   | start a REPL - prompted for REPL type (sesman-start)     |
+| `SPC m ,`   | command menu in REPL buffer (cider-repl-handle-shortcut) |
 
 ### Managing REPL connections
 
 Managing CIDER REPL connections and sessions
 
-  Key binding     Description
-  --------------- ------------------------------------------------------------------
-  `SPC m m b`     browse all REPL session (sesman-browser)
-  `SPC m m i`     current REPL information, `SPC u` for all sessions (sesman-info)
-  `SPC m m g`     go to most relevant REPL session (sesman-goto)
-  `SPC m m l b`   link buffer to REPL session (sesman-link-with-buffer)
-  `SPC m m l d`   link directory to REPL session (sesman-link-with-directory)
-  `SPC m m l p`   link project to REPL session (sesman-link-with-project)
-  `SPC m m l u`   unlink from REPL session (sesman-unlink)
-  `SPC m m S j`   connect as sibling to existing Clojure REPL
-  `SPC m m S s`   connect as sibling to existing ClojureScript REPL
-  `SPC m m s`     start a REPL - prompted for REPL type (sesman-start)
-  `SPC m m q q`   quit REPL session (sesman-quit)
-  `SPC m m q r`   restart REPL (sesman-restart)
+| Key binding   | Description                                                      |
+|---------------|------------------------------------------------------------------|
+| `SPC m m b`   | browse all REPL session (sesman-browser)                         |
+| `SPC m m i`   | current REPL information, `SPC u` for all sessions (sesman-info) |
+| `SPC m m g`   | go to most relevant REPL session (sesman-goto)                   |
+| `SPC m m l b` | link buffer to REPL session (sesman-link-with-buffer)            |
+| `SPC m m l d` | link directory to REPL session (sesman-link-with-directory)      |
+| `SPC m m l p` | link project to REPL session (sesman-link-with-project)          |
+| `SPC m m l u` | unlink from REPL session (sesman-unlink)                         |
+| `SPC m m S j` | connect as sibling to existing Clojure REPL                      |
+| `SPC m m S s` | connect as sibling to existing ClojureScript REPL                |
+| `SPC m m s`   | start a REPL - prompted for REPL type (sesman-start)             |
+| `SPC m m q q` | quit REPL session (sesman-quit)                                  |
+| `SPC m m q r` | restart REPL (sesman-restart)                                    |
 
 ### Documentation
 
-  Key binding   Description
-  ------------- -----------------------------
-  `SPC m h a`   cider apropos
-  `SPC m h c`   cider cheatsheet
-  `SPC m h d`   cider clojuredocs
-  `SPC m h h`   cider doc
-  `SPC m h j`   cider javadoc
-  `SPC m h n`   cider browse namespace
-  `SPC m h N`   cider browse all namespaces
-  `SPC m h s`   cider-browse-spec
-  `SPC m h S`   cider-browse-spec-all
+| Key binding | Description                 |
+|-------------|-----------------------------|
+| `SPC m h a` | cider apropos               |
+| `SPC m h c` | cider cheatsheet            |
+| `SPC m h d` | cider clojuredocs           |
+| `SPC m h h` | cider doc                   |
+| `SPC m h j` | cider javadoc               |
+| `SPC m h n` | cider browse namespace      |
+| `SPC m h N` | cider browse all namespaces |
+| `SPC m h s` | cider-browse-spec           |
+| `SPC m h S` | cider-browse-spec-all       |
 
 ### Evaluation
 
 Evaluate Clojure code in the source code buffer
 
-  Key binding     Description
-  --------------- -------------------------------------------------------------------
-  `SPC m e ;`     eval sexp and show result as comment
-  `SPC m e $`     go to end of line and eval last sexp
-  `SPC m e (`     eval \'list\' around point (sequence, list, vector, map, set)
-  `SPC m e b`     eval buffer
-  `SPC m e e`     eval last sexp
-  `SPC m e f`     eval function at point
-  `SPC m e i`     interrupt the current evaluation
-  `SPC m e l`     go to end of line and eval last sexp
-  `SPC m e m`     cider macroexpand 1
-  `SPC m e M`     cider macroexpand all
-  `SPC m e n a`   reload all namespaces (cider-ns-reload-all)
-  `SPC m e n n`   eval current namespace form (cider-eval-ns-form)
-  `SPC m e n r`   refresh namespace (cider-ns-refresh)
-  `SPC m e n l`   reload namespace (cider-ns-reload), `SPC u` (cider-ns-reload-all)
-  `SPC m e p ;`   eval top-level sexp, pretty print result as a comment
-  `SPC m e p :`   eval last sexp, pretty print result as a comment
-  `SPC m e p f`   eval top-level sexp, pretty print result in separate buffer
-  `SPC m e p e`   eval last sexp, pretty print result in separate buffer
-  `SPC m e r`     eval region
-  `SPC m e u`     Undefine a symbol from the current namespace
-  `SPC m e v`     eval sexp around point
-  `SPC m e w`     eval last sexp and replace with result
+| Key binding   | Description                                                       |
+|---------------|-------------------------------------------------------------------|
+| `SPC m e ;`   | eval sexp and show result as comment                              |
+| `SPC m e $`   | go to end of line and eval last sexp                              |
+| `SPC m e (`   | eval 'list' around point (sequence, list, vector, map, set)       |
+| `SPC m e b`   | eval buffer                                                       |
+| `SPC m e e`   | eval last sexp                                                    |
+| `SPC m e f`   | eval function at point                                            |
+| `SPC m e i`   | interrupt the current evaluation                                  |
+| `SPC m e l`   | go to end of line and eval last sexp                              |
+| `SPC m e m`   | cider macroexpand 1                                               |
+| `SPC m e M`   | cider macroexpand all                                             |
+| `SPC m e n a` | reload all namespaces (cider-ns-reload-all)                       |
+| `SPC m e n n` | eval current namespace form (cider-eval-ns-form)                  |
+| `SPC m e n r` | refresh namespace (cider-ns-refresh)                              |
+| `SPC m e n l` | reload namespace (cider-ns-reload), `SPC u` (cider-ns-reload-all) |
+| `SPC m e p ;` | eval top-level sexp, pretty print result as a comment             |
+| `SPC m e p :` | eval last sexp, pretty print result as a comment                  |
+| `SPC m e p f` | eval top-level sexp, pretty print result in separate buffer       |
+| `SPC m e p e` | eval last sexp, pretty print result in separate buffer            |
+| `SPC m e r`   | eval region                                                       |
+| `SPC m e u`   | Undefine a symbol from the current namespace                      |
+| `SPC m e v`   | eval sexp around point                                            |
+| `SPC m e w`   | eval last sexp and replace with result                            |
 
 ### Goto
 
-  Key binding   Description
-  ------------- ----------------------------------------------
-  `SPC m g b`   go back
-  `SPC m g C`   browse classpath
-  `SPC m g g`   goto var definition `spacemacs/clj-find-var`
-  `SPC m g e`   goto error
-  `SPC m g n`   goto namespace
-  `SPC m g r`   goto resource
-  `SPC m g s`   browse spec
-  `SPC m g S`   browse all specs
+| Key binding | Description                                  |
+|-------------|----------------------------------------------|
+| `SPC m g b` | go back                                      |
+| `SPC m g C` | browse classpath                             |
+| `SPC m g g` | goto var definition `spacemacs/clj-find-var` |
+| `SPC m g e` | goto error                                   |
+| `SPC m g n` | goto namespace                               |
+| `SPC m g r` | goto resource                                |
+| `SPC m g s` | browse spec                                  |
+| `SPC m g S` | browse all specs                             |
 
 ### Send code to REPL
 
 Use these key bindings when working directly with a REPL buffer. Use the
 Evaluation key bindings when evaluating in source code buffer.
 
-  Key binding         Description
-  ------------------- ----------------------------------------------------------------------------
-  `SPC m s a`         switch between REPL and last Clojure source code buffer (cider-repl)
-  `SPC m s b`         send and eval buffer in REPL
-  `SPC m s B`         send and eval buffer and switch to REPL in `insert state`
-  `SPC u SPC m s B`   same as `SPC m s B` including switching to the buffer namespace in REPL
-  `SPC m s c j`       connect to a running Clojure REPL (cider-connect-clj)
-  `SPC m s c m`       connect to a running Clojure & ClojureScript REPL (cider-connect-clj&cljs)
-  `SPC m s c s`       connect to a running ClojureScript REPL (cider-connect-cljs)
-  `SPC m s e`         send and eval last sexp in REPL
-  `SPC m s E`         send and eval last sexp and switch to REPL in `insert state`
-  `SPC m s f`         send and eval function in REPL
-  `SPC m s F`         send and eval function and switch to REPL in `insert state`
-  `SPC m s i`         start a REPL - prompt for REPL type (sesman-start)
-  `SPC m s j j`       start Clojure REPL (`cider-jack-in-clj`)
-  `SPC m s j m`       start Clojure REPL (`cider-jack-in-clj&cljs`)
-  `SPC m s j s`       start ClojureScript REPL (`cider-jack-in-cljs`)
-  `SPC m l`           clear REPL buffer (cider-repl-clear-buffer)
-  `SPC m L`           clear and switch to REPL buffer (cider-find-and-clear-repl-output)
-  `SPC m s n`         send and eval ns form in REPL
-  `SPC m s N`         send and eval ns form and switch to REPL in `insert state`
-  `SPC m s o`         switch to other repl instance (cider-repl-switch-to-other)
-  `SPC m s q n`       reload namespace in REPL (cider-ns-reload)
-  `SPC m s q N`       reload all namespace in REPL (cider-ns-reload-all)
-  `SPC m s q q`       quit REPL (cider-quit)
-  `SPC m s q r`       restart REPL (cider-restart)
-  `SPC m s r`         send and eval region in REPL
-  `SPC m s R`         send and eval region and switch to REPL in `insert state`
-  `SPC m e u`         require Clojure utils into current namespace - i.e. `doc` `source`
-  `SPC m s p`         print last sexp (clojure interaction mode only)
+| Key binding       | Description                                                                |
+|-------------------|----------------------------------------------------------------------------|
+| `SPC m s a`       | switch between REPL and last Clojure source code buffer (cider-repl)       |
+| `SPC m s b`       | send and eval buffer in REPL                                               |
+| `SPC m s B`       | send and eval buffer and switch to REPL in `insert state`                  |
+| `SPC u SPC m s B` | same as `SPC m s B` including switching to the buffer namespace in REPL    |
+| `SPC m s c j`     | connect to a running Clojure REPL (cider-connect-clj)                      |
+| `SPC m s c m`     | connect to a running Clojure & ClojureScript REPL (cider-connect-clj&cljs) |
+| `SPC m s c s`     | connect to a running ClojureScript REPL (cider-connect-cljs)               |
+| `SPC m s e`       | send and eval last sexp in REPL                                            |
+| `SPC m s E`       | send and eval last sexp and switch to REPL in `insert state`               |
+| `SPC m s f`       | send and eval function in REPL                                             |
+| `SPC m s F`       | send and eval function and switch to REPL in `insert state`                |
+| `SPC m s i`       | start a REPL - prompt for REPL type (sesman-start)                         |
+| `SPC m s j j`     | start Clojure REPL (`cider-jack-in-clj`)                                   |
+| `SPC m s j m`     | start Clojure REPL (`cider-jack-in-clj&cljs`)                              |
+| `SPC m s j s`     | start ClojureScript REPL (`cider-jack-in-cljs`)                            |
+| `SPC m l`         | clear REPL buffer (cider-repl-clear-buffer)                                |
+| `SPC m L`         | clear and switch to REPL buffer (cider-find-and-clear-repl-output)         |
+| `SPC m s n`       | send and eval ns form in REPL                                              |
+| `SPC m s N`       | send and eval ns form and switch to REPL in `insert state`                 |
+| `SPC m s o`       | switch to other repl instance (cider-repl-switch-to-other)                 |
+| `SPC m s q n`     | reload namespace in REPL (cider-ns-reload)                                 |
+| `SPC m s q N`     | reload all namespace in REPL (cider-ns-reload-all)                         |
+| `SPC m s q q`     | quit REPL (cider-quit)                                                     |
+| `SPC m s q r`     | restart REPL (cider-restart)                                               |
+| `SPC m s r`       | send and eval region in REPL                                               |
+| `SPC m s R`       | send and eval region and switch to REPL in `insert state`                  |
+| `SPC m e u`       | require Clojure utils into current namespace - i.e. `doc` `source`         |
+| `SPC m s p`       | print last sexp (clojure interaction mode only)                            |
 
 ### Tests
 
-  Key binding   Description
-  ------------- ------------------------------------
-  `SPC m t a`   run all tests in namespace
-  `SPC m t r`   re-run test failures for namespace
-  `SPC m t t`   run test at point
+| Key binding | Description                        |
+|-------------|------------------------------------|
+| `SPC m t a` | run all tests in namespace         |
+| `SPC m t r` | re-run test failures for namespace |
+| `SPC m t t` | run test at point                  |
 
 ### Toggles
 
-  Key binding   Description
-  ------------- -----------------------------
-  `SPC m T e`   toggle englighten mode
-  `SPC m T f`   toggle REPL font-locking
-  `SPC m T i`   toggle indentation style
-  `SPC m T p`   toggle REPL pretty-printing
-  `SPC m T t`   toggle auto test mode
+| Key binding | Description                 |
+|-------------|-----------------------------|
+| `SPC m T e` | toggle englighten mode      |
+| `SPC m T f` | toggle REPL font-locking    |
+| `SPC m T i` | toggle indentation style    |
+| `SPC m T p` | toggle REPL pretty-printing |
+| `SPC m T t` | toggle auto test mode       |
 
 ### Debugging
 
 TODO: separate clojure-mode and sayid key bindings
 
-  Key binding     Description
-  --------------- ----------------------------------------------------
-  `SPC m d !`     reload traces and clear sayid workspace
-  `SPC m d b`     instrument expression at point
-  `SPC m d c`     clear workspace trace log
-  `SPC m d e`     display last stacktrace
-  `SPC m d E`     one time display of value at cursor
-  `SPC m d f`     query form at point
-  `SPC m d h`     show sayid help (key bindings may not be accurate)
-  `SPC m d i`     inspect expression at point
-  `SPC m d r`     reload namespaces
-  `SPC m d s`     show what is currently traced
-  `SPC m d S`     show what is currently traced in current namespace
-  `SPC m d t b`   trace current file\'s namespace
-  `SPC m d t d`   disable existing trace on current function
-  `SPC m d t D`   disable existing trace on all functions
-  `SPC m d t e`   enable existing trace on current function
-  `SPC m d t E`   enable existing trace on all functions
-  `SPC m d t K`   remove all traces
-  `SPC m d t n`   create inner trace on function
-  `SPC m d t o`   create outer trace on function
-  `SPC m d t p`   trace namespaces by regex
-  `SPC m d t r`   remove trace on function
-  `SPC m d t y`   recursively trace every namespace in given dir
-  `SPC m d v e`   inspect last expression
-  `SPC m d v f`   inspect function at point
-  `SPC m d v i`   inspect value at point (`cider-inspect`)
-  `SPC m d v l`   inspect last result
-  `SPC m d v v`   inspect expression at point
-  `SPC m d V`     set the view
-  `SPC m d w`     open sayid workspace window
-  `SPC m d x`     clear workspace traces and log
+| Key binding   | Description                                        |
+|---------------|----------------------------------------------------|
+| `SPC m d !`   | reload traces and clear sayid workspace            |
+| `SPC m d b`   | instrument expression at point                     |
+| `SPC m d c`   | clear workspace trace log                          |
+| `SPC m d e`   | display last stacktrace                            |
+| `SPC m d E`   | one time display of value at cursor                |
+| `SPC m d f`   | query form at point                                |
+| `SPC m d h`   | show sayid help (key bindings may not be accurate) |
+| `SPC m d i`   | inspect expression at point                        |
+| `SPC m d r`   | reload namespaces                                  |
+| `SPC m d s`   | show what is currently traced                      |
+| `SPC m d S`   | show what is currently traced in current namespace |
+| `SPC m d t b` | trace current file's namespace                     |
+| `SPC m d t d` | disable existing trace on current function         |
+| `SPC m d t D` | disable existing trace on all functions            |
+| `SPC m d t e` | enable existing trace on current function          |
+| `SPC m d t E` | enable existing trace on all functions             |
+| `SPC m d t K` | remove all traces                                  |
+| `SPC m d t n` | create inner trace on function                     |
+| `SPC m d t o` | create outer trace on function                     |
+| `SPC m d t p` | trace namespaces by regex                          |
+| `SPC m d t r` | remove trace on function                           |
+| `SPC m d t y` | recursively trace every namespace in given dir     |
+| `SPC m d v e` | inspect last expression                            |
+| `SPC m d v f` | inspect function at point                          |
+| `SPC m d v i` | inspect value at point (`cider-inspect`)           |
+| `SPC m d v l` | inspect last result                                |
+| `SPC m d v v` | inspect expression at point                        |
+| `SPC m d V`   | set the view                                       |
+| `SPC m d w`   | open sayid workspace window                        |
+| `SPC m d x`   | clear workspace traces and log                     |
 
 ### Refactoring
 
 The following refactoring key bindings are enabled by default in
 clojure-mode:
 
-  Key binding     Description
-  --------------- ------------------------------------------------------------------
-  `SPC m r a n`   insert a namespace form at the beginning of the buffer
-  `SPC m r a N`   insert a namespace form at point
-  `SPC m r c i`   cycle between if and if-not forms
-  `SPC m r c p`   cycle privacy of defn and def forms
-  `SPC m r c (`   convert coll to list
-  `SPC m r c '`   convert coll to quoted list
-  `SPC m r c {`   convert coll to map
-  `SPC m r c #`   convert coll to set
-  `SPC m r c [`   convert coll to vector
-  `SPC m r s n`   sort namespaces inside the ns form
-  `SPC m r t f`   rewrite the following form to use the -\> (thread first) macro.
-  `SPC m r t l`   rewrite the following form to use the -\>\> (thread last) macro.
-  `SPC m r t h`   thread another form into the surrounding threading macro
-  `SPC m r u a`   unwind all steps of surrounding threading macro
-  `SPC m r u w`   unwind threading macro one step at a time
+| Key binding   | Description                                                      |
+|---------------|------------------------------------------------------------------|
+| `SPC m r a n` | insert a namespace form at the beginning of the buffer           |
+| `SPC m r a N` | insert a namespace form at point                                 |
+| `SPC m r c i` | cycle between if and if-not forms                                |
+| `SPC m r c p` | cycle privacy of defn and def forms                              |
+| `SPC m r c (` | convert coll to list                                             |
+| `SPC m r c '` | convert coll to quoted list                                      |
+| `SPC m r c {` | convert coll to map                                              |
+| `SPC m r c #` | convert coll to set                                              |
+| `SPC m r c [` | convert coll to vector                                           |
+| `SPC m r s n` | sort namespaces inside the ns form                               |
+| `SPC m r t f` | rewrite the following form to use the -\> (thread first) macro.  |
+| `SPC m r t l` | rewrite the following form to use the -\>\> (thread last) macro. |
+| `SPC m r t h` | thread another form into the surrounding threading macro         |
+| `SPC m r u a` | unwind all steps of surrounding threading macro                  |
+| `SPC m r u w` | unwind threading macro one step at a time                        |
 
 The following refactorings require cljr-refactor to be enabled and
 generally depend on a connected CIDER session.
 
-  Key binding     Description
-  --------------- -----------------------------------
-  `SPC m r ?`     describe refactoring
-  `SPC m r a d`   add declaration
-  `SPC m r a i`   add import to ns
-  `SPC m r a m`   add missing libspec
-  `SPC m r a p`   add project dependency
-  `SPC m r a r`   add require to ns
-  `SPC m r a u`   add use to ns
-  `SPC m r c :`   toggle between keyword and string
-  `SPC m r c n`   clean ns
-  `SPC m r d k`   destructure keys
-  `SPC m r e c`   extract constant
-  `SPC m r e d`   extract definition
-  `SPC m r e f`   extract function
-  `SPC m r e l`   expand let
-  `SPC m r f u`   find usages
-  `SPC m r f e`   create fn from example
-  `SPC m r h d`   hotload dependency
-  `SPC m r i l`   introduce let
-  `SPC m r i s`   inline symbol
-  `SPC m r m f`   move form
-  `SPC m r m l`   move to let
-  `SPC m r p c`   project clean
-  `SPC m r p f`   promote function
-  `SPC m r r d`   remove debug fns
-  `SPC m r r f`   rename file
-  `SPC m r r l`   remove let
-  `SPC m r r r`   remove unused requires
-  `SPC m r r s`   rename symbol
-  `SPC m r r u`   replace use
-  `SPC m r s n`   sort ns
-  `SPC m r s p`   sort project dependencies
-  `SPC m r s r`   stop referring
-  `SPC m r s c`   show changelog
-  `SPC m r u p`   update project dependencies
+| Key binding   | Description                       |
+|---------------|-----------------------------------|
+| `SPC m r ?`   | describe refactoring              |
+| `SPC m r a d` | add declaration                   |
+| `SPC m r a i` | add import to ns                  |
+| `SPC m r a m` | add missing libspec               |
+| `SPC m r a p` | add project dependency            |
+| `SPC m r a r` | add require to ns                 |
+| `SPC m r a u` | add use to ns                     |
+| `SPC m r c :` | toggle between keyword and string |
+| `SPC m r c n` | clean ns                          |
+| `SPC m r d k` | destructure keys                  |
+| `SPC m r e c` | extract constant                  |
+| `SPC m r e d` | extract definition                |
+| `SPC m r e f` | extract function                  |
+| `SPC m r e l` | expand let                        |
+| `SPC m r f u` | find usages                       |
+| `SPC m r f e` | create fn from example            |
+| `SPC m r h d` | hotload dependency                |
+| `SPC m r i l` | introduce let                     |
+| `SPC m r i s` | inline symbol                     |
+| `SPC m r m f` | move form                         |
+| `SPC m r m l` | move to let                       |
+| `SPC m r p c` | project clean                     |
+| `SPC m r p f` | promote function                  |
+| `SPC m r r d` | remove debug fns                  |
+| `SPC m r r f` | rename file                       |
+| `SPC m r r l` | remove let                        |
+| `SPC m r r r` | remove unused requires            |
+| `SPC m r r s` | rename symbol                     |
+| `SPC m r r u` | replace use                       |
+| `SPC m r s n` | sort ns                           |
+| `SPC m r s p` | sort project dependencies         |
+| `SPC m r s r` | stop referring                    |
+| `SPC m r s c` | show changelog                    |
+| `SPC m r u p` | update project dependencies       |
 
 ### Reformatting
 
-  Key binding     Description
-  --------------- -------------------------
-  `SPC m = =`     reformat current buffer
-  `SPC m = e b`   reformat edn buffer
-  `SPC m = e e`   reformat edn last sexp
-  `SPC m = e r`   reformat edn region
-  `SPC m = f`     reformat current sexp
-  `SPC m = l`     realign current form
-  `SPC m = r`     realign current region
+| Key binding   | Description             |
+|---------------|-------------------------|
+| `SPC m = =`   | reformat current buffer |
+| `SPC m = e b` | reformat edn buffer     |
+| `SPC m = e e` | reformat edn last sexp  |
+| `SPC m = e r` | reformat edn region     |
+| `SPC m = f`   | reformat current sexp   |
+| `SPC m = l`   | realign current form    |
+| `SPC m = r`   | realign current region  |
 
 ### Profiling
 
-  Key binding   Description
-  ------------- ----------------------
-  `SPC m p +`   profile samples
-  `SPC m p c`   clear profile
-  `SPC m p n`   toggle profile ns
-  `SPC m p s`   profile summary
-  `SPC m p S`   summary for all
-  `SPC m p t`   toggle profile
-  `SPC m p v`   is variable profiled
+| Key binding | Description          |
+|-------------|----------------------|
+| `SPC m p +` | profile samples      |
+| `SPC m p c` | clear profile        |
+| `SPC m p n` | toggle profile ns    |
+| `SPC m p s` | profile summary      |
+| `SPC m p S` | summary for all      |
+| `SPC m p t` | toggle profile       |
+| `SPC m p v` | is variable profiled |
 
 CIDER Buffers
 -------------
@@ -830,106 +830,106 @@ In general, `q` should always quit the popped up buffer.
 
 ### cider-repl-mode
 
-  Key binding   Description
-  ------------- ----------------
-  `C-j`         next input
-  `C-k`         previous input
+| Key binding | Description    |
+|-------------|----------------|
+| `C-j`       | next input     |
+| `C-k`       | previous input |
 
 ### stacktrace-mode
 
-  Key binding   Description
-  ------------- ---------------------
-  `C-j`         next cause
-  `C-k`         previous cause
-  `TAB`         cycle current cause
-  `0`           cycle all causes
-  `1`           cycle cause 1
-  `2`           cycle cause 2
-  `3`           cycle cause 3
-  `4`           cycle cause 4
-  `5`           cycle cause 5
-  `a`           toggle all
-  `c`           toggle clj
-  `d`           toggle duplicates
-  `J`           toggle java
-  `r`           toggle repl
-  `T`           toggle tooling
+| Key binding | Description         |
+|-------------|---------------------|
+| `C-j`       | next cause          |
+| `C-k`       | previous cause      |
+| `TAB`       | cycle current cause |
+| `0`         | cycle all causes    |
+| `1`         | cycle cause 1       |
+| `2`         | cycle cause 2       |
+| `3`         | cycle cause 3       |
+| `4`         | cycle cause 4       |
+| `5`         | cycle cause 5       |
+| `a`         | toggle all          |
+| `c`         | toggle clj          |
+| `d`         | toggle duplicates   |
+| `J`         | toggle java         |
+| `r`         | toggle repl         |
+| `T`         | toggle tooling      |
 
 ### inspector-mode
 
-  Key binding   Description
-  ------------- ---------------------------------
-  `TAB`         next inspectable object
-  `Shift-TAB`   previous inspectable object
-  `RET`         inspect object
-  `L`           pop to the parent object
-  `n`           next page in paginated view
-  `N`           previous page in paginated view
-  `r`           refresh
-  `s`           set a new page size
+| Key binding | Description                     |
+|-------------|---------------------------------|
+| `TAB`       | next inspectable object         |
+| `Shift-TAB` | previous inspectable object     |
+| `RET`       | inspect object                  |
+| `L`         | pop to the parent object        |
+| `n`         | next page in paginated view     |
+| `N`         | previous page in paginated view |
+| `r`         | refresh                         |
+| `s`         | set a new page size             |
 
 ### test-report-mode
 
-  Key binding   Description
-  ------------- --------------------
-  `C-j`         next result
-  `C-k`         previous result
-  `RET`         jump to test
-  `d`           ediff test result
-  `e`           show stacktrace
-  `r`           rerun failed tests
-  `t`           run test
-  `T`           run tests
+| Key binding | Description        |
+|-------------|--------------------|
+| `C-j`       | next result        |
+| `C-k`       | previous result    |
+| `RET`       | jump to test       |
+| `d`         | ediff test result  |
+| `e`         | show stacktrace    |
+| `r`         | rerun failed tests |
+| `t`         | run test           |
+| `T`         | run tests          |
 
 Sayid Buffers
 -------------
 
 ### sayid-mode
 
-  Key binding          Description
-  -------------------- ---------------------------------------------------
-  `Shift-Backspace`    forward buffer state
-  `enter`              pop to function
-  `d`                  def value to \$s/\*
-  `f`                  query for calls to function
-  `F`                  query to calls to function with modifier
-  `i`                  show only this instance
-  `I`                  show only this instance with modifier
-  `L` or `Backspace`   previous buffer state
-  `n`                  jump to next call
-  `N`                  jump to previous call
-  `P`                  pretty print value
-  `C`                  clear workspace trace log
-  `e`                  generate instance expression and put in kill ring
-  `H`                  display help (key bindings may not be accurate)
-  `w`                  show full workspace trace
-  `C-s v`              toggle view
-  `C-s V`              set view
+| Key binding        | Description                                       |
+|--------------------|---------------------------------------------------|
+| `Shift-Backspace`  | forward buffer state                              |
+| `enter`            | pop to function                                   |
+| `d`                | def value to $s/\*                                |
+| `f`                | query for calls to function                       |
+| `F`                | query to calls to function with modifier          |
+| `i`                | show only this instance                           |
+| `I`                | show only this instance with modifier             |
+| `L` or `Backspace` | previous buffer state                             |
+| `n`                | jump to next call                                 |
+| `N`                | jump to previous call                             |
+| `P`                | pretty print value                                |
+| `C`                | clear workspace trace log                         |
+| `e`                | generate instance expression and put in kill ring |
+| `H`                | display help (key bindings may not be accurate)   |
+| `w`                | show full workspace trace                         |
+| `C-s v`            | toggle view                                       |
+| `C-s V`            | set view                                          |
 
 ### sayid-traced-mode
 
-  Key binding   Description
-  ------------- -------------------------------------------------
-  `backspace`   go back to trace overview
-  `enter`       drill into ns at point
-  `e`           enable trace
-  `E`           enable all traces
-  `d`           disable trace
-  `D`           disable all traces
-  `h`           display help (key bindings may not be accurate)
-  `i`           apply inner trace to function at point
-  `o`           apply outer trace to function at point
-  `r`           remove trace at point
+| Key binding | Description                                     |
+|-------------|-------------------------------------------------|
+| `backspace` | go back to trace overview                       |
+| `enter`     | drill into ns at point                          |
+| `e`         | enable trace                                    |
+| `E`         | enable all traces                               |
+| `d`         | disable trace                                   |
+| `D`         | disable all traces                              |
+| `h`         | display help (key bindings may not be accurate) |
+| `i`         | apply inner trace to function at point          |
+| `o`         | apply outer trace to function at point          |
+| `r`         | remove trace at point                           |
 
 ### sayid-pprint
 
-  Key binding   Description
-  ------------- -----------------------------
-  `enter`       show path in minibuffer
-  `i`           enter child node
-  `o`           enter parent node
-  `n`           enter next sibling node
-  `p`           enter previous sibling node
+| Key binding | Description                 |
+|-------------|-----------------------------|
+| `enter`     | show path in minibuffer     |
+| `i`         | enter child node            |
+| `o`         | enter parent node           |
+| `n`         | enter next sibling node     |
+| `p`         | enter previous sibling node |
 
 Development Notes
 =================
@@ -940,6 +940,6 @@ Indentation
 With a [Indentation
 spec](https://github.com/clojure-emacs/cider/blob/master/doc/modules/ROOT/pages/indent_spec.adoc)
 functionality of Cider to read the custom indentation rules from the
-var\'s metadata, it is better for consistency reasons to not add the
+var's metadata, it is better for consistency reasons to not add the
 custom indentation rules to Spacemacs, but to add them to the metadata
 of those specific vars.

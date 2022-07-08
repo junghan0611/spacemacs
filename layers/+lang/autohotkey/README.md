@@ -5,11 +5,11 @@ Description
 
 Syntax highlighting and Emacs functions for use with
 [AutoHotkey](https://autohotkey.com/) or
-[AutoHotkey~L~](http://ahkscript.org).
+[AutoHotkey<sub>L</sub>](http://ahkscript.org).
 
-Using a combined implementation of ahk-mode from Xah Lee\'s `xahk-mode`
-and Robert Widhopf-Fenk\'s `autohotkey-mode`. Updated with the latest
-ahk and ahk~l~ commands found in the latest revision of
+Using a combined implementation of ahk-mode from Xah Lee's `xahk-mode`
+and Robert Widhopf-Fenk's `autohotkey-mode`. Updated with the latest ahk
+and ahk<sub>l</sub> commands found in the latest revision of
 [SciTE4AutoHotkey](http://fincs.ahk4.net/scite4ahk/).
 
 Contributed and maintained by [Rich
@@ -33,10 +33,10 @@ need to add `autohotkey` to the existing
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ------------------------------------
-  `SPC m c b`   block comment
-  `SPC m c c`   line comment
-  `SPC m e b`   execute file with `autohotkey.exe`
-  `SPC m h h`   open documentation in `browser`
-  `SPC m h H`   open documentation in local `chm`
+| Key binding | Description                        |
+|-------------|------------------------------------|
+| `SPC m c b` | block comment                      |
+| `SPC m c c` | line comment                       |
+| `SPC m e b` | execute file with `autohotkey.exe` |
+| `SPC m h h` | open documentation in `browser`    |
+| `SPC m h H` | open documentation in local `chm`  |

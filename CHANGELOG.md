@@ -48,7 +48,7 @@ Release 0.200.x
 -   Throw an error instead of a warning if emacs version is too old
     (thanks to deb0ch)
 -   Refactor `rotate-windows` (thanks to bmag)
--   Don\'t toggle maximized window at startup if already maximized
+-   Don't toggle maximized window at startup if already maximized
     (thanks to TheBB)
 -   Set default value of `dotspacemacs-enable-paste-transient-state` to
     nil to reflect its value in the doftile template (tanks to toupeira)
@@ -157,7 +157,7 @@ Release 0.200.x
 9.  Elixir
 
     -   Add support for `credo` (denin)
-    -   Prevent from inserting too many \"end\"s in Elixir (thanks to
+    -   Prevent from inserting too many "end"s in Elixir (thanks to
         michalmuskala)
 
 10. Emacs Lisp
@@ -351,16 +351,15 @@ Release 0.200.x
 
 ### Fixes
 
--   More robust fix for error helm :config: \'fuzzy-match\' not
-    supported in async sources
+-   More robust fix for error helm :config: 'fuzzy-match' not supported
+    in async sources
 
 0.200.6 (2017/01/01)
 --------------------
 
 ### Fixes
 
--   Fix error helm :config: \'fuzzy-match\' not supported in async
-    sources
+-   Fix error helm :config: 'fuzzy-match' not supported in async sources
 
 0.200.5 (2016/11/03)
 --------------------
@@ -507,7 +506,7 @@ Release 0.200.x
 
 16. Nim
 
-    -   Add support `nimsuggest` for better completion using Nim\'s IDE
+    -   Add support `nimsuggest` for better completion using Nim's IDE
         tool (thanks to tuhdo)
     -   Add support for `eldoc` via `nimsuggest` (thanks to tuhdo)
     -   New key bindings for code navigation:
@@ -530,9 +529,8 @@ Release 0.200.x
     -   Use `semantic` for `imenu` only when `semantic-mode` is enabled
         (thanks to bmag)
     -   Improve `spacemacs/python-execute-file` on `SPC m c c` to
-        pre-fill \"python \<filename\>\" as the compile command when
-        using the universal prefix argument `SPC u SPC m c c` (thanks to
-        bmag)
+        pre-fill "python \<filename\>" as the compile command when using
+        the universal prefix argument `SPC u SPC m c c` (thanks to bmag)
 
 19. Ruby
 
@@ -666,7 +664,7 @@ Release 0.200.x
     for example.
 -   Key binding `SPC :` acting as `M-x` as been replaced by `SPC SPC`.
     If you want to revert to the old `SPC :` key binding set the new
-    variable `dotspacemacs-emacs-command-key` to \":\".
+    variable `dotspacemacs-emacs-command-key` to ":".
 -   Key binding `SPC f e h` is now `SPC h SPC`
 -   Key bindings to delete things are now more consistent and use the
     `d` key. We moved `SPC w c` and `SPC w C` to `SPC w d` and
@@ -734,8 +732,8 @@ Release 0.200.x
 -   New transient states powered by `Hydra`, they replace the deprecated
     micro states (thanks to justbur)
 -   New `jump to definition` abstraction to handle multiple jump
-    backends like tags, dumb-jump etc... (thanks to TheBB)
--   Global access to all available REPLs with `SPC a '` and \`SPC m \'\~
+    backends like tags, dumb-jump etc… (thanks to TheBB)
+-   Global access to all available REPLs with `SPC a '` and \`SPC m '\~
     (thanks to AlejandroCatalina and TheBB)
 -   New debugging tools:
     -   press `SPC q d` to restart Emacs in debug mode with command line
@@ -844,7 +842,7 @@ Release 0.200.x
             uninstall any unused packages as well as their unused
             dependencies.
         -   `used-but-keep-unused` installs only the used packages but
-            won\'t uninstall them if they become unused.
+            won't uninstall them if they become unused.
         -   `all` installs **all** packages supported by Spacemacs and
             never uninstall them.
 
@@ -863,9 +861,8 @@ Release 0.200.x
     -   New variable `dotspacemacs-smart-closing-parenthesis`. If
         non-nil pressing the closing parenthesis `)` key in insert mode
         passes over any automatically added closing parenthesis,
-        bracket, quote, etc... This can be temporary disabled by
-        pressing `C-q` before `)`. Default is nil. (thanks to
-        StreakyCobra)
+        bracket, quote, etc… This can be temporary disabled by pressing
+        `C-q` before `)`. Default is nil. (thanks to StreakyCobra)
     -   New variable `dotspacemacs-retain-visual-mode-on-shift`, If non
         nil `>` is remapped to `>gv` and `<` is remapped to `<gv` in
         visual mode, default value is nil (thanks to Stebalien)
@@ -1107,8 +1104,8 @@ Release 0.200.x
 -   Disable tilde fringe in `messages` and `which-key` buffers (thanks
     to sooheon)
 -   Disable smartparens highlighting (thanks to TheBB)
--   Diminish `visual-mode` to \" Ⓛ\" or \" L\" to match key binding
-    (thanks to xiaohanyu)
+-   Diminish `visual-mode` to " Ⓛ" or " L" to match key binding (thanks
+    to xiaohanyu)
 -   Diminish `evil-mc` when there is no cursor.
 -   Move `org` base configuration from the `org` layer to the
     `spacemacs` distribution (thanks to d12frosted)
@@ -1183,7 +1180,7 @@ Release 0.200.x
 
 6.  Better defaults
 
-    -   Add \"smart move end of line\" behaviour and add two layer
+    -   Add "smart move end of line" behaviour and add two layer
         variables allow for tweaking C-a and C-e behaviours:
         -   `better-defaults-move-to-beginning-of-code-first`
         -   `better-defaults-move-to-end-of-code-first`
@@ -1457,7 +1454,7 @@ Release 0.200.x
         utkarshkukreti)
     -   Make `pug` files use `jade-mode` since Jade is now called Pug
         (thanks to robbyoconnor)
-    -   Fix `emmet` expansion if `yasnippet` isn\'t turned on (thanks to
+    -   Fix `emmet` expansion if `yasnippet` isn't turned on (thanks to
         TheBB)
 
 34. Idris
@@ -1488,7 +1485,7 @@ Release 0.200.x
 36. Jabber
 
     -   Add support for evilified key bindings (thanks to mssun)
-    -   Don\'t overwrite mini-buffer when active (thanks to toshism)
+    -   Don't overwrite mini-buffer when active (thanks to toshism)
 
 37. Java
 
@@ -1525,7 +1522,7 @@ Release 0.200.x
         values are `eww` (built-in browser) or `vmd` (installed with
         `npm`)
     -   Add package `vmd-mode` (thanks to bixuanzju)
-    -   New key binding `SPC m c P` to live preview in Emacs\'s built-in
+    -   New key binding `SPC m c P` to live preview in Emacs's built-in
         browser (thanks to lunaryorn)
 
 41. mu4e
@@ -1541,7 +1538,7 @@ Release 0.200.x
         (thanks to myrjola)
     -   Enable `org-mu4e` (thanks to choppsv1)
     -   Use `helm--completing-read-default` (thanks to jeizsm)
-    -   Improve set account by \"to\" field (thanks to sorpaas)
+    -   Improve set account by "to" field (thanks to sorpaas)
 
 42. OCaml
 
@@ -1692,19 +1689,20 @@ Release 0.200.x
     -   Only disable `semantic-idle-summary` if `anaconda-mode` is used
         (thanks to cpaulik)
     -   Set `comment-inline-offset` to 2 for `python-mode` Since
-        python\'s PEP8 recommends two spaces for inline spaces (thanks
-        to xiaohanyu)
+        python's PEP8 recommends two spaces for inline spaces (thanks to
+        xiaohanyu)
     -   Set breakpoints correctly when `pyenv` is used (thanks to
         cpaulik)
 
 50. React
 
     -   Add support for `smartparens` (thanks to axyz)
-    -   Add \"^import^ React\" to `magic-mode-alist` (thanks to axyz)
+    -   Add "<sup>import</sup> React" to `magic-mode-alist` (thanks to
+        axyz)
     -   Add `javascript-standard` as a `flycheck` checker (thanks to
         shahinism)
-    -   Use node~modules~ version of eslint or global if not available
-        (thanks axyz)
+    -   Use node<sub>modules</sub> version of eslint or global if not
+        available (thanks axyz)
 
 51. Restclient
 
@@ -1824,7 +1822,7 @@ Release 0.200.x
         to it.
     -   Improve `flycheck` loading process (thanks to TheBB)
     -   Enable lazy loading of `flycheck`.
-    -   Don\'t switch to `error-list` window if already on it (thanks to
+    -   Don't switch to `error-list` window if already on it (thanks to
         bmag)
     -   Fix bug where errors are not filtered correctly when setting
         `flycheck-navigation-minimum-level` (thanks to maxigit)
@@ -1846,7 +1844,7 @@ Release 0.200.x
     -   Add typescript format and make tide formatter the default
         (thanks to JAremko)
     -   Add support for `evil-shift-width` (thanks to TheBB)
-    -   Allow `tsfmt` to use the local project\'s configuration (thanks
+    -   Allow `tsfmt` to use the local project's configuration (thanks
         to overminder)
     -   Swap `C-j` and `C-k` in tide reference mode (thanks to
         zilongshanren)
@@ -1929,8 +1927,8 @@ Release 0.200.x
 -   New keywords for `spacemacs|add-toggle` macro:
     -   `:prefix` a symbol that is bound to the raw prefix argument (as
         in `(interactive "P")` forms).
-    -   `:on-message` an expression overriding the default \"on\" toggle
-        message (useful to document a toggle\'s argument)
+    -   `:on-message` an expression overriding the default "on" toggle
+        message (useful to document a toggle's argument)
     -   `:mode` a minor mode, when provided, `:on`, `:off` and `:status`
         are automatically defined to support the minor mode.
 
@@ -2252,7 +2250,7 @@ Release 0.105.x
 
 6.  Org
 
-    -   Fix custom Spacemacs layout when `org-agenda-files` isn\'t a
+    -   Fix custom Spacemacs layout when `org-agenda-files` isn't a
         list. The org-agenda-files variable can be the name of a
         directory or a file. (thanks to jmiven)
 
@@ -2314,8 +2312,8 @@ Improve loading robustness:
 -   Fix display of recent bookmarks without filename (thanks to lislon)
 -   Fix `toggle-maximize-buffer` (thanks to justbur)
 -   Remove files from rollback slot list (thanks to microamp)
--   Don\'t catch errors while loading if `--debug-init` is provided.
--   Don\'t change scratch major mode if buffer exists (thanks to TheBB)
+-   Don't catch errors while loading if `--debug-init` is provided.
+-   Don't change scratch major mode if buffer exists (thanks to TheBB)
 -   Restore windows layout when quitting `ediff` (thanks to fbergroth)
 -   Ensure that `pcache-directory` ends in a slash (thanks to
     rpglover64)
@@ -2347,7 +2345,7 @@ Improve loading robustness:
 
 2.  C-C++
 
-    -   Get `clang` args even if `flycheck` isn\'t installed (thanks to
+    -   Get `clang` args even if `flycheck` isn't installed (thanks to
         TheBB)
 
 3.  Clojure
@@ -2451,7 +2449,7 @@ Improve loading robustness:
 ### Improvements
 
 -   Fix error on Microsoft Windows 10 OS regarding missing `printf`
-    command (don\'t call `exec-path-from-shell` function on Microsoft
+    command (don't call `exec-path-from-shell` function on Microsoft
     Windows) (thanks to syohex)
 -   New key bindings `C-e` and `C-y` in evilified buffers to scroll
     lines (thanks to CestDiego)
@@ -2585,7 +2583,7 @@ Improve loading robustness:
 
     -   Add `~/.spacemacs.d/snippets` directory to the snippet sources
         of yasnippet.
-    -   Don\'t enter `evil-insert-state` after `aya-expand` when
+    -   Don't enter `evil-insert-state` after `aya-expand` when
         `holy-mode` if active (thanks to abaw)
 
 0.105.4 (2016/01/07)
@@ -2871,7 +2869,7 @@ Improve loading robustness:
 -   Add custom info+ mode-line (thanks to TheBB)
 -   Add `bug-reference-prog-mode` to `prog-mode-hook` (thanks to
     lunaryorn)
--   Add the ability to search with `ag`, `pt` etc... when pressing `C-s`
+-   Add the ability to search with `ag`, `pt` etc… when pressing `C-s`
     in `helm-projectile-switch-project` (`SPC p p`) (thanks to TheBB)
 -   Add case insensitive alphabetical sort of `which-key` buffers
 -   Add `gg` and `G` support in `neotree` buffers (thanks to synic)
@@ -3091,9 +3089,9 @@ Improve loading robustness:
     -   New key bindings for testing:
         -   `SPC m t P` to run `go test` for the current package and all
             packages under it \|
-        -   `SPC m t t` to run `go test` for the function you\'re
+        -   `SPC m t t` to run `go test` for the function you're
             currently in and `SPC m t s` to run `go test` for the suite
-            you\'re currently in
+            you're currently in
 
         (thanks to bogdanteleaga)
     -   Import `GO15VENDOREXPERIMENT` from environment variables (thanks
@@ -3332,7 +3330,7 @@ Improve loading robustness:
         lunaryorn)
     -   New key binding `SPC m b b` for `sbt-command` (thanks to
         lunaryorn)
-    -   Enable Ensime\'s `expand-region` integration (thanks to
+    -   Enable Ensime's `expand-region` integration (thanks to
         lunaryorn)
     -   Only disable `flycheck` Scala syntax checker in Ensime (thanks
         to lunaryorn)
@@ -3394,7 +3392,7 @@ Improve loading robustness:
     -   New key bindings `SPC e s` and `SPC e S` to select `flycheck`
         checker executable (thanks to nashamri)
     -   Fix escaping in buffer name regexp (thanks to lunaryorn)
-    -   Remove flycheck fringe\'s bullet underlines (thanks to
+    -   Remove flycheck fringe's bullet underlines (thanks to
         StreakyCobra)
 
 40. Themes-megapack
@@ -3413,7 +3411,7 @@ Improve loading robustness:
     -   New key bindings `SPC T d` and `SPC T C-d` to toggle diff margin
         in the fringe (thanks to ralesi)
     -   New micro-state on `SPC g .` to stage, unstage, commit, show
-        diff, show hunks, etc... (thanks to ralesi)
+        diff, show hunks, etc… (thanks to ralesi)
     -   Add support for multiple gutter backends: `diff-hl`,
         `git-gutter` and `git-gutter+` (thanks to ralesi)
 
@@ -3563,7 +3561,7 @@ Release 0.104.x
 
 1.  Eyebrowse
 
-    -   Eyebrowse doesn\'t have a lighter anymore (thanks to myrjola)
+    -   Eyebrowse doesn't have a lighter anymore (thanks to myrjola)
 
 2.  Haskell
 
@@ -3609,7 +3607,7 @@ Release 0.104.x
     -   Replace obsolete function `vagrant-tramp-enable` by the function
         `vagrant-tramp-add-method` (thanks to joehillen)
 
-### Core {#core-2}
+### Core
 
 -   Prevent bootstrap packages from being automatically uninstalled
     (thanks to TheBB)
@@ -3643,7 +3641,7 @@ Release 0.104.x
 
     -   Fix `SPC m c r` binding (thanks to tko)
 
-### Core {#core-3}
+### Core
 
 -   Silence `ad-handle-definition` about advised functions getting
     redefined
@@ -3701,7 +3699,7 @@ Release 0.104.x
         available on `C-S-h`.
 -   `Y` has been remapped to `y$`
 -   The `bookmark` saved file has been moved to the `.cache` directory,
-    if you have a bookmark file `~/.emacs.d/bookmarks` then you\'ll have
+    if you have a bookmark file `~/.emacs.d/bookmarks` then you'll have
     to move it to `~/.emacs.d/.cache/bookmarks`
 -   `Ruby on Rails` framework has now its own layer called
     `ruby-on-rails`, be sure to add this layer to your dotfile if you
@@ -3860,16 +3858,17 @@ Release 0.104.x
     -   Fix windows micro-state by using the minibuffer (thanks to
         person808)
     -   Fix broken alignment functions on `SPC x a` (thanks to justbur)
-    -   Don\'t jump if only one match in `helm-imenu` (thanks to tuhdo)
+    -   Don't jump if only one match in `helm-imenu` (thanks to tuhdo)
     -   Remove `wS` from prefix list in `config.el` (thanks to justbur)
     -   Properly close frame when running a client from terminal (thanks
         to drewkett)
     -   Add chocolate color for the `replace` state (thanks to TheBB)
     -   Make `Y` equivalent to `y$` (thanks to person808)
     -   Sync `visual-line-mode` and `evil-visual-xxx` functions. Now
-        `SPC t L` correctly enables `visual-mode-line` [and]{.underline}
-        change Evil to visual navigation accordingly. Use `SPC t l` to
-        disable truncated lines while keeping default Evil behavior.
+        `SPC t L` correctly enables `visual-mode-line` <span
+        class="underline">and</span> change Evil to visual navigation
+        accordingly. Use `SPC t l` to disable truncated lines while
+        keeping default Evil behavior.
     -   Reduce autosave interval for evil-jumper (thanks to ralesi)
     -   Improve evil configuration for cursors and colors (thanks to
         justbur)
@@ -3896,7 +3895,7 @@ Release 0.104.x
     -   Fix search direction consistency for `auto-highlight-symbol`
         micro-state (thanks to herbertjones)
     -   Add VCS integration to `neotree`
-    -   Focus current file when opening Neotree in project\'s root with
+    -   Focus current file when opening Neotree in project's root with
         `SPC p t` (thanks to StreakyCobra)
     -   Set `sp-show-pair-delay` to 0.2 instead of 0. Should fix some
         slowness in
@@ -3914,7 +3913,7 @@ Release 0.104.x
         sooheon)
     -   Make `golden-ratio` work after avy-word-jump (thanks to synic)
     -   Exclude `helm` windows from `golden-ratio` (thanks to ralesi)
-    -   Don\'t automatically select **compilation** buffer (thanks to
+    -   Don't automatically select **compilation** buffer (thanks to
         jasminpatry)
     -   Define explicit functions to inverse comments for
         `evil-nerd-commenter` (thanks to endrebak)
@@ -3952,7 +3951,7 @@ Release 0.104.x
 
 5.  Chinese
 
-    -   Remove \"symbol\" from list of changed charsets, this prevents
+    -   Remove "symbol" from list of changed charsets, this prevents
         minor mode lighters from being displayed in the Chinese font
         (thanks to louy2)
 
@@ -3998,8 +3997,8 @@ Release 0.104.x
     -   Rename old function `clfr-rename-file-or-dir` to new function
         `cljr-rename-file` (thanks to luxbock)
     -   Remove `SPC m d b` `cider-debug-defun-at-point` in REPL (It
-        doesn\'t do anything other than messing up the buffer) (thanks
-        to luxbock)
+        doesn't do anything other than messing up the buffer) (thanks to
+        luxbock)
     -   Gives faster access to display the last error buffer with
         `SPC m d e` (thanks to luxbock)
 
@@ -4069,7 +4068,7 @@ Release 0.104.x
 18. Git
 
     -   Make sure that git-commit is initialized so that Emacs can be
-        used as \$GITEDITOR (thanks to thrnio)
+        used as $GITEDITOR (thanks to thrnio)
     -   Remove some deprecated code (thanks to tko)
     -   Add documentation about `magit-push-always-verify` variable
         (thanks to sooheon)
@@ -4168,8 +4167,7 @@ Release 0.104.x
     -   Add new key bindings to move between complex TODO sets with
         `SPC m C-S` prefix (thanks to katshinka)
     -   Add more cycling options for time-stamps, headlines, items,
-        properties with `SPC m L`, `SPC m K`, etc... (thanks to
-        katshinka)
+        properties with `SPC m L`, `SPC m K`, etc… (thanks to katshinka)
     -   Add key bindings `SPC m .` to insert time-stamps (thanks to
         katshinka)
     -   Set `toc-org-max-depth` to 10.
@@ -4379,7 +4377,7 @@ Release 0.103.x
 0.103.6 (2015/08/30)
 --------------------
 
-### Core {#core-4}
+### Core
 
 -   Fix error with `SPC h b` (bookmarks) (thanks to sgepigon)
 
@@ -4393,7 +4391,7 @@ Release 0.103.x
     -   Fix initialization of `reveal-in-osx-finder` (thanks to
         fintelkai)
 
-### Core {#core-5}
+### Core
 
 -   Temporarily switch to HTTP instead of HTTPS to communicate with
     elpa.gnu.org (thanks to robbyoconnor)
@@ -4449,7 +4447,7 @@ Release 0.103.x
     -   Fix intermittent erroneous `k` key binding in `Magit` status
         buffer.
 
-### Core {#core-6}
+### Core
 
 -   Fix mandatory dependency on `evil-escape`
 -   Fix evilification of `evil-escape` starter key
@@ -4480,14 +4478,14 @@ Release 0.103.x
 -   Add support for Magit 2.1!
 -   Helm now uses its header to display the input pattern.
 -   Use Flycheck default configuration to check the current buffer in
-    \"real time\" (yes this is a hot new features :-))
+    "real time" (yes this is a hot new features :-))
 -   New interactive function `spacemacs/switch-to-version`, it will ask
     for a version number and warn if the current branch is not `master`.
     Users on `develop` branch cannot use this function (it has no
     effect).
 -   Clicking on the up arrow in the mode-line will now update Spacemacs.
     A prompt asks for confirmation before updating.
--   New \"tool assisted\" search and replace interface supporting `ag`,
+-   New "tool assisted" search and replace interface supporting `ag`,
     `pt`, and `ack` with a new key binding scheme. Check the
     documentation for `searching with an external tool`.
 
@@ -4690,7 +4688,7 @@ Release 0.103.x
 
 21. Ocaml
 
-    -   Don\'t auto-close backticks (thanks to edwintorok)
+    -   Don't auto-close backticks (thanks to edwintorok)
 
 22. Org
 
@@ -4773,7 +4771,7 @@ Release 0.103.x
     -   Add spacemacs-theme! (WIP) (thanks to nashamri)
     -   Add tao theme (thanks to elais)
 
-### Core {#core-7}
+### Core
 
 -   New interactive function `spacemacs/switch-to-version`
 -   Clicking on the up arrow will now update Spacemacs
@@ -4821,7 +4819,7 @@ Release 0.102.x
 
     -   Fix bug with `ox-gfm` by moving it to extensions
 
-### Core {#core-8}
+### Core
 
 -   Fix detection of new versions by correctly fetch latest changes
 
@@ -4834,7 +4832,7 @@ Release 0.102.x
 
     -   Fix lazy-loading of `ox-gfm` package.
 
-### Core {#core-9}
+### Core
 
 -   Catch layer variables syntax errors
 
@@ -4961,8 +4959,8 @@ Release 0.102.x
         tuhdo)
     -   Remove all themes from the layer (since now themes are not
         automatically uninstalled).
-    -   Don\'t use the minibuffer for `scroll` micro-state
-    -   Don\'t close compilation buffer after success (thanks to TheBB)
+    -   Don't use the minibuffer for `scroll` micro-state
+    -   Don't close compilation buffer after success (thanks to TheBB)
     -   Make `trailing-whitespace` face more subtle (thanks to tuhdo)
     -   Beautify whitespace highlighting (thanks to tuhdo)
     -   Make inactive window face of mode-line compatible with more
@@ -5267,7 +5265,7 @@ Release 0.102.x
         tuhdo)
     -   Fix wrong extra parenthesis when inserting a breakpoint (thanks
         to CestDiego)
-    -   Don\'t enable Vim key bindings in REPL if `holy-mode` is active
+    -   Don't enable Vim key bindings in REPL if `holy-mode` is active
         (thanks to tuhdo)
     -   Fix Python and Semantic integration when no `python` executable
         can be found on the system (thanks to tuhdo)
@@ -5299,14 +5297,15 @@ Release 0.102.x
 
 30. Semantic
 
-    -   Create directory for `semanticdb` if it doesn\'t exist (thanks
-        to CestDiego)
+    -   Create directory for `semanticdb` if it doesn't exist (thanks to
+        CestDiego)
 
 31. Shell
 
     -   Use `shell-pop` to toggle shell/eshell and terminals (thanks to
         tuhdo)
-    -   Add binding for EOF (^D^) in `term` (thanks to darkfeline)
+    -   Add binding for EOF (<sup>D</sup>) in `term` (thanks to
+        darkfeline)
     -   Bind `term-send-tab` only in insert state (thanks to darkfeline)
     -   `up` and `down` in shell to cycle through previous commands
         (thanks to ralesi)
@@ -5345,7 +5344,7 @@ Release 0.102.x
 
     -   Move C/C++ related configuration to `c-c++` layer.
 
-### Core {#core-10}
+### Core
 
 -   Add support for `use-package` injected hooks (not yet documented)
 -   It is now possible to create a layer directly in a known
@@ -5367,7 +5366,7 @@ Release 0.102.x
     faces, better key bindings (thanks to tuhdo)
 -   `dotspacemacs/location` now respect `dotspacemacs-filepath` value
     (thanks to coldnew)
--   Avoid conflict with hydra\'s `lv.el` (thanks to edwintorok)
+-   Avoid conflict with hydra's `lv.el` (thanks to edwintorok)
 -   Update layer templates to use `setq` instead of `defvar` (thanks to
     person808)
 
@@ -5377,7 +5376,7 @@ Release 0.102.x
     `<layer>-packages`, `<layer>-pre-extensions` and
     `<layer>-pre-extensions`.
 -   Themes in `dotspacemacs-themes` are not considered orphans anymore
--   Fix \"Unable to check for new version.\" if `.emacs.d` is a symlink
+-   Fix "Unable to check for new version." if `.emacs.d` is a symlink
     (thanks to louy2)
 -   Fix non unicode number spacing in mode-line
 -   Typos (thanks to Andrea, atamis, CarlQLange, charl, ctjhoa,
@@ -5412,25 +5411,25 @@ new functions to initialize a given package:
     package, an `init` function is still required to consider the
     package to be used.
 
-### Auto-completion {#auto-completion-8}
+### Auto-completion
 
 Spacemacs now officially support auto-completion. The old layer
 `company-mode` has been removed and `auto-complete` has been removed
 from the spacemacs layer. They are now part of a new layer called
-`auto-completion`. You\'ll have to this add layer to your dotfile to
+`auto-completion`. You'll have to this add layer to your dotfile to
 enable auto-completion.
 
-### Syntax checking {#syntax-checking-7}
+### Syntax checking
 
 Flycheck has been removed from the Spacemacs layer and moved to a new
-layer called `syntax-checking`. You\'ll have to add this layer to your
+layer called `syntax-checking`. You'll have to add this layer to your
 dotfile to enable the fly syntax checking.
 
-### Org {#org-12}
+### Org
 
 Org packages have been removed from Spacemacs layer and moved to a new
-`org` layer. You\'ll have to add this layer to your dotfile to enable
-the Org configuration of Spacemacs.
+`org` layer. You'll have to add this layer to your dotfile to enable the
+Org configuration of Spacemacs.
 
 ### New shortcuts in startup buffer
 
@@ -5478,12 +5477,12 @@ Initial Release (2015/04/13)
 
 -   Move to `auto-completion` layer
 
-### C/C++ {#cc-6}
+### C/C++
 
 -   Add key bindings `SPC m g a` and `SPC m g A` for open alternate file
     (thanks to mijoharas)
 
-### Clojure {#clojure-11}
+### Clojure
 
 -   Add `SPC m e f` eval function at point
 -   Add `cider-eval-sexp-fu`
@@ -5504,7 +5503,7 @@ Initial Release (2015/04/13)
 -   Ignore `company-quickhelp` for Emacs version \< 24.4
 -   Add support for `company` in various languages (thanks to trishume)
 
-### Emacs Lisp {#emacs-lisp-6}
+### Emacs Lisp
 
 -   Add `eval-sexp-fu` (thanks to tuhdo)
 -   Enable eldoc in eval-expression and IELM (thanks to tuhdo)
@@ -5512,7 +5511,7 @@ Initial Release (2015/04/13)
     evaluate the buffer, the current form starting by `set` or `def` and
     the region respectively (thanks to ralesi)
 
-### Ess {#ess-4}
+### Ess
 
 -   Fix loading of `ess-R-object-popup` and `ess-R-data-view` (thanks to
     jcpetkovich)
@@ -5527,7 +5526,7 @@ Initial Release (2015/04/13)
 -   Add `flycheck-pos-tip` (thanks to tuhdo)
 -   Enable flycheck for `lua` files (thanks rphillips)
 
-### Git {#git-9}
+### Git
 
 -   Add `gitconfig-mode` and `git-commit-mode` (thanks to ralesi)
 -   Add `gitattributes-mode` and `gitignore-mode` (thanks to r4ts0n)
@@ -5536,13 +5535,13 @@ Initial Release (2015/04/13)
 -   Enable Magit authentication on Windows (thanks to tuhdo)
 -   Loads `magit-gh-pulls` only after requesting it (thanks to cpaulik)
 
-### Go {#go-8}
+### Go
 
 -   Add `run-package-tests` command on `SPC m t p` (thanks to
     robmerrell)
 -   Fix path to `go-oracle` (thanks to Pursuit92)
 
-### Haskell {#haskell-11}
+### Haskell
 
 -   Move `SPC m t` and `SPC m i` under `SPC m h`
 -   Remove `hi2` (it is now integrated in `haskell-mode`)
@@ -5551,9 +5550,9 @@ Initial Release (2015/04/13)
 -   Fix `flycheck` loading
 -   Move `SPC m t` to `SPC m h t` according to Spacemacs conventions
     (thanks to jeremyjh)
--   Add C-- `cmm-mode` (thanks to bgamari)
+-   Add C– `cmm-mode` (thanks to bgamari)
 
-### Helm {#helm-3}
+### Helm
 
 -   Add `helm-colors` key binding on `SPC C l` (thanks to tuhdo)
 -   Make `helm-ff-doted-directory` consistent (thanks to tuhdo)
@@ -5583,11 +5582,11 @@ Initial Release (2015/04/13)
 -   Add ERC key bindings (thans to cpaulik)
 -   Move startup key bindings to prefix `SPC a i`
 
-### Markdown {#markdown-11}
+### Markdown
 
 -   Associate `.mkd` with `markdown-mode` (thanks to bgamari)
 
-### Org {#org-13}
+### Org
 
 -   Move to `org` layer
 -   Bind evil-leader in org-agenda-map (thanks to luxbock)
@@ -5605,38 +5604,38 @@ Initial Release (2015/04/13)
 
 -   Move projectile switch project from `SPC p S` to `SPC p p`
 
-### Python {#python-9}
+### Python
 
 -   Add helm-pydoc on `SPC m h d` (thanks to danielwuz)
 -   Fix `pylookup` configuration
 
-### Racket {#racket-4}
+### Racket
 
 -   Add key bindings for REPL interaction
 
-### Ruby {#ruby-7}
+### Ruby
 
 -   Lazy-load `projectile-rails`
 -   Remove mode-line lighter for `robe`
 
-### Scala {#scala-11}
+### Scala
 
 -   Do not enable ensime in non-file buffers (thanks to chrisbarrett)
 
-### SLIME {#slime-2}
+### SLIME
 
 -   Use slime for indentation (thanks to tuhdo)
 -   Add extension for SBCL (thanks to tuhdo)
 -   Allow to create a common lisp scratch buffer with slime-scratch
     (thanks to tuhdo)
 -   Enable fuzzy completion with score (thanks to tuhdo)
--   Don\'t enable SLIME in Emacs Lisp (thanks to tuhdo)
+-   Don't enable SLIME in Emacs Lisp (thanks to tuhdo)
 
 ### Smartparens
 
 -   Enable smartparens in eval-expression (thanks to tuhdo)
 
-### Themes {#themes-2}
+### Themes
 
 -   Fix `themes-megapack` layer where themes could not be browsed in
     Helm.
@@ -5644,7 +5643,7 @@ Initial Release (2015/04/13)
 -   Add `darktooth` theme (thanks to person808)
 -   Add `gotham` theme (thanks to person808)
 
-### ycmd {#ycmd-3}
+### ycmd
 
 -   Set global config only if not already set (thanks naseer)
 
@@ -5655,8 +5654,8 @@ Initial Release (2015/04/13)
 
 ### Various Improvements and Changes
 
--   New `evil` state called `evilified` which is used in
-    [evilified]{.underline} buffers.
+-   New `evil` state called `evilified` which is used in <span
+    class="underline">evilified</span> buffers.
 -   Remove the following packages from Spacemacs layer: `dired+`,
     `fancy-narrow`, `string-edit`, `visual-regexp-steroids` and `wdired`
 -   Rename `*-declarep` functions to `*-usedp` functions
@@ -5707,14 +5706,14 @@ Initial Release (2015/04/13)
 -   Fix double loading of `extensions.el` files
 -   Fix question for preferred coding systems on Microsoft Windows
 -   Properly enable saveplace (thanks to tuhdo)
--   Don\'t bind `C-d` in `ido-completion-map` to
+-   Don't bind `C-d` in `ido-completion-map` to
     `ido-delete-file-at-head` (thanks to segv)
--   Don\'t refer to \~/.emacs.d/ directly at various places (thanks to
+-   Don't refer to \~/.emacs.d/ directly at various places (thanks to
     jcpetkovich)
--   Don\'t want paste-micro-state to pop up when pasting in ex command
+-   Don't want paste-micro-state to pop up when pasting in ex command
     prompt (thanks to ralesi)
--   Don\'t cycle when press TAB in eshell (thanks to tuhdo)
--   Don\'t insert extra quote in dotspacemacs-mode (thanks to tuhdo)
+-   Don't cycle when press TAB in eshell (thanks to tuhdo)
+-   Don't insert extra quote in dotspacemacs-mode (thanks to tuhdo)
 -   Adapt some micro-states to the micro-state macro (thanks to ralesi)
 -   Improve smooth scrolling configuration (reduce some point jump)
     (thanks to tuhdo)
@@ -5729,33 +5728,33 @@ Hot Fixes
 
 ### Startup Buffer
 
--   Don\'t display the release notes in the startup buffer when Emacs is
+-   Don't display the release notes in the startup buffer when Emacs is
     restarted after a fresh install
 -   Startup buffer: fix widget activation in `holy-mode` (thanks to
     tuhdo)
--   Startup buffer: Don\'t fontify the startup buffer when
+-   Startup buffer: Don't fontify the startup buffer when
     `rainbow-identifiers`
 
-### Auto-completion {#auto-completion-9}
+### Auto-completion
 
 -   Fix error when toggling auto-completion in some buffers
 
-### Haskell {#haskell-12}
+### Haskell
 
 -   Add new `haskell-snippets` package (fixes error with required
     `haskell-yas`)
 -   Fix missing quote in `haskell-indentation`
 
-### Org {#org-14}
+### Org
 
 -   Org layer: exclude ox-gfm since it seems problematic for some users.
     package is used
 
-### Ruby {#ruby-8}
+### Ruby
 
 -   Fix auto-completion activation.
 
-### Themes {#themes-3}
+### Themes
 
 -   Fix conflict between official Spacemacs solarized theme and
     `color-theme-solarized` declared in `themes-megapack` layer.

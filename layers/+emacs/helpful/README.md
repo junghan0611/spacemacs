@@ -33,24 +33,24 @@ with improved versions. So it does not introduce new bindings. For the
 sake of completion you can find below all keys which are replaced by
 this layer.
 
-  Key binding   Description
-  ------------- --------------------------------------------------------
-  `SPC m h h`   Open helpful buffer for item under point in elisp mode
-  `SPC h d k`   Open helpful buffer for key binding
-  `SPC h d f`   Open helpful buffer for any callable object
-  `SPC h d v`   Open helpful buffer for variable
-  `C-h k`       Open helpful buffer for key binding
-  `C-h f`       Open helpful buffer for any callable object
-  `C-h v`       Open helpful buffer for variable
+| Key binding | Description                                            |
+|-------------|--------------------------------------------------------|
+| `SPC m h h` | Open helpful buffer for item under point in elisp mode |
+| `SPC h d k` | Open helpful buffer for key binding                    |
+| `SPC h d f` | Open helpful buffer for any callable object            |
+| `SPC h d v` | Open helpful buffer for variable                       |
+| `C-h k`     | Open helpful buffer for key binding                    |
+| `C-h f`     | Open helpful buffer for any callable object            |
+| `C-h v`     | Open helpful buffer for variable                       |
 
 Helpful mode bindings
 ---------------------
 
 Additional key bindings available in the helpful-mode buffers.
 
-  Key binding   Description
-  ------------- ----------------------------------------------------
-  `SPC m q`     Close all helpful-mode buffers
-  `gr`          Reload the buffer (e.g. to see new variable value)
-  `o`           Open link with Avy
-  `q`           Close window (buffer is kept in background)
+| Key binding | Description                                        |
+|-------------|----------------------------------------------------|
+| `SPC m q`   | Close all helpful-mode buffers                     |
+| `gr`        | Reload the buffer (e.g. to see new variable value) |
+| `o`         | Open link with Avy                                 |
+| `q`         | Close window (buffer is kept in background)        |

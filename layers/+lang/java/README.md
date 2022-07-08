@@ -34,7 +34,7 @@ Choosing a backend
 
 To choose a default backend set the layer variable `java-backend`:
 
-``` {.elisp}
+``` elisp
 (java :variables java-backend 'meghanada)
 ```
 
@@ -46,7 +46,7 @@ Backend can be chosen on a per project basis using directory local
 variables (files named `.dir-locals.el` at the root of a project), an
 example to use the `lsp` backend:
 
-``` {.elisp}
+``` elisp
 ;;; Directory Local Variables
 ;;; For more information see (info "(emacs) Directory Variables")
 
@@ -113,50 +113,50 @@ LSP Java
 
 ### Code completion
 
-  Key binding     Description
-  --------------- ------------------------------------------
-  `SPC m =`       Format code
-  `SPC m c c`     Build project
-  `SPC m c p`     Create spring boot project
-  `SPC m e a`     Execute code action
-  `SPC m e l`     List project errors/warnings
-  `SPC m g A`     Search type in project using `lsp-ui`
-  `SPC m g R`     Peek references using `lsp-ui`
-  `SPC m g a`     Search type in project
-  `SPC m g d`     Goto type definition
-  `SPC m g g`     Go to definition
-  `SPC m g k k`   Show type hierarchy
-  `SPC m g k s`   Show sub type hierarchy
-  `SPC m g k u`   Show super type hierarchy
-  `SPC m g r`     Find references
-  `SPC m h h`     Describe thing at point
-  `SPC m q r`     Restart workspace
-  `SPC m r a F`   Assign statement to field
-  `SPC m r a a`   Assign all parameters to fields
-  `SPC m r a f`   Assign parameter to field
-  `SPC m r a i`   Add import
-  `SPC m r a l`   Assign statement to local
-  `SPC m r a m`   Add unimplemented methods
-  `SPC m r a t`   Add throws exception
-  `SPC m r c f`   Create field
-  `SPC m r c i`   Convert to static import
-  `SPC m r c p`   Create parameter
-  `SPC m r e c`   Extract constant
-  `SPC m r e l`   Extract local
-  `SPC m r e m`   Extract method
-  `SPC m r g e`   Generate `equals` and `hashCode` methods
-  `SPC m r g g`   Generate getters/setters
-  `SPC m r g o`   Generate method overrides
-  `SPC m r g t`   Generate `toString` method
-  `SPC m r o i`   Organize imports
-  `SPC m r r`     Rename symbol
-  `SPC m t b`     test browser
-  `SPC m w u`     Refresh user settings
+| Key binding   | Description                              |
+|---------------|------------------------------------------|
+| `SPC m =`     | Format code                              |
+| `SPC m c c`   | Build project                            |
+| `SPC m c p`   | Create spring boot project               |
+| `SPC m e a`   | Execute code action                      |
+| `SPC m e l`   | List project errors/warnings             |
+| `SPC m g A`   | Search type in project using `lsp-ui`    |
+| `SPC m g R`   | Peek references using `lsp-ui`           |
+| `SPC m g a`   | Search type in project                   |
+| `SPC m g d`   | Goto type definition                     |
+| `SPC m g g`   | Go to definition                         |
+| `SPC m g k k` | Show type hierarchy                      |
+| `SPC m g k s` | Show sub type hierarchy                  |
+| `SPC m g k u` | Show super type hierarchy                |
+| `SPC m g r`   | Find references                          |
+| `SPC m h h`   | Describe thing at point                  |
+| `SPC m q r`   | Restart workspace                        |
+| `SPC m r a F` | Assign statement to field                |
+| `SPC m r a a` | Assign all parameters to fields          |
+| `SPC m r a f` | Assign parameter to field                |
+| `SPC m r a i` | Add import                               |
+| `SPC m r a l` | Assign statement to local                |
+| `SPC m r a m` | Add unimplemented methods                |
+| `SPC m r a t` | Add throws exception                     |
+| `SPC m r c f` | Create field                             |
+| `SPC m r c i` | Convert to static import                 |
+| `SPC m r c p` | Create parameter                         |
+| `SPC m r e c` | Extract constant                         |
+| `SPC m r e l` | Extract local                            |
+| `SPC m r e m` | Extract method                           |
+| `SPC m r g e` | Generate `equals` and `hashCode` methods |
+| `SPC m r g g` | Generate getters/setters                 |
+| `SPC m r g o` | Generate method overrides                |
+| `SPC m r g t` | Generate `toString` method               |
+| `SPC m r o i` | Organize imports                         |
+| `SPC m r r`   | Rename symbol                            |
+| `SPC m t b`   | test browser                             |
+| `SPC m w u`   | Refresh user settings                    |
 
 ### Debugger
 
-Using the `dap` layer you\'ll get access to all the DAP key bindings,
-see the complete list of key bindings on the [dap layer
+Using the `dap` layer you'll get access to all the DAP key bindings, see
+the complete list of key bindings on the [dap layer
 description](https://github.com/syl20bnr/spacemacs/tree/develop/layers/%2Btools/dap#key-bindings).
 
 Meghanada
@@ -164,69 +164,69 @@ Meghanada
 
 ### Server
 
-  Key binding   Description
-  ------------- ----------------------------------------------
-  `SPC m D c`   Connect to server
-  `SPC m D d`   Disconnect from server
-  `SPC m D i`   Install server (should be done automatically
-  `SPC m D k`   Kill server
-  `SPC m D l`   Clear server cache
-  `SPC m D p`   Ping server
-  `SPC m D r`   Restart server
-  `SPC m D s`   Start server
-  `SPC m D u`   Update server
-  `SPC m D v`   Print version of the server
+| Key binding | Description                                  |
+|-------------|----------------------------------------------|
+| `SPC m D c` | Connect to server                            |
+| `SPC m D d` | Disconnect from server                       |
+| `SPC m D i` | Install server (should be done automatically |
+| `SPC m D k` | Kill server                                  |
+| `SPC m D l` | Clear server cache                           |
+| `SPC m D p` | Ping server                                  |
+| `SPC m D r` | Restart server                               |
+| `SPC m D s` | Start server                                 |
+| `SPC m D u` | Update server                                |
+| `SPC m D v` | Print version of the server                  |
 
 ### Navigation
 
-  Key binding   Description
-  ------------- --------------------------------
-  `SPC m g b`   Jump back to previous location
-  `SPC m g g`   Jump to declaration
+| Key binding | Description                    |
+|-------------|--------------------------------|
+| `SPC m g b` | Jump back to previous location |
+| `SPC m g g` | Jump to declaration            |
 
 ### Compilation
 
-  Key binding   Description
-  ------------- -----------------------
-  `SPC m c b`   Compile file (buffer)
-  `SPC m c c`   Compile project
+| Key binding | Description           |
+|-------------|-----------------------|
+| `SPC m c b` | Compile file (buffer) |
+| `SPC m c c` | Compile project       |
 
 ### Tests (junit)
 
-  Key binding   Description
-  ------------- -----------------------------
-  `SPC m t a`   Run all tests
-  `SPC m t c`   Run test class around point
-  `SPC m t l`   Run last tests
-  `SPC m t t`   Run test cause around point
+| Key binding | Description                 |
+|-------------|-----------------------------|
+| `SPC m t a` | Run all tests               |
+| `SPC m t c` | Run test class around point |
+| `SPC m t l` | Run last tests              |
+| `SPC m t t` | Run test cause around point |
 
 ### Refactoring
 
-  Key binding   Description
-  ------------- ----------------------------------------
-  `SPC m =`     Beautify code
-  `SPC m r i`   Optimize imports
-  `SPC m r I`   Import all
-  `SPC m r n`   Create a new class, interface, or enum
+| Key binding | Description                            |
+|-------------|----------------------------------------|
+| `SPC m =`   | Beautify code                          |
+| `SPC m r i` | Optimize imports                       |
+| `SPC m r I` | Import all                             |
+| `SPC m r n` | Create a new class, interface, or enum |
 
 ### Tasks
 
-  Key binding   Description
-  ------------- -------------
-  `SPC m x :`   Run task
+| Key binding | Description |
+|-------------|-------------|
+| `SPC m x :` | Run task    |
 
 Maven
 -----
 
-  Key binding       Description
-  ----------------- ------------------------------------------------------
-  `SPC m m c c`     Compile
-  `SPC m m c C`     Clean
-  `SPC m m c r`     Clean and compile
-  `SPC m m g a`     Switch between class and test file
-  `SPC m m g A`     Switch between class and test file in another window
-  `SPC m m t a`     Run all tests
-  `SPC m m t C-a`   Clean and run all tests
-  `SPC m m t b`     Run current buffer tests
-  `SPC m m t i`     Test and install
-  `SPC m m t t`     Run a specific test
+| Key binding     | Description                                          |
+|-----------------|------------------------------------------------------|
+| `SPC m m c c`   | Compile                                              |
+| `SPC m m c C`   | Clean                                                |
+| `SPC m m c r`   | Clean and compile                                    |
+| `SPC m m g a`   | Switch between class and test file                   |
+| `SPC m m g A`   | Switch between class and test file in another window |
+| `SPC m m t a`   | Run all tests                                        |
+| `SPC m m t C-a` | Clean and run all tests                              |
+| `SPC m m t b`   | Run current buffer tests                             |
+| `SPC m m t i`   | Test and install                                     |
+| `SPC m m t t`   | Run a specific test                                  |

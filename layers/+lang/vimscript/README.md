@@ -35,7 +35,7 @@ in your dotfile. This mode only provides very limited IDE capabilities.
 Used best if only small scripts are edited. To set explicitly set the
 following in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (vimscript :variables vimscript-backend 'company-vimscript)
 ```
 
@@ -49,7 +49,7 @@ the same in all modes.
 
 To set explicitly do the following in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (vimscript :variables
            vimscript-backend 'lsp)
 ```
@@ -57,7 +57,7 @@ To set explicitly do the following in your dotfile:
 For this to work you will also need to install the latest version of the
 lsp server with below command:
 
-``` {.bash org-language="sh"}
+``` bash
 npm install -g vim-language-server
 ```
 

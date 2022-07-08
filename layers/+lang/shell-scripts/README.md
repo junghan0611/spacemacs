@@ -52,7 +52,7 @@ Format
 To support formatting of buffers you need to install the application
 shfmt. This can be done like shown below
 
-``` {.bash org-language="sh"}
+``` bash
 go install mvdan.cc/sh/v3/cmd/shfmt@latest
 ```
 
@@ -62,7 +62,7 @@ Format on save
 To enable automatic formatting on save, set the layer variable
 `shell-scripts-format-on-save` to `t`:
 
-``` {.elisp}
+``` elisp
 (shell-scripts :variables shell-scripts-format-on-save t)
 ```
 
@@ -84,7 +84,7 @@ It supports `bash` and `fish` shell scripts.
 Set `shell-scripts-backend` to `nil` explicitly to use this simple
 backend even when the `lsp` layer is loaded.
 
-``` {.elisp}
+``` elisp
 (shell-scripts :variables shell-scripts-backend nil)
 ```
 
@@ -97,7 +97,7 @@ However it only supports working with `bash` scripts.
 
 It requires installing the external server via:
 
-``` {.bash org-language="sh"}
+``` bash
 npm i -g bash-language-server
 ```
 
@@ -107,26 +107,26 @@ page](https://github.com/mads-hartmann/bash-language-server).
 Set the variable `shell-scripts-backend` to select the LSP backend
 explicitly. This will result in the `lsp` layer being loaded.
 
-``` {.elisp}
+``` elisp
 (shell-scripts :variables shell-scripts-backend 'lsp)
 ```
 
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -----------------------------------------------------------
-  `SPC m \`     insert end-of-line backslashes to the lines in the region
-  `SPC i !`     insert shebang in a script file
-  `SPC m i !`   insert shebang in a script file
-  `SPC m i c`   insert switch case statement if supported by shell
-  `SPC m i i`   insert if statement if supported by shell
-  `SPC m i f`   insert function definition if supported by shell
-  `SPC m i o`   insert for loop if supported by shell
-  `SPC m i e`   insert an indexed for loop if supported by shell
-  `SPC m i w`   insert while loop if supported by shell
-  `SPC m i r`   insert repeat loop if supported by shell
-  `SPC m i s`   insert select loop if supported by shell
-  `SPC m i u`   insert until loop if supported by shell
-  `SPC m i g`   insert a getopts while loop if supported by shell
-  `SPC m =`     format the buffer using shfmt
+| Key binding | Description                                               |
+|-------------|-----------------------------------------------------------|
+| `SPC m \`   | insert end-of-line backslashes to the lines in the region |
+| `SPC i !`   | insert shebang in a script file                           |
+| `SPC m i !` | insert shebang in a script file                           |
+| `SPC m i c` | insert switch case statement if supported by shell        |
+| `SPC m i i` | insert if statement if supported by shell                 |
+| `SPC m i f` | insert function definition if supported by shell          |
+| `SPC m i o` | insert for loop if supported by shell                     |
+| `SPC m i e` | insert an indexed for loop if supported by shell          |
+| `SPC m i w` | insert while loop if supported by shell                   |
+| `SPC m i r` | insert repeat loop if supported by shell                  |
+| `SPC m i s` | insert select loop if supported by shell                  |
+| `SPC m i u` | insert until loop if supported by shell                   |
+| `SPC m i g` | insert a getopts while loop if supported by shell         |
+| `SPC m =`   | format the buffer using shfmt                             |

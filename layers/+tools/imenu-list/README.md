@@ -2,7 +2,7 @@ Description
 ===========
 
 This layer uses [imenu-list](https://github.com/bmag/imenu-list) to show
-the current buffer\'s index in a side bar.
+the current buffer's index in a side bar.
 
 This is similar to \`SPC j i\` but displayed in a persistent sidebar
 instead of a completion buffer.
@@ -31,18 +31,18 @@ Key bindings
 From any buffer
 ---------------
 
-  Key binding   Description
-  ------------- --------------------------------------------------
-  `SPC b i`     focus imenu tree sidebar (creating if necessary)
-  `SPC T i`     toggle imenu tree sidebar
+| Key binding | Description                                      |
+|-------------|--------------------------------------------------|
+| `SPC b i`   | focus imenu tree sidebar (creating if necessary) |
+| `SPC T i`   | toggle imenu tree sidebar                        |
 
 From imenu-list buffer
 ----------------------
 
-  Key binding   Description
-  ------------- --------------------------------------------------------
-  `q`           quit imenu-list window
-  `RET`         go to current entry
-  `d`           display current entry, keep focus on imenu-list window
-  `f`           fold/unfold current section
-  `r`           refresh imenu-list window
+| Key binding | Description                                            |
+|-------------|--------------------------------------------------------|
+| `q`         | quit imenu-list window                                 |
+| `RET`       | go to current entry                                    |
+| `d`         | display current entry, keep focus on imenu-list window |
+| `f`         | fold/unfold current section                            |
+| `r`         | refresh imenu-list window                              |

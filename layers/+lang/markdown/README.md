@@ -55,7 +55,7 @@ installation instructions to install pandoc into path:
 
 Another choice is installing `Python-Markdown`:
 
-``` {.shell}
+``` shell
 pip install --user Markdown
 ```
 
@@ -72,14 +72,14 @@ markdown buffer.
 To use `vmd` (GitHub-flavored live preview) instead set the value of the
 variable `markdown-live-preview-engine` to `vmd`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 dotspacemacs-configuration-layers '(
   (markdown :variables markdown-live-preview-engine 'vmd))
 ```
 
 And install the executable with:
 
-``` {.shell}
+``` shell
 npm install -g vmd
 ```
 
@@ -93,9 +93,9 @@ Automatic MMM-Mode Generation
 To generate MMM-Modes for languages set the value of the variable
 `markdown-mmm-auto-modes` to a list of the languages. For languages
 where the mode name directly relates to the language name, use a string.
-Otherwise, use a list of \`(\"language\" \"mode\")\`:
+Otherwise, use a list of \`("language" "mode")\`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 dotspacemacs-configuration-layers '(
   (markdown :variables markdown-mmm-auto-modes '("c" "c++" "python" "scala" ("elisp" "emacs-lisp"))))
 ```
@@ -120,147 +120,147 @@ Key bindings
 Element insertion
 -----------------
 
-  Key binding   Description
-  ------------- -------------------------------------------------------------------
-  `SPC m -`     insert horizontal line
-  `SPC m h i`   insert header dwim
-  `SPC m h I`   insert header setext dwim
-  `SPC m h 1`   insert header atx 1
-  `SPC m h 2`   insert header atx 2
-  `SPC m h 3`   insert header atx 3
-  `SPC m h 4`   insert header atx 4
-  `SPC m h 5`   insert header atx 5
-  `SPC m h 6`   insert header atx 6
-  `SPC m h !`   insert header setext 1
-  `SPC m h @`   insert header setext 2
-  `SPC m i l`   insert link
-  `SPC m i u`   insert uri
-  `SPC m i f`   insert footnote
-  `SPC m i w`   insert wiki link
-  `SPC m i i`   insert image
-  `SPC m i t`   insert Table of Contents (toc)
-  `SPC m i T`   insert general markdown table
-  `SPC m x b`   make region bold or insert bold
-  `SPC m x B`   insert gfm checkbox
-  `SPC m x i`   make region italic or insert italic
-  `SPC m x c`   make region code or insert code
-  `SPC m x C`   make region code or insert code (GitHub Flavored Markdown format)
-  `SPC m x k`   make region \<kbd\> element or insert \<kbd\> element
-  `SPC m x q`   make region blockquote or insert blockquote
-  `SPC m x Q`   blockquote region
-  `SPC m x p`   make region or insert pre
-  `SPC m x P`   pre region
-  `SPC m x s`   make region striked through or insert strikethrough
+| Key binding | Description                                                       |
+|-------------|-------------------------------------------------------------------|
+| `SPC m -`   | insert horizontal line                                            |
+| `SPC m h i` | insert header dwim                                                |
+| `SPC m h I` | insert header setext dwim                                         |
+| `SPC m h 1` | insert header atx 1                                               |
+| `SPC m h 2` | insert header atx 2                                               |
+| `SPC m h 3` | insert header atx 3                                               |
+| `SPC m h 4` | insert header atx 4                                               |
+| `SPC m h 5` | insert header atx 5                                               |
+| `SPC m h 6` | insert header atx 6                                               |
+| `SPC m h !` | insert header setext 1                                            |
+| `SPC m h @` | insert header setext 2                                            |
+| `SPC m i l` | insert link                                                       |
+| `SPC m i u` | insert uri                                                        |
+| `SPC m i f` | insert footnote                                                   |
+| `SPC m i w` | insert wiki link                                                  |
+| `SPC m i i` | insert image                                                      |
+| `SPC m i t` | insert Table of Contents (toc)                                    |
+| `SPC m i T` | insert general markdown table                                     |
+| `SPC m x b` | make region bold or insert bold                                   |
+| `SPC m x B` | insert gfm checkbox                                               |
+| `SPC m x i` | make region italic or insert italic                               |
+| `SPC m x c` | make region code or insert code                                   |
+| `SPC m x C` | make region code or insert code (GitHub Flavored Markdown format) |
+| `SPC m x k` | make region \<kbd\> element or insert \<kbd\> element             |
+| `SPC m x q` | make region blockquote or insert blockquote                       |
+| `SPC m x Q` | blockquote region                                                 |
+| `SPC m x p` | make region or insert pre                                         |
+| `SPC m x P` | pre region                                                        |
+| `SPC m x s` | make region striked through or insert strikethrough               |
 
 Element removal
 ---------------
 
-  Key binding   Description
-  ------------- ---------------------
-  `SPC m k`     kill thing at point
+| Key binding | Description         |
+|-------------|---------------------|
+| `SPC m k`   | kill thing at point |
 
 Table manipulation
 ------------------
 
-  Key binding   Description
-  ------------- -------------------------
-  `SPC m t a`   align table
-  `SPC m t p`   move row up
-  `SPC m t n`   move row down
-  `SPC m t f`   move column right
-  `SPC m t b`   move column left
-  `SPC m t r`   insert row
-  `SPC m t R`   delete row
-  `SPC m t c`   insert column
-  `SPC m t C`   delete column
-  `SPC m t s`   sort lines
-  `SPC m t t`   transpose table
-  `SPC m t d`   convert region to table
+| Key binding | Description             |
+|-------------|-------------------------|
+| `SPC m t a` | align table             |
+| `SPC m t p` | move row up             |
+| `SPC m t n` | move row down           |
+| `SPC m t f` | move column right       |
+| `SPC m t b` | move column left        |
+| `SPC m t r` | insert row              |
+| `SPC m t R` | delete row              |
+| `SPC m t c` | insert column           |
+| `SPC m t C` | delete column           |
+| `SPC m t s` | sort lines              |
+| `SPC m t t` | transpose table         |
+| `SPC m t d` | convert region to table |
 
 Completion
 ----------
 
-  Key binding   Description
-  ------------- -------------
-  `SPC m ]`     complete
+| Key binding | Description |
+|-------------|-------------|
+| `SPC m ]`   | complete    |
 
 Following and Jumping
 ---------------------
 
-  Key binding   Description
-  ------------- -----------------------
-  `SPC m o`     follow thing at point
-  `RET`         jump (markdown-do)
+| Key binding | Description           |
+|-------------|-----------------------|
+| `SPC m o`   | follow thing at point |
+| `RET`       | jump (markdown-do)    |
 
 Indentation
 -----------
 
-  Key binding   Description
-  ------------- ----------------
-  `SPC m >`     indent region
-  `SPC m <`     outdent region
+| Key binding | Description    |
+|-------------|----------------|
+| `SPC m >`   | indent region  |
+| `SPC m <`   | outdent region |
 
 Header navigation
 -----------------
 
-  Key binding   Description
-  ------------- ------------------------------
-  `gj`          outline forward same level
-  `gk`          outline backward same level
-  `gh`          outline up one level
-  `gl`          outline next visible heading
+| Key binding | Description                  |
+|-------------|------------------------------|
+| `gj`        | outline forward same level   |
+| `gk`        | outline backward same level  |
+| `gh`        | outline up one level         |
+| `gl`        | outline next visible heading |
 
 Buffer-wide commands
 --------------------
 
-  Key binding   Description
-  ------------- --------------------------------------------------------------------------------------
-  `SPC m c ]`   complete buffer
-  `SPC m c m`   other window
-  `SPC m c p`   preview
-  `SPC m c P`   live preview using engine defined with layer variable `markdown-live-preview-engine`
-  `SPC m c e`   export
-  `SPC m c v`   export and preview
-  `SPC m c o`   open
-  `SPC m c w`   kill ring save
-  `SPC m c c`   check refs
-  `SPC m c n`   cleanup list numbers
-  `SPC m c r`   render buffer
+| Key binding | Description                                                                          |
+|-------------|--------------------------------------------------------------------------------------|
+| `SPC m c ]` | complete buffer                                                                      |
+| `SPC m c m` | other window                                                                         |
+| `SPC m c p` | preview                                                                              |
+| `SPC m c P` | live preview using engine defined with layer variable `markdown-live-preview-engine` |
+| `SPC m c e` | export                                                                               |
+| `SPC m c v` | export and preview                                                                   |
+| `SPC m c o` | open                                                                                 |
+| `SPC m c w` | kill ring save                                                                       |
+| `SPC m c c` | check refs                                                                           |
+| `SPC m c n` | cleanup list numbers                                                                 |
+| `SPC m c r` | render buffer                                                                        |
 
 List editing
 ------------
 
-  Key binding   Description
-  ------------- ------------------
-  `SPC m l i`   insert list item
+| Key binding | Description      |
+|-------------|------------------|
+| `SPC m l i` | insert list item |
 
 Movement
 --------
 
-  Key binding   Description
-  ------------- --------------------
-  `SPC m {`     backward paragraph
-  `SPC m }`     forward paragraph
-  `SPC m N`     next link
-  `SPC m P`     previous link
+| Key binding | Description        |
+|-------------|--------------------|
+| `SPC m {`   | backward paragraph |
+| `SPC m }`   | forward paragraph  |
+| `SPC m N`   | next link          |
+| `SPC m P`   | previous link      |
 
 Promotion, Demotion
 -------------------
 
-  Key binding          Command
-  -------------------- --------------------
-  `M-k` or `M-up`      markdown-move-up
-  `M-j` or `M-down`    markdown-move-down
-  `M-h` or `M-left`    markdown-promote
-  `M-l` or `M-right`   markdown-demote
+| Key binding        | Command            |
+|--------------------|--------------------|
+| `M-k` or `M-up`    | markdown-move-up   |
+| `M-j` or `M-down`  | markdown-move-down |
+| `M-h` or `M-left`  | markdown-promote   |
+| `M-l` or `M-right` | markdown-demote    |
 
 Toggles
 -------
 
-  Key binding   Description
-  ------------- ----------------------
-  `SPC m T i`   toggle inline images
-  `SPC m T l`   toggle hidden urls
-  `SPC m T m`   toggle markup hiding
-  `SPC m T t`   toggle checkbox
-  `SPC m T w`   toggle wiki links
+| Key binding | Description          |
+|-------------|----------------------|
+| `SPC m T i` | toggle inline images |
+| `SPC m T l` | toggle hidden urls   |
+| `SPC m T m` | toggle markup hiding |
+| `SPC m T t` | toggle checkbox      |
+| `SPC m T w` | toggle wiki links    |

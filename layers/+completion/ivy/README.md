@@ -6,7 +6,7 @@ completion by [Helm](https://github.com/emacs-helm/helm).
 
 These completion systems are the central control towers of Spacemacs,
 they are used to manage buffers, projects, search results, configuration
-layers, toggles and more...
+layers, toggles and more…
 
 Mastering your choice of completion system will make you a Spacemacs
 power user.
@@ -31,7 +31,7 @@ list in this file.
 Make sure that the other completion layers: `compleseus` and `helm` are
 removed or commented out in the `dotspacemacs-configuration-layers`
 list. Or add `ivy` below the other completion layers. Spacemacs uses the
-completion layer that\'s listed last.
+completion layer that's listed last.
 
 Configuration
 =============
@@ -45,7 +45,7 @@ You can customize ivy with the following variables:
     first or last candidate. The default value is `nil`.
 -   `ivy-extra-directories` Setting this to `nil` hides . and ..
     directories from file name completion. You can still go up a
-    directory up by `DEL`. The default value is (\"../\", \"./\").
+    directory up by `DEL`. The default value is ("../", "./").
 -   `ivy-use-virtual-buffers` Add bookmarks and recent files to buffer
     completion menu. The Spacemacs default is t.
 -   `ivy-height` The height of the minibuffer. The Spacemacs default
@@ -74,7 +74,7 @@ To display more information about buffers set the layer variable
 Note that `ivy-rich` has been reported to be very slow on `macOS`. This
 feature is disabled by default.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (ivy :variables ivy-enable-advanced-buffer-information t)))
 ```
@@ -86,7 +86,7 @@ To display icons with
 [all-the-icons-ivy-rich](https://github.com/seagle0128/all-the-icons-ivy-rich),
 set the layer variable `ivy-enable-icons` to `t`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (ivy :variables ivy-enable-icons t)))
 ```
@@ -105,36 +105,36 @@ Key bindings
 ============
 
 If you choose `ivy` as completion system, make sure to read the
-[official manual](http://oremacs.com/swiper/). In case you don\'t want
-to read everything, at least familiarise with [minibuffer key
+[official manual](http://oremacs.com/swiper/). In case you don't want to
+read everything, at least familiarise with [minibuffer key
 bindings](http://oremacs.com/swiper/#minibuffer-key-bindings).
 
 Some useful key bindings are presented in the following table.
 
-  Key binding   Description
-  ------------- -----------------------------------------------------------------------------------------------------------------------------------------------------
-  `RET`         call default action on current candidate
-  `M-RET`       the same as `RET` but doesn\'t close completion minibuffer
-  `C-RET`       when completing file names, selects the current directory candidate and starts a new completion session there, otherwise it is the same as ivy-done
-  `C-SPC`       try to preview file under point without leaving ivy
-  `C-M-j`       use current input immediately (this can be used to create a new file in Find File)
-  `TAB`         complete partially
-  `M-o`         show the list of valid actions on current candidate (then press any of described keys to execute it)
-  `C-M-o`       the same as `M-o` but doesn\'t close completion minibuffer
-  `C-'`         use avy to quickly select completion on current page (sometimes faster than using arrows)
-  `<ESC>`       close minibuffer
-  `C-M-k`       kill buffer (in `ivy-switch-buffer` (`SPC b b`))
-  `C-M-k`       kill buffer (in `ivy-reverse-i-search` (`C-r` at a prompt))
+| Key binding | Description                                                                                                                                         |
+|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
+| `RET`       | call default action on current candidate                                                                                                            |
+| `M-RET`     | the same as `RET` but doesn't close completion minibuffer                                                                                           |
+| `C-RET`     | when completing file names, selects the current directory candidate and starts a new completion session there, otherwise it is the same as ivy-done |
+| `C-SPC`     | try to preview file under point without leaving ivy                                                                                                 |
+| `C-M-j`     | use current input immediately (this can be used to create a new file in Find File)                                                                  |
+| `TAB`       | complete partially                                                                                                                                  |
+| `M-o`       | show the list of valid actions on current candidate (then press any of described keys to execute it)                                                |
+| `C-M-o`     | the same as `M-o` but doesn't close completion minibuffer                                                                                           |
+| `C-'`       | use avy to quickly select completion on current page (sometimes faster than using arrows)                                                           |
+| `<ESC>`     | close minibuffer                                                                                                                                    |
+| `C-M-k`     | kill buffer (in `ivy-switch-buffer` (`SPC b b`))                                                                                                    |
+| `C-M-k`     | kill buffer (in `ivy-reverse-i-search` (`C-r` at a prompt))                                                                                         |
 
 Mark/unmark candidates
 ----------------------
 
-  Key binding   Description
-  ------------- ---------------------------------------------------------
-  `C-.`         Mark candidate and move to next line
-  `C ,`         Unmark the selected candidate and move to the next one.
-  `C-<`         Move to the previous candidate and unmark it.
-  `C->`         Toggle mark for all narrowed candidates.
+| Key binding | Description                                             |
+|-------------|---------------------------------------------------------|
+| `C-.`       | Mark candidate and move to next line                    |
+| `C ,`       | Unmark the selected candidate and move to the next one. |
+| `C-<`       | Move to the previous candidate and unmark it.           |
+| `C->`       | Toggle mark for all narrowed candidates.                |
 
 Transient state
 ---------------
@@ -145,27 +145,27 @@ or `C-o` anytime in Ivy to get into the transient state. Additional
 actions are found in [the Hydra section of the official
 manual](https://oremacs.com/swiper/#minibuffer-key-bindings).
 
-  Key binding   Description
-  ------------- ----------------------------------------------------------
-  `j`           select next candidate
-  `k`           select previous candidate
-  `d`           call default action on candidate
-  `f`           call alternative action on candidate
-  `g`           the same as `d` but doesn\'t close completion minibuffer
-  `o`           leave transient state
-  `m`           mark candidate
-  `u`           unmark candidate
-  `t`           toggle marks
+| Key binding | Description                                             |
+|-------------|---------------------------------------------------------|
+| `j`         | select next candidate                                   |
+| `k`         | select previous candidate                               |
+| `d`         | call default action on candidate                        |
+| `f`         | call alternative action on candidate                    |
+| `g`         | the same as `d` but doesn't close completion minibuffer |
+| `o`         | leave transient state                                   |
+| `m`         | mark candidate                                          |
+| `u`         | unmark candidate                                        |
+| `t`         | toggle marks                                            |
 
 Colors/Faces
 ------------
 
-  Key binding   Description
-  ------------- -------------------------
-  `SPC C e`     `counsel-colors-emacs`
-  `SPC C f`     `counsel-colors-faces`
-  `SPC C w`     `counsel-colors-web`
-  `SPC h d F`   `counsel-describe-face`
+| Key binding | Description             |
+|-------------|-------------------------|
+| `SPC C e`   | `counsel-colors-emacs`  |
+| `SPC C f`   | `counsel-colors-faces`  |
+| `SPC C w`   | `counsel-colors-web`    |
+| `SPC h d F` | `counsel-describe-face` |
 
 Search files with ivy
 ---------------------
@@ -176,7 +176,7 @@ everything after it is treated as parameters for search app.
 
 For example:
 
-``` {.example}
+``` example
 phrase I want to search -- -t lisp
 ```
 
@@ -184,23 +184,23 @@ will search only on lisp files.
 
 Commands available while browsing the search result:
 
-  Key binding        Description
-  ------------------ ----------------------------------
-  `C-SPC` or `C-l`   Preview result
-  `C-x C-d`          Change search folder
-  `M-q`              `counsel-git-grep-query-replace`
-  `C-c C-o`          `ivy-occur`
-  `C-c C-e`          Spacemacs\'s `counsel-edit`
+| Key binding      | Description                      |
+|------------------|----------------------------------|
+| `C-SPC` or `C-l` | Preview result                   |
+| `C-x C-d`        | Change search folder             |
+| `M-q`            | `counsel-git-grep-query-replace` |
+| `C-c C-o`        | `ivy-occur`                      |
+| `C-c C-e`        | Spacemacs's `counsel-edit`       |
 
 When you `M-o` on the result list of `counsel-find-file` and file search
 result you have these following extra actions:
 
-  Key binding   Description
-  ------------- ---------------------------------
-  `f`           `find-file-other-frame`
-  `j`           `find-file-other-window`
-  `v`           `spacemacs/find-file-vsplit`
-  `s`           `spacemacs/find-file-split`
-  `l`           `find-file-literally`
-  `d`           `spacemacs/delete-file-confirm`
-  `r`           `spacemacs/rename-file`
+| Key binding | Description                     |
+|-------------|---------------------------------|
+| `f`         | `find-file-other-frame`         |
+| `j`         | `find-file-other-window`        |
+| `v`         | `spacemacs/find-file-vsplit`    |
+| `s`         | `spacemacs/find-file-split`     |
+| `l`         | `find-file-literally`           |
+| `d`         | `spacemacs/delete-file-confirm` |
+| `r`         | `spacemacs/rename-file`         |

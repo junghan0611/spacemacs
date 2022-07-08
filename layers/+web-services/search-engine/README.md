@@ -53,18 +53,18 @@ need to add `search-engine` to the existing
 Key bindings
 ============
 
-  Evil          Holy      Command
-  ------------- --------- -------------------------------------------
-  `SPC a w /`   `C-c /`   Summon a Helm buffer to select any engine
+| Evil        | Holy    | Command                                   |
+|-------------|---------|-------------------------------------------|
+| `SPC a w /` | `C-c /` | Summon a Helm buffer to select any engine |
 
 Customize it!
 =============
 
-If you\'d rather have emacs use chrome, or firefox or any other thing
+If you'd rather have emacs use chrome, or firefox or any other thing
 (`eww`) you can have that customization. For example for google chrome
 you can put this in your `dotspacemacs/user-config`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq browse-url-browser-function 'browse-url-generic
       engine/browser-function 'browse-url-generic
       browse-url-generic-program "google-chrome")
@@ -72,9 +72,9 @@ you can put this in your `dotspacemacs/user-config`:
 
 The Amazon search engine defaults to use the `.com`
 [TLD](https://en.wikipedia.org/wiki/TLD). If you want it to search on
-another country\'s website, you can specify a different one:
+another country's website, you can specify a different one:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ;; Use amazon.es site (Spain)
 (setq-default search-engine-amazon-tld "es")
 ```
@@ -94,7 +94,7 @@ The datastructure consists of a key and:
     detailed list of all supported features
     [here](https://github.com/hrs/engine-mode).
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((search-engine :variables
                    search-engine-config-list '((custom1
@@ -104,7 +104,7 @@ The datastructure consists of a key and:
                                                                       :browser 'eww-browse-url))))))
 ```
 
-If you\'d rather not use helm but would want a specific search engine,
+If you'd rather not use helm but would want a specific search engine,
 remember the function generated is always
 `engine/search-(the name of the search engine
 lower-case and hyphen instead-of-spaces-for-separation)` so you can bind

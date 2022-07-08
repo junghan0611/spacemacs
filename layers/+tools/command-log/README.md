@@ -43,7 +43,7 @@ it with the rest of the project.
 Key bindings
 ============
 
-  Key binding     Description
-  --------------- ------------------------
-  `SPC a t l l`   Toggle the command log
-  `SPC a t l k`   Toggle keycast
+| Key binding   | Description            |
+|---------------|------------------------|
+| `SPC a t l l` | Toggle the command log |
+| `SPC a t l k` | Toggle keycast         |

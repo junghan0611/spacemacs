@@ -18,18 +18,18 @@ list in this file.
 Key bindings
 ============
 
-  Key binding     Description
-  --------------- -----------------------------------------------
-  `SPC m p a p`   Add package to the current dotnet project
-  `SPC m p a r`   Add reference to the current dotnet project
-  `SPC m p b`     Build the current dotnet project
-  `SPC m p c`     Clean the current dotnet project
-  `SPC m p n`     Create a new dotnet project
-  `SPC m p p`     Publish the current dotnet project
-  `SPC m p r a`   Run the current dotnet project with arguments
-  `SPC m p r r`   Restore the current dotnet project
-  `SPC m p s a`   Add to the current dotnet solution
-  `SPC m p s l`   List the current dotnet solution
-  `SPC m p s n`   Create a new dotnet solution
-  `SPC m p s r`   Remove from the current dotnet solution
-  `SPC m p t`     Run tests for the current dotnet project
+| Key binding   | Description                                   |
+|---------------|-----------------------------------------------|
+| `SPC m p a p` | Add package to the current dotnet project     |
+| `SPC m p a r` | Add reference to the current dotnet project   |
+| `SPC m p b`   | Build the current dotnet project              |
+| `SPC m p c`   | Clean the current dotnet project              |
+| `SPC m p n`   | Create a new dotnet project                   |
+| `SPC m p p`   | Publish the current dotnet project            |
+| `SPC m p r a` | Run the current dotnet project with arguments |
+| `SPC m p r r` | Restore the current dotnet project            |
+| `SPC m p s a` | Add to the current dotnet solution            |
+| `SPC m p s l` | List the current dotnet solution              |
+| `SPC m p s n` | Create a new dotnet solution                  |
+| `SPC m p s r` | Remove from the current dotnet solution       |
+| `SPC m p t`   | Run tests for the current dotnet project      |

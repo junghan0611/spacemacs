@@ -28,7 +28,7 @@ Current stack
 -------------
 
 Wait, what? Why Clojure, why 2 CI providers? I knew you would ask this
-question, dear reader, so here\'s my rationale:
+question, dear reader, so here's my rationale:
 
 ### CircleCI
 
@@ -47,10 +47,10 @@ that can leave you puzzled for quite a while.
 
 Quality CI! It is clear that GitHub team had the benefit of hindsight
 while developing their CI platform. And it runs really fast (at least
-for now). Maybe, one day we\'ll fully switch to Actions. The biggest
+for now). Maybe, one day we'll fully switch to Actions. The biggest
 concern here is the vendor lock-in since all of the good stuff is highly
 specific, while CircleCI allows you to run a job locally for free. And
-run whole CI on your own hardware with \"strings attached\".
+run whole CI on your own hardware with "strings attached".
 
 ### Docker
 
@@ -62,9 +62,9 @@ DockerHub no longer provides auto-builds for standard free accounts.
 
 ### Clojure
 
-Besides the obvious fact that Rich Hickey\'s talks are the best, before
+Besides the obvious fact that Rich Hickey's talks are the best, before
 we started with automation, Spacemacs already had a huge set of
-documentation files that couldn\'t be fixed by a bunch of regular
+documentation files that couldn't be fixed by a bunch of regular
 expressions wrapped into bash/ELisp code. The options were to either fix
 all README.org files by hand and keep fixing them forever, since
 contributors often forget to format org blocks properly and nagging them
@@ -84,7 +84,7 @@ CI files and directories
 
 -   [.ci](https://github.com/syl20bnr/spacemacs/tree/develop/.ci) is a
     shared CI directory that holds two config files:
-    1.  [built~inmanifest~](https://github.com/syl20bnr/spacemacs/blob/develop/.ci/built_in_manifest)
+    1.  [built<sub>inmanifest</sub>](https://github.com/syl20bnr/spacemacs/blob/develop/.ci/built_in_manifest)
         list of upstream URL and target locations for built-in files.
     2.  [spacedoc-cfg.edn](https://github.com/syl20bnr/spacemacs/blob/develop/.ci/spacedoc-cfg.edn)
         configuration file for Spacemacs documentation tools. More
@@ -95,7 +95,7 @@ CI files and directories
     -   `workflows/scripts/dot_lock.el` package lock file that adds
         local ELPA mirror.
     -   `elisp_test.yml` runs EmacsLisp tests on PR and branch updates.
-    -   `rebase.yml` Rebases PR onto current HEAD, it doesn\'t always
+    -   `rebase.yml` Rebases PR onto current HEAD, it doesn't always
         work and requires personal token to run automatically so we
         rarely use it.
     -   `stale.yml` manages stale issues and PRs.
@@ -105,7 +105,7 @@ CI files and directories
     `built_in` is all about updating built-in files and `update`
     contains helpers related to making patches and pushing changes. The
     rest is a bunch of shared script files. The specific cases are
-    `shared` file that\'s loaded before each script run for every job,
+    `shared` file that's loaded before each script run for every job,
     `config.yml` - CircleCI bootstrap script that generates the config
     that CircleCI runs for actual jobs. It does so by rendering
     `config_tmpl.yml` template file.
@@ -128,7 +128,7 @@ Code tests are handled by GitHub Actions exclusively. The stages are:
     `os` and `emacs_version`. CI runs test for every possible
     combination. The stage ended up seriously bloated with repetition
     since the actions sometimes fail (especially for MacOS) so I added
-    sets of retires for both actions. Currently GitHub [doesn\'t provide
+    sets of retires for both actions. Currently GitHub [doesn't provide
     a better way to implement
     this](https://github.community/t/how-to-retry-a-failed-step-in-github-actions-workflow/125880).
 2.  Checkout - clones the repo.
@@ -156,7 +156,7 @@ file.
 ### Documentation validation
 
 This job uses
-[.circleci/select~prchanged~](https://github.com/syl20bnr/spacemacs/blob/develop/.circleci/select_pr_changed)
+[.circleci/select<sub>prchanged</sub>](https://github.com/syl20bnr/spacemacs/blob/develop/.circleci/select_pr_changed)
 to find changed files in the tested PR and for every .org file in the
 list it will check if it can be processed by exporting and validating
 the file. The process will be explored further in the [Documentation
@@ -165,11 +165,11 @@ updates](#documentation-updates) section.
 ### PR validation
 
 There are only two jobs here.
-[.circleci/PR~base~](https://github.com/syl20bnr/spacemacs/blob/develop/.circleci/PR_base)
+[.circleci/PR<sub>base</sub>](https://github.com/syl20bnr/spacemacs/blob/develop/.circleci/PR_base)
 makes sure that the PR is against develop branch and
-[.circleci/PR~rebased~](https://github.com/syl20bnr/spacemacs/blob/develop/.circleci/PR_rebased)
-checks if the PR needs a rebase (only when it\'s updated, so Spacemacs
-HEAD can actually get, well... Ahead, sorry).
+[.circleci/PR<sub>rebased</sub>](https://github.com/syl20bnr/spacemacs/blob/develop/.circleci/PR_rebased)
+checks if the PR needs a rebase (only when it's updated, so Spacemacs
+HEAD can actually get, well… Ahead, sorry).
 
 Branch updates (runs on merge)
 ------------------------------
@@ -184,16 +184,16 @@ All updates are handled by CircleCI. There are two config files:
 [.circleci/config.yml](https://github.com/syl20bnr/spacemacs/blob/develop/.circleci/config.yml)
 workflow that injects `IS_BRANCH_UDATE` environment variable into the
 second file
-[.circleci/config~tmpl~.yml](https://github.com/syl20bnr/spacemacs/blob/develop/.circleci/config_tmpl.yml)
+[.circleci/config<sub>tmpl</sub>.yml](https://github.com/syl20bnr/spacemacs/blob/develop/.circleci/config_tmpl.yml)
 - actual config that the CI uses. It has to be done this way because
-environment variables aren\'t accessible outside workflows, but CI needs
+environment variables aren't accessible outside workflows, but CI needs
 `IS_BRANCH_UDATE` to choose what workflows to run.
-[.circleci/config~tmpl~.yml](https://github.com/syl20bnr/spacemacs/blob/develop/.circleci/config_tmpl.yml)
+[.circleci/config<sub>tmpl</sub>.yml](https://github.com/syl20bnr/spacemacs/blob/develop/.circleci/config_tmpl.yml)
 begins with declarations of `parameters` (they are used to configure
 jobs) and `spacetools` executor - docker image alias with some configs.
 Every job runs inside of a freshly spawned
 `jare/spacemacs-circleci:latest` container that has Emacs and
-documentation tools binaries, hub CLI and some other stuff. Here\'s its
+documentation tools binaries, hub CLI and some other stuff. Here's its
 [docker
 file](https://github.com/JAremko/spacemacs-circleci/blob/master/Dockerfile)
 and its bases image [docker
@@ -217,7 +217,7 @@ variables page under CircleCI project settings.
     bot. See
     [.circleci/update/push](https://github.com/syl20bnr/spacemacs/blob/develop/.circleci/update/push)
     and
-    [.circleci/update/maybe~pr~](https://github.com/syl20bnr/spacemacs/blob/develop/.circleci/update/maybe_pr)
+    [.circleci/update/maybe<sub>pr</sub>](https://github.com/syl20bnr/spacemacs/blob/develop/.circleci/update/maybe_pr)
     files for inner-works. Most of bash variables are configured in the
     [.circleci/shared](https://github.com/syl20bnr/spacemacs/blob/develop/.circleci/shared)
     file. The PRs are merged manually.
@@ -225,9 +225,9 @@ variables page under CircleCI project settings.
 2.  Built-in updates
 
     Bash script
-    [.circleci/built~in~/upd~builtin~](https://github.com/syl20bnr/spacemacs/blob/develop/.circleci/built_in/upd_built_in)
+    [.circleci/built<sub>in</sub>/upd<sub>builtin</sub>](https://github.com/syl20bnr/spacemacs/blob/develop/.circleci/built_in/upd_built_in)
     reads
-    [.ci/built~inmanifest~](https://github.com/syl20bnr/spacemacs/blob/develop/.ci/built_in_manifest)
+    [.ci/built<sub>inmanifest</sub>](https://github.com/syl20bnr/spacemacs/blob/develop/.ci/built_in_manifest)
     file line by line and downloads every listed file into its specified
     location overriding existing ones.
 
@@ -235,15 +235,15 @@ variables page under CircleCI project settings.
 
     Firstly, files are exported into
     [edn](https://github.com/edn-format/edn) format. The file extension
-    is .sdn \"Spacemacs Documentation Notation\" - if you will. New file
+    is .sdn "Spacemacs Documentation Notation" - if you will. New file
     extension needed to avoid collisions with config .edn files. The
     exporting is done by Emacs Lisp program based on
     [ox.el](https://github.com/emacsmirror/org/blob/master/lisp/ox.el).
-    [Here\'s repository](https://github.com/JAremko/sdnize.el). The
+    [Here's repository](https://github.com/JAremko/sdnize.el). The
     program extracts data and performs basic validation. The resulting
     .sdn files then process by
-    [spacetools](https://github.com/JAremko/spacetools) binary(I\'ll
-    work on documentation) but it boils down to those steps:
+    [spacetools](https://github.com/JAremko/spacetools) binary(I'll work
+    on documentation) but it boils down to those steps:
 
     1.  parse and validate .sdn files
     2.  Generate LAYERS.sdn file from them.
@@ -252,7 +252,7 @@ variables page under CircleCI project settings.
     `spacetools` configured by
     [.ci/spacedoc-cfg.edn](https://github.com/syl20bnr/spacemacs/blob/develop/.ci/spacedoc-cfg.edn)
     file. For details on how LAYERS.org generation works see
-    [\"README.org tags\" section of
+    ["README.org tags" section of
     CONTRIBUTING.org](https://github.com/syl20bnr/spacemacs/blob/develop/CONTRIBUTING.org#readmeorg-tags)
     The rest of configs(and their default values) are listed
     [here](https://github.com/JAremko/spacetools/blob/master/components/spacedoc/src/spacetools/spacedoc/config.clj).
@@ -264,7 +264,7 @@ variables page under CircleCI project settings.
     `spacemacs/publish-doc` is the entry function. All the interesting
     parts are in preprocessors. Search for `Add preprocessors here`
     comment. Overall - pretty basic. When I finish with
-    documenting/refactoring `spacetools` I\'ll probably use it to
+    documenting/refactoring `spacetools` I'll probably use it to
     generate HTML similarly to how it generates .org files. What makes
     this job special is that CircleCI caches EmacsLisp dependencies of
     the HTML exporter script. See `save_cache` and `restore_cache`
@@ -280,7 +280,7 @@ We have 2 cron(scheduled) jobs: [Managing stale
 issues](https://github.com/syl20bnr/spacemacs/blob/develop/.github/workflows/stale.yml)
 with [actions/stale](https://github.com/actions/stale) and running
 built-in update job. The last one is ran by CircleCI and currently seems
-to bug out since CircleCI [doesn\'t support cron jobs with setup
+to bug out since CircleCI [doesn't support cron jobs with setup
 configs](https://discuss.circleci.com/t/setup-workflow-and-scheduled-workflow-in-the-same-configuration/39932/6).
 As a fall-back mechanism, CI updates built-in files every time Spacemacs
 develop branch is pushed.
@@ -291,19 +291,18 @@ Potential improvements (PR ideas)
 -   CircleCI config generation stage can test if a PR changes any .org
     file and schedule documentation testing job only if it does.
 -   PR validation job can be moved to CircleCI config generation stage.
-    If it isn\'t valid - all CircleCI jobs can be skipped.
+    If it isn't valid - all CircleCI jobs can be skipped.
 -   Web site repo becomes too heavy and PR diffs are meaningless.
     Removing update dates that are embedded into each exported HTML
     files would reduce the patch size drastically.
 -   Figure out how to retry installation of Emacs for EmacsLisp tests in
     more concise manner.
--   EmacsLisp step that executes the tests isn\'t DRY.
+-   EmacsLisp step that executes the tests isn't DRY.
 -   Emacs Install retries can use some delay between the attempts since
     it is likely that a failed upstream repo will fail again if you
-    don\'t give it any time to recover/change state. But it shouldn\'t
-    add delay to runs without failures since they vastly outnumber
-    failed ones and it is very important to giving PR author fast
-    feedback.
+    don't give it any time to recover/change state. But it shouldn't add
+    delay to runs without failures since they vastly outnumber failed
+    ones and it is very important to giving PR author fast feedback.
 -   See if we actually properly clean all they side effects between
     running EmacsLisp tests.
 -   CircleCI script files can have better names.
@@ -317,12 +316,12 @@ We used to have TravisCI (3 CI providers at the same time)
 ----------------------------------------------------------
 
 We ran long running jobs with it but ended up dropping the CI since
-TravisCI doesn\'t allow collaborators to read/set environment variables
+TravisCI doesn't allow collaborators to read/set environment variables
 anymore, [they could be in some kind of
 trouble](https://pbs.twimg.com/media/Eoq3OnWW4AIy7ih?format=jpg&name=large)
 or [maybe not](https://blog.travis-ci.com/oss-announcement). Anyway,
 when TravisCI stopped running jobs on their old domain (as a part of the
 migration from <https://travis-ci.org/> to <https://www.travis-ci.com/>)
 I decided to use this disruption as an opportunity to have fewer kinds
-of configs. Still, it\'s a good environment for heavy jobs(both in build
+of configs. Still, it's a good environment for heavy jobs(both in build
 time and RAM).

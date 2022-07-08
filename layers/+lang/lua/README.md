@@ -13,7 +13,7 @@ Features:
 -   Code-Completion with `lsp` or `company-lua`
 -   Sending code to a lua REPL
 -   Code linting using [Luacheck](https://github.com/mpeterv/luacheck)
--   Cross references (definitions, references, rename...)
+-   Cross references (definitions, references, rename…)
 
 Install
 =======
@@ -45,7 +45,7 @@ This backend provides basic support via pure emacs packages. It requires
 less setup than a full blown LSP setup but also provides less features.
 To enable it set the `lua-backend` to `lua-mode`.
 
-``` {.elisp}
+``` elisp
 (lua :variables
      lua-backend 'lua-mode)
 ```
@@ -68,7 +68,7 @@ To enable LSP set `lua-backend` to `lsp`. If `lua-backend` is `nil` and
 the `LSP layer` is loaded `LSP` will be used automatically otherwise it
 will fallback to `lua-mode`.
 
-``` {.elisp}
+``` elisp
 (lua :variables
      lua-backend 'lsp)
 ```
@@ -85,7 +85,7 @@ will fallback to `lua-mode`.
     the path to the LSP server jar. The java path and the path to the
     server executable can be configured as is shown below:
 
-    ``` {.elisp}
+    ``` elisp
     (lua :variables
          lua-backend 'lsp
          lua-lsp-server 'emmy
@@ -100,7 +100,7 @@ will fallback to `lua-mode`.
     to compile the standalone binary. Then set the layer variables as
     shown below:
 
-    ``` {.elisp}
+    ``` elisp
     (lua :variables
          lua-backend 'lsp
          lua-lsp-server 'lua-language-server
@@ -119,7 +119,7 @@ will fallback to `lua-mode`.
     To instruct Spacemacs to use this server set your config as shown
     below:
 
-    ``` {.elisp}
+    ``` elisp
     (lua :variables
          lua-backend 'lsp
          lua-lsp-server 'lua-lsp
@@ -138,11 +138,11 @@ documented in the [LSP layer](../../+tools/lsp/README.org).
 Commands
 --------
 
-  Key binding   Description
-  ------------- --------------------------------------------
-  `SPC m d`     lookup thing at point in lua documentation
-  `SPC m s b`   send buffer contents to REPL
-  `SPC m s f`   send current function to REPL
-  `SPC m s l`   send current line to REPL
-  `SPC m s r`   send current region to REPL
-  `SPC m '`     open repl buffer
+| Key binding | Description                                |
+|-------------|--------------------------------------------|
+| `SPC m d`   | lookup thing at point in lua documentation |
+| `SPC m s b` | send buffer contents to REPL               |
+| `SPC m s f` | send current function to REPL              |
+| `SPC m s l` | send current line to REPL                  |
+| `SPC m s r` | send current region to REPL                |
+| `SPC m '`   | open repl buffer                           |

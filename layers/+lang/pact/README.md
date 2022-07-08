@@ -30,7 +30,7 @@ Flycheck
 To enable flycheck, add the following to your
 `dotspacemacs/user-config`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (add-hook 'pact-mode-hook 'flycheck-mode)
 ```
 
@@ -45,7 +45,7 @@ REPL
 
 REPL commands are prefixed by `SPC m s`:
 
-  Key binding   Description
-  ------------- -------------------------------------------------
-  `SPC m s '`   Open a Pact REPL in a new frame
-  `SPC m s b`   Load or reload the current buffer into the REPL
+| Key binding | Description                                     |
+|-------------|-------------------------------------------------|
+| `SPC m s '` | Open a Pact REPL in a new frame                 |
+| `SPC m s b` | Load or reload the current buffer into the REPL |

@@ -19,7 +19,7 @@ To use `exwm` layer, add it to your `~/.spacemacs`.
 
 The default layer variables are:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((exwm :variables exwm-enable-systray nil
                                  exwm-autostart-xdg-applications nil
@@ -57,28 +57,28 @@ Key bindings
 ============
 
 As other window managers the `s` or **Super** key (Windows Key) is the
-one that is the prefix to every action. We\'ll use a lot of `s`.
+one that is the prefix to every action. We'll use a lot of `s`.
 
 Some emacs key bindings are disabled in X Window, for example `C-x` and
 `C-c` are disabled so that they can be used for Cutting and Copying
 text.
 
-  Key binding             Description
-  ----------------------- ------------------------------------------
-  `M-m`                   Spacemacs Leader Key
-  `C-q`                   Send next key pressed to the X window
-  `s-i`                   Toggle between line mode and char mode
-  `s-l`                   Lock Screen
-  `s-r`                   Reset window state
-  `s-w`                   Workspace Switch Menu
-  `s-[1 2 3 ... 8 9 0]`   Switch to workspace \[1 2 3 ... 8 9 10\]
-  `s-TAB`                 Switch to last workspace
-  `s-[` / `s-]`           Switch to prev,next workspace
-  `s-SPC`                 App Launcher
-  `s-RET`                 Spawn terminal
-  `s-:` and `s-;`         Helm M-x (same as `SPC :`)
-  `s-u,U`                 Undo, Redo window configurations
-  `s-b`                   Show all opened buffers
-  `s-[h j k l]`           Switch to window in the direction
-  `s-[H J K L]`           Move window to the direction
-  `M-s-[h j k l]`         Resize window toward the direction
+| Key binding           | Description                            |
+|-----------------------|----------------------------------------|
+| `M-m`                 | Spacemacs Leader Key                   |
+| `C-q`                 | Send next key pressed to the X window  |
+| `s-i`                 | Toggle between line mode and char mode |
+| `s-l`                 | Lock Screen                            |
+| `s-r`                 | Reset window state                     |
+| `s-w`                 | Workspace Switch Menu                  |
+| `s-[1 2 3 ... 8 9 0]` | Switch to workspace \[1 2 3 … 8 9 10\] |
+| `s-TAB`               | Switch to last workspace               |
+| `s-[` / `s-]`         | Switch to prev,next workspace          |
+| `s-SPC`               | App Launcher                           |
+| `s-RET`               | Spawn terminal                         |
+| `s-:` and `s-;`       | Helm M-x (same as `SPC :`)             |
+| `s-u,U`               | Undo, Redo window configurations       |
+| `s-b`                 | Show all opened buffers                |
+| `s-[h j k l]`         | Switch to window in the direction      |
+| `s-[H J K L]`         | Move window to the direction           |
+| `M-s-[h j k l]`       | Resize window toward the direction     |

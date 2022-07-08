@@ -23,7 +23,7 @@ need to add `typography` to the existing
 Typographic editing however is disabled by default. To enable it by
 default set `typography-enable-typographic-editing` to `t`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '(typography :variables typography-enable-typographic-editing t))
 ```
@@ -35,30 +35,30 @@ and dashes.
 Key bindings
 ============
 
-  Key bindings   Description
-  -------------- ------------------------------------------------------------------
-  `SPC t T`      Toggle Typo Mode (automatic insertion of typographic characters)
-  `SPC t ~`      Toggle Tildify Mode (automatic insertion of non-breaking spaces)
-  `SPC x ~`      Insert non-breaking spaces in the current region
+| Key bindings | Description                                                      |
+|--------------|------------------------------------------------------------------|
+| `SPC t T`    | Toggle Typo Mode (automatic insertion of typographic characters) |
+| `SPC t ~`    | Toggle Tildify Mode (automatic insertion of non-breaking spaces) |
+| `SPC x ~`    | Insert non-breaking spaces in the current region                 |
 
 The following key bindings are available in insert state.
 
 Typo Mode
 ---------
 
-  Key bindings   Description
-  -------------- ------------------------------------------
-  `​"​`          Cycle among quotation marks
-  `` ` ``        Cycle among left single quotation marks
-  `​'​`          Cycle among right single quotation marks
-  `-`            Cycle among dashes
-  `.`            Cycle among ellipsis
-  `<`            Cycle among left angle brackets
-  `>`            Cycle among right angle brackets
+| Key bindings | Description                              |
+|--------------|------------------------------------------|
+| `​"​`        | Cycle among quotation marks              |
+| `` ` ``      | Cycle among left single quotation marks  |
+| `​'​`        | Cycle among right single quotation marks |
+| `-`          | Cycle among dashes                       |
+| `.`          | Cycle among ellipsis                     |
+| `<`          | Cycle among left angle brackets          |
+| `>`          | Cycle among right angle brackets         |
 
 Tildify Mode
 ------------
 
-  Key bindings   Description
-  -------------- -----------------------------------------
-  `SPC`          Insert non-breaking space when required
+| Key bindings | Description                             |
+|--------------|-----------------------------------------|
+| `SPC`        | Insert non-breaking space when required |

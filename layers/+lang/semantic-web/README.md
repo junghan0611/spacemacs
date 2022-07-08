@@ -30,6 +30,6 @@ need to add `semantic-web` to the existing
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ----------------------
-  `SPC m q`     Execute SPARQL query
+| Key binding | Description          |
+|-------------|----------------------|
+| `SPC m q`   | Execute SPARQL query |

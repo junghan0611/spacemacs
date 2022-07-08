@@ -27,7 +27,7 @@ need to add `compleseus` to the existing
 Make sure that the other completion layers: `helm` and `ivy` are removed
 or commented out in the `dotspacemacs-configuration-layers` list. Or add
 `compleseus` below the other completion layers. Spacemacs uses the
-completion layer that\'s listed last.
+completion layer that's listed last.
 
 Configuration
 -------------
@@ -37,7 +37,7 @@ to either `vertico` (default) or `selectrum` by editing the
 `compleseus-engine` variable like below to use `selectrum` as opposed to
 the default of `vertico`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (compleseus :variables
             compleseus-engine 'selectrum)
 ```
@@ -45,7 +45,7 @@ the default of `vertico`:
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ---------------
-  `M-o`         embark-action
-  `C-r`         history
+| Key binding | Description   |
+|-------------|---------------|
+| `M-o`       | embark-action |
+| `C-r`       | history       |

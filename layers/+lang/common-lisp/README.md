@@ -31,7 +31,7 @@ This layer defaults to using [sbcl](http://www.sbcl.org/). If you want
 to use a different implementation of Common Lisp, you can specify it in
 your `~/.spacemacs`
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dotspacemacs/user-config ()
   (setq inferior-lisp-program "/path/to/your/lisp"))
 ```
@@ -48,13 +48,13 @@ active buffer with `SPC m T s` (`s` for safe).
 To turn it on automatically for all `common-lisp` buffers call the
 following function in your `dotspacemacs/user-config` function:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-common-lisp-mode)
 ```
 
 or to enable it for all supported modes:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hooks)
 ```
 
@@ -67,7 +67,7 @@ Working with lisp files (barfage, slurpage & more)
 --------------------------------------------------
 
 Spacemacs comes with a special `lisp-state` for working with lisp code
-that supports slurpage, barfage and more tools you\'ll likely want when
+that supports slurpage, barfage and more tools you'll likely want when
 working with lisp.
 
 As this state works the same for all files, the documentation is in
@@ -80,67 +80,67 @@ Leader
 
 ### Help
 
-  Key binding   Description
-  ------------- ----------------------------------------------------------
-  `SPC m h a`   SLIME apropos
-  `SPC m h d`   Disassemble symbol at point
-  `SPC m h h`   Describe symbol at point
-  `SPC m h i`   Inspect definition
-  `SPC m h H`   Hyperspec lookup symbol at point
-  `SPC m h p`   Browse apropos results for a package\'s exported symbols
-  `SPC m h t`   Toggle tracing of the function at point
-  `SPC m h T`   Untrace all functions
-  `SPC m h <`   Show all known callers
-  `SPC m h >`   Show all known callees
-  `SPC m h m`   Show all usages of a macro
-  `SPC m h r`   Show references to global variable
-  `SPC m h s`   Show all methods specialized on a class
+| Key binding | Description                                             |
+|-------------|---------------------------------------------------------|
+| `SPC m h a` | SLIME apropos                                           |
+| `SPC m h d` | Disassemble symbol at point                             |
+| `SPC m h h` | Describe symbol at point                                |
+| `SPC m h i` | Inspect definition                                      |
+| `SPC m h H` | Hyperspec lookup symbol at point                        |
+| `SPC m h p` | Browse apropos results for a package's exported symbols |
+| `SPC m h t` | Toggle tracing of the function at point                 |
+| `SPC m h T` | Untrace all functions                                   |
+| `SPC m h <` | Show all known callers                                  |
+| `SPC m h >` | Show all known callees                                  |
+| `SPC m h m` | Show all usages of a macro                              |
+| `SPC m h r` | Show references to global variable                      |
+| `SPC m h s` | Show all methods specialized on a class                 |
 
 ### Evaluation
 
-  Key binding   Description
-  ------------- ---------------------------------------------------
-  `SPC m e b`   Evaluate buffer
-  `SPC m e c`   Evaluate parent sexp of current form around point
-  `SPC m e C`   Evaluate current `def` or `set` form around point
-  `SPC m e e`   Evaluate last sexp
-  `SPC m e l`   Go to end of line and evaluate last sexp
-  `SPC m e f`   Evaluate top level sexp
-  `SPC m e F`   Undefine the function at point
-  `SPC m e r`   Evaluate region
-  `SPC m e s`   Evaluate symbol around point
+| Key binding | Description                                       |
+|-------------|---------------------------------------------------|
+| `SPC m e b` | Evaluate buffer                                   |
+| `SPC m e c` | Evaluate parent sexp of current form around point |
+| `SPC m e C` | Evaluate current `def` or `set` form around point |
+| `SPC m e e` | Evaluate last sexp                                |
+| `SPC m e l` | Go to end of line and evaluate last sexp          |
+| `SPC m e f` | Evaluate top level sexp                           |
+| `SPC m e F` | Undefine the function at point                    |
+| `SPC m e r` | Evaluate region                                   |
+| `SPC m e s` | Evaluate symbol around point                      |
 
 ### REPL
 
-  Key binding   Description
-  ------------- ----------------------------------
-  `SPC m s i`   Start an inferior process
-  `SPC m s e`   Evaluate last expression in REPL
-  `SPC m s q`   Quit
+| Key binding | Description                      |
+|-------------|----------------------------------|
+| `SPC m s i` | Start an inferior process        |
+| `SPC m s e` | Evaluate last expression in REPL |
+| `SPC m s q` | Quit                             |
 
 ### Compile
 
-  Key binding   Description
-  ------------- --------------------------
-  `SPC m c c`   Compile file
-  `SPC m c C`   Compile file and load it
-  `SPC m c l`   Load file
-  `SPC m c n`   Remove compilation notes
-  `SPC m c f`   Compile function
-  `SPC m c r`   Compile region
+| Key binding | Description              |
+|-------------|--------------------------|
+| `SPC m c c` | Compile file             |
+| `SPC m c C` | Compile file and load it |
+| `SPC m c l` | Load file                |
+| `SPC m c n` | Remove compilation notes |
+| `SPC m c f` | Compile function         |
+| `SPC m c r` | Compile region           |
 
 ### Navigation
 
-  Key binding                  Description
-  ---------------------------- ------------------
-  `SPC m g g`                  Go to definition
-  `SPC m g b`                  Go back
-  `SPC m g n`                  Next note
-  `SPC m g N` or \~SPC m g p   Previous note
+| Key binding                | Description      |
+|----------------------------|------------------|
+| `SPC m g g`                | Go to definition |
+| `SPC m g b`                | Go back          |
+| `SPC m g n`                | Next note        |
+| `SPC m g N` or \~SPC m g p | Previous note    |
 
 ### Macroexpansion
 
-  Key binding   Description
-  ------------- ------------------------------------------------
-  `SPC m m a`   Macroexpand the expression at point completely
-  `SPC m m o`   Macroexpand the expression at point once
+| Key binding | Description                                    |
+|-------------|------------------------------------------------|
+| `SPC m m a` | Macroexpand the expression at point completely |
+| `SPC m m o` | Macroexpand the expression at point once       |

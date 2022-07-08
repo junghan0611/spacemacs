@@ -11,7 +11,7 @@ Features:
 
 -   syntax highlighting for [haskell
     source](https://github.com/haskell/haskell-mode), [cabal
-    files](https://github.com/haskell/haskell-mode), [C--
+    files](https://github.com/haskell/haskell-mode), [C–
     source](https://github.com/bgamari/cmm-mode)
 -   auto-completion and syntax-checking with one of the selected
     backends (`dante` or `lsp`).
@@ -63,7 +63,7 @@ packages:
 
 To install them, use the following command (or the `stack` equivalent):
 
-``` {.bash org-language="sh"}
+``` bash
 $ cabal install apply-refact hlint stylish-haskell hasktags hoogle
 ```
 
@@ -74,11 +74,11 @@ First of all, make sure that your `$PATH` contains the installation path
 for Haskell tools like `ghc`, `ghci` etc. It depends on how you have
 installed `ghc`, but you can always check it by running `which ghc` in
 your terminal. `Stack` users should only add the installation path of
-`stack` itself. Usually it\'s `~/.local/bin`.
+`stack` itself. Usually it's `~/.local/bin`.
 
 Then make sure that your `$PATH` contains the installation path for the
 `cabal` packages. If you are using `cabal` it should be `~/.cabal/bin`
-or `~/Library/Haskell/bin` (for \'Haskell for Mac\' users). If you are
+or `~/Library/Haskell/bin` (for 'Haskell for Mac' users). If you are
 using `stack` then it should be `~/.local/bin`.
 
 For more information about setting up `$PATH`, check out the
@@ -100,21 +100,21 @@ that you have `auto-completion` and `syntax-checking` layers enabled.
 Then, to choose a haskell backend, set the haskell layer variable
 `haskell-completion-backend`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (haskell :variables haskell-completion-backend 'dante)
 ```
 
 Supported values for `haskell-completion-backend` are `dante` and `lsp`.
 
-If you don\'t specify any value for `haskell-completion-backend`,
-`dante` will be used as default backend, unless the layer `lsp` is
-enabled, in which case `lsp` is used as default backend.
+If you don't specify any value for `haskell-completion-backend`, `dante`
+will be used as default backend, unless the layer `lsp` is enabled, in
+which case `lsp` is used as default backend.
 
 Backend can be chosen on a per project basis using directory local
 variables (files named `.dir-locals.el` at the root of a project). An
 example of `.dir-locals.el` to use the `lsp` backend:
 
-``` {.elisp}
+``` elisp
 ;;; Directory Local Variables
 ;;; For more information see (info "(emacs) Directory Variables")
 
@@ -204,7 +204,7 @@ through the layer variables.
 
 Currently there is no support for
 [structured-haskell-mode](https://github.com/chrisdone/structured-haskell-mode),
-since it doesn\'t play very well with non-emacs editing styles
+since it doesn't play very well with non-emacs editing styles
 ([structured-haskell-mode/\#81](https://github.com/chrisdone/structured-haskell-mode/issues/81)).
 Emacs editing style users can easily enable it by adding
 `structured-haskell-mode` to the list of
@@ -230,7 +230,7 @@ To enable it you have to toggle the variable `haskell-enable-hindent`.
 See examples
 [here](https://github.com/commercialhaskell/hindent/blob/master/TESTS.md).
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((haskell :variables haskell-enable-hindent t)))
 ```
@@ -243,122 +243,122 @@ All Haskell specific bindings are prefixed with the major-mode leader
 
 Top-level commands are prefixed by `SPC m`:
 
-  Key binding   Description
-  ------------- ---------------------------------------------------------------------
-  `SPC m g g`   go to definition or tag
-  `SPC m g i`   cycle the Haskell import lines or return to point (with prefix arg)
-  `SPC m F`     format buffer using haskell-stylish
-  `SPC m f`     format declaration using hindent (if enabled)
+| Key binding | Description                                                         |
+|-------------|---------------------------------------------------------------------|
+| `SPC m g g` | go to definition or tag                                             |
+| `SPC m g i` | cycle the Haskell import lines or return to point (with prefix arg) |
+| `SPC m F`   | format buffer using haskell-stylish                                 |
+| `SPC m f`   | format declaration using hindent (if enabled)                       |
 
 Documentation
 -------------
 
 Documentation commands are prefixed by `SPC m h`
 
-  Key binding   Description
-  ------------- ----------------------------------------------------------------------------
-  `SPC m h d`   find or generate Haddock documentation for the identifier under the cursor
-  `SPC m h f`   do a helm-hoogle lookup
-  `SPC m h h`   do a Hoogle lookup
-  `SPC m h H`   do a local Hoogle lookup
-  `SPC m h i`   gets information for the identifier under the cursor
-  `SPC m h t`   gets the type of the identifier under the cursor
+| Key binding | Description                                                                |
+|-------------|----------------------------------------------------------------------------|
+| `SPC m h d` | find or generate Haddock documentation for the identifier under the cursor |
+| `SPC m h f` | do a helm-hoogle lookup                                                    |
+| `SPC m h h` | do a Hoogle lookup                                                         |
+| `SPC m h H` | do a local Hoogle lookup                                                   |
+| `SPC m h i` | gets information for the identifier under the cursor                       |
+| `SPC m h t` | gets the type of the identifier under the cursor                           |
 
 Debug
 -----
 
 Debug commands are prefixed by `SPC m d`:
 
-  Key binding   Description
-  ------------- --------------------------------------------
-  `SPC m d a`   abandon current process
-  `SPC m d b`   insert breakpoint at function
-  `SPC m d B`   delete breakpoint
-  `SPC m d c`   continue current process
-  `SPC m d d`   start debug process, needs to be run first
-  `SPC m d n`   next breakpoint
-  `SPC m d N`   previous breakpoint
-  `SPC m d p`   previous breakpoint
-  `SPC m d r`   refresh process buffer
-  `SPC m d s`   step into the next function
-  `SPC m d t`   trace the expression
+| Key binding | Description                                |
+|-------------|--------------------------------------------|
+| `SPC m d a` | abandon current process                    |
+| `SPC m d b` | insert breakpoint at function              |
+| `SPC m d B` | delete breakpoint                          |
+| `SPC m d c` | continue current process                   |
+| `SPC m d d` | start debug process, needs to be run first |
+| `SPC m d n` | next breakpoint                            |
+| `SPC m d N` | previous breakpoint                        |
+| `SPC m d p` | previous breakpoint                        |
+| `SPC m d r` | refresh process buffer                     |
+| `SPC m d s` | step into the next function                |
+| `SPC m d t` | trace the expression                       |
 
 Debug Buffer
 ------------
 
-  Key binding   Description
-  ------------- ---------------------------------------------
-  `RET`         select object at the point
-  `a`           abandon current computation
-  `b`           break on function
-  `c`           continue the current computation
-  `d`           delete object at the point
-  `i`           step into the next function
-  `r`           refresh the debugger buffer
-  `s`           go to next step to inspect bindings
-  `S`           go to previous step to inspect the bindings
-  `t`           trace the expression
+| Key binding | Description                                 |
+|-------------|---------------------------------------------|
+| `RET`       | select object at the point                  |
+| `a`         | abandon current computation                 |
+| `b`         | break on function                           |
+| `c`         | continue the current computation            |
+| `d`         | delete object at the point                  |
+| `i`         | step into the next function                 |
+| `r`         | refresh the debugger buffer                 |
+| `s`         | go to next step to inspect bindings         |
+| `S`         | go to previous step to inspect the bindings |
+| `t`         | trace the expression                        |
 
 REPL
 ----
 
 REPL commands are prefixed by `SPC m s`:
 
-  Key binding   Description
-  ------------- -------------------------------------------------
-  `SPC m s b`   load or reload the current buffer into the REPL
-  `SPC m s c`   clear the REPL
-  `SPC m s s`   show and switch to the REPL
-  `SPC m s S`   show the REPL without switching to it
-  `SPC m s t`   change the target for the REPL
-  `C-j`         switch to next history item
-  `C-k`         switch to previous history item
-  `C-l`         clear the REPL
+| Key binding | Description                                     |
+|-------------|-------------------------------------------------|
+| `SPC m s b` | load or reload the current buffer into the REPL |
+| `SPC m s c` | clear the REPL                                  |
+| `SPC m s s` | show and switch to the REPL                     |
+| `SPC m s S` | show the REPL without switching to it           |
+| `SPC m s t` | change the target for the REPL                  |
+| `C-j`       | switch to next history item                     |
+| `C-k`       | switch to previous history item                 |
+| `C-l`       | clear the REPL                                  |
 
 Cabal commands
 --------------
 
 Cabal commands are prefixed by `SPC m c`:
 
-  Key binding   Description
-  ------------- ------------------------------------------------------------
-  `SPC m c a`   cabal actions
-  `SPC m c b`   build the current cabal project, i.e. invoke `cabal build`
-  `SPC m c c`   compile the current project, i.e. invoke `ghc`
-  `SPC m c v`   visit the cabal file
+| Key binding | Description                                                |
+|-------------|------------------------------------------------------------|
+| `SPC m c a` | cabal actions                                              |
+| `SPC m c b` | build the current cabal project, i.e. invoke `cabal build` |
+| `SPC m c c` | compile the current project, i.e. invoke `ghc`             |
+| `SPC m c v` | visit the cabal file                                       |
 
 Cabal files
 -----------
 
 These commands are available in a cabal file.
 
-  Key binding   Description
-  ------------- ---------------------------------------------
-  `SPC m d`     add a dependency to the project
-  `SPC m b`     go to benchmark section
-  `SPC m e`     go to executable section
-  `SPC m t`     go to test-suite section
-  `SPC m m`     go to exposed modules
-  `SPC m l`     go to library section
-  `SPC m n`     go to next subsection
-  `SPC m p`     go to previous subsection
-  `SPC m s c`   clear the REPL
-  `SPC m s s`   show the REPL without switching to it
-  `SPC m s S`   show and switch to the REPL
-  `SPC m N`     go to next section
-  `SPC m P`     go to previous section
-  `SPC m f`     find or create source-file under the cursor
+| Key binding | Description                                 |
+|-------------|---------------------------------------------|
+| `SPC m d`   | add a dependency to the project             |
+| `SPC m b`   | go to benchmark section                     |
+| `SPC m e`   | go to executable section                    |
+| `SPC m t`   | go to test-suite section                    |
+| `SPC m m`   | go to exposed modules                       |
+| `SPC m l`   | go to library section                       |
+| `SPC m n`   | go to next subsection                       |
+| `SPC m p`   | go to previous subsection                   |
+| `SPC m s c` | clear the REPL                              |
+| `SPC m s s` | show the REPL without switching to it       |
+| `SPC m s S` | show and switch to the REPL                 |
+| `SPC m N`   | go to next section                          |
+| `SPC m P`   | go to previous section                      |
+| `SPC m f`   | find or create source-file under the cursor |
 
 Refactor
 --------
 
 Refactor commands are prefixed by `SPC m r`:
 
-  Key binding   Description
-  ------------- ---------------------------------------------------
-  `SPC m r b`   apply all HLint suggestions in the current buffer
-  `SPC m r i`   reformat imports from anywhere in the buffer
-  `SPC m r r`   apply the HLint suggestion under the cursor
+| Key binding | Description                                       |
+|-------------|---------------------------------------------------|
+| `SPC m r b` | apply all HLint suggestions in the current buffer |
+| `SPC m r i` | reformat imports from anywhere in the buffer      |
+| `SPC m r r` | apply the HLint suggestion under the cursor       |
 
 Only some of the HLint suggestions can be applied.
 
@@ -374,7 +374,7 @@ the code. Those components are:
 
 Since some of these components can be active at the same time, it can be
 tricky to know which component is displaying which message, especially
-when they disagree, or if one isn\'t working. Only flycheck errors (from
+when they disagree, or if one isn't working. Only flycheck errors (from
 ghci and hlint) are displayed in the error list and can be navigated
 between, using the standard Spacemacs key bindings (under `SPC e`) even
 though errors from other modes might highlight the actual buffer.
@@ -382,22 +382,22 @@ though errors from other modes might highlight the actual buffer.
 Flycheck
 --------
 
-This is the standard Spacemacs way of syntax checking, and it\'s also
-the most elaborate. You need to install the syntax-checking layer first,
-which will bring flycheck. Please read the layer\'s
+This is the standard Spacemacs way of syntax checking, and it's also the
+most elaborate. You need to install the syntax-checking layer first,
+which will bring flycheck. Please read the layer's
 [documentation](https://github.com/syl20bnr/spacemacs/tree/develop/layers/+checkers/syntax-checking)
 on how to interact with flycheck.
 
 Flycheck has different Haskell checkers: `haskell-dante`, `haskell-ghc`,
 `haskell-stack-ghc` and `haskell-hlint`. Normally it can detect the best
-one to use automatically, but if it doesn\'t work, then you can change
-it with `SPC e s`.
+one to use automatically, but if it doesn't work, then you can change it
+with `SPC e s`.
 
 HLint
 -----
 
 [HLint](https://github.com/ndmitchell/hlint) is a linter for Haskell. It
-doesn\'t detect errors (as long as it can parse the file) but bad coding
+doesn't detect errors (as long as it can parse the file) but bad coding
 style and code smell. The HLint checker is called **after** the flycheck
 GHC checker.
 
@@ -418,15 +418,15 @@ suite (usually `test/` or `tests/`) is and to put the line
 `((haskell-mode . ((dante-target . "--test"))))` into it. This tells
 Dante to use test suite target when working with test files.
 
-The REPL doesn\'t work
-----------------------
+The REPL doesn't work
+---------------------
 
 Usually `haskell-mode` is great at figuring out which interactive
 process to bring up. But if you are experiencing problems with it, then
 you can help `haskell-mode` by setting `haskell-process-type` as in
 following code:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((haskell :variables haskell-process-type 'stack-ghci)))
 ```
@@ -443,14 +443,14 @@ Available options are:
 The REPL is stuck
 -----------------
 
-Make sure that there\'s a space between the REPL\'s `λ>` prompt and the
-cursor. When there is no space, then the REPL will behave as if it\'s
+Make sure that there's a space between the REPL's `λ>` prompt and the
+cursor. When there is no space, then the REPL will behave as if it's
 stuck. Usually, when you enter normal state, the cursor moves backwards
 by one character, so there is no required space when you switch to
 insert mode. There is a possible workaround - just add the following
 snippet to your `dotspacemacs/user-config` function:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (when (configuration-layer/layer-used-p 'haskell)
   (add-hook 'haskell-interactive-mode-hook
             (lambda ()
@@ -459,27 +459,27 @@ snippet to your `dotspacemacs/user-config` function:
 
 It makes the cursor stay in the right place in the REPL buffer when you
 enter normal state. Which in most cases helps you to avoid the problem
-with \'stuck\' REPL.
+with 'stuck' REPL.
 
 Also, some users might want to start the REPL in insert mode. This is
 done by placing the following snippet in your `dotspacemacs/user-config`
 function:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (when (configuration-layer/layer-used-p 'haskell)
     (defadvice haskell-interactive-switch (after spacemacs/haskell-interactive-switch-advice activate)
       (when (eq dotspacemacs-editing-style 'vim)
         (call-interactively 'evil-insert))))
 ```
 
-Indentation doesn\'t reset when pressing return after an empty line
--------------------------------------------------------------------
+Indentation doesn't reset when pressing return after an empty line
+------------------------------------------------------------------
 
 This is the intended behavior in `haskell-indentation-mode`. If you want
 to reset the indentation when pressing return after an empty line, add
 the following snippet into your `dotspacemacs/user-config` function.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun haskell-indentation-advice ()
   (when (and (< 1 (line-number-at-pos))
              (save-excursion
@@ -495,7 +495,7 @@ Flycheck displays HLint warnings but not errors
 -----------------------------------------------
 
 The HLint checker is called **after** the normal flycheck checker, even
-if the checker fails. Check the [Flycheck doesn\'t
+if the checker fails. Check the [Flycheck doesn't
 work](#flycheck-doesnt-work) section.
 
 HLint fails with parse error
@@ -508,30 +508,30 @@ file.
 Check [HLint](https://github.com/ndmitchell/hlint) docs for more
 details.
 
-I can see highlighted errors but they don\'t appear in the error list
----------------------------------------------------------------------
+I can see highlighted errors but they don't appear in the error list
+--------------------------------------------------------------------
 
 The error list is only set by flycheck. You are probably seeing errors
-highlighted by haskell-mode. Check the [Flycheck doesn\'t
+highlighted by haskell-mode. Check the [Flycheck doesn't
 work](#flycheck-doesnt-work) section.
 
-Flycheck doesn\'t work
-----------------------
+Flycheck doesn't work
+---------------------
 
-You can use the `flycheck-compile` command to check what\'s wrong with
-flycheck. This will show you the exact command line that\'s used, and
-its output.
+You can use the `flycheck-compile` command to check what's wrong with
+flycheck. This will show you the exact command line that's used, and its
+output.
 
-If you are using `stack`, check the [Flycheck doesn\'t work with
+If you are using `stack`, check the [Flycheck doesn't work with
 `stack`](#flycheck-doesnt-work-with-stack) section.
 
-Flycheck doesn\'t work with `stack`
------------------------------------
+Flycheck doesn't work with `stack`
+----------------------------------
 
 First check that flycheck uses the correct checker, and all the paths
 are properly configured using `flycheck-verify-setup` (`SPC e v`). You
 can force the checker with `flycheck-select-checker` (`SPC e s`) to
-ensure that it uses `haskell-stack-ghc`. If it still doesn\'t work, then
+ensure that it uses `haskell-stack-ghc`. If it still doesn't work, then
 it could be one of the following problems:
 
 -   The `stack` build directory is wrong
@@ -542,29 +542,29 @@ it could be one of the following problems:
 The path to the build directory, which contains some generated files, is
 normally under `.stack-work/install/<os>/Cabal-<version>/build`.
 
-However the version of the cabal library that\'s used by `stack` to
+However the version of the cabal library that's used by `stack` to
 generate the directory name is not the version of the cabal library
-that\'s installed by `stack` but rather the version of cabal that\'s
+that's installed by `stack` but rather the version of cabal that's
 associated to the GHC version. This error can happen after upgrading
 cabal or cabal-install. To check if this is the problem, compare the
-path name of the build path that\'s used by flycheck using
+path name of the build path that's used by flycheck using
 `flycheck-compile` and compare it to the actual path in the
-`.stack-work` directory. If they are different, then you\'ll need to
+`.stack-work` directory. If they are different, then you'll need to
 reinstall ghc using the command `stack setup --upgrade-cabal`.
 
 ### The Project root directory is not set properly
 
 Flycheck launches the GHC command, not from the project root directory,
-but from the directory of the file that\'s being checked. This is
+but from the directory of the file that's being checked. This is
 normally not a problem, as all the paths are set properly, however it
 could be a problem if some template Haskell functions use relative paths
 (e.g. in Yesod scaffolded projects).
 
-Until it\'s fixed in flycheck, the workaround is to wrap the `stack`
-command in order to run all subcommands from the project\'s root
+Until it's fixed in flycheck, the workaround is to wrap the `stack`
+command in order to run all subcommands from the project's root
 directory. You can do so with the following script:
 
-``` {.bash}
+``` bash
 #!/bin/bash
 cd `stack path --project-root`
 stack $*
@@ -573,8 +573,8 @@ stack $*
 Make sure you set `flycheck-haskell-stack-ghc-executable` to this
 script.
 
-haskell-mode commands don\'t work
----------------------------------
+haskell-mode commands don't work
+--------------------------------
 
 Some (most) of the haskell-mode commands only work when haskell-mode is
 in interactive mode, i.e. has an interactive session associated with it.

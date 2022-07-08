@@ -47,7 +47,7 @@ line. You can hover over these numbers to get a description or view the
 compiler output with the `SPC m c l` key binding. To disable the feature
 use this line in your `dotspacemacs/user-config` function.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (remove-hook 'emacs-lisp-mode-hook 'auto-compile-mode)
 ```
 
@@ -57,7 +57,7 @@ Working with lisp files (barfage, slurpage & more)
 ==================================================
 
 Spacemacs comes with a special `lisp-state` for working with lisp code
-that supports slurpage, barfage and more tools you\'ll likely want when
+that supports slurpage, barfage and more tools you'll likely want when
 working with lisp.
 
 As this state works the same for all files, the documentation is in
@@ -80,7 +80,7 @@ T V` so that Spacemacs will switch to `org-mode`. Now you can place the
 cursor somewhere inside the code block and press `, '` to open the code
 in an interactive `emacs-lisp-buffer`.
 
-``` {.elisp}
+``` elisp
 (defun helloworld (name)
   (let ((n (subroutine name)))
     (message (format "Hello world, %s!" name))))
@@ -140,7 +140,7 @@ variable `emacs-lisp-hide-namespace-prefix` to `t`.
 NOTE: `nameless` is known to cause problems when spacemacs is used
 inside a terminal window, use with caution.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (emacs-lisp :variables emacs-lisp-hide-namespace-prefix t)))
 ```
@@ -150,17 +150,17 @@ Aliases
 
 This layer defines some global aliases for Spacemacs:
 
-  alias   namespace
-  ------- ---------------------
-  .S      dotspacemacs
-  CL      configuration-layer
-  S       spacemacs
-  SB      spacemacs-buffer
+| alias | namespace           |
+|-------|---------------------|
+| .S    | dotspacemacs        |
+| CL    | configuration-layer |
+| S     | spacemacs           |
+| SB    | spacemacs-buffer    |
 
 You can define additional alias in function `dotspacemacs/user-config`
 of your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (add-to-list 'nameless-global-aliases '("N" . "nameless"))
 ```
 
@@ -176,13 +176,13 @@ active buffer with `SPC m T s` (`s` for safe).
 To turn it on automatically for all `emacs-lisp` buffers call the
 following function in your `dotspacemacs/user-config` function:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-emacs-lisp-mode)
 ```
 
 or to enable it for all supported modes:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hooks)
 ```
 
@@ -191,41 +191,41 @@ When enabled the symbol `🆂` should be displayed in the mode-line.
 Key bindings
 ============
 
-  Key binding                  Description
-  ---------------------------- -----------------------------------------------------------------------
-  `SPC m g g`                  go to definition of symbol under point
-  `SPC m g G`                  go to definition of symbol under point in other window
-  `SPC m h h`                  describe symbol at point
-  `SPC m c c`                  byte compile the current file
-  `SPC m c l`                  popup compile-log buffer
-  `SPC m e $` or `SPC m e l`   go to end of current line and evaluate
-  `SPC m e b`                  evaluate current buffer
-  `SPC m e C`                  evaluate current `defun` or `setq`
-  `SPC m e e`                  evaluate sexp before point
-  `SPC m e f`                  evaluation current function
-  `SPC m e r`                  evaluate current region
-  `SPC m ​,​`                  toggle `lisp state`
-  `SPC m t b`                  run tests of current buffer
-  `SPC m t q`                  run `ert`
-  `SPC m d m`                  open [macrostep](https://github.com/joddie/macrostep) transient-state
-  `SPC m :`                    toggle nameless minor mode
+| Key binding                | Description                                                           |
+|----------------------------|-----------------------------------------------------------------------|
+| `SPC m g g`                | go to definition of symbol under point                                |
+| `SPC m g G`                | go to definition of symbol under point in other window                |
+| `SPC m h h`                | describe symbol at point                                              |
+| `SPC m c c`                | byte compile the current file                                         |
+| `SPC m c l`                | popup compile-log buffer                                              |
+| `SPC m e $` or `SPC m e l` | go to end of current line and evaluate                                |
+| `SPC m e b`                | evaluate current buffer                                               |
+| `SPC m e C`                | evaluate current `defun` or `setq`                                    |
+| `SPC m e e`                | evaluate sexp before point                                            |
+| `SPC m e f`                | evaluation current function                                           |
+| `SPC m e r`                | evaluate current region                                               |
+| `SPC m ​,​`                | toggle `lisp state`                                                   |
+| `SPC m t b`                | run tests of current buffer                                           |
+| `SPC m t q`                | run `ert`                                                             |
+| `SPC m d m`                | open [macrostep](https://github.com/joddie/macrostep) transient-state |
+| `SPC m :`                  | toggle nameless minor mode                                            |
 
 Additional testing functions with overseer
 ------------------------------------------
 
 Function related to test are present under the `SPC m t` prefix:
 
-  Key binding   Description
-  ------------- ---------------
-  `SPC m t a`   overseer test
-  `SPC m t A`   test debug
-  `SPC m t t`   run test
-  `SPC m t b`   test buffer
-  `SPC m t f`   test file
-  `SPC m t g`   test tags
-  `SPC m t p`   test prompt
-  `SPC m t q`   test quiet
-  `SPC m t h`   test help
+| Key binding | Description   |
+|-------------|---------------|
+| `SPC m t a` | overseer test |
+| `SPC m t A` | test debug    |
+| `SPC m t t` | run test      |
+| `SPC m t b` | test buffer   |
+| `SPC m t f` | test file     |
+| `SPC m t g` | test tags     |
+| `SPC m t p` | test prompt   |
+| `SPC m t q` | test quiet    |
+| `SPC m t h` | test help     |
 
 Additional evaluation functions
 -------------------------------
@@ -233,10 +233,10 @@ Additional evaluation functions
 If `smartparens` is used the following additional key bindings are
 available:
 
-  Key binding   Description
-  ------------- ------------------------------
-  `SPC m e c`   evaluate sexp around point
-  `SPC m e s`   evaluate symbol around point
+| Key binding | Description                  |
+|-------------|------------------------------|
+| `SPC m e c` | evaluate sexp around point   |
+| `SPC m e s` | evaluate symbol around point |
 
 Format code
 -----------
@@ -245,120 +245,120 @@ The
 [semantic](https://github.com/syl20bnr/spacemacs/blob/develop/layers/%2Bemacs/semantic/README.org)
 layer should be installed for these key bindings to become active.
 
-  Key binding   Description
-  ------------- -------------------------
-  `SPC m = b`   format current buffer
-  `SPC m = d`   format current function
-  `SPC m = o`   format all on one line
-  `SPC m = s`   format current sexp
+| Key binding | Description             |
+|-------------|-------------------------|
+| `SPC m = b` | format current buffer   |
+| `SPC m = d` | format current function |
+| `SPC m = o` | format all on one line  |
+| `SPC m = s` | format current sexp     |
 
 Debugging
 ---------
 
 To start debugging:
 
-  Key binding   Description
-  ------------- ------------------------------------------------------------------------
-  `SPC m d f`   on a `defun` symbol toggle on the instrumentalisation of the function
-  `SPC m d F`   on a `defun` symbol toggle off the instrumentalisation of the function
-  `SPC m d t`   insert `(debug)` to print the stack trace and re-evaluate the function
+| Key binding | Description                                                            |
+|-------------|------------------------------------------------------------------------|
+| `SPC m d f` | on a `defun` symbol toggle on the instrumentalisation of the function  |
+| `SPC m d F` | on a `defun` symbol toggle off the instrumentalisation of the function |
+| `SPC m d t` | insert `(debug)` to print the stack trace and re-evaluate the function |
 
 In `edebug-mode` (`*Debugging*` is displayed in the minor modes segment
 of the mode line)
 
-  Key binding   Description
-  ------------- ----------------------------
-  `s`           step
-  `i`           step in
-  `o`           step out
-  `S`           next
-  `f`           forward-sexp
-  `H`           goto here
-  `I`           instrument callee
-  `c`           go
-  `C`           fast continue
-  `t`           trace
-  `T`           fast trace
-  `q`           quit
-  `Q`           quit nonstop
-  `a`           stop
-  `b`           set breakpoint
-  `u`           unset breakpoint
-  `B`           next breakpoint
-  `x`           set conditional breakpoint
-  `r`           previous result
-  `e`           evaluate expression
-  `C-x C-e`     evaluate last sexp
-  `w`           where
-  `?`           help
-  `d`           backtrace
+| Key binding | Description                |
+|-------------|----------------------------|
+| `s`         | step                       |
+| `i`         | step in                    |
+| `o`         | step out                   |
+| `S`         | next                       |
+| `f`         | forward-sexp               |
+| `H`         | goto here                  |
+| `I`         | instrument callee          |
+| `c`         | go                         |
+| `C`         | fast continue              |
+| `t`         | trace                      |
+| `T`         | fast trace                 |
+| `q`         | quit                       |
+| `Q`         | quit nonstop               |
+| `a`         | stop                       |
+| `b`         | set breakpoint             |
+| `u`         | unset breakpoint           |
+| `B`         | next breakpoint            |
+| `x`         | set conditional breakpoint |
+| `r`         | previous result            |
+| `e`         | evaluate expression        |
+| `C-x C-e`   | evaluate last sexp         |
+| `w`         | where                      |
+| `?`         | help                       |
+| `d`         | backtrace                  |
 
 In `edebug-eval-mode`
 
-  Key binding   Description
-  ------------- ------------------------------
-  `SPC m g w`   where
-  `SPC m a`     delete evaluation item
-  `SPC m k`     delete evaluation item
-  `SPC m ,`     update evaluation list
-  `SPC m c`     update evaluation list
-  `SPC m e e`   evaluate last sexp
-  `SPC m e E`   evaluate last sexp and print
+| Key binding | Description                  |
+|-------------|------------------------------|
+| `SPC m g w` | where                        |
+| `SPC m a`   | delete evaluation item       |
+| `SPC m k`   | delete evaluation item       |
+| `SPC m ,`   | update evaluation list       |
+| `SPC m c`   | update evaluation list       |
+| `SPC m e e` | evaluate last sexp           |
+| `SPC m e E` | evaluate last sexp and print |
 
 In `debugger-mode` (`Debugger` is displayed in major mode segment of the
 mode line)
 
-  Key binding   Description
-  ------------- --------------------------
-  `<tab>`       forward
-  `S-<tab>`     backward
-  `RET`         backtrace help follow
-  `p`           backtrace backward frame
-  `c`           continue
-  `R`           record expression
-  `d`           step through
-  `e`           eval expression
-  `J`           jump
-  `L`           list functions
-  `b`           frame
-  `r`           return value
-  `u`           frame clear
-  `C-v`         backtrace toggle locals
-  `q`           quit
+| Key binding | Description              |
+|-------------|--------------------------|
+| `<tab>`     | forward                  |
+| `S-<tab>`   | backward                 |
+| `RET`       | backtrace help follow    |
+| `p`         | backtrace backward frame |
+| `c`         | continue                 |
+| `R`         | record expression        |
+| `d`         | step through             |
+| `e`         | eval expression          |
+| `J`         | jump                     |
+| `L`         | list functions           |
+| `b`         | frame                    |
+| `r`         | return value             |
+| `u`         | frame clear              |
+| `C-v`       | backtrace toggle locals  |
+| `q`         | quit                     |
 
 Refactoring with emr
 --------------------
 
-  Key binding     Description
-  --------------- ---------------------------
-  `SPC m r f e`   implement function
-  `SPC m r f d`   find unused definitions
-  `SPC m r e f`   extract function
-  `SPC m r e v`   extract variable
-  `SPC m r e l`   extract to let
-  `SPC m r e c`   extract constant
-  `SPC m r e a`   extract autoload
-  `SPC m r i v`   inline variable
-  `SPC m r i s`   inline let variable
-  `SPC m r i f`   inline function
-  `SPC m r i a`   insert autoload directive
-  `SPC m r d l`   delete let binding form
-  `SPC m r d d`   delete unused definition
-  `SPC m e w`     eval and replace
+| Key binding   | Description               |
+|---------------|---------------------------|
+| `SPC m r f e` | implement function        |
+| `SPC m r f d` | find unused definitions   |
+| `SPC m r e f` | extract function          |
+| `SPC m r e v` | extract variable          |
+| `SPC m r e l` | extract to let            |
+| `SPC m r e c` | extract constant          |
+| `SPC m r e a` | extract autoload          |
+| `SPC m r i v` | inline variable           |
+| `SPC m r i s` | inline let variable       |
+| `SPC m r i f` | inline function           |
+| `SPC m r i a` | insert autoload directive |
+| `SPC m r d l` | delete let binding form   |
+| `SPC m r d d` | delete unused definition  |
+| `SPC m e w`   | eval and replace          |
 
 Inspector
 ---------
 
 **inspector buffer**
 
-  Key binding   Description
-  ------------- -----------------------------
-  `RET`         inspect object
-  `L`           navigate to previous object
-  `q`           quit inspector
+| Key binding | Description                 |
+|-------------|-----------------------------|
+| `RET`       | inspect object              |
+| `L`         | navigate to previous object |
+| `q`         | quit inspector              |
 
 **backtrace buffer**
 
-  ----- ----------------
-  `i`   inspect object
-  ----- ----------------
+|     |                |
+|-----|----------------|
+| `i` | inspect object |

@@ -58,7 +58,7 @@ Configure `~/.mailrc` with the path where `msmtp` is found.
 
 For example:
 
-``` {.rc}
+``` rc
 set sendmail="/usr/local/bin/msmtp"
 ```
 
@@ -74,7 +74,7 @@ by setting the layer variable `notmuch-message-deleted-tags`.
 Default value is to add the `deleted` tag and remove both `inbox` and
 `unread` tags.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((notmuch :variables notmuch-message-deleted-tags '("+deleted" "-inbox" "-unread"))))
 ```
@@ -91,102 +91,102 @@ Key bindings
 Global bindings
 ---------------
 
-  Key binding     Command
-  --------------- ------------------------------------------------
-  `SPC a e n N`   Start notmuch
-  `SPC a e n n`   Start helm/counsil notmuch
-  `SPC a e n j`   Start a notmuch jump search
-  `SPC a e n s`   Start a notmuch search
-  `SPC l o n`     Start notmuch in a custom layout, \"@Notmuch\"
+| Key binding   | Command                                      |
+|---------------|----------------------------------------------|
+| `SPC a e n N` | Start notmuch                                |
+| `SPC a e n n` | Start helm/counsil notmuch                   |
+| `SPC a e n j` | Start a notmuch jump search                  |
+| `SPC a e n s` | Start a notmuch search                       |
+| `SPC l o n`   | Start notmuch in a custom layout, "@Notmuch" |
 
 Show mode
 ---------
 
-  Key binding       Command
-  ----------------- ------------------------------------------------------------------------------------
-  `SPC m a`         \[ATTACHMENTS\] Save all attachments
-  `SPC m P o`       \[PATCH\] Open github patch in a new buffer
-  `SPC m p m`       \[PART\] Choose the mime type to use for displaying
-  `SPC m p \vert`   \[PART\] Pipe part at point to an external command
-  `SPC m p o`       \[PART\] View part at point (prompt for a viewer)
-  `SPC m p v`       \[PART\] View part at point in an external viewer
-  `SPC m p s`       \[PART\] Save part at point to a file
-  `SPC m s c`       \[STASH\] Copy `CC` to kill-ring
-  `SPC m s d`       \[STASH\] Copy `timestamp` to kill-ring
-  `SPC m s G`       \[STASH\] Copy `From/To/Cc/Message-Id` of current message to kill-ring
-  `SPC m s l`       \[STASH\] \[Mailing List Archive\] Copy `ML Archive URI` to kill-ring
-  `SPC m s L`       \[STASH\] \[Mailing List Archive\] Copy `ML Archive URI` to kill-ring and visit it
-  `SPC m s i`       \[STASH\] Copy `message-id` to kill-ring
-  `SPC m s I`       \[STASH\] Copy `message-id` without `id:` prefix to kill-ring
-  `SPC m s f`       \[STASH\] Copy `From address` to kill-ring
-  `SPC m s F`       \[STASH\] Copy `filename` to kill-ring
-  `SPC m s s`       \[STASH\] Copy `Subject` to kill-ring
-  `SPC m s t`       \[STASH\] Copy `To address` to kill-ring
-  `SPC m s T`       \[STASH\] Copy `tags` to kill-ring
+| Key binding     | Command                                                                            |
+|-----------------|------------------------------------------------------------------------------------|
+| `SPC m a`       | \[ATTACHMENTS\] Save all attachments                                               |
+| `SPC m P o`     | \[PATCH\] Open github patch in a new buffer                                        |
+| `SPC m p m`     | \[PART\] Choose the mime type to use for displaying                                |
+| `SPC m p \vert` | \[PART\] Pipe part at point to an external command                                 |
+| `SPC m p o`     | \[PART\] View part at point (prompt for a viewer)                                  |
+| `SPC m p v`     | \[PART\] View part at point in an external viewer                                  |
+| `SPC m p s`     | \[PART\] Save part at point to a file                                              |
+| `SPC m s c`     | \[STASH\] Copy `CC` to kill-ring                                                   |
+| `SPC m s d`     | \[STASH\] Copy `timestamp` to kill-ring                                            |
+| `SPC m s G`     | \[STASH\] Copy `From/To/Cc/Message-Id` of current message to kill-ring             |
+| `SPC m s l`     | \[STASH\] \[Mailing List Archive\] Copy `ML Archive URI` to kill-ring              |
+| `SPC m s L`     | \[STASH\] \[Mailing List Archive\] Copy `ML Archive URI` to kill-ring and visit it |
+| `SPC m s i`     | \[STASH\] Copy `message-id` to kill-ring                                           |
+| `SPC m s I`     | \[STASH\] Copy `message-id` without `id:` prefix to kill-ring                      |
+| `SPC m s f`     | \[STASH\] Copy `From address` to kill-ring                                         |
+| `SPC m s F`     | \[STASH\] Copy `filename` to kill-ring                                             |
+| `SPC m s s`     | \[STASH\] Copy `Subject` to kill-ring                                              |
+| `SPC m s t`     | \[STASH\] Copy `To address` to kill-ring                                           |
+| `SPC m s T`     | \[STASH\] Copy `tags` to kill-ring                                                 |
 
 Evilified key bindings
 ----------------------
 
 ### Hello mode
 
-  Key binding   Command
-  ------------- --------------------------------------
-  `TAB`         Jump to next widget
-  `S-TAB`       Jump to previous widget
-  `J`           Jump to a saved search
-  `s`           Show threads matching QUERY
-  `=` or `g`    Refresh buffer
-  `M-=`         Refresh all open notmuch buffers
-  `?`           Open notmuch help buffer
-  `G`           Pull new messages and refresh buffer
-  `m`           Open new mail buffer
-  `q`           Kill notmuch buffer
-  `v`           Show current notmuch version
-  `z`           Open notmuch tree buffer
+| Key binding | Command                              |
+|-------------|--------------------------------------|
+| `TAB`       | Jump to next widget                  |
+| `S-TAB`     | Jump to previous widget              |
+| `J`         | Jump to a saved search               |
+| `s`         | Show threads matching QUERY          |
+| `=` or `g`  | Refresh buffer                       |
+| `M-=`       | Refresh all open notmuch buffers     |
+| `?`         | Open notmuch help buffer             |
+| `G`         | Pull new messages and refresh buffer |
+| `m`         | Open new mail buffer                 |
+| `q`         | Kill notmuch buffer                  |
+| `v`         | Show current notmuch version         |
+| `z`         | Open notmuch tree buffer             |
 
 ### Search mode
 
-  Key binding   Command
-  ------------- ----------------------------
-  `J`           Jump to saved search
-  `*`           \[Thread\] Add/Remove tags
-  `+`           \[Message\] Add tags
-  `-`           \[Message\] Remove tags
-  `a`           \[Message\] Archive
+| Key binding | Command                    |
+|-------------|----------------------------|
+| `J`         | Jump to saved search       |
+| `*`         | \[Thread\] Add/Remove tags |
+| `+`         | \[Message\] Add tags       |
+| `-`         | \[Message\] Remove tags    |
+| `a`         | \[Message\] Archive        |
 
 ### Show mode
 
-  Key binding   Description
-  ------------- ----------------------------
-  `o`           Open all messages
-  `O`           Close all messages
-  `n`           Show next open message
-  `N`           Show next message
-  `p`           Show previous open message
-  `P`           Show previous message
-  `C-n`         Show next thread
-  `C-p`         Show previous thread
-  `d`           Delete messages down
-  `D`           Delete messages up
-  `J`           Jump search
-  `L`           Filter current search
-  `gf`          Find file or URL at point
-  `gg`          Jump to top
-  `G`           Jump to bottom
-  `gr`          Refresh buffer
-  `gR`          Refresh all buffers
-  `m`           Compose mail
+| Key binding | Description                |
+|-------------|----------------------------|
+| `o`         | Open all messages          |
+| `O`         | Close all messages         |
+| `n`         | Show next open message     |
+| `N`         | Show next message          |
+| `p`         | Show previous open message |
+| `P`         | Show previous message      |
+| `C-n`       | Show next thread           |
+| `C-p`       | Show previous thread       |
+| `d`         | Delete messages down       |
+| `D`         | Delete messages up         |
+| `J`         | Jump search                |
+| `L`         | Filter current search      |
+| `gf`        | Find file or URL at point  |
+| `gg`        | Jump to top                |
+| `G`         | Jump to bottom             |
+| `gr`        | Refresh buffer             |
+| `gR`        | Refresh all buffers        |
+| `m`         | Compose mail               |
 
 ### Tree mode
 
-  Key binding   Command
-  ------------- ------------------------------------------
-  `*`           \[Thread\] Add/Remove tags
-  `+`           \[Message\] Add tags
-  `-`           \[Message\] Remove tags
-  `a`           \[Message\] Archive
-  `M-d`         \[Message\] Scroll down the message pane
-  `M-u`         \[Message\] Scroll up the message pane
+| Key binding | Command                                  |
+|-------------|------------------------------------------|
+| `*`         | \[Thread\] Add/Remove tags               |
+| `+`         | \[Message\] Add tags                     |
+| `-`         | \[Message\] Remove tags                  |
+| `a`         | \[Message\] Archive                      |
+| `M-d`       | \[Message\] Scroll down the message pane |
+| `M-u`       | \[Message\] Scroll up the message pane   |
 
 Spacemacs layout integration
 ============================
@@ -203,7 +203,7 @@ variables:
 The following example configures the layout with the default name and
 binding:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (notmuch :variables notmuch-spacemacs-layout-name "@Notmuch"
                       notmuch-spacemacs-layout-binding "n")))

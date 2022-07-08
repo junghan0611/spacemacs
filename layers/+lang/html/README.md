@@ -34,7 +34,7 @@ list in this file.
 SCSS linting requires SCSS-Lint version \>= 0.43.0. You can get it from
 GitHub:
 
-``` {.command-line}
+``` command-line
 gem install scss_lint_reporter_checkstyle
 gem install scss_lint
 ```
@@ -65,7 +65,7 @@ Choosing a formatter
 
 To choose a formatter, set the layer variable `web-fmt-tool`:
 
-``` {.elisp}
+``` elisp
 (html :variables web-fmt-tool 'web-beautify)
 ```
 
@@ -73,7 +73,7 @@ Formatter can be chosen on a per project basis using directory local
 variables (files named `.dir-locals.el` at the root of a project), an
 example to use the `prettier` formatter:
 
-``` {.elisp}
+``` elisp
 ;;; Directory Local Variables
 ;;; For more information see (info "(emacs) Directory Variables")
 
@@ -89,7 +89,7 @@ Activate leex support
 To activate support for `.leex` files set below config variable to a
 non-nil value.
 
-``` {.elisp}
+``` elisp
 (html :variables html-enable-leex-support t)
 ```
 
@@ -101,19 +101,19 @@ Language Server Protocol
 
 For css files, you have to install `vscode-css-languageserver-bin`
 
-``` {.bash org-language="sh"}
+``` bash
 npm i -g vscode-css-languageserver-bin
 ```
 
 For html files, you will need to install
 `vscode-html-languageserver-bin`
 
-``` {.bash org-language="sh"}
+``` bash
 npm install -g vscode-html-languageserver-bin
 ```
 
-Don\'t forget to set the corresponding layer variables mentioned above
-to `t`
+Don't forget to set the corresponding layer variables mentioned above to
+`t`
 
 Live display in browser
 =======================
@@ -135,48 +135,48 @@ Key bindings
 Web mode
 --------
 
-  Key binding   Description
-  ------------- -----------------------------------------------------------
-  `SPC m g p`   quickly navigate CSS rules using `helm`
-  `SPC m e h`   highlight DOM errors
-  `SPC m I`     open live view in browser
-  `SPC m g b`   go to the beginning of current element
-  `SPC m g c`   go to the first child element
-  `SPC m g p`   go to the parent element
-  `SPC m g s`   go to next sibling
-  `SPC m h p`   show xpath of the current element
-  `SPC m r c`   clone the current element
-  `SPC m r d`   delete the current element (does not delete the children)
-  `SPC m r r`   rename current element
-  `SPC m r w`   wrap current element
-  `SPC m z`     fold/unfold current element
-  `%`           evil-matchit key binding to jump to closing tag
-  `C-return`    emmet-expand snippet
+| Key binding | Description                                               |
+|-------------|-----------------------------------------------------------|
+| `SPC m g p` | quickly navigate CSS rules using `helm`                   |
+| `SPC m e h` | highlight DOM errors                                      |
+| `SPC m I`   | open live view in browser                                 |
+| `SPC m g b` | go to the beginning of current element                    |
+| `SPC m g c` | go to the first child element                             |
+| `SPC m g p` | go to the parent element                                  |
+| `SPC m g s` | go to next sibling                                        |
+| `SPC m h p` | show xpath of the current element                         |
+| `SPC m r c` | clone the current element                                 |
+| `SPC m r d` | delete the current element (does not delete the children) |
+| `SPC m r r` | rename current element                                    |
+| `SPC m r w` | wrap current element                                      |
+| `SPC m z`   | fold/unfold current element                               |
+| `%`         | evil-matchit key binding to jump to closing tag           |
+| `C-return`  | emmet-expand snippet                                      |
 
 A transient-state is also defined, start it with `SPC m .` or `, .`
 
-  Key binding   Description
-  ------------- ----------------------------------------------------------------
-  `?`           Toggle full help
-  `c`           clone current element
-  `d`           delete (vanish) current element (does not delete the children)
-  `D`           delete current element and children
-  `j`           next element
-  `J` / `gj`    next sibling element
-  `h`           parent element
-  `k`           previous element
-  `K` / `gk`    previous sibling element
-  `l`           first child element
-  `p`           show xpath of current element
-  `q`           leave the transient-state
-  `r`           rename current element
-  `w`           wrap current element
+| Key binding | Description                                                    |
+|-------------|----------------------------------------------------------------|
+| `?`         | Toggle full help                                               |
+| `c`         | clone current element                                          |
+| `d`         | delete (vanish) current element (does not delete the children) |
+| `D`         | delete current element and children                            |
+| `j`         | next element                                                   |
+| `J` / `gj`  | next sibling element                                           |
+| `h`         | parent element                                                 |
+| `k`         | previous element                                               |
+| `K` / `gk`  | previous sibling element                                       |
+| `l`         | first child element                                            |
+| `p`         | show xpath of current element                                  |
+| `q`         | leave the transient-state                                      |
+| `r`         | rename current element                                         |
+| `w`         | wrap current element                                           |
 
 CSS/SCSS
 --------
 
-  Key binding   Description
-  ------------- ----------------------------------
-  `SPC m g h`   quickly navigate CSS rules
-  `SPC m z c`   fold css statement to one line
-  `SPC m z o`   unfold css statement to one line
+| Key binding | Description                      |
+|-------------|----------------------------------|
+| `SPC m g h` | quickly navigate CSS rules       |
+| `SPC m z c` | fold css statement to one line   |
+| `SPC m z o` | unfold css statement to one line |

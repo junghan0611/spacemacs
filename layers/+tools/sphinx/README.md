@@ -26,12 +26,12 @@ Configuration
 Sphinx target
 -------------
 
-To use the layer\'s Sphinx feature, the following variables should be
+To use the layer's Sphinx feature, the following variables should be
 set.
 
 A parent directory is needed for all your Sphinx project builds:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (sphinx :variables
         rst-sphinx-target-parent "~/MyProjects/")
 ```
@@ -40,7 +40,7 @@ Create a directory in the parent directory for each Sphinx project. This
 will be used as the project name for the layer. In addition you need to
 define where the output folder should be for each project.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (sphinx :variables
         rst-sphinx-target-parent "~/MyProjects/"
         rst-sphinx-target-projects
@@ -54,7 +54,7 @@ Web browser
 Set the browser for viewing the HTML page of current rst file. This one
 is optional. If not set, the default browser will be used.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (sphinx :variables
         rst-slides-program "chromium")
 ```
@@ -62,10 +62,10 @@ is optional. If not set, the default browser will be used.
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -----------------------------------------
-  `SPC m c c`   compile projects
-  `SPC m c C`   clean projects
-  `SPC m c r`   rebuild projects
-  `SPC m g c`   open `conf.py` of current project
-  `SPC m o`     open compiled HTML page of current page
+| Key binding | Description                             |
+|-------------|-----------------------------------------|
+| `SPC m c c` | compile projects                        |
+| `SPC m c C` | clean projects                          |
+| `SPC m c r` | rebuild projects                        |
+| `SPC m g c` | open `conf.py` of current project       |
+| `SPC m o`   | open compiled HTML page of current page |

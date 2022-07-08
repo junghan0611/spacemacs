@@ -22,7 +22,7 @@ list in this file.
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- --------------------------------------------
-  `SPC SPC`     all Emacs commands (interactive functions)
-  `SPC m :`     current major mode commands
+| Key binding | Description                                |
+|-------------|--------------------------------------------|
+| `SPC SPC`   | all Emacs commands (interactive functions) |
+| `SPC m :`   | current major mode commands                |

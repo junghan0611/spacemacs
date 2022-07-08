@@ -22,7 +22,7 @@ need to add `mercury` to the existing
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- --------------------------------------
-  `SPC m c b`   Compile current buffer file.
-  `SPC m c r`   Compile and run current buffer file.
+| Key binding | Description                          |
+|-------------|--------------------------------------|
+| `SPC m c b` | Compile current buffer file.         |
+| `SPC m c r` | Compile and run current buffer file. |

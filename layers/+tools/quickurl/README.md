@@ -20,11 +20,11 @@ need to add `quickurl` to the existing
 Key bindings
 ============
 
-  Key binding     Description
-  --------------- ------------------------------------------
-  `SPC a t q l`   List quickurls
-  `SPC a t q q`   Expand quickurl abbrev at point
-  `SPC a t q i`   Ask for which quickurl to insert
-  `SPC a t q e`   Edit quickurl at point
-  `SPC a t q a`   Add quickurl at point
-  `SPC a t q b`   Ask to browse some url from those stored
+| Key binding   | Description                              |
+|---------------|------------------------------------------|
+| `SPC a t q l` | List quickurls                           |
+| `SPC a t q q` | Expand quickurl abbrev at point          |
+| `SPC a t q i` | Ask for which quickurl to insert         |
+| `SPC a t q e` | Edit quickurl at point                   |
+| `SPC a t q a` | Add quickurl at point                    |
+| `SPC a t q b` | Ask to browse some url from those stored |

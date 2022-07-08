@@ -24,7 +24,7 @@ Currently supported backends are:
 To set your choice of backend, configure `multiple-cursors-backend`
 variable of the layer.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (multiple-cursors :variables multiple-cursors-backend 'evil-mc))
 ```
@@ -37,22 +37,22 @@ Key bindings
 
 The `evil-mc` package provides the following key bindings:
 
-  Key binding   Description
-  ------------- ------------------------------------
-  `g r f`       evil-mc-make-and-goto-first-cursor
-  `g r h`       evil-mc-make-cursor-here
-  `g r j`       evil-mc-make-cursor-move-next-line
-  `g r k`       evil-mc-make-cursor-move-prev-line
-  `g r l`       evil-mc-make-and-goto-last-cursor
-  `g r m`       evil-mc-make-all-cursors
-  `g r n`       evil-mc-skip-and-goto-next-match
-  `g r N`       evil-mc-skip-and-goto-next-cursor
-  `g r p`       evil-mc-skip-and-goto-prev-match
-  `g r P`       evil-mc-skip-and-goto-prev-cursor
-  `g r r`       evil-mc-resume-cursors
-  `g r s`       evil-mc-pause-cursors
-  `g r q`       evil-mc-undo-all-cursors
-  `g r u`       evil-mc-undo-last-added-cursor
+| Key binding | Description                        |
+|-------------|------------------------------------|
+| `g r f`     | evil-mc-make-and-goto-first-cursor |
+| `g r h`     | evil-mc-make-cursor-here           |
+| `g r j`     | evil-mc-make-cursor-move-next-line |
+| `g r k`     | evil-mc-make-cursor-move-prev-line |
+| `g r l`     | evil-mc-make-and-goto-last-cursor  |
+| `g r m`     | evil-mc-make-all-cursors           |
+| `g r n`     | evil-mc-skip-and-goto-next-match   |
+| `g r N`     | evil-mc-skip-and-goto-next-cursor  |
+| `g r p`     | evil-mc-skip-and-goto-prev-match   |
+| `g r P`     | evil-mc-skip-and-goto-prev-cursor  |
+| `g r r`     | evil-mc-resume-cursors             |
+| `g r s`     | evil-mc-pause-cursors              |
+| `g r q`     | evil-mc-undo-all-cursors           |
+| `g r u`     | evil-mc-undo-last-added-cursor     |
 
 ### Make cursors from a selection
 
@@ -63,24 +63,24 @@ When the following commands are called from a:
 -   block selection, then the cursors are created before or after the
     selection blocks left or right most column.
 
-  Key binding   Description
-  ------------- ---------------------------------------------
-  `g r A`       evil-mc-make-cursor-in-visual-selection-end
-  `g r I`       evil-mc-make-cursor-in-visual-selection-beg
+| Key binding | Description                                 |
+|-------------|---------------------------------------------|
+| `g r A`     | evil-mc-make-cursor-in-visual-selection-end |
+| `g r I`     | evil-mc-make-cursor-in-visual-selection-beg |
 
 ### Additional key bindings
 
 For easy navigation you also have the following:
 
-  Key binding   Description
-  ------------- ------------------------------------
-  `M-n`         evil-mc-make-and-goto-next-cursor
-  `M-p`         evil-mc-make-and-goto-prev-cursor
-  `C-n`         evil-mc-make-and-goto-next-match
-  `C-p`         evil-mc-make-and-goto-prev-match
-  `C-t`         evil-mc-skip-and-goto-next-match
-  `C-M-j`       evil-mc-make-cursor-move-next-line
-  `C-M-k`       evil-mc-make-cursor-move-prev-line
+| Key binding | Description                        |
+|-------------|------------------------------------|
+| `M-n`       | evil-mc-make-and-goto-next-cursor  |
+| `M-p`       | evil-mc-make-and-goto-prev-cursor  |
+| `C-n`       | evil-mc-make-and-goto-next-match   |
+| `C-p`       | evil-mc-make-and-goto-prev-match   |
+| `C-t`       | evil-mc-skip-and-goto-next-match   |
+| `C-M-j`     | evil-mc-make-cursor-move-next-line |
+| `C-M-k`     | evil-mc-make-cursor-move-prev-line |
 
 `multiple-cursors`
 ------------------
@@ -88,23 +88,23 @@ For easy navigation you also have the following:
 The `multiple-cursors` backend provides the following key bindings to
 insert new cursors:
 
-  Key binding   Description
-  ------------- ---------------------------------
-  `SPC s m a`   mc/mark-all-dwim
-  `SPC s m b`   mc/mark-all-like-this
-  `SPC s m m`   mc/mark-more-like-this-extended
-  `SPC s m r`   mc/edit-lines
+| Key binding | Description                     |
+|-------------|---------------------------------|
+| `SPC s m a` | mc/mark-all-dwim                |
+| `SPC s m b` | mc/mark-all-like-this           |
+| `SPC s m m` | mc/mark-more-like-this-extended |
+| `SPC s m r` | mc/edit-lines                   |
 
 These special bindings manipulate text under cursors:
 
-  Key binding     Description
-  --------------- -------------------------------
-  `SPC s m s l`   mc/insert-letters
-  `SPC s m s m`   mc/mark-sgml-tag-pair
-  `SPC s m s n`   mc/insert-numbers
-  `SPC s m s r`   set-rectangular-region-anchor
-  `SPC s m s s`   mc/sort-regions
-  `SPC s m s t`   mc/reverse-regions
+| Key binding   | Description                   |
+|---------------|-------------------------------|
+| `SPC s m s l` | mc/insert-letters             |
+| `SPC s m s m` | mc/mark-sgml-tag-pair         |
+| `SPC s m s n` | mc/insert-numbers             |
+| `SPC s m s r` | set-rectangular-region-anchor |
+| `SPC s m s s` | mc/sort-regions               |
+| `SPC s m s t` | mc/reverse-regions            |
 
 Notes
 =====
@@ -124,7 +124,7 @@ the case or you want a command to be executed only once, configure the
 `mc/cmds-to-run-once` variable of the layer like in the following
 example.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (multiple-cursors :variables
                     multiple-cursors-backend 'mc

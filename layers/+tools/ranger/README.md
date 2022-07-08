@@ -17,7 +17,7 @@ work). To default with preview enabled when entering ranger set
 can set both variables at once via the
 `dotspacemacs-configuration-layers` of your dotfiles as follows:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '(ranger :variables
                        ranger-override-dired 'ranger
@@ -47,41 +47,41 @@ Toggle the use of `-` to enter deer or ranger with
 -   `'ranger`
 -   `nil` (restores the default behavior of `-`)
 
-``` {.elisp}
+``` elisp
 (setq ranger-enter-with-minus 'deer)
 ```
 
 When disabling the mode you can choose to kill the buffers that were
 opened while browsing the directories.
 
-``` {.elisp}
+``` elisp
 (setq ranger-cleanup-on-disable t)
 ```
 
 Or you can choose to kill the buffer just after you move to another
 entry in the dired buffer.
 
-``` {.elisp}
+``` elisp
 (setq ranger-cleanup-eagerly t)
 ```
 
 You can choose to show dotfiles at ranger startup, toggled by `zh`
 
-``` {.elisp}
+``` elisp
 (setq ranger-show-hidden t)
 ```
 
 Define custom function used to output header of primary ranger window.
 Must return a string that is placed in the header-line.
 
-``` {.elisp}
+``` elisp
 (setq ranger-header-func 'ranger-header-line)
 ```
 
 Define custom function used to output header of parent and preview
 windows. Must return a string that is placed in the header-line.
 
-``` {.elisp}
+``` elisp
 (setq ranger-parent-header-func 'ranger-parent-header-line)
 ```
 
@@ -91,21 +91,21 @@ Parent options
 You can set the number of folders to nest to the left, adjusted by `z-`
 and `z+`
 
-``` {.elisp}
+``` elisp
 (setq ranger-parent-depth 2)
 ```
 
 You can set the size of the parent windows as a fraction of the frame
 size
 
-``` {.elisp}
+``` elisp
 (setq ranger-width-parents 0.12)
 ```
 
 When increasing number of nested parent folders, set max width as
 fraction of frame size to prevent filling up entire frame with parents.
 
-``` {.elisp}
+``` elisp
 (setq ranger-max-parent-width 0.12)
 ```
 
@@ -115,63 +115,63 @@ Preview options
 You can choose to show previews literally, or through find-file, toggled
 by `zi`
 
-``` {.elisp}
+``` elisp
 (setq ranger-show-literal t)
 ```
 
 You can set the size of the preview windows as a fraction of the frame
 size
 
-``` {.elisp}
+``` elisp
 (setq ranger-width-preview 0.55)
 ```
 
-You probably don\'t want to open certain files like videos when using
+You probably don't want to open certain files like videos when using
 preview. To ignore certain files when moving over them you can customize
 the following to your liking:
 
-``` {.elisp}
+``` elisp
 (setq ranger-ignored-extensions '("mkv" "iso" "mp4"))
 ```
 
 To set the max files size (in MB), set the following parameter:
 
-``` {.elisp}
+``` elisp
 (setq ranger-max-preview-size 10)
 ```
 
 Key bindings
 ============
 
-  Key binding       Description
-  ----------------- ------------------------------------------------------
-  `SPC a t r r`     launch ranger
-  `SPC a t r d`     deer (minimal ranger window in current directory)
-  `C-p`             (ranger) toggle ranger in dired buffer
-  `j`               (ranger) navigate down
-  `k`               (ranger) navigate up
-  `yy`              (ranger) copy
-  `pp`              (ranger) paste
-  `R`               (ranger) rename
-  `D`               (ranger) delete
-  `C-j`             (ranger) scroll preview window down
-  `C-k`             (ranger) scroll preview window up
-  `f`               (ranger) search for file names
-  `i`               (ranger) show preview of current file
-  `zi`              (ranger) toggle showing literal / full-text previews
-  `zh`              (ranger) toggle showing dotfiles
-  `o`               (ranger) sort options
-  `H`               (ranger) search through history
-  `h`               (ranger) go up directory
-  `l`               (ranger) find file / enter directory
-  `RET`             (ranger) find file / enter directory
-  `q`               (ranger) quit
-  `;g`              (ranger) revert buffer
-  `z-`              (ranger) reduce number of parents
-  `z+`              (ranger) increment number of parents
-  `C-SPC` / `TAB`   (ranger) mark current file
-  `v`               (ranger) toggle all marks
-  `t`               (ranger) toggle mark current file
-  `S`               (ranger) enter shell
-  `;C`              (ranger) copy directory / copy and move directory
-  `;+`              (ranger) create directory
+| Key binding     | Description                                          |
+|-----------------|------------------------------------------------------|
+| `SPC a t r r`   | launch ranger                                        |
+| `SPC a t r d`   | deer (minimal ranger window in current directory)    |
+| `C-p`           | (ranger) toggle ranger in dired buffer               |
+| `j`             | (ranger) navigate down                               |
+| `k`             | (ranger) navigate up                                 |
+| `yy`            | (ranger) copy                                        |
+| `pp`            | (ranger) paste                                       |
+| `R`             | (ranger) rename                                      |
+| `D`             | (ranger) delete                                      |
+| `C-j`           | (ranger) scroll preview window down                  |
+| `C-k`           | (ranger) scroll preview window up                    |
+| `f`             | (ranger) search for file names                       |
+| `i`             | (ranger) show preview of current file                |
+| `zi`            | (ranger) toggle showing literal / full-text previews |
+| `zh`            | (ranger) toggle showing dotfiles                     |
+| `o`             | (ranger) sort options                                |
+| `H`             | (ranger) search through history                      |
+| `h`             | (ranger) go up directory                             |
+| `l`             | (ranger) find file / enter directory                 |
+| `RET`           | (ranger) find file / enter directory                 |
+| `q`             | (ranger) quit                                        |
+| `;g`            | (ranger) revert buffer                               |
+| `z-`            | (ranger) reduce number of parents                    |
+| `z+`            | (ranger) increment number of parents                 |
+| `C-SPC` / `TAB` | (ranger) mark current file                           |
+| `v`             | (ranger) toggle all marks                            |
+| `t`             | (ranger) toggle mark current file                    |
+| `S`             | (ranger) enter shell                                 |
+| `;C`            | (ranger) copy directory / copy and move directory    |
+| `;+`            | (ranger) create directory                            |

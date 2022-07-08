@@ -19,14 +19,14 @@ List of TODOS
 
 This is a WIP, feel free to collaborate.
 
-[TODO]{.todo .TODO} Maybe it\'d be better if there was a state for this {#maybe-itd-be-better-if-there-was-a-state-for-this}
------------------------------------------------------------------------
+<span class="todo TODO">TODO</span> Maybe it'd be better if there was a state for this
+--------------------------------------------------------------------------------------
 
-[TODO]{.todo .TODO} Make more key binding to `connect` to a python buffer {#make-more-key-binding-to-connect-to-a-python-buffer}
--------------------------------------------------------------------------
+<span class="todo TODO">TODO</span> Make more key binding to `connect` to a python buffer
+-----------------------------------------------------------------------------------------
 
-[TODO]{.todo .TODO} Deleting visual regions don\'t work, find out why {#deleting-visual-regions-dont-work-find-out-why}
----------------------------------------------------------------------
+<span class="todo TODO">TODO</span> Deleting visual regions don't work, find out why
+------------------------------------------------------------------------------------
 
 Install
 =======
@@ -43,7 +43,7 @@ Choosing a backend
 
 To choose a default backend set the layer variable `ein-backend`:
 
-``` {.elisp}
+``` elisp
 (ipython-notebook :variables ein-backend 'jupyter)
 ```
 
@@ -60,7 +60,7 @@ Install IPython Notebook \> 3
 Note that IPython Notebook has now been renamed to [Jupyter
 Notebook](https://jupyter.org/install).
 
-``` {.bash org-language="sh"}
+``` bash
 pip install jupyter
 ```
 
@@ -69,7 +69,7 @@ What needs to be run
 
 Have an IPython notebook running
 
-``` {.bash org-language="sh"}
+``` bash
 jupyter notebook
 ```
 
@@ -97,56 +97,56 @@ transient-state with `SPC m .`
 The following table lists the keys. Use them as listed in the
 transient-state or prefix with `SPC m` to use with your evil-leader.
 
-  Key       Function
-  --------- -------------------------------------------
-  `h`       ein:notebook-worksheet-open-prev-or-last
-  `j`       ein:worksheet-goto-next-input
-  `k`       ein:worksheet-goto-prev-input
-  `l`       ein:notebook-worksheet-open-next-or-first
-  `H`       ein:notebook-worksheet-move-prev
-  `J`       ein:worksheet-move-cell-down
-  `K`       ein:worksheet-move-cell-up
-  `L`       ein:notebook-worksheet-move-next
-  `t`       ein:worksheet-toggle-output
-  `d`       ein:worksheet-kill-cell
-  `R`       ein:worksheet-rename-sheet
-  `y`       ein:worksheet-copy-cell
-  `p`       ein:worksheet-yank-cell
-  `i`       ein:worksheet-insert-cell-below
-  `I`       ein:worksheet-insert-cell-above
-  `u`       ein:worksheet-change-cell-type
-  `RET`     ein:worksheet-execute-cell-and-goto-next
-  `C-l`     ein:worksheet-clear-output
-  `C-S-l`   ein:worksheet-clear-all-output
-  `C-o`     ein:console-open
-  `C-k`     ein:worksheet-merge-cell
-  `C-j`     spacemacs/ein:worksheet-merge-cell-next
-  `s`       ein:worksheet-split-cell-at-point
-  `C-s`     ein:notebook-save-notebook-command
-  `C-r`     ein:notebook-rename-command
-  `1`       ein:notebook-worksheet-open-1th
-  `2`       ein:notebook-worksheet-open-2th
-  `3`       ein:notebook-worksheet-open-3th
-  `4`       ein:notebook-worksheet-open-4th
-  `5`       ein:notebook-worksheet-open-5th
-  `6`       ein:notebook-worksheet-open-6th
-  `7`       ein:notebook-worksheet-open-7th
-  `8`       ein:notebook-worksheet-open-8th
-  `9`       ein:notebook-worksheet-open-last
-  `+`       ein:notebook-worksheet-insert-next
-  `-`       ein:notebook-worksheet-delete
-  `x`       ein:notebook-close
+| Key     | Function                                  |
+|---------|-------------------------------------------|
+| `h`     | ein:notebook-worksheet-open-prev-or-last  |
+| `j`     | ein:worksheet-goto-next-input             |
+| `k`     | ein:worksheet-goto-prev-input             |
+| `l`     | ein:notebook-worksheet-open-next-or-first |
+| `H`     | ein:notebook-worksheet-move-prev          |
+| `J`     | ein:worksheet-move-cell-down              |
+| `K`     | ein:worksheet-move-cell-up                |
+| `L`     | ein:notebook-worksheet-move-next          |
+| `t`     | ein:worksheet-toggle-output               |
+| `d`     | ein:worksheet-kill-cell                   |
+| `R`     | ein:worksheet-rename-sheet                |
+| `y`     | ein:worksheet-copy-cell                   |
+| `p`     | ein:worksheet-yank-cell                   |
+| `i`     | ein:worksheet-insert-cell-below           |
+| `I`     | ein:worksheet-insert-cell-above           |
+| `u`     | ein:worksheet-change-cell-type            |
+| `RET`   | ein:worksheet-execute-cell-and-goto-next  |
+| `C-l`   | ein:worksheet-clear-output                |
+| `C-S-l` | ein:worksheet-clear-all-output            |
+| `C-o`   | ein:console-open                          |
+| `C-k`   | ein:worksheet-merge-cell                  |
+| `C-j`   | spacemacs/ein:worksheet-merge-cell-next   |
+| `s`     | ein:worksheet-split-cell-at-point         |
+| `C-s`   | ein:notebook-save-notebook-command        |
+| `C-r`   | ein:notebook-rename-command               |
+| `1`     | ein:notebook-worksheet-open-1th           |
+| `2`     | ein:notebook-worksheet-open-2th           |
+| `3`     | ein:notebook-worksheet-open-3th           |
+| `4`     | ein:notebook-worksheet-open-4th           |
+| `5`     | ein:notebook-worksheet-open-5th           |
+| `6`     | ein:notebook-worksheet-open-6th           |
+| `7`     | ein:notebook-worksheet-open-7th           |
+| `8`     | ein:notebook-worksheet-open-8th           |
+| `9`     | ein:notebook-worksheet-open-last          |
+| `+`     | ein:notebook-worksheet-insert-next        |
+| `-`     | ein:notebook-worksheet-delete             |
+| `x`     | ein:notebook-close                        |
 
 ### Normal mode
 
 In normal mode the following key bindings are defined:
 
-  Key       Function
-  --------- ------------------------------------------
-  `gj`      ein:worksheet-goto-next-input
-  `gk`      ein:worksheet-goto-prev-input
-  `C-RET`   ein:worksheet-execute-cell
-  `S-RET`   ein:worksheet-execute-cell-and-goto-next
+| Key     | Function                                 |
+|---------|------------------------------------------|
+| `gj`    | ein:worksheet-goto-next-input            |
+| `gk`    | ein:worksheet-goto-prev-input            |
+| `C-RET` | ein:worksheet-execute-cell               |
+| `S-RET` | ein:worksheet-execute-cell-and-goto-next |
 
 Also `SPC f s` saves the notebook like you would a regular buffer.
 
@@ -154,21 +154,21 @@ Also `SPC f s` saves the notebook like you would a regular buffer.
 
 In normal mode the following key bindings are defined:
 
-  Key       Function
-  --------- ------------------------------------------
-  `C-RET`   ein:worksheet-execute-cell
-  `S-RET`   ein:worksheet-execute-cell-and-goto-next
+| Key     | Function                                 |
+|---------|------------------------------------------|
+| `C-RET` | ein:worksheet-execute-cell               |
+| `S-RET` | ein:worksheet-execute-cell-and-goto-next |
 
 ### Traceback mode
 
 In traceback mode the following key bindings are defined:
 
-  key     Function
-  ------- ----------------------------------------
-  `RET`   ein:tb-jump-to-source-at-point-command
-  `n`     ein:tb-next-item
-  `p`     ein:tb-prev-item
-  `q`     bury-buffer
+| key   | Function                               |
+|-------|----------------------------------------|
+| `RET` | ein:tb-jump-to-source-at-point-command |
+| `n`   | ein:tb-next-item                       |
+| `p`   | ein:tb-prev-item                       |
+| `q`   | bury-buffer                            |
 
 Screenshots
 ===========

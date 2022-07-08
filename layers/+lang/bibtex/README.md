@@ -34,7 +34,7 @@ This layer also supports having a global BibTeX file. For a basic
 configuration, add this to your `~/.spacemacs` inside
 `dotspacemacs/user-config`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq bibtex-completion-bibliography '("~/Papers/references.bib")
       bibtex-completion-library-path "~/Papers/"
       bibtex-completion-notes-path "~/Papers/notes.org")
@@ -48,7 +48,7 @@ always set file-local variables (through `SPC f v f`).
 You can also customize which program is used to display the PDFs. For
 example, to use Zathura:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq org-ref-open-pdf-function
   (lambda (fpath)
     (start-process "zathura" "*helm-bibtex-zathura*" "/usr/bin/zathura" fpath)))
@@ -67,7 +67,7 @@ manager](https://joostkremers.github.io/ebib/ebib-manual.html) set the
 variable `bibtex-enable-ebib-support` as shown in the following code
 block:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (bibtex :variables
         bibtex-enable-ebib-support t
         ebib-preload-bib-files '("path-to-bib-file.bib")
@@ -91,56 +91,56 @@ Key bindings
 
 In a Bib(La)TeX file, the following key bindings are added:
 
-  Key binding                 Description
-  --------------------------- ---------------------------------------------
-  `SPC m j` / `g j` / `C-j`   Next entry
-  `SPC m k` / `g k` / `C-k`   Previous entry
-  `SPC m p`                   Open PDF
-  `SPC m n`                   Open notes
-  `SPC m b`                   Open browser
-  `SPC m i`                   Insert new entry
-  `SPC m s`                   Sort entry
-  `SPC m h`                   Various actions on entry
-  `SPC m m`                   Manage bibtex library
-  `SPC m l a`                 Lookup and add arXiv paper (don\'t get PDF)
-  `SPC m l A`                 Lookup and add arXiv paper (download PDF)
-  `SPC m l d`                 Lookup and add paper by DOI
-  `SPC m l i`                 Lookup and add book by ISBN
-  `SPC m l p`                 Lookup and add paper by PMID
+| Key binding               | Description                                |
+|---------------------------|--------------------------------------------|
+| `SPC m j` / `g j` / `C-j` | Next entry                                 |
+| `SPC m k` / `g k` / `C-k` | Previous entry                             |
+| `SPC m p`                 | Open PDF                                   |
+| `SPC m n`                 | Open notes                                 |
+| `SPC m b`                 | Open browser                               |
+| `SPC m i`                 | Insert new entry                           |
+| `SPC m s`                 | Sort entry                                 |
+| `SPC m h`                 | Various actions on entry                   |
+| `SPC m m`                 | Manage bibtex library                      |
+| `SPC m l a`               | Lookup and add arXiv paper (don't get PDF) |
+| `SPC m l A`               | Lookup and add arXiv paper (download PDF)  |
+| `SPC m l d`               | Lookup and add paper by DOI                |
+| `SPC m l i`               | Lookup and add book by ISBN                |
+| `SPC m l p`               | Lookup and add paper by PMID               |
 
 In addition, `org-mode`, `latex-mode` and `markdown-mode` all have the
 following key binding added:
 
-  Key binding   Description
-  ------------- -----------------
-  `SPC m i c`   Insert citation
+| Key binding | Description     |
+|-------------|-----------------|
+| `SPC m i c` | Insert citation |
 
 **EBIB**
 
 **Index buffer**
 
-  Key binding   Description
-  ------------- -------------------------------------------------------
-  `J/K`         scroll page down/up
-  `g j`         jump to entry (searches only author and title fields)
-  `SPC u g j`   jump to entry (only) in current database
-  `/`           ebib-search (searches in all fields)
-  `n`           ebib-search-next
-  `e`           switch to entry buffer
-  `SPC m k`     delete current entry
-  `SPC m b`     fetch current entry bibtex from web
-  `q`           quit ebib
+| Key binding | Description                                           |
+|-------------|-------------------------------------------------------|
+| `J/K`       | scroll page down/up                                   |
+| `g j`       | jump to entry (searches only author and title fields) |
+| `SPC u g j` | jump to entry (only) in current database              |
+| `/`         | ebib-search (searches in all fields)                  |
+| `n`         | ebib-search-next                                      |
+| `e`         | switch to entry buffer                                |
+| `SPC m k`   | delete current entry                                  |
+| `SPC m b`   | fetch current entry bibtex from web                   |
+| `q`         | quit ebib                                             |
 
 **Entry buffer**
 
-  ----- -------------------
-  `q`   quit entry buffer
-  ----- -------------------
+|     |                   |
+|-----|-------------------|
+| `q` | quit entry buffer |
 
 **Biblio selection buffer**
 
-  ------- --------------------------------------------------------------------------------------
-  `e`     import entry to current database (requires \'active\' database in ebib index buffer)
-  `C-j`   Next entry
-  `C-k`   Previous entry
-  ------- --------------------------------------------------------------------------------------
+|       |                                                                                    |
+|-------|------------------------------------------------------------------------------------|
+| `e`   | import entry to current database (requires 'active' database in ebib index buffer) |
+| `C-j` | Next entry                                                                         |
+| `C-k` | Previous entry                                                                     |

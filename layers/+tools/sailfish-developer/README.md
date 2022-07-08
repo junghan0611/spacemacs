@@ -24,9 +24,9 @@ Key bindings
 sailfish-scratchbox
 -------------------
 
-  Key binding   Description
-  ------------- --------------------------
-  `SPC c s`     Show menu
-  `SPC c s b`   Invoke mb2 build
-  `SPC c s d`   Copy rpms to the phone
-  `SPC c s i`   Install rpms into target
+| Key binding | Description              |
+|-------------|--------------------------|
+| `SPC c s`   | Show menu                |
+| `SPC c s b` | Invoke mb2 build         |
+| `SPC c s d` | Copy rpms to the phone   |
+| `SPC c s i` | Install rpms into target |

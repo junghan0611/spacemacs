@@ -30,20 +30,20 @@ NeoTree Theme
 You can change the NeoTree theme by using the setting `neo-theme`.
 Possible values are:
 
-  Setting     Description
-  ----------- --------------------------------------------------------------------------------------
-  `classic`   Use an icon to display items - only suitable for gui mode.
-  `ascii`     The simplest style, it will use `x`, `-` to display fold status.
-  `arrow`     Use unicode arrows to display fold status.
-  `icons`     Use [all-the-icons](https://github.com/domtronn/all-the-icons.el) packages and fonts
-  `nerd`      Use the NERDTree indentation mode and arrows.
+| Setting   | Description                                                                          |
+|-----------|--------------------------------------------------------------------------------------|
+| `classic` | Use an icon to display items - only suitable for gui mode.                           |
+| `ascii`   | The simplest style, it will use `x`, `-` to display fold status.                     |
+| `arrow`   | Use unicode arrows to display fold status.                                           |
+| `icons`   | Use [all-the-icons](https://github.com/domtronn/all-the-icons.el) packages and fonts |
+| `nerd`    | Use the NERDTree indentation mode and arrows.                                        |
 
 The default is `classic`.
 
 Use `nerd` if you want it to look most like NERDTree in VIM. For
 example:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq neo-theme 'nerd)
 ```
 
@@ -54,17 +54,17 @@ If you would like NeoTree to show source control information, you can
 use the setting `neo-vc-integration`. It is a list containing the
 possible values:
 
-  Setting   Description
-  --------- ---------------------------------------------------------------------------
-  `face`    Show information by changing the color of the file/directory name.
-  `char`    Show information with a character to the left of the file/directory name.
+| Setting | Description                                                               |
+|---------|---------------------------------------------------------------------------|
+| `face`  | Show information by changing the color of the file/directory name.        |
+| `char`  | Show information with a character to the left of the file/directory name. |
 
 The default is `nil` (do not show source control information), which is
 recommended.
 
 For example,
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq neo-vc-integration '(face))
 ```
 
@@ -114,17 +114,17 @@ NeoTree navigation
 Navigation is centered on the `hjkl` keys with the hope of providing a
 fast navigation experience like in [ranger](http://ranger.nongnu.org/):
 
-  Key binding    Description
-  -------------- -------------------------------------------------------------------------------
-  `h`            collapse expanded directory or go to parent node
-  `H`            select previous sibling
-  `j`            select next file or directory
-  `J`            select next expanded directory on level down
-  `k`            select previous file or directory
-  `K`            select parent directory, when reaching the root change it to parent directory
-  `l` or `RET`   expand directory
-  `L`            select next sibling
-  `R`            make a directory the root directory
+| Key binding  | Description                                                                   |
+|--------------|-------------------------------------------------------------------------------|
+| `h`          | collapse expanded directory or go to parent node                              |
+| `H`          | select previous sibling                                                       |
+| `j`          | select next file or directory                                                 |
+| `J`          | select next expanded directory on level down                                  |
+| `k`          | select previous file or directory                                             |
+| `K`          | select parent directory, when reaching the root change it to parent directory |
+| `l` or `RET` | expand directory                                                              |
+| `L`          | select next sibling                                                           |
+| `R`          | make a directory the root directory                                           |
 
 **Note**: Point is automatically set to the first letter of a node for a
 smoother experience.
@@ -137,24 +137,24 @@ choose window number where to open a file by using a numeric argument,
 for instance `2 l` or `2 RET` will open the current file in window 2. It
 is also possible to open the file in a split window with `|` and `-`:
 
-  Key binding        Description
-  ------------------ -------------------------------------------
-  `l` or `RET`       open file in last active window
-  `# l` or `# RET`   open file in window number `#`
-  `¦`                open file in an vertically split window
-  `-`                open file in an horizontally split window
+| Key binding      | Description                               |
+|------------------|-------------------------------------------|
+| `l` or `RET`     | open file in last active window           |
+| `# l` or `# RET` | open file in window number `#`            |
+| `¦`              | open file in an vertically split window   |
+| `-`              | open file in an horizontally split window |
 
 Other NeoTree key bindings
 --------------------------
 
-  Key binding   Description
-  ------------- ---------------------------------
-  `TAB`         toggle stretching of the buffer
-  `c`           create a node
-  `C`           copy a node
-  `d`           delete a node
-  `gr`          refresh
-  `s`           toggle showing of hidden files
-  `q` or `fd`   hide `NeoTree` buffer
-  `r`           rename a node
-  `?`           show help
+| Key binding | Description                     |
+|-------------|---------------------------------|
+| `TAB`       | toggle stretching of the buffer |
+| `c`         | create a node                   |
+| `C`         | copy a node                     |
+| `d`         | delete a node                   |
+| `gr`        | refresh                         |
+| `s`         | toggle showing of hidden files  |
+| `q` or `fd` | hide `NeoTree` buffer           |
+| `r`         | rename a node                   |
+| `?`         | show help                       |

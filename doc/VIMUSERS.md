@@ -111,16 +111,16 @@ Buffer and window management
 Buffers in Emacs and vim are essentially the same. The key bindings for
 buffers are located under the `SPC b` prefix.
 
-  Key binding                 Function
-  --------------------------- --------------------------------------------------------------------------
-  `SPC b b <buffer-name>`     Create a buffer named `<buffer-name>`.
-  `SPC b b`                   Search through open buffers and recent files.
-  `SPC b n` or `:bnext`       Switch to the next buffer. (See [Special buffers](#special-buffers))
-  `SPC b p` or `:bprevious`   Switch to the previous buffer. (See [Special buffers](#special-buffers))
-  `SPC b d` or `:bdelete`     Kill current buffer.
-  `SPC b C-S-d`               Kill buffers using a regular expression.
-  `SPC b C-d`                 Kill all buffers except the current buffer.
-  `SPC b .`                   Buffer transient-state.
+| Key binding               | Function                                                                 |
+|---------------------------|--------------------------------------------------------------------------|
+| `SPC b b <buffer-name>`   | Create a buffer named `<buffer-name>`.                                   |
+| `SPC b b`                 | Search through open buffers and recent files.                            |
+| `SPC b n` or `:bnext`     | Switch to the next buffer. (See [Special buffers](#special-buffers))     |
+| `SPC b p` or `:bprevious` | Switch to the previous buffer. (See [Special buffers](#special-buffers)) |
+| `SPC b d` or `:bdelete`   | Kill current buffer.                                                     |
+| `SPC b C-S-d`             | Kill buffers using a regular expression.                                 |
+| `SPC b C-d`               | Kill all buffers except the current buffer.                              |
+| `SPC b .`                 | Buffer transient-state.                                                  |
 
 1.  Special buffers
 
@@ -134,26 +134,26 @@ buffers are located under the `SPC b` prefix.
 Windows are like splits in vim. They are useful for editing multiple
 files at once. All window key bindings are under the `SPC w` prefix.
 
-  Key binding              Function
-  ------------------------ --------------------------------------
-  `SPC w v` or `:vsplit`   Opens a vertical split on the right.
-  `SPC w s` or `:split`    Opens a horizontal split below.
-  `SPC w h/j/k/l`          Navigate among windows.
-  `SPC w H/J/K/L`          Move the current window.
-  `SPC w .`                Window transient-state.
+| Key binding            | Function                             |
+|------------------------|--------------------------------------|
+| `SPC w v` or `:vsplit` | Opens a vertical split on the right. |
+| `SPC w s` or `:split`  | Opens a horizontal split below.      |
+| `SPC w h/j/k/l`        | Navigate among windows.              |
+| `SPC w H/J/K/L`        | Move the current window.             |
+| `SPC w .`              | Window transient-state.              |
 
 Files
 -----
 
 All file commands in Spacemacs are available under the `SPC f` prefix.
 
-  Key binding         Function
-  ------------------- --------------------------------------------------------------
-  `SPC f f`           Opens a buffer to search for files in the current directory.
-  `SPC f r`           Opens a buffer to search through recently opened files.
-  `SPC f s` or `:w`   Save the current file.
-  `:x`                Save the current file and quit.
-  `:e <file>`         Open `<file>`
+| Key binding       | Function                                                     |
+|-------------------|--------------------------------------------------------------|
+| `SPC f f`         | Opens a buffer to search for files in the current directory. |
+| `SPC f r`         | Opens a buffer to search through recently opened files.      |
+| `SPC f s` or `:w` | Save the current file.                                       |
+| `:x`              | Save the current file and quit.                              |
+| `:e <file>`       | Open `<file>`                                                |
 
 The Help System
 ---------------
@@ -164,12 +164,12 @@ these keybindings are `SPC h d f`, `SPC h d k`, and `SPC h d v`. There
 is also the `SPC <f1>` key binding which allows you to search for
 documentation.
 
-  Key binding   Function
-  ------------- ----------------------------------------------------------------------------------
-  `SPC h d f`   Prompts for a function and shows its documentation.
-  `SPC h d k`   Prompts for a key binding and shows what it is bound to.
-  `SPC h d v`   Prompts for a variable and shows its documentation and current value.
-  `SPC <f1>`    Searches for a command, function, variable, or face and shows its documentation.
+| Key binding | Function                                                                         |
+|-------------|----------------------------------------------------------------------------------|
+| `SPC h d f` | Prompts for a function and shows its documentation.                              |
+| `SPC h d k` | Prompts for a key binding and shows what it is bound to.                         |
+| `SPC h d v` | Prompts for a variable and shows its documentation and current value.            |
+| `SPC <f1>`  | Searches for a command, function, variable, or face and shows its documentation. |
 
 Whenever, you see weird behavior or want to know what something does,
 these functions are the first thing you should refer to.
@@ -183,34 +183,33 @@ GitHub. You can begin to feel your way around Emacs Lisp and how
 Spacemacs works this way. You can also use the following key bindings to
 explore:
 
-  Key binding   Function
-  ------------- ---------------------------------------------------------------
-  `SPC h SPC`   Lists all layers and allows you to view files from the layer.
-  `SPC ?`       Lists all key bindings.
+| Key binding | Function                                                      |
+|-------------|---------------------------------------------------------------|
+| `SPC h SPC` | Lists all layers and allows you to view files from the layer. |
+| `SPC ?`     | Lists all key bindings.                                       |
 
 Regular expression syntax
 -------------------------
 
 One thing that might catch you off guard is the difference in regex
 syntax between Vim and Emacs. In Emacs, even when you search under
-`evil-mode` with the `/` key, you\'ll be using the Emacs flavor of
+`evil-mode` with the `/` key, you'll be using the Emacs flavor of
 regular expression, instead of the Vim one.
 
 Some idiosyncrasies of Elisp regex:
 
 -   You need to additionally escape some symbols such as:
+    backslash `\`  
+    `\\`
 
-    backslash `\`
-    :   `\\`
+    alternation `|`  
+    `\|`
 
-    alternation `|`
-    :   `\|`
+    grouping `(` and `)`  
+    `\(` and `\)`
 
-    grouping `(` and `)`
-    :   `\(` and `\)`
-
-    counting `{` and `}`
-    :   `\{` and `\}`
+    counting `{` and `}`  
+    `\{` and `\}`
 -   `\s` begins a [syntax
     class](https://www.emacswiki.org/emacs/RegularExpression).
     Whitespaces are denoted as `\s-` instead of `\s`.
@@ -244,10 +243,10 @@ is also run before anything else and contains user specific
 configuration. The `dotspacemacs/user-config` function is the one you
 will use the most. This is where you define any user configuration.
 
-  Key binding   Function
-  ------------- --------------------------------------------------------------------------
-  `SPC f e d`   Open your `.spacemacs`
-  `SPC f e D`   Update your `.spacemacs` manually using a diff with the default template
+| Key binding | Function                                                                 |
+|-------------|--------------------------------------------------------------------------|
+| `SPC f e d` | Open your `.spacemacs`                                                   |
+| `SPC f e D` | Update your `.spacemacs` manually using a diff with the default template |
 
 Emacs Lisp
 ----------
@@ -263,7 +262,7 @@ at `SPC h i elisp RET`.
 Setting variables is the most common way to customize the behavior of
 Spacemacs. The syntax is simple:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq variable value) ; Syntax
 ;; Setting variables example
 (setq variable1 t ; True
@@ -276,7 +275,7 @@ Spacemacs. The syntax is simple:
 Defining key bindings is something that almost everyone will want to do.
 The built-in `define-key` function is the best way to do that.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (define-key map new-keybinding function) ; Syntax
 ;; Map H to go to the previous buffer in normal mode
 (define-key evil-normal-state-map (kbd "H") 'previous-buffer)
@@ -290,7 +289,7 @@ key binding in insert mode.
 To map `<Leader>` key bindings, use the `spacemacs/set-leader-keys`
 function.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (spacemacs/set-leader-keys key function) ; Syntax
 ;; Map killing a buffer to <Leader> b c
 (spacemacs/set-leader-keys "bc" 'spacemacs/kill-this-buffer)
@@ -301,7 +300,7 @@ function.
 
 1.  Bind keys to a macro
 
-    ``` {.commonlisp org-language="emacs-lisp"}
+    ``` commonlisp
     ;; H goes to beginning of the line
     (define-key evil-normal-state-map (kbd "H") (kbd "^"))
     ```
@@ -312,7 +311,7 @@ function.
 
     The remapping in Vim:
 
-    ``` {.vimrc}
+    ``` vimrc
     nmap <S-Enter> O<Esc>j
     ```
 
@@ -321,7 +320,7 @@ function.
 
     The equivalent remapping in Spac/Emacs:
 
-    ``` {.commonlisp org-language="emacs-lisp"}
+    ``` commonlisp
     ;; S-return adds a newline above
     (define-key evil-normal-state-map (kbd "S-<return>") (kbd "O <escape> j"))
     ```
@@ -331,7 +330,7 @@ function.
 You may occasionally want to define a function to do a more complex
 customization. The syntax is simple:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun func-name (arg1 arg2)
   "docstring"
   ;; Body
@@ -343,7 +342,7 @@ customization. The syntax is simple:
 
 Here is an example of a function that is useful in real life:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ;; This snippet allows you to run clang-format before saving
 ;; given the current file as the correct filetype.
 ;; This relies on the c-c++ layer being enabled.
@@ -367,7 +366,7 @@ features. Activating a layer is done in the `.spacemacs` file. In the
 file search for the `dotspacemacs-configuration-layers` variable. By
 default, it should look like this:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dotspacemacs/layers ()
   (setq-default
    ;; ...
@@ -390,13 +389,13 @@ their documentation use `SPC h SPC`.
 Creating a Layer
 ----------------
 
-To group configuration or when configuration doesn\'t fit well in your
+To group configuration or when configuration doesn't fit well in your
 `.spacemacs` file, you can create a configuration layer. Spacemacs
 provides a builtin command to generate the layer boilerplate:
 `SPC SPC configuration-layer/create-layer RET`. This generates a folder
 that looks like this:
 
-``` {.example}
+``` example
 [layer-name]
   |__ [local]*
   | |__ [example-mode-1]
@@ -421,7 +420,7 @@ function contains configuration for the package. There are also
 `pre/post-init` functions to execute code before or after a package
 loads. It would look like this:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq layer-name-packages '(example-package
                             ;; This layer uninstalls example-package-2
                             ;; by setting the :excluded property to true (t)
@@ -456,7 +455,7 @@ Installing a single package
 ---------------------------
 
 Sometimes creating a layer is a bit overkill. Maybe you just want one
-package and don\'t want to maintain a whole layer. Spacemacs provides a
+package and don't want to maintain a whole layer. Spacemacs provides a
 variable in the `dotspacemacs/layers` function in `.spacemacs` called
 `dotspacemacs-additional-packages`. Just add a package name to the list
 and it will be installed when you restart. Loading the package is
@@ -472,7 +471,7 @@ black magic that no one can understand. Thanks to
 true. It is a package that allows easy lazy-loading and configuration of
 packages. Here are the basics to using it:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ;; Basic form of use-package declaration. The :defer t tells use-package to
 ;; try to lazy load the package.
 (use-package package-name
@@ -495,7 +494,7 @@ packages. Here are the basics to using it:
 ```
 
 This is just a very basic overview of `use-package`. There are many
-other ways to control how a package loads using it that aren\'t covered
+other ways to control how a package loads using it that aren't covered
 here.
 
 Uninstalling a package
@@ -518,7 +517,7 @@ Spacemacs uses [evil-escape](https://github.com/syl20bnr/evil-escape) to
 allow escaping from many `major-modes` with one key binding. You can
 customize the variable in your `dotspacemacs/user-config` like this:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dotspacemacs/user-config ()
   ;; ...
   ;; Set escape keybinding to "jk"
@@ -535,7 +534,7 @@ The `.spacemacs` file contains the `dotspacemacs-themes` variable in the
 cycled through with the `SPC T n` key binding. The first theme in the
 list is the one that is loaded at startup. Here is an example:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dotspacemacs/init
     ;; Darktooth theme is the default theme
     ;; Each theme is automatically installed.
@@ -571,7 +570,7 @@ Spacemacs uses the vim default of navigating by actual lines, even if
 they are wrapped. If you want `j` and `k` to behave like `g j` and
 `g k`, add this to your `.spacemacs`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
 (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
 ```
@@ -582,7 +581,7 @@ Other useful links
 -   [Emacs Manual](https://www.gnu.org/software/emacs/manual/emacs.html)
 -   [Spacemacs
     Documentation](https://github.com/syl20bnr/spacemacs/blob/develop/doc/DOCUMENTATION.org)
--   [Spacemacs: A Vimmer\'s Emacs
+-   [Spacemacs: A Vimmer's Emacs
     Prerequisites](http://ian.mccowan.space/2015/04/07/Spacemacs/)
     -   Note: The article refers to `SPC b s` as the key binding to
         switch buffers. It is `SPC b b`

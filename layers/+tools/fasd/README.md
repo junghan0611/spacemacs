@@ -31,7 +31,7 @@ The general installation instructions can be found in the repository
 On macOS, it can be installed via
 [homebrew](https://github.com/Homebrew/legacy-homebrew):
 
-``` {.bash org-language="sh"}
+``` bash
 $ brew install fasd
 ```
 
@@ -47,8 +47,8 @@ deep search in that directory.
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ------------------------------------
-  `SPC f a s`   find a file or directory with fasd
-  `SPC f a d`   find a directory with fasd
-  `SPC f a f`   find a file with fasd
+| Key binding | Description                        |
+|-------------|------------------------------------|
+| `SPC f a s` | find a file or directory with fasd |
+| `SPC f a d` | find a directory with fasd         |
+| `SPC f a f` | find a file with fasd              |

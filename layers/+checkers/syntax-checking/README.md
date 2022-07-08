@@ -33,7 +33,7 @@ By default tooltips are enabled and used whenever it is possible. You
 can disable them by setting the variable
 `syntax-checking-enable-tooltips` to `nil`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((syntax-checking :variables syntax-checking-enable-tooltips nil)))
 ```
@@ -46,7 +46,7 @@ By default, syntax-checking is enabled in all available major modes
 You can default this to off by setting the variable
 `syntax-checking-enable-by-default` to `nil`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((syntax-checking :variables syntax-checking-enable-by-default nil)))
 ```
@@ -81,7 +81,7 @@ alternative general emacs bindings instead of the spacemacs specific
 ones. To do so set `syntax-checking-use-standard-error-navigation` to
 non-nil.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((syntax-checking :variables syntax-checking-use-standard-error-navigation t)))
 ```
@@ -92,7 +92,7 @@ Bitmaps
 If the original flycheck fringe bitmaps are more to your liking, you can
 set the variable `syntax-checking-use-original-bitmaps` to `t`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((syntax-checking :variables syntax-checking-use-original-bitmaps t)))
 ```
@@ -107,7 +107,7 @@ positive number of seconds.
 Default value of `syntax-checking-auto-hide-tooltips` is `nil`, and in
 that case tooltips are kept open until the cursor is moved.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((syntax-checking :variables syntax-checking-auto-hide-tooltips 10)))
 ```
@@ -121,7 +121,7 @@ variable `syntax-checking-window-position`. Available values are
 size by setting `syntax-checking-window-width` and
 `syntax-checking-window-height` for width and height respectively.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((syntax-checking :variables
                      syntax-checking-window-position 'bottom
@@ -132,15 +132,15 @@ size by setting `syntax-checking-window-width` and
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- --------------------------------------------------------------
-  `SPC e b`     check for errors now
-  `SPC e c`     clear errors
-  `SPC e h`     describe flycheck checker
-  `SPC e l`     display a list of all the errors
-  `SPC e L`     display a list of all the errors and focus the errors buffer
-  `SPC e s`     set flycheck checker
-  `SPC e S`     set flycheck checker executable
-  `SPC e v`     verify flycheck setup
-  `SPC t s`     toggle flycheck
-  `SPC e x`     explain the error at point
+| Key binding | Description                                                  |
+|-------------|--------------------------------------------------------------|
+| `SPC e b`   | check for errors now                                         |
+| `SPC e c`   | clear errors                                                 |
+| `SPC e h`   | describe flycheck checker                                    |
+| `SPC e l`   | display a list of all the errors                             |
+| `SPC e L`   | display a list of all the errors and focus the errors buffer |
+| `SPC e s`   | set flycheck checker                                         |
+| `SPC e S`   | set flycheck checker executable                              |
+| `SPC e v`   | verify flycheck setup                                        |
+| `SPC t s`   | toggle flycheck                                              |
+| `SPC e x`   | explain the error at point                                   |

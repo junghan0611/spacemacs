@@ -34,7 +34,7 @@ To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `osx` to the existing `dotspacemacs-configuration-layers`
 list in this file. The different modifier keys can be set as follows:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
    (osx :variables osx-command-as       'hyper
                    osx-option-as        'meta
@@ -55,11 +55,11 @@ to `t` will swap `command` and `option` key.
 ### Use with non-US keyboard layouts
 
 If you need the `⌥` key to type common characters such as `{[]}~` which
-is usual for e.g. Finnish and Swedish keyboard layouts, you\'ll probably
+is usual for e.g. Finnish and Swedish keyboard layouts, you'll probably
 want to leave the `⌥` key unchanged by setting the `osx-option-as`
 variable to `none`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
    (osx :variables osx-option-as 'none)))
 ```
@@ -69,7 +69,7 @@ want to set the variables as follows. This will allow you to use the
 right `⌥` key to write symbols. The left `⌥` key can be used as the Meta
 key.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
    (osx :variables osx-option-as 'meta
                    osx-right-option-as 'none)))
@@ -81,7 +81,7 @@ This layer by default enables defining words under point `SPC x w d`
 using macOS Dictionary. In some cases you might want to manually setup
 dictionary to use. For example,
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
    (osx :variables osx-dictionary-dictionary-choice "English")))
 ```
@@ -92,7 +92,7 @@ To get the list of available dictionaries call
 You can disable it by setting `osx-use-dictionary-app` variable to
 `nil`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
    (osx :variables osx-use-dictionary-app nil)))
 ```
@@ -102,30 +102,30 @@ Coreutils
 
 To get `gls` install coreutils homebrew:
 
-``` {.bash org-language="sh"}
+``` bash
 brew install coreutils
 ```
 
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -----------------------------
-  `⌘ =`         Scale up text
-  `⌘ -`         Scale down text
-  `⌘ q`         Quit
-  `⌘ v`         Paste
-  `⌘ c`         Copy
-  `⌘ x`         Cut
-  `⌘ a`         Select all
-  `⌘ w`         Close window
-  `⌘ W`         Close frame
-  `⌘ n`         New frame
-  `` ⌘ ` ``     Other frame
-  `⌘ z`         Undo
-  `⌘ Z`         Redo
-  `⌃ ⌘ f`       Toggle fullscreen
-  `SPC x w d`   Define word under the point
+| Key binding | Description                 |
+|-------------|-----------------------------|
+| `⌘ =`       | Scale up text               |
+| `⌘ -`       | Scale down text             |
+| `⌘ q`       | Quit                        |
+| `⌘ v`       | Paste                       |
+| `⌘ c`       | Copy                        |
+| `⌘ x`       | Cut                         |
+| `⌘ a`       | Select all                  |
+| `⌘ w`       | Close window                |
+| `⌘ W`       | Close frame                 |
+| `⌘ n`       | New frame                   |
+| `` ⌘ ` ``   | Other frame                 |
+| `⌘ z`       | Undo                        |
+| `⌘ Z`       | Redo                        |
+| `⌃ ⌘ f`     | Toggle fullscreen           |
+| `SPC x w d` | Define word under the point |
 
 Future Work
 ===========

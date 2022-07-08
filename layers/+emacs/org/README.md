@@ -52,7 +52,7 @@ loading up of the `org` shipped with emacs which will induce conflicts.
 One way to avoid conflict is to wrap your `org` config code in a
 `with-eval-after-load` block like this:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (with-eval-after-load 'org
   ;; here goes your Org config :)
   ;; ....
@@ -86,27 +86,27 @@ layer has some sane default configurations to try via its
 
 Setting it to `'naive-auto`, will cause an entry to switch to `DONE`
 when all its subentries are done, and to `TODO` otherwise. This does not
-result in extra prompts for the user, but doesn\'t work well with more
+result in extra prompts for the user, but doesn't work well with more
 workflow states because of the literal `DONE` and `TODO`; it is an
 excellent place for beginners and minimalists:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (org :variables
        org-todo-dependencies-strategy 'naive-auto)))
 ```
 
 Setting it to `'semiauto`, will cause the user to be prompted to change
-an entry\'s state when the state of the subentries imply it: that is,
+an entry's state when the state of the subentries imply it: that is,
 when they are either all done while it is still a todo, or the when they
-are all still todo\'s while it is done. This assumes next to nothing
+are all still todo's while it is done. This assumes next to nothing
 about your workflow states (it does not use literal `TODO` and `DONE`),
 but may result in additional, possibly surprising, prompting for the
 user; and it has no intelligence to attempt to determine the destination
 state. It is a good thing to try if `'naive-auto` does not accomplish
 what you need:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (org :variables
        org-todo-dependencies-strategy 'naive-auto)))
@@ -123,7 +123,7 @@ Agenda notifications
 To enable notifications for agenda events, set the variable
 `org-enable-notifications` to `t`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (org :variables
        org-enable-notifications t
@@ -141,14 +141,14 @@ snippet above.
 Check the [documentation for how org-wild-notifier can be
 configured](https://github.com/akhramov/org-wild-notifier.el#configuration)
 (org-wild-notifier uses the [alert](https://melpa.org/#/alert) package
-for showing notifications. On GNU/linux and Windows, using alert\'s
+for showing notifications. On GNU/linux and Windows, using alert's
 [notifications](https://github.com/jwiegley/alert#builtin-alert-styles)
 style is recommended. Note also [this
 issue](https://github.com/jwiegley/alert/pull/94)). Add [your preferred
 alert style](https://github.com/jwiegley/alert#builtin-alert-styles) to
 `dotspacemacs/user-config` with:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq alert-default-style 'notifications)
 ```
 
@@ -169,7 +169,7 @@ variable. The notification type can be configured via the [the alert
 package its configuration
 settings](https://github.com/jwiegley/alert#for-users). Additional
 notification times can be added using the
-[:WILD~NOTIFIERNOTIFYBEFORE~:](https://github.com/akhramov/org-wild-notifier.el#configuration)
+[:WILD<sub>NOTIFIERNOTIFYBEFORE</sub>:](https://github.com/akhramov/org-wild-notifier.el#configuration)
 keyword (**note** that [this additionally requires a `SCHEDULED:`
 stamp)](https://github.com/akhramov/org-wild-notifier.el/issues/46).
 Properties can be added with `, i p`.
@@ -190,7 +190,7 @@ in the agenda, add the diary-style expression entries to your
 Subsequently, to add appointments to the agenda you could use the
 following syntax:
 
-``` {.org}
+``` org
 * Friday, 04/02/2021
   ** Appointment 1
   <2021-04-02 Fri 10:10>
@@ -213,7 +213,7 @@ To install GitHub related extensions like
 [ox-gfm](https://github.com/larstvei/ox-gfm) to export to GitHub
 flavored markdown set the variable `org-enable-github-support` to `t`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (org :variables org-enable-github-support t)))
 ```
@@ -225,7 +225,7 @@ To enable the export to Twitter Bootstrap-formatted HTML - set the
 variable `org-enable-bootstrap-support` to `t`. This would install the
 [ox-twbs](https://github.com/marsmining/ox-twbs) extension.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (org :variables
        org-enable-bootstrap-support t)))
@@ -252,7 +252,7 @@ To enable the export of org files as a
 variable `org-enable-reveal-js-support` to `t`. This would install the
 [org-re-reveal](https://gitlab.com/oer/org-re-reveal/) Emacs extension.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
  '((org :variables org-enable-reveal-js-support t)))
 ```
@@ -265,7 +265,7 @@ and point `org-re-reveal-root` to the path, as it described in the
 Alternatively, add the following line to each `.org` file you want to
 process:
 
-``` {.example}
+``` example
 #+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js@3.8.0
 ```
 
@@ -286,7 +286,7 @@ as contact sources. If set to `nil` (default) then all your Org files
 will be used. The first file in the `org-contacts-files` list can be
 visited with the keyboard shortcut `SPC a o C f`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (org :variables org-enable-org-contacts-support t
      org-contacts-files '("~/Org/contacts.org" "~/Org/file2.org")
      org-capture-templates '(("c" "Contacts" entry (file "~/Org/contacts.org")
@@ -304,7 +304,7 @@ your org-agenda add `%%(org-contacts-anniversaries)` to one of your
 contacts files. It is important that this is inserted after a heading an
 that it has no preceding whitespace. So probably the best way is to add
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 * Birthdays
 %%(org-contacts-anniversaries)
 ```
@@ -335,7 +335,7 @@ journal management system that:
 To install org-journal - set the variable
 `org-enable-org-journal-support` to `t`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (org :variables
        org-enable-org-journal-support t)))
@@ -345,14 +345,14 @@ By default, journal files are stored in `~/Documents/journal/`. To
 override this - set `org-journal-dir` variable in the
 `dotspacemacs/user-config`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq org-journal-dir "~/org/journal/")
 ```
 
 To change the journal file name format - alter
 `org-journal-file-format`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq org-journal-file-format "%Y-%m-%d")
 ```
 
@@ -367,13 +367,13 @@ differently:
 -   alter `org-journal-date-prefix` and `org-journal-date-format`. For
     example, to have new journal files created with this header:
 
-    ``` {.example}
+    ``` example
     #+TITLE: Tuesday, September 06 2016
     ```
 
 -   define the following in `dotspacemacs/user-config`:
 
-    ``` {.commonlisp org-language="emacs-lisp"}
+    ``` commonlisp
     (setq org-journal-date-prefix "#+TITLE: ")
     (setq org-journal-date-format "%A, %B %d %Y")
     ```
@@ -383,7 +383,7 @@ timestamp. If you start your journal files with a Title as shown above
 you may want to adjust entries to start at the first level heading and
 you may want to change or omit the timestamp.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq org-journal-time-prefix "* ")
 (setq org-journal-time-format "")
 ```
@@ -393,7 +393,7 @@ Any of the org-journal settings can be configured in
 
 For example:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (org :variables
       org-enable-org-journal-support t
@@ -414,7 +414,7 @@ generates [Hugo](https://gohugo.io) -compatible Markdown *plus*
 TOML/YAML front-matter, set the variable `org-enable-hugo-support` to
 `t`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (org :variables
        org-enable-hugo-support t)))
@@ -426,7 +426,7 @@ Trello support
 To install Trello support set the variable `org-enable-trello-support`
 to `t`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (org :variables
        org-enable-trello-support t)))
@@ -440,14 +440,14 @@ You can tweak the bullets displayed in the org buffer in the function
 `org-superstar-headline-bullets-list`. By default the list is set to
 `(?◉ ?○ ?✸ ?✿)`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq org-superstar-headline-bullets-list '(?■ ?◆ ?▲ ?▶))
 ```
 
 You can disable the fancy bullets entirely by adding `org-superstar` to
 `dotspacemacs-excluded-packages`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (dotspacemacs-excluded-packages '(org-superstar))
 ```
 
@@ -459,7 +459,7 @@ want to store project-specific TODOs. If this is an absolute path, all
 todos will be stored in the same file (organized by project), whereas if
 it is just a single filename, todos will be stored in each project root.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((org :variables org-projectile-file "TODOs.org")))
 ```
@@ -467,7 +467,7 @@ it is just a single filename, todos will be stored in each project root.
 The TODO files are not added to the agenda automatically. You can do
 this with the following snippet.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (with-eval-after-load 'org-agenda
   (require 'org-projectile)
   (mapcar '(lambda (file)
@@ -493,7 +493,7 @@ Org-roam support
 To install org-roam support set the variable `org-enable-roam-support`
 to `t`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (org :variables
        org-enable-roam-support t)))
@@ -517,7 +517,7 @@ To enable support for [Org Roam
 Protocol](https://www.orgroam.com/manual.html#Org_002droam-Protocol) set
 the variable `org-enable-roam-protocol` to `t`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (org :variables
        org-enable-roam-protocol t)))
@@ -534,7 +534,7 @@ To temporarily enable mode line display of org clock, press `SPC t m c`.
 To permanently enable mode line display of org clock, add this snippet
 to your `dotspacemacs/user-config` function:
 
-``` {.elisp}
+``` elisp
 (setq spaceline-org-clock-p t)
 ```
 
@@ -544,7 +544,7 @@ Sticky header support
 To install sticky header support set the variable
 `org-enable-sticky-header` to `t`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (org :variables
        org-enable-sticky-header t)))
@@ -558,7 +558,7 @@ that generates e-book file format
 [epub](https://en.wikipedia.org/wiki/EPUB), set the variable
 `org-enable-epub-support` to `t`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs--configuration-layers
               '((org :variables
                      org-enable-epub-support t)))
@@ -571,7 +571,7 @@ To bring Jira and OrgMode together over
 [org-jira](https://github.com/ahungry/org-jira) set the variable
 `org-enable-jira-support` to `t`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (org :variables
        org-enable-jira-support t
@@ -582,7 +582,7 @@ If you would like to avoid being prompted for your login and password
 each time you connect, add your authentication credentials to
 `~/.authinfo.gpg` or `~/.authinfo`:
 
-``` {.authinfo}
+``` authinfo
 machine yourcompany.atlassian.net login you@example.com password yourPassword port 443
 ```
 
@@ -593,7 +593,7 @@ To install [valign](https://github.com/casouri/valign). Which provides:
 Pixel-perfect visual alignment for Org and Markdown tables. Set the
 variable `org-enable-valign` to `t`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
  '((org :variables org-enable-valign t)))
 ```
@@ -608,7 +608,7 @@ To install [org-appear](https://github.com/awth13/org-appear), which
 toggles visibility of emphasis markers, links, subscripts, and
 superscripts in org mode, set the `org-enable-appear-support` to `t`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
  '((org :variables org-enable-appear-support t)))
 ```
@@ -625,7 +625,7 @@ To install
 allows you to include a view of another file via a file link or an ID
 lin, set the `org-enable-transclusion-support` to `t`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
  '((org :variables org-enable-transclusion-support t)))
 ```
@@ -636,7 +636,7 @@ Verb support
 To install [Verb](https://github.com/federicotdn/verb), an HTTP client
 based on Org mode, set the `org-enable-verb-support` variable to `t`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
  '((org :variables org-enable-verb-support t)))
 ```
@@ -649,7 +649,7 @@ To install Org exporter
 AsciiDoc documents, set the variable `org-enable-asciidoc-support` to
 `t`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((org :variables org-enable-asciidoc-support t)))
 ```
@@ -675,85 +675,85 @@ Key bindings
 Starting org-mode
 -----------------
 
-  Key binding     Description
-  --------------- ---------------------------------------------------------------------------
-  `SPC a o #`     org agenda list stuck projects
-  `SPC a o /`     org occur in agenda files
-  `SPC a o a`     org agenda list
-  `SPC a o c`     org capture
-  `SPC a o e`     org store agenda views
-  `SPC a o f i`   org feed goto inbox
-  `SPC a o f u`   org feed update all
-  `SPC a o C c`   org cancel clock
-  `SPC a o C g`   org goto last clocked-in clock (go to specific recent clock with `SPC u`)
-  `SPC a o C i`   org clock in
-  `SPC a o C I`   org clock in last
-  `SPC a o C j`   org jump to current clock
-  `SPC a o C o`   org clock out
-  `SPC a o C r`   org resolve clocks
-  `SPC a o l`     org store link
-  `SPC a o m`     org tags view
-  `SPC a o o`     org agenda
-  `SPC a o s`     org search view
-  `SPC a o t`     org todo list
-  `SPC C c`       org-capture
+| Key binding   | Description                                                               |
+|---------------|---------------------------------------------------------------------------|
+| `SPC a o #`   | org agenda list stuck projects                                            |
+| `SPC a o /`   | org occur in agenda files                                                 |
+| `SPC a o a`   | org agenda list                                                           |
+| `SPC a o c`   | org capture                                                               |
+| `SPC a o e`   | org store agenda views                                                    |
+| `SPC a o f i` | org feed goto inbox                                                       |
+| `SPC a o f u` | org feed update all                                                       |
+| `SPC a o C c` | org cancel clock                                                          |
+| `SPC a o C g` | org goto last clocked-in clock (go to specific recent clock with `SPC u`) |
+| `SPC a o C i` | org clock in                                                              |
+| `SPC a o C I` | org clock in last                                                         |
+| `SPC a o C j` | org jump to current clock                                                 |
+| `SPC a o C o` | org clock out                                                             |
+| `SPC a o C r` | org resolve clocks                                                        |
+| `SPC a o l`   | org store link                                                            |
+| `SPC a o m`   | org tags view                                                             |
+| `SPC a o o`   | org agenda                                                                |
+| `SPC a o s`   | org search view                                                           |
+| `SPC a o t`   | org todo list                                                             |
+| `SPC C c`     | org-capture                                                               |
 
 Toggles
 -------
 
-  Key binding   Description
-  ------------- -----------------------------------------------
-  `SPC m T c`   org-toggle-checkbox
-  `SPC m T e`   org-toggle-pretty-entities
-  `SPC m T i`   org-toggle-inline-images
-  `SPC m T n`   org-num-mode
-  `SPC m T l`   org-toggle-link-display
-  `SPC m T t`   org-show-todo-tree
-  `SPC m T T`   org-todo
-  `SPC m T V`   toggle `space-doc-mode` a read-only view mode
-  `SPC m T x`   org-preview-latex-fragment
+| Key binding | Description                                   |
+|-------------|-----------------------------------------------|
+| `SPC m T c` | org-toggle-checkbox                           |
+| `SPC m T e` | org-toggle-pretty-entities                    |
+| `SPC m T i` | org-toggle-inline-images                      |
+| `SPC m T n` | org-num-mode                                  |
+| `SPC m T l` | org-toggle-link-display                       |
+| `SPC m T t` | org-show-todo-tree                            |
+| `SPC m T T` | org-todo                                      |
+| `SPC m T V` | toggle `space-doc-mode` a read-only view mode |
+| `SPC m T x` | org-preview-latex-fragment                    |
 
 Org-mode
 --------
 
-  Key binding                                    Description
-  ---------------------------------------------- -----------------------------------------------
-  `SPC m <dotspacemacs-major-mode-leader-key>`   org-ctrl-c-ctrl-c
-  `SPC m *`                                      org-ctrl-c-star
-  `SPC m RET`                                    org-ctrl-c-ret
-  `SPC m -`                                      org-ctrl-c-minus
-  `SPC m '​`                                     org-edit-special
-  `SPC m a`                                      org-agenda
-  `SPC m A`                                      org-attach
-  `SPC m c`                                      org-capture
-  `SPC m C c`                                    org-clock-cancel
-  `SPC m C d`                                    Temporarily show clock times for current file
-  `SPC m C e`                                    org-evaluate-time-range
-  `SPC m C g`                                    org-clock-goto
-  `SPC m C i`                                    org-clock-in
-  `SPC m C I`                                    org-clock-in-last
-  `SPC m C j`                                    Jump to the current clock
-  `SPC m C o`                                    org-clock-out
-  `SPC m C R`                                    Insert clock report
-  `SPC m C r`                                    org-resolve-clocks
-  `SPC m d d`                                    org-deadline
-  `SPC m d s`                                    org-schedule
-  `SPC m d t`                                    org-time-stamp
-  `SPC m d T`                                    org-time-stamp-inactive
-  `SPC m e e`                                    org-export-dispatch
-  `SPC m e m`                                    send current buffer as HTML email message
-  `SPC m f i`                                    org-feed-goto-inbox
-  `SPC m f u`                                    org-feed-update-all
-  `SPC m l`                                      org-open-at-point
-  `SPC m L`                                      org-shiftright
-  `SPC m H`                                      org-shiftleft
-  `SPC m K`                                      org-shiftup
-  `SPC m J`                                      org-shiftdown
-  `SPC m C-S-l`                                  org-shiftcontrolright
-  `SPC m C-S-h`                                  org-shiftcontrolleft
-  `SPC m C-S-j`                                  org-shiftcontroldown
-  `SPC m C-S-k`                                  org-shiftcontrolup
-  `SPC s j`                                      spacemacs/jump-in-buffer (jump to a heading)
+| Key binding                                  | Description                                   |
+|----------------------------------------------|-----------------------------------------------|
+| `SPC m <dotspacemacs-major-mode-leader-key>` | org-ctrl-c-ctrl-c                             |
+| `SPC m *`                                    | org-ctrl-c-star                               |
+| `SPC m RET`                                  | org-ctrl-c-ret                                |
+| `SPC m -`                                    | org-ctrl-c-minus                              |
+| `SPC m '​`                                   | org-edit-special                              |
+| `SPC m a`                                    | org-agenda                                    |
+| `SPC m A`                                    | org-attach                                    |
+| `SPC m c`                                    | org-capture                                   |
+| `SPC m C c`                                  | org-clock-cancel                              |
+| `SPC m C d`                                  | Temporarily show clock times for current file |
+| `SPC m C e`                                  | org-evaluate-time-range                       |
+| `SPC m C g`                                  | org-clock-goto                                |
+| `SPC m C i`                                  | org-clock-in                                  |
+| `SPC m C I`                                  | org-clock-in-last                             |
+| `SPC m C j`                                  | Jump to the current clock                     |
+| `SPC m C o`                                  | org-clock-out                                 |
+| `SPC m C R`                                  | Insert clock report                           |
+| `SPC m C r`                                  | org-resolve-clocks                            |
+| `SPC m d d`                                  | org-deadline                                  |
+| `SPC m d s`                                  | org-schedule                                  |
+| `SPC m d t`                                  | org-time-stamp                                |
+| `SPC m d T`                                  | org-time-stamp-inactive                       |
+| `SPC m e e`                                  | org-export-dispatch                           |
+| `SPC m e m`                                  | send current buffer as HTML email message     |
+| `SPC m f i`                                  | org-feed-goto-inbox                           |
+| `SPC m f u`                                  | org-feed-update-all                           |
+| `SPC m l`                                    | org-open-at-point                             |
+| `SPC m L`                                    | org-shiftright                                |
+| `SPC m H`                                    | org-shiftleft                                 |
+| `SPC m K`                                    | org-shiftup                                   |
+| `SPC m J`                                    | org-shiftdown                                 |
+| `SPC m C-S-l`                                | org-shiftcontrolright                         |
+| `SPC m C-S-h`                                | org-shiftcontrolleft                          |
+| `SPC m C-S-j`                                | org-shiftcontroldown                          |
+| `SPC m C-S-k`                                | org-shiftcontrolup                            |
+| `SPC s j`                                    | spacemacs/jump-in-buffer (jump to a heading)  |
 
 Org with evil-org-mode
 ----------------------
@@ -767,132 +767,132 @@ under `M-m
 h d` and `M-RET` to discover key bindings. The following table shows
 keybindings for some of the most frequently used commands
 
-  Key binding     Description
-  --------------- ---------------------------------------------------
-  `M-RET M-RET`   org-meta-return (dwim retrun)
-  `M-h/l`         org-meta-left/right (e.g. promote/demote heading)
+| Key binding   | Description                                       |
+|---------------|---------------------------------------------------|
+| `M-RET M-RET` | org-meta-return (dwim retrun)                     |
+| `M-h/l`       | org-meta-left/right (e.g. promote/demote heading) |
 
 **Normal state**
 
-  Key binding     Description
-  --------------- ---------------------------------
-  `gj` / `gk`     Next/previous element (heading)
-  `gh` / `gl`     Parent/child element (heading)
-  `gH`            Root heading
-  `ae`            Element text object
-  `ar`            Subtree text object
-  `M-j` / `M-k`   Move heading
-  `M-h` / `M-l`   Promote or demote heading
-  `M-J` / `M-K`   Move subtree
-  `M-H` / `M-L`   Promote or demote subtree
-  `>>` / `<<`     Promote or demote heading
+| Key binding   | Description                     |
+|---------------|---------------------------------|
+| `gj` / `gk`   | Next/previous element (heading) |
+| `gh` / `gl`   | Parent/child element (heading)  |
+| `gH`          | Root heading                    |
+| `ae`          | Element text object             |
+| `ar`          | Subtree text object             |
+| `M-j` / `M-k` | Move heading                    |
+| `M-h` / `M-l` | Promote or demote heading       |
+| `M-J` / `M-K` | Move subtree                    |
+| `M-H` / `M-L` | Promote or demote subtree       |
+| `>>` / `<<`   | Promote or demote heading       |
 
 If the layer variable `org-want-todo-bindings` is true, the following
 bindings are also available.
 
-  Key bindings   Description
-  -------------- -------------------------------------
-  `t`            Cycle TODO state of current heading
-  `T`            Insert new TODO heading
-  `M-t`          Insert new TODO sub-heading
+| Key bindings | Description                         |
+|--------------|-------------------------------------|
+| `t`          | Cycle TODO state of current heading |
+| `T`          | Insert new TODO heading             |
+| `M-t`        | Insert new TODO sub-heading         |
 
 Tables
 ------
 
-  Key binding     Description
-  --------------- ------------------------------------------------------------------------------
-  `SPC m t a`     Align the table at point by aligning all vertical bars
-  `SPC m t b`     Blank the current table field or active region
-  `SPC m t c`     Convert from `org-mode` table to table.el and back
-  `SPC m t d c`   Delete a column from the table
-  `SPC m t d r`   Delete the current row or horizontal line from the table
-  `SPC m t e`     Replace the table field value at the cursor by the result of a calculation
-  `SPC m t E`     Export table to a file, with configurable format
-  `SPC m t f`     Show table field info
-  `SPC m t h`     Go to the previous field in the table
-  `SPC m t H`     Move column to the left
-  `SPC m t i c`   Insert a new column into the table
-  `SPC m t i h`   Insert a horizontal-line below the current line into the table
-  `SPC m t i H`   Insert a hline and move to the row below that line
-  `SPC m t i r`   Insert a new row above the current line into the table
-  `SPC m t I`     Import a file as a table
-  `SPC m t j`     Go to the next row (same column) in the current table
-  `SPC m t J`     Move table row down
-  `SPC m t K`     Move table row up
-  `SPC m t l`     Go to the next field in the current table, creating new lines as needed
-  `SPC m t L`     Move column to the right
-  `SPC m t n`     Query for a size and insert a table skeleton
-  `SPC m t N`     Use the table.el package to insert a new table
-  `SPC m t p`     Plot the table using org-plot/gnuplot
-  `SPC m t r`     Recalculate the current table line by applying all stored formulas
-  `SPC m t R`     Recalculate all tables in the current buffer by applying all stored formulas
-  `SPC m t s`     Sort table lines according to the column at point
-  `SPC m t t f`   Toggle the formula debugger in tables
-  `SPC m t t o`   Toggle the display of Row/Column numbers in tables
-  `SPC m t w`     Wrap several fields in a column like a paragraph
+| Key binding   | Description                                                                  |
+|---------------|------------------------------------------------------------------------------|
+| `SPC m t a`   | Align the table at point by aligning all vertical bars                       |
+| `SPC m t b`   | Blank the current table field or active region                               |
+| `SPC m t c`   | Convert from `org-mode` table to table.el and back                           |
+| `SPC m t d c` | Delete a column from the table                                               |
+| `SPC m t d r` | Delete the current row or horizontal line from the table                     |
+| `SPC m t e`   | Replace the table field value at the cursor by the result of a calculation   |
+| `SPC m t E`   | Export table to a file, with configurable format                             |
+| `SPC m t f`   | Show table field info                                                        |
+| `SPC m t h`   | Go to the previous field in the table                                        |
+| `SPC m t H`   | Move column to the left                                                      |
+| `SPC m t i c` | Insert a new column into the table                                           |
+| `SPC m t i h` | Insert a horizontal-line below the current line into the table               |
+| `SPC m t i H` | Insert a hline and move to the row below that line                           |
+| `SPC m t i r` | Insert a new row above the current line into the table                       |
+| `SPC m t I`   | Import a file as a table                                                     |
+| `SPC m t j`   | Go to the next row (same column) in the current table                        |
+| `SPC m t J`   | Move table row down                                                          |
+| `SPC m t K`   | Move table row up                                                            |
+| `SPC m t l`   | Go to the next field in the current table, creating new lines as needed      |
+| `SPC m t L`   | Move column to the right                                                     |
+| `SPC m t n`   | Query for a size and insert a table skeleton                                 |
+| `SPC m t N`   | Use the table.el package to insert a new table                               |
+| `SPC m t p`   | Plot the table using org-plot/gnuplot                                        |
+| `SPC m t r`   | Recalculate the current table line by applying all stored formulas           |
+| `SPC m t R`   | Recalculate all tables in the current buffer by applying all stored formulas |
+| `SPC m t s`   | Sort table lines according to the column at point                            |
+| `SPC m t t f` | Toggle the formula debugger in tables                                        |
+| `SPC m t t o` | Toggle the display of Row/Column numbers in tables                           |
+| `SPC m t w`   | Wrap several fields in a column like a paragraph                             |
 
 Trees
 -----
 
-  Key binding     Description
-  --------------- ---------------------------------
-  `gj` / `gk`     Next/previous element (heading)
-  `gh` / `gl`     Parent/child element (heading)
-  `gH`            Root heading
-  `ae`            Element text object
-  `ar`            Subtree text object
-  `M-j` / `M-k`   Move heading
-  `M-h` / `M-l`   Promote or demote heading
-  `M-J` / `M-K`   Move subtree
-  `M-H` / `M-L`   Promote or demote subtree
-  `>>` / `<<`     Promote or demote heading
-  `TAB`           org-cycle
-  `SPC m s a`     Toggle archive tag for subtree
-  `SPC m s A`     Archive subtree
-  `SPC m s b`     org-tree-to-indirect-buffer
-  `SPC m s d`     org-cut-subtree
-  `SPC m s y`     org-copy-subtree
-  `SPC m s p`     org-paste-subtree
-  `SPC m s l`     org-demote-subtree
-  `SPC m s h`     org-promote-subtree
-  `SPC m s k`     org-move-subtree-up
-  `SPC m s j`     org-move-subtree-down
-  `SPC m s n`     org-narrow-to-subtree
-  `SPC m s w`     widen narrowed subtree
-  `SPC m s r`     org-refile
-  `SPC m s s`     show sparse tree
-  `SPC m s S`     sort trees
+| Key binding   | Description                     |
+|---------------|---------------------------------|
+| `gj` / `gk`   | Next/previous element (heading) |
+| `gh` / `gl`   | Parent/child element (heading)  |
+| `gH`          | Root heading                    |
+| `ae`          | Element text object             |
+| `ar`          | Subtree text object             |
+| `M-j` / `M-k` | Move heading                    |
+| `M-h` / `M-l` | Promote or demote heading       |
+| `M-J` / `M-K` | Move subtree                    |
+| `M-H` / `M-L` | Promote or demote subtree       |
+| `>>` / `<<`   | Promote or demote heading       |
+| `TAB`         | org-cycle                       |
+| `SPC m s a`   | Toggle archive tag for subtree  |
+| `SPC m s A`   | Archive subtree                 |
+| `SPC m s b`   | org-tree-to-indirect-buffer     |
+| `SPC m s d`   | org-cut-subtree                 |
+| `SPC m s y`   | org-copy-subtree                |
+| `SPC m s p`   | org-paste-subtree               |
+| `SPC m s l`   | org-demote-subtree              |
+| `SPC m s h`   | org-promote-subtree             |
+| `SPC m s k`   | org-move-subtree-up             |
+| `SPC m s j`   | org-move-subtree-down           |
+| `SPC m s n`   | org-narrow-to-subtree           |
+| `SPC m s w`   | widen narrowed subtree          |
+| `SPC m s r`   | org-refile                      |
+| `SPC m s s`   | show sparse tree                |
+| `SPC m s S`   | sort trees                      |
 
 Element insertion
 -----------------
 
-  Key binding     Description
-  --------------- -----------------------------------------------
-  `C-RET`         Insert heading at end of current subtree
-  `C-S-RET`       Insert TODO heading at end of current subtree
-  `SPC m i d`     org-insert-drawer
-  `SPC m i D s`   Take screenshot
-  `SPC m i D y`   Yank image url
-  `SPC m i e`     org-set-effort
-  `SPC m i f`     org-insert-footnote
-  `SPC m i h`     org-insert-heading
-  `SPC m i H`     org-insert-heading-after-current
-  `SPC m i i`     org-insert-item
-  `SPC m i K`     spacemacs/insert-keybinding-org
-  `SPC m i l`     org-insert-link
-  `SPC m i L`     insert URL with its page title from clipboard
-  `SPC m i n`     org-add-note
-  `SPC m i p`     org-set-property
-  `SPC m i r`     org-rich-yank (paste code into a `src` block)
-  `SPC m i s`     org-insert-subheading
-  `SPC m i t`     org-set-tags
+| Key binding   | Description                                   |
+|---------------|-----------------------------------------------|
+| `C-RET`       | Insert heading at end of current subtree      |
+| `C-S-RET`     | Insert TODO heading at end of current subtree |
+| `SPC m i d`   | org-insert-drawer                             |
+| `SPC m i D s` | Take screenshot                               |
+| `SPC m i D y` | Yank image url                                |
+| `SPC m i e`   | org-set-effort                                |
+| `SPC m i f`   | org-insert-footnote                           |
+| `SPC m i h`   | org-insert-heading                            |
+| `SPC m i H`   | org-insert-heading-after-current              |
+| `SPC m i i`   | org-insert-item                               |
+| `SPC m i K`   | spacemacs/insert-keybinding-org               |
+| `SPC m i l`   | org-insert-link                               |
+| `SPC m i L`   | insert URL with its page title from clipboard |
+| `SPC m i n`   | org-add-note                                  |
+| `SPC m i p`   | org-set-property                              |
+| `SPC m i r`   | org-rich-yank (paste code into a `src` block) |
+| `SPC m i s`   | org-insert-subheading                         |
+| `SPC m i t`   | org-set-tags                                  |
 
 Links
 -----
 
-  Key binding   Description
-  ------------- -------------------
-  `SPC m x o`   org-open-at-point
+| Key binding | Description       |
+|-------------|-------------------|
+| `SPC m x o` | org-open-at-point |
 
 Babel / Source Blocks
 ---------------------
@@ -904,31 +904,31 @@ and its [yasnippet key
 bindings](https://develop.spacemacs.org/layers/+completion/auto-completion/README.html#yasnippet)
 in particular.
 
-  Key binding   Description
-  ------------- ------------------------------------------
-  `SPC m b .`   Enter Babel Transient State
-  `SPC m b a`   org-babel-sha1-hash
-  `SPC m b b`   org-babel-execute-buffer
-  `SPC m b c`   org-babel-check-src-block
-  `SPC m b d`   org-babel-demarcate-block
-  `SPC m b e`   org-babel-execute-maybe
-  `SPC m b f`   org-babel-tangle-file
-  `SPC m b g`   org-babel-goto-named-src-block
-  `SPC m b i`   org-babel-lob-ingest
-  `SPC m b I`   org-babel-view-src-block-info
-  `SPC m b j`   org-babel-insert-header-arg
-  `SPC m b l`   org-babel-load-in-session
-  `SPC m b n`   org-babel-next-src-block
-  `SPC m b o`   org-babel-open-src-block-result
-  `SPC m b p`   org-babel-previous-src-block
-  `SPC m b r`   org-babel-goto-named-result
-  `SPC m b s`   org-babel-execute-subtree
-  `SPC m b t`   org-babel-tangle
-  `SPC m b u`   org-babel-goto-src-block-head
-  `SPC m b v`   org-babel-expand-src-block
-  `SPC m b x`   org-babel-do-key-sequence-in-edit-buffer
-  `SPC m b z`   org-babel-switch-to-session
-  `SPC m b Z`   org-babel-switch-to-session-with-code
+| Key binding | Description                              |
+|-------------|------------------------------------------|
+| `SPC m b .` | Enter Babel Transient State              |
+| `SPC m b a` | org-babel-sha1-hash                      |
+| `SPC m b b` | org-babel-execute-buffer                 |
+| `SPC m b c` | org-babel-check-src-block                |
+| `SPC m b d` | org-babel-demarcate-block                |
+| `SPC m b e` | org-babel-execute-maybe                  |
+| `SPC m b f` | org-babel-tangle-file                    |
+| `SPC m b g` | org-babel-goto-named-src-block           |
+| `SPC m b i` | org-babel-lob-ingest                     |
+| `SPC m b I` | org-babel-view-src-block-info            |
+| `SPC m b j` | org-babel-insert-header-arg              |
+| `SPC m b l` | org-babel-load-in-session                |
+| `SPC m b n` | org-babel-next-src-block                 |
+| `SPC m b o` | org-babel-open-src-block-result          |
+| `SPC m b p` | org-babel-previous-src-block             |
+| `SPC m b r` | org-babel-goto-named-result              |
+| `SPC m b s` | org-babel-execute-subtree                |
+| `SPC m b t` | org-babel-tangle                         |
+| `SPC m b u` | org-babel-goto-src-block-head            |
+| `SPC m b v` | org-babel-expand-src-block               |
+| `SPC m b x` | org-babel-do-key-sequence-in-edit-buffer |
+| `SPC m b z` | org-babel-switch-to-session              |
+| `SPC m b Z` | org-babel-switch-to-session-with-code    |
 
 ### Org Babel Transient State
 
@@ -936,42 +936,42 @@ Use `SPC m b .` to enter a transient state for quick source block
 navigation and execution. During that state, the following bindings are
 active:
 
-  Key binding   Description
-  ------------- -------------------------------
-  `'`           edit source block
-  `e`           execute source block
-  `g`           jump to named source block
-  `j`           jump to next source block
-  `k`           jump to previous source block
-  `z`           recenter buffer in window
-  `q`           leave transient state
+| Key binding | Description                   |
+|-------------|-------------------------------|
+| `'`         | edit source block             |
+| `e`         | execute source block          |
+| `g`         | jump to named source block    |
+| `j`         | jump to next source block     |
+| `k`         | jump to previous source block |
+| `z`         | recenter buffer in window     |
+| `q`         | leave transient state         |
 
 Emphasis
 --------
 
-  Key binding   Description
-  ------------- ----------------------------
-  `SPC m x b`   make region bold
-  `SPC m x c`   make region code
-  `SPC m x i`   make region italic
-  `SPC m x r`   clear region emphasis
-  `SPC m x s`   make region strike-through
-  `SPC m x u`   make region underline
-  `SPC m x v`   make region verbatim
+| Key binding | Description                |
+|-------------|----------------------------|
+| `SPC m x b` | make region bold           |
+| `SPC m x c` | make region code           |
+| `SPC m x i` | make region italic         |
+| `SPC m x r` | clear region emphasis      |
+| `SPC m x s` | make region strike-through |
+| `SPC m x u` | make region underline      |
+| `SPC m x v` | make region verbatim       |
 
 Navigating in calendar
 ----------------------
 
-  Key binding   Description
-  ------------- --------------------
-  `M-l`         One day forward
-  `M-h`         One day backward
-  `M-j`         One week forward
-  `M-k`         One week backward
-  `M-L`         One month forward
-  `M-H`         One month backward
-  `M-J`         One year forward
-  `M-K`         One year backward
+| Key binding | Description        |
+|-------------|--------------------|
+| `M-l`       | One day forward    |
+| `M-h`       | One day backward   |
+| `M-j`       | One week forward   |
+| `M-k`       | One week backward  |
+| `M-L`       | One month forward  |
+| `M-H`       | One month backward |
+| `M-J`       | One year forward   |
+| `M-K`       | One year backward  |
 
 Capture buffers and src blocks
 ------------------------------
@@ -979,14 +979,14 @@ Capture buffers and src blocks
 `org-capture-mode` and `org-src-mode` both support the confirm and abort
 conventions.
 
-  Key binding                                    Description
-  ---------------------------------------------- ----------------------------------------
-  `SPC m <dotspacemacs-major-mode-leader-key>`   confirm in `org-capture-mode`
-  `SPC m '​`                                     confirm in `org-src-mode`
-  `SPC m c`                                      confirm
-  `SPC m a`                                      abort
-  `SPC m k`                                      abort
-  `SPC m r`                                      org-capture-refile in org-capture-mode
+| Key binding                                  | Description                            |
+|----------------------------------------------|----------------------------------------|
+| `SPC m <dotspacemacs-major-mode-leader-key>` | confirm in `org-capture-mode`          |
+| `SPC m '​`                                   | confirm in `org-src-mode`              |
+| `SPC m c`                                    | confirm                                |
+| `SPC m a`                                    | abort                                  |
+| `SPC m k`                                    | abort                                  |
+| `SPC m r`                                    | org-capture-refile in org-capture-mode |
 
 Org agenda
 ----------
@@ -995,33 +995,33 @@ Org agenda
 
 The evilified org agenda supports the following bindings:
 
-  Key binding            Description
-  ---------------------- -----------------------------------
-  `M-SPC` or `s-M-SPC`   org-agenda transient state
-  `SPC m a`              org-agenda
-  `SPC m ,`              org-agenda-ctrl-c-ctrl-c
-  `SPC m c`              org-agenda-capture
-  `SPC m C c`            org-agenda-clock-cancel
-  `SPC m C i`            org-agenda-clock-in
-  `SPC m C o`            org-agenda-clock-out
-  `SPC m C j`            org-agenda-clock-goto
-  `SPC m C p`            org-pomodoro (if package is used)
-  `SPC m d d`            org-agenda-deadline
-  `SPC m d s`            org-agenda-schedule
-  `SPC m i e`            org-agenda-set-effort
-  `SPC m i p`            org-agenda-set-property
-  `SPC m i P`            org-agenda-priority
-  `SPC m i t`            org-agenda-set-tags
-  `SPC m s r`            org-agenda-refile
-  `M-j`                  next item
-  `M-k`                  previous item
-  `M-h`                  earlier view
-  `M-l`                  later view
-  `gr`                   refresh
-  `gd`                   toggle grid
-  `C-v`                  change view
-  `RET`                  org-agenda-goto
-  `M-RET`                org-agenda-show-and-scroll-up
+| Key binding          | Description                       |
+|----------------------|-----------------------------------|
+| `M-SPC` or `s-M-SPC` | org-agenda transient state        |
+| `SPC m a`            | org-agenda                        |
+| `SPC m ,`            | org-agenda-ctrl-c-ctrl-c          |
+| `SPC m c`            | org-agenda-capture                |
+| `SPC m C c`          | org-agenda-clock-cancel           |
+| `SPC m C i`          | org-agenda-clock-in               |
+| `SPC m C o`          | org-agenda-clock-out              |
+| `SPC m C j`          | org-agenda-clock-goto             |
+| `SPC m C p`          | org-pomodoro (if package is used) |
+| `SPC m d d`          | org-agenda-deadline               |
+| `SPC m d s`          | org-agenda-schedule               |
+| `SPC m i e`          | org-agenda-set-effort             |
+| `SPC m i p`          | org-agenda-set-property           |
+| `SPC m i P`          | org-agenda-priority               |
+| `SPC m i t`          | org-agenda-set-tags               |
+| `SPC m s r`          | org-agenda-refile                 |
+| `M-j`                | next item                         |
+| `M-k`                | previous item                     |
+| `M-h`                | earlier view                      |
+| `M-l`                | later view                        |
+| `gr`                 | refresh                           |
+| `gd`                 | toggle grid                       |
+| `C-v`                | change view                       |
+| `RET`                | org-agenda-goto                   |
+| `M-RET`              | org-agenda-show-and-scroll-up     |
 
 ### Org agenda transient state
 
@@ -1030,67 +1030,67 @@ its transient state. The transient state aims to list the most useful
 org agenda commands and visually organize them by category. The commands
 associated with each binding are listed bellow.
 
-  Key binding   Description           Command
-  ------------- --------------------- -----------------------------------
-  Entry                               
-  `h:`          set tags              org-agenda-set-tags
-  `hA`          archive               org-agenda-archive-default
-  `ht`          set status            org-agenda-todo
-  `hk`          kill                  org-agenda-kill
-  `hp`          set priority          org-agenda-priority
-  `hR`          refile                org-agenda-refile
-  Visit entry                         
-  `SPC`         in other window       org-agenda-show-and-scroll-up
-  `TAB`         & go to location      org-agenda-goto
-  `RET`         & del other windows   org-agenda-switch-to
-  `o`           link                  link-hint-open-link
-  Filter                              
-  `fc`          by category           org-agenda-filter-by-category
-  `fd`          delete all filters    org-agenda-filter-remove-all
-  `fh`          by top headline       org-agenda-filter-by-top-headline
-  `fr`          refine by tag         org-agenda-filter-by-tag-refine
-  `ft`          by tag                org-agenda-filter-by-tag
-  `fx`          by regexp             org-agenda-filter-by-regexp
-  Date                                
-  `+`           do later              org-agenda-do-date-later
-  `-`           do earlier            org-agenda-do-date-earlier
-  `dd`          set deadline          org-agenda-deadline
-  `dD`          remove deadline       org-agenda-deadline
-  `ds`          schedule              org-agenda-schedule
-  `dS`          un-schedule           org-agenda-schedule
-  `dt`          timestamp             org-agenda-date-prompt
-  Toggle                              
-  `ta`          archive               org-agenda-archives-mode
-  `tc`          clocking issues       org-agenda-show-clocking-issues
-  `td`          diaries               org-agenda-toggle-diary
-  `tf`          follow                org-agenda-follow-mode
-  `tl`          log                   org-agenda-log-mode
-  `tr`          clock report          org-agenda-clockreport-mode
-  View                                
-  `vd`          day                   org-agenda-day-view
-  `vm`          month                 org-agenda-month-view
-  `vn`          next span             org-agenda-later
-  `vp`          prev span             org-agenda-earlier
-  `vr`          reset                 org-agenda-reset-view
-  `vt`          fortnight             org-agenda-fortnight-view
-  `vw`          week                  org-agenda-week-view
-  `vy`          year                  org-agenda-year-view
-  Clock                               
-  `cI`          in                    org-agenda-clock-in
-  `cj`          jump                  org-agenda-clock-goto
-  `cO`          out                   org-agenda-clock-out
-  `cq`          cancel                org-agenda-clock-cancel
-  Other                               
-  `.`           go to today           org-agenda-goto-today
-  `gd`          go to date            org-agenda-goto-date
-  `gr`          reload                org-agenda-redo
+| Key binding | Description         | Command                           |
+|-------------|---------------------|-----------------------------------|
+| Entry       |                     |                                   |
+| `h:`        | set tags            | org-agenda-set-tags               |
+| `hA`        | archive             | org-agenda-archive-default        |
+| `ht`        | set status          | org-agenda-todo                   |
+| `hk`        | kill                | org-agenda-kill                   |
+| `hp`        | set priority        | org-agenda-priority               |
+| `hR`        | refile              | org-agenda-refile                 |
+| Visit entry |                     |                                   |
+| `SPC`       | in other window     | org-agenda-show-and-scroll-up     |
+| `TAB`       | & go to location    | org-agenda-goto                   |
+| `RET`       | & del other windows | org-agenda-switch-to              |
+| `o`         | link                | link-hint-open-link               |
+| Filter      |                     |                                   |
+| `fc`        | by category         | org-agenda-filter-by-category     |
+| `fd`        | delete all filters  | org-agenda-filter-remove-all      |
+| `fh`        | by top headline     | org-agenda-filter-by-top-headline |
+| `fr`        | refine by tag       | org-agenda-filter-by-tag-refine   |
+| `ft`        | by tag              | org-agenda-filter-by-tag          |
+| `fx`        | by regexp           | org-agenda-filter-by-regexp       |
+| Date        |                     |                                   |
+| `+`         | do later            | org-agenda-do-date-later          |
+| `-`         | do earlier          | org-agenda-do-date-earlier        |
+| `dd`        | set deadline        | org-agenda-deadline               |
+| `dD`        | remove deadline     | org-agenda-deadline               |
+| `ds`        | schedule            | org-agenda-schedule               |
+| `dS`        | un-schedule         | org-agenda-schedule               |
+| `dt`        | timestamp           | org-agenda-date-prompt            |
+| Toggle      |                     |                                   |
+| `ta`        | archive             | org-agenda-archives-mode          |
+| `tc`        | clocking issues     | org-agenda-show-clocking-issues   |
+| `td`        | diaries             | org-agenda-toggle-diary           |
+| `tf`        | follow              | org-agenda-follow-mode            |
+| `tl`        | log                 | org-agenda-log-mode               |
+| `tr`        | clock report        | org-agenda-clockreport-mode       |
+| View        |                     |                                   |
+| `vd`        | day                 | org-agenda-day-view               |
+| `vm`        | month               | org-agenda-month-view             |
+| `vn`        | next span           | org-agenda-later                  |
+| `vp`        | prev span           | org-agenda-earlier                |
+| `vr`        | reset               | org-agenda-reset-view             |
+| `vt`        | fortnight           | org-agenda-fortnight-view         |
+| `vw`        | week                | org-agenda-week-view              |
+| `vy`        | year                | org-agenda-year-view              |
+| Clock       |                     |                                   |
+| `cI`        | in                  | org-agenda-clock-in               |
+| `cj`        | jump                | org-agenda-clock-goto             |
+| `cO`        | out                 | org-agenda-clock-out              |
+| `cq`        | cancel              | org-agenda-clock-cancel           |
+| Other       |                     |                                   |
+| `.`         | go to today         | org-agenda-goto-today             |
+| `gd`        | go to date          | org-agenda-goto-date              |
+| `gr`        | reload              | org-agenda-redo                   |
 
 Pomodoro
 --------
 
-  Key binding   Description
-  ------------- -------------------
-  `SPC m C p`   starts a pomodoro
+| Key binding | Description       |
+|-------------|-------------------|
+| `SPC m C p` | starts a pomodoro |
 
 Presentation
 ------------
@@ -1098,105 +1098,105 @@ Presentation
 org-present must be activated explicitly by typing:
 `SPC SPC org-present`
 
-  Key binding   Description
-  ------------- ----------------
-  `h`           previous slide
-  `l`           next slide
-  `q`           quit
+| Key binding | Description    |
+|-------------|----------------|
+| `h`         | previous slide |
+| `l`         | next slide     |
+| `q`         | quit           |
 
 Helm-org-rifle
 --------------
 
-  Key binding   Description
-  ------------- --------------------------------------------
-  `SPC a o /`   Search org files for keywords and headings
+| Key binding | Description                                |
+|-------------|--------------------------------------------|
+| `SPC a o /` | Search org files for keywords and headings |
 
 Org-projectile
 --------------
 
-  Key binding         Description
-  ------------------- ---------------------------------------------------------
-  `SPC a o p`         Capture a TODO for the current project
-  `SPC u SPC a o p`   Capture a TODO for any given project (choose from list)
-  `SPC p o`           Go to the TODOs for the current project
+| Key binding       | Description                                             |
+|-------------------|---------------------------------------------------------|
+| `SPC a o p`       | Capture a TODO for the current project                  |
+| `SPC u SPC a o p` | Capture a TODO for any given project (choose from list) |
+| `SPC p o`         | Go to the TODOs for the current project                 |
 
 Org-journal
 -----------
 
-  Key binding           Description
-  --------------------- --------------------------------------------------
-  `SPC a o j f`         Visit journal file
-  `SPC a o j j`         New journal entry
-  `SPC u SPC a o j j`   Open today\'s journal without adding a new entry
-  `SPC a o j s`         Search journal entries
-  `SPC a o j t`         New scheduled journal entry
-  `SPC a o j v`         View scheduled journal entries
+| Key binding         | Description                                     |
+|---------------------|-------------------------------------------------|
+| `SPC a o j f`       | Visit journal file                              |
+| `SPC a o j j`       | New journal entry                               |
+| `SPC u SPC a o j j` | Open today's journal without adding a new entry |
+| `SPC a o j s`       | Search journal entries                          |
+| `SPC a o j t`       | New scheduled journal entry                     |
+| `SPC a o j v`       | View scheduled journal entries                  |
 
 Journal entries are highlighted in the calendar. The following key
 bindings are available for `calendar-mode` for navigating and
 manipulating the journal.
 
-  Key binding   Description
-  ------------- ---------------------------------------
-  `SPC m i`     Insert journal entry for date
-  `SPC m m`     Search calendar month journal entries
-  `SPC m n`     Next journal entry
-  `SPC m p`     Previous journal entry
-  `SPC m r`     Read journal entry
-  `SPC m s`     Search all journal entries
-  `SPC m w`     Search calendar week journal entries
-  `SPC m y`     Search calendar year journal entries
+| Key binding | Description                           |
+|-------------|---------------------------------------|
+| `SPC m i`   | Insert journal entry for date         |
+| `SPC m m`   | Search calendar month journal entries |
+| `SPC m n`   | Next journal entry                    |
+| `SPC m p`   | Previous journal entry                |
+| `SPC m r`   | Read journal entry                    |
+| `SPC m s`   | Search all journal entries            |
+| `SPC m w`   | Search calendar week journal entries  |
+| `SPC m y`   | Search calendar year journal entries  |
 
 While viewing a journal entry in `org-journal-mode` the following key
 bindings are available.
 
-  Key binding   Description
-  ------------- ------------------------
-  `SPC m j`     New journal entry
-  `SPC m n`     Next journal entry
-  `SPC m p`     Previous journal entry
+| Key binding | Description            |
+|-------------|------------------------|
+| `SPC m j`   | New journal entry      |
+| `SPC m n`   | Next journal entry     |
+| `SPC m p`   | Previous journal entry |
 
 Org-brain
 ---------
 
 ### Application bindings
 
-  Key binding     Description
-  --------------- ------------------------------
-  `SPC a o B v`   Visualize an org-brain entry
-  `SPC a o B a`   Go to the org-brain agenda
+| Key binding   | Description                  |
+|---------------|------------------------------|
+| `SPC a o B v` | Visualize an org-brain entry |
+| `SPC a o B a` | Go to the org-brain agenda   |
 
 ### org-mode bindings
 
-  Key binding     Description
-  --------------- ------------------------------
-  `SPC m B a c`   Add child
-  `SPC m B a h`   Add headline child
-  `SPC m B a f`   Add friend
-  `SPC m B a p`   Add parent
-  `SPC m B a r`   Add resource
-  `SPC m B g g`   Go to an org-brain entry
-  `SPC m B g c`   Go to child
-  `SPC m B g f`   Go to friend
-  `SPC m B g p`   Go to parent
-  `SPC m B R`     Refile entry
-  `SPC m B x`     Delete entry
-  `SPC m B v`     Visualize an org-brain entry
+| Key binding   | Description                  |
+|---------------|------------------------------|
+| `SPC m B a c` | Add child                    |
+| `SPC m B a h` | Add headline child           |
+| `SPC m B a f` | Add friend                   |
+| `SPC m B a p` | Add parent                   |
+| `SPC m B a r` | Add resource                 |
+| `SPC m B g g` | Go to an org-brain entry     |
+| `SPC m B g c` | Go to child                  |
+| `SPC m B g f` | Go to friend                 |
+| `SPC m B g p` | Go to parent                 |
+| `SPC m B R`   | Refile entry                 |
+| `SPC m B x`   | Delete entry                 |
+| `SPC m B v`   | Visualize an org-brain entry |
 
 ### Visualization bindings
 
-  Key binding   Description
-  ------------- -----------------------------------------------------------------------
-  `j / TAB`     Goto next link
-  `k / S-TAB`   Goto previous link
-  `C-y`         Paste resource link
-  `a`           Add resource [attachment](http://orgmode.org/manual/Attachments.html)
-  `c`           Add child
-  `f`           Find/visit another entry to visualize
-  `l`           Add resource link
-  `p`           Add parent
-  `o`           Open and edit the visualized entry
-  `r`           Rename this, or another, entry
+| Key binding | Description                                                           |
+|-------------|-----------------------------------------------------------------------|
+| `j / TAB`   | Goto next link                                                        |
+| `k / S-TAB` | Goto previous link                                                    |
+| `C-y`       | Paste resource link                                                   |
+| `a`         | Add resource [attachment](http://orgmode.org/manual/Attachments.html) |
+| `c`         | Add child                                                             |
+| `f`         | Find/visit another entry to visualize                                 |
+| `l`         | Add resource link                                                     |
+| `p`         | Add parent                                                            |
+| `o`         | Open and edit the visualized entry                                    |
+| `r`         | Rename this, or another, entry                                        |
 
 Org-jira
 --------
@@ -1206,53 +1206,53 @@ Key binding prefixes:
 -   `SPC a o J` (everywhere)
 -   `SPC m m j` (in an org-mode buffer)
 
-  Key binding      Description
-  ---------------- --------------------------------------------------
-  `[prefix] p g`   Get projects list
-  `[prefix] i b`   Open the current issue in a WWW browser
-  `[prefix] i g`   Get issues
-  `[prefix] i h`   Get only head of issues
-  `[prefix] i f`   Get only head of issues from filter
-  `[prefix] i u`   Update an issue at point
-  `[prefix] i w`   Progress an issue at point
-  `[prefix] i r`   Refresh an issue at point
-  `[prefix] i c`   Create an issue at point
-  `[prefix] i y`   Copy current issue key
-  `[prefix] s c`   Create a subtask
-  `[prefix] s g`   Get subtasks
-  `[prefix] c u`   Update the comment at point or add a new comment
-  `[prefix] t j`   Convert the TODO item at point to a Jira ticket
+| Key binding    | Description                                      |
+|----------------|--------------------------------------------------|
+| `[prefix] p g` | Get projects list                                |
+| `[prefix] i b` | Open the current issue in a WWW browser          |
+| `[prefix] i g` | Get issues                                       |
+| `[prefix] i h` | Get only head of issues                          |
+| `[prefix] i f` | Get only head of issues from filter              |
+| `[prefix] i u` | Update an issue at point                         |
+| `[prefix] i w` | Progress an issue at point                       |
+| `[prefix] i r` | Refresh an issue at point                        |
+| `[prefix] i c` | Create an issue at point                         |
+| `[prefix] i y` | Copy current issue key                           |
+| `[prefix] s c` | Create a subtask                                 |
+| `[prefix] s g` | Get subtasks                                     |
+| `[prefix] c u` | Update the comment at point or add a new comment |
+| `[prefix] t j` | Convert the TODO item at point to a Jira ticket  |
 
 Verb
 ----
 
 ### Verb-mode bindings
 
-  Key binding   Description
-  ------------- ---------------------------------------------------------------
-  `SPC m r r`   Send request on point in another window, but don\'t select it
-  `SPC m r s`   Send request on point in another window
-  `SPC m r m`   Send request on point, show result status in minibuffer
-  `SPC m r f`   Send request on point in selected window
-  `SPC m r k`   Kill all response buffers and their windows
-  `SPC m r e`   Export request on point (prompt for format)
-  `SPC m r u`   Export request on point to curl format
-  `SPC m r b`   Export request on point to Verb format
-  `SPC m r v`   Set value of a Verb variable
+| Key binding | Description                                                  |
+|-------------|--------------------------------------------------------------|
+| `SPC m r r` | Send request on point in another window, but don't select it |
+| `SPC m r s` | Send request on point in another window                      |
+| `SPC m r m` | Send request on point, show result status in minibuffer      |
+| `SPC m r f` | Send request on point in selected window                     |
+| `SPC m r k` | Kill all response buffers and their windows                  |
+| `SPC m r e` | Export request on point (prompt for format)                  |
+| `SPC m r u` | Export request on point to curl format                       |
+| `SPC m r b` | Export request on point to Verb format                       |
+| `SPC m r v` | Set value of a Verb variable                                 |
 
 ### Verb-response-body-mode bindings
 
-  Key binding   Description
-  ------------- ---------------------------------------------
-  `SPC m r r`   Toggle display headers for current response
-  `SPC m r k`   Kill current response buffer and its window
-  `SPC m r f`   Re-send current response
+| Key binding | Description                                 |
+|-------------|---------------------------------------------|
+| `SPC m r r` | Toggle display headers for current response |
+| `SPC m r k` | Kill current response buffer and its window |
+| `SPC m r f` | Re-send current response                    |
 
 ### Verb-response-headers-mode bindings
 
-  Key binding   Description
-  ------------- -----------------------------------------------------
-  `SPC m r q`   Kill current response headers buffer and its window
+| Key binding | Description                                         |
+|-------------|-----------------------------------------------------|
+| `SPC m r q` | Kill current response headers buffer and its window |
 
 Org-roam
 --------
@@ -1262,38 +1262,38 @@ Key binding prefixes:
 -   `SPC a o r` (anywhere)
 -   `SPC m r` (in an org-mode buffer)
 
-  Key binding     Description
-  --------------- -----------------------------------
-  `SPC m r c`     Capture
-  `SPC m r l`     Toggle org-roam links visibility
-  `SPC m r f`     Find node in org-roam
-  `SPC m r i`     Insert node into org-roam
-  `SPC m r g`     Visualize org-roam graph
-  `SPC m r a`     Add org-roam alias to file
-  `SPC m r d y`   Open yesterday\'s daily note
-  `SPC m r d t`   Open today\'s daily note
-  `SPC m r d T`   Open tomorrow\'s daily note
-  `SPC m r d d`   Open daily note via calendar view
-  `SPC m r t a`   Add a tag to file
-  `SPC m r t r`   Remove a tag from file
+| Key binding   | Description                       |
+|---------------|-----------------------------------|
+| `SPC m r c`   | Capture                           |
+| `SPC m r l`   | Toggle org-roam links visibility  |
+| `SPC m r f`   | Find node in org-roam             |
+| `SPC m r i`   | Insert node into org-roam         |
+| `SPC m r g`   | Visualize org-roam graph          |
+| `SPC m r a`   | Add org-roam alias to file        |
+| `SPC m r d y` | Open yesterday's daily note       |
+| `SPC m r d t` | Open today's daily note           |
+| `SPC m r d T` | Open tomorrow's daily note        |
+| `SPC m r d d` | Open daily note via calendar view |
+| `SPC m r t a` | Add a tag to file                 |
+| `SPC m r t r` | Remove a tag from file            |
 
 **org-roam buffer**
 
-  Key binding   Description
-  ------------- -------------------------
-  `o`           Follow link
-  `r`           Refresh org-roam buffer
+| Key binding | Description             |
+|-------------|-------------------------|
+| `o`         | Follow link             |
+| `r`         | Refresh org-roam buffer |
 
 Transclusion
 ------------
 
-  Key binding   Description
-  ------------- --------------------------------
-  `SPC m u u`   Transclude under cursor
-  `SPC m u U`   Transclude all in buffer
-  `SPC m u d`   De-transclude under cursor
-  `SPC m u D`   De-transclude all in buffer
-  `SPC m u l`   Demote transcluded subtree
-  `SPC m u h`   Promote transcluded subtree
-  `SPC m u r`   Refresh transclusion in buffer
-  `SPC m u g`   Go to transclusion source
+| Key binding | Description                    |
+|-------------|--------------------------------|
+| `SPC m u u` | Transclude under cursor        |
+| `SPC m u U` | Transclude all in buffer       |
+| `SPC m u d` | De-transclude under cursor     |
+| `SPC m u D` | De-transclude all in buffer    |
+| `SPC m u l` | Demote transcluded subtree     |
+| `SPC m u h` | Promote transcluded subtree    |
+| `SPC m u r` | Refresh transclusion in buffer |
+| `SPC m u g` | Go to transclusion source      |

@@ -26,9 +26,9 @@ Games instructions
 
 To run a game:
 
-  Key binding   Description
-  ------------- ----------------------------------------
-  `SPC a f g`   Open an `helm` buffer to select a game
+| Key binding | Description                            |
+|-------------|----------------------------------------|
+| `SPC a f g` | Open an `helm` buffer to select a game |
 
 Possible helm actions:
 
@@ -39,54 +39,54 @@ Possible helm actions:
 2048
 ----
 
-  Key binding   Description
-  ------------- ----------------------
-  `h`           Move the tiles left
-  `j`           Move the tiles down
-  `k`           Move the tiles up
-  `l`           Move the tiles right
+| Key binding | Description          |
+|-------------|----------------------|
+| `h`         | Move the tiles left  |
+| `j`         | Move the tiles down  |
+| `k`         | Move the tiles up    |
+| `l`         | Move the tiles right |
 
 Pacmacs
 -------
 
-  Key binding   Description
-  ------------- -------------
-  `h`           Move left
-  `j`           Move down
-  `k`           Move up
-  `l`           Move right
-                
+| Key binding | Description |
+|-------------|-------------|
+| `h`         | Move left   |
+| `j`         | Move down   |
+| `k`         | Move up     |
+| `l`         | Move right  |
+|             |             |
 
 Sudoku
 ------
 
-  -------------- --------------
-  Key bindings   Description
-  `h`            Move left
-  `j`            Move down
-  `k`            Move up
-  `l`            Move right
-  `1 ... 9`      Insert value
-  `0`            Remove value
-  `N`            New puzzle
-  `, h`          Hint
-  `, s`          Save puzzle
-  `, l`          Load puzzle
-  -------------- --------------
+|              |              |
+|--------------|--------------|
+| Key bindings | Description  |
+| `h`          | Move left    |
+| `j`          | Move down    |
+| `k`          | Move up      |
+| `l`          | Move right   |
+| `1 ... 9`    | Insert value |
+| `0`          | Remove value |
+| `N`          | New puzzle   |
+| `, h`        | Hint         |
+| `, s`        | Save puzzle  |
+| `, l`        | Load puzzle  |
 
 Tetris
 ------
 
-  Key binding   Description
-  ------------- --------------------------------
-  `h`           Move block to the left
-  `i`           Rotate block counter-clockwise
-  `j`           Move block to the bottom
-  `k`           Rotate block clockwise
-  `l`           Move block to the right
-  `n`           Start a new game
-  `p`           Pause the game
-  `q`           Quit the game
+| Key binding | Description                    |
+|-------------|--------------------------------|
+| `h`         | Move block to the left         |
+| `i`         | Rotate block counter-clockwise |
+| `j`         | Move block to the bottom       |
+| `k`         | Rotate block clockwise         |
+| `l`         | Move block to the right        |
+| `n`         | Start a new game               |
+| `p`         | Pause the game                 |
+| `q`         | Quit the game                  |
 
 Typit
 -----
@@ -103,12 +103,12 @@ By default a game duration is one minute.
 
 The game can be customized with the following variables:
 
-  Vsariable             Description
-  --------------------- -------------------------------------------------------
-  `typit-dict`          Language dictionary to use (default is `english.txt`)
-  `typit-dict-dir`      A directory path where to find dictionaries
-  `typit-line-length`   Length of generated lines (default 80)
-  `typit-test-time`     Duration of a game in seconds (default 60)
+| Vsariable           | Description                                           |
+|---------------------|-------------------------------------------------------|
+| `typit-dict`        | Language dictionary to use (default is `english.txt`) |
+| `typit-dict-dir`    | A directory path where to find dictionaries           |
+| `typit-line-length` | Length of generated lines (default 80)                |
+| `typit-test-time`   | Duration of a game in seconds (default 60)            |
 
 ### Create a new dictionary
 

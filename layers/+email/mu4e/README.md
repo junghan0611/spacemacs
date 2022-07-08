@@ -23,18 +23,18 @@ In order to use this layer you must install `mu` and `mu4e` separately.
 Typically `mu4e` will be bundled with `mu` (this is the case on many
 Linux distributions).
 
-If you\'re on macOS and install `mu` using Homebrew, you must specify
-the location of your Emacs binary at install time using the EMACS
+If you're on macOS and install `mu` using Homebrew, you must specify the
+location of your Emacs binary at install time using the EMACS
 environment variable, as well as passing the `--with-emacs` option:
 
-``` {.shell}
+``` shell
 brew install mu --with-emacs
 ```
 
-If the installation directory of `mu4e` is not in Emacs\' load path, you
+If the installation directory of `mu4e` is not in Emacs' load path, you
 can set the layer variable `mu4e-installation-path`, for example:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((mu4e :variables
                       mu4e-installation-path "/usr/share/emacs/site-lisp")))
@@ -49,48 +49,48 @@ Commands
 Global bindings
 ---------------
 
-  Key binding              Command
-  ------------------------ ---------------------------------
-  `SPC a e m`              Start mu4e
-  `SPC m S` or `SPC m /`   Search emails (requires helm)
-  `SPC m C`                Search contacts (requires helm)
-  `C-x m`                  Compose new message
+| Key binding            | Command                         |
+|------------------------|---------------------------------|
+| `SPC a e m`            | Start mu4e                      |
+| `SPC m S` or `SPC m /` | Search emails (requires helm)   |
+| `SPC m C`              | Search contacts (requires helm) |
+| `C-x m`                | Compose new message             |
 
 Headers mode
 ------------
 
-  Key binding   Command
-  ------------- -------------------------------------------------------------
-  `J`           Go to next unread thread marking other mail read on the way
-  `C-j`         Next header
-  `C-k`         Previous header
+| Key binding | Command                                                     |
+|-------------|-------------------------------------------------------------|
+| `J`         | Go to next unread thread marking other mail read on the way |
+| `C-j`       | Next header                                                 |
+| `C-k`       | Previous header                                             |
 
 View mode
 ---------
 
-  Key binding   Command
-  ------------- -------------------------------------------------------------
-  `J`           Go to next unread thread marking other mail read on the way
-  `C-j`         Next header
-  `C-k`         Previous header
+| Key binding | Command                                                     |
+|-------------|-------------------------------------------------------------|
+| `J`         | Go to next unread thread marking other mail read on the way |
+| `C-j`       | Next header                                                 |
+| `C-k`       | Previous header                                             |
 
 Compose mode
 ------------
 
-  Key binding              Command
-  ------------------------ --------------------------------
-  `SPC m c` or `SPC m ,`   Send the message and exit
-  `SPC m k` or `SPC m a`   Kill the message buffer
-  `SPC m s`                Auto-save and bury the message
-  `SPC m f`                Add file as attachment
-  `SPC m o`                Compose in Org-mode syntax
+| Key binding            | Command                        |
+|------------------------|--------------------------------|
+| `SPC m c` or `SPC m ,` | Send the message and exit      |
+| `SPC m k` or `SPC m a` | Kill the message buffer        |
+| `SPC m s`              | Auto-save and bury the message |
+| `SPC m f`              | Add file as attachment         |
+| `SPC m o`              | Compose in Org-mode syntax     |
 
 Configuration
 =============
 
 Configuration varies too much to give precise instructions. What follows
-is one example configuration. Refer to `mu4e`\'s manual for more
-detailed configuration instructions.
+is one example configuration. Refer to `mu4e`'s manual for more detailed
+configuration instructions.
 
 Maildirs extension
 ------------------
@@ -104,7 +104,7 @@ directory.
 The maildirs extension is not enabled by default. To activate it, change
 the variable `mu4e-use-maildirs-extension` to a non-nil value:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((mu4e :variables
                       mu4e-use-maildirs-extension t)))
@@ -118,7 +118,7 @@ managing multiple accounts.
 
 The following example is taken from the manual:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq mu4e-contexts
   `( ,(make-mu4e-context
   :name "Private"
@@ -173,7 +173,7 @@ not have to wait for the email to be sent. This is off by default but
 you can enable it by setting the `mu4e-enable-async-operations` variable
 when including the layer.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((mu4e :variables
                       mu4e-enable-async-operations t)))
@@ -186,14 +186,14 @@ By default `mu4e` will save attachment files to `$HOME`, but this layer
 changes that to `$HOME/Downloads` if it exists. You can override this in
 your `dotspacemacs/user-config`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq mu4e-attachment-dir "~/files")
 ```
 
 Example configuration
 ---------------------
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ;;; Set up some common mu4e variables
 (setq mu4e-maildir "~/.mail"
       mu4e-trash-folder "/Trash"
@@ -232,7 +232,7 @@ adds the count of unread messages to the modeline.
 ![](https://raw.githubusercontent.com/iqbalansari/mu4e-alert/master/screenshots/mu4e-alert-in-action.png)
 
 For an extended documentation of the available customizations please
-refer to [mu4e-alert\'s
+refer to [mu4e-alert's
 documentation](https://github.com/iqbalansari/mu4e-alert#user-content-customizations)
 
 ### OS notifications
@@ -240,14 +240,14 @@ documentation](https://github.com/iqbalansari/mu4e-alert#user-content-customizat
 To enable notifications about new messages, add the following line to
 your `dotspacemacs/user-config`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq mu4e-enable-notifications t)
 ```
 
 or use layer variables when you add the layer to
 `dotspacemacs-configuration-layers`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (mu4e :variables mu4e-enable-notifications t)
 ```
 
@@ -256,7 +256,7 @@ enable desktop notifications about new messages, add the following lines
 to your `dotspacemacs/user-config`, according to your operating system
 and the installed libraries:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (with-eval-after-load 'mu4e-alert
   ;; Enable Desktop notifications
   (mu4e-alert-set-default-style 'notifications)) ; For Linux.
@@ -271,14 +271,14 @@ and the installed libraries:
 To enable mode-line display about new messages, add the following line
 to your `dotspacemacs/user-config`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq mu4e-enable-mode-line t)
 ```
 
 or use layer variables when you add the layer to
 `dotspacemacs-configuration-layers`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (mu4e :variables mu4e-enable-mode-line t)
 ```
 
@@ -297,7 +297,7 @@ customized with the following layer variables:
 
 By default the values are:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((mu4e :variables mu4e-spacemacs-layout-name "@Mu4e"
                       mu4e-spacemacs-layout-binding "m"
@@ -314,7 +314,7 @@ form of `[[mu4e:msgid::***][link text]]`. Enabled by default. You can
 disable it by setting the `mu4e-org-link-support` variable when
 including the layer.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((mu4e :variables
                       mu4e-org-link-support nil)))
@@ -326,7 +326,7 @@ Feature `org-mu4e` supports composing emails in Org mode format.
 Disabled by default. You can enable it by setting the
 `mu4e-org-compose-support` variable when including the layer.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((mu4e :variables
                       mu4e-org-compose-support t)))

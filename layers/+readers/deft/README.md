@@ -29,7 +29,7 @@ Zetteldeft
 Zetteldeft support is included with the layer. To enable it, set the
 layer variable `deft-zetteldeft` to `t`:
 
-``` {.elisp}
+``` elisp
 (deft :variables deft-zetteldeft t)
 ```
 
@@ -39,7 +39,7 @@ Configuration
 By default deft tries to put notes in `~/.deft` but you can change this
 in your `dotspacemacs/user-config` function:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq deft-directory "~/Dropbox/notes")
 ```
 
@@ -48,7 +48,7 @@ editing. The default extension for new notes is `org`. However also `md`
 and `txt` files are recognized as notes. Which extensions are used for
 notes discovery can be configured in your `dotfile`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq deft-extensions '("org" "md" "txt"))
 ```
 
@@ -57,18 +57,18 @@ Just add or substitute your preferred extension.
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ----------------------------------
-  `SPC a r d`   Open Deft (works globally)
-  `SPC C d`     Create new file (works globally)
-  `SPC m c`     Clear deft filter
-  `SPC m d`     Delete selected note
-  `SPC m i`     Toggle to regex search
-  `SPC m n`     Create new file with filter text
-  `SPC m N`     Create new file named
-  `SPC m o`     Deft open file in other window
-  `SPC m r`     Rename selected note
-  `SPC m q`     quit deft window
+| Key binding | Description                      |
+|-------------|----------------------------------|
+| `SPC a r d` | Open Deft (works globally)       |
+| `SPC C d`   | Create new file (works globally) |
+| `SPC m c`   | Clear deft filter                |
+| `SPC m d`   | Delete selected note             |
+| `SPC m i`   | Toggle to regex search           |
+| `SPC m n`   | Create new file with filter text |
+| `SPC m N`   | Create new file named            |
+| `SPC m o`   | Deft open file in other window   |
+| `SPC m r`   | Rename selected note             |
+| `SPC m q`   | quit deft window                 |
 
 Zetteldeft key bindings
 -----------------------
@@ -78,26 +78,26 @@ follows:
 
 ### Global
 
-  Key binding                   Description
-  ----------------------------- ----------------------------------
-  `SPC C z` / `SPC a r d z n`   New zetteldeft file
-  `SPC a r d n`                 Open deft (replaces `SPC a r d`)
-  `SPC a r d z T`               Show tag buffer
-  `SPC a r d z s`               Zetteldeft search-at-point
-  `SPC a r d z o`               Zetteldeft find file
+| Key binding                 | Description                      |
+|-----------------------------|----------------------------------|
+| `SPC C z` / `SPC a r d z n` | New zetteldeft file              |
+| `SPC a r d n`               | Open deft (replaces `SPC a r d`) |
+| `SPC a r d z T`             | Show tag buffer                  |
+| `SPC a r d z s`             | Zetteldeft search-at-point       |
+| `SPC a r d z o`             | Zetteldeft find file             |
 
 ### Org-mode
 
-  Key binding   Description
-  ------------- --------------------------------------------
-  `SPC m z c`   Search for id of current file
-  `SPC m z f`   Follow link
-  `SPC m z t`   Tag search with avy
-  `SPC m z N`   New file and insert link
-  `SPC m z r`   Rename file
-  `SPC m z i`   Find a file and insert link
-  `SPC m z I`   Find a file and insert link with full name
-  `SPC m z s`   Search at point
-  `SPC m z l`   Link search with avy
-  `SPC m z F`   File search with avy on window
-  `SPC m z o`   Find file
+| Key binding | Description                                |
+|-------------|--------------------------------------------|
+| `SPC m z c` | Search for id of current file              |
+| `SPC m z f` | Follow link                                |
+| `SPC m z t` | Tag search with avy                        |
+| `SPC m z N` | New file and insert link                   |
+| `SPC m z r` | Rename file                                |
+| `SPC m z i` | Find a file and insert link                |
+| `SPC m z I` | Find a file and insert link with full name |
+| `SPC m z s` | Search at point                            |
+| `SPC m z l` | Link search with avy                       |
+| `SPC m z F` | File search with avy on window             |
+| `SPC m z o` | Find file                                  |

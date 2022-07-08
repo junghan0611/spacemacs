@@ -24,23 +24,23 @@ Key bindings
 Element insertion
 -----------------
 
-  Key binding   Description
-  ------------- -----------------------------------------------
-  `SPC m h 1`   Insert title level 1
-  `SPC m h I`   Insert title level 1 (the most important one)
-  `SPC m h 2`   Insert title level 2
-  `SPC m h i`   Insert title level 2 (the most usual one)
-  `SPC m h 3`   Insert title level 3
-  `SPC m h 4`   Insert title level 4
-  `SPC m h 5`   Insert title level 5
-  `SPC m h 5`   Insert title level 5
-  `SPC m x b`   Boldface selected
-  `SPC m x i`   Italicize selected
+| Key binding | Description                                   |
+|-------------|-----------------------------------------------|
+| `SPC m h 1` | Insert title level 1                          |
+| `SPC m h I` | Insert title level 1 (the most important one) |
+| `SPC m h 2` | Insert title level 2                          |
+| `SPC m h i` | Insert title level 2 (the most usual one)     |
+| `SPC m h 3` | Insert title level 3                          |
+| `SPC m h 4` | Insert title level 4                          |
+| `SPC m h 5` | Insert title level 5                          |
+| `SPC m h 5` | Insert title level 5                          |
+| `SPC m x b` | Boldface selected                             |
+| `SPC m x i` | Italicize selected                            |
 
 Promotion, Demotion
 -------------------
 
-  Key binding   Description
-  ------------- ---------------------
-  `M-h`         Promote title level
-  `M-l`         Demote title level
+| Key binding | Description         |
+|-------------|---------------------|
+| `M-h`       | Promote title level |
+| `M-l`       | Demote title level  |

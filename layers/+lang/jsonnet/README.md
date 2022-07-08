@@ -21,14 +21,14 @@ To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `jsonnet` to the existing
 `dotspacemacs-configuration-layers` list in this file.
 
-To use some of the additional formatting and evaluation features,
-you\'ll need [the jsonnet binary](http://jsonnet.org/index.html)
+To use some of the additional formatting and evaluation features, you'll
+need [the jsonnet binary](http://jsonnet.org/index.html)
 
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ----------------------------------------------------------
-  `SPC m =`     format the buffer using \`jsonnet fmt\`
-  `SPC m g g`   jump to the definition of a given identifier
-  `SPC m s b`   show the result of running jsonnet on the current buffer
+| Key binding | Description                                              |
+|-------------|----------------------------------------------------------|
+| `SPC m =`   | format the buffer using \`jsonnet fmt\`                  |
+| `SPC m g g` | jump to the definition of a given identifier             |
+| `SPC m s b` | show the result of running jsonnet on the current buffer |

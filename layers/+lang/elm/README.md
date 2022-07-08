@@ -50,7 +50,7 @@ Official installers for these operating systems are available from:
 A npm based installer is available to, and provides pre-compiled
 binaries for certain operating system and architectures.
 
-``` {.bash org-language="sh"}
+``` bash
 npm install --global elm
 ```
 
@@ -78,7 +78,7 @@ of rules.
 
 To install `elm-format` run below command:
 
-``` {.bash org-language="sh"}
+``` bash
 npm install --global elm-format
 ```
 
@@ -89,7 +89,7 @@ Also, note that if you use homebrew to install `elm-format` the
 installed exe has a version suffix, the installed command name can be
 set in your `~/spacemacs`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (elm :variables
      elm-format-command "elm-format-0.17")
 ```
@@ -101,7 +101,7 @@ elm-test
 
 To install `elm-test` run below command:
 
-``` {.bash org-language="sh"}
+``` bash
 npm install --global elm-test
 ```
 
@@ -123,7 +123,7 @@ in your dotfile. This mode only provides very limited IDE capabilities.
 Used best if only small programs are edited. To set explicitly set the
 following in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (elm :variables elm-backend 'company-elm)
 ```
 
@@ -133,13 +133,13 @@ following in your dotfile:
     under the cursor and provide support for auto-completion, but it is
     not part of the standard elm-platform.
 
-    Both the \"company\" and \"auto-complete\" backends are supported,
-    but this layer is configured with company.
+    Both the "company" and "auto-complete" backends are supported, but
+    this layer is configured with company.
 
     To install `elm-oracle`, install `node.js` and `npm`, then run this
     command:
 
-    ``` {.bash org-language="sh"}
+    ``` bash
     npm install -g elm-oracle
     ```
 
@@ -153,7 +153,7 @@ in all modes.
 
 To set explicitly do the following in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (elm :variables
         elm-backend 'lsp)
 ```
@@ -161,7 +161,7 @@ To set explicitly do the following in your dotfile:
 For this to work you will also need to install the lsp server and
 separate dependencies with below command:
 
-``` {.bash org-language="sh"}
+``` bash
 npm install -g elm-analyse @elm-tooling/elm-language-server
 ```
 
@@ -192,14 +192,14 @@ to preview from buffer, press `C-u C-c C-n` (or `SPC m R
 n`). To preview in debug mode, prefix with `C-u` (or `SPC u`).
 
 By default, `elm-reactor` with launch with its own generated index.html.
-To use a custom html, you\'d need to load the debuger excplictly and use
+To use a custom html, you'd need to load the debuger excplictly and use
 an http daemon to serve your custom file.
 
 If needed, default values for host and port used by for the elm-reactor
 server can be controlled by passing in these variables in your
 `~/.spacemacs`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (elm :variables
      elm-reactor-port "3000"          ; default 8000
      elm-reactor-address "0.0.0.0") ; default 127.0.0.1
@@ -213,7 +213,7 @@ On save usage
 Set `elm-sort-imports-on-save` to `t` to sort the imports in the current
 file on every save.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (elm :variables elm-sort-imports-on-save t)
 ```
 
@@ -221,7 +221,7 @@ file on every save.
 
 Set `elm-format-on-save` to `t` to format current file on every save.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (elm :variables elm-format-on-save t)
 ```
 
@@ -231,10 +231,10 @@ Indentation
 elm-mode indentation is based on cycling: every time you insert a new
 line there will be one or more indentation levels available for you to
 choose from. The exact number is printed in the minibuffer either as
-Sole indentation or Indent cycle (n)... where n is the number of
-available indentations to choose from. If the automatic indentation
-level was not the one you expected simply hit TAB to cycle through the
-list (note that hitting any other key will cancel the cycle).
+Sole indentation or Indent cycle (n)… where n is the number of available
+indentations to choose from. If the automatic indentation level was not
+the one you expected simply hit TAB to cycle through the list (note that
+hitting any other key will cancel the cycle).
 
 Test runner settings
 --------------------
@@ -243,7 +243,7 @@ You may want to customize the default suffix for test files. For
 example, if you prefer to put your tests in `HelloSpec.elm` instead of
 `HelloTest.elm`, set the following variable:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (elm :variables
      elm-test-runner-preferred-test-suffix "Spec")
 ```
@@ -259,82 +259,82 @@ Key bindings
 elm-make
 --------
 
-  Key binding   Description
-  ------------- ----------------------------------------------
-  `SPC m c b`   elm-compile-buffer
-  `SPC m c B`   spacemacs/elm-compile-buffer-override-output
-  `SPC m c m`   elm-compile-main
+| Key binding | Description                                  |
+|-------------|----------------------------------------------|
+| `SPC m c b` | elm-compile-buffer                           |
+| `SPC m c B` | spacemacs/elm-compile-buffer-override-output |
+| `SPC m c m` | elm-compile-main                             |
 
 elm-repl
 --------
 
-  Key binding   Description
-  ------------- ------------------------------------------------------------
-  `SPC m s i`   elm-repl-load
-  `SPC m s f`   send current function to REPL
-  `SPC m s F`   send current function to REPL and focus it in insert state
-  `SPC m s r`   send current region to REPL
-  `SPC m s R`   send current region to REPL and focus it in insert state
+| Key binding | Description                                                |
+|-------------|------------------------------------------------------------|
+| `SPC m s i` | elm-repl-load                                              |
+| `SPC m s f` | send current function to REPL                              |
+| `SPC m s F` | send current function to REPL and focus it in insert state |
+| `SPC m s r` | send current region to REPL                                |
+| `SPC m s R` | send current region to REPL and focus it in insert state   |
 
 elm-reactor
 -----------
 
-  Key binding   Description
-  ------------- --------------------
-  `SPC m R n`   elm-preview-buffer
-  `SPC m R m`   elm-preview-main
+| Key binding | Description        |
+|-------------|--------------------|
+| `SPC m R n` | elm-preview-buffer |
+| `SPC m R m` | elm-preview-main   |
 
 elm-test-runner
 ---------------
 
-  Key binding     Description
-  --------------- ----------------------------------------
-  `SPC m t b`     elm-test-runner-run
-  `SPC m t d`     elm-test-runner-run-directory
-  `SPC m t p`     elm-test-runner-run-project
-  `SPC m t r`     elm-test-runner-rerun
-  `SPC m t w`     elm-test-runner-watch
-  `SPC m t TAB`   elm-test-runner-toggle-test-and-target
+| Key binding   | Description                            |
+|---------------|----------------------------------------|
+| `SPC m t b`   | elm-test-runner-run                    |
+| `SPC m t d`   | elm-test-runner-run-directory          |
+| `SPC m t p`   | elm-test-runner-run-project            |
+| `SPC m t r`   | elm-test-runner-rerun                  |
+| `SPC m t w`   | elm-test-runner-watch                  |
+| `SPC m t TAB` | elm-test-runner-toggle-test-and-target |
 
 elm-package
 -----------
 
-  Key binding   Description
-  ------------- --------------------------
-  `SPC m p i`   elm-import
-  `SPC m p c`   elm-package-catalog
-  `SPC m p d`   elm-documentation-lookup
+| Key binding | Description              |
+|-------------|--------------------------|
+| `SPC m p i` | elm-import               |
+| `SPC m p c` | elm-package-catalog      |
+| `SPC m p d` | elm-documentation-lookup |
 
 ### package list buffer
 
-  Key binding   Description
-  ------------- ---------------------
-  `g`           elm-package-refresh
-  `v`           elm-package-view
-  `m`           elm-package-mark
-  `u`           elm-package-unmark
-  `x`           elm-package-install
-  `q`           quit-window
+| Key binding | Description         |
+|-------------|---------------------|
+| `g`         | elm-package-refresh |
+| `v`         | elm-package-view    |
+| `m`         | elm-package-mark    |
+| `u`         | elm-package-unmark  |
+| `x`         | elm-package-install |
+| `q`         | quit-window         |
 
-elm-oracle {#elm-oracle-1}
+elm-oracle
 ----------
 
-  Key binding   Description
-  ------------- --------------------------
-  `SPC m h h`   elm-oracle-doc-at-point
-  `SPC m h t`   elm-oracle-type-at-point
+| Key binding | Description              |
+|-------------|--------------------------|
+| `SPC m h h` | elm-oracle-doc-at-point  |
+| `SPC m h t` | elm-oracle-type-at-point |
 
 elm-format
 ----------
 
-  ------------- ------------------------
-  Key binding   Description
-  `SPC m = b`   elm-mode-format-buffer
-  ------------- ------------------------
+|             |                        |
+|-------------|------------------------|
+| Key binding | Description            |
+| `SPC m = b` | elm-mode-format-buffer |
 
 Refactoring
 -----------
 
-  Key binding   Description
-  ------------- ------------------
-  `SPC m r i`   elm-sort-imports
+| Key binding | Description      |
+|-------------|------------------|
+| `SPC m r i` | elm-sort-imports |

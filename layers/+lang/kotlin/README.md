@@ -49,7 +49,7 @@ in your dotfile. This mode only provides very limited IDE capabilities.
 Used best if only small applications are edited. To set explicitly set
 the following in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (kotlin :variables kotlin-backend 'company-kotlin)
 ```
 
@@ -63,7 +63,7 @@ same in all modes.
 
 To set explicitly do the following in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (kotlin :variables
         kotlin-backend 'lsp
         kotlin-lsp-jar-path "path/to/kotlin/installdir/install/server/bin/kotlin-language-server")

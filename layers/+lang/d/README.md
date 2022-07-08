@@ -32,9 +32,9 @@ It is also recommended to install [DUB](https://github.com/dlang/dub) a
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -------------------------------------------------------
-  `SPC m g g`   Go to definition
-  `SPC m g b`   Jump back (after go to definition with above command)
-  `SPC m g r`   Find references to all symbol at point
-  `SPC m h h`   Display documentation of symbol under point
+| Key binding | Description                                           |
+|-------------|-------------------------------------------------------|
+| `SPC m g g` | Go to definition                                      |
+| `SPC m g b` | Jump back (after go to definition with above command) |
+| `SPC m g r` | Find references to all symbol at point                |
+| `SPC m h h` | Display documentation of symbol under point           |

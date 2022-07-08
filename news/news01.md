@@ -3,7 +3,7 @@ Introduction
 
 0.200 is a huge release with more than 1700 commits since the last major
 version released in January 2016. Actually it is so big that we jumped
-directly from version 0.105 to version 0.200, so don\'t panic if you
+directly from version 0.105 to version 0.200, so don't panic if you
 think you missed all the versions since 0.105 :-)
 
 This first newsletter describes with details the main changes introduced
@@ -13,7 +13,7 @@ made during the last months.
 The (boring) complete list of changes can be found in the file
 `CHANGELOG.org` at the root of the Git repository.
 
-Let\'s start with the hottest section: breaking changes!
+Let's start with the hottest section: breaking changes!
 
 Breaking changes
 ================
@@ -39,7 +39,7 @@ more work for maintainers so we decided to drop all the 24.3 related
 code in Spacemacs effectively raising the minimum Emacs version required
 to 24.4. We believe that users are able to switch to a newer version of
 Emacs, if you need help in this process you can try the [Gitter
-chat](https://gitter.im/syl20bnr/spacemacs), I\'m sure you\'ll find
+chat](https://gitter.im/syl20bnr/spacemacs), I'm sure you'll find
 solutions there.
 
 Some modifications in the layer format
@@ -50,9 +50,9 @@ We renamed `extensions` directories in layers to `local` and the file
 `packages.el` and their package declarations must now set the keyword
 `:location` to `local`.
 
-[Before:]{.underline}
+<span class="underline">Before:</span>
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ;; in extensions.el
 (setq python-post-extensions
   '(
@@ -63,9 +63,9 @@ We renamed `extensions` directories in layers to `local` and the file
     ))
 ```
 
-[After:]{.underline}
+<span class="underline">After:</span>
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ;; in packages.el
 (setq python-packages
   '(
@@ -80,9 +80,9 @@ The variables `<package>-excluded-packages` are now ignored, they have
 been replaced by the `:excluded` keyword in `<layer>-packages`
 variables.
 
-[Before:]{.underline}
+<span class="underline">Before:</span>
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq vim-empty-lines-packages
       '(
         (vim-empty-lines-mode :location local)
@@ -92,9 +92,9 @@ variables.
       '(vi-tilde-fringe))
 ```
 
-[After:]{.underline}
+<span class="underline">After:</span>
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq vim-empty-lines-packages
       '(
         (vim-empty-lines-mode :location local)
@@ -104,7 +104,7 @@ variables.
 
 A new file called `layers.el` is in charge of layers dependency, i.e.
 when a layer needs to declare additional layers. Previously this was
-done in the `config.el` file, to avoid errors you\'ll have to move the
+done in the `config.el` file, to avoid errors you'll have to move the
 calls to the functions `configuration-layer/declare-layer` and
 `configuration-layer/declare-layers` to a dedicated `layers.el` file. An
 example can be found in the [spacemacs distribution
@@ -126,9 +126,9 @@ supported:
 
 -   `used-only` (default) will download only the used packages
 -   `used-but-keep-unused` will download only the used packages but
-    won\'t uninstall them if they become unused
--   `all` will download [all]{.underline} the supported packages by
-    Spacemacs.
+    won't uninstall them if they become unused
+-   `all` will download <span class="underline">all</span> the supported
+    packages by Spacemacs.
 
 Key bindings
 ------------
@@ -139,18 +139,18 @@ master 0.105 to 0.200.
 
 First of all the most visible change is for `SPC SPC` which triggers now
 `M-x` instead of `avy` to jump to a character. The `SPC` key in
-Spacemacs is a central key as it acts as the leader key for
-[all]{.underline} the key bindings, it made sense to give the same sense
-of \"root\" key to the sequence `SPC SPC`, so now `SPC SPC` is the
-central sequence to execute [any]{.underline} interactive function in
-Emacs.
+Spacemacs is a central key as it acts as the leader key for <span
+class="underline">all</span> the key bindings, it made sense to give the
+same sense of "root" key to the sequence `SPC SPC`, so now `SPC SPC` is
+the central sequence to execute <span class="underline">any</span>
+interactive function in Emacs.
 
 Where is the `avy` command then ? We reorganised from the ground up the
 prefix `SPC j` for all jump commands. In the conventions a doubled key
 is often used for the default command under a given prefix, for instance
-`SPC b b` is for buffer selection, `SPC f f` for file selection etc...
-The \"jump to character\" command of `avy` is then under `SPC j j`. Here
-is a detailed list of the new `SPC j` prefix:
+`SPC b b` is for buffer selection, `SPC f f` for file selection etc… The
+"jump to character" command of `avy` is then under `SPC j j`. Here is a
+detailed list of the new `SPC j` prefix:
 
 -   `avy` commands are now behind the prefix `SPC j` for `jump`:
     -   `SPC j j` to jump to a character in the buffer (works as an evil
@@ -173,8 +173,8 @@ distinguish them and we can find such confusion in the Spacemacs key
 bindings, for instance we close a window but we delete a buffer and we
 can also kill a buffer. Whereas it can make sense for a lot of users,
 there are still users finding this confusing. So we decided to simplify
-the notion of \"closing/deleting\" things under the `d` key for
-`delete`. We moved `SPC w c` and `SPC w C` to `SPC w d` and `SPC w D`.
+the notion of "closing/deleting" things under the `d` key for `delete`.
+We moved `SPC w c` and `SPC w C` to `SPC w d` and `SPC w D`.
 
 More generally we tried to map prefixes `SPC b` and `SPC w` to the same
 actions and bring a convention with `avy` commands with the capital
@@ -189,7 +189,7 @@ letter to manipulate windows and buffers. The result is detailed here:
     `SPC w m` (maximize buffer/window which effectively delete other
     windows).
 -   `SPC b D` now kills a buffer using `ace-window`.
--   Buffer actions don\'t delete the windows by default, use the
+-   Buffer actions don't delete the windows by default, use the
     universal prefix argument to do so, for instance `SPC u SPC b d` and
     `SPC u SPC b D` will delete the buffer and also the window. Another
     example is `SPC u SPC b m` to maximize a buffer.
@@ -197,8 +197,9 @@ letter to manipulate windows and buffers. The result is detailed here:
 `Helm` has a new friend in this release, it is called `ivy` and it has
 more and more adopters. Since we have now a new package capable of doing
 `helm` commands we decided to remove all `helm` related command from the
-prefix `SPC h`. `SPC h` is now exclusively for [help]{.underline}
-commands and the following `helm` commands has been moved:
+prefix `SPC h`. `SPC h` is now exclusively for <span
+class="underline">help</span> commands and the following `helm` commands
+has been moved:
 
 -   `SPC h b` for =helm-filetered-bookmarks\~is now `SPC f b`
 -   `SPC h l` for `helm-resume` is now `SPC r l`
@@ -215,7 +216,7 @@ different keys between `SPC g` and the `magit` dispatch menu accessible
 under `?`. The new available keys allowed us to move some key bindings
 directly under `SPC g` like `git-link` which is now under `SPC g l`, it
 makes more sense to have it under `SPC g l` since it is agnostic of the
-hosting platform (i.e. it works with `GitHub`, `GitLab` etc...).
+hosting platform (i.e. it works with `GitHub`, `GitLab` etc…).
 
 Spacemacs layouts now restrict the scope of the buffer list opened with
 `SPC b b`. Use `SPC b B` to list all the buffers of all the layouts.
@@ -233,8 +234,8 @@ popular package to define transient maps. In effect the macro
 `spacemacs|define-micro-state` is deprecated and is replaced by the new
 `hydra` powered macro `spacemacs|define-transient-state`.
 
-What\'s new ?
-=============
+What's new ?
+============
 
 Startup improvments
 -------------------
@@ -267,21 +268,21 @@ An exhaustive list of all the `spacemacs` layers:
 
 For people wanting an even more bare Emacs experience try the
 distribution layer `spacemacs-bootstrap` which installs only essential
-packages like `use-package`, `which-key`, etc...
+packages like `use-package`, `which-key`, etc…
 
 Also it is easier to select or exclude a sub-list of packages in a layer
 with the new keyword `:packages`. For instance here is an example to
 select only the packages `fill-column-indicator` and `golden-ratio` in
 the layer `spacemacs-ui-visual`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq dotspacemacs-configuration-layers
   (spacemacs-ui-visual :packages fill-column-indicator golden-ratio))
 ```
 
 Another example to select all the packages except `fancy-battery`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq dotspacemacs-configuration-layers
   (spacemacs-ui-visual :packages (not fancy-battery))
 ```
@@ -289,10 +290,9 @@ Another example to select all the packages except `fancy-battery`:
 Improved stability
 ------------------
 
-This is one of the Achilles\' heel of Spacemacs. We rely on bleeding
-edge version of packages from `melpa` repository to install a fresh
-version of Spacemacs. If the repository is down then no sugar, try again
-later.
+This is one of the Achilles' heel of Spacemacs. We rely on bleeding edge
+version of packages from `melpa` repository to install a fresh version
+of Spacemacs. If the repository is down then no sugar, try again later.
 
 With 0.200 we introduce
 [mirrors](https://github.com/syl20bnr/spacemacs-elpa-mirror) for all
@@ -322,17 +322,17 @@ all its packages when opening a new file with a supported extension.
 
 For instance, when opening an Elixir file with extension `.ex` Spacemacs
 will ask to install the `elixir` layer if it is not already used. The
-`elixir` layer is automatically added to the dotfile so it won\'t be
+`elixir` layer is automatically added to the dotfile so it won't be
 uninstalled after a restart.
 
-By default this feature is [disabled]{.underline}, you have to opt-in
-for it by setting the variable `dotspacemacs-enable-lazy-installation`
-to one of the following values:
+By default this feature is <span class="underline">disabled</span>, you
+have to opt-in for it by setting the variable
+`dotspacemacs-enable-lazy-installation` to one of the following values:
 
 -   `unused` to lazy install only layers not listed in
     `dotspacemacs-configuration-layers`
 -   `all` to lazy install any layer supporting lazy installation (i.e.
-    even the used layers won\'t be installed at startup until you open a
+    even the used layers won't be installed at startup until you open a
     file with a supported extension).
 
 A better hybrid editing style
@@ -350,7 +350,7 @@ three new variables allow to fine tune the Hybrid style experience:
 
 To define these new variables use the `:variables` keyword. For example:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq dotspacemacs-editing-style '(hybrid :variables
                                    hybrid-mode-enable-evilified-state t
                                    hybrid-mode-enable-hjkl-bindings t
@@ -368,7 +368,7 @@ Want to switch from `helm` to `ivy`? This is as simple as adding the
 
 The level of feature of the `ivy` layer is pretty on par with the `helm`
 layer, this is a fantastic work and it demonstrates all the power of a
-community-driven configuration. I\'m really excited by this new feature
+community-driven configuration. I'm really excited by this new feature
 and how it is so easy to enjoy it. Nice work guys!
 
 Better transient-states
@@ -406,8 +406,8 @@ Along with these new key bindings, new Spacemacs specific command line
 parameters are available to help you change the scope of an issue
 investigation:
 
--   `--no-layer` deactivates all the layers [except]{.underline} the
-    distribution layer
+-   `--no-layer` deactivates all the layers <span
+    class="underline">except</span> the distribution layer
 -   `--distribution x` allows to change temporarily the distribution to
     `x`.
 
@@ -460,7 +460,7 @@ Like text searching tools, there is now the concept of jump handlers,
 each mode can set a list of jump handlers and Spacemacs will try them in
 order to get you to a symbol definition. This new abstraction alows to
 merge the different jumping tools under the same key binding, for
-instance `dumb-jump`, `tags` etc...
+instance `dumb-jump`, `tags` etc…
 
 All supported REPLs are now registered in a list and you can run any
 registered REPL with `SPC a '`.
@@ -478,7 +478,7 @@ each list with the variable `dotspacemacs-startup-list`, for instance
 the following value will display a maximum of 5 items for the recent
 files list and a maximum of 7 items for the projects list:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq dotspacemacs-startup-lists '((recents  . 5)
                                    (projects . 7)))
 ```
@@ -530,8 +530,8 @@ shop](https://shop.spreadshirt.com/spacemacs-shop)!
 There is a limited number of models for women but all the men tee-shirts
 will be available for women as well in the coming weeks!
 
-What\'s next ?
-==============
+What's next ?
+=============
 
 Even more stability
 -------------------
@@ -551,14 +551,14 @@ More consistent window behaviour
 One of the main focus for 0.201 will be to integrate
 [emacs-purpose](https://github.com/bmag/emacs-purpose). It is a package
 to display buffer in the same windows. The current pull request is very
-popular and I\'m sure you\'ll like what it will bring to the Spacemacs
+popular and I'm sure you'll like what it will bring to the Spacemacs
 experience.
 
 New layers
 ----------
 
 Pull requests with new layers are low on the priority list because
-reviewing them is more time consuming. For 0.201 I\'ll focus on all the
+reviewing them is more time consuming. For 0.201 I'll focus on all the
 pull requests with new layers in order to speed up the merge so you can
 expect more new layers for 0.201 than 0.200.
 

@@ -14,12 +14,12 @@ Features:
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ----------------------------------------------------------
-  `SPC x w d`   Show definition of word at point
-  `SPC x g l`   Set the target language for google translate
-  `SPC x g L`   Set the source and target languages for google translate
-  `SPC x g Q`   Send marked area to google translate as reverse query
-  `SPC x g q`   Send marked area to google translate as forward query
-  `SPC x g T`   Send word at point to google translate as reverse query
-  `SPC x g t`   Send word at point to google translate as forward query
+| Key binding | Description                                              |
+|-------------|----------------------------------------------------------|
+| `SPC x w d` | Show definition of word at point                         |
+| `SPC x g l` | Set the target language for google translate             |
+| `SPC x g L` | Set the source and target languages for google translate |
+| `SPC x g Q` | Send marked area to google translate as reverse query    |
+| `SPC x g q` | Send marked area to google translate as forward query    |
+| `SPC x g T` | Send word at point to google translate as reverse query  |
+| `SPC x g t` | Send word at point to google translate as forward query  |

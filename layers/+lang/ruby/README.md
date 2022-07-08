@@ -25,13 +25,12 @@ To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `ruby` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-This layer supports two different Ruby modes: Emacs\'s built-in Ruby
-Mode and
-[enh-ruby-mode](https://github.com/zenspider/enhanced-ruby-mode). By
+This layer supports two different Ruby modes: Emacs's built-in Ruby Mode
+and [enh-ruby-mode](https://github.com/zenspider/enhanced-ruby-mode). By
 default the built-in Ruby mode is enabled. To switch to the
 `enh-ruby-mode` set `ruby-enable-enh-ruby-mode` to t:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dotspacemacs-configuration-layers ()
    '((ruby :variables ruby-enable-enh-ruby-mode t)))
 ```
@@ -41,7 +40,7 @@ Choosing a backend
 
 To choose a default backend set the layer variable `ruby-backend`:
 
-``` {.elisp}
+``` elisp
 (ruby :variables ruby-backend 'robe)
 ```
 
@@ -53,7 +52,7 @@ Backend can be chosen on a per project basis using directory local
 variables (files named `.dir-locals.el` at the root of a project), an
 example to use the `lsp` backend:
 
-``` {.elisp}
+``` elisp
 ;;; Directory Local Variables
 ;;; For more information see (info "(emacs) Directory Variables")
 
@@ -73,7 +72,7 @@ to support Robe.
 IDE-like backend for Ruby. The only prerequisite gem is `solargraph`
 which can be installed globally with:
 
-``` {.bash org-language="sh"}
+``` bash
 gem install solargraph
 ```
 
@@ -90,7 +89,7 @@ for guidance based on your version manager):
 
 -   `pry` and `pry-doc` are required for **jump to definition** and
     **code documentation** (`robe-mode`)
--   `ruby_parser` is required for **goto-step~definition~** in
+-   `ruby_parser` is required for **goto-step<sub>definition</sub>** in
     `feature-mode`
 -   `rubocop` is required for rubocop integration
 -   `prettier` is required for formatter
@@ -101,14 +100,14 @@ for guidance based on your version manager):
 You can install the gems in the context of your current project by
 adding them to the `Gemfile`, e.g.:
 
-``` {.ruby}
+``` ruby
 gem 'pry'
 ```
 
 or on the command line (please refer to your ruby version manager
 specific documentation for details and caveats):
 
-``` {.bash org-language="sh"}
+``` bash
 gem install pry
 ```
 
@@ -121,7 +120,7 @@ This layer supports [RVM](https://rvm.io/),
 default version manager by setting the variable `ruby-version-manager`
 in your dotfile, for example:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dotspacemacs-configuration-layers ()
    '((ruby :variables ruby-version-manager 'rvm)))
 ```
@@ -143,7 +142,7 @@ frameworks set the layer variable `ruby-test-runner`.
 
 Example to set the test runner to `RSpec`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dotspacemacs-configuration-layers ()
    '((ruby :variables ruby-test-runner 'rspec)))
 ```
@@ -154,16 +153,16 @@ using directory local variables.
 Formatting
 ----------
 
-If you\'d like to use
+If you'd like to use
 [prettier/plugin-ruby](https://github.com/prettier/plugin-ruby) to
 format on save:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dotspacemacs-configuration-layers ()
    '((ruby :variables ruby-prettier-on-save t)))
 ```
 
-Note that the `prettier` binary must be available in the project\'s
+Note that the `prettier` binary must be available in the project's
 `node_modules/.bin/` or on `exec-path`.
 
 Key bindings
@@ -172,58 +171,58 @@ Key bindings
 Ruby (enh-ruby-mode, robe, inf-ruby, ruby-tools)
 ------------------------------------------------
 
-  Key binding    Description
-  -------------- ----------------------------------------------------------------------------------
-  `SPC m g g`    go to definition (robe-jump)
-  `SPC m h h`    show documentation for method at point (robe-doc)
-  `SPC m s b`    send buffer
-  `SPC m s B`    send buffer and switch to REPL
-  `SPC m s f`    send function definition
-  `SPC m s F`    send function definition and switch to REPL
-  `SPC m s i`    start REPL
-  `SPC m s l`    send line
-  `SPC m s L`    send line and switch to REPL
-  `SPC m s r`    send region
-  `SPC m s R`    send region and switch to REPL
-  `SPC m s s`    switch to REPL
-  `SPC m x '​`   Change symbol or `"` string to `'`
-  `SPC m x "​`   Change symbol or `'` string to `"`
-  `SPC m x :`    Change string to symbol
-  `SPC m x h`    toggle hash syntax in active region
-  `SPC m = =`    format buffer using prettier
-  `%`            [evil-matchit](https://github.com/redguardtoo/evil-matchit) jumps between blocks
+| Key binding  | Description                                                                      |
+|--------------|----------------------------------------------------------------------------------|
+| `SPC m g g`  | go to definition (robe-jump)                                                     |
+| `SPC m h h`  | show documentation for method at point (robe-doc)                                |
+| `SPC m s b`  | send buffer                                                                      |
+| `SPC m s B`  | send buffer and switch to REPL                                                   |
+| `SPC m s f`  | send function definition                                                         |
+| `SPC m s F`  | send function definition and switch to REPL                                      |
+| `SPC m s i`  | start REPL                                                                       |
+| `SPC m s l`  | send line                                                                        |
+| `SPC m s L`  | send line and switch to REPL                                                     |
+| `SPC m s r`  | send region                                                                      |
+| `SPC m s R`  | send region and switch to REPL                                                   |
+| `SPC m s s`  | switch to REPL                                                                   |
+| `SPC m x '​` | Change symbol or `"` string to `'`                                               |
+| `SPC m x "​` | Change symbol or `'` string to `"`                                               |
+| `SPC m x :`  | Change string to symbol                                                          |
+| `SPC m x h`  | toggle hash syntax in active region                                              |
+| `SPC m = =`  | format buffer using prettier                                                     |
+| `%`          | [evil-matchit](https://github.com/redguardtoo/evil-matchit) jumps between blocks |
 
 Debugger
 --------
 
-Using the `dap` layer you\'ll get access to all the DAP key bindings,
-see the complete list of key bindings on the [dap layer
+Using the `dap` layer you'll get access to all the DAP key bindings, see
+the complete list of key bindings on the [dap layer
 description](https://github.com/syl20bnr/spacemacs/tree/develop/layers/%2Btools/dap#key-bindings).
 
 Bundler
 -------
 
-  Key binding   Description
-  ------------- --------------------
-  `SPC m b c`   run bundle check
-  `SPC m b i`   run bundle install
-  `SPC m b s`   run bundle console
-  `SPC m b u`   run bundle update
-  `SPC m b x`   run bundle exec
-  `SPC m b o`   run bundle open
+| Key binding | Description        |
+|-------------|--------------------|
+| `SPC m b c` | run bundle check   |
+| `SPC m b i` | run bundle install |
+| `SPC m b s` | run bundle console |
+| `SPC m b u` | run bundle update  |
+| `SPC m b x` | run bundle exec    |
+| `SPC m b o` | run bundle open    |
 
 RuboCop
 -------
 
-  Key binding     Description
-  --------------- ------------------------------------------------------
-  `SPC m = r`     Format the current buffer using RuboCop
-  `SPC m R r f`   Runs RuboCop on the currently visited file
-  `SPC m R r F`   Runs auto-correct on the currently visited file
-  `SPC m R r d`   Prompts from a directory on which to run RuboCop
-  `SPC m R r D`   Prompts for a directory on which to run auto-correct
-  `SPC m R r p`   Runs RuboCop on the entire project
-  `SPC m R r P`   Runs auto-correct on the project
+| Key binding   | Description                                          |
+|---------------|------------------------------------------------------|
+| `SPC m = r`   | Format the current buffer using RuboCop              |
+| `SPC m R r f` | Runs RuboCop on the currently visited file           |
+| `SPC m R r F` | Runs auto-correct on the currently visited file      |
+| `SPC m R r d` | Prompts from a directory on which to run RuboCop     |
+| `SPC m R r D` | Prompts for a directory on which to run auto-correct |
+| `SPC m R r p` | Runs RuboCop on the entire project                   |
+| `SPC m R r P` | Runs auto-correct on the project                     |
 
 Tests
 -----
@@ -232,76 +231,76 @@ Tests
 
 When `ruby-test-runner` equals `rspec`.
 
-  Key binding     Description
-  --------------- ----------------------------------------------------------
-  `SPC m t a`     run all specs
-  `SPC m t b`     run current spec file
-  `SPC m t c`     run the current spec file and subsequent ones
-  `SPC m t d`     run tests in a directory
-  `SPC m t e`     mark example as pending
-  `SPC m t f`     run method
-  `SPC m t l`     run last failed spec
-  `SPC m t m`     run specs related to the current buffer
-  `SPC m t r`     re-run last spec
-  `SPC m t t`     run spec at pointer
-  `SPC m t TAB`   toggle between spec\'s and target\'s buffer
-  `SPC m t ~`     toggle between spec\'s and target\'s buffer find example
+| Key binding   | Description                                            |
+|---------------|--------------------------------------------------------|
+| `SPC m t a`   | run all specs                                          |
+| `SPC m t b`   | run current spec file                                  |
+| `SPC m t c`   | run the current spec file and subsequent ones          |
+| `SPC m t d`   | run tests in a directory                               |
+| `SPC m t e`   | mark example as pending                                |
+| `SPC m t f`   | run method                                             |
+| `SPC m t l`   | run last failed spec                                   |
+| `SPC m t m`   | run specs related to the current buffer                |
+| `SPC m t r`   | re-run last spec                                       |
+| `SPC m t t`   | run spec at pointer                                    |
+| `SPC m t TAB` | toggle between spec's and target's buffer              |
+| `SPC m t ~`   | toggle between spec's and target's buffer find example |
 
 ### Ruby-test-mode
 
 When `ruby-test-runner` equals `ruby-test`.
 
-  Key binding   Description
-  ------------- ---------------------
-  `SPC m t b`   run test file
-  `SPC m t t`   run test at pointer
+| Key binding | Description         |
+|-------------|---------------------|
+| `SPC m t b` | run test file       |
+| `SPC m t t` | run test at pointer |
 
 ### minitest-mode
 
 When `ruby-test-runner` equals `minitest`.
 
-  Key binding   Description
-  ------------- ---------------------------
-  `SPC m t a`   run all tests
-  `SPC m t b`   run current file
-  `SPC m t r`   repeat last test command
-  `SPC m t s`   run test for current file
+| Key binding | Description               |
+|-------------|---------------------------|
+| `SPC m t a` | run all tests             |
+| `SPC m t b` | run current file          |
+| `SPC m t r` | repeat last test command  |
+| `SPC m t s` | run test for current file |
 
 Toggles
 -------
 
-  Key binding   Description
-  ------------- ------------------------------------------------------
-  `SPC m T '`   Toggle quotes of current string (only built-in mode)
-  `SPC m T {`   Toggle style of current block (only built-in mode)
+| Key binding | Description                                          |
+|-------------|------------------------------------------------------|
+| `SPC m T '` | Toggle quotes of current string (only built-in mode) |
+| `SPC m T {` | Toggle style of current block (only built-in mode)   |
 
 Rake
 ----
 
-  Key binding   Description
-  ------------- ---------------------------------
-  `SPC m k k`   Runs rake
-  `SPC m k r`   Re-runs the last rake task
-  `SPC m k R`   Regenerates the rake cache
-  `SPC m k f`   Finds definition of a rake task
+| Key binding | Description                     |
+|-------------|---------------------------------|
+| `SPC m k k` | Runs rake                       |
+| `SPC m k r` | Re-runs the last rake task      |
+| `SPC m k R` | Regenerates the rake cache      |
+| `SPC m k f` | Finds definition of a rake task |
 
 Refactor
 --------
 
-  Key binding     Description
-  --------------- ------------------------
-  `SPC m r e m`   Extract to method
-  `SPC m r e v`   Extract local variable
-  `SPC m r e c`   Extract constant
-  `SPC m r e l`   Extract to let (rspec)
+| Key binding   | Description            |
+|---------------|------------------------|
+| `SPC m r e m` | Extract to method      |
+| `SPC m r e v` | Extract local variable |
+| `SPC m r e c` | Extract constant       |
+| `SPC m r e l` | Extract to let (rspec) |
 
 Seeing is believing
 -------------------
 
-  Key binding     Description
-  --------------- ----------------------------------
-  `<SPC> m @ @`   Run seeing is believing
-  `<SPC> m @ c`   Clear seeing is believing output
+| Key binding   | Description                      |
+|---------------|----------------------------------|
+| `<SPC> m @ @` | Run seeing is believing          |
+| `<SPC> m @ c` | Clear seeing is believing output |
 
 Configuration
 =============
@@ -309,13 +308,13 @@ Configuration
 Layer options
 -------------
 
-  Variable                             Default value   Description
-  ------------------------------------ --------------- ----------------------------------------------------------------------------------------------
-  `ruby-enable-enh-ruby-mode`          `nil`           If non-nil, use `enh-ruby-mode` package instead of the built-in Ruby Mode.
-  `ruby-version-manager`               `nil`           If non nil, defines the Ruby version manager.Possible values are `rbenv`, `rvm` or `chruby`.
-  `ruby-test-runner`                   `ruby-test`     Test runner to use. Possible values are `ruby-test`, `minitest` or `rspec`.
-  `ruby-highlight-debugger-keywords`   `t`             If non-nil, enable highlight for debugger keywords.
-  `ruby-backend`                       `robe`          Defines the backend for IDE feature. Possible values are `robe` or `lsp`.
+| Variable                           | Default value | Description                                                                                  |
+|------------------------------------|---------------|----------------------------------------------------------------------------------------------|
+| `ruby-enable-enh-ruby-mode`        | `nil`         | If non-nil, use `enh-ruby-mode` package instead of the built-in Ruby Mode.                   |
+| `ruby-version-manager`             | `nil`         | If non nil, defines the Ruby version manager.Possible values are `rbenv`, `rvm` or `chruby`. |
+| `ruby-test-runner`                 | `ruby-test`   | Test runner to use. Possible values are `ruby-test`, `minitest` or `rspec`.                  |
+| `ruby-highlight-debugger-keywords` | `t`           | If non-nil, enable highlight for debugger keywords.                                          |
+| `ruby-backend`                     | `robe`        | Defines the backend for IDE feature. Possible values are `robe` or `lsp`.                    |
 
 Disabling the automatic insertion of encoding comment
 -----------------------------------------------------
@@ -334,7 +333,7 @@ is to set the variable `ruby-insert-encoding-magic-comment`
 (`ruby-mode`) or `enh-ruby-add-encoding-comment-on-save`
 (`enh-ruby-mode`) to `nil`, e.g.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun dotspacemacs-configuration-layers ()
    '((ruby :variables ruby-insert-encoding-magic-comment nil)))
 ```

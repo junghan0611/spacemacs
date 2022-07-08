@@ -24,7 +24,7 @@ list in this file.
 To get syntax checking to work you will also need to install
 `puppet-lint` by executing:
 
-``` {.bash org-language="sh"}
+``` bash
 $ gem install puppet-lint
 ```
 
@@ -33,17 +33,17 @@ Key bindings
 
 The following key bindings are available in Puppet Mode:
 
-  Key binding   Description
-  ------------- ---------------------------------------------------
-  `SPC m {`     Move to the beginning of the current block
-  `SPC m }`     Move to the end of the current block
-  `SPC m a`     Align parameters in the current block
-  `SPC m '​`    Toggle string quoting between single and double
-  `SPC m ;`     Blank the string at point
-  `SPC m j`     Jump to a `class`, `define`, variable or resource
-  `SPC m c`     Apply the current manifest in dry-run mode
-  `SPC m v`     Validate the syntax of the current manifest
-  `SPC m l`     Check the current manifest for semantic issues
-  `SPC m $`     Interpolate with \${} in double quoted strings
+| Key binding | Description                                       |
+|-------------|---------------------------------------------------|
+| `SPC m {`   | Move to the beginning of the current block        |
+| `SPC m }`   | Move to the end of the current block              |
+| `SPC m a`   | Align parameters in the current block             |
+| `SPC m '​`  | Toggle string quoting between single and double   |
+| `SPC m ;`   | Blank the string at point                         |
+| `SPC m j`   | Jump to a `class`, `define`, variable or resource |
+| `SPC m c`   | Apply the current manifest in dry-run mode        |
+| `SPC m v`   | Validate the syntax of the current manifest       |
+| `SPC m l`   | Check the current manifest for semantic issues    |
+| `SPC m $`   | Interpolate with ${} in double quoted strings     |
 
 Use `M-x customize-group RET puppet` to customize Puppet Mode.

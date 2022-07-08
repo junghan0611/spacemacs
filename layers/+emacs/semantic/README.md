@@ -45,8 +45,8 @@ need to add `semantic` to the existing
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ------------------------------------------
-  `SPC m r`     srefactor: refactor thing at point.
-  `SPC T S`     toggle `semantic-stickyfunc-mode`
-  `SPC T C-S`   toggle `global-semantic-stickyfunc-mode`
+| Key binding | Description                              |
+|-------------|------------------------------------------|
+| `SPC m r`   | srefactor: refactor thing at point.      |
+| `SPC T S`   | toggle `semantic-stickyfunc-mode`        |
+| `SPC T C-S` | toggle `global-semantic-stickyfunc-mode` |

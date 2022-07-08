@@ -19,14 +19,14 @@ Features:
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- --------------------------------------------------------
-  `SPC t m b`   Display battery state in mode-line
-  `SPC t m r`   Make the mode-line responsive
-  `SPC t m m`   Display active minor modes in mode-line
-  `SPC t m M`   Display active major mode in mode-line
-  `SPC t m v`   Display version control information in mode-line
-  `SPC t m V`   Display new mode-line version
-  `SPC t m p`   Display cursor position in mode-line
-  `SPC t m c`   Display a clock in mode-line
-  `SPC t m s`   Display a small system monitor in a separate mode-line
+| Key binding | Description                                            |
+|-------------|--------------------------------------------------------|
+| `SPC t m b` | Display battery state in mode-line                     |
+| `SPC t m r` | Make the mode-line responsive                          |
+| `SPC t m m` | Display active minor modes in mode-line                |
+| `SPC t m M` | Display active major mode in mode-line                 |
+| `SPC t m v` | Display version control information in mode-line       |
+| `SPC t m V` | Display new mode-line version                          |
+| `SPC t m p` | Display cursor position in mode-line                   |
+| `SPC t m c` | Display a clock in mode-line                           |
+| `SPC t m s` | Display a small system monitor in a separate mode-line |

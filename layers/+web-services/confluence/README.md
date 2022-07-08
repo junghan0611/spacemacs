@@ -28,7 +28,7 @@ Configuration
 Define the variable `confluence-url` to point on your Confluence server
 `xmlrpc` endpoint.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq confluence-url "https://<host>/confluence/rpc/xmlrpc")
 ```
 
@@ -59,15 +59,15 @@ Key bindings
 Confluence page
 ---------------
 
-  Key binding   Description
-  ------------- ----------------------------------------------------------
-  `SPC m TAB`   toggle the content type to `wiki` format or `xml` format
-  `SPC m s`     save the buffer on the confluence server as a minor edit
-  `SPC m S`     save the buffer on the confluence server as a major edit
+| Key binding | Description                                              |
+|-------------|----------------------------------------------------------|
+| `SPC m TAB` | toggle the content type to `wiki` format or `xml` format |
+| `SPC m s`   | save the buffer on the confluence server as a minor edit |
+| `SPC m S`   | save the buffer on the confluence server as a major edit |
 
 Org
 ---
 
-  Key binding   Description
-  ------------- ----------------------------------------------------------------
-  `SPC m e c`   in a org buffer, export the buffer to Confluence `wiki` format
+| Key binding | Description                                                    |
+|-------------|----------------------------------------------------------------|
+| `SPC m e c` | in a org buffer, export the buffer to Confluence `wiki` format |

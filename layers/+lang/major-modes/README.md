@@ -27,22 +27,22 @@ Key bindings
 Arch Linux PKGBUILDs
 --------------------
 
-  Key binding   Description
-  ------------- ----------------------------
-  `SPC m b`     Run makepkg
-  `SPC m r`     Increase the pkgrel number
-  `SPC m u`     Browse URL
-  `SPC m m`     Update package sums
-  `SPC m s`     Update .SRCINFO file
-  `SPC m e`     Build ETAGS file
-  `SPC m a`     Make a source tarball
+| Key binding | Description                |
+|-------------|----------------------------|
+| `SPC m b`   | Run makepkg                |
+| `SPC m r`   | Increase the pkgrel number |
+| `SPC m u`   | Browse URL                 |
+| `SPC m m`   | Update package sums        |
+| `SPC m s`   | Update .SRCINFO file       |
+| `SPC m e`   | Build ETAGS file           |
+| `SPC m a`   | Make a source tarball      |
 
 Gentoo ebuilds
 --------------
 
-  Key binding   Description
-  ------------- ------------------------
-  `SPC m n`     Insert skeleton ebuild
-  `SPC m k`     Edit keywords
-  `SPC m e`     Run ebuild command
-  `SPC m a`     Add ChangeLog entry
+| Key binding | Description            |
+|-------------|------------------------|
+| `SPC m n`   | Insert skeleton ebuild |
+| `SPC m k`   | Edit keywords          |
+| `SPC m e`   | Run ebuild command     |
+| `SPC m a`   | Add ChangeLog entry    |

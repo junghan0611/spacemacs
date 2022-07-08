@@ -20,7 +20,7 @@ list in this file.
 
 You can install `tern` globally with the following command:
 
-``` {.bash org-language="sh"}
+``` bash
 $ npm install -g tern
 ```
 
@@ -37,7 +37,7 @@ details](https://github.com/syl20bnr/spacemacs/issues/5733). The
 variable can be set by adding the `tern` layer with this configuration
 layer:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (tern :variables tern-command '("node" "/path/to/tern/bin/tern"))
 ```
 
@@ -55,18 +55,18 @@ you have open [see here for more
 details](http://ternjs.net/doc/manual.html)) set the variable
 `tern-disable-port-files` to nil:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (tern :variables tern-disable-port-files nil)
 ```
 
 Key bindings
 ============
 
-  Key binding     Description
-  --------------- ------------------------------------------------------------------------------------------
-  `SPC m C-g`     brings you back to last place you were when you pressed M-..
-  `SPC m g g`     jump to the definition of the thing under the cursor
-  `SPC m g G`     jump to definition for the given name
-  `SPC m h d`     find docs of the thing under the cursor. Press again to open the associated URL (if any)
-  `SPC m h t`     find the type of the thing under the cursor
-  `SPC m r r V`   rename variable under the cursor using tern
+| Key binding   | Description                                                                              |
+|---------------|------------------------------------------------------------------------------------------|
+| `SPC m C-g`   | brings you back to last place you were when you pressed M-..                             |
+| `SPC m g g`   | jump to the definition of the thing under the cursor                                     |
+| `SPC m g G`   | jump to definition for the given name                                                    |
+| `SPC m h d`   | find docs of the thing under the cursor. Press again to open the associated URL (if any) |
+| `SPC m h t`   | find the type of the thing under the cursor                                              |
+| `SPC m r r V` | rename variable under the cursor using tern                                              |

@@ -3,13 +3,12 @@
 Description
 ===========
 
-This layer adds various replacements for vim\'s default search
-functions.
+This layer adds various replacements for vim's default search functions.
 
 Features:
 ---------
 
--   Alternative implementation of vim\'s default search operations.
+-   Alternative implementation of vim's default search operations.
 -   Replacement of evil-surround with a two-character search.
 -   Support for alternative scopes for default search operations.
 -   Support for alternative motions based on configurable regexps.
@@ -28,7 +27,7 @@ Improved f and t search behavior
 --------------------------------
 
 With evil-snipe you can define your own search scope for `f` and `t`
-searches which means that you won\'t have to jump to the correct line
+searches which means that you won't have to jump to the correct line
 before searching with `f` / `t` / `F` / `T`. And after you have found a
 match, you can just press `f` or `t` again afterwards to continue the
 search. No need to use `;` / `​,​`.
@@ -36,7 +35,7 @@ search. No need to use `;` / `​,​`.
 This alternate behavior is disabled by default, to enable it set the
 layer variable `evil-snipe-enable-alternate-f-and-t-behaviors` to `t`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((evil-snipe :variables evil-snipe-enable-alternate-f-and-t-behaviors t)))
 ```
@@ -48,7 +47,7 @@ With the `s~/~S` keys you can do a simple search like `f~/~t`, but
 instead of searching for one character, you search for two. This makes
 the search a lot more precise than regular `f~/~t` searches. While you
 can search forward or backwards in the buffer with `/` and `?`, `s` /
-`S` are much easier to reach, don\'t require you to press enter and they
+`S` are much easier to reach, don't require you to press enter and they
 are precise enough for many common purposes.
 
 More scopes
@@ -58,14 +57,14 @@ Evil-snipe also adds several scope options for searches (set
 `evil-snipe-scope` and `evil-snipe-repeat-scope` to one of these, the
 default value is `buffer`):
 
-  Value           Description
-  --------------- --------------------------------------------------------------------------
-  buffer          search in the rest of the buffer after the cursor (`vim-sneak` behavior)
-  line            search in the current line after the cursor (`vim-seek` behavior)
-  visible         search in the rest of the visible buffer only
-  whole-line      same as `line`, but highlight matches on either side of cursor
-  whole-buffer    same as `buffer`, but highlight **all** matches in buffer
-  whole-visible   same as `visible`, but highlight **all** visible matches in buffer
+| Value         | Description                                                              |
+|---------------|--------------------------------------------------------------------------|
+| buffer        | search in the rest of the buffer after the cursor (`vim-sneak` behavior) |
+| line          | search in the current line after the cursor (`vim-seek` behavior)        |
+| visible       | search in the rest of the visible buffer only                            |
+| whole-line    | same as `line`, but highlight matches on either side of cursor           |
+| whole-buffer  | same as `buffer`, but highlight **all** matches in buffer                |
+| whole-visible | same as `visible`, but highlight **all** visible matches in buffer       |
 
 If you do not want to replace the regular `f` / `F` / `t` / `T`
 behavior, just remove this line from `evil-snipe/packages.el`:
@@ -81,18 +80,17 @@ list `evil-snipe-aliases` you can search for a regex very simply:
 -   Here we set the `[` character to mean `all characters [({` **in all
     modes** so a search with `sa[` would find `a[`, `a{` or `a(`.
 
-    ``` {.commonlisp org-language="emacs-lisp"}
+    ``` commonlisp
     ;; Alias [ and ] to all types of brackets
     (push '(?\[ "[[{(]") evil-snipe-aliases)
     (push '(?\] "[]})]") evil-snipe-aliases)
     ```
 
--   Here we set the char `:` to mean \"a regex matching python function
-    definitions\" (but only in python-mode), so by searching with
-    `f:fff` you can quickly cycle through all function definitions in a
-    buffer!
+-   Here we set the char `:` to mean "a regex matching python function
+    definitions" (but only in python-mode), so by searching with `f:fff`
+    you can quickly cycle through all function definitions in a buffer!
 
-    ``` {.commonlisp org-language="emacs-lisp"}
+    ``` commonlisp
     ;; For python style functions
     (add-hook 'python-mode-hook
               (lambda ()
@@ -103,11 +101,11 @@ list `evil-snipe-aliases` you can search for a regex very simply:
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ------------------------------------------------------------------------------------------
-  `f`           search forward for the next entered character and set the cursor to it\'s position
-  `F`           search backward for the next entered character and set the cursor to it\'s position
-  `t`           search forward for the next entered character and set the cursor before it\'s position
-  `T`           search backward for the next entered character and set the cursor before it\'s position
-  `s`           search forward for the next entered two characters and set the cursor to it\'s position
-  `S`           search backward for the next entered two characters and set the cursor to it\'s position
+| Key binding | Description                                                                             |
+|-------------|-----------------------------------------------------------------------------------------|
+| `f`         | search forward for the next entered character and set the cursor to it's position       |
+| `F`         | search backward for the next entered character and set the cursor to it's position      |
+| `t`         | search forward for the next entered character and set the cursor before it's position   |
+| `T`         | search backward for the next entered character and set the cursor before it's position  |
+| `s`         | search forward for the next entered two characters and set the cursor to it's position  |
+| `S`         | search backward for the next entered two characters and set the cursor to it's position |

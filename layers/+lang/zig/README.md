@@ -45,7 +45,7 @@ To do so, make sure you have the `lsp` layer in your
 Wiki](https://github.com/zigtools/zls/wiki/Downloading-and-Building-ZLS#using-an-official-release)
 and then configure the `zls` layer with the appropriate variable:
 
-``` {.elisp}
+``` elisp
 (setq-default dotspacemacs-configuration-layers
   '((zig :variables
         zls-backend 'lsp)))

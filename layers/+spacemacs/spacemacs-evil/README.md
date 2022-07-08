@@ -54,7 +54,7 @@ However, there is a large overlap of features provided by both
 `Spacemacs` and `evil-collection`. For the same feature, `Spacemacs`
 implementation is often better than `evil-collection`.
 
-That\'s said, when `evil-collection` is used carefully we can reduce the
+That's said, when `evil-collection` is used carefully we can reduce the
 amount of effort wasted on `reinventing the wheel` on `Spacemacs` side.
 
 Spacemacs provides a layer variable
@@ -64,7 +64,7 @@ enable evil-collection on their desired modes.
 For users, if you want to enable evil-collection on `eglot`, then you
 will need to declare this layer with it variable explicitly:
 
-``` {.example}
+``` example
 (spacemacs-evil :variables
                     spacemacs-evil-collection-allowed-list
                    '(eglot))

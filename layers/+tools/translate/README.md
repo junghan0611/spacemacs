@@ -22,7 +22,7 @@ need to add `translate` to the existing
 Usage
 =====
 
-It\'s quite simple to use this layer. Open the translation file you are
+It's quite simple to use this layer. Open the translation file you are
 currently working on, and call command `translate-open-reference-file`
 or `translate-select-reference-buffer` to set the reference buffer or
 open an existed reference file. Now you can just keep your cursor in
@@ -43,7 +43,7 @@ Language Pair
 
 You need to set language pairs to make online translation work.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (translate :variables gts-translate-list '(("en" "zh") ("en" "fr")))
 ```
 
@@ -52,7 +52,7 @@ Highlighting
 
 Set `translate-enable-highlight` to `nil` to disable highlighting.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (translate :variables translate-enable-highlight nil)
 ```
 
@@ -62,7 +62,7 @@ Read-only
 You can set `translate-reference-buffer-read-only` to `t` to make the
 reference buffer read-only.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (translate :variables translate-reference-buffer-read-only t)
 ```
 
@@ -74,18 +74,18 @@ The face of highlight paragraph can be customized by
 `custom-set-faces` in your =\~/.spacemacs\~ file to set the background
 color to red, for example.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 '(translate-paragraph-highlight ((t (:extend t :background "red"))))
 ```
 
 Key bindings
 ============
 
-  Key binding     Description
-  --------------- ------------------------------------------------------------------------------
-  `SPC a t T t`   Toggle `translate-mode`
-  `SPC a t T p`   Open a translation list buffer for current paragraph in the reference buffer
-  `SPC a t T w`   Popup translation list for word at point, also can be used on regions
-  `SPC a t T f`   Prompt to open the reference file
-  `SPC a t T b`   Prompt to select a buffer and set it as the reference buffer
-  `SPC a t T h`   Toggle paragraph highlighting
+| Key binding   | Description                                                                  |
+|---------------|------------------------------------------------------------------------------|
+| `SPC a t T t` | Toggle `translate-mode`                                                      |
+| `SPC a t T p` | Open a translation list buffer for current paragraph in the reference buffer |
+| `SPC a t T w` | Popup translation list for word at point, also can be used on regions        |
+| `SPC a t T f` | Prompt to open the reference file                                            |
+| `SPC a t T b` | Prompt to select a buffer and set it as the reference buffer                 |
+| `SPC a t T h` | Toggle paragraph highlighting                                                |

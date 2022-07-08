@@ -38,6 +38,6 @@ package repo
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -----------------------------------------------------
-  `SPC t P`     Toggle between parinfer smart indent and paren mode
+| Key binding | Description                                         |
+|-------------|-----------------------------------------------------|
+| `SPC t P`   | Toggle between parinfer smart indent and paren mode |

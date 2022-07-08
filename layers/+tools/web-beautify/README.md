@@ -18,13 +18,13 @@ need to add `web-beautify` to the existing
 
 To install `js-beautify` globally:
 
-``` {.bash org-language="sh"}
+``` bash
 $ npm install -g js-beautify
 ```
 
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -----------------------------------
-  `SPC m = =`   beautify code in supported layers
+| Key binding | Description                       |
+|-------------|-----------------------------------|
+| `SPC m = =` | beautify code in supported layers |

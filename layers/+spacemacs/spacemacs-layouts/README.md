@@ -24,17 +24,17 @@ To set configuration layer variables, add `spacemacs-layouts` to the
 existing `dotspacemacs-configuration-layers` list in your `~/.spacemacs`
 file.
 
-Restrict functions to the current layout\'s buffers
----------------------------------------------------
+Restrict functions to the current layout's buffers
+--------------------------------------------------
 
-Besides `helm-mini` and `ivy-switch-buffer` that are aware of a
-layout\'s buffers. This layer also provides a
+Besides `helm-mini` and `ivy-switch-buffer` that are aware of a layout's
+buffers. This layer also provides a
 `spacemacs-layouts-restricted-functions` variable that holds a list of
-functions that will be restricted to the current layout\'s buffers.
+functions that will be restricted to the current layout's buffers.
 
 Default value of `spacemacs-layouts-restricted-functions` is:
 
-``` {.example}
+``` example
 '(spacemacs/window-split-double-columns
   spacemacs/window-split-triple-columns
   spacemacs/window-split-grid)
@@ -43,7 +43,7 @@ Default value of `spacemacs-layouts-restricted-functions` is:
 The list can be edited in the `dotspacemacs-configuration-layers`
 variable near the top of `.spacemacs` like this:
 
-``` {.example}
+``` example
 (spacemacs-layouts :variables
                    spacemacs-layouts-restricted-functions
                    '(spacemacs/window-split-double-columns
@@ -52,22 +52,22 @@ variable near the top of `.spacemacs` like this:
 ```
 
 Note that `spacemacs-layouts-restricted-functions` can only be changed
-in the `dotspacemacs-configuration-layers` variable. They can\'t be
+in the `dotspacemacs-configuration-layers` variable. They can't be
 edited during the current Emacs session. A restart is required.
 
-Restrict SPC-TAB to the current layout\'s buffers
--------------------------------------------------
+Restrict SPC-TAB to the current layout's buffers
+------------------------------------------------
 
 When the `spacemacs-layouts-restrict-spc-tab` variable is set to `t`,
 then `SPC-TAB` (`spacemacs/alternate-buffer`) will be restricted to only
-switch between the current layout\'s buffers.
+switch between the current layout's buffers.
 
 Default value of `spacemacs-layouts-restrict-spc-tab` is `nil`.
 
 It can be enabled in the `dotspacemacs-configuration-layers` variable
 near the top of `.spacemacs` like this:
 
-``` {.example}
+``` example
 (spacemacs-layouts :variables
                    spacemacs-layouts-restrict-spc-tab t)
 ```
@@ -75,7 +75,7 @@ near the top of `.spacemacs` like this:
 Note that `spacemacs-layouts-restrict-spc-tab` also can be toggle on the
 fly by evaluating it like this:
 
-``` {.example}
+``` example
 (setq spacemacs-layouts-restrict-spc-tab t)
 ```
 
@@ -88,7 +88,7 @@ killed `nil` keeps all buffers `kill-weak` kills a buffer if it is not
 in any other layout except default `t` will kill all buffers in the
 current layout
 
-``` {.example}
+``` example
 (spacemacs-layouts :variables
                    persp-autokill-buffer-on-remove 'kill-weak)
 ```
@@ -116,53 +116,53 @@ See key bindings for more layout commands.
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -------------------------------------------
-  `SPC l ?`     toggle hint in layouts transient state
-  `SPC l 1`     switch to layout 1
-  `SPC l 2`     switch to layout 2
-  `SPC l 3`     switch to layout 3
-  `SPC l 4`     switch to layout 4
-  `SPC l 5`     switch to layout 5
-  `SPC l 6`     switch to layout 6
-  `SPC l 7`     switch to layout 7
-  `SPC l 8`     switch to layout 8
-  `SPC l 9`     switch to layout 9
-  `SPC l 0`     switch to layout 0
-  `SPC l C-1`   switch to layout 11
-  `SPC l C-2`   switch to layout 12
-  `SPC l C-3`   switch to layout 13
-  `SPC l C-4`   switch to layout 14
-  `SPC l C-5`   switch to layout 15
-  `SPC l C-6`   switch to layout 16
-  `SPC l C-7`   switch to layout 17
-  `SPC l C-8`   switch to layout 18
-  `SPC l C-9`   switch to layout 19
-  `SPC l C-0`   switch to layout 20
-  `SPC l TAB`   jump to last layout
-  `SPC l RET`   exit layout transient state
-  `SPC l C-h`   previous layout
-  `SPC l C-l`   next layout
-  `SPC l <`     move current layout left
-  `SPC l >`     move current layout right
-  `SPC l a`     add buffer to layout
-  `SPC l A`     import buffers
-  `SPC l b`     list buffers open in layout
-  `SPC l d`     close current layout (keeps buffers open)
-  `SPC l e`     switch to/create layout at position
-  `SPC l D`     close-other layout
-  `SPC l h`     Switch to default layout
-  `SPC l L`     Load saved layouts from a file
-  `SPC l l`     select or create a layout by name
-  `SPC l n`     next layout
-  `SPC l N`     previous layout
-  `SPC l o`     select custom layout
-  `SPC l p`     persp-prev
-  `SPC l r`     remove buffer from layout
-  `SPC l R`     rename layout
-  `SPC l s`     save current layouts to file
-  `SPC l S`     save current layouts to file by names
-  `SPC l t`     temporarily display buffer
-  `SPC l w`     workspaces transient state
-  `SPC l x`     kill current layout
-  `SPC l X`     kill other layout
+| Key binding | Description                               |
+|-------------|-------------------------------------------|
+| `SPC l ?`   | toggle hint in layouts transient state    |
+| `SPC l 1`   | switch to layout 1                        |
+| `SPC l 2`   | switch to layout 2                        |
+| `SPC l 3`   | switch to layout 3                        |
+| `SPC l 4`   | switch to layout 4                        |
+| `SPC l 5`   | switch to layout 5                        |
+| `SPC l 6`   | switch to layout 6                        |
+| `SPC l 7`   | switch to layout 7                        |
+| `SPC l 8`   | switch to layout 8                        |
+| `SPC l 9`   | switch to layout 9                        |
+| `SPC l 0`   | switch to layout 0                        |
+| `SPC l C-1` | switch to layout 11                       |
+| `SPC l C-2` | switch to layout 12                       |
+| `SPC l C-3` | switch to layout 13                       |
+| `SPC l C-4` | switch to layout 14                       |
+| `SPC l C-5` | switch to layout 15                       |
+| `SPC l C-6` | switch to layout 16                       |
+| `SPC l C-7` | switch to layout 17                       |
+| `SPC l C-8` | switch to layout 18                       |
+| `SPC l C-9` | switch to layout 19                       |
+| `SPC l C-0` | switch to layout 20                       |
+| `SPC l TAB` | jump to last layout                       |
+| `SPC l RET` | exit layout transient state               |
+| `SPC l C-h` | previous layout                           |
+| `SPC l C-l` | next layout                               |
+| `SPC l <`   | move current layout left                  |
+| `SPC l >`   | move current layout right                 |
+| `SPC l a`   | add buffer to layout                      |
+| `SPC l A`   | import buffers                            |
+| `SPC l b`   | list buffers open in layout               |
+| `SPC l d`   | close current layout (keeps buffers open) |
+| `SPC l e`   | switch to/create layout at position       |
+| `SPC l D`   | close-other layout                        |
+| `SPC l h`   | Switch to default layout                  |
+| `SPC l L`   | Load saved layouts from a file            |
+| `SPC l l`   | select or create a layout by name         |
+| `SPC l n`   | next layout                               |
+| `SPC l N`   | previous layout                           |
+| `SPC l o`   | select custom layout                      |
+| `SPC l p`   | persp-prev                                |
+| `SPC l r`   | remove buffer from layout                 |
+| `SPC l R`   | rename layout                             |
+| `SPC l s`   | save current layouts to file              |
+| `SPC l S`   | save current layouts to file by names     |
+| `SPC l t`   | temporarily display buffer                |
+| `SPC l w`   | workspaces transient state                |
+| `SPC l x`   | kill current layout                       |
+| `SPC l X`   | kill other layout                         |

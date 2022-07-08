@@ -32,51 +32,51 @@ Key bindings
 factor-mode (editing source files)
 ----------------------------------
 
-  Key binding   Description
-  ------------- -----------------------------------------------------
-  `SPC m '`     Jump to the factor listener, start if required
-  `SPC m c c`   Compile and run the current file
-                
-  `SPC m e f`   Evaluate definition at point
-  `SPC m e r`   Evaluate region
-  `SPC m e R`   Evaluate region extended to nearest definition
-                
-  `SPC m g g`   Jump to definition of word (under point)
-  `SPC m g a`   Cycle between source, test, and documentation
-                
-  `SPC m t a`   Run tests for current vocab
-                
-  `SPC m r s`   Extract innermost sexp as separate word
-  `SPC m r r`   Extract region as separate word
-  `SPC m r v`   Create new Vocab with words in region
-  `SPC m r i`   Inline word
-  `SPC m r w`   Rename all occurrences of word
-  `SPC m r a`   Extract region as new ARTICLE form
-  `SPC m r g`   Turn current definition into generic word
-  `SPC m r u`   Update USING: line according to actually used words
-                
-  `SPC m s s`   Switch to factor listener
-                
-  `SPC m h h`   Help for thing at point
-  `SPC m h e`   Infer stack effect for sexp/region
-  `SPC m h p`   Apropos
-  `SPC m h v`   List all words in current file/vocab
-  `SPC m h <`   Show calling words of current word
-  `SPC m h >`   Show words called by current word
-                
-  `SPC m S v`   Scaffold vocab
-  `SPC m S h`   Scaffold help for current vocab
+| Key binding | Description                                         |
+|-------------|-----------------------------------------------------|
+| `SPC m '`   | Jump to the factor listener, start if required      |
+| `SPC m c c` | Compile and run the current file                    |
+|             |                                                     |
+| `SPC m e f` | Evaluate definition at point                        |
+| `SPC m e r` | Evaluate region                                     |
+| `SPC m e R` | Evaluate region extended to nearest definition      |
+|             |                                                     |
+| `SPC m g g` | Jump to definition of word (under point)            |
+| `SPC m g a` | Cycle between source, test, and documentation       |
+|             |                                                     |
+| `SPC m t a` | Run tests for current vocab                         |
+|             |                                                     |
+| `SPC m r s` | Extract innermost sexp as separate word             |
+| `SPC m r r` | Extract region as separate word                     |
+| `SPC m r v` | Create new Vocab with words in region               |
+| `SPC m r i` | Inline word                                         |
+| `SPC m r w` | Rename all occurrences of word                      |
+| `SPC m r a` | Extract region as new ARTICLE form                  |
+| `SPC m r g` | Turn current definition into generic word           |
+| `SPC m r u` | Update USING: line according to actually used words |
+|             |                                                     |
+| `SPC m s s` | Switch to factor listener                           |
+|             |                                                     |
+| `SPC m h h` | Help for thing at point                             |
+| `SPC m h e` | Infer stack effect for sexp/region                  |
+| `SPC m h p` | Apropos                                             |
+| `SPC m h v` | List all words in current file/vocab                |
+| `SPC m h <` | Show calling words of current word                  |
+| `SPC m h >` | Show words called by current word                   |
+|             |                                                     |
+| `SPC m S v` | Scaffold vocab                                      |
+| `SPC m S h` | Scaffold help for current vocab                     |
 
 fuel-listener-mode
 ------------------
 
-  Key binding   Description
-  ------------- ---------------------------
-  `SPC m r`     Refresh all loaded vocabs
-  `SPC m T s`   Toggle stack mode
-  `SPC m h`     Help for word at point
-  `SPC m v`     Edit vocab
-  `SPC m S v`   Scaffold vocab
+| Key binding | Description               |
+|-------------|---------------------------|
+| `SPC m r`   | Refresh all loaded vocabs |
+| `SPC m T s` | Toggle stack mode         |
+| `SPC m h`   | Help for word at point    |
+| `SPC m v`   | Edit vocab                |
+| `SPC m S v` | Scaffold vocab            |
 
 Snippets
 ========
@@ -106,6 +106,6 @@ their respective documentation for details)
 -   `factor-ui-listener-args`
 
 Note that the commands described in the [Key bindings](#key-bindings)
-section which start a factor listener are supplied by FUEL and don\'t
+section which start a factor listener are supplied by FUEL and don't
 take the last of these variables, `factor-ui-listener-args` into
 account.

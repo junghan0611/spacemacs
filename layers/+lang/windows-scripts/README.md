@@ -29,22 +29,22 @@ Key bindings
 Powershell (powershell.el)
 --------------------------
 
-  Key binding     Description
-  --------------- ----------------------------------
-  `SPC m r r`     Transform marked regexp to regex
-  `SPC a t s p`   Start powershell shell
+| Key binding   | Description                      |
+|---------------|----------------------------------|
+| `SPC m r r`   | Transform marked regexp to regex |
+| `SPC a t s p` | Start powershell shell           |
 
 Bat-mode
 --------
 
-  Key binding   Description
-  ------------- -------------------------------------------------
-  `SPC m e b`   evaluate buffer
-  `SPC m e B`   evaluate buffer with args
-  `SPC m h h`   show help of command
-  `SPC m i t`   insert minimal template
-  `SPC m z`     toggle outline
-  `SPC m g d`   jump to definition
-  `SPC m g r`   find references
-  `SPC m r r`   rename symbol
-  `SPC m r f`   ensure all symbols has consistent casing/syntax
+| Key binding | Description                                     |
+|-------------|-------------------------------------------------|
+| `SPC m e b` | evaluate buffer                                 |
+| `SPC m e B` | evaluate buffer with args                       |
+| `SPC m h h` | show help of command                            |
+| `SPC m i t` | insert minimal template                         |
+| `SPC m z`   | toggle outline                                  |
+| `SPC m g d` | jump to definition                              |
+| `SPC m g r` | find references                                 |
+| `SPC m r r` | rename symbol                                   |
+| `SPC m r f` | ensure all symbols has consistent casing/syntax |

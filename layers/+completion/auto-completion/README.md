@@ -66,7 +66,7 @@ following layer variables:
 
 The default configuration of the layer is:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (auto-completion :variables
                    auto-completion-return-key-behavior 'complete
@@ -83,7 +83,7 @@ The default configuration of the layer is:
 ```
 
 `jk` is a good candidate for
-`auto-completion-complete-with-key-sequence` if you don\'t use it
+`auto-completion-complete-with-key-sequence` if you don't use it
 already.
 
 Snippets directories
@@ -112,7 +112,7 @@ By default, snippets are not shown in the auto-completion popup. To show
 them in the popup, set the variable
 `auto-completion-enable-snippets-in-popup` to `t`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((auto-completion :variables
                                  auto-completion-enable-snippets-in-popup t)))
@@ -124,7 +124,7 @@ Tooltips
 To enable automatic docstring tooltips set
 `auto-completion-enable-help-tooltip` to `t`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((auto-completion :variables
                     auto-completion-enable-help-tooltip t)))
@@ -133,7 +133,7 @@ To enable automatic docstring tooltips set
 To enable manual non-automatic invocation of docstring tooltips, set it
 to `manual`. The tooltip can be invoked manually by pressing `M-h`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((auto-completion :variables
                     auto-completion-enable-help-tooltip 'manual)))
@@ -157,7 +157,7 @@ package when `company` is used. The variable has no effect when
 Beware: Sorting completion results is often done already by the
 completion backend, doing it again in company may degrate performance.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((auto-completion :variables
                     auto-completion-enable-sort-by-usage t)))
@@ -197,7 +197,7 @@ via the package `company-anaconda`.
 
 In the file `packages.el` of the python layer:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ;; Add the relevant packages to the layer
 ;; here it is `company-anaconda'
 (setq python-packages
@@ -224,7 +224,7 @@ include completion backends specified in the
 well, but you can configure this variable in your `.spacemacs` file with
 (e.g.)
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default
  dotspacemacs-configuration-layers
  '((auto-completion :variables
@@ -237,7 +237,7 @@ Improved faces
 For nicer-looking faces, try adding the following to
 \`custom-set-faces\` in your dotspacemacs file.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (custom-set-faces
  '(company-tooltip-common
    ((t (:inherit company-tooltip :weight bold :underline nil))))
@@ -251,52 +251,52 @@ Key bindings
 Company
 -------
 
-  Key binding   Description
-  ------------- -------------------------------------------------------------------------------------------------------
-  `C-d`         open minibuffer with documentation of thing at point in company dropdown
-  `C-/`         show candidates in Helm or Ivy (for fuzzy searching)
-  `C-M-/`       filter the company dropdown menu
-  `M-h`         show current candidate\'s documentation in a tooltip (requires `auto-completion-enable-help-tooltip`)
+| Key binding | Description                                                                                          |
+|-------------|------------------------------------------------------------------------------------------------------|
+| `C-d`       | open minibuffer with documentation of thing at point in company dropdown                             |
+| `C-/`       | show candidates in Helm or Ivy (for fuzzy searching)                                                 |
+| `C-M-/`     | filter the company dropdown menu                                                                     |
+| `M-h`       | show current candidate's documentation in a tooltip (requires `auto-completion-enable-help-tooltip`) |
 
 Vim Style:
 
-  Key binding   Description
-  ------------- ----------------------------------------------
-  `C-j`         (vim style) go down in company dropdown menu
-  `C-k`         (vim style) go up in company dropdown menu
-  `C-l`         (vim style) complete selection
+| Key binding | Description                                  |
+|-------------|----------------------------------------------|
+| `C-j`       | (vim style) go down in company dropdown menu |
+| `C-k`       | (vim style) go up in company dropdown menu   |
+| `C-l`       | (vim style) complete selection               |
 
 Emacs style:
 
-  Key binding   Description
-  ------------- ------------------------------------------------
-  `C-n`         (emacs style) go down in company dropdown menu
-  `C-p`         (emacs style) go up in company dropdown menu
+| Key binding | Description                                    |
+|-------------|------------------------------------------------|
+| `C-n`       | (emacs style) go down in company dropdown menu |
+| `C-p`       | (emacs style) go up in company dropdown menu   |
 
 Auto-complete
 -------------
 
-  Key binding   Description
-  ------------- ----------------------------------------------------------------------
-  `C-j`         select next candidate
-  `C-k`         select previous candidate
-  `TAB`         expand selection or select next candidate
-  `S-TAB`       select previous candidate
-  `RET`         complete word, if word is already completed insert a carriage return
+| Key binding | Description                                                          |
+|-------------|----------------------------------------------------------------------|
+| `C-j`       | select next candidate                                                |
+| `C-k`       | select previous candidate                                            |
+| `TAB`       | expand selection or select next candidate                            |
+| `S-TAB`     | select previous candidate                                            |
+| `RET`       | complete word, if word is already completed insert a carriage return |
 
 Yasnippet
 ---------
 
-  Key binding   Description
-  ------------- ----------------------------------------------------------------
-  `M-/`         Expand a snippet if text before point is a prefix of a snippet
-  `SPC i s`     List all current yasnippets for inserting
+| Key binding | Description                                                    |
+|-------------|----------------------------------------------------------------|
+| `M-/`       | Expand a snippet if text before point is a prefix of a snippet |
+| `SPC i s`   | List all current yasnippets for inserting                      |
 
 Auto-yasnippet
 --------------
 
-  Key binding   Description
-  ------------- ---------------------------------------------------------------------------
-  `SPC i S c`   create a snippet from an active region
-  `SPC i S e`   Expand the snippet just created with `SPC i y`
-  `SPC i S w`   Write the snippet inside `private/snippets` directory for future sessions
+| Key binding | Description                                                               |
+|-------------|---------------------------------------------------------------------------|
+| `SPC i S c` | create a snippet from an active region                                    |
+| `SPC i S e` | Expand the snippet just created with `SPC i y`                            |
+| `SPC i S w` | Write the snippet inside `private/snippets` directory for future sessions |

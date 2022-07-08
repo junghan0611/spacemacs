@@ -43,6 +43,6 @@ Key bindings
 Grip-mode
 ---------
 
-  Key binding   Description
-  ------------- -------------------------------------------------------------
-  `SPC g p`     toggle github flavored mb/org buffer preview in web-browser
+| Key binding | Description                                                 |
+|-------------|-------------------------------------------------------------|
+| `SPC g p`   | toggle github flavored mb/org buffer preview in web-browser |

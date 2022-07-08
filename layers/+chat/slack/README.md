@@ -37,7 +37,7 @@ To test that everything is alright put the following snippet in your
 private stuff elsewhere (like Dropbox for instance) and load the file in
 your dotfile.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (slack-register-team
   :name "emacs-slack"
   :default t
@@ -60,7 +60,7 @@ customized with the following layer variables:
 
 By default the values are:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (slack :variables slack-spacemacs-layout-name "@Slack"
                     slack-spacemacs-layout-binding "s")))
@@ -69,37 +69,37 @@ By default the values are:
 Key bindings
 ============
 
-  Key binding     Description
-  --------------- ------------------------------------------
-  `SPC a c s T`   Show all threads followed in a workspace
-  `SPC a c s d`   Direct message someone
-  `SPC a c s g`   Join a group (private channel)
-  `SPC a c s j`   Join a channel
-  `SPC a c s q`   Close connection
-  `SPC a c s r`   Join a channel, group, or direct messge
-  `SPC a c s s`   (Re)connects to Slack
-  `SPC a c s u`   Show all unread in a workspace
-  `SPC m (`       Remove reaction (emoji) to a message
-  `SPC m )`       Add reaction (emoji) to a message
-  `SPC m c`       Embed mention of channel
-  `SPC m d`       Direct message someone
-  `SPC m e`       Edit message at point
-  `SPC m j`       Join a channel
-  `SPC m m`       Embed mention of user
-  `SPC m p`       Load previous messages
-  `SPC m q`       Quit Slack
-  `SPC m t`       Show or create thread
+| Key binding   | Description                              |
+|---------------|------------------------------------------|
+| `SPC a c s T` | Show all threads followed in a workspace |
+| `SPC a c s d` | Direct message someone                   |
+| `SPC a c s g` | Join a group (private channel)           |
+| `SPC a c s j` | Join a channel                           |
+| `SPC a c s q` | Close connection                         |
+| `SPC a c s r` | Join a channel, group, or direct messge  |
+| `SPC a c s s` | (Re)connects to Slack                    |
+| `SPC a c s u` | Show all unread in a workspace           |
+| `SPC m (`     | Remove reaction (emoji) to a message     |
+| `SPC m )`     | Add reaction (emoji) to a message        |
+| `SPC m c`     | Embed mention of channel                 |
+| `SPC m d`     | Direct message someone                   |
+| `SPC m e`     | Edit message at point                    |
+| `SPC m j`     | Join a channel                           |
+| `SPC m m`     | Embed mention of user                    |
+| `SPC m p`     | Load previous messages                   |
+| `SPC m q`     | Quit Slack                               |
+| `SPC m t`     | Show or create thread                    |
 
 The following bindings are provided to mimic bindings in the official
 Slack client.
 
-  Key binding   Description
-  ------------- --------------------------
-  `SPC m #`     Embed mention of channel
-  `SPC m )`     Add a rection
-  `SPC m :`     Embed emoji
-  `SPC m @`     Embed mention of user
-  `SPC m k`     Join a channel
+| Key binding | Description              |
+|-------------|--------------------------|
+| `SPC m #`   | Embed mention of channel |
+| `SPC m )`   | Add a rection            |
+| `SPC m :`   | Embed emoji              |
+| `SPC m @`   | Embed mention of user    |
+| `SPC m k`   | Join a channel           |
 
 In insert state, one can also use `:`, `@`, and `#` directly without the
 leader key prefix.

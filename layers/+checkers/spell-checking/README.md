@@ -45,7 +45,7 @@ By default, `spell-checking` is enabled in all available major modes and
 may be toggled off with `SPC t S`. You can default this to off by
 setting the variable `spell-checking-enable-by-default` to `nil`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((spell-checking :variables spell-checking-enable-by-default nil)))
 ```
@@ -58,7 +58,7 @@ buffer content, and activate the corresponding dictionary. You can
 enable it by setting the variable
 `spell-checking-enable-auto-dictionary` to something other than `nil`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((spell-checking :variables spell-checking-enable-auto-dictionary t)))
 ```
@@ -73,37 +73,37 @@ languages are listed in the `adict-language-list` variable, that can be
 checked with `spacemacs/describe-variable`. For convenience, here is the
 list of currently supported language:
 
-  Language
-  -------------------
-  catalan
-  classical greek
-  danish
-  english
-  esperanto
-  french
-  german
-  hindi
-  hungarian
-  modern greek
-  norwegian bokmål
-  norwegian nynorsk
-  portuguese
-  romanian
-  slovak
-  slovene
-  spanish
-  swedish
+| Language          |
+|-------------------|
+| catalan           |
+| classical greek   |
+| danish            |
+| english           |
+| esperanto         |
+| french            |
+| german            |
+| hindi             |
+| hungarian         |
+| modern greek      |
+| norwegian bokmål  |
+| norwegian nynorsk |
+| portuguese        |
+| romanian          |
+| slovak            |
+| slovene           |
+| spanish           |
+| swedish           |
 
 Enabling multi-dictionary support with hunspell
 -----------------------------------------------
 
 If your language is not supported by auto-dictionary feature or you
-author multi-lingual documents you might be compelled to use hunspell\'s
-multi-dictionary mode. For example to enable it for pl~PL~ and en~GB~
-dictionaries you could put following code in your
+author multi-lingual documents you might be compelled to use hunspell's
+multi-dictionary mode. For example to enable it for pl<sub>PL</sub> and
+en<sub>GB</sub> dictionaries you could put following code in your
 dotspacemacs/user-config section in your configuration file:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (with-eval-after-load "ispell"
     (setq ispell-program-name "hunspell")
     ;; ispell-set-spellchecker-params has to be called
@@ -113,7 +113,7 @@ dotspacemacs/user-config section in your configuration file:
     (setq ispell-dictionary "pl_PL,en_GB"))
 ```
 
-One caveat is you need quite modern ispell.el for above to work. It\'s
+One caveat is you need quite modern ispell.el for above to work. It's
 been tested with version coming from Emacs 25.2 repository.
 
 Enable auto-completion popup
@@ -122,7 +122,7 @@ Enable auto-completion popup
 To enable auto-completion popup when the point is idle on a misspelled
 word set the layer variable `enable-flyspell-auto-completion` to t:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((spell-checking :variables enable-flyspell-auto-completion t)))
 ```
@@ -130,42 +130,42 @@ word set the layer variable `enable-flyspell-auto-completion` to t:
 Key bindings
 ============
 
-  Key binding       Description
-  ----------------- ----------------------------------------
-  `SPC S a b`       Add word to dict (buffer)
-  `SPC S a g`       Add word to dict (global)
-  `SPC S a s`       Add word to dict (session)
-  `SPC S b`         Flyspell whole buffer
-  `SPC S r`         Flyspell region
-  `SPC S c`         Flyspell correct word before point
-  `SPC S s`         Flyspell correct word at point
-  `SPC u SPC S c`   Flyspell correct all errors one by one
-  `SPC S d`         Change dictionary
-  `SPC S n`         Flyspell goto next error
-  `SPC t S`         Toggle flyspell
+| Key binding     | Description                            |
+|-----------------|----------------------------------------|
+| `SPC S a b`     | Add word to dict (buffer)              |
+| `SPC S a g`     | Add word to dict (global)              |
+| `SPC S a s`     | Add word to dict (session)             |
+| `SPC S b`       | Flyspell whole buffer                  |
+| `SPC S r`       | Flyspell region                        |
+| `SPC S c`       | Flyspell correct word before point     |
+| `SPC S s`       | Flyspell correct word at point         |
+| `SPC u SPC S c` | Flyspell correct all errors one by one |
+| `SPC S d`       | Change dictionary                      |
+| `SPC S n`       | Flyspell goto next error               |
+| `SPC t S`       | Toggle flyspell                        |
 
 Spell Checking Transient-state
 ------------------------------
 
-  Key binding   Description
-  ------------- --------------------------------------------------
-  `SPC S . b`   Rerun spell check for the whole buffer
-  `SPC S . r`   Rerun spell check for the selected region
-  `SPC S . d`   Change dictionary
-  `SPC S . n`   Go to next spelling error
-  `SPC S . c`   Correct word before point
-  `SPC S . s`   Correct word at point
-  `SPC S . t`   Toggle spell check
-  `SPC S . q`   Quit transient state
-  `SPC S . Q`   Quit transient state and disable `flyspell-mode`
-  `SPC S . B`   Add word to dict (buffer)
-  `SPC S . G`   Add word to dict (global)
-  `SPC S . S`   Add word to dict (session)
+| Key binding | Description                                      |
+|-------------|--------------------------------------------------|
+| `SPC S . b` | Rerun spell check for the whole buffer           |
+| `SPC S . r` | Rerun spell check for the selected region        |
+| `SPC S . d` | Change dictionary                                |
+| `SPC S . n` | Go to next spelling error                        |
+| `SPC S . c` | Correct word before point                        |
+| `SPC S . s` | Correct word at point                            |
+| `SPC S . t` | Toggle spell check                               |
+| `SPC S . q` | Quit transient state                             |
+| `SPC S . Q` | Quit transient state and disable `flyspell-mode` |
+| `SPC S . B` | Add word to dict (buffer)                        |
+| `SPC S . G` | Add word to dict (global)                        |
+| `SPC S . S` | Add word to dict (session)                       |
 
 Known issues
 ============
 
 Vim-empty-lines layer seems incompatible with spell-checking inside
-org-mode. If you experience \"Args out of range\" error message when
-invoking `SPC S c` inside org-mode buffer then check if you don\'t have
+org-mode. If you experience "Args out of range" error message when
+invoking `SPC S c` inside org-mode buffer then check if you don't have
 vim-empty-lines layer enabled and disable it.

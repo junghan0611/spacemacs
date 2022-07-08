@@ -17,7 +17,7 @@ To use this configuration layer, add it to your `~/.spacemacs`. You will
 need to add `yang` to the existing `dotspacemacs-configuration-layers`
 list in this file.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(yang))
 ```
 
@@ -43,7 +43,7 @@ were:
 -   ieee Validate the module(s) according to IEEE rules.
 -   lint Validate the module(s) according to RFC 6087 rules.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((yang :variables yang-pyang-rules "ietf")))
 ```
@@ -52,7 +52,7 @@ To allow further customization one can set the `yang-pyang-extra-args`
 variable to a string that will be passed directly to the `pyang`
 command.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((yang :variables yang-pyang-extra-args "--max-line-length=69")))
 ```

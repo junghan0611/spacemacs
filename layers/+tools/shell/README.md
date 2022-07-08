@@ -21,7 +21,7 @@ list in this file.
 Install vterm
 -------------
 
-`vterm` is the latest addition to Emacs\' set of terminal emulators and
+`vterm` is the latest addition to Emacs' set of terminal emulators and
 the only one to be implemented in C, leveraging `libvterm`. It is the
 only one in Emacs at the moment to be as fast as a standalone terminal
 with full support for `ncurses`, `vim`, `htop` and the likes.
@@ -42,13 +42,13 @@ supports it or compile it from source supplying the
 
 1.  macOS
 
-    ``` {.shell}
+    ``` shell
     brew install cmake
     ```
 
 2.  Ubuntu
 
-    ``` {.shell}
+    ``` shell
     sudo apt install cmake
     ```
 
@@ -59,7 +59,7 @@ If the `libtool` command does not exist in your system (usually in
 
 1.  Ubuntu
 
-    ``` {.shell}
+    ``` shell
     sudo apt install libtool-bin
     ```
 
@@ -67,7 +67,7 @@ If the `libtool` command does not exist in your system (usually in
 
 1.  macOS
 
-    ``` {.shell}
+    ``` shell
     brew install libvterm
     ```
 
@@ -78,8 +78,8 @@ If the `libtool` command does not exist in your system (usually in
     Ubuntu). If not available, it will be downloaded during the
     compilation process. Some distributions (e.g. Ubuntu 18.04) have
     versions of libvterm that are too old. If you find compilation
-    errors related to VTERM~COLOR~, you should not use your system
-    libvterm.
+    errors related to VTERM<sub>COLOR</sub>, you should not use your
+    system libvterm.
 
 3.  Windows
 
@@ -113,7 +113,7 @@ To define the default shell you can set the layer variable
 -   `multi-term`
 -   `vterm`
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((shell :variables shell-default-shell 'eshell)))
 ```
@@ -133,7 +133,7 @@ default width in percents with the variable `shell-default-width`, which
 has a default value of 30 and will take effect if your shell is
 positioned on the left or the right.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((shell :variables
            shell-default-position 'bottom
@@ -160,7 +160,7 @@ Set shell for term, ansi-term and vterm
 The default shell can be set by setting the variable
 `shell-default-term-shell`. Default value is `/bin/bash`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((shell :variables shell-default-term-shell "/bin/bash")))
 ```
@@ -171,7 +171,7 @@ Set shell for multi-term
 The default shell can be set by setting the variable
 `multi-term-program`. Default value is `/bin/bash`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((shell :variables multi-term-program "/bin/bash")))
 ```
@@ -183,7 +183,7 @@ By default the popup buffer spans the full width of the current frame,
 if you prefer to spans only the width of the current window then set the
 layer variable `shell-default-full-span` to nil.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((shell :variables shell-default-full-span nil)))
 ```
@@ -196,18 +196,18 @@ From the `em-smart` documentation:
 > The best way to get a sense of what this code is trying to do is by
 > using it. Basically, the philosophy represents a blend between the
 > ease of use of modern day shells, and the review-before-you-proceed
-> mentality of Plan 9\'s 9term.
+> mentality of Plan 9's 9term.
 
-In a nutshell, when `em-smart` is enabled point won\'t jump at the end
-of the buffer when a command is executed, it will stay at the same
-command prompt used to execute the command. This allows to quickly edit
-the last command in the case of a mistake. If there is no mistake and
-you directly type a new command then the prompt will jump to the next
-prompt at the end of the buffer.
+In a nutshell, when `em-smart` is enabled point won't jump at the end of
+the buffer when a command is executed, it will stay at the same command
+prompt used to execute the command. This allows to quickly edit the last
+command in the case of a mistake. If there is no mistake and you
+directly type a new command then the prompt will jump to the next prompt
+at the end of the buffer.
 
 To enable `em-smart` put the following layer variable to non-nil:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((shell :variables shell-enable-smart-eshell t)))
 ```
@@ -226,7 +226,7 @@ By default this layer also protects the `eshell` prompt. If you want to
 disable this protection you can set the variable
 `shell-protect-eshell-prompt` to nil.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((shell :variables shell-protect-eshell-prompt nil)))
 ```
@@ -239,20 +239,20 @@ are some pointers to save you time to setup your environment correctly.
 
 First be sure `~/.terminfo` is setup correctly by running:
 
-``` {.fish}
+``` fish
 tic -o ~/.terminfo $TERMINFO/e/eterm-color.ti
 ```
 
 You can locate the `eterm-colors.ti` file with:
 
-``` {.fish}
+``` fish
 locate eterm-color.ti
 ```
 
 Then setup your fish configuration file (usually at
 `~/.config/fish/config.fish`)
 
-``` {.fish}
+``` fish
 # emacs ansi-term support
 if test -n "$EMACS"
   set -x TERM eterm-color
@@ -268,7 +268,7 @@ Finally you may need to toggle truncated lines for some prompts to work
 correctly, in the function `dotspacemacs/user-config` of your dotfile
 add:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (add-hook 'term-mode-hook 'spacemacs/toggle-truncate-lines-on)
 ```
 
@@ -278,7 +278,7 @@ Close window with terminal
 If you want its window to close when the terminal terminates, set the
 following layer variable to non-nil:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((shell :variables close-window-with-terminal t)))
 ```
@@ -310,23 +310,23 @@ Some advanced configuration is setup for `eshell` in this layer:
 Key bindings
 ============
 
-  Key binding     Description
-  --------------- ----------------------------------------------------------
-  `SPC '​`        Toggle pop-shell with your default shell
-  `SPC "​`        Open external terminal emulator in current directory
-  `SPC a t s e`   Toggle pop-shell with `eshell`
-  `SPC a t s i`   Toggle pop-shell with `shell`
-  `SPC a t s m`   Toggle pop-shell with `multi-term`
-  `SPC a t s t`   Toggle pop-shell with `ansi-term`
-  `SPC a t s T`   Toggle pop-shell with `term`
-  `SPC a t s v`   Toggle pop-shell with `vterm`
-  `SPC p '​`      Toggle pop-shell with your default shell in project root
-  `SPC p "​`      Open external terminal emulator in project root
-  `SPC p $`       Open a new buffer with default shell in project root
-  `TAB`           In a shell buffer, browse completions
-  `SPC m H`       In `shell` or `eshell`, browse history
-  `C-j`           Next item in history
-  `C-k`           Previous item in history
+| Key binding   | Description                                              |
+|---------------|----------------------------------------------------------|
+| `SPC '​`      | Toggle pop-shell with your default shell                 |
+| `SPC "​`      | Open external terminal emulator in current directory     |
+| `SPC a t s e` | Toggle pop-shell with `eshell`                           |
+| `SPC a t s i` | Toggle pop-shell with `shell`                            |
+| `SPC a t s m` | Toggle pop-shell with `multi-term`                       |
+| `SPC a t s t` | Toggle pop-shell with `ansi-term`                        |
+| `SPC a t s T` | Toggle pop-shell with `term`                             |
+| `SPC a t s v` | Toggle pop-shell with `vterm`                            |
+| `SPC p '​`    | Toggle pop-shell with your default shell in project root |
+| `SPC p "​`    | Open external terminal emulator in project root          |
+| `SPC p $`     | Open a new buffer with default shell in project root     |
+| `TAB`         | In a shell buffer, browse completions                    |
+| `SPC m H`     | In `shell` or `eshell`, browse history                   |
+| `C-j`         | Next item in history                                     |
+| `C-k`         | Previous item in history                                 |
 
 **Note:** You can open multiple shells using a numerical prefix
 argument, for instance pressing `2 SPC '​` will a second default shell,
@@ -338,27 +338,27 @@ shell in the current buffer instead of a popup.
 Multi-term
 ----------
 
-  Key binding              Description
-  ------------------------ --------------------------------
-  `SPC m c`                create a new multi-term
-  `SPC m C`                switch multi-term char mode
-  `SPC m l`                switch multi-term to line mode
-  `SPC m n`                go to next multi-term
-  `SPC m N` or `SPC m p`   go to previous multi-term
+| Key binding            | Description                    |
+|------------------------|--------------------------------|
+| `SPC m c`              | create a new multi-term        |
+| `SPC m C`              | switch multi-term char mode    |
+| `SPC m l`              | switch multi-term to line mode |
+| `SPC m n`              | go to next multi-term          |
+| `SPC m N` or `SPC m p` | go to previous multi-term      |
 
 Eshell
 ------
 
-  Key binding          Description
-  -------------------- ------------------------------
-  `SPC m H` or `M-l`   search shell command history
+| Key binding        | Description                  |
+|--------------------|------------------------------|
+| `SPC m H` or `M-l` | search shell command history |
 
 vterm
 -----
 
-  Key binding   Description
-  ------------- --------------------------------
-  `M-r`         search shell command history\*
+| Key binding | Description                    |
+|-------------|--------------------------------|
+| `M-r`       | search shell command history\* |
 
 Note\*: `M-r` will only be bound to search for the command history when
 the variable `spacemacs-vterm-history-file-location` is set to the path
@@ -366,7 +366,7 @@ to your shell history file.
 
 For example with bash
 
-``` {.elisp}
+``` elisp
 (shell :variables
        spacemacs-vterm-history-file-location "~/.bash_history")
 ```

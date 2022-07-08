@@ -22,7 +22,7 @@ need to add `keyboard-layout` to the existing
 `dotspacemacs-configuration-layers` list in this file. You can then
 select the desired layout by specifying the `kl-layout` variable:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (keyboard-layout :variables kl-layout 'dvorak)))
 ```
@@ -46,7 +46,7 @@ are loaded. Any configuration listed in `kl-disabled-configurations`
 will never be loaded, whether it is in the enabled list or not (default:
 `nil`).
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (keyboard-layout :variables
                    kl-layout 'dvorak
@@ -59,14 +59,14 @@ Add/Override key bindings
 It is possible to override or add key bindings, by defining functions
 named `kl/pre-config-<NAME>` and `kl/post-config-<NAME>` in
 `dotspacemacs/user-init`. They are called just before and after the
-actual configuration of the key bindings in this layer. **You don\'t
-have to think about when to apply the configuration by yourself**.
-`<NAME>` is the name of the configuration you want to customize, they
-are listed under the [Configuration](#configuration) section.
+actual configuration of the key bindings in this layer. **You don't have
+to think about when to apply the configuration by yourself**. `<NAME>`
+is the name of the configuration you want to customize, they are listed
+under the [Configuration](#configuration) section.
 
 Example:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defun kl/post-config-company ()
   "Company delete backward."
   (kl/set-in-state company-active-map (kbd "C-w") 'evil-delete-backward-word))
@@ -89,15 +89,15 @@ The equivalent remapping is also made for uppercase letters, `CTRL+KEY`,
 `META+KEY` and leader key bindings such as (`SPC …`), whenever it makes
 sense.
 
-In some cases the remapped keys won\'t follow these conventions, mainly
-because there are better alternatives, or because some movements don\'t
+In some cases the remapped keys won't follow these conventions, mainly
+because there are better alternatives, or because some movements don't
 make sense.
 
 For example: In the `magit` status buffer, the `c` key is bound to
 `commit` by default. If we want to follow the conventions, then it
-should be remapped to \"move left\" in the bepo layout, but since
-operations in `magit` are done line by line, then there\'s no reason to
-move left, and we won\'t remap the `c` key.
+should be remapped to "move left" in the bepo layout, but since
+operations in `magit` are done line by line, then there's no reason to
+move left, and we won't remap the `c` key.
 
 Keyboard layouts
 ================
@@ -109,7 +109,7 @@ Bepo
 
 ![](img/bepo-logo.png)
 
-Bepo is a keyboard layout that\'s optimized for the French language.
+Bepo is a keyboard layout that's optimized for the French language.
 
 ![](img/bepo-layout.png)
 
@@ -131,7 +131,7 @@ Some Bepo keys are not used in the traditional mapping, mainly because
 they are not on the `en-us` keyboard layout. They are used as aliases
 for other shortcuts:
 
--   Map the unused `é` key as an alias for `w`, it\'s more useful in vim
+-   Map the unused `é` key as an alias for `w`, it's more useful in vim
     mode:
     -   `é → w`
     -   `É → W`
@@ -142,21 +142,21 @@ for other shortcuts:
 Some default configurations are also not optimal for vim, so the
 following defaults are changed:
 
--   Change the `evil-escape` combination to something that\'s faster to
+-   Change the `evil-escape` combination to something that's faster to
     type, while being nearly nonexistent in French or English words:
     -   `fd → gq`
 -   In `avy`, the keys that select words/lines are remapped to the 8
     characters under the home row fingers:
     -   `a u i e t s r n`
 
-Note: There\'s one difference from the wiki version: `w` is **not**
+Note: There's one difference from the wiki version: `w` is **not**
 remapped to `C-w`. This avoids having to change its meaning in other
 modes. Spacemacs already provides `SPC w` for working with windows.
 
 Dvorak
 ------
 
-Dvorak is a keyboard layout, that\'s optimized for the English language.
+Dvorak is a keyboard layout, that's optimized for the English language.
 It rearranges the keys, to require less finger movements away from the
 home row.
 
@@ -172,7 +172,7 @@ pre-installed on most operating systems.
 
 ![](img/programmer-dvorak-layout.png)
 
-There\'s also a sub-layout called [Programmer
+There's also a sub-layout called [Programmer
 Dvorak](https://www.kaufmann.no/roland/dvorak/). It reorders the number
 and symbol keys, to make it easier to type common programming symbols,
 without having to hold down the shift key. The keys that differ from the
@@ -197,7 +197,7 @@ The lost keys are remapped as follows:
 The `dvorak` variant: uses the home row, which is shifted 1 key to the
 right of Vims movement keys.
 
--   `h` doesn\'t need to be remapped, it\'s already under the index
+-   `h` doesn't need to be remapped, it's already under the index
     finger.
 -   `t → j`
 -   `n → k`
@@ -240,12 +240,12 @@ when using `colemak-jkhl`, the `kl/pre-config-evil` and
 Workman
 -------
 
-`Workman` is an English-optimized keyboard layout that\'s designed to,
+`Workman` is an English-optimized keyboard layout that's designed to,
 among other things, reduce finger travel-distance, and balance the load
 equally between hands. It is meant to function particularly well in
-conjunction with ortholinear (\'matrix\' or \'grid\') keyboards, such as
-the one depicted in the diagram below. More information can be found in
-the [Workman
+conjunction with ortholinear ('matrix' or 'grid') keyboards, such as the
+one depicted in the diagram below. More information can be found in the
+[Workman
 section](https://en.wikipedia.org/wiki/Keyboard_layout#Workman), of the
 wikipedia keyboard layout page.
 

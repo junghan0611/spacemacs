@@ -6,7 +6,7 @@ Description
 Alda is a music composition language allowing music to easily be written
 and edited in a text file.
 
-This layer adds key bindings for `alda-mode`\'s functions, which allow
+This layer adds key bindings for `alda-mode`'s functions, which allow
 Alda code to be interpreted and played by the running Alda server. It
 will also start the Alda server if it is not running.
 
@@ -31,12 +31,12 @@ Key bindings
 When alda-mode is active in an Alda file, you can use these key
 bindings:
 
-  Key binding   Description
-  ------------- ---------------------------------
-  `SPC m b`     Play the entire buffer
-  `SPC m c`     Play block (paragraph on point)
-  `SPC m r`     Play region (selected text)
-  `SPC m n`     Plays the current line
+| Key binding | Description                     |
+|-------------|---------------------------------|
+| `SPC m b`   | Play the entire buffer          |
+| `SPC m c`   | Play block (paragraph on point) |
+| `SPC m r`   | Play region (selected text)     |
+| `SPC m n`   | Plays the current line          |
 
 Note that if the Alda server is not running, `alda-mode` will start the
 server, and you will have to run the command again.

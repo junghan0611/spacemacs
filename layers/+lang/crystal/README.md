@@ -47,7 +47,7 @@ in your dotfile. This mode only provides very limited IDE capabilities.
 Used best if only small files are edited. To set explicitly set the
 following in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (crystal :variables crystal-backend 'company-crystal)
 ```
 
@@ -61,7 +61,7 @@ same in all modes.
 
 To set explicitly do the following in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (crystal :variables
          crystal-backend 'lsp)
 ```
@@ -88,7 +88,7 @@ Installation instructions can be found on the main page of
 Although not in the installation instruction it seems that on macOS you
 can install it with Homebrew:
 
-``` {.bash org-language="sh"}
+``` bash
 brew install crystal-icr
 ```
 
@@ -108,22 +108,22 @@ Key bindings
 Crystal commands
 ----------------
 
-  Key binding   Description
-  ------------- -----------------------------------------------------------
-  `SPC m e b`   play-crystal submit buffer
-  `SPC m e e`   play-crystal show code in a browser
-  `SPC m e i`   download play-crystal snippet
-  `SPC m e r`   play-crystal submit region
-  `SPC m g G`   jump to definition in other window
-  `SPC m g a`   jump to matching spec file or back from spec to code file
-  `SPC m g g`   jump to definition
-  `SPC m t b`   run `crystal spec` for the current buffer
-  `SPC m t p`   run `crystal spec` for the current project
-  `SPC m u c`   show context
-  `SPC m u e`   show macro expansion
-  `SPC m u f`   format the current buffer
-  `SPC m u i`   show implementations for given call
-  `SPC m a x`   run `crystal run` for the current file
+| Key binding | Description                                               |
+|-------------|-----------------------------------------------------------|
+| `SPC m e b` | play-crystal submit buffer                                |
+| `SPC m e e` | play-crystal show code in a browser                       |
+| `SPC m e i` | download play-crystal snippet                             |
+| `SPC m e r` | play-crystal submit region                                |
+| `SPC m g G` | jump to definition in other window                        |
+| `SPC m g a` | jump to matching spec file or back from spec to code file |
+| `SPC m g g` | jump to definition                                        |
+| `SPC m t b` | run `crystal spec` for the current buffer                 |
+| `SPC m t p` | run `crystal spec` for the current project                |
+| `SPC m u c` | show context                                              |
+| `SPC m u e` | show macro expansion                                      |
+| `SPC m u f` | format the current buffer                                 |
+| `SPC m u i` | show implementations for given call                       |
+| `SPC m a x` | run `crystal run` for the current file                    |
 
 REPL
 ----
@@ -131,23 +131,23 @@ REPL
 Start a inferior crystal REPL process with `SPC m '​` or `SPC m s i`.
 Then you can send code to it with the bindings below:
 
-  Key binding   Description
-  ------------- ---------------------------------------------
-  `SPC m '​`    start inferior REPL process
-  `SPC m s B`   send buffer and switch to REPL
-  `SPC m s F`   send function definition and switch to REPL
-  `SPC m s R`   send region and switch to REPL
-  `SPC m s b`   send buffer
-  `SPC m s f`   send function definition
-  `SPC m s i`   start inferior REPL process
-  `SPC m s r`   send region
-  `SPC m s s`   switch to REPL
+| Key binding | Description                                 |
+|-------------|---------------------------------------------|
+| `SPC m '​`  | start inferior REPL process                 |
+| `SPC m s B` | send buffer and switch to REPL              |
+| `SPC m s F` | send function definition and switch to REPL |
+| `SPC m s R` | send region and switch to REPL              |
+| `SPC m s b` | send buffer                                 |
+| `SPC m s f` | send function definition                    |
+| `SPC m s i` | start inferior REPL process                 |
+| `SPC m s r` | send region                                 |
+| `SPC m s s` | switch to REPL                              |
 
 Ameba
 -----
 
-  Key binding     Description
-  --------------- ------------------------------------------------
-  `SPC m u a d`   Prompts from a directory on which to run Ameba
-  `SPC m u a f`   Runs Ameba on the current visited file
-  `SPC m u a p`   Runs Ameba on the entire project
+| Key binding   | Description                                    |
+|---------------|------------------------------------------------|
+| `SPC m u a d` | Prompts from a directory on which to run Ameba |
+| `SPC m u a f` | Runs Ameba on the current visited file         |
+| `SPC m u a p` | Runs Ameba on the entire project               |

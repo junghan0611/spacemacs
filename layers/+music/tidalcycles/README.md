@@ -33,28 +33,28 @@ binding `C-RET`.
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -----------------------
-  `SPC m RET`   Run block near cursor
-  `SPC m t s`   Start TidalCycles
-  `SPC m t q`   Quit TidalCycles
-  `SPC m r 1`   Run orbit d1
-  `SPC m r 2`   Run orbit d2
-  `SPC m r 3`   Run orbit d3
-  `SPC m r 4`   Run orbit d4
-  `SPC m r 5`   Run orbit d5
-  `SPC m r 6`   Run orbit d6
-  `SPC m r 7`   Run orbit d7
-  `SPC m r 8`   Run orbit d8
-  `SPC m r 9`   Run orbit d9
-  `SPC m s 1`   Stop orbit d1
-  `SPC m s 2`   Stop orbit d2
-  `SPC m s 3`   Stop orbit d3
-  `SPC m s 4`   Stop orbit d4
-  `SPC m s 5`   Stop orbit d5
-  `SPC m s 6`   Stop orbit d6
-  `SPC m s 7`   Stop orbit d7
-  `SPC m s 8`   Stop orbit d8
-  `SPC m s 9`   Stop orbit d9
-  `SPC m m u`   Unmute all orbits
-  `SPC m o u`   Unsolo all orbits
+| Key binding | Description           |
+|-------------|-----------------------|
+| `SPC m RET` | Run block near cursor |
+| `SPC m t s` | Start TidalCycles     |
+| `SPC m t q` | Quit TidalCycles      |
+| `SPC m r 1` | Run orbit d1          |
+| `SPC m r 2` | Run orbit d2          |
+| `SPC m r 3` | Run orbit d3          |
+| `SPC m r 4` | Run orbit d4          |
+| `SPC m r 5` | Run orbit d5          |
+| `SPC m r 6` | Run orbit d6          |
+| `SPC m r 7` | Run orbit d7          |
+| `SPC m r 8` | Run orbit d8          |
+| `SPC m r 9` | Run orbit d9          |
+| `SPC m s 1` | Stop orbit d1         |
+| `SPC m s 2` | Stop orbit d2         |
+| `SPC m s 3` | Stop orbit d3         |
+| `SPC m s 4` | Stop orbit d4         |
+| `SPC m s 5` | Stop orbit d5         |
+| `SPC m s 6` | Stop orbit d6         |
+| `SPC m s 7` | Stop orbit d7         |
+| `SPC m s 8` | Stop orbit d8         |
+| `SPC m s 9` | Stop orbit d9         |
+| `SPC m m u` | Unmute all orbits     |
+| `SPC m o u` | Unsolo all orbits     |

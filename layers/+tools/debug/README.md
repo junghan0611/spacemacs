@@ -32,7 +32,7 @@ want to add additional debuggers, add them to the
 compatible by checking
 [here](https://github.com/realgud/realgud/wiki/Debuggers-Available).
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
               '((debug :variables debug-additional-debuggers '("remake"))))
 ```
@@ -43,26 +43,26 @@ Key bindings
 Major Mode
 ----------
 
-  Key binding   Description
-  ------------- -----------------
-  `SPC m d d`   open cmd buffer
+| Key binding | Description     |
+|-------------|-----------------|
+| `SPC m d d` | open cmd buffer |
 
 Debugger
 --------
 
-  Key binding   Description
-  ------------- ----------------------
-  `bb`          set break
-  `bc`          clear break
-  `bd`          delete break
-  `bs`          disable break
-  `be`          enable break
-  `c`           continue
-  `i`           step into
-  `J`           jump to current line
-  `o`           step out
-  `q`           quit debug
-  `r`           restart
-  `s`           step over
-  `S`           goto cmd buffer
-  `v`           eval variable
+| Key binding | Description          |
+|-------------|----------------------|
+| `bb`        | set break            |
+| `bc`        | clear break          |
+| `bd`        | delete break         |
+| `bs`        | disable break        |
+| `be`        | enable break         |
+| `c`         | continue             |
+| `i`         | step into            |
+| `J`         | jump to current line |
+| `o`         | step out             |
+| `q`         | quit debug           |
+| `r`         | restart              |
+| `s`         | step over            |
+| `S`         | goto cmd buffer      |
+| `v`         | eval variable        |

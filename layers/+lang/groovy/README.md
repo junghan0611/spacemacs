@@ -41,7 +41,7 @@ in your dotfile. This mode only provides very limited IDE capabilities.
 Used best if only small scripts are edited. To set explicitly set the
 following in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (groovy :variables groovy-backend 'company-groovy)
 ```
 
@@ -55,7 +55,7 @@ same in all modes.
 
 To set explicitly do the following in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (groovy :variables
         groovy-backend 'lsp
         groovy-lsp-jar-path "path/to/groovy/lsp/jar-all.jar")
@@ -81,19 +81,19 @@ Key bindings
 Imports
 -------
 
-  Key binding   Description
-  ------------- ------------------------------------
-  `SPC m r i`   Add import for symbol around point
+| Key binding | Description                        |
+|-------------|------------------------------------|
+| `SPC m r i` | Add import for symbol around point |
 
 REPL
 ----
 
-  Key binding   Description
-  ------------- -------------------------------------------------------
-  `SPC m s b`   send buffer to REPL and stay in buffer
-  `SPC m s B`   send buffer and and switch to REPL buffer
-  `SPC m s e`   send sexp in front of the cursor to the REPL
-  `SPC m s f`   send function to REPL and stay in buffer
-  `SPC m s F`   send function to REPL and switch to REPL buffer
-  `SPC m s r`   send current region to REPL and stay in buffer
-  `SPC m s R`   send current region to REPL and switch to REPL buffer
+| Key binding | Description                                           |
+|-------------|-------------------------------------------------------|
+| `SPC m s b` | send buffer to REPL and stay in buffer                |
+| `SPC m s B` | send buffer and and switch to REPL buffer             |
+| `SPC m s e` | send sexp in front of the cursor to the REPL          |
+| `SPC m s f` | send function to REPL and stay in buffer              |
+| `SPC m s F` | send function to REPL and switch to REPL buffer       |
+| `SPC m s r` | send current region to REPL and stay in buffer        |
+| `SPC m s R` | send current region to REPL and switch to REPL buffer |

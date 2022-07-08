@@ -18,6 +18,6 @@ need to add `lobsters` to the existing
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -----------------------------------
-  `SPC a w l`   `helm-lobsters` or `ivy-lobsters`
+| Key binding | Description                       |
+|-------------|-----------------------------------|
+| `SPC a w l` | `helm-lobsters` or `ivy-lobsters` |

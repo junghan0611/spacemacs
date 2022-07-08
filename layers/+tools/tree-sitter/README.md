@@ -28,7 +28,7 @@ Configure
 =========
 
 **Note**: Enabled features *should* override existing mechanisms
-seamlessly. For example, there\'s no need to separately disable
+seamlessly. For example, there's no need to separately disable
 regexp-based syntax highlighting, and in general you do not need to
 update key bindings to point to new tree-sitter-based commands.
 
@@ -44,15 +44,15 @@ Currently only Rust is supported. Default: `nil`.
 Set `tree-sitter-fold-enable t` for code folding, provided by
 [`ts-fold`](https://github.com/jcs090218/ts-fold). If you use a
 `dotspacemacs-editing-style` other than `'vim` or a
-`dotspacemacs-folding-method` other than `'evil`, it\'s likely that
-you\'ll find the integration with `ts-fold` wanting. Contributions are
+`dotspacemacs-folding-method` other than `'evil`, it's likely that
+you'll find the integration with `ts-fold` wanting. Contributions are
 encouraged! Default: `nil`.
 
 Set `spacemacs-tree-sitter-hl-black-list` for a list of modes that
 should not enable highlight by `tree-sitter-hl-mode`, such as `js2-mode`
 and `rjsx-mode` for example.
 
-``` {.elisp}
+``` elisp
 (setq-default dotspacemacs-configuration-layers
               (tree-sitter :variables
                            spacemacs-tree-sitter-hl-black-list '(js2-mode rjsx-mode)

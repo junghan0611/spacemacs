@@ -37,7 +37,7 @@ Clipboard Manager Integration
 Clipboard manager integration can be enabled by setting
 `xclipboard-enable-cliphist` to `t`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 dotspacemacs-configuration-layers '(
   (xclipboard :variables xclipboard-enable-cliphist t))
 ```
@@ -48,7 +48,7 @@ Custom Copy Paste Command
 Setting `xclipboard-copy-command` for copy, `xclipboard-paste-command`
 for paste.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 dotspacemacs-configuration-layers '(
   (xclipboard :variables xclipboard-copy-command "utf8clip.exe"))
 ```
@@ -56,10 +56,10 @@ dotspacemacs-configuration-layers '(
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- --------------------------------------------------------------
-  `SPC x p`     Paste clipboard contents at cursor position
-  `SPC x y`     Copy selection to clipboard
-  `SPC x P`     paste item from history (cliphist must be enabled)
-  `SPC x R`     rectangle paste item from history (cliphist must be enabled)
-  `SPC x s`     select item from history (cliphist must be enabled)
+| Key binding | Description                                                  |
+|-------------|--------------------------------------------------------------|
+| `SPC x p`   | Paste clipboard contents at cursor position                  |
+| `SPC x y`   | Copy selection to clipboard                                  |
+| `SPC x P`   | paste item from history (cliphist must be enabled)           |
+| `SPC x R`   | rectangle paste item from history (cliphist must be enabled) |
+| `SPC x s`   | select item from history (cliphist must be enabled)          |

@@ -16,13 +16,13 @@ To use this configuration layer, add it to your `~/.spacemacs`.
 
 To install `prettier` globally:
 
-``` {.bash org-language="sh"}
+``` bash
 $ npm install -g prettier
 ```
 
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- -----------------------------------
-  `SPC m = =`   format buffer in supported layers
+| Key binding | Description                       |
+|-------------|-----------------------------------|
+| `SPC m = =` | format buffer in supported layers |

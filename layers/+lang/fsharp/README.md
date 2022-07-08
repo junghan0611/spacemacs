@@ -45,7 +45,7 @@ fsharp file is opened.
 This backend is best used if small applications are edited. To set
 explicitly set the following in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (fsharp :variables fsharp-backend 'eglot)
 ```
 
@@ -61,7 +61,7 @@ same in all modes.
 
 To set explicitly do the following in your dotfile:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (fsharp :variables
         fsharp-backend 'lsp)
 ```
@@ -77,20 +77,20 @@ intellisense config for LSP.
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ----------------------
-  `SPC m c c`   Build the project
-  `SPC m g a`   Go to alternate file
+| Key binding | Description          |
+|-------------|----------------------|
+| `SPC m c c` | Build the project    |
+| `SPC m g a` | Go to alternate file |
 
 REPL
 ----
 
-  Key binding                 Description
-  --------------------------- ------------------------------------------------------------------
-  `SPC m s b`                 Send buffer to the REPL
-  `SPC m s B`                 Send buffer to the REPL and switch to the REPL in `insert state`
-  `SPC m s i` or `SPC m '​`   Start a REPL process
-  `SPC m s p`                 Send phrase to the REPL
-  `SPC m s P`                 Send phrase to the REPL and switch to the REPL in `insert state`
-  `SPC m s r`                 Send region to the REPL
-  `SPC m s R`                 Send region to the REPL and switch to the REPL in `insert state`
+| Key binding               | Description                                                      |
+|---------------------------|------------------------------------------------------------------|
+| `SPC m s b`               | Send buffer to the REPL                                          |
+| `SPC m s B`               | Send buffer to the REPL and switch to the REPL in `insert state` |
+| `SPC m s i` or `SPC m '​` | Start a REPL process                                             |
+| `SPC m s p`               | Send phrase to the REPL                                          |
+| `SPC m s P`               | Send phrase to the REPL and switch to the REPL in `insert state` |
+| `SPC m s r`               | Send region to the REPL                                          |
+| `SPC m s R`               | Send region to the REPL and switch to the REPL in `insert state` |

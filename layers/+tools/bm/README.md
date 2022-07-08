@@ -31,6 +31,6 @@ list in this file.
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- --------------------
-  `SPC a t b`   bm transient state
+| Key binding | Description        |
+|-------------|--------------------|
+| `SPC a t b` | bm transient state |

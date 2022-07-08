@@ -27,7 +27,7 @@ achieve. Is there a package that provides the functionality you are
 after, and you want to integrate it in Spacemacs? If yes, you should
 write a layer. Are you trying to implement a new feature that would be
 useful for the Emacs community at large? In that case, consider whether
-it wouldn\'t be more appropriate to write a package first, and then a
+it wouldn't be more appropriate to write a package first, and then a
 layer that uses your package.
 
 The Emacs loading process
@@ -56,14 +56,14 @@ How is this done in Emacs, and how is it done in Spacemacs?
 
 The simplest way to load a file is to call `load-file`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (load-file "~/elisp/foo.el")
 ```
 
 This is as primitive as it comes. The path must be exact, and it does
-not have to be in the Emacs load path (we\'ll get to that later). It
-will not look for a byte-compiled `.elc` file. It will simply load
-exactly what you tell it to.
+not have to be in the Emacs load path (we'll get to that later). It will
+not look for a byte-compiled `.elc` file. It will simply load exactly
+what you tell it to.
 
 Features
 --------
@@ -72,7 +72,7 @@ A better way to load what you need is to use *features*. A feature is a
 symbol that typically has the same name as the file it resides in. Let
 us say you have the following contents in a file called `my-feature.el`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ;; Your code goes here ...
 
 (provide 'my-feature)
@@ -80,7 +80,7 @@ us say you have the following contents in a file called `my-feature.el`.
 
 To have Emacs load this file, call `require`, as such:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (require 'my-feature)
 ```
 
@@ -106,7 +106,7 @@ This is nothing more than a list of paths where elisp files can be
 found, and you can inspect it through `SPC h d v load-path` in
 Spacemacs. To add to the load path, simply add to this list, e.g.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (add-to-list 'load-path "/some/path/")
 ```
 
@@ -120,17 +120,17 @@ find the files on disk but a long list of calls to `require` at startup
 would still cause Emacs to take forever to load.
 
 Emacs uses auto-loading to solve this problem. When a function is
-registered as auto-loading, an \"empty\" definition is provided. When
-that function is called, the file that provides the function is
-immediately loaded (along with all its required features). Finally, the
-\"empty\" function is substituted with the real one and called normally.
-The end user will see only a slight delay when first calling the
-function, while subsequent calls to that function (or any other function
-loaded as part of the same procedure) will be as quick as normal.
+registered as auto-loading, an "empty" definition is provided. When that
+function is called, the file that provides the function is immediately
+loaded (along with all its required features). Finally, the "empty"
+function is substituted with the real one and called normally. The end
+user will see only a slight delay when first calling the function, while
+subsequent calls to that function (or any other function loaded as part
+of the same procedure) will be as quick as normal.
 
 To register a function as auto-loadable, we call `autoload`:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (autoload 'some-function "some-file")
 ```
 
@@ -138,7 +138,7 @@ This instructs Emacs that whenever `some-function` is called, load
 `some-file.el` first, and then proceed.
 
 After evaluating the above code, you can try to inspect `some-function`
-by doing `SPC h d f some-function`. It will say it\'s an auto-loaded
+by doing `SPC h d f some-function`. It will say it's an auto-loaded
 function, and that nothing else is known about it until it is loaded.
 The call to `autoload` can optionally include more information, such as
 a doc-string, whether the function can be called interactively, and so
@@ -148,10 +148,10 @@ actually load the file first.
 Open your `elpa` directory, go to `helm` and look at the file
 `helm-autoloads.el`. This provides all the auto-loads for all the files
 in Helm. However, this file is not written by hand. Instead, it is
-automatically generated from \"magic\" comments in the source code of
+automatically generated from "magic" comments in the source code of
 Helm. They look like this:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ;;;###autoload
 (defun my-function ()
   ;; Source code...
@@ -162,7 +162,7 @@ The magic comment `;;;###autoload` instructs Emacs that the following
 definition should be auto-loaded. This automatically generates an
 appropriate call to `autoload`.
 
-Things that can be auto-loaded generally involve anything \"definable\",
+Things that can be auto-loaded generally involve anything "definable",
 such as functions, macros, major or minor modes, groups, classes, and so
 on.
 
@@ -172,7 +172,7 @@ into the auto-loading file. For example, this code will load Helm on
 startup, long before your file is actually evaluated, probably not what
 was intended:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 ;;;###autoload
 (require 'helm)
 ```
@@ -195,7 +195,7 @@ autoloading, because the configuration code must also be deferred.
 Emacs offers `with-eval-after-load` for this purpose. It can be used
 like this:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (with-eval-after-load 'helm
      ;; Code
      )
@@ -220,14 +220,14 @@ The aspiring layer author is recommended to have a look at the
 `use-package` [documentation](https://github.com/jwiegley/use-package).
 Some examples follow.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (use-package helm)
 ```
 
 This simply loads Helm. It is essentially equivalent to
 `(require 'helm)`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (use-package helm
   :defer t)
 ```
@@ -236,7 +236,7 @@ This defers the loading of Helm using the auto-load facility and the
 auto-load commands provided by the Helm source code. It is, in fact, a
 no-op.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (use-package helm
   :defer t
   :init
@@ -252,7 +252,7 @@ the `:config` section is not executed until after loading, if ever. It
 is essentially equivalent to simply running the `:init` block, and then
 adding the `:config` block in an `with-eval-after-load`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (use-package helm
   :commands (helm-find-files helm-M-x))
 ```
@@ -260,7 +260,7 @@ adding the `:config` block in an `with-eval-after-load`.
 This creates auto-load references for additional commands, if you find
 that the package author has been slacking.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (use-package ruby-mode
   :mode "\\.rb\\'")
 ```
@@ -277,7 +277,7 @@ Use-package supports heaps of useful keywords. Look at the
 Anatomy of a layer
 ==================
 
-A layer is simply a folder somewhere in Spacemacs\'s layer search path
+A layer is simply a folder somewhere in Spacemacs's layer search path
 that usually contains these files (listed in loading order).
 
 -   declare additional layers
@@ -300,7 +300,7 @@ additional layers can be declared.
 For instance, if layer A depends on some functionality of layer B, then
 in the file `layers.el` of layer A, we can add:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (configuration-layer/declare-layer 'B)
 ```
 
@@ -319,7 +319,7 @@ It must define a variable called `<layer>-packages`, which should be a
 list of all the packages that this layer needs. Some valid package
 specifications are as follows:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (defconst mylayer-packages
   '(
     ;; Get the package from MELPA, ELPA, etc.
@@ -392,7 +392,7 @@ This file is loaded after `packages.el` and before `config.el`.
 It is good practice to guard the definition of functions to make sure a
 package is actually used. For instance:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (when (configuration-layer/package-used-p 'my-package)
   (defun spacemacs/my-package-enable () ...)
   (defun spacemacs/my-package-disable () ...))
@@ -404,7 +404,7 @@ By guarding these functions we avoid defining them when the package
 config.el
 ---------
 
-This file configures the layer by declaring layer variables\' default
+This file configures the layer by declaring layer variables' default
 values and setting up some other variables related to the layer.
 
 This file is loaded after `funcs.el`.
@@ -442,7 +442,7 @@ The Spacemacs loading process can be summarized as follows:
     -   there must be at least one `<layer>/init-<package>` function
         defined for it.
 
-    Alternatively, if a package is part of the end user\'s
+    Alternatively, if a package is part of the end user's
     `dotspacemacs-additional-packages`, it will also be installed.
 3.  All packages which should be installed are installed in alphabetical
     order, `package.el` built-in Emacs library is in charge of implicit
@@ -460,8 +460,8 @@ for it. A layer does **not** own a package if it only defines `pre-init`
 or `post-init` functions.
 
 Only one layer may own a package. Since layers are processed in order of
-specification in the user\'s dotfile, it is possible for layers to
-\"seize\" ownership of a package that was owned by a previously enabled
+specification in the user's dotfile, it is possible for layers to
+"seize" ownership of a package that was owned by a previously enabled
 layer.
 
 Case study: auto-completion
@@ -546,11 +546,11 @@ order of the layers in the dotfile (like the ownership stealing
 mechanism).
 
 If `:can-shadow` property is set explicitly to `nil` in the dotfile then
-the layer won\'t shadow any layer.
+the layer won't shadow any layer.
 
 For instance to install both ivy and helm layer:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq dotspacemacs-configuration-layers
  '(
    ivy
@@ -562,7 +562,7 @@ note that due to the commutative relation `can-shadow` the above example
 can also be written like this (in this case, `:can-shadow` should be
 read `:can-be-shawdowed`):
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq dotspacemacs-configuration-layers
 '(
   (ivy :can-shadow nil)
@@ -599,10 +599,10 @@ Use-package hooks
 
 Spacemacs includes a macro for adding more code to the `:init` or
 `:config` blocks of a call to `use-package`, after the fact. This is
-useful for `pre-init` or `post-init` functions to \"inject\" code into
-the `use-package` call of the `init` function.
+useful for `pre-init` or `post-init` functions to "inject" code into the
+`use-package` call of the `init` function.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (spacemacs|use-package-add-hook helm
   :pre-init
   ;; Code

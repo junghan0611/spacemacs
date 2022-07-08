@@ -62,7 +62,7 @@ Choosing a backend
 
 To choose a default backend set the layer variable `python-backend`:
 
-``` {.elisp}
+``` elisp
 (python :variables python-backend 'anaconda)
 ```
 
@@ -74,7 +74,7 @@ Backend can be chosen on a per project basis using directory local
 variables (files named `.dir-locals.el` at the root of a project), an
 example to use the `lsp` backend:
 
-``` {.elisp}
+``` elisp
 ;;; Directory Local Variables
 ;;; For more information see (info "(emacs) Directory Variables")
 
@@ -86,10 +86,10 @@ example to use the `lsp` backend:
 
 The available options are:
 
-  symbol       description
-  ------------ ---------------------------
-  \'anaconda   Default
-  \'lsp        python-lsp-server package
+| symbol    | description               |
+|-----------|---------------------------|
+| 'anaconda | Default                   |
+| 'lsp      | python-lsp-server package |
 
 Backends
 ========
@@ -101,7 +101,7 @@ Anaconda
 it does not work and you may encounter the following message when
 opening a python buffer:
 
-``` {.example}
+``` example
 Blocking call to accept-process-output with quit inhibited!!
 ```
 
@@ -109,7 +109,7 @@ To fix this, install the `anaconda-mode`
 [anaconda-deps](https://github.com/proofit404/anaconda-mode/wiki) by
 hand:
 
-``` {.bash org-language="sh"}
+``` bash
 pip install --upgrade "jedi>=0.13.0" "json-rpc>=1.8.1" "service_factory>=0.1.5"
 ```
 
@@ -119,7 +119,7 @@ details.
 
 Source: <https://github.com/proofit404/anaconda-mode#issues>
 
-If you are facing errors such as \"Unable to run anaconda-mode server\",
+If you are facing errors such as "Unable to run anaconda-mode server",
 try setting your `PYTHONPATH` as explained at
 <https://github.com/proofit404/anaconda-mode#pythonpath>
 
@@ -129,22 +129,22 @@ Language Server Protocol
 The `lsp` backend can use either of the following language server
 implementations:
 
-  symbol      description
-  ----------- ------------------------------------------------------------------------------------
-  \'pylsp     [python-lsp-server package](https://pypi.org/project/python-lsp-server/) (default)
-  \'mspyls    [Microsoft python language server](https://github.com/emacs-lsp/lsp-python-ms)
-  \'pyright   [Microsoft pyright language server](https://github.com/emacs-lsp/lsp-pyright)
+| symbol   | description                                                                        |
+|----------|------------------------------------------------------------------------------------|
+| 'pylsp   | [python-lsp-server package](https://pypi.org/project/python-lsp-server/) (default) |
+| 'mspyls  | [Microsoft python language server](https://github.com/emacs-lsp/lsp-python-ms)     |
+| 'pyright | [Microsoft pyright language server](https://github.com/emacs-lsp/lsp-pyright)      |
 
 `pylsp` is used by default - to use the Microsoft python language
 server, set the `python-lsp-server` layer variable as follows:
 
-``` {.elisp}
+``` elisp
 (python :variables python-backend 'lsp python-lsp-server 'mspyls)
 ```
 
 To setup the pyright language server instead, use:
 
-``` {.elisp}
+``` elisp
 (python :variables python-backend 'lsp python-lsp-server 'pyright)
 ```
 
@@ -152,13 +152,13 @@ To setup the pyright language server instead, use:
 
 You need to install python language server:
 
-``` {.bash org-language="sh"}
+``` bash
 pip install python-lsp-server
 ```
 
 You may also be interested in installing all optional dependencies with
 
-``` {.bash org-language="sh"}
+``` bash
 pip install 'python-lsp-server[all]'
 ```
 
@@ -166,9 +166,9 @@ For more information on optional dependencies, as well as 3rd-party
 plugins, see [python-lsp-server
 repository](https://github.com/python-lsp/python-lsp-server).
 
-If you\'ve installed the language server and related packages as
-development dependencies in a pipenv environment, you\'ll want to set
-the `python-pipenv-activate` config variable to `t`. This activates your
+If you've installed the language server and related packages as
+development dependencies in a pipenv environment, you'll want to set the
+`python-pipenv-activate` config variable to `t`. This activates your
 pipenv before enabling the lsp backend. The same applies for
 `python-poetry-activate`.
 
@@ -177,7 +177,7 @@ pipenv before enabling the lsp backend. The same applies for
 Paraphrasing the instructions provided by the author of the
 `lsp-python-ms` package:
 
-``` {.bash org-language="sh"}
+``` bash
 git clone https://github.com/Microsoft/python-language-server.git
 cd python-language-server/src/LanguageServer/Impl
 dotnet build -c Release
@@ -192,7 +192,7 @@ The default package configuration assumes the executable is located in a
 folder included in your system path. To use the latest built version in
 a cloned git repo, use the `python-lsp-git-root` config variable, e.g.:
 
-``` {.elisp}
+``` elisp
 (setq-default dotspacemacs-configuration-layers
   '((python :variables
             python-backend 'lsp
@@ -200,7 +200,7 @@ a cloned git repo, use the `python-lsp-git-root` config variable, e.g.:
             python-lsp-git-root "~/dev/python/python-language-server")))
 ```
 
-N.B. If you\'re using Arch linux or a derivative distribution, you can
+N.B. If you're using Arch linux or a derivative distribution, you can
 install the `microsoft-python-language-server` package from the AUR.
 
 ### Microsoft pyright language server
@@ -211,7 +211,7 @@ planned to be deprecated in favor of pyright. Pyright offers improved
 performance and better features compared to the old implementation. It
 can be installed via yarn or npm as follows:
 
-``` {.bash org-language="sh"}
+``` bash
 # via yarn
 yarn global add pyright
 # or via npm
@@ -226,7 +226,7 @@ Syntax checking
 
 Syntax checking uses `flake8` package:
 
-``` {.bash org-language="sh"}
+``` bash
 pip install flake8
 ```
 
@@ -237,7 +237,7 @@ Both `nose` and `pytest` are supported. By default `nose` is used. To
 choose your test runner set the layer variable `python-test-runner` to
 either `nose` or `pytest`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((python :variables python-test-runner 'pytest)))
 ```
@@ -245,7 +245,7 @@ either `nose` or `pytest`.
 If you need both then you can set `python-test-runner` to a list like
 this:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers
   '((python :variables python-test-runner '(pytest nose))))
 ```
@@ -272,7 +272,7 @@ One of [YAPF](https://github.com/google/yapf) (the default),
 formatter, via `python-formatter`, as `yapf`, `black` or `lsp`
 respectively.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (python :variables python-formatter 'yapf)))
 ```
@@ -295,7 +295,7 @@ To enable automatic buffer formatting on save set the variable
 `python-format-on-save` to `t`. The formatter specified by
 `python-formatter` will be used.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (python :variables python-format-on-save t)))
 ```
@@ -307,7 +307,7 @@ By default a buffer is automatically saved before tests are executed
 upon it, you can disable this feature by setting
 `python-save-before-test` to `nil`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq-default dotspacemacs-configuration-layers '(
   (python :variables python-save-before-test nil)))
 ```
@@ -318,7 +318,7 @@ autoflake
 To be able to suppress unused imports easily, install
 [autoflake](https://github.com/myint/autoflake):
 
-``` {.bash org-language="sh"}
+``` bash
 pip install autoflake
 ```
 
@@ -333,7 +333,7 @@ dap-mode debugger (only for lsp backend)
 
 To use `dap-mode` for debugging do:
 
-``` {.bash}
+``` bash
 pip install "ptvsd>=4.2"
 ```
 
@@ -358,7 +358,7 @@ Fill column
 If you want to customize the fill column value, use something like this
 inside the `user-init` function in your `.spacemacs`:
 
-``` {.elisp}
+``` elisp
 (setq-default dotspacemacs-configuration-layers '(
     (python :variables python-fill-column 99)))
 ```
@@ -371,7 +371,7 @@ If you want imports to be automatically sorted when you save a file
 `python-sort-imports-on-save` variable in the python layer config
 section:
 
-``` {.elisp}
+``` elisp
 (setq-default dotspacemacs-configuration-layers
   '((python :variables python-sort-imports-on-save t)))
 ```
@@ -383,7 +383,7 @@ Importmagic
 
 Install importmagic and epc for importmagic functionality.
 
-``` {.bash org-language="sh"}
+``` bash
 pip install importmagic epc
 ```
 
@@ -397,7 +397,7 @@ provides the variables `spacemacs--python-pyenv-modes`,
 `spacemacs--python-pipenv-modes`. If you wish to be able to access these
 functionalities from other modes, in your user config section, do:
 
-``` {.elisp}
+``` elisp
 (add-to-list 'spacemacs--python-pipenv-mode 'your-mode)
 ```
 
@@ -423,19 +423,19 @@ Spacemacs integration of virtual environments and virtualenvwrapper is
 provided by the [pyvenv](https://github.com/jorgenschaefer/pyvenv)
 package. It provides the following key bindings:
 
-  Key binding   Description
-  ------------- -------------------------------------------------
-  `SPC m v a`   activate a virtual environment in any directory
-  `SPC m v d`   deactivate active virtual environment
-  `SPC m v w`   work on virtual environment in `WORKON_HOME`
+| Key binding | Description                                     |
+|-------------|-------------------------------------------------|
+| `SPC m v a` | activate a virtual environment in any directory |
+| `SPC m v d` | deactivate active virtual environment           |
+| `SPC m v w` | work on virtual environment in `WORKON_HOME`    |
 
 ### Automatic activation of local virtual environment
 
 By default Spacemacs uses the
 [pyvenv](https://github.com/jorgenschaefer/pyvenv) package to manage
 virtual environments. Additionally it uses `pyvenv-tracking-mode` to
-activate a buffer\'s local virtual environment on change of focus.
-Pyvenv determines which virtual environment to use from the value of the
+activate a buffer's local virtual environment on change of focus. Pyvenv
+determines which virtual environment to use from the value of the
 `pyvenv-workon` or the `pyvenv-activate` buffer-local-variable.
 Spacemacs scans the project directory for a pattern `.venv`. If the
 found `.venv` is a directory then it sets that directory as the local
@@ -467,10 +467,10 @@ gives a good overview on how to use the tool. Spacemacs integration is
 provided by [pyenv mode](https://github.com/proofit404/pyenv-mode) which
 has the following key bindings.
 
-  Key binding   Description
-  ------------- ------------------------------------------------------------------------
-  `SPC m v s`   set a pyenv environment with [pyenv](https://github.com/pyenv/pyenv)
-  `SPC m v u`   unset a pyenv environment with [pyenv](https://github.com/pyenv/pyenv)
+| Key binding | Description                                                            |
+|-------------|------------------------------------------------------------------------|
+| `SPC m v s` | set a pyenv environment with [pyenv](https://github.com/pyenv/pyenv)   |
+| `SPC m v u` | unset a pyenv environment with [pyenv](https://github.com/pyenv/pyenv) |
 
 Pyenv can also manage virtual environments for each of the Python
 versions it has installed. Those will be listed alongside your Python
@@ -504,14 +504,14 @@ Spacemacs integration for pipenv is provided by the [pipenv
 package](https://github.com/pwalsh/pipenv.el). It provides the following
 key bindings:
 
-  Key binding     Description
-  --------------- ---------------------------------------------------------------------------------------------------
-  `SPC m v p a`   activate a pipenv environment with [pipenv](https://github.com/pwalsh/pipenv.el)
-  `SPC m v p d`   deactivate a pipenv environment with [pipenv](https://github.com/pwalsh/pipenv.el)
-  `SPC m v p i`   install a package into a virtual environment with [pipenv](https://github.com/pwalsh/pipenv.el)
-  `SPC m v p o`   open an installed module in a new buffer with [pipenv](https://github.com/pwalsh/pipenv.el)
-  `SPC m v p s`   open a shell buffer in the current environment with [pipenv](https://github.com/pwalsh/pipenv.el)
-  `SPC m v p u`   uninstall a package from a virtual environment with [pipenv](https://github.com/pwalsh/pipenv.el)
+| Key binding   | Description                                                                                       |
+|---------------|---------------------------------------------------------------------------------------------------|
+| `SPC m v p a` | activate a pipenv environment with [pipenv](https://github.com/pwalsh/pipenv.el)                  |
+| `SPC m v p d` | deactivate a pipenv environment with [pipenv](https://github.com/pwalsh/pipenv.el)                |
+| `SPC m v p i` | install a package into a virtual environment with [pipenv](https://github.com/pwalsh/pipenv.el)   |
+| `SPC m v p o` | open an installed module in a new buffer with [pipenv](https://github.com/pwalsh/pipenv.el)       |
+| `SPC m v p s` | open a shell buffer in the current environment with [pipenv](https://github.com/pwalsh/pipenv.el) |
+| `SPC m v p u` | uninstall a package from a virtual environment with [pipenv](https://github.com/pwalsh/pipenv.el) |
 
 Manage environments and packages with Poetry
 --------------------------------------------
@@ -524,11 +524,11 @@ Spacemacs integration for Poetry is provided by the
 [poetry](https://github.com/galaunay/poetry.el) package. It provides the
 following key bindings:
 
-  Key binding     Description
-  --------------- ---------------------------------------------------------------------
-  `SPC m v o d`   De-activate the virtualenv associated to the current poetry project
-  `SPC m v o a`   Activate the virtualenv associated to the current poetry project
-  `SPC m v o t`   Toggle the virtualenv associated to the current poetry project
+| Key binding   | Description                                                         |
+|---------------|---------------------------------------------------------------------|
+| `SPC m v o d` | De-activate the virtualenv associated to the current poetry project |
+| `SPC m v o a` | Activate the virtualenv associated to the current poetry project    |
+| `SPC m v o t` | Toggle the virtualenv associated to the current poetry project      |
 
 Key bindings
 ============
@@ -544,21 +544,21 @@ activating a virtual environment.
 
 Send code to inferior process commands:
 
-  Key binding   Description
-  ------------- --------------------------------------------------------------
-  `SPC m s s`   send region (or line when region not active) and show output
-  `SPC m s b`   send buffer and keep code buffer focused
-  `SPC m s B`   send buffer and switch to REPL in insert mode
-  `SPC m s e`   send statement and keep code buffer focused
-  `SPC m s E`   send statement and switch to REPL in insert mode
-  `SPC m s f`   send function and keep code buffer focused
-  `SPC m s F`   send function and switch to REPL in insert mode
-  `SPC m s i`   start inferior REPL process
-  `SPC m s l`   send line and keep code buffer focused
-  `SPC m s r`   send region and keep code buffer focused
-  `SPC m s R`   send region and switch to REPL in insert mode
-  `CTRL+j`      next item in REPL history
-  `CTRL+k`      previous item in REPL history
+| Key binding | Description                                                  |
+|-------------|--------------------------------------------------------------|
+| `SPC m s s` | send region (or line when region not active) and show output |
+| `SPC m s b` | send buffer and keep code buffer focused                     |
+| `SPC m s B` | send buffer and switch to REPL in insert mode                |
+| `SPC m s e` | send statement and keep code buffer focused                  |
+| `SPC m s E` | send statement and switch to REPL in insert mode             |
+| `SPC m s f` | send function and keep code buffer focused                   |
+| `SPC m s F` | send function and switch to REPL in insert mode              |
+| `SPC m s i` | start inferior REPL process                                  |
+| `SPC m s l` | send line and keep code buffer focused                       |
+| `SPC m s r` | send region and keep code buffer focused                     |
+| `SPC m s R` | send region and switch to REPL in insert mode                |
+| `CTRL+j`    | next item in REPL history                                    |
+| `CTRL+k`    | previous item in REPL history                                |
 
 Running Python Script in shell
 ------------------------------
@@ -568,10 +568,10 @@ start the Python script in comint mode. This is useful when working with
 multiple Python files since the REPL does not reload changes made in
 other modules.
 
-  Key binding   Description
-  ------------- ---------------------------------------------------------------------------
-  `SPC m c c`   Execute current file in a comint shell
-  `SPC m c C`   Execute current file in a comint shell and switch to it in `insert state`
+| Key binding | Description                                                               |
+|-------------|---------------------------------------------------------------------------|
+| `SPC m c c` | Execute current file in a comint shell                                    |
+| `SPC m c C` | Execute current file in a comint shell and switch to it in `insert state` |
 
 **Note:** With the universal argument `SPC u` you can enter a new
 compilation command.
@@ -582,31 +582,31 @@ Testing
 Test commands start with `m t`. To use the secondary test runner call
 the function with a prefix argument, for example `SPC u SPC m t a`.
 
-  No Debug      Description
-  ------------- ----------------------------------------------------------
-  `SPC m t a`   launch all tests of the project
-  `SPC m t b`   launch all tests of the current buffer (same as module)
-  `SPC m t l`   launch last tests
-  `SPC m t m`   launch all tests of the current module
-  `SPC m t s`   launch all tests of the current suite (only with `nose`)
-  `SPC m t t`   launch the current test (function)
+| No Debug    | Description                                              |
+|-------------|----------------------------------------------------------|
+| `SPC m t a` | launch all tests of the project                          |
+| `SPC m t b` | launch all tests of the current buffer (same as module)  |
+| `SPC m t l` | launch last tests                                        |
+| `SPC m t m` | launch all tests of the current module                   |
+| `SPC m t s` | launch all tests of the current suite (only with `nose`) |
+| `SPC m t t` | launch the current test (function)                       |
 
-  Debug         Description
-  ------------- ------------------------------------------------------------------------
-  `SPC m t A`   launch all tests of the project in debug mode
-  `SPC m t B`   launch all tests of the current buffer (module) in debug mode
-  `SPC m t M`   launch all tests of the current module in debug mode
-  `SPC m t S`   launch all tests of the current suite in debug mode (only with `nose`)
-  `SPC m t T`   launch the current test (function) in debug mode
+| Debug       | Description                                                            |
+|-------------|------------------------------------------------------------------------|
+| `SPC m t A` | launch all tests of the project in debug mode                          |
+| `SPC m t B` | launch all tests of the current buffer (module) in debug mode          |
+| `SPC m t M` | launch all tests of the current module in debug mode                   |
+| `SPC m t S` | launch all tests of the current suite in debug mode (only with `nose`) |
+| `SPC m t T` | launch the current test (function) in debug mode                       |
 
 Refactoring
 -----------
 
-  Key binding   Description
-  ------------- ---------------------------------------------------------------------------------------------
-  `SPC m r f`   fix a missing import statement with [importmagic](https://pypi.python.org/pypi/importmagic)
-  `SPC m r i`   remove unused imports with [autoflake](https://github.com/myint/autoflake)
-  `SPC m r I`   sort imports with [isort](https://pypi.python.org/pypi/isort)
+| Key binding | Description                                                                                 |
+|-------------|---------------------------------------------------------------------------------------------|
+| `SPC m r f` | fix a missing import statement with [importmagic](https://pypi.python.org/pypi/importmagic) |
+| `SPC m r i` | remove unused imports with [autoflake](https://github.com/myint/autoflake)                  |
+| `SPC m r I` | sort imports with [isort](https://pypi.python.org/pypi/isort)                               |
 
 Pip package management
 ----------------------
@@ -619,16 +619,16 @@ In python buffer type `SPC m P` to open buffer listing all installed
 
 In the package list buffer:
 
-  Key binding   Description
-  ------------- -------------------------------------------------------------
-  `RET`         follow link (`pippel-menu-visit-homepage`)
-  `d`           mark for deletion (`pippel-menu-mark-delete`)
-  `i`           prompt user for packages (`pippel-install-package`)
-  `m`           remove mark (`pippel-menu-mark-unmark`)
-  `r`           refresh package list (`pippel-list-packages`)
-  `U`           mark all upgradable (`pippel-menu-mark-all-upgrades`)
-  `u`           mark for upgrade (`pippel-menu-mark-upgrade`)
-  `x`           perform marked package menu actions (`pippel-menu-execute`)
+| Key binding | Description                                                 |
+|-------------|-------------------------------------------------------------|
+| `RET`       | follow link (`pippel-menu-visit-homepage`)                  |
+| `d`         | mark for deletion (`pippel-menu-mark-delete`)               |
+| `i`         | prompt user for packages (`pippel-install-package`)         |
+| `m`         | remove mark (`pippel-menu-mark-unmark`)                     |
+| `r`         | refresh package list (`pippel-list-packages`)               |
+| `U`         | mark all upgradable (`pippel-menu-mark-all-upgrades`)       |
+| `u`         | mark for upgrade (`pippel-menu-mark-upgrade`)               |
+| `x`         | perform marked package menu actions (`pippel-menu-execute`) |
 
 Live coding
 -----------
@@ -636,42 +636,42 @@ Live coding
 Live coding is provided by the
 [live-py-plugin.](https://github.com/donkirkby/live-py-plugin)
 
-  Key binding   Description
-  ------------- ---------------------
-  `SPC m l`     Toggle live-py-mode
+| Key binding | Description         |
+|-------------|---------------------|
+| `SPC m l`   | Toggle live-py-mode |
 
 Other Python commands
 ---------------------
 
-  Key binding                Description
-  -------------------------- -------------------------------------------------------------------------------------------
-  `SPC m =` or `SPC m = =`   reformat the buffer using default formatter specified in `python-formatter`
-  `SPC m d b`                toggle a breakpoint using `wdb`, `ipdb`, `pudb`, `pdb` or `python3.7` (and above)
-  `SPC m g a`                go to assignment using `anaconda-mode-find-assignments` (`C-o` to jump back)
-  `SPC m g b`                jump back
-  `SPC m g g`                go to definition using `anaconda-mode-find-definitions` (`C-o` to jump back)
-  `SPC m g u`                navigate between usages with `anaconda-mode-find-references`
-  `SPC m h d`                look for documentation using `helm-pydoc`
-  `SPC m h h`                quick documentation using anaconda
-  `SPC m h p`                quick documentation using pydoc (no-jedi, as `pydoc-at-point` seems broken)
-  `SPC m h P`                quick documentation using pydoc
-  `SPC m h H`                open documentation in `firefox` using [pylookup](https://github.com/tsgates/pylookup)
-  `SPC m S d`                insert doc-string skeleton using [sphinx-doc](https://github.com/naiquevin/sphinx-doc.el)
-  `SPC m v a`                activate a virtual environment in any directory
-  `SPC m v d`                deactivate active virtual environment
-  `SPC m v s`                set a pyenv environment with [pyenv](https://github.com/pyenv/pyenv)
-  `SPC m v u`                unset a pyenv environment with [pyenv](https://github.com/pyenv/pyenv)
-  `SPC m v w`                work on virtual environment in `WORKON_HOME`
-  `SPC m v p a`              activate pipenv in current project
-  `SPC m v p d`              deactivate pipenv in current project
-  `SPC m v p i`              install module into pipenv environment
-  `SPC m v p o`              open pipenv module in buffer
-  `SPC m v p s`              launch pipenv shell in current project
-  `SPC m v p u`              uninstall module from pipenv environment
+| Key binding              | Description                                                                               |
+|--------------------------|-------------------------------------------------------------------------------------------|
+| `SPC m =` or `SPC m = =` | reformat the buffer using default formatter specified in `python-formatter`               |
+| `SPC m d b`              | toggle a breakpoint using `wdb`, `ipdb`, `pudb`, `pdb` or `python3.7` (and above)         |
+| `SPC m g a`              | go to assignment using `anaconda-mode-find-assignments` (`C-o` to jump back)              |
+| `SPC m g b`              | jump back                                                                                 |
+| `SPC m g g`              | go to definition using `anaconda-mode-find-definitions` (`C-o` to jump back)              |
+| `SPC m g u`              | navigate between usages with `anaconda-mode-find-references`                              |
+| `SPC m h d`              | look for documentation using `helm-pydoc`                                                 |
+| `SPC m h h`              | quick documentation using anaconda                                                        |
+| `SPC m h p`              | quick documentation using pydoc (no-jedi, as `pydoc-at-point` seems broken)               |
+| `SPC m h P`              | quick documentation using pydoc                                                           |
+| `SPC m h H`              | open documentation in `firefox` using [pylookup](https://github.com/tsgates/pylookup)     |
+| `SPC m S d`              | insert doc-string skeleton using [sphinx-doc](https://github.com/naiquevin/sphinx-doc.el) |
+| `SPC m v a`              | activate a virtual environment in any directory                                           |
+| `SPC m v d`              | deactivate active virtual environment                                                     |
+| `SPC m v s`              | set a pyenv environment with [pyenv](https://github.com/pyenv/pyenv)                      |
+| `SPC m v u`              | unset a pyenv environment with [pyenv](https://github.com/pyenv/pyenv)                    |
+| `SPC m v w`              | work on virtual environment in `WORKON_HOME`                                              |
+| `SPC m v p a`            | activate pipenv in current project                                                        |
+| `SPC m v p d`            | deactivate pipenv in current project                                                      |
+| `SPC m v p i`            | install module into pipenv environment                                                    |
+| `SPC m v p o`            | open pipenv module in buffer                                                              |
+| `SPC m v p s`            | launch pipenv shell in current project                                                    |
+| `SPC m v p u`            | uninstall module from pipenv environment                                                  |
 
 Debugger
 --------
 
-Using the `dap` layer you\'ll get access to all the DAP key bindings,
-see the complete list of key bindings on the [dap layer
+Using the `dap` layer you'll get access to all the DAP key bindings, see
+the complete list of key bindings on the [dap layer
 description](https://github.com/syl20bnr/spacemacs/tree/develop/layers/%2Btools/dap#key-bindings).

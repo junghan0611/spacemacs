@@ -5,7 +5,7 @@ Description
 
 This layer makes your Emacs sound like an IBM Selectric typewriter, for
 those moments when your loud, clicky mechanical keyboard is not at hand,
-yet, you\'d still wish to enjoy the sound.
+yet, you'd still wish to enjoy the sound.
 
 Features:
 ---------
@@ -24,9 +24,9 @@ need to add `selectric` to the existing
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- --------------------------
-  `SPC C-t t`   Toggle clicky key sounds
+| Key binding | Description              |
+|-------------|--------------------------|
+| `SPC C-t t` | Toggle clicky key sounds |
 
 Notes
 =====

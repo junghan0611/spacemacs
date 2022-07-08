@@ -25,7 +25,7 @@ Configuration
 You can get an OAUTH token for twitch
 [here](http://twitchapps.com/tmi/). Remove `oauth:` from the token.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 erc ;; optional
 (twitch :variables
         twitch-api-username "USERNAME"
@@ -35,16 +35,16 @@ erc ;; optional
 Key bindings
 ============
 
-  Key binding     Description
-  --------------- ------------------------------------------
-  `SPC a c i t`   Connect to Twitch irc via erc
-  `SPC a w s t`   Start twitch helm and search for streams
+| Key binding   | Description                              |
+|---------------|------------------------------------------|
+| `SPC a c i t` | Connect to Twitch irc via erc            |
+| `SPC a w s t` | Start twitch helm and search for streams |
 
 Twitch helm
 -----------
 
-  Key binding     Description
-  --------------- -----------------------------------------
-  `F1` or `RET`   Open stream in streamlink
-  `F2`            Join this stream in irc Twitch channel
-  `F3`            Open this stream in a browser (default)
+| Key binding   | Description                             |
+|---------------|-----------------------------------------|
+| `F1` or `RET` | Open stream in streamlink               |
+| `F2`          | Join this stream in irc Twitch channel  |
+| `F3`          | Open this stream in a browser (default) |

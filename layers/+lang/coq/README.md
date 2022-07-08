@@ -51,7 +51,7 @@ appropriate math symbol cannot be found in your **font**. You can either
 install a appropriate math font, or disable the feature by adding the
 following snippet to the your `dotspacemacs/user-config`.
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (with-eval-after-load 'company-coq
   (add-to-list 'company-coq-disabled-features 'prettify-symbols))
 ```
@@ -62,76 +62,76 @@ Key bindings
 Laying out windows
 ------------------
 
-  Key binding   Description
-  ------------- -----------------------
-  `SPC m l c`   Clear response buffer
-  `SPC m l l`   Re-layout windows
-  `SPC m l p`   Show current proof
+| Key binding | Description           |
+|-------------|-----------------------|
+| `SPC m l c` | Clear response buffer |
+| `SPC m l l` | Re-layout windows     |
+| `SPC m l p` | Show current proof    |
 
 Managing prover process
 -----------------------
 
-  Key binding   Description
-  ------------- -----------------------------------------------------------------
-  `SPC m p i`   Interrupt prover
-  `SPC m p p`   Process buffer - processes and moves point to end of buffer
-  `SPC m p q`   Quit prover
-  `SPC m p r`   Retract buffer - rewinds and moves point to beginning of buffer
+| Key binding | Description                                                     |
+|-------------|-----------------------------------------------------------------|
+| `SPC m p i` | Interrupt prover                                                |
+| `SPC m p p` | Process buffer - processes and moves point to end of buffer     |
+| `SPC m p q` | Quit prover                                                     |
+| `SPC m p r` | Retract buffer - rewinds and moves point to beginning of buffer |
 
 Getting documentation
 ---------------------
 
-  Key binding   Description
-  ------------- -----------------------------------------------------------------
-  `SPC m h h`   Show documentation for whatever is below the cursor
-  `SPC m h e`   Show documentation for the error in the \`\*response\*\` buffer
-  `SPC m h E`   Browse all available documentation for errors
+| Key binding | Description                                                     |
+|-------------|-----------------------------------------------------------------|
+| `SPC m h h` | Show documentation for whatever is below the cursor             |
+| `SPC m h e` | Show documentation for the error in the \`\*response\*\` buffer |
+| `SPC m h E` | Browse all available documentation for errors                   |
 
 Prover queries
 --------------
 
-The mnemonic for `a` is \"ask\".
+The mnemonic for `a` is "ask".
 
-  Key binding     Description
-  --------------- ---------------------------------------------
-  `SPC m a a`     Print
-  `SPC m a A`     Print (showing all)
-  `SPC m a b`     About
-  `SPC m a B`     About (showing all)
-  `SPC m a c`     Check
-  `SPC m a C`     Check (showing all)
-  `SPC m a f`     Search (mnemonic: \"find theorems\")
-  `SPC m a i b`   About (showing implicits)
-  `SPC m a i c`   Check (showing implicits)
-  `SPC m a i i`   Print (showing implicits)
-  `SPC m a o`     Show an outline of the current proof script
+| Key binding   | Description                                 |
+|---------------|---------------------------------------------|
+| `SPC m a a`   | Print                                       |
+| `SPC m a A`   | Print (showing all)                         |
+| `SPC m a b`   | About                                       |
+| `SPC m a B`   | About (showing all)                         |
+| `SPC m a c`   | Check                                       |
+| `SPC m a C`   | Check (showing all)                         |
+| `SPC m a f`   | Search (mnemonic: "find theorems")          |
+| `SPC m a i b` | About (showing implicits)                   |
+| `SPC m a i c` | Check (showing implicits)                   |
+| `SPC m a i i` | Print (showing implicits)                   |
+| `SPC m a o`   | Show an outline of the current proof script |
 
 Moving the point
 ----------------
 
-  Key binding   Description
-  ------------- ---------------------------------
-  `SPC m g e`   Go to end of command at point
-  `SPC m g g`   Go to definition at point
-  `SPC m g l`   Go to last processed command
-  `SPC m g s`   Go to start of command at point
+| Key binding | Description                     |
+|-------------|---------------------------------|
+| `SPC m g e` | Go to end of command at point   |
+| `SPC m g g` | Go to definition at point       |
+| `SPC m g l` | Go to last processed command    |
+| `SPC m g s` | Go to start of command at point |
 
 Inserting
 ---------
 
-  Key binding       Description
-  ----------------- -----------------------------------------------------------------
-  `SPC m M-RET`     Insert regular match branch
-  `SPC m M-S-RET`   Insert `match goal with` branch
-  `SPC m i c`       Insert a vernacular command
-  `SPC m i e`       Insert `End <section-name>`
-  `SPC m i i`       Insert `intros` with default variable names
-  `SPC m i l`       Extract lemma from current goal - exit with `C-RET` (not `C-j`)
-  `SPC m i m`       Insert `match` on a type
-  `SPC m i r`       Insert a `Require` statement
-  `SPC m i s`       Insert a `Section` or `Module`
-  `SPC m i t`       Insert a tactic
-  `SPC m i T`       Insert a tactical
+| Key binding     | Description                                                     |
+|-----------------|-----------------------------------------------------------------|
+| `SPC m M-RET`   | Insert regular match branch                                     |
+| `SPC m M-S-RET` | Insert `match goal with` branch                                 |
+| `SPC m i c`     | Insert a vernacular command                                     |
+| `SPC m i e`     | Insert `End <section-name>`                                     |
+| `SPC m i i`     | Insert `intros` with default variable names                     |
+| `SPC m i l`     | Extract lemma from current goal - exit with `C-RET` (not `C-j`) |
+| `SPC m i m`     | Insert `match` on a type                                        |
+| `SPC m i r`     | Insert a `Require` statement                                    |
+| `SPC m i s`     | Insert a `Section` or `Module`                                  |
+| `SPC m i t`     | Insert a tactic                                                 |
+| `SPC m i T`     | Insert a tactical                                               |
 
 Note the last two are regular `company-coq` bindings, left alone since
 they are most useful in insert mode. The full `company-coq` tutorial
@@ -142,6 +142,6 @@ company-coq-tutorial`.
 Options
 -------
 
-  Key binding   Description
-  ------------- -----------------------------
-  `SPC m T e`   Toggle electric terminator.
+| Key binding | Description                 |
+|-------------|-----------------------------|
+| `SPC m T e` | Toggle electric terminator. |

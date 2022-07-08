@@ -18,7 +18,7 @@ need to add `pianobar` to the existing
 
 For example:
 
-``` {.emacs-elisp}
+``` emacs-elisp
 dotspacemacs-configuration-layers
    '((pianobar :variables pianobar-config t))
 ```
@@ -28,7 +28,7 @@ Configure
 
 Below is an example configuration from MacOS:
 
-``` {.bash}
+``` bash
 $ cat ~/.config/pianobar/config
 user = foobar@gmail.com
 password = 295TkBbHZiKwnDnQYhJW 
@@ -55,11 +55,11 @@ autostart station.
 Key bindings
 ============
 
-  Key binding     Description
-  --------------- ------------------------
-  `SPC a m p p`   Play or pause Pianobar
-  `SPC a m p n`   Go to the next track
-  `SPC a m p +`   Love current song
-  `SPC a m p -`   Ban current song
-  `SPC a m p t`   Tired of current song
-  `SPC a m p s`   Switch station
+| Key binding   | Description            |
+|---------------|------------------------|
+| `SPC a m p p` | Play or pause Pianobar |
+| `SPC a m p n` | Go to the next track   |
+| `SPC a m p +` | Love current song      |
+| `SPC a m p -` | Ban current song       |
+| `SPC a m p t` | Tired of current song  |
+| `SPC a m p s` | Switch station         |

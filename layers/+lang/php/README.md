@@ -43,24 +43,24 @@ different setup instructions and different capabilities.
 
 ### LSP
 
-Note that you\'ll need to use the `lsp` layer to enable these backends.
+Note that you'll need to use the `lsp` layer to enable these backends.
 
 1.  intelephense
 
     This is the recommended LSP server solution. To activate it set the
     layer variable `php-backend`:
 
-    ``` {.commonlisp org-language="emacs-lisp"}
+    ``` commonlisp
     (php :variables php-backend 'lsp)
     ```
 
     and install the npm server with:
 
-    ``` {.bash org-language="sh"}
+    ``` bash
     npm install -g intelephense
     ```
 
-    You can find further information on the project\'s
+    You can find further information on the project's
     [website](http://intelephense.net/) and [GitHub
     page](https://github.com/bmewburn/vscode-intelephense).
 
@@ -71,12 +71,12 @@ Note that you\'ll need to use the `lsp` layer to enable these backends.
     `php-backend` like for the intelephense backend and install the
     server via [composer](https://getcomposer.org/):
 
-    ``` {.bash org-language="sh"}
+    ``` bash
     composer require felixfbecker/language-server
     composer run-script --working-dir=vendor/felixfbecker/language-server parse-stubs
     ```
 
-    You can find further information on the project\'s [GitHub
+    You can find further information on the project's [GitHub
     page](https://github.com/felixfbecker/php-language-server).
 
 3.  Debugging
@@ -105,20 +105,20 @@ Note that you\'ll need to use the `lsp` layer to enable these backends.
 
     For xdebug v2:
 
-    ``` {.bash org-language="sh"}
+    ``` bash
     php -d xdebug.idekey=PHPSTORM -d xdebug.remote_autostart=1 -d xdebug.remote_enable=1 -d xdebug.remote_host=127.0.0.1 -d xdebug.remote_port=9000 bin/phpunit ./path/to/Test.php
     ```
 
     For xdebug v3:
 
-    ``` {.bash org-language="sh"}
+    ``` bash
     php -d xdebug.idekey=PHPSTORM -d xdebug.start_with_request=yes -d xdebug.mode=debug -d xdebug.client_host=127.0.0.1 -d xdebug.client_port=9000 bin/phpunit ./path/to/Test.php
     ```
 
     Make sure You use the proper host. For example both `localhost` and
     `127.0.0.1` most likely will not work while debugging inside of
     docker. You have to use either `host.docker.internal` or Your
-    machine\'s external IP if it doesn\'t work. See [this docker
+    machine's external IP if it doesn't work. See [this docker
     issue](https://github.com/docker/for-linux/issues/264) for reasons
     of troubles with `host.docker.internal`.
 
@@ -134,7 +134,7 @@ Note that you\'ll need to use the `lsp` layer to enable these backends.
     spacemacs it could be done for example by adding a next call to
     `dotspacemacs/user-config` function of Your `.spacemacs` config:
 
-    ``` {.commonlisp org-language="emacs-lisp"}
+    ``` commonlisp
     (with-eval-after-load 'dap-php
       (dap-register-debug-template "PHP debug with custom path"
         (list :type "php"
@@ -152,7 +152,7 @@ This is a non server solution working entirely from an elisp package.
 This requires no installation of external services but also delivers the
 least amount of IDE like integrations with spacemacs.
 
-To activate it just don\'t set the variable `php-backend` in your
+To activate it just don't set the variable `php-backend` in your
 dotfile. Remember that additional setup instructions are necessary on a
 per project basis which you can find below.
 
@@ -165,7 +165,7 @@ per project basis which you can find below.
 
     1.  Run the following
 
-        ``` {.shell}
+        ``` shell
         cd /root/of/project
         touch .ac-php-conf.json
         ```
@@ -192,7 +192,7 @@ per project basis which you can find below.
     [phpactor.el](https://github.com/emacs-php/phpactor.el). To ensure
     that the phpactor package is intact, just run
     `M-x phpactor-install-or-update` and the package itself will make
-    sure that you\'re good to go.
+    sure that you're good to go.
 
 3.  Debugging
 
@@ -206,10 +206,10 @@ Key bindings
 General
 -------
 
-  Key binding   Description
-  ------------- -------------------------
-  `SPC m g g`   jump to define at point
-  `C-t`         jump back
+| Key binding | Description             |
+|-------------|-------------------------|
+| `SPC m g g` | jump to define at point |
+| `C-t`       | jump back               |
 
 Refactoring for non LSP backends
 --------------------------------
@@ -218,68 +218,68 @@ For more precise insights on the meaning of the key bindings please
 refer to [phpactor API
 reference.](https://phpactor.github.io/phpactor/refactorings.html)
 
-  Key binding     Description
-  --------------- ---------------------------------------------------------
-  `SPC m r i`     import class under cursor
-  `SPC m r r`     rename local variable
-  `SPC m r R`     rename variable in a whole file
-  `SPC m r n`     synchronize namespace with file location
-  `SPC m r v`     toggle method visibility (public-\>protected-\>private)
-  `SPC m r g a`   generate unknown property accessors
-  `SPC m r g m`   generate a method signature by a call example
-  `SPC m r c n`   create a new class at a given path
-  `SPC m r c c`   copy current class elsewhere
-  `SPC m r c m`   move (rename) current class
-  `SPC m r c i`   generate an interface from class\' public methods
-  `SPC m r p c`   declare class properties by constructor signature
-  `SPC m r p p`   add missing class properties
-  `SPC m r e c`   extract constant under cursor from a class
-  `SPC m r e e`   extract expression to a variable
-  `SPC m r e m`   extract a code hunk to a method
-  `SPC m r m c`   add non-implemented stubs from parent classes/contracts
-  `SPC m P s`     ask phpactor about it\'s status
-  `SPC m P u`     install/update phpactor package
+| Key binding   | Description                                             |
+|---------------|---------------------------------------------------------|
+| `SPC m r i`   | import class under cursor                               |
+| `SPC m r r`   | rename local variable                                   |
+| `SPC m r R`   | rename variable in a whole file                         |
+| `SPC m r n`   | synchronize namespace with file location                |
+| `SPC m r v`   | toggle method visibility (public-\>protected-\>private) |
+| `SPC m r g a` | generate unknown property accessors                     |
+| `SPC m r g m` | generate a method signature by a call example           |
+| `SPC m r c n` | create a new class at a given path                      |
+| `SPC m r c c` | copy current class elsewhere                            |
+| `SPC m r c m` | move (rename) current class                             |
+| `SPC m r c i` | generate an interface from class' public methods        |
+| `SPC m r p c` | declare class properties by constructor signature       |
+| `SPC m r p p` | add missing class properties                            |
+| `SPC m r e c` | extract constant under cursor from a class              |
+| `SPC m r e e` | extract expression to a variable                        |
+| `SPC m r e m` | extract a code hunk to a method                         |
+| `SPC m r m c` | add non-implemented stubs from parent classes/contracts |
+| `SPC m P s`   | ask phpactor about it's status                          |
+| `SPC m P u`   | install/update phpactor package                         |
 
 Debugging for non LSP backends
 ------------------------------
 
 XDebug client management:
 
-  Key binding   Description
-  ------------- ---------------------------------------------
-  `SPC m d x`   start XDebug client
-  `SPC m d X`   stop XDebug client
-  `SPC m d b`   set a predefined breakpoint on current line
-  `SPC m d C`   clear predefined breakpoints
+| Key binding | Description                                 |
+|-------------|---------------------------------------------|
+| `SPC m d x` | start XDebug client                         |
+| `SPC m d X` | stop XDebug client                          |
+| `SPC m d b` | set a predefined breakpoint on current line |
+| `SPC m d C` | clear predefined breakpoints                |
 
 Debugger interaction:
 
-  Key binding   Description
-  ------------- ------------------------------------------------------------------
-  `o` or `n`    step over statement
-  `s` or `i`    step into current call
-  `r`           step out of function
-  `c`           resume execution until cursor position or next breakpoint
-  `e`           evaluate expression in local context
-  `L`           focus line the execution stopped on
-  `v`           display context (local/global variables, user-defined constants)
-  `b b`         set breakpoint here
-  `b c`         set conditional breakpoint here
-  `b e`         set breakpoint on exception here
-  `u`           unset breakpoint here
-  `U`           clear all breakpoints (in all files!)
-  `w`           show current stack trace
-  `g f`         find debugged file in a worktree
-  `q`           quit debugging
+| Key binding | Description                                                      |
+|-------------|------------------------------------------------------------------|
+| `o` or `n`  | step over statement                                              |
+| `s` or `i`  | step into current call                                           |
+| `r`         | step out of function                                             |
+| `c`         | resume execution until cursor position or next breakpoint        |
+| `e`         | evaluate expression in local context                             |
+| `L`         | focus line the execution stopped on                              |
+| `v`         | display context (local/global variables, user-defined constants) |
+| `b b`       | set breakpoint here                                              |
+| `b c`       | set conditional breakpoint here                                  |
+| `b e`       | set breakpoint on exception here                                 |
+| `u`         | unset breakpoint here                                            |
+| `U`         | clear all breakpoints (in all files!)                            |
+| `w`         | show current stack trace                                         |
+| `g f`       | find debugged file in a worktree                                 |
+| `q`         | quit debugging                                                   |
 
 Variable listing:
 
-  Key binding   Description
-  ------------- ---------------------------------
-  `j`           next variable or section
-  `k`           previous variable or section
-  `TAB`         fold/unfold variable or section
-  `q`           close variable listing
+| Key binding | Description                     |
+|-------------|---------------------------------|
+| `j`         | next variable or section        |
+| `k`         | previous variable or section    |
+| `TAB`       | fold/unfold variable or section |
+| `q`         | close variable listing          |
 
 LSP key bindings
 ----------------

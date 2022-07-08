@@ -37,7 +37,7 @@ To look up the x86 instructions, two things are required:
 
 -   the `pdftotext` command line tool from Poppler:
 
-    ``` {.bash org-language="sh"}
+    ``` bash
     sudo apt-get install poppler-utils
     ```
 
@@ -51,7 +51,7 @@ you use Helm as your completion of choice, you can use `SPC f f` to
 navigate to the file, and press `C-c i` to insert the path). For
 example, something like this:
 
-``` {.commonlisp org-language="emacs-lisp"}
+``` commonlisp
 (setq x86-lookup-pdf "~/64-ia-32-architectures-software-developer-instruction-set-reference-manual-325383.pdf")
 ```
 
@@ -61,15 +61,15 @@ this is a one time operation and the result is cached for later use.
 Key bindings
 ============
 
-  Key binding   Description
-  ------------- ----------------------------------------------------
-  `SPC m h h`   Look up the documentation for instruction at point
-  `;`           Insert a comment
+| Key binding | Description                                        |
+|-------------|----------------------------------------------------|
+| `SPC m h h` | Look up the documentation for instruction at point |
+| `;`         | Insert a comment                                   |
 
-[Note]{.underline}: Quoted from the docstring of `asm-comment`, the
-command bound to `;`:
+<span class="underline">Note</span>: Quoted from the docstring of
+`asm-comment`, the command bound to `;`:
 
-``` {.text}
+``` text
 Convert an empty comment to a `larger' kind, or start a new one.
 These are the known comment classes:
 
