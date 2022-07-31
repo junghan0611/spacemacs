@@ -1,0 +1,950 @@
+---
+title: "spacemacs__layers__+lang__clojure_README-ko"
+keywords:
+  - readme-ko
+  - spacemacs
+  - clojure-mode
+author:
+  - Junghan Kim
+url:  
+---
+
+#readme-ko, 
+
+![](img/clojure.png) ![](img/cider.png)
+
+# Description
+
+이 계층은  [CIDER](https://github.com/clojure-emacs/cider)를 사용하여  [Clojure](https://clojure.org/) 언어를 지원하며 Clojure REPL 관리 및 전체 개발 환경을 제공합니다. 
+
+[[2022-07-14--practicalli-spacemacs-init-configuration]] 2022-07-14--practicalli-spacemacs-init-configuration 파일을 참고하자! 
+
+
+## Features:
+
+-  REPL via [CIDER](https://github.com/clojure-emacs/cider)
+
+-  Code formatting via [CIDER](https://github.com/clojure-emacs/cider) using [Cljfmt](https://github.com/weavejester/cljfmt)
+
+-  Aligning of code forms via [clojure-mode](https://github.com/clojure-emacs/clojure-mode)
+
+-  Structuraly safe editing using optional  [evil-cleverparens](https://github.com/luxbock/evil-cleverparens)
+
+-  Linting via [clj-kondo](https://github.com/borkdude/clj-kondo) ([joker](https://github.com/candid82/joker) and  [squiggly-clojure](https://github.com/clojure-emacs/squiggly-clojure) also available)
+
+-  Advanced help with [helm-cider](https://github.com/clojure-emacs/helm-cider)
+
+-  LSP via [clojure-lsp](https://github.com/snoe/clojure-lsp) 
+
+``` 
+아. 굉장히 재미있는 부분이다. 여기에서 clojure-lsp는 어디있지? 
+
+
+```
+
+### Related layers
+다음의 스페이스맥스 레이어들도 보다 완벽한 개발 환경을 위해서 추가할 수 있다. 
+
+-   auto-completion
+-   syntax-checking (provides flycheck for linter support)
+-   LSP
+
+```
+아마. 위에 언급한 존의 문서를 확인해보라. 
+```
+
+### Other optional features
+
+-   Refactoring via [clj-refactor](https://github.com/clojure-emacs/clj-refactor.el)
+-   Debugging with [sayid](https://github.com/clojure-emacs/sayid)
+
+### References
+
+-   [CIDER documentation](https://docs.cider.mx/cider/)
+-   [Practicalli Spacemacs](https://practicalli.github.io/spacemacs)
+
+# Install
+
+Spacemacs will prompt to install the Clojure layer automatically when
+opening a file ending in `.clj` `.cljs`, `.cljc` or `.edn`. Replying `y`
+will download all the packages for the Clojure layer. Restarting
+Spacemacs, `SPC q r`, is recommended to ensure all changes are loaded.
+
+스페이스맥스는 클로져 관련 파일을 열면 자동으로 클로져 레이어를 설치한다. 
+
+## Add the Clojure Layer manually
+
+Edit the `~/.spacemacs` file and add the word `clojure` to the existing
+`dotspacemacs-configuration-layers` list.
+
+## Pretty Symbols
+
+Pretty symbols for **anonymous** functions, set literals and partial, like
+`(λ [a]
+(+ a 5))`, `ƒ(+ % 5)`, `∈{2 4 6}` and `Ƥ`.
+
+To enable this feature, add the following snippet to the
+`dotspacemacs/user-config` section of your `~/.spacemacs` file:
+
+``` commonlisp
+(setq clojure-enable-fancify-symbols t)
+```
+
+Or set this variable when loading the configuration layer:
+
+``` commonlisp
+(setq-default dotspacemacs-configuration-layers
+'((clojure :variables clojure-enable-fancify-symbols t)))
+```
+
+```
+원하는 설정이 있을 경우 user-config에 setq로 설정하는 이맥스 설정 방식을 사용하거나, 
+dotspacemacs-configuration-layers에 관련 설정을 축가하면 된다. 
+
+스페이스맥스를 사용하는 이상 후자의 설정 방식을 사용하는 것이 더 좋을 것이다. 
+
+한글 처리 관련해서 user-config에 넣은 설정을 두 번째 방법으로 다 바꿔야겠다. 라고 생각했는데, 관련 레이어가 따로 없네?
+그럼 방법이 없지. 
+
+=> 설정은 1) 이맥스 스타일 2) 스페이스맥스 스타일이 있으며, 2)가 가능하면 하고, 어쩔 수 없으면 1) 으로 하라!
+
+```
+
+## ~~Optional~~ LSP server ⇒ 이제 필수야!
+
+Traditionally the clojure developing environment is working exclusively with an external server called CIDER. This has some drawbacks especially that most features require a working REPL session in the background. Newer layers work with a standard LSP server providing standard bindings for most features. In addition `lsp-UI` provides a more modern UI for visualising linter results and providing code actions.
+
+전통적으로 클로져 개발 환경은 CIDER라고 하는 외부 서버와 연동하여 동작했다. 이는 대부분의 기능들이 백그라운드의 REPL 세션을 필요로 한다는 단점이 있었다. 의존도가 너무 높다는 말이다. 새로운 레이어들은 표준화된 LSP 서버와 연동하여 동작하며 그 결과 대부분의 기능을 표준화된 바인딩의 형태로 제공한다. 게다가 `lsp-UI`는 linter 결과를 표시하고, 코드 동작을 수행하는데 더 모던한 UI를 제공한다.
+
+> 즉, CIDER에 의존하는 기존 개발 환경을 탈피하고, 표준화된 LSP 서버 인터페이스를 사용하여 CIDER-REPL 세션을 제외한 기능들을 분리한다. 여기에 보다 더 훌륭한 UI 기능을 탑재했다는 말이다. 
+
+The server is automatically activated when you have the `lsp-layer` installed in your dotfile. Alternatively you can force a certain backend by setting the `clojure-backend` variable in your dotfile:
+
+### lsp-layer 를 사용하는 방법
+dotfile에 `lsp-layer`를 명시하는 경우 해당 서버 (여기서는 클로져 LSP 서버)는 자동으로 동작한다. 이와 달리 `clojure-backend`로 명시할 수도 있다. 
+
+``` commonlisp
+(setq-default dotspacemacs-configuration-layers
+'((clojure :variables clojure-backend 'lsp)))
+```
+
+The server is started automatically when a supported file is opened. It will also provide a flycheck integration via `lsp-flycheck` which will run the configured linter from your project config. See [here](https://github.com/snoe/clojure-lsp) for details. The server is installed automatically in your emacs directory however if this does not work it can also be installed manually from [here](https://github.com/snoe/clojure-lsp/releases/latest/download/clojure-lsp).
+
+LSP 서버는 지원하는 파일을 열면 자동으로 시작한다. 또한 `lsp-flycheck`와 연계하여 프로젝트 설정으로 얻어온 configured linter를 수행한다. 자세한 것은 clojurel-lsp를 보길 바란다. 서버는 이맥스 디렉토리에 자동으로 설치가 된다. 물론 LSP는 이맥스 전용이 아니므로 매뉴얼하게 설치하고 연동하게 할 수도 있다.
+
+> 예를 들어 하나의 LSP 서버를 이맥스도 쓰고 VSCODE도 쓸 수 있다. 이런 방식이 더 좋다. 
+
+
+####  현재 lsp 설정
+
+lsp-mode 문서를 보자.
+
+```
+     ;; Language server protocol with minimal visual impact
+     ;; https://practical.li/spacemacs/install-spacemacs/clojure-lsp/
+     (lsp :variables
+          lsp-ui-doc-enable nil       ;; disable all doc popups
+          lsp-ui-sideline-enable nil  ;; disable sideline bar for less distraction
+          treemacs-space-between-root-nodes nil  ;; no spacing in treemacs views
+          )
+```
+
+###  lsp-layer를 끄고  cider를 사용하는 방법 
+
+You can also explicitly disable lsp support by setting `cider` asbackend explicitly:
+아! 물론 아래와 같이 clojure-backend를 cider로 지정하면 LSP를 사용하지 않는다. 
+
+``` commonlisp
+(setq-default dotspacemacs-configuration-layers
+'((clojure :variables clojure-backend 'cider)))
+```
+
+---
+
+## Enabling Automatic Linting
+
+[clj-kondo](https://github.com/borkdude/clj-kondo), [joker](https://github.com/candid82/joker) and [squiggly-clojure](https://github.com/clojure-emacs/squiggly-clojure) provide automated linting via `flycheck`. These packages are disabled by default as they require the relevant linter binaries to be installed
+locally.
+
+clj-kondo 는 기본은 disable 되어 있다. 관련된 패키지를 설치해야 되기 때문에 그렇다. 
+
+The recommended linter is to use [clj-kondo](https://github.com/borkdude/clj-kondo) in combination with [joker](https://github.com/candid82/joker). Together they catch the most issues while both running extremely quickly. squiggly reloads your code on every change which gives unexpected results if your code is not re-loadable. squiggly also requires `org.clojure/core.typed` be added to the development dependencies of
+your projects or build tool when using `cider-connect`.
+
+
+### Enable clj-kondo linter
+
+This linter based on static syntax checking and requires the [clj-kondo](https://github.com/borkdude/clj-kondo) binary installed on the system PATH that `spacemacs.env` includes. Please read the
+[clj-kondo binary installation instructions](https://github.com/borkdude/clj-kondo/blob/master/doc/install.md)
+
+Enable the clj-kondo automatic linter in Spacemacs by adding a `:variables` option to your Spacemacs configuration:
+
+clj-kondo를 `automatic linter`로 스페이스맥스에서 사용하기 위해서는 아래와 같이 :variable 옵션으로 추가해줘야 한다. 
+
+==CHECK==
+> 근데 존의 설정 파일에는
+;; clojure-enable-linters 'clj-kondo    ;; clj-kondo included in lsp
+이렇게 적혀 있다. → 즉, 이 문서도 OLD라는 말인가? kondo가 동작하고 있는지를 확인하는 방법은?
+
+
+``` commonlisp
+;; Witout any variables your configuration would just include clojure
+dotspacemacs-configuration-layers
+'(...
+  clojure
+  )
+
+;; to use clj-kondo as a linter, add this variable to the clojure layer
+;; wrapping the clojure layer in a list
+dotspacemacs-configuration-layers
+'(...
+  (clojure :variables
+           clojure-enable-linters 'clj-kondo)
+  )
+```
+
+### ~~Enable joker linter~~
+
+This linter is based on static syntax checking and requires the [joker](https://github.com/candid82/joker) binary installed on the system PATH that `spacemacs.env` includes. Please read the [joker binary
+installation instructions](https://github.com/candid82/joker#installation)
+
+Enable the joker automatic linter in Spacemacs by adding a `:variables` option to your Spacemacs configuration:
+
+``` commonlisp
+;; Witout any variables your configuration would just include clojure
+dotspacemacs-configuration-layers
+'(...
+  clojure
+  )
+
+;; to use joker as a linter, add this variable to the clojure layer
+;; wrapping the clojure layer in a list
+dotspacemacs-configuration-layers
+'(...
+  (clojure :variables
+           clojure-enable-linters 'joker)
+  )
+```
+
+### ~~Enable Squiggly linter~~
+
+[squiggly-clojure](https://github.com/clojure-emacs/squiggly-clojure) uses [Eastwood](https://github.com/jonase/eastwood) and [Kibit](https://github.com/jonase/kibit) for linting. Please install these projects before configuring Spacemacs with `squiggly`.
+
+Make sure to read the [squiggly-clojure warnings section](https://github.com/clojure-emacs/squiggly-clojure#warnings).
+
+Please read the section on [squiggly dependencies](https://github.com/clojure-emacs/squiggly-clojure#dependencies-in-clojure) if you are using `cider-connect`
+
+Enable the squiggly (eastwood, kibit and core.typed) automatic linter in
+Spacemacs by adding a `:variables` option to your Spacemacs
+configuration:
+
+``` commonlisp
+;; Without any variables your configuration would just include Clojure
+dotspacemacs-configuration-layers
+'(...
+  clojure
+  )
+
+;; to use squiggly as a linter, add this variable to the clojure layer
+;; wrapping the clojure layer in a list
+dotspacemacs-configuration-layers
+  '(...
+    (clojure :variables
+             clojure-enable-linters 'squiggly)
+    )
+
+```
+
+Troubleshooting: please read [debugging and bug
+reporting](https://github.com/clojure-emacs/squiggly-clojure#debugging-and-bug-reporting)
+and try to reproduce using the [sample
+project](https://github.com/clojure-emacs/squiggly-clojure/tree/master/sample-project).
+
+### ~~Enable multiple linters~~
+
+You can choose to enable multiple linters and have them all run together. This gives you better linting coverage, as they don't catch all the same issues.
+
+You will need to follow their individual install instructions first, to get all their necessary binaries and configs on the system PATH that `spacemacs.env` includes. Please refer to their individual Enable … linter section respectively.
+
+Once all the linters you want to enable are installed, you simply need
+to specify a list of them in the `:variables` option to your Spacemacs
+configuration:
+
+``` commonlisp
+;; Witout any variables your configuration would just include clojure
+dotspacemacs-configuration-layers
+'(...
+  clojure
+  )
+
+;; to enable multiple linters, say clj-kondo and joker, add a list variable to the clojure layer
+;; listing each one in the order you want them running, wrapping the clojure layer in a list
+dotspacemacs-configuration-layers
+'(...
+  (clojure :variables
+           clojure-enable-linters '(clj-kondo joker))
+  )
+```
+
+### ==Enable Clojure fancify Symbols==
+
+Fancify symbols re-writes your code and displays symbols for:
+
+-   function definitions with fn `(λ [a] (+ a 5))` and its syntax
+    shortcut `ƒ(+ % 5)`
+-   set literals `∈{2 4 6}`
+-   partial functions `Ƥ`.
+
+To enable this feature, add the following snippet to the
+`dotspacemacs/user-config` section of your `~/.spacemacs` file:
+
+``` commonlisp
+(setq clojure-enable-fancify-symbols t)
+```
+
+Or set this variable when loading the configuration layer:
+
+``` commonlisp
+(setq-default dotspacemacs-configuration-layers
+'((clojure :variables clojure-enable-fancify-symbols t)))
+```
+
+### ~~Enabling `sayid` or `clj-refactor`~~
+
+The packages sayid (Clojure debugger) and clj-refactor (automatic
+refactorings) are disabled by default. These packages are less active
+that the CIDER project and may cause issues when running CIDER.
+
+> sayid와 clj-refactor는 기본 disable이다. 
+
+To enable them, add a `:variables` option when enabling the `clojure` layer, specifying `clojure-enable-sayid`, or `clojure-enable-clj-refactor`, or both.
+
+In your Spacemacs configuration:
+
+``` commonlisp
+;; before
+dotspacemacs-configuration-layers
+'(...
+  clojure
+  )
+
+;; after
+dotspacemacs-configuration-layers
+'(...
+  (clojure :variables
+           clojure-enable-sayid t
+           clojure-enable-clj-refactor t)
+  )
+```
+
+Enabling either of these packages will cause extra nREPL middleware to
+be injected when jacking in CIDER.
+
+If you are experiencing issues when running a REPL, try disabling these
+packages first and restart Spacemacs to see if the error persists.
+
+## Enabling Kaocha Runner
+
+Run unit tests with Kaocha via CIDER.
+
+Enable the Kaocha feature via setting the `clojure-enable-kaocha-runner`
+variable in your dotfile:
+
+``` commonlisp
+(setq-default dotspacemacs-configuration-layers
+'((clojure :variables clojure-enable-kaocha-runner t)))
+```
+
+The kaocha library must be included when starting a REPL, either through
+Leiningen dev profile dependency
+
+``` commonlisp
+:profiles {:dev {:dependencies [[lambdaisland/kaocha "1.60.977"]]}}
+```
+
+or a Clojure CLI alias in a project deps.edn or user wide deps.edn file
+
+``` commonlisp
+:lib/kaocha {:extra-deps {lambdaisland/kaocha {:mvn/version "1.60.977"}}}
+```
+
+[practicalli/clojure-deps-edn](https://github.com/practicalli/clojure-deps-edn) contains an example `:lib/kaocha` alias
+
+# Usage
+
+Read the key bindings section to see all the functionality available, or
+simply use the `,` or `SPC m` to open the which-key menu for the Clojure
+layer.
+
+## Starting a REPL from Spacemacs
+
+Open a Clojure file (`.clj`, `.cljs`, `.cljc`, `.edn`) and start a
+Clojure REPL, choosing the REPL session type (Clojure, ClojureScript or
+both Clojure & ClojureScript).
+
+`, '` and `, s i` calls the `sesman-start` command, a wrapper for all
+the `jack-in` and `connect` commands. A prompt appears allowing you to
+choose the type of REPL session required.
+
+`, s j` opens the cider-jack-in menu, providing commands to start
+specific REPL sessions, it is the same as using the `sesman-start`
+command described previously.
+
+Using the universal constant, `SPC u` before any of the previous
+commands enables editing of the command that starts the REPL. This is
+useful if you want to add a `deps.edn` alias or add your own
+dependencies to inject. The command is edited in the mini-buffer
+
+Once the REPL starts, a confirmation message is displayed in the
+mini-buffer.
+
+The REPL buffer does not open automatically (Clojure is typically
+evaluated in the source code buffer). `, s a` will switch between REPL
+and source code buffers, opening the REPL buffer if not already shown.
+
+### Troubleshooting
+
+If the REPL does not start, `SPC b m` opens the message buffer and
+should show errors. Also check the REPL buffer, `, s a` for error
+messages.
+
+Remove optional features from the Clojure layer, specifically sayid and
+clj-refactor. Restart Emacs and confirm the issue still occurs.
+
+Visit [\#cider channel on Clojurians Slack
+community](https://clojurians.slack.com/messages/cider) for help with
+CIDER, and [\#spacemacs
+channel](https://clojurians.slack.com/messages/spacemacs) for Spacemacs
+specific help
+
+## Connecting to a Clojure REPL outside of Emacs
+
+Start a REPL outside of Emacs that includes an nREPL server. The IP
+address and port the nREPL runs on should be printed.
+
+`, '_` or `SPC m s i` displays the sesman prompt, select the connect
+command relevant to the type of REPL you wish to start.
+
+`, s c` opens the cider-connect menu, providing key bindings for
+connecting too the different REPL session types.
+
+CIDER communicates with your Clojure process through nREPL and for CIDER
+to function correctly extra nREPL middleware is needed
+(cider/cider-nrepl). The same is true for clj-refactor (refactor-nrepl),
+and for sayid (com.billpiel/sayid).
+
+When starting the Clojure process through cider (`cider-jack-in` and
+friends) this will be handled automatically, and so most users should be
+able to just run `SPC m s i` to connect to the CIDER REPL and skip the
+rest of this section.
+
+If you are running an older version of CIDER (0.10 or older), or if you
+are starting the Clojure process yourself outside of Emacs, then you
+need to make sure the necessary dependencies are present, and the
+necessary nREPL middlewares are enabled.
+
+### Quick Start with boot
+
+-   Install `boot` 2.8.2 or newer (see
+    <https://github.com/boot-clj/boot#user-content-install>)
+
+-   Create a file `~/.boot/profile.boot` with the following content:
+
+    ```clojure
+    (require 'boot.repl)
+
+    (swap! boot.repl/*default-dependencies* conj
+           ;; When running an older version of CIDER (pre 0.18), use the
+           ;; version that best matches M-x cider-version. For versions since
+           ;; 0.18.0 use whatever version is the most recent.
+           '[cider/cider-nrepl "0.21.1"]
+
+           ;; Only necessary when using clj-refactor
+           '[refactor-nrepl "2.4.0"]
+
+           ;; Only necessary when using sayid
+           '[com.billpiel/sayid "0.0.17"])
+
+    (swap! boot.repl/*default-middleware* conj
+           'cider.nrepl/cider-middleware
+           'refactor-nrepl.middleware/wrap-refactor
+           'com.billpiel.sayid.nrepl-middleware/wrap-sayid)
+    ```
+
+### Quick Start with lein
+
+-   Install `lein` version 2.9.0 or newer (see
+    <https://leiningen.org/#install>)
+
+-   Create a file `~/.lein/profiles.clj` with the following content:
+
+    ``` clojure
+    {:repl
+     {:plugins [;; When running an older version of CIDER (pre 0.18), use the
+                ;; version that best matches M-x cider-version. For versions since
+                ;; 0.18.0 use whatever version is the most recent.
+                [cider/cider-nrepl "0.21.1"]
+
+                ;; Only necessary when using clj-refactor
+                [refactor-nrepl "2.4.0"]
+
+                ;; Only necessary when using sayid
+                [com.billpiel/sayid "0.0.17"]]
+
+      :dependencies [[nrepl "0.4.5"]]
+
+      :repl-options
+      {:nrepl-middleware [refactor-nrepl.middleware/wrap-refactor ;; clj-refactor
+                          com.billpiel.sayid.nrepl-middleware/wrap-sayid ;; sayid
+                          ]}}}
+    ```
+
+### More details
+
+More info regarding installation of nREPL middleware can be found here:
+
+-   CIDER: [CIDER installation (official
+    docs)](https://cider.readthedocs.io/en/latest/installation/)
+-   clj-refactor:
+    [refactor-nrepl](https://github.com/clojure-emacs/refactor-nrepl)
+
+## Managing REPL connections
+
+Sesman is used for [managing REPL
+connections](https://docs.cider.mx/cider/usage/managing_connections.html)
+when working simultaneously on multiple projects or have multiple
+connections opened for the same project
+
+`SPC m m i` provides information about the current REPL. `SPC m m b`
+shows information about all REPLs currently active. `SPC m m l` menu
+links files, directories and projects to an existing session.
+
+See REPL connections in the key bindings section for all the commands.
+
+## Advanced help
+
+This layer installs the
+[helm-cider](https://github.com/clojure-emacs/helm-cider) package which
+provides helm integration with cider apropos. It also embeds cider
+cheatsheet.
+
+Type `SPC m h a` to display advanced apropos window. Type `SPC m h c` to
+display the cheatsheet then type in some terms (space separated) to
+narrow down the list. For example, try typing in "sort map" to see some
+functions that deal with sorting maps.
+
+NOTE: If helm is not used, then `cider-apropos` and `cider-cheatsheet`
+are used.
+
+## Structuraly safe editing
+
+The Clojure layer adds support for `evil-cleverparens` which allows to
+safely edit lisp code by keeping the s-expressions balanced.
+
+`SPC m T s` will toggle safe structured editing, off by default.
+
+Enable safe structural editing for all `clojure` buffers using the
+following in the `dotspacemacs/user-config` function of your .spacemacs
+file
+
+``` commonlisp
+(spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hook-clojure-mode)
+```
+
+Or enable safe structural editing for all supported modes:
+
+``` commonlisp
+(spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hooks)
+```
+
+When enabled the symbol `🆂` will display in the mode-line.
+
+# Key bindings
+
+## Working with clojure files (barfage, slurpage & more)
+
+Spacemacs comes with a special `lisp-state` for working with lisp code
+that supports slurpage, barfage and more tools you'll likely want when
+working with lisp.
+
+As this state works the same for all files, the documentation is in
+global
+[DOCUMENTATION.org](https://github.com/syl20bnr/spacemacs/blob/master/doc/DOCUMENTATION.org#lisp-key-bindings).
+In general, use `SPC k` to interact with the lisp-state.
+
+## Leader
+
+### Shortcuts
+
+Shortcut key bindings for regularly used commands.
+
+| Key binding | Description                                              |
+|-------------|----------------------------------------------------------|
+| `SPC m '`   | start a REPL - prompted for REPL type (sesman-start)     |
+| `SPC m ,`   | command menu in REPL buffer (cider-repl-handle-shortcut) |
+
+### Managing REPL connections
+
+Managing CIDER REPL connections and sessions
+
+| Key binding   | Description                                                      |
+|---------------|------------------------------------------------------------------|
+| `SPC m m b`   | browse all REPL session (sesman-browser)                         |
+| `SPC m m i`   | current REPL information, `SPC u` for all sessions (sesman-info) |
+| `SPC m m g`   | go to most relevant REPL session (sesman-goto)                   |
+| `SPC m m l b` | link buffer to REPL session (sesman-link-with-buffer)            |
+| `SPC m m l d` | link directory to REPL session (sesman-link-with-directory)      |
+| `SPC m m l p` | link project to REPL session (sesman-link-with-project)          |
+| `SPC m m l u` | unlink from REPL session (sesman-unlink)                         |
+| `SPC m m S j` | connect as sibling to existing Clojure REPL                      |
+| `SPC m m S s` | connect as sibling to existing ClojureScript REPL                |
+| `SPC m m s`   | start a REPL - prompted for REPL type (sesman-start)             |
+| `SPC m m q q` | quit REPL session (sesman-quit)                                  |
+| `SPC m m q r` | restart REPL (sesman-restart)                                    |
+
+### Documentation
+
+| Key binding | Description                 |
+|-------------|-----------------------------|
+| `SPC m h a` | cider apropos               |
+| `SPC m h c` | cider cheatsheet            |
+| `SPC m h d` | cider clojuredocs           |
+| `SPC m h h` | cider doc                   |
+| `SPC m h j` | cider javadoc               |
+| `SPC m h n` | cider browse namespace      |
+| `SPC m h N` | cider browse all namespaces |
+| `SPC m h s` | cider-browse-spec           |
+| `SPC m h S` | cider-browse-spec-all       |
+
+### Evaluation
+
+Evaluate Clojure code in the source code buffer
+
+| Key binding   | Description                                                       |
+|---------------|-------------------------------------------------------------------|
+| `SPC m e ;`   | eval sexp and show result as comment                              |
+| `SPC m e $`   | go to end of line and eval last sexp                              |
+| `SPC m e (`   | eval 'list' around point (sequence, list, vector, map, set)       |
+| `SPC m e b`   | eval buffer                                                       |
+| `SPC m e e`   | eval last sexp                                                    |
+| `SPC m e f`   | eval function at point                                            |
+| `SPC m e i`   | interrupt the current evaluation                                  |
+| `SPC m e l`   | go to end of line and eval last sexp                              |
+| `SPC m e m`   | cider macroexpand 1                                               |
+| `SPC m e M`   | cider macroexpand all                                             |
+| `SPC m e n a` | reload all namespaces (cider-ns-reload-all)                       |
+| `SPC m e n n` | eval current namespace form (cider-eval-ns-form)                  |
+| `SPC m e n r` | refresh namespace (cider-ns-refresh)                              |
+| `SPC m e n l` | reload namespace (cider-ns-reload), `SPC u` (cider-ns-reload-all) |
+| `SPC m e p ;` | eval top-level sexp, pretty print result as a comment             |
+| `SPC m e p :` | eval last sexp, pretty print result as a comment                  |
+| `SPC m e p f` | eval top-level sexp, pretty print result in separate buffer       |
+| `SPC m e p e` | eval last sexp, pretty print result in separate buffer            |
+| `SPC m e r`   | eval region                                                       |
+| `SPC m e u`   | Undefine a symbol from the current namespace                      |
+| `SPC m e v`   | eval sexp around point                                            |
+| `SPC m e w`   | eval last sexp and replace with result                            |
+
+### Goto
+
+| Key binding | Description                                  |
+|-------------|----------------------------------------------|
+| `SPC m g b` | go back                                      |
+| `SPC m g C` | browse classpath                             |
+| `SPC m g g` | goto var definition `spacemacs/clj-find-var` |
+| `SPC m g e` | goto error                                   |
+| `SPC m g n` | goto namespace                               |
+| `SPC m g r` | goto resource                                |
+| `SPC m g s` | browse spec                                  |
+| `SPC m g S` | browse all specs                             |
+
+### Send code to REPL
+
+Use these key bindings when working directly with a REPL buffer. Use the
+Evaluation key bindings when evaluating in source code buffer.
+
+| Key binding       | Description                                                                |
+|-------------------|----------------------------------------------------------------------------|
+| `SPC m s a`       | switch between REPL and last Clojure source code buffer (cider-repl)       |
+| `SPC m s b`       | send and eval buffer in REPL                                               |
+| `SPC m s B`       | send and eval buffer and switch to REPL in `insert state`                  |
+| `SPC u SPC m s B` | same as `SPC m s B` including switching to the buffer namespace in REPL    |
+| `SPC m s c j`     | connect to a running Clojure REPL (cider-connect-clj)                      |
+| `SPC m s c m`     | connect to a running Clojure & ClojureScript REPL (cider-connect-clj&cljs) |
+| `SPC m s c s`     | connect to a running ClojureScript REPL (cider-connect-cljs)               |
+| `SPC m s e`       | send and eval last sexp in REPL                                            |
+| `SPC m s E`       | send and eval last sexp and switch to REPL in `insert state`               |
+| `SPC m s f`       | send and eval function in REPL                                             |
+| `SPC m s F`       | send and eval function and switch to REPL in `insert state`                |
+| `SPC m s i`       | start a REPL - prompt for REPL type (sesman-start)                         |
+| `SPC m s j j`     | start Clojure REPL (`cider-jack-in-clj`)                                   |
+| `SPC m s j m`     | start Clojure REPL (`cider-jack-in-clj&cljs`)                              |
+| `SPC m s j s`     | start ClojureScript REPL (`cider-jack-in-cljs`)                            |
+| `SPC m l`         | clear REPL buffer (cider-repl-clear-buffer)                                |
+| `SPC m L`         | clear and switch to REPL buffer (cider-find-and-clear-repl-output)         |
+| `SPC m s n`       | send and eval ns form in REPL                                              |
+| `SPC m s N`       | send and eval ns form and switch to REPL in `insert state`                 |
+| `SPC m s o`       | switch to other repl instance (cider-repl-switch-to-other)                 |
+| `SPC m s q n`     | reload namespace in REPL (cider-ns-reload)                                 |
+| `SPC m s q N`     | reload all namespace in REPL (cider-ns-reload-all)                         |
+| `SPC m s q q`     | quit REPL (cider-quit)                                                     |
+| `SPC m s q r`     | restart REPL (cider-restart)                                               |
+| `SPC m s r`       | send and eval region in REPL                                               |
+| `SPC m s R`       | send and eval region and switch to REPL in `insert state`                  |
+| `SPC m e u`       | require Clojure utils into current namespace - i.e. `doc` `source`         |
+| `SPC m s p`       | print last sexp (clojure interaction mode only)                            |
+
+### Tests
+
+| Key binding | Description                        |
+|-------------|------------------------------------|
+| `SPC m t a` | run all tests in namespace         |
+| `SPC m t r` | re-run test failures for namespace |
+| `SPC m t t` | run test at point                  |
+
+### Toggles
+
+| Key binding | Description                 |
+|-------------|-----------------------------|
+| `SPC m T e` | toggle englighten mode      |
+| `SPC m T f` | toggle REPL font-locking    |
+| `SPC m T i` | toggle indentation style    |
+| `SPC m T p` | toggle REPL pretty-printing |
+| `SPC m T t` | toggle auto test mode       |
+
+### Debugging
+
+TODO: separate clojure-mode and sayid key bindings
+
+| Key binding   | Description                                        |
+|---------------|----------------------------------------------------|
+| `SPC m d !`   | reload traces and clear sayid workspace            |
+| `SPC m d b`   | instrument expression at point                     |
+| `SPC m d c`   | clear workspace trace log                          |
+| `SPC m d e`   | display last stacktrace                            |
+| `SPC m d E`   | one time display of value at cursor                |
+| `SPC m d f`   | query form at point                                |
+| `SPC m d h`   | show sayid help (key bindings may not be accurate) |
+| `SPC m d i`   | inspect expression at point                        |
+| `SPC m d r`   | reload namespaces                                  |
+| `SPC m d s`   | show what is currently traced                      |
+| `SPC m d S`   | show what is currently traced in current namespace |
+| `SPC m d t b` | trace current file's namespace                     |
+| `SPC m d t d` | disable existing trace on current function         |
+| `SPC m d t D` | disable existing trace on all functions            |
+| `SPC m d t e` | enable existing trace on current function          |
+| `SPC m d t E` | enable existing trace on all functions             |
+| `SPC m d t K` | remove all traces                                  |
+| `SPC m d t n` | create inner trace on function                     |
+| `SPC m d t o` | create outer trace on function                     |
+| `SPC m d t p` | trace namespaces by regex                          |
+| `SPC m d t r` | remove trace on function                           |
+| `SPC m d t y` | recursively trace every namespace in given dir     |
+| `SPC m d v e` | inspect last expression                            |
+| `SPC m d v f` | inspect function at point                          |
+| `SPC m d v i` | inspect value at point (`cider-inspect`)           |
+| `SPC m d v l` | inspect last result                                |
+| `SPC m d v v` | inspect expression at point                        |
+| `SPC m d V`   | set the view                                       |
+| `SPC m d w`   | open sayid workspace window                        |
+| `SPC m d x`   | clear workspace traces and log                     |
+
+### Refactoring
+
+The following refactoring key bindings are enabled by default in
+clojure-mode:
+
+| Key binding   | Description                                                      |
+|---------------|------------------------------------------------------------------|
+| `SPC m r a n` | insert a namespace form at the beginning of the buffer           |
+| `SPC m r a N` | insert a namespace form at point                                 |
+| `SPC m r c i` | cycle between if and if-not forms                                |
+| `SPC m r c p` | cycle privacy of defn and def forms                              |
+| `SPC m r c (` | convert coll to list                                             |
+| `SPC m r c '` | convert coll to quoted list                                      |
+| `SPC m r c {` | convert coll to map                                              |
+| `SPC m r c #` | convert coll to set                                              |
+| `SPC m r c [` | convert coll to vector                                           |
+| `SPC m r s n` | sort namespaces inside the ns form                               |
+| `SPC m r t f` | rewrite the following form to use the -\> (thread first) macro.  |
+| `SPC m r t l` | rewrite the following form to use the -\>\> (thread last) macro. |
+| `SPC m r t h` | thread another form into the surrounding threading macro         |
+| `SPC m r u a` | unwind all steps of surrounding threading macro                  |
+| `SPC m r u w` | unwind threading macro one step at a time                        |
+
+The following refactorings require cljr-refactor to be enabled and
+generally depend on a connected CIDER session.
+
+| Key binding   | Description                       |
+|---------------|-----------------------------------|
+| `SPC m r ?`   | describe refactoring              |
+| `SPC m r a d` | add declaration                   |
+| `SPC m r a i` | add import to ns                  |
+| `SPC m r a m` | add missing libspec               |
+| `SPC m r a p` | add project dependency            |
+| `SPC m r a r` | add require to ns                 |
+| `SPC m r a u` | add use to ns                     |
+| `SPC m r c :` | toggle between keyword and string |
+| `SPC m r c n` | clean ns                          |
+| `SPC m r d k` | destructure keys                  |
+| `SPC m r e c` | extract constant                  |
+| `SPC m r e d` | extract definition                |
+| `SPC m r e f` | extract function                  |
+| `SPC m r e l` | expand let                        |
+| `SPC m r f u` | find usages                       |
+| `SPC m r f e` | create fn from example            |
+| `SPC m r h d` | hotload dependency                |
+| `SPC m r i l` | introduce let                     |
+| `SPC m r i s` | inline symbol                     |
+| `SPC m r m f` | move form                         |
+| `SPC m r m l` | move to let                       |
+| `SPC m r p c` | project clean                     |
+| `SPC m r p f` | promote function                  |
+| `SPC m r r d` | remove debug fns                  |
+| `SPC m r r f` | rename file                       |
+| `SPC m r r l` | remove let                        |
+| `SPC m r r r` | remove unused requires            |
+| `SPC m r r s` | rename symbol                     |
+| `SPC m r r u` | replace use                       |
+| `SPC m r s n` | sort ns                           |
+| `SPC m r s p` | sort project dependencies         |
+| `SPC m r s r` | stop referring                    |
+| `SPC m r s c` | show changelog                    |
+| `SPC m r u p` | update project dependencies       |
+
+### Reformatting
+
+| Key binding   | Description             |
+|---------------|-------------------------|
+| `SPC m = =`   | reformat current buffer |
+| `SPC m = e b` | reformat edn buffer     |
+| `SPC m = e e` | reformat edn last sexp  |
+| `SPC m = e r` | reformat edn region     |
+| `SPC m = f`   | reformat current sexp   |
+| `SPC m = l`   | realign current form    |
+| `SPC m = r`   | realign current region  |
+
+### Profiling
+
+| Key binding | Description          |
+|-------------|----------------------|
+| `SPC m p +` | profile samples      |
+| `SPC m p c` | clear profile        |
+| `SPC m p n` | toggle profile ns    |
+| `SPC m p s` | profile summary      |
+| `SPC m p S` | summary for all      |
+| `SPC m p t` | toggle profile       |
+| `SPC m p v` | is variable profiled |
+
+## CIDER Buffers
+
+In general, `q` should always quit the popped up buffer.
+
+### cider-repl-mode
+
+| Key binding | Description    |
+|-------------|----------------|
+| `C-j`       | next input     |
+| `C-k`       | previous input |
+
+### stacktrace-mode
+
+| Key binding | Description         |
+|-------------|---------------------|
+| `C-j`       | next cause          |
+| `C-k`       | previous cause      |
+| `TAB`       | cycle current cause |
+| `0`         | cycle all causes    |
+| `1`         | cycle cause 1       |
+| `2`         | cycle cause 2       |
+| `3`         | cycle cause 3       |
+| `4`         | cycle cause 4       |
+| `5`         | cycle cause 5       |
+| `a`         | toggle all          |
+| `c`         | toggle clj          |
+| `d`         | toggle duplicates   |
+| `J`         | toggle java         |
+| `r`         | toggle repl         |
+| `T`         | toggle tooling      |
+
+### inspector-mode
+
+| Key binding | Description                     |
+|-------------|---------------------------------|
+| `TAB`       | next inspectable object         |
+| `Shift-TAB` | previous inspectable object     |
+| `RET`       | inspect object                  |
+| `L`         | pop to the parent object        |
+| `n`         | next page in paginated view     |
+| `N`         | previous page in paginated view |
+| `r`         | refresh                         |
+| `s`         | set a new page size             |
+
+### test-report-mode
+
+| Key binding | Description        |
+|-------------|--------------------|
+| `C-j`       | next result        |
+| `C-k`       | previous result    |
+| `RET`       | jump to test       |
+| `d`         | ediff test result  |
+| `e`         | show stacktrace    |
+| `r`         | rerun failed tests |
+| `t`         | run test           |
+| `T`         | run tests          |
+
+## Sayid Buffers
+
+### sayid-mode
+
+| Key binding        | Description                                       |
+|--------------------|---------------------------------------------------|
+| `Shift-Backspace`  | forward buffer state                              |
+| `enter`            | pop to function                                   |
+| `d`                | def value to $s/\*                                |
+| `f`                | query for calls to function                       |
+| `F`                | query to calls to function with modifier          |
+| `i`                | show only this instance                           |
+| `I`                | show only this instance with modifier             |
+| `L` or `Backspace` | previous buffer state                             |
+| `n`                | jump to next call                                 |
+| `N`                | jump to previous call                             |
+| `P`                | pretty print value                                |
+| `C`                | clear workspace trace log                         |
+| `e`                | generate instance expression and put in kill ring |
+| `H`                | display help (key bindings may not be accurate)   |
+| `w`                | show full workspace trace                         |
+| `C-s v`            | toggle view                                       |
+| `C-s V`            | set view                                          |
+
+### sayid-traced-mode
+
+| Key binding | Description                                     |
+|-------------|-------------------------------------------------|
+| `backspace` | go back to trace overview                       |
+| `enter`     | drill into ns at point                          |
+| `e`         | enable trace                                    |
+| `E`         | enable all traces                               |
+| `d`         | disable trace                                   |
+| `D`         | disable all traces                              |
+| `h`         | display help (key bindings may not be accurate) |
+| `i`         | apply inner trace to function at point          |
+| `o`         | apply outer trace to function at point          |
+| `r`         | remove trace at point                           |
+
+### sayid-pprint
+
+| Key binding | Description                 |
+|-------------|-----------------------------|
+| `enter`     | show path in minibuffer     |
+| `i`         | enter child node            |
+| `o`         | enter parent node           |
+| `n`         | enter next sibling node     |
+| `p`         | enter previous sibling node |
+
+# Development Notes
+
+## Indentation
+
+With a [Indentation spec](https://github.com/clojure-emacs/cider/blob/master/doc/modules/ROOT/pages/indent_spec.adoc) functionality of Cider to read the custom indentation rules from the
+var's metadata, it is better for consistency reasons to not add the custom indentation rules to Spacemacs, but to add them to the metadata of those specific vars.

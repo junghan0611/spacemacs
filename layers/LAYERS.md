@@ -1,6 +1,6 @@
 # Description
 
-THIS FILE IS AUTO-GENERATED! Don't edit it directly. See ["README.org
+THIS FILE IS AUTO-GENERATED! Don't edit it directly. See ["README.md
 tags" section of CONTRIBUTING.org for the
 instructions](https://github.com/syl20bnr/spacemacs/blob/develop/CONTRIBUTING.org#readmeorg-tags).
 
@@ -12,7 +12,7 @@ development](https://develop.spacemacs.org/doc/LAYERS.html).
 
 ## ERC
 
-[+chat/erc/README.org](+chat/erc/README.org)
+[+chat/erc/README.md](+chat/erc/README.md)
 
 Layer for [ERC IRC chat](http://www.emacswiki.org/emacs/ERC).
 
@@ -39,7 +39,7 @@ Features:
 
 ## Jabber
 
-[+chat/jabber/README.org](+chat/jabber/README.org)
+[+chat/jabber/README.md](+chat/jabber/README.md)
 
 This layer adds support for the Jabber (XMPP) client for Emacs
 
@@ -49,7 +49,7 @@ Features:
 
 ## RCIRC
 
-[+chat/rcirc/README.org](+chat/rcirc/README.org)
+[+chat/rcirc/README.md](+chat/rcirc/README.md)
 
 This layer provide support for
 [rcirc](http://www.gnu.org/software/emacs/manual/html_mono/rcirc.html)
@@ -70,7 +70,7 @@ Features:
 
 ## Slack
 
-[+chat/slack/README.org](+chat/slack/README.org)
+[+chat/slack/README.md](+chat/slack/README.md)
 
 This layer provides an interface to the Slack chat service via the
 emacs-slack package. Where possible, this layer aims to reuse key
@@ -87,7 +87,7 @@ Features:
 
 ## Spell Checking
 
-[+checkers/spell-checking/README.org](+checkers/spell-checking/README.org)
+[+checkers/spell-checking/README.md](+checkers/spell-checking/README.md)
 
 This layer provides spell checking capabilities to Spacemacs.
 
@@ -105,7 +105,7 @@ Features:
 
 ## Syntax Checking
 
-[+checkers/syntax-checking/README.org](+checkers/syntax-checking/README.org)
+[+checkers/syntax-checking/README.md](+checkers/syntax-checking/README.md)
 
 This layer adds on the fly syntax checking to all supported language
 layers.
@@ -120,7 +120,7 @@ Features:
 
 ## Auto-completion
 
-[+completion/auto-completion/README.org](+completion/auto-completion/README.org)
+[+completion/auto-completion/README.md](+completion/auto-completion/README.md)
 
 This layer adds auto-completion to all supported language layers.
 
@@ -143,7 +143,7 @@ Features:
 
 ## Compleseus
 
-[+completion/compleseus/README.org](+completion/compleseus/README.org)
+[+completion/compleseus/README.md](+completion/compleseus/README.md)
 
 This layer adds a new way of completion provided by the following core
 packages:
@@ -162,7 +162,7 @@ Features:
 
 ## Helm
 
-[+completion/helm/README.org](+completion/helm/README.org)
+[+completion/helm/README.md](+completion/helm/README.md)
 
 This layer enables Helm everywhere in Spacemacs. The alternative to this
 layer is the Ivy layer which brings the same level of integration as
@@ -186,7 +186,7 @@ Features:
 
 ## Ivy
 
-[+completion/ivy/README.org](+completion/ivy/README.org)
+[+completion/ivy/README.md](+completion/ivy/README.md)
 
 This layer enables Ivy for completion. It will replace the default
 completion by [Helm](https://github.com/emacs-helm/helm).
@@ -209,7 +209,7 @@ Features:
 
 ## Templates
 
-[+completion/templates/README.org](+completion/templates/README.org)
+[+completion/templates/README.md](+completion/templates/README.md)
 
 This layer provides templates to Spacemacs. A template consists of text
 that is automatically inserted into a new file when it is opened. This
@@ -224,7 +224,7 @@ Features:
 
 ## Gnus
 
-[+email/gnus/README.org](+email/gnus/README.org)
+[+email/gnus/README.md](+email/gnus/README.md)
 
 This layer integrates a general purpose email/newsgroup client into
 Spacemacs.
@@ -238,7 +238,7 @@ Features:
 
 ## Mu4e
 
-[+email/mu4e/README.org](+email/mu4e/README.org)
+[+email/mu4e/README.md](+email/mu4e/README.md)
 
 This layer adds support for the `Mu4e` email client.
 
@@ -256,7 +256,7 @@ Features:
 
 ## Notmuch
 
-[+email/notmuch/README.org](+email/notmuch/README.org)
+[+email/notmuch/README.md](+email/notmuch/README.md)
 
 Notmuch offers a fast, global-search and tag-based email system to use
 within your text editor or in a terminal.
@@ -272,7 +272,7 @@ Features:
 
 ## Better Defaults
 
-[+emacs/better-defaults/README.org](+emacs/better-defaults/README.org)
+[+emacs/better-defaults/README.md](+emacs/better-defaults/README.md)
 
 This layer enhances the default commands of Emacs and is primarily
 intended to be used with the `emacs` editing style as it does not change
@@ -304,7 +304,7 @@ Features:
 
 ## Helpful
 
-[+emacs/helpful/README.org](+emacs/helpful/README.org)
+[+emacs/helpful/README.md](+emacs/helpful/README.md)
 
 This layer replaces the existing emacs related help buffers with more
 detailed ones.
@@ -321,7 +321,7 @@ Features:
 
 ## IBuffer
 
-[+emacs/ibuffer/README.org](+emacs/ibuffer/README.org)
+[+emacs/ibuffer/README.md](+emacs/ibuffer/README.md)
 
 This layer configures Emacs IBuffer for Spacemacs.
 
@@ -332,7 +332,7 @@ Features:
 
 ## Org
 
-[+emacs/org/README.org](+emacs/org/README.org)
+[+emacs/org/README.md](+emacs/org/README.md)
 
 This layer enables [org mode](http://orgmode.org/) for Spacemacs.
 
@@ -364,7 +364,7 @@ Features:
 
 ## Outshine
 
-[+emacs/outshine/README.org](+emacs/outshine/README.org)
+[+emacs/outshine/README.md](+emacs/outshine/README.md)
 
 This layer adds support for
 [outshine](https://github.com/alphapapa/outshine) and
@@ -379,7 +379,7 @@ Features:
 
 ## Quickurl
 
-[+tools/quickurl/README.org](+tools/quickurl/README.org)
+[+tools/quickurl/README.md](+tools/quickurl/README.md)
 
 Quickurl is a package in vanilla emacs for saving and inserting URLs.
 These are key bindings for the various methods of insertion, which are
@@ -391,7 +391,7 @@ Features:
 
 ## Semantic
 
-[+emacs/semantic/README.org](+emacs/semantic/README.org)
+[+emacs/semantic/README.md](+emacs/semantic/README.md)
 
 CEDET is a \*C\*ollection of \*E\*macs \*D\*evelopment \*E\*nvironment
 \*T\*ools written with the end goal of creating an advanced development
@@ -428,7 +428,7 @@ Features:
 
 ## Smex
 
-[+emacs/smex/README.org](+emacs/smex/README.org)
+[+emacs/smex/README.md](+emacs/smex/README.md)
 
 This layer provides a more traditional alternative to `helm-M-x` based
 on `ido`.
@@ -440,7 +440,7 @@ Features:
 
 ## Tabs
 
-[+emacs/tabs/README.org](+emacs/tabs/README.org)
+[+emacs/tabs/README.md](+emacs/tabs/README.md)
 
 This layer adds support for tabs. Implementation is done using [Centaur
 Tabs](https://github.com/ema2159/centaur-tabs).
@@ -452,7 +452,7 @@ Features:
 
 ## Typography
 
-[+emacs/typography/README.org](+emacs/typography/README.org)
+[+emacs/typography/README.md](+emacs/typography/README.md)
 
 This layer provides support for typographic text editing in Spacemacs.
 
@@ -469,7 +469,7 @@ Features:
 
 ## Neotree
 
-[+filetree/neotree/README.org](+filetree/neotree/README.org)
+[+filetree/neotree/README.md](+filetree/neotree/README.md)
 
 This layer setups a file tree navigator buffer using Neotree (replacing
 the Treemacs layer).
@@ -483,7 +483,7 @@ Features:
 
 ## Treemacs
 
-[+filetree/treemacs/README.org](+filetree/treemacs/README.org)
+[+filetree/treemacs/README.md](+filetree/treemacs/README.md)
 
 This layer sets up a file navigation and project explorer side-window
 via [Treemacs](https://github.com/Alexander-Miller/treemacs).
@@ -520,7 +520,7 @@ In short, Treemacs offers:
 
 ## Unicode-fonts
 
-[+fonts/unicode-fonts/README.org](+fonts/unicode-fonts/README.org)
+[+fonts/unicode-fonts/README.md](+fonts/unicode-fonts/README.md)
 
 This layer adds support for
 [unicode-fonts](https://github.com/rolandwalker/unicode-fonts) package.
@@ -542,7 +542,7 @@ Features:
 
 ## Emoji
 
-[+fun/emoji/README.org](+fun/emoji/README.org)
+[+fun/emoji/README.md](+fun/emoji/README.md)
 
 This layer adds support for Emoji emoticons from
 [emoji-cheat-sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet/).
@@ -557,7 +557,7 @@ Features:
 
 ## Games
 
-[+fun/games/README.org](+fun/games/README.org)
+[+fun/games/README.md](+fun/games/README.md)
 
 This layer allows you to play evilified games in Spacemacs.
 
@@ -571,7 +571,7 @@ Features:
 
 ## Selectric
 
-[+fun/selectric/README.org](+fun/selectric/README.org)
+[+fun/selectric/README.md](+fun/selectric/README.md)
 
 This layer makes your Emacs sound like an IBM Selectric typewriter, for
 those moments when your loud, clicky mechanical keyboard is not at hand,
@@ -585,7 +585,7 @@ Features:
 
 ## Xkcd
 
-[+fun/xkcd/README.org](+fun/xkcd/README.org)
+[+fun/xkcd/README.md](+fun/xkcd/README.md)
 
 This layer adds a [xkcd](http://xkcd.com/) navigation mode using
 [emacs-xkcd](https://github.com/vibhavp/emacs-xkcd).
@@ -601,7 +601,7 @@ Features:
 
 ## Chinese
 
-[+intl/chinese/README.org](+intl/chinese/README.org)
+[+intl/chinese/README.md](+intl/chinese/README.md)
 
 This layer adds support for traditional Chinese script to Spacemacs.
 
@@ -635,7 +635,7 @@ Features:
 
 ## Japanese
 
-[+intl/japanese/README.org](+intl/japanese/README.org)
+[+intl/japanese/README.md](+intl/japanese/README.md)
 
 This Layer adds Japanese related packages.
 
@@ -660,7 +660,7 @@ Features:
 
 ## Keyboard-layout
 
-[+intl/keyboard-layout/README.org](+intl/keyboard-layout/README.org)
+[+intl/keyboard-layout/README.md](+intl/keyboard-layout/README.md)
 
 This layer configures some key bindings in Spacemacs, to make it
 compatible with keyboard layouts that differ from the traditional
@@ -676,7 +676,7 @@ Features:
 
 ## Copy-as-format
 
-[+misc/copy-as-format/README.org](+misc/copy-as-format/README.org)
+[+misc/copy-as-format/README.md](+misc/copy-as-format/README.md)
 
 This layer adds support for
 [copy-as-format](https://github.com/sshaw/copy-as-format).
@@ -688,7 +688,7 @@ Features:
 
 ## Dtrt-indent
 
-[+misc/dtrt-indent/README.org](+misc/dtrt-indent/README.org)
+[+misc/dtrt-indent/README.md](+misc/dtrt-indent/README.md)
 
 This is a simple layer wrapping the dtrt-indent Emacs package for
 automatic detection and switching of indentation style.
@@ -703,7 +703,7 @@ Features:
 
 ## Ietf
 
-[+misc/ietf/README.org](+misc/ietf/README.org)
+[+misc/ietf/README.md](+misc/ietf/README.md)
 
 The `IETF` layer collects various useful packages for participating in
 the Internet Engineering Task Force (<https://www.ietf.org>).
@@ -716,7 +716,7 @@ Features:
 
 ## Multiple-cursors
 
-[+misc/multiple-cursors/README.org](+misc/multiple-cursors/README.org)
+[+misc/multiple-cursors/README.md](+misc/multiple-cursors/README.md)
 
 Features:
 
@@ -724,7 +724,7 @@ Features:
 
 ## Nav-flash
 
-[+misc/nav-flash/README.org](+misc/nav-flash/README.org)
+[+misc/nav-flash/README.md](+misc/nav-flash/README.md)
 
 This layer adds [nav-flash](https://github.com/rolandwalker/nav-flash)
 package which temporarily highlights the line containing the point,
@@ -736,7 +736,7 @@ Features:
 
 ## Parinfer
 
-[+misc/parinfer/README.org](+misc/parinfer/README.org)
+[+misc/parinfer/README.md](+misc/parinfer/README.md)
 
 This layer provides an implementation of
 [parinfer](https://shaunlebron.github.io/parinfer/), a lisp editing
@@ -750,7 +750,7 @@ Features:
 
 ## Spacemacs-completion
 
-[+spacemacs/spacemacs-completion/README.org](+spacemacs/spacemacs-completion/README.org)
+[+spacemacs/spacemacs-completion/README.md](+spacemacs/spacemacs-completion/README.md)
 
 This layer does basic setup for completion frameworks like `helm`, `ivy`
 and `ido`.
@@ -771,7 +771,7 @@ Features:
 
 ## Spacemacs-defaults
 
-[+spacemacs/spacemacs-defaults/README.org](+spacemacs/spacemacs-defaults/README.org)
+[+spacemacs/spacemacs-defaults/README.md](+spacemacs/spacemacs-defaults/README.md)
 
 This layer configures mostly Emacs built-in packages to given them
 better defaults.
@@ -815,7 +815,7 @@ Features:
 
 ## Spacemacs-editing
 
-[+spacemacs/spacemacs-editing/README.org](+spacemacs/spacemacs-editing/README.org)
+[+spacemacs/spacemacs-editing/README.md](+spacemacs/spacemacs-editing/README.md)
 
 This layer adds packages to improve editing with Spacemacs.
 
@@ -870,7 +870,7 @@ Features:
 
 ## Spacemacs-editing-visual
 
-[+spacemacs/spacemacs-editing-visual/README.org](+spacemacs/spacemacs-editing-visual/README.org)
+[+spacemacs/spacemacs-editing-visual/README.md](+spacemacs/spacemacs-editing-visual/README.md)
 
 This layer defines a lot of functions used to visually enhance the
 currently edited line in Spacemacs.
@@ -887,7 +887,7 @@ Features:
 
 ## Spacemacs-evil
 
-[+spacemacs/spacemacs-evil/README.org](+spacemacs/spacemacs-evil/README.org)
+[+spacemacs/spacemacs-evil/README.md](+spacemacs/spacemacs-evil/README.md)
 
 This layer adds various adjustments to packages to create an evilified
 experience throughout the entirety of Spacemacs.
@@ -925,7 +925,7 @@ Features:
 
 ## Spacemacs-language
 
-[+spacemacs/spacemacs-language/README.org](+spacemacs/spacemacs-language/README.org)
+[+spacemacs/spacemacs-language/README.md](+spacemacs/spacemacs-language/README.md)
 
 This layer adds support various language related services to Spacemacs.
 
@@ -938,7 +938,7 @@ Features:
 
 ## Spacemacs-layouts
 
-[+spacemacs/spacemacs-layouts/README.org](+spacemacs/spacemacs-layouts/README.org)
+[+spacemacs/spacemacs-layouts/README.md](+spacemacs/spacemacs-layouts/README.md)
 
 This layer adds support for distinct layouts/workspaces to Spacemacs.
 
@@ -954,7 +954,7 @@ Features:
 
 ## Spacemacs-misc
 
-[+spacemacs/spacemacs-misc/README.org](+spacemacs/spacemacs-misc/README.org)
+[+spacemacs/spacemacs-misc/README.md](+spacemacs/spacemacs-misc/README.md)
 
 This layer adds some general packages into Spacemacs.
 
@@ -966,7 +966,7 @@ Features:
 
 ## Spacemacs-modeline
 
-[+spacemacs/spacemacs-modeline/README.org](+spacemacs/spacemacs-modeline/README.org)
+[+spacemacs/spacemacs-modeline/README.md](+spacemacs/spacemacs-modeline/README.md)
 
 This layer adds various mode-lines to Spacemacs.
 
@@ -984,7 +984,7 @@ Features:
 
 ## Spacemacs-navigation
 
-[+spacemacs/spacemacs-navigation/README.org](+spacemacs/spacemacs-navigation/README.org)
+[+spacemacs/spacemacs-navigation/README.md](+spacemacs/spacemacs-navigation/README.md)
 
 This layer adds general navigation functions to all supported layers.
 
@@ -1004,7 +1004,7 @@ Features:
 
 ## Spacemacs-org
 
-[+spacemacs/spacemacs-org/README.org](+spacemacs/spacemacs-org/README.org)
+[+spacemacs/spacemacs-org/README.md](+spacemacs/spacemacs-org/README.md)
 
 This layer tweaks `org-mode` to integrate nicely into Spacemacs.
 
@@ -1017,7 +1017,7 @@ Features:
 
 ## Spacemacs-project
 
-[+spacemacs/spacemacs-project/README.org](+spacemacs/spacemacs-project/README.org)
+[+spacemacs/spacemacs-project/README.md](+spacemacs/spacemacs-project/README.md)
 
 This layer tweaks `projectile` to integrate nicely into Spacemacs.
 
@@ -1030,7 +1030,7 @@ Features:
 
 ## Spacemacs-purpose
 
-[+spacemacs/spacemacs-purpose/README.org](+spacemacs/spacemacs-purpose/README.org)
+[+spacemacs/spacemacs-purpose/README.md](+spacemacs/spacemacs-purpose/README.md)
 
 This layer enables
 [window-purpose](https://github.com/bmag/emacs-purpose), which provides
@@ -1060,7 +1060,7 @@ Features:
 
 ## Spacemacs-visual
 
-[+spacemacs/spacemacs-visual/README.org](+spacemacs/spacemacs-visual/README.org)
+[+spacemacs/spacemacs-visual/README.md](+spacemacs/spacemacs-visual/README.md)
 
 This layer adds various modes to enhance Spacemacs visual appearance.
 
@@ -1081,7 +1081,7 @@ Features:
 
 ## Alda Layer
 
-[+lang/alda/README.org](+lang/alda/README.org)
+[+lang/alda/README.md](+lang/alda/README.md)
 
 Alda is a music composition language allowing music to easily be written
 and edited in a text file.
@@ -1098,7 +1098,7 @@ Features:
 
 ## Extempore
 
-[+lang/extempore/README.org](+lang/extempore/README.org)
+[+lang/extempore/README.md](+lang/extempore/README.md)
 
 This layer adds support for the
 [Extempore](https://github.com/digego/extempore) programming
@@ -1112,7 +1112,7 @@ Features:
 
 ## Pianobar
 
-[+music/pianobar/README.org](+music/pianobar/README.org)
+[+music/pianobar/README.md](+music/pianobar/README.md)
 
 This layer integrates an online music service into Spacemacs.
 
@@ -1123,7 +1123,7 @@ Features:
 
 ## Spotify
 
-[+music/spotify/README.org](+music/spotify/README.org)
+[+music/spotify/README.md](+music/spotify/README.md)
 
 This layer integrates an online music service into Spacemacs.
 
@@ -1134,7 +1134,7 @@ Features:
 
 ## TidalCycles
 
-[+music/tidalcycles/README.org](+music/tidalcycles/README.org)
+[+music/tidalcycles/README.md](+music/tidalcycles/README.md)
 
 This layer adds a major mode to control
 [TidalCycles](https://tidalcycles.org), a programming language for live
@@ -1149,7 +1149,7 @@ Features:
 
 ## NixOS
 
-[+os/nixos/README.org](+os/nixos/README.org)
+[+os/nixos/README.md](+os/nixos/README.md)
 
 This layer adds tools for better integration of Emacs in NixOS.
 
@@ -1166,7 +1166,7 @@ Features:
 
 ## OSX
 
-[+os/osx/README.org](+os/osx/README.org)
+[+os/osx/README.md](+os/osx/README.md)
 
 Spacemacs is not just Emacs plus Vim. It can have macOS key bindings
 too! This layer globally defines common macOS key bindings.
@@ -1181,7 +1181,7 @@ Features:
 
 ## Floobits
 
-[+pair-programming/floobits/README.org](+pair-programming/floobits/README.org)
+[+pair-programming/floobits/README.md](+pair-programming/floobits/README.md)
 
 This layer adds support for the peer programming tool
 [floobits](https://github.com/Floobits/floobits-emacs) to Spacemacs.
@@ -1202,7 +1202,7 @@ Features:
 
 1.  Clojure
 
-    [+lang/clojure/README.org](+lang/clojure/README.org)
+    [+lang/clojure/README.md](+lang/clojure/README.md)
 
     This layer adds support for [Clojure](https://clojure.org/) language
     using [CIDER](https://github.com/clojure-emacs/cider), providing
@@ -1251,7 +1251,7 @@ Features:
 
 2.  Common Lisp
 
-    [+lang/common-lisp/README.org](+lang/common-lisp/README.org)
+    [+lang/common-lisp/README.md](+lang/common-lisp/README.md)
 
     This layer provides support for Common Lisp to Spacemacs.
 
@@ -1267,7 +1267,7 @@ Features:
 
 3.  Emacs Lisp
 
-    [+lang/emacs-lisp/README.org](+lang/emacs-lisp/README.org)
+    [+lang/emacs-lisp/README.md](+lang/emacs-lisp/README.md)
 
     This layer gathers all the configuration related to emacs-lisp. This
     should always be in your dotfile, it is not recommended to uninstall
@@ -1297,7 +1297,7 @@ Features:
 
 4.  Scheme
 
-    [+lang/scheme/README.org](+lang/scheme/README.org)
+    [+lang/scheme/README.md](+lang/scheme/README.md)
 
     This layer adds support for Scheme via
     [Geiser](http://geiser.nongnu.org). Note that combined usage of
@@ -1315,7 +1315,7 @@ Features:
 
 1.  Asciidoc
 
-    [+lang/asciidoc/README.org](+lang/asciidoc/README.org)
+    [+lang/asciidoc/README.md](+lang/asciidoc/README.md)
 
     This layer adds [AsciiDoc](https://asciidoctor.org) markup language
     support to Spacemacs.
@@ -1328,7 +1328,7 @@ Features:
 
 2.  BibTeX
 
-    [+lang/bibtex/README.org](+lang/bibtex/README.org)
+    [+lang/bibtex/README.md](+lang/bibtex/README.md)
 
     BibTeX and BibLaTeX files are a common way to manage bibliographies.
     The format was original designed to work with LaTeX files and
@@ -1349,7 +1349,7 @@ Features:
 
 3.  CSV
 
-    [+lang/csv/README.org](+lang/csv/README.org)
+    [+lang/csv/README.md](+lang/csv/README.md)
 
     This layer adds tools for better integration of CSV files in
     Spacemacs.
@@ -1366,7 +1366,7 @@ Features:
 
 4.  Dhall
 
-    [+lang/dhall/README.org](+lang/dhall/README.org)
+    [+lang/dhall/README.md](+lang/dhall/README.md)
 
     This layer adds support for the [Dhall Configuration
     Language](https://dhall-lang.org/), a non-repetitive alternate to
@@ -1384,7 +1384,7 @@ Features:
 
 5.  Fountain
 
-    [+lang/fountain/README.org](+lang/fountain/README.org)
+    [+lang/fountain/README.md](+lang/fountain/README.md)
 
     This layer adds support for the [fountain](https://fountain.io/)
     screenwriting format to Spacemacs.
@@ -1398,7 +1398,7 @@ Features:
 
 6.  Graphviz
 
-    [+lang/graphviz/README.org](+lang/graphviz/README.org)
+    [+lang/graphviz/README.md](+lang/graphviz/README.md)
 
     This layer adds support for the open-source graph declaration system
     graphviz to Spacemacs.
@@ -1413,7 +1413,7 @@ Features:
 
 7.  HTML
 
-    [+lang/html/README.org](+lang/html/README.org)
+    [+lang/html/README.md](+lang/html/README.md)
 
     This layer adds support for editing HTML and CSS.
 
@@ -1437,7 +1437,7 @@ Features:
 
 8.  JSON
 
-    [+lang/json/README.org](+lang/json/README.org)
+    [+lang/json/README.md](+lang/json/README.md)
 
     This layer adds support for JSON files with
     [json-mode](https://github.com/joshwnj/json-mode)
@@ -1456,7 +1456,7 @@ Features:
 
 9.  Jsonnet
 
-    [+lang/jsonnet/README.org](+lang/jsonnet/README.org)
+    [+lang/jsonnet/README.md](+lang/jsonnet/README.md)
 
     This layer provides support for [Jsonnet
     template](https://jsonnet.org/) provided by
@@ -1471,7 +1471,7 @@ Features:
 
 10. LaTeX
 
-    [+lang/latex/README.org](+lang/latex/README.org)
+    [+lang/latex/README.md](+lang/latex/README.md)
 
     This layer adds support for LaTeX files with
     [AucTeX](https://savannah.gnu.org/projects/auctex/).
@@ -1491,7 +1491,7 @@ Features:
 
 11. Markdown
 
-    [+lang/markdown/README.org](+lang/markdown/README.org)
+    [+lang/markdown/README.md](+lang/markdown/README.md)
 
     This layer adds markdown support to Spacemacs.
 
@@ -1512,7 +1512,7 @@ Features:
 
 12. Plantuml
 
-    [+lang/plantuml/README.org](+lang/plantuml/README.org)
+    [+lang/plantuml/README.md](+lang/plantuml/README.md)
 
     This layer enables support for
     [plantuml-mode](https://github.com/skuro/plantuml-mode), which
@@ -1553,7 +1553,7 @@ Features:
 
 13. ReStructuredText
 
-    [+lang/restructuredtext/README.org](+lang/restructuredtext/README.org)
+    [+lang/restructuredtext/README.md](+lang/restructuredtext/README.md)
 
     The layer adds ReStructuredText (ReST) support to Spacemacs and adds
     some functions to `rst-mode`.
@@ -1569,7 +1569,7 @@ Features:
 
 14. Semantic Web
 
-    [+lang/semantic-web/README.org](+lang/semantic-web/README.org)
+    [+lang/semantic-web/README.md](+lang/semantic-web/README.md)
 
     This layer adds support for RDF files in N3 and [Turtle
     syntax](https://www.w3.org/TR/turtle/) using
@@ -1590,7 +1590,7 @@ Features:
 
 15. YAML
 
-    [+lang/yaml/README.org](+lang/yaml/README.org)
+    [+lang/yaml/README.md](+lang/yaml/README.md)
 
     This layer provides support for the YAML file format.
 
@@ -1602,7 +1602,7 @@ Features:
 
 16. Yang
 
-    [+lang/yang/README.org](+lang/yang/README.org)
+    [+lang/yang/README.md](+lang/yang/README.md)
 
     This layer provides support for the YANG file format.
 
@@ -1616,7 +1616,7 @@ Features:
 
 1.  Autohotkey
 
-    [+lang/autohotkey/README.org](+lang/autohotkey/README.org)
+    [+lang/autohotkey/README.md](+lang/autohotkey/README.md)
 
     Syntax highlighting and Emacs functions for use with
     [AutoHotkey](https://autohotkey.com/) or
@@ -1639,7 +1639,7 @@ Features:
 
 2.  Graphql
 
-    [+lang/graphql/README.org](+lang/graphql/README.org)
+    [+lang/graphql/README.md](+lang/graphql/README.md)
 
     This layer adds support for graphql file. It builds around
     [graphql-mode](https://github.com/davazp/graphql-mode). Please check
@@ -1654,7 +1654,7 @@ Features:
 
 3.  Shell Scripts
 
-    [+lang/shell-scripts/README.org](+lang/shell-scripts/README.org)
+    [+lang/shell-scripts/README.md](+lang/shell-scripts/README.md)
 
     This simple layer adds support for shell scripting.
 
@@ -1679,7 +1679,7 @@ Features:
 
 4.  Vimscript language
 
-    [+lang/vimscript/README.org](+lang/vimscript/README.org)
+    [+lang/vimscript/README.md](+lang/vimscript/README.md)
 
     This layer adds support for vimscript and pentadactyl config files.
 
@@ -1691,7 +1691,7 @@ Features:
 
 5.  Windows Scripting
 
-    [+lang/windows-scripts/README.org](+lang/windows-scripts/README.org)
+    [+lang/windows-scripts/README.md](+lang/windows-scripts/README.md)
 
     This simple layer adds support for the Powershell scripting language
     as well as support for batch files.
@@ -1707,7 +1707,7 @@ Features:
 
 ### Coq
 
-[+lang/coq/README.org](+lang/coq/README.org)
+[+lang/coq/README.md](+lang/coq/README.md)
 
 This layer adds support for the [Coq](https://coq.inria.fr/) proof
 assistant (adapted from
@@ -1727,7 +1727,7 @@ Features:
 
 ### Elasticsearch
 
-[+tools/elasticsearch/README.org](+tools/elasticsearch/README.org)
+[+tools/elasticsearch/README.md](+tools/elasticsearch/README.md)
 
 This layer adds Elasticsearch query and monitoring support to Spacemacs.
 
@@ -1739,7 +1739,7 @@ Features:
 
 ### ESS (R)
 
-[+lang/ess/README.org](+lang/ess/README.org)
+[+lang/ess/README.md](+lang/ess/README.md)
 
 This layer adds support for statistical programming languages to
 Spacemacs.
@@ -1760,7 +1760,7 @@ Features:
 
 ### Extra Languages
 
-[+lang/major-modes/README.org](+lang/major-modes/README.org)
+[+lang/major-modes/README.md](+lang/major-modes/README.md)
 
 This layer adds a number of packages for less common languages and major
 modes.
@@ -1783,7 +1783,7 @@ Features:
 
 ### Faust
 
-[+lang/faust/README.org](+lang/faust/README.org)
+[+lang/faust/README.md](+lang/faust/README.md)
 
 This layer adds support for the [faust
 language](https://en.wikipedia.org/wiki/FAUST_(programming_language)) to
@@ -1796,7 +1796,7 @@ Features:
 
 ### GPU
 
-[+lang/gpu/README.org](+lang/gpu/README.org)
+[+lang/gpu/README.md](+lang/gpu/README.md)
 
 This layer adds support for GPU related languages like CUDA, OpenCL and
 various Shader formats to Spacemacs.
@@ -1827,7 +1827,7 @@ Features:
 
 ### Kivy
 
-[+lang/kivy/README.org](+lang/kivy/README.org)
+[+lang/kivy/README.md](+lang/kivy/README.md)
 
 This layer adds support for Kivy, cross-platform GUI framework for
 Python.
@@ -1838,7 +1838,7 @@ Features:
 
 ### Mercury
 
-[+lang/mercury/README.org](+lang/mercury/README.org)
+[+lang/mercury/README.md](+lang/mercury/README.md)
 
 This layer adds support for the Mercury language.
 
@@ -1850,7 +1850,7 @@ Features:
 
 ### Octave
 
-[+lang/octave/README.org](+lang/octave/README.org)
+[+lang/octave/README.md](+lang/octave/README.md)
 
 This layer adds support for `GNU Octave` files to Spacemacs.
 
@@ -1864,7 +1864,7 @@ Features:
 
 ### Prolog
 
-[+lang/prolog/README.org](+lang/prolog/README.org)
+[+lang/prolog/README.md](+lang/prolog/README.md)
 
 This layer adds support for Prolog using the bundled Prolog mode for
 Emacs. In addition it also adds ediprolog support for better interaction
@@ -1880,7 +1880,7 @@ Features:
 
 ### Solidity Layer
 
-[+lang/solidity/README.org](+lang/solidity/README.org)
+[+lang/solidity/README.md](+lang/solidity/README.md)
 
 A layer to support Solidity development in Spacemacs.
 
@@ -1892,7 +1892,7 @@ Features:
 
 ### SQL
 
-[+lang/sql/README.org](+lang/sql/README.org)
+[+lang/sql/README.md](+lang/sql/README.md)
 
 This layer adds support for a wide range of SQL dialects to Spacemacs.
 
@@ -1925,7 +1925,7 @@ Features:
 
 ### Django
 
-[+frameworks/django/README.org](+frameworks/django/README.org)
+[+frameworks/django/README.md](+frameworks/django/README.md)
 
 This layer adds support for the Python web framework
 [Django](https://www.djangoproject.com/) to Spacemacs.
@@ -1944,7 +1944,7 @@ Features:
 
 ### Emberjs
 
-[+frameworks/emberjs/README.org](+frameworks/emberjs/README.org)
+[+frameworks/emberjs/README.md](+frameworks/emberjs/README.md)
 
 This enables helpers for working with Ember.js projects.
 
@@ -1982,7 +1982,7 @@ Features:
 
 ### Phoenix
 
-[+frameworks/phoenix/README.org](+frameworks/phoenix/README.org)
+[+frameworks/phoenix/README.md](+frameworks/phoenix/README.md)
 
 This layer adds key bindings for
 [Alchemist](https://github.com/tonini/alchemist.el)'s already built in
@@ -1994,7 +1994,7 @@ Features:
 
 ### React
 
-[+frameworks/react/README.org](+frameworks/react/README.org)
+[+frameworks/react/README.md](+frameworks/react/README.md)
 
 ES6 and JSX ready configuration layer for React It will automatically
 recognize `.jsx` files and files with `react` imported.
@@ -2010,7 +2010,7 @@ Features:
 
 ### Ruby on Rails
 
-[+frameworks/ruby-on-rails/README.org](+frameworks/ruby-on-rails/README.org)
+[+frameworks/ruby-on-rails/README.md](+frameworks/ruby-on-rails/README.md)
 
 This layer aims at providing support for the Ruby on Rails framework.
 
@@ -2025,7 +2025,7 @@ Features:
 
 ### Svelte
 
-[+frameworks/svelte/README.org](+frameworks/svelte/README.org)
+[+frameworks/svelte/README.md](+frameworks/svelte/README.md)
 
 Layer for Svelte, for working with `.svelte` files.
 
@@ -2049,7 +2049,7 @@ Features:
 
 ### Vue
 
-[+frameworks/vue/README.org](+frameworks/vue/README.org)
+[+frameworks/vue/README.md](+frameworks/vue/README.md)
 
 Layer for Vue, for working with `.vue` files.
 
@@ -2077,7 +2077,7 @@ Features:
 
 1.  Asm
 
-    [+lang/asm/README.org](+lang/asm/README.org)
+    [+lang/asm/README.md](+lang/asm/README.md)
 
     This layer adds support for Assembly code. The built-in major mode
     for editing assembly code in Emacs is `asm-mode`.
@@ -2097,7 +2097,7 @@ Features:
 
 2.  Forth
 
-    [+lang/forth/README.org](+lang/forth/README.org)
+    [+lang/forth/README.md](+lang/forth/README.md)
 
     This layer adds basic support for the Forth family of languages to
     spacemacs.
@@ -2116,7 +2116,7 @@ Features:
 
     1.  CoffeeScript
 
-        [+lang/coffeescript/README.org](+lang/coffeescript/README.org)
+        [+lang/coffeescript/README.md](+lang/coffeescript/README.md)
 
         This layer adds support for the CoffeeScript language using
         [coffee-mode](https://github.com/defunkt/coffee-mode).
@@ -2131,7 +2131,7 @@ Features:
 
     2.  JavaScript
 
-        [+lang/javascript/README.org](+lang/javascript/README.org)
+        [+lang/javascript/README.md](+lang/javascript/README.md)
 
         This layer adds support for the JavaScript language using
         [js2-mode](https://github.com/mooz/js2-mode).
@@ -2157,7 +2157,7 @@ Features:
 
     3.  Purescript
 
-        [+lang/purescript/README.org](+lang/purescript/README.org)
+        [+lang/purescript/README.md](+lang/purescript/README.md)
 
         This layer provides basic Purescript editing support for
         spacemacs.
@@ -2174,7 +2174,7 @@ Features:
 
     4.  TypeScript
 
-        [+lang/typescript/README.org](+lang/typescript/README.org)
+        [+lang/typescript/README.md](+lang/typescript/README.md)
 
         This layer adds support for TypeScript and TSX editing.
 
@@ -2194,7 +2194,7 @@ Features:
 
 2.  C#
 
-    [+lang/csharp/README.org](+lang/csharp/README.org)
+    [+lang/csharp/README.md](+lang/csharp/README.md)
 
     This layer adds support for the C# language using the
     [omnisharp-roslyn](https://github.com/OmniSharp/omnisharp-roslyn)
@@ -2214,7 +2214,7 @@ Features:
 
 3.  C/C++
 
-    [+lang/c-c++/README.org](+lang/c-c++/README.org)
+    [+lang/c-c++/README.md](+lang/c-c++/README.md)
 
     This layer adds configuration for C/C++ language.
 
@@ -2252,7 +2252,7 @@ Features:
 
 4.  Crystal
 
-    [+lang/crystal/README.org](+lang/crystal/README.org)
+    [+lang/crystal/README.md](+lang/crystal/README.md)
 
     This layer provides support for the Crystal language.
 
@@ -2274,7 +2274,7 @@ Features:
 
 5.  D language
 
-    [+lang/d/README.org](+lang/d/README.org)
+    [+lang/d/README.md](+lang/d/README.md)
 
     This simple layer adds support for the [D
     language](http://dlang.org/) to Spacemacs.
@@ -2287,7 +2287,7 @@ Features:
 
 6.  Dart
 
-    [+lang/dart/README.org](+lang/dart/README.org)
+    [+lang/dart/README.md](+lang/dart/README.md)
 
     This layer adds support for Dart language, and could be optionally
     used for Flutter development as well.
@@ -2302,7 +2302,7 @@ Features:
 
 7.  Elixir
 
-    [+lang/elixir/README.org](+lang/elixir/README.org)
+    [+lang/elixir/README.md](+lang/elixir/README.md)
 
     This layer adds support for [Elixir](http://elixir-lang.org/).
 
@@ -2333,7 +2333,7 @@ Features:
 
 8.  Erlang
 
-    [+lang/erlang/README.org](+lang/erlang/README.org)
+    [+lang/erlang/README.md](+lang/erlang/README.md)
 
     This layer adds support for [Erlang](https://erlang.org/).
 
@@ -2364,7 +2364,7 @@ Features:
 
 9.  F#
 
-    [+lang/fsharp/README.org](+lang/fsharp/README.org)
+    [+lang/fsharp/README.md](+lang/fsharp/README.md)
 
     This layer adds support for F# language using
     [fsharpbinding](https://github.com/fsharp/fsharpbinding) and
@@ -2379,7 +2379,7 @@ Features:
 
 10. Factor Layer
 
-    [+lang/factor/README.org](+lang/factor/README.org)
+    [+lang/factor/README.md](+lang/factor/README.md)
 
     A spacemacs layer for Factor language support.
 
@@ -2395,7 +2395,7 @@ Features:
 
 11. Go
 
-    [+lang/go/README.org](+lang/go/README.org)
+    [+lang/go/README.md](+lang/go/README.md)
 
     This layer adds extensive support for the [Go](https://golang.org)
     programming language.
@@ -2404,34 +2404,34 @@ Features:
 
     -   Run [gofmt](https://golang.org/cmd/gofmt/) /
         [goimports](https://godoc.org/golang.org/x/tools/cmd/goimports)
-        on file save (see [Autoformat](+lang/go/README.org))
+        on file save (see [Autoformat](+lang/go/README.md))
     -   Auto-completion
     -   Source analysis using
         [go-guru](https://docs.google.com/document/d/1_Y9xCEMj5S-7rv2ooHpZNH15JgRT5iM742gJkw5LtmQ)
-        (see [Guru](+lang/go/README.org))
+        (see [Guru](+lang/go/README.md))
     -   Refactoring with
         [godoctor](https://github.com/godoctor/godoctor)
     -   Edit struct field tags with
         [gomodifytags](https://github.com/fatih/gomodifytags)
     -   Syntax checking with flycheck's built-in checkers or
         [golangci-lint](https://github.com/golangci/golangci-lint) (see
-        [Linting](+lang/go/README.org))
+        [Linting](+lang/go/README.md))
     -   Test generation via
         [go-gen-test](https://github.com/s-kostyaev/go-gen-test) (see
-        [Tests](+lang/go/README.org))
+        [Tests](+lang/go/README.md))
     -   Coverage profile visualization (see
-        [Coverage](+lang/go/README.org))
+        [Coverage](+lang/go/README.md))
     -   List packages faster with
         [gopkgs](https://github.com/haya14busa/gopkgs)
     -   Fill a structure with default values using the
         [fillstruct](https://github.com/davidrjenni/reftools/tree/master/cmd/fillstruct)
-    -   Gopls backend support (see [LSP backend](+lang/go/README.org))
+    -   Gopls backend support (see [LSP backend](+lang/go/README.md))
     -   Interactive debugger with LSP using
         [dap-mode](https://github.com/emacs-lsp/dap-mode)
 
 12. Groovy
 
-    [+lang/groovy/README.org](+lang/groovy/README.org)
+    [+lang/groovy/README.md](+lang/groovy/README.md)
 
     This layer supports [Groovy](http://www.groovy-lang.org/)
     development in Spacemacs.
@@ -2447,7 +2447,7 @@ Features:
 
 13. Hy
 
-    [+lang/hy/README.org](+lang/hy/README.org)
+    [+lang/hy/README.md](+lang/hy/README.md)
 
     This layer adds support for the Hy language based on Python.
 
@@ -2457,7 +2457,7 @@ Features:
     -   Auto-completion
     -   Code Navigation
     -   Python test runners (see [python
-        layer](+lang/hy/../python/README.org))
+        layer](+lang/hy/../python/README.md))
     -   Virtual Environment using
         [pyvenv](https://github.com/jorgenschaefer/pyvenv) and
         [pyenv](https://github.com/yyuu/pyenv)
@@ -2465,7 +2465,7 @@ Features:
 
 14. Java
 
-    [+lang/java/README.org](+lang/java/README.org)
+    [+lang/java/README.md](+lang/java/README.md)
 
     This layer adds support for the Java language.
 
@@ -2484,7 +2484,7 @@ Features:
 
 15. JR Concurrent Programming Language
 
-    [+lang/jr/README.org](+lang/jr/README.org)
+    [+lang/jr/README.md](+lang/jr/README.md)
 
     This layer adds syntax highlighting for the [JR Concurrent
     Programming
@@ -2498,7 +2498,7 @@ Features:
 
 16. Julia
 
-    [+lang/julia/README.org](+lang/julia/README.org)
+    [+lang/julia/README.md](+lang/julia/README.md)
 
     This layer adds support for [Julia](https://julialang.org) to
     Spacemacs.
@@ -2514,7 +2514,7 @@ Features:
 
 17. Kotlin
 
-    [+lang/kotlin/README.org](+lang/kotlin/README.org)
+    [+lang/kotlin/README.md](+lang/kotlin/README.md)
 
     This layer adds support for [Kotlin](http://kotlinlang.org/) to
     Spacemacs.
@@ -2529,7 +2529,7 @@ Features:
 
 18. Lua
 
-    [+lang/lua/README.org](+lang/lua/README.org)
+    [+lang/lua/README.md](+lang/lua/README.md)
 
     This layer adds support for editing Lua.
 
@@ -2545,7 +2545,7 @@ Features:
 
 19. Nim
 
-    [+lang/nim/README.org](+lang/nim/README.org)
+    [+lang/nim/README.md](+lang/nim/README.md)
 
     This layer adds support for the multi-paradigm language `Nim`.
 
@@ -2557,7 +2557,7 @@ Features:
 
 20. Ocaml
 
-    [+lang/ocaml/README.org](+lang/ocaml/README.org)
+    [+lang/ocaml/README.md](+lang/ocaml/README.md)
 
     This is a very basic layer for editing ocaml files.
 
@@ -2579,7 +2579,7 @@ Features:
 
 21. Pact
 
-    [+lang/pact/README.org](+lang/pact/README.org)
+    [+lang/pact/README.md](+lang/pact/README.md)
 
     This layer adds support for the [Pact Smart Contract
     Language](https://github.com/kadena-io/pact).
@@ -2595,7 +2595,7 @@ Features:
 
 22. Perl5
 
-    [+lang/perl5/README.org](+lang/perl5/README.org)
+    [+lang/perl5/README.md](+lang/perl5/README.md)
 
     This layer adds support for the Perl5 language.
 
@@ -2613,7 +2613,7 @@ Features:
 
 23. PHP
 
-    [+lang/php/README.org](+lang/php/README.org)
+    [+lang/php/README.md](+lang/php/README.md)
 
     This layer adds PHP language support to Spacemacs.
 
@@ -2639,7 +2639,7 @@ Features:
 
 24. Python
 
-    [+lang/python/README.org](+lang/python/README.org)
+    [+lang/python/README.md](+lang/python/README.md)
 
     This layer adds support for the Python language.
 
@@ -2688,7 +2688,7 @@ Features:
 
 25. Racket
 
-    [+lang/racket/README.org](+lang/racket/README.org)
+    [+lang/racket/README.md](+lang/racket/README.md)
 
     Adds support for the [Racket](http://racket-lang.org/) programming
     language.
@@ -2704,7 +2704,7 @@ Features:
 
 26. Raku
 
-    [+lang/raku/README.org](+lang/raku/README.org)
+    [+lang/raku/README.md](+lang/raku/README.md)
 
     This layer provides an environment for the [Raku Programming
     Language](https://www.raku.org/) that was previously known as Perl
@@ -2729,7 +2729,7 @@ Features:
 
 27. ReasonML
 
-    [+lang/reasonml/README.org](+lang/reasonml/README.org)
+    [+lang/reasonml/README.md](+lang/reasonml/README.md)
 
     Spacemacs layer for ReasonML, based around
     [reason-mode](https://github.com/reasonml-editor/reason-mode).
@@ -2745,7 +2745,7 @@ Features:
 
 28. Ruby
 
-    [+lang/ruby/README.org](+lang/ruby/README.org)
+    [+lang/ruby/README.md](+lang/ruby/README.md)
 
     This layer provides support for the Ruby programming language.
 
@@ -2763,7 +2763,7 @@ Features:
 
 29. Rust
 
-    [+lang/rust/README.org](+lang/rust/README.org)
+    [+lang/rust/README.md](+lang/rust/README.md)
 
     This layer supports [Rust](https://www.rust-lang.org) development in
     Spacemacs.
@@ -2782,7 +2782,7 @@ Features:
 
 30. Scala
 
-    [+lang/scala/README.org](+lang/scala/README.org)
+    [+lang/scala/README.md](+lang/scala/README.md)
 
     This layer adds support for the Scala language to Spacemacs.
 
@@ -2803,7 +2803,7 @@ Features:
 
 31. SML
 
-    [+lang/sml/README.org](+lang/sml/README.org)
+    [+lang/sml/README.md](+lang/sml/README.md)
 
     Adds support for the [SML](http://www.smlnj.org) programming
     language to Spacemacs.
@@ -2816,7 +2816,7 @@ Features:
 
 32. Swift
 
-    [+lang/swift/README.org](+lang/swift/README.org)
+    [+lang/swift/README.md](+lang/swift/README.md)
 
     This layer adds support for Apple's Swift programming language, used
     as a general purpose scripting language.
@@ -2832,7 +2832,7 @@ Features:
 
 33. Zig
 
-    [+lang/zig/README.org](+lang/zig/README.org)
+    [+lang/zig/README.md](+lang/zig/README.md)
 
     This layer adds support for the zig programming language
     <https://ziglang.org/>
@@ -2840,13 +2840,13 @@ Features:
     Features:
 
     -   Syntax Highlighting
-    -   LSP support via `zls` (see [LSP](+lang/zig/README.org))
+    -   LSP support via `zls` (see [LSP](+lang/zig/README.md))
 
 ### Purely functional
 
 1.  Agda
 
-    [+lang/agda/README.org](+lang/agda/README.org)
+    [+lang/agda/README.md](+lang/agda/README.md)
 
     This layer adds support for the
     [Agda](http://wiki.portal.chalmers.se/agda/pmwiki.php) programming
@@ -2862,7 +2862,7 @@ Features:
 
 2.  Elm
 
-    [+lang/elm/README.org](+lang/elm/README.org)
+    [+lang/elm/README.md](+lang/elm/README.md)
 
     This layer adds support for [Elm](http://elm-lang.org).
 
@@ -2883,7 +2883,7 @@ Features:
 
 3.  Haskell
 
-    [+lang/haskell/README.org](+lang/haskell/README.org)
+    [+lang/haskell/README.md](+lang/haskell/README.md)
 
     This layer adds support for the [Haskell](https://www.haskell.org/)
     language.
@@ -2899,7 +2899,7 @@ Features:
 
 4.  Idris
 
-    [+lang/idris/README.org](+lang/idris/README.org)
+    [+lang/idris/README.md](+lang/idris/README.md)
 
     This layer adds support for the [Idris](https://www.idris-lang.org/)
     language to Spacemacs.
@@ -2915,7 +2915,7 @@ Features:
 
 ### Conda Layer
 
-[+tools/conda/README.org](+tools/conda/README.org)
+[+tools/conda/README.md](+tools/conda/README.md)
 
 This layer adds support for the Anaconda python environment for
 numerical computations to Spacemacs.
@@ -2927,7 +2927,7 @@ Features:
 
 ### Dotnet
 
-[+tools/dotnet/README.org](+tools/dotnet/README.org)
+[+tools/dotnet/README.md](+tools/dotnet/README.md)
 
 This layer adds support for the dotnet cli package.
 
@@ -2937,7 +2937,7 @@ Features:
 
 ### IPython Notebook
 
-[+tools/ipython-notebook/README.org](+tools/ipython-notebook/README.org)
+[+tools/ipython-notebook/README.md](+tools/ipython-notebook/README.md)
 
 This layer adds support for the package `emacs-ipython-notebook`.
 
@@ -2953,7 +2953,7 @@ Features:
 
 ### Protocol Buffers
 
-[+lang/protobuf/README.org](+lang/protobuf/README.org)
+[+lang/protobuf/README.md](+lang/protobuf/README.md)
 
 Highlighting and syntax checking for [Protocol
 Buffer](https://developers.google.com/protocol-buffers/) files.
@@ -2968,7 +2968,7 @@ Features:
 
 ### Sailfish OS developer
 
-[+tools/sailfish-developer/README.org](+tools/sailfish-developer/README.org)
+[+tools/sailfish-developer/README.md](+tools/sailfish-developer/README.md)
 
 This layer adds support of sailfish-os development packages.
 
@@ -2981,7 +2981,7 @@ Features:
 
 ## Dash
 
-[+readers/dash/README.org](+readers/dash/README.org)
+[+readers/dash/README.md](+readers/dash/README.md)
 
 This layer integrates offline API browsers into Emacs. It provides one
 for macOS, Linux and Windows.
@@ -2997,7 +2997,7 @@ Features:
 
 ## Deft
 
-[+readers/deft/README.org](+readers/deft/README.org)
+[+readers/deft/README.md](+readers/deft/README.md)
 
 This layer adds a search driven note taking system into Spacemacs.
 
@@ -3012,7 +3012,7 @@ Features:
 
 ## Djvu
 
-[+readers/djvu/README.org](+readers/djvu/README.org)
+[+readers/djvu/README.md](+readers/djvu/README.md)
 
 This layer adds support for reading djvu files with spacemacs.
 
@@ -3036,7 +3036,7 @@ alternative to [djvu2.el](https://github.com/dalanicolai/djvu2.el)).
 
 ## Elfeed
 
-[+readers/elfeed/README.org](+readers/elfeed/README.org)
+[+readers/elfeed/README.md](+readers/elfeed/README.md)
 
 This layer integrates a web feed reader into spacemacs.
 
@@ -3051,7 +3051,7 @@ Features:
 
 ## Epub
 
-[+readers/epub/README.org](+readers/epub/README.org)
+[+readers/epub/README.md](+readers/epub/README.md)
 
 This layer provides support for reading EPUB-formatted eBooks in
 Spacemacs using the excellent
@@ -3071,7 +3071,7 @@ Features:
 
 ## PDF
 
-[+readers/pdf/README.org](+readers/pdf/README.org)
+[+readers/pdf/README.md](+readers/pdf/README.md)
 
 This layer enables support for PDF with the
 [pdf-tools](https://github.com/vedang/pdf-tools) package.
@@ -3092,7 +3092,7 @@ Features:
 
 ## Speed Reading
 
-[+readers/speed-reading/README.org](+readers/speed-reading/README.org)
+[+readers/speed-reading/README.md](+readers/speed-reading/README.md)
 
 A speed reading mode for Emacs.
 
@@ -3100,11 +3100,11 @@ Features:
 
 -   Support for `speed-reading` of arbitrary texts
 
-# README.org files that need proper tags
+# README.md files that need proper tags
 
 ## LanguageTool
 
-[+tools/languagetool/README.org](+tools/languagetool/README.org)
+[+tools/languagetool/README.md](+tools/languagetool/README.md)
 
 This layer adds grammar checking using
 [LanguageTool](https://www.languagetool.org/). LanguageTool will use the
@@ -3118,7 +3118,7 @@ Features:
 
 ## Git
 
-[+source-control/git/README.org](+source-control/git/README.org)
+[+source-control/git/README.md](+source-control/git/README.md)
 
 This layers adds extensive support for [git](http://git-scm.com/) to
 Spacemacs.
@@ -3147,7 +3147,7 @@ guide to configuring and using the Git and version control layers.
 
 ## GitHub
 
-[+source-control/github/README.org](+source-control/github/README.org)
+[+source-control/github/README.md](+source-control/github/README.md)
 
 **This layer is deprecated**.
 
@@ -3165,7 +3165,7 @@ Features:
 
 ## Perforce
 
-[+source-control/perforce/README.org](+source-control/perforce/README.org)
+[+source-control/perforce/README.md](+source-control/perforce/README.md)
 
 This layer integrates `Perforce` SCM system into Spacemacs.
 
@@ -3176,7 +3176,7 @@ Features:
 
 ## Version-Control
 
-[+source-control/version-control/README.org](+source-control/version-control/README.org)
+[+source-control/version-control/README.md](+source-control/version-control/README.md)
 
 This layers adds general configuration for [Emacs
 VC](http://www.gnu.org/software/emacs/manual/html_node/emacs/Version-Control.html).
@@ -3198,7 +3198,7 @@ Features:
 
 ### Spacemacs distribution
 
-[+distributions/spacemacs/README.org](+distributions/spacemacs/README.org)
+[+distributions/spacemacs/README.md](+distributions/spacemacs/README.md)
 
 This is the default distribution for Spacemacs.
 
@@ -3223,7 +3223,7 @@ Features:
 
 ### Spacemacs-base distribution
 
-[+distributions/spacemacs-base/README.org](+distributions/spacemacs-base/README.org)
+[+distributions/spacemacs-base/README.md](+distributions/spacemacs-base/README.md)
 
 This is the base distribution for Spacemacs.
 
@@ -3236,7 +3236,7 @@ Features:
 
 ### Spacemacs-bootstrap distribution
 
-[+distributions/spacemacs-bootstrap/README.org](+distributions/spacemacs-bootstrap/README.org)
+[+distributions/spacemacs-bootstrap/README.md](+distributions/spacemacs-bootstrap/README.md)
 
 This layer loads the necessary packages for spacemacs to start-up.
 
@@ -3256,7 +3256,7 @@ Features:
 
 ## Cscope
 
-[+tags/cscope/README.org](+tags/cscope/README.org)
+[+tags/cscope/README.md](+tags/cscope/README.md)
 
 This layer provides bindings for using
 [Cscope](http://cscope.sourceforge.net) and
@@ -3276,7 +3276,7 @@ Features:
 
 ## Helm Gtags
 
-[+tags/gtags/README.org](+tags/gtags/README.org)
+[+tags/gtags/README.md](+tags/gtags/README.md)
 
 `counsel-gtags`, `helm-gtags` and `ggtags` are clients for GNU Global.
 GNU Global is a source code tagging system that allows querying symbol
@@ -3306,7 +3306,7 @@ Features:
 
 ## Colors
 
-[+themes/colors/README.org](+themes/colors/README.org)
+[+themes/colors/README.md](+themes/colors/README.md)
 
 This layer colors your life by enhancing the existing coloration of
 identifiers as well as providing you with a more colorful process
@@ -3328,7 +3328,7 @@ Features:
 
 ## Nyan-mode
 
-[+themes/colors/local/nyan-mode/README.org](+themes/colors/local/nyan-mode/README.org)
+[+themes/colors/local/nyan-mode/README.md](+themes/colors/local/nyan-mode/README.md)
 
 Nyan Mode - Turn your Emacs into Nyanmacs! :) The mode is an analog
 indicator of your position in the buffer. The Cat should go from left to
@@ -3346,7 +3346,7 @@ Features:
 
 ## Themes Megapack
 
-[+themes/themes-megapack/README.org](+themes/themes-megapack/README.org)
+[+themes/themes-megapack/README.md](+themes/themes-megapack/README.md)
 
 This layer installs around 100 themes for Emacs.
 
@@ -3359,7 +3359,7 @@ Features:
 
 ## Theming
 
-[+themes/theming/README.org](+themes/theming/README.org)
+[+themes/theming/README.md](+themes/theming/README.md)
 
 This layer allows for a simple way of modifying themes.
 
@@ -3373,7 +3373,7 @@ Features:
 
 ## Ansible
 
-[+tools/ansible/README.org](+tools/ansible/README.org)
+[+tools/ansible/README.md](+tools/ansible/README.md)
 
 This layer adds support for editing Ansible configuration files in
 Spacemacs.
@@ -3387,7 +3387,7 @@ Features:
 
 ## Bm
 
-[+tools/bm/README.org](+tools/bm/README.org)
+[+tools/bm/README.md](+tools/bm/README.md)
 
 [BM](https://github.com/joodland/bm/blob/master/README.md) provides
 visible, buffer local, bookmarks and the ability to jump forward and
@@ -3410,7 +3410,7 @@ Features:
 
 ## CFEngine
 
-[+tools/cfengine/README.org](+tools/cfengine/README.org)
+[+tools/cfengine/README.md](+tools/cfengine/README.md)
 
 This layer adds support for CFEngine policies to Spacemacs.
 
@@ -3424,7 +3424,7 @@ Features:
 
 ## Chrome
 
-[+tools/chrome/README.org](+tools/chrome/README.org)
+[+tools/chrome/README.md](+tools/chrome/README.md)
 
 This layer provides some integration with the Google Chrome browser.
 
@@ -3438,7 +3438,7 @@ Features:
 
 ## CMake
 
-[+tools/cmake/README.org](+tools/cmake/README.org)
+[+tools/cmake/README.md](+tools/cmake/README.md)
 
 This layer adds support [CMake](https://cmake.org/) scripts.
 
@@ -3455,7 +3455,7 @@ Features:
 
 ## Command-log
 
-[+tools/command-log/README.org](+tools/command-log/README.org)
+[+tools/command-log/README.md](+tools/command-log/README.md)
 
 This layer adds handy commands for demonstrating Spacemacs.
 
@@ -3472,7 +3472,7 @@ Features:
 
 ## DAP
 
-[+tools/dap/README.org](+tools/dap/README.org)
+[+tools/dap/README.md](+tools/dap/README.md)
 
 Experimental integrated visual debugger using [Debug Adapter
 Protocol](https://code.visualstudio.com/docs/extensionAPI/api-debugging).
@@ -3502,7 +3502,7 @@ Fully featured IDE-like debugger providing:
 
 ## Debug
 
-[+tools/debug/README.org](+tools/debug/README.org)
+[+tools/debug/README.md](+tools/debug/README.md)
 
 This layer adds interactive debuggers for multiple languages using
 [realgud](https://github.com/realgud/realgud).
@@ -3518,7 +3518,7 @@ Features:
 
 ## Docker
 
-[+tools/docker/README.org](+tools/docker/README.org)
+[+tools/docker/README.md](+tools/docker/README.md)
 
 This layer integrates basic container management into Spacemacs.
 
@@ -3536,7 +3536,7 @@ Features:
 
 ## Eww
 
-[+web/eww/README.org](+web/eww/README.org)
+[+web/eww/README.md](+web/eww/README.md)
 
 Ewww.. So ergonomic!
 
@@ -3549,7 +3549,7 @@ Features:
 
 ## EXWM
 
-[+window-management/exwm/README.org](+window-management/exwm/README.org)
+[+window-management/exwm/README.md](+window-management/exwm/README.md)
 
 Thanks to @ch11ng and his [EXWM](https://github.com/ch11ng/exwm) project
 we can now use Emacs as our window manager, that means that you can
@@ -3561,7 +3561,7 @@ Features:
 
 ## Fasd
 
-[+tools/fasd/README.org](+tools/fasd/README.org)
+[+tools/fasd/README.md](+tools/fasd/README.md)
 
 This layer integrates the [fasd](https://github.com/clvv/fasd) command
 line tool into Spacemacs.
@@ -3574,7 +3574,7 @@ Features:
 
 ## Finance
 
-[+tools/finance/README.org](+tools/finance/README.org)
+[+tools/finance/README.md](+tools/finance/README.md)
 
 This layer integrates a full fledged accounting system into Spacemacs.
 
@@ -3590,7 +3590,7 @@ Features:
 
 ## Geolocation
 
-[+tools/geolocation/README.org](+tools/geolocation/README.org)
+[+tools/geolocation/README.md](+tools/geolocation/README.md)
 
 This layer offers location sensitive adjustments to Emacs.
 
@@ -3607,7 +3607,7 @@ Features:
 
 ## Imenu-list
 
-[+tools/imenu-list/README.org](+tools/imenu-list/README.org)
+[+tools/imenu-list/README.md](+tools/imenu-list/README.md)
 
 This layer uses [imenu-list](https://github.com/bmag/imenu-list) to show
 the current buffer's index in a side bar.
@@ -3622,7 +3622,7 @@ Features:
 
 ## Import-js
 
-[+tools/import-js/README.org](+tools/import-js/README.org)
+[+tools/import-js/README.md](+tools/import-js/README.md)
 
 This layer adds support for
 [import-js](https://github.com/Galooshi/import-js)
@@ -3635,7 +3635,7 @@ Features:
 
 ## Kubernetes
 
-[+tools/kubernetes/README.org](+tools/kubernetes/README.org)
+[+tools/kubernetes/README.md](+tools/kubernetes/README.md)
 
 This layer provides the
 [kubernetes-el](https://github.com/chrisbarrett/kubernetes-el#kubernetes-el)
@@ -3653,7 +3653,7 @@ Features:
 
 ## LSP
 
-[+tools/lsp/README.org](+tools/lsp/README.org)
+[+tools/lsp/README.md](+tools/lsp/README.md)
 
 This layer adds support for basic language server protocol packages
 speaking [language server
@@ -3680,7 +3680,7 @@ Features:
 
 ## Meson
 
-[+tools/meson/README.org](+tools/meson/README.org)
+[+tools/meson/README.md](+tools/meson/README.md)
 
 This layer adds support [Meson](https://mesonbuild.com/) scripts.
 
@@ -3691,7 +3691,7 @@ Features:
 
 ## Nginx
 
-[+tools/nginx/README.org](+tools/nginx/README.org)
+[+tools/nginx/README.md](+tools/nginx/README.md)
 
 This layer adds support for configuring [nginx](http://nginx.org) a
 powerful alternative for the Apache web server.
@@ -3704,7 +3704,7 @@ Features:
 
 ## Node
 
-[+tools/node/README.org](+tools/node/README.org)
+[+tools/node/README.md](+tools/node/README.md)
 
 This layer introduces packages that target Node.js. Currently this layer
 should not be used directly, as it will be used by other layers.
@@ -3716,7 +3716,7 @@ Features:
 
 ## Pandoc
 
-[+tools/pandoc/README.org](+tools/pandoc/README.org)
+[+tools/pandoc/README.md](+tools/pandoc/README.md)
 
 This layer adds support for [Pandoc](http://pandoc.org/).
 
@@ -3732,7 +3732,7 @@ Features:
 
 ## Pass
 
-[+tools/pass/README.org](+tools/pass/README.org)
+[+tools/pass/README.md](+tools/pass/README.md)
 
 This layer adds integration with [pass](http://www.passwordstore.org/),
 the unix password manager. You must have `pass` installed and available
@@ -3749,7 +3749,7 @@ Features:
 
 ## Prettier
 
-[+tools/prettier/README.org](+tools/prettier/README.org)
+[+tools/prettier/README.md](+tools/prettier/README.md)
 
 This layer adds support for
 [prettier](https://github.com/prettier/prettier)
@@ -3760,7 +3760,7 @@ Features:
 
 ## Prodigy
 
-[+tools/prodigy/README.org](+tools/prodigy/README.org)
+[+tools/prodigy/README.md](+tools/prodigy/README.md)
 
 This layer adds support for the
 [prodigy](https://github.com/rejeep/prodigy.el) package to manage
@@ -3778,7 +3778,7 @@ Features:
 
 ## Puppet
 
-[+tools/puppet/README.org](+tools/puppet/README.org)
+[+tools/puppet/README.md](+tools/puppet/README.md)
 
 This layer provides support for the Puppet DSL to Spacemacs.
 
@@ -3792,7 +3792,7 @@ Features:
 
 ## Ranger
 
-[+tools/ranger/README.org](+tools/ranger/README.org)
+[+tools/ranger/README.md](+tools/ranger/README.md)
 
 This layer brings Ranger features to spacemacs from the `ranger`
 package.
@@ -3824,7 +3824,7 @@ Features:
 
 ## Rebox
 
-[+tools/rebox/README.org](+tools/rebox/README.org)
+[+tools/rebox/README.md](+tools/rebox/README.md)
 
 This layer adds support for [rebox2](https://github.com/lewang/rebox2)
 package which is a minor-mode allowing to easily add ASCII text boxes to
@@ -3845,7 +3845,7 @@ Features:
 
 ## Restclient
 
-[+tools/restclient/README.org](+tools/restclient/README.org)
+[+tools/restclient/README.md](+tools/restclient/README.md)
 
 This layer provides a REPL-like interface for http requests.
 
@@ -3858,7 +3858,7 @@ Features:
 
 ## Saltstack
 
-[+tools/salt/README.org](+tools/salt/README.org)
+[+tools/salt/README.md](+tools/salt/README.md)
 
 This layer provides syntax highlighting for Saltstack files.
 
@@ -3869,7 +3869,7 @@ Features:
 
 ## Shell
 
-[+tools/shell/README.org](+tools/shell/README.org)
+[+tools/shell/README.md](+tools/shell/README.md)
 
 This layer configures the various shells available in Emacs.
 
@@ -3880,7 +3880,7 @@ Features:
 
 ## Sphinx
 
-[+tools/sphinx/README.org](+tools/sphinx/README.org)
+[+tools/sphinx/README.md](+tools/sphinx/README.md)
 
 The layer adds support for the documentation generation system `Sphinx`
 to the `restructuredtext` layer.
@@ -3893,7 +3893,7 @@ Features:
 
 ## Systemd
 
-[+tools/systemd/README.org](+tools/systemd/README.org)
+[+tools/systemd/README.md](+tools/systemd/README.md)
 
 This layer adds support for editing `systemd` configuration files in
 Spacemacs.
@@ -3908,7 +3908,7 @@ Features:
 
 ## Tern
 
-[+tools/tern/README.org](+tools/tern/README.org)
+[+tools/tern/README.md](+tools/tern/README.md)
 
 This layer adds support for [tern](http://ternjs.net/) stand-alone
 code-analysis engine for JavaScript.
@@ -3919,7 +3919,7 @@ Features:
 
 ## Terraform
 
-[+tools/terraform/README.org](+tools/terraform/README.org)
+[+tools/terraform/README.md](+tools/terraform/README.md)
 
 This layer provides basic support for Terraform `.tf` files.
 
@@ -3932,7 +3932,7 @@ Features:
 
 ## Tide Layer
 
-[+tools/tide/README.org](+tools/tide/README.org)
+[+tools/tide/README.md](+tools/tide/README.md)
 
 This layer installs [tide](https://github.com/ananthakumaran/tide)
 package which allows communication with [standalone typescript
@@ -3950,7 +3950,7 @@ Features:
 
 ## Tmux
 
-[+tools/tmux/README.org](+tools/tmux/README.org)
+[+tools/tmux/README.md](+tools/tmux/README.md)
 
 This layer adds basic `tmux` key bindings to Spacemacs.
 
@@ -3961,7 +3961,7 @@ Features:
 
 ## Translate Layer
 
-[+tools/translate/README.org](+tools/translate/README.org)
+[+tools/translate/README.md](+tools/translate/README.md)
 
 This layer is designed for Paragraph-oriented minor mode for
 side-by-side document translation workflow.
@@ -3973,7 +3973,7 @@ Features:
 
 ## Transmission
 
-[+tools/transmission/README.org](+tools/transmission/README.org)
+[+tools/transmission/README.md](+tools/transmission/README.md)
 
 This layer integrates a BitTorrent client into Spacemacs.
 
@@ -3984,7 +3984,7 @@ Features:
 
 ## Tree-sitter
 
-[+tools/tree-sitter/README.org](+tools/tree-sitter/README.org)
+[+tools/tree-sitter/README.md](+tools/tree-sitter/README.md)
 
 This layer integrates
 [`Emacs Tree-sitter`](https://github.com/emacs-tree-sitter/elisp-tree-sitter)
@@ -4003,7 +4003,7 @@ Features:
 
 ## Vagrant
 
-[+tools/vagrant/README.org](+tools/vagrant/README.org)
+[+tools/vagrant/README.md](+tools/vagrant/README.md)
 
 This layer adds support for working with Vagrant using
 [vagrant.el](https://github.com/ottbot/vagrant.el) and
@@ -4016,7 +4016,7 @@ Features:
 
 ## Web-beautify
 
-[+tools/web-beautify/README.org](+tools/web-beautify/README.org)
+[+tools/web-beautify/README.md](+tools/web-beautify/README.md)
 
 This layer adds support for
 [web-beautify](https://github.com/yasuyk/web-beautify).
@@ -4027,7 +4027,7 @@ Features:
 
 ## Xclipboard
 
-[+tools/xclipboard/README.org](+tools/xclipboard/README.org)
+[+tools/xclipboard/README.md](+tools/xclipboard/README.md)
 
 `xclipboard` integration layer.
 
@@ -4042,7 +4042,7 @@ Features:
 
 ## Evil-better-jumper
 
-[+vim/evil-better-jumper/README.org](+vim/evil-better-jumper/README.org)
+[+vim/evil-better-jumper/README.md](+vim/evil-better-jumper/README.md)
 
 This layer adds support for
 [better-jumper](https://github.com/gilbertw1/better-jumper). A
@@ -4055,7 +4055,7 @@ Features:
 
 ## Evil-commentary
 
-[+vim/evil-commentary/README.org](+vim/evil-commentary/README.org)
+[+vim/evil-commentary/README.md](+vim/evil-commentary/README.md)
 
 This layer replaces
 [evil-nerd-commenter](https://github.com/redguardtoo/evil-nerd-commenter)
@@ -4070,7 +4070,7 @@ Features:
 
 ## Evil-snipe
 
-[+vim/evil-snipe/README.org](+vim/evil-snipe/README.org)
+[+vim/evil-snipe/README.md](+vim/evil-snipe/README.md)
 
 This layer adds various replacements for vim's default search functions.
 
@@ -4083,7 +4083,7 @@ Features:
 
 ## Vim-empty-lines
 
-[+vim/vim-empty-lines/README.org](+vim/vim-empty-lines/README.org)
+[+vim/vim-empty-lines/README.md](+vim/vim-empty-lines/README.md)
 
 This layer is a drop-in replacement for the `vi-tilde-fringe` mode, for
 those who desire behaviour closer to `vim`'s.
@@ -4105,7 +4105,7 @@ Features:
 
 ## Vinegar
 
-[+vim/vinegar/README.org](+vim/vinegar/README.org)
+[+vim/vinegar/README.md](+vim/vinegar/README.md)
 
 This layer is a port of vim-vinegar for Emacs.
 
@@ -4129,7 +4129,7 @@ Features:
 
 ## Confluence
 
-[+web-services/confluence/README.org](+web-services/confluence/README.org)
+[+web-services/confluence/README.md](+web-services/confluence/README.md)
 
 This layer adds support for Atlassian
 [Confluence](https://www.atlassian.com/software/confluence).
@@ -4141,7 +4141,7 @@ Features:
 
 ## Eaf
 
-[+tools/eaf/README.org](+tools/eaf/README.org)
+[+tools/eaf/README.md](+tools/eaf/README.md)
 
 This layer adds support for the [Emacs Application Framework
 (EAF)](https://github.com/emacs-eaf/emacs-application-framework).
@@ -4158,7 +4158,7 @@ Features:
 
 ## Evernote
 
-[+web-services/evernote/README.org](+web-services/evernote/README.org)
+[+web-services/evernote/README.md](+web-services/evernote/README.md)
 
 This layer adds support for the famous [Evernote](https://evernote.com/)
 note taking service to Spacemacs. It does so by grouping together
@@ -4174,7 +4174,7 @@ Features:
 
 ## Hacker News
 
-[+web-services/hackernews/README.org](+web-services/hackernews/README.org)
+[+web-services/hackernews/README.md](+web-services/hackernews/README.md)
 
 This layer adds support for reading [Hacker
 News](https://news.ycombinator.com/).
@@ -4185,7 +4185,7 @@ Features:
 
 ## Layer for reddit
 
-[+web-services/reddit/README.org](+web-services/reddit/README.org)
+[+web-services/reddit/README.md](+web-services/reddit/README.md)
 
 This layer adds Reddit support to Spacemacs via the package
 [reddigg](https://github.com/thanhvg/emacs-reddigg). This package allows
@@ -4200,7 +4200,7 @@ Features:
 
 ## Lobsters
 
-[+web-services/lobsters/README.org](+web-services/lobsters/README.org)
+[+web-services/lobsters/README.md](+web-services/lobsters/README.md)
 
 This layer adds support for reading [lobsters](https://lobste.rs/).
 
@@ -4210,7 +4210,7 @@ Features:
 
 ## Pocket
 
-[+web-services/pocket/README.org](+web-services/pocket/README.org)
+[+web-services/pocket/README.md](+web-services/pocket/README.md)
 
 This layer adds [Pocket](https://getpocket.com/) support to Spacemacs
 via the package
@@ -4226,7 +4226,7 @@ Features:
 
 ## Search Engine
 
-[+web-services/search-engine/README.org](+web-services/search-engine/README.org)
+[+web-services/search-engine/README.md](+web-services/search-engine/README.md)
 
 This layer adds support for the [Search
 Engine](https://github.com/hrs/engine-mode) package.
@@ -4237,7 +4237,7 @@ Features:
 
 ## Streamlink
 
-[+web-services/streamlink/README.org](+web-services/streamlink/README.org)
+[+web-services/streamlink/README.md](+web-services/streamlink/README.md)
 
 This layer adds support for opening URLs in streamlink.
 
@@ -4247,7 +4247,7 @@ Features:
 
 ## Twitch
 
-[+web-services/twitch/README.org](+web-services/twitch/README.org)
+[+web-services/twitch/README.md](+web-services/twitch/README.md)
 
 This layer adds support for twitch. You can search for streamers and
 open the stream in the browser. You are also able to connect to twitch
@@ -4261,7 +4261,7 @@ Features:
 
 ## Twitter
 
-[+web-services/twitter/README.org](+web-services/twitter/README.org)
+[+web-services/twitter/README.md](+web-services/twitter/README.md)
 
 This layer adds Twitter support to Spacemacs via the package
 [twittering-mode](https://github.com/hayamiz/twittering-mode).
@@ -4291,7 +4291,7 @@ Features:
 
 ## Wakatime
 
-[+web-services/wakatime/README.org](+web-services/wakatime/README.org)
+[+web-services/wakatime/README.md](+web-services/wakatime/README.md)
 
 This layer adds support for Wakatime.
 
