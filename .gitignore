@@ -98,3 +98,16 @@ gtags.files
 eln-cache/
 meghanada/
 vimish-fold/
+
+.org-generic-id-locations
+elgrep-data.el
+emms
+layouts
+mastodon.plstore
+multisession
+oauth2-auto.plstore
+persist
+projects
+tabsession.el
+tree-sitter
+tutorial
