@@ -36,7 +36,25 @@
     (selectrum :toggle (eq compleseus-engine 'selectrum))
     (vertico
      :toggle (eq compleseus-engine 'vertico)
-     :location elpa)
+     ;; TODO remove when `vertico-repeat' on ELPA
+     :location (recipe :fetcher github
+                       :repo "minad/vertico"))
+    (vertico-directory
+     :toggle (eq compleseus-engine 'vertico)
+     ;; TODO remove when it's on ELPA
+     :location (recipe :fetcher url
+                       :url "https://raw.githubusercontent.com/minad/vertico/main/extensions/vertico-directory.el"))
+    (vertico-quick
+     :toggle (eq compleseus-engine 'vertico)
+     ;; TODO remove when it's on ELPA
+     :location (recipe :fetcher url
+                       :url "https://raw.githubusercontent.com/minad/vertico/main/extensions/vertico-quick.el"))
+    (vertico-repeat
+     :toggle (eq compleseus-engine 'vertico)
+     ;; TODO: Remove when https://github.com/minad/vertico/issues/83 solved.
+     :location (recipe :fetcher url
+                       :url "https://raw.githubusercontent.com/minad/vertico/main/extensions/vertico-repeat.el"))
+
     (grep :location built-in)
     wgrep))
 
