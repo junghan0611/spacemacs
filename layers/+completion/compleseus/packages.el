@@ -376,7 +376,7 @@
     ;; Disable ido. We want to use the regular find-file etc.; enhanced by vertico
     (setq ido-mode nil)
 
-    (vertico-mode)
+    ;; (vertico-mode)
 
     :config
     (when (spacemacs//support-hjkl-navigation-p)
