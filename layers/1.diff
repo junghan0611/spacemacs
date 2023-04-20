@@ -1,0 +1,1824 @@
+diff --git a/CHANGELOG.develop b/CHANGELOG.develop
+index be7643080..937a163b2 100644
+--- a/CHANGELOG.develop
++++ b/CHANGELOG.develop
+@@ -132,6 +132,7 @@ the [[file:CHANGELOG.org][CHANGELOG.org]] file.
+     in Vim editing style; disabled by default. (thanks to Benedict HW)
+   - Added ~SPC m r R~ to show tide refactorings submenu (thanks to Roberto 
+     Previdi)
++  - Added ~SPC m R F~ to autocorrect the current ruby file.
+ - Other:
+   - Support for multiple cursors using =evil-mc= is now encapsulated in the
+     =multiple-cursors= layer (thanks to Codruț Constantin Gușoi)
+@@ -1831,6 +1832,14 @@ Other:
+     - Added ~SPC m s l~ for =coffee-send-line=
+     - Added ~SPC m s r~ for =coffee-send-region=
+     - Added ~SPC m T c~ for =coffee-cos-mode=
++**** Command-log
++- Key bindings:
++  -  ~SPC a t k h~ display keycast in buffer header (thanks to John Stevenson)
++  -  ~SPC a t k m~ display keycast in modeline (thanks to John Stevenson)
++  -  ~SPC a t k t~ display keycast in tab bar (thanks to John Stevenson)
++- Improvements:
++  - ~keycast-mode-line-insert-after~ variable used to include keycast in
++    mode-line-format (thanks to John Stevenson)
+ **** Common Lisp
+ - Improvements:
+   - Added eval-thing-at-point functions to Common Lisp Layer
+@@ -2174,7 +2183,8 @@ Other:
+   - Implement performance hack for MacOS mentioned in Magit manual (thanks to
+     Keith Pinson)
+   - Magit Forge key bindings for editing a topic, i.e. issue, PR (thanks to
+-    @practicalli-john & @nickanderson)
++  - ~SPC m d~ Magit Forge toggle draft PR key bindings (thanks to
++    @practicalli-john)
+ - Fixes:
+   - Install magit-svn by default and activate with git-enable-magit-svn-plugin
+   - Added feature to toggle =evil-magit= based on editing style
+diff --git a/core/core-themes-support.el b/core/core-themes-support.el
+index 60dc2c3aa..d7af704ae 100644
+--- a/core/core-themes-support.el
++++ b/core/core-themes-support.el
+@@ -261,8 +261,8 @@
+     (kaolin-temple                    . kaolin-themes)
+     (kaolin-valley-dark               . kaolin-themes)
+     (kaolin-valley-light              . kaolin-themes)
+-    (majapahit-dark                   . majapahit-theme)
+-    (majapahit-light                  . majapahit-theme)
++    (majapahit-dark                   . majapahit-themes)
++    (majapahit-light                  . majapahit-themes)
+     (material-light                   . material-theme)
+     (mccarthy                         . sublime-themes)
+     (minimal-light                    . minimal-theme)
+diff --git a/core/libs/package-build.el b/core/libs/package-build.el
+index 0b78bc8a8..2688e9cc1 100644
+--- a/core/libs/package-build.el
++++ b/core/libs/package-build.el
+@@ -362,7 +362,7 @@ with a timeout so that no command can block the build process."
+       (unless package-build--inhibit-fetch
+         (let ((default-directory dir))
+           (package-build--message "Updating %s" dir)
+-          (package-build--run-process "git" "fetch" "-f" "--all" "--tags")
++          (package-build--run-process "git" "fetch" "-f" "--tags" "origin")
+           ;; We might later checkout "origin/HEAD". Sadly "git fetch"
+           ;; cannot be told to keep it up-to-date, so we have to make
+           ;; a second request.
+@@ -1003,7 +1003,7 @@ packages for which that returns non-nil are build."
+           (message "Building %i packages failed:\n%s"
+                    (length failed)
+                    (mapconcat (lambda (n) (concat "  " n)) (nreverse failed) "\n"))))))
+-  (package-build-cleanup))
++  (package-build-dump-archive-contents))
+ 
+ (defun package-build-cleanup ()
+   "Remove previously built packages that no longer have recipes."
+@@ -1023,36 +1023,54 @@ packages for which that returns non-nil are build."
+ (defun package-build-dump-archive-contents (&optional file pretty-print)
+   "Update and return the archive contents.
+ 
+-If non-nil, then store the archive contents in FILE instead of in
+-the \"archive-contents\" file inside `package-build-archive-dir'.
+-If PRETTY-PRINT is non-nil, then pretty-print instead of using one
+-line per entry."
+-  (let (entries)
+-    (dolist (file (sort (directory-files package-build-archive-dir t ".*\\.entry$")
+-                        ;; Sort more recently-build packages first
+-                        (lambda (f1 f2)
+-                          (let ((default-directory package-build-archive-dir))
+-                            (file-newer-than-file-p f1 f2)))))
++Update files \"archive-contents\" and \"elpa-packages.eld\" in
++`package-build-archive-dir'.  If optional FILE is non-nil,
++use that to store the archive contents and place the second
++file next to it.
++
++If optional PRETTY-PRINT is non-nil, then pretty-print
++\"archive-contents\" instead of using one line per entry.
++\"elpa-packages.eld\" always uses one line per entry."
++  (let ((default-directory package-build-archive-dir)
++        (entries nil)
++        (vc-pkgs nil))
++    (dolist (file (sort (directory-files default-directory t ".*\\.entry\\'")
++                        ;; Sort more recently build packages first.
++                        #'file-newer-than-file-p))
+       (let* ((entry (with-temp-buffer
+                       (insert-file-contents file)
+                       (read (current-buffer))))
+-             (name (car entry))
+-             (newer-entry (assq name entries)))
+-        (if (not (file-exists-p (expand-file-name (symbol-name name)
+-                                                  package-build-recipes-dir)))
+-            (package-build--remove-archive-files entry)
+-          ;; Prefer the more-recently-built package, which may not
+-          ;; necessarily have the highest version number, e.g. if
++             (symbol (car entry))
++             (name (symbol-name symbol))
++             (outdated (assq symbol entries)))
++        (cond
++         ((not (file-exists-p (expand-file-name name package-build-recipes-dir)))
++          ;; Recipe corresponding to this entry no longer exists.
++          (package-build--remove-archive-files entry))
++         (outdated
++          ;; Prefer the more recently built package, which may not
++          ;; necessarily have the highest version number, e.g., if
+           ;; commit histories were changed.
+-          (if newer-entry
+-              (package-build--remove-archive-files entry)
+-            (push entry entries)))))
+-    (setq entries (sort entries (lambda (a b)
+-                                  (string< (symbol-name (car a))
+-                                           (symbol-name (car b))))))
+-    (with-temp-file
+-        (or file
+-            (expand-file-name "archive-contents" package-build-archive-dir))
++          (package-build--remove-archive-files entry))
++         (t
++          (push entry entries)
++          ;; [Non]GNU ELPA recipes are not compatible with Melpa recipes.
++          ;; See around occurrences of "pkg-spec" in "package-vc.el";
++          ;; section "Specifications (elpa-packages)" in "README" of the
++          ;; "elpa-admin" branch in "emacs/elpa.git" repository; and also
++          ;; `elpaa--supported-keywords' and `elpaa--publish-package-spec'.
++          (let ((recipe (package-recipe-lookup name)))
++            (push
++             `(,symbol
++               :url ,(package-recipe--upstream-url recipe)
++               ,@(and (cl-typep recipe 'package-hg-recipe)
++                      (list :vc-backend 'Hg))
++               ,@(when-let* ((branch (oref recipe branch)))
++                   (list :branch branch)))
++             vc-pkgs))))))
++    (setq entries (cl-sort entries #'string<
++                           :key (lambda (e) (symbol-name (car e)))))
++    (with-temp-file (or file (expand-file-name "archive-contents"))
+       (let ((print-level nil)
+             (print-length nil))
+         (if pretty-print
+@@ -1062,7 +1080,18 @@ line per entry."
+             (newline)
+             (insert " ")
+             (prin1 entry (current-buffer)))
+-          (insert ")"))))
++          (insert ")\n"))))
++    (with-temp-file (expand-file-name "elpa-packages.eld"
++                                      (and file (file-name-nondirectory file)))
++      (let ((print-level nil)
++            (print-length nil))
++        (insert "((")
++        (prin1 (car vc-pkgs) (current-buffer))
++        (dolist (entry (cdr vc-pkgs))
++          (newline)
++          (insert "  ")
++          (prin1 entry (current-buffer)))
++        (insert ")\n :version 1 :default-vc Git)\n")))
+     entries))
+ 
+ (defun package-build--remove-archive-files (archive-entry)
+diff --git a/doc/LAYERS.org b/doc/LAYERS.org
+index e415b7e6b..06af6474a 100644
+--- a/doc/LAYERS.org
++++ b/doc/LAYERS.org
+@@ -477,8 +477,8 @@ * Layer tips and tricks
+ ** Cross-dependencies
+ Spacemacs provides a couple of additional useful functions you can use to check
+ whether other layers or packages are included.
+-- check if a layer is enabled
+-- check if a package is or will be installed
++- check if a layer is enabled (=configuration-layer/layer-used-p=)
++- check if a package is or will be installed (=configuration-layer/package-used-p=)
+ 
+ These are useful in some cases, but usually you can get the desired result just
+ by using =post-init= functions.
+diff --git a/layers/+checkers/syntax-checking/README.org b/layers/+checkers/syntax-checking/README.org
+index 587f67bf2..facfb083a 100644
+--- a/layers/+checkers/syntax-checking/README.org
++++ b/layers/+checkers/syntax-checking/README.org
+@@ -128,7 +128,7 @@ ** Error Indicator on Fringe/Margin
+ If =flycheck-indication-mode= is =nil=, no indicator is displayed for errors.
+ 
+ To change the indicator symbol, you can customize
+-=syntax-checking-indicatin-symbol=, which is a cons cell of a fringe bitmap and
++=syntax-checking-indication-symbol=, which is a cons cell of a fringe bitmap and
+ margin string. When any of the element is nil, it's left to =flycheck= to
+ determine a default indicator. (At any time, only one of the fringe bitmap and
+ margin string is needed, since error indicator cannot be both =*-fringe= and
+diff --git a/layers/+completion/auto-completion/README.org b/layers/+completion/auto-completion/README.org
+index e9279068c..310635ee3 100644
+--- a/layers/+completion/auto-completion/README.org
++++ b/layers/+completion/auto-completion/README.org
+@@ -225,6 +225,7 @@ ** Company
+ | ~C-/~       | show candidates in Helm or Ivy (for fuzzy searching)                                                 |
+ | ~C-M-/~     | filter the company dropdown menu                                                                     |
+ | ~M-h~       | show current candidate's documentation in a tooltip (requires =auto-completion-enable-help-tooltip=) |
++| ~C-b~       | switch to next completion backend (=company-other-backend=)                                          |
+ 
+ Vim Style:
+ 
+diff --git a/layers/+completion/auto-completion/packages.el b/layers/+completion/auto-completion/packages.el
+index 50155dc1a..613b84c57 100644
+--- a/layers/+completion/auto-completion/packages.el
++++ b/layers/+completion/auto-completion/packages.el
+@@ -127,7 +127,8 @@
+       (let ((map company-active-map))
+         (define-key map (kbd "C-/")   'company-search-candidates)
+         (define-key map (kbd "C-M-/") 'company-filter-candidates)
+-        (define-key map (kbd "C-d")   'company-show-doc-buffer))
++        (define-key map (kbd "C-d")   'company-show-doc-buffer)
++        (define-key map (kbd "C-b")   'company-other-backend))
+       (add-hook 'spacemacs-editing-style-hook 'spacemacs//company-active-navigation)
+       ;; ensure that the correct bindings are set at startup
+       (spacemacs//company-active-navigation dotspacemacs-editing-style))))
+diff --git a/layers/+completion/compleseus/README.org b/layers/+completion/compleseus/README.org
+index c1b1e317c..244e38bfc 100644
+--- a/layers/+completion/compleseus/README.org
++++ b/layers/+completion/compleseus/README.org
+@@ -7,25 +7,25 @@ * Table of Contents                     :TOC_5_gh:noexport:
+   - [[#features][Features:]]
+ - [[#install][Install]]
+   - [[#configuration][Configuration]]
++    - [[#completion-engine][Completion engine]]
+ - [[#key-bindings][Key bindings]]
+ 
+ * Description
+-This layer adds a new way of completion provided by the following core packages:
+-- =consult=
+-- =embark=
+-- =marginalia=
+-- =orderless=
+-- =selectrum= or =vertico=
++This layer implements completion provided by combining the following packages:
++- =selectrum= or =vertico=: vertical completion user interface
++- =consult=: useful commands using ~completing-read~
++- =embark=: provides minibuffer actions
++- =marginalia=: annotations to completion candidates
++- =orderless=: filtering enhancements
+ 
+-This is an WIP and only supports emacs 27 or later. Please contribute.
++It only supports emacs 27 or later.
+ 
+ ** Features:
+-- Same features as =ivy= or =helm=
++- Similar features like =ivy= or =helm=
+ 
+ * Install
+-To use this configuration layer, add it to your =~/.spacemacs=. You will need to
+-add =compleseus= to the existing =dotspacemacs-configuration-layers= list in this
+-file.
++To use this configuration layer, add it to your =~/.spacemacs=: You will need to
++add =compleseus= to the =dotspacemacs-configuration-layers= list in this file.
+ 
+ Make sure that the other completion layers: =helm= and =ivy= are removed or
+ commented out in the =dotspacemacs-configuration-layers= list. Or add
+@@ -33,6 +33,7 @@ * Install
+ layer that's listed last.
+ 
+ ** Configuration
++*** Completion engine
+ You can configure the completion engine by setting =compleseus-engine= to either
+ =vertico= (default) or =selectrum= by editing the =compleseus-engine= variable
+ like below to use =selectrum= as opposed to the default of =vertico=:
+@@ -44,7 +45,8 @@ ** Configuration
+ 
+ * Key bindings
+ 
+-| Key binding | Description   |
+-|-------------+---------------|
+-| ~M-o~       | embark-action |
+-| ~C-r~       | history       |
++| Key binding | Description               |
++|-------------+---------------------------|
++| ~M-o~       | embark-action             |
++| ~C-r~       | history                   |
++| ~M-.~       | preview selected item now |
+diff --git a/layers/+completion/compleseus/packages.el b/layers/+completion/compleseus/packages.el
+index 0478b251a..a1bd82515 100644
+--- a/layers/+completion/compleseus/packages.el
++++ b/layers/+completion/compleseus/packages.el
+@@ -86,11 +86,12 @@
+              '((spacemacs/compleseus-pers-switch-project . project-file)
+                ;; https://github.com/bbatsov/projectile/issues/1664
+                ;; https://github.com/minad/marginalia/issues/110
++               (persp-switch-to-buffer . buffer)
+                (projectile-find-file . project-file)
+                (projectile-find-dir . project-file)
+                (projectile-recentf . project-file)
+                (projectile-switch-to-buffer . buffer)
+-               (projectile-switch-project . file)))
++               (projectile-switch-project . project-file)))
+       (push it marginalia-command-categories))
+     (setq marginalia-align 'right)
+     ;; The :init configuration is always executed (Not lazy!)
+@@ -205,12 +206,12 @@
+ 
+     ;; disable automatic preview by default,
+     ;; selectively enable it for some prompts below.
+-    (setq consult-preview-key "M-.")
++    (setq consult-preview-key '("M-." "C-SPC"))
+ 
+     ;; customize preview activation and delay while selecting candiates
+     (consult-customize
+      consult-theme
+-     :preview-key '("M-."
++     :preview-key '("M-." "C-SPC"
+                     :debounce 0.2 any)
+ 
+      ;; slightly delayed preview upon candidate selection
+@@ -221,7 +222,7 @@
+      consult-grep
+      consult-bookmark
+      consult-yank-pop
+-     :preview-key '("M-."
++     :preview-key '("M-." "C-SPC"
+                     :debounce 0.3 "<up>" "<down>" "C-n" "C-p"
+                     :debounce 0.6 any))
+ 
+@@ -278,10 +279,15 @@
+ 
+     :init
+     (spacemacs/set-leader-keys "?" #'embark-bindings)
+-    ;; Optionally replace the key help with a completing-read interface
+-    (setq prefix-help-command #'embark-prefix-help-command)
++    ;; this gets you the available-key preview minibuffer popup
++    (setq prefix-help-command #'embark-prefix-help-command
++          ;; don't use C-h for paging, instead `describe-prefix-bindings`.
++          which-key-use-C-h-commands nil)
++
+     ;; same key binding as ivy-occur
+     (define-key minibuffer-local-map (kbd "C-c C-o") #'embark-export)
++    (define-key minibuffer-local-map (kbd "C-c C-l") #'embark-collect)
++
+     :config
+     (define-key embark-file-map "s" 'spacemacs/compleseus-search-from)
+ 
+@@ -318,10 +324,12 @@
+ 
+     (setq orderless-component-separator "[ &]")
+ 
+-    ;; should be all in with orderless other wise the results are inconsistent.
+-    ;; (setq completion-styles '(basic partial-completion orderless)
+-    (setq completion-styles '(orderless)
++    ;; should be all in with orderless otherwise the results are inconsistent.
++    ;; the available styles are registered in `completion-styles-alist`.
++    (setq completion-styles '(orderless basic)
+           completion-category-defaults nil
++          ;; we need to have 'basic here first in order to support tramp connections...
++          ;; see `completion-styles`.
+           completion-category-overrides '((file (styles basic partial-completion))))))
+ 
+ (defun compleseus/init-selectrum ()
+@@ -357,6 +365,7 @@
+     (setq minibuffer-prompt-properties
+           '(read-only t cursor-intangible t face minibuffer-prompt))
+     (add-hook 'minibuffer-setup-hook #'cursor-intangible-mode)
++    (add-hook 'minibuffer-setup-hook #'vertico-repeat-save)
+ 
+     ;; Cleans up path when moving directories with shadowed paths syntax, e.g.
+     ;; cleans ~/foo/bar/// to /, and ~/foo/bar/~/ to ~/.
+@@ -367,11 +376,24 @@
+ 
+     ;; when vertico is used set this so tab when doing M-: will show suggestions
+     ;; https://github.com/minad/vertico/issues/24
+-    (setq completion-in-region-function #'consult-completion-in-region)
++    (setq-default completion-in-region-function
++                  (lambda (&rest args)
++                    (apply (if vertico-mode
++                               #'consult-completion-in-region
++                             #'completion--in-region)
++                           args)))
+ 
+     (setq vertico-resize nil
+           vertico-count 20
+-          vertico-cycle nil)
++          vertico-cycle nil
++
++          ;; ignore case for all basic completions
++          ;; if we have orderless completion, we use it's `orderless-smart-case` feature anyway.
++          ;; this is the setting when we chose "basic" from `completion-styles`,
++          ;; which we do for filename completion.
++          read-file-name-completion-ignore-case t
++          read-buffer-completion-ignore-case t
++          completion-ignore-case t)
+ 
+     ;; Disable ido. We want to use the regular find-file etc.; enhanced by vertico
+     (setq ido-mode nil)
+@@ -380,40 +402,43 @@
+ 
+     :config
+     (when (spacemacs//support-hjkl-navigation-p)
+-      (define-key vertico-map (kbd "M-RET") #'vertico-exit-input)
+-      (define-key vertico-map (kbd "C-SPC") #'spacemacs/embark-preview)
+       (define-key vertico-map (kbd "C-j") #'vertico-next)
+-      (define-key vertico-map (kbd "C-M-j") #'spacemacs/next-candidate-preview)
+-      (define-key vertico-map (kbd "C-S-j") #'vertico-next-group)
+       (define-key vertico-map (kbd "C-k") #'vertico-previous)
+-      (define-key vertico-map (kbd "C-M-k") #'spacemacs/previous-candidate-preview)
++      (define-key vertico-map (kbd "C-l") #'vertico-insert)
++      (define-key vertico-map (kbd "C-S-j") #'vertico-next-group)
+       (define-key vertico-map (kbd "C-S-k") #'vertico-previous-group)
+-      (define-key vertico-map (kbd "C-r") #'consult-history))))
++      (define-key vertico-map (kbd "C-M-j") #'spacemacs/next-candidate-preview)
++      (define-key vertico-map (kbd "C-M-k") #'spacemacs/previous-candidate-preview)
++      (define-key vertico-map (kbd "M-RET") #'vertico-exit-input)
++      (define-key vertico-map (kbd "C-SPC") #'spacemacs/embark-preview)
++      (define-key vertico-map (kbd "C-r") #'consult-history)))
++
++  (use-package vertico-directory
++      :after vertico
++      :ensure nil
++      ;; More convenient directory navigation commands
++      :init (bind-key "C-h" 'vertico-directory-up vertico-map
++                      (spacemacs//support-hjkl-navigation-p))
++      ;; tidy shadowed file names
++      :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
+ 
+-(defun compleseus/init-vertico-quick ()
+   (use-package vertico-quick
+-    :after vertico
+-    :init
+-    (define-key vertico-map "\M-q" #'vertico-quick-insert)
+-    (define-key vertico-map "\C-q" #'vertico-quick-exit)))
++      :after vertico
++      :ensure nil
++      :init
++      (define-key vertico-map "\M-q" #'vertico-quick-insert)
++      (define-key vertico-map "\C-q" #'vertico-quick-exit))
+ 
+-(defun compleseus/init-vertico-repeat ()
+   (use-package vertico-repeat
+-    :after vertico
+-    :init
+-    (add-hook 'minibuffer-setup-hook #'vertico-repeat-save)
+-    (spacemacs/set-leader-keys
+-      "rl" 'vertico-repeat-last
+-      "rL" 'vertico-repeat-select
+-      "sl" 'vertico-repeat-last
+-      "sL" 'vertico-repeat-select)))
+-
+-(defun compleseus/init-vertico-directory ()
+-  (use-package vertico-directory
+-    ;; More convenient directory navigation commands
+-    :init (bind-key "C-h" 'vertico-directory-delete-char vertico-map (spacemacs//support-hjkl-navigation-p))
+-    ;; Tidy shadowed file names
+-    :hook (rfn-eshadow-update-overlay . vertico-directory-tidy)))
++      :after vertico
++      :ensure nil
++      :init
++      (add-hook 'minibuffer-setup-hook #'vertico-repeat-save)
++      (spacemacs/set-leader-keys
++        "rl" 'vertico-repeat-last
++        "rL" 'vertico-repeat-select
++        "sl" 'vertico-repeat-last
++        "sL" 'vertico-repeat-select)))
+ 
+ (defun spacemacs/compleseus-wgrep-change-to-wgrep-mode ()
+   (interactive)
+diff --git a/layers/+emacs/org/README.org b/layers/+emacs/org/README.org
+index d5a961bb4..0e48b0b73 100644
+--- a/layers/+emacs/org/README.org
++++ b/layers/+emacs/org/README.org
+@@ -34,6 +34,7 @@ * Table of Contents                     :TOC_5_gh:noexport:
+   - [[#epub-support][Epub support]]
+   - [[#jira-support][Jira support]]
+   - [[#valign-support][Valign support]]
++  - [[#org-modern-support][Org-modern support]]
+   - [[#org-appear-support][Org-appear support]]
+   - [[#transclusion-support][Transclusion support]]
+   - [[#verb-support][Verb support]]
+@@ -544,6 +545,18 @@ ** Valign support
+ 
+ [[https://github.com/casouri/valign#valignel][Known problem: Rendering large tables (≥100 lines) is laggy.]]
+ 
++** Org-modern support
++[[https://github.com/minad/org-modern][org-modern]] beautifies org files with many visual enhancements.
++It toggles visibility of some markers, changes faces of common elements and just "modernizes" the visual appearance.
++To enable it by default, set the =org-enable-modern-support= to =t=:
++
++#+BEGIN_SRC emacs-lisp
++  (setq-default dotspacemacs-configuration-layers
++   '((org :variables org-enable-modern-support t)))
++#+END_SRC
++
++To toggle its features, either call ~M-x org-modern-mode~ or ~ESC , T m~.
++
+ ** Org-appear support
+ To install [[https://github.com/awth13/org-appear][org-appear]], which toggles visibility of emphasis markers, links, subscripts, and superscripts in org mode, set the =org-enable-appear-support= to =t=:
+ 
+diff --git a/layers/+emacs/org/config.el b/layers/+emacs/org/config.el
+index a7acb8394..319198970 100644
+--- a/layers/+emacs/org/config.el
++++ b/layers/+emacs/org/config.el
+@@ -74,12 +74,12 @@ used.")
+   "If non-nil, Jira (https://www.atlassian.com/software/jira) related packages
+ are configured.")
+ 
++(defvar org-enable-modern-support nil
++  "If non-nil, org-modern (https://github.com/minad/org-modern) is configured.")
++
+ (defvar org-enable-verb-support nil
+   "If non-nil, Verb (https://github.com/federicotdn/verb) is configured.")
+ 
+-(defvar org-enable-roam-support (bound-and-true-p org-enable-roam-ui)
+-  "If non-nil, org-roam (https://www.orgroam.com/) is configured")
+-
+ (defvar org-persp-startup-org-file nil
+   "If non-nil, opens the specified file instead of the first in org-agenda-files")
+ 
+@@ -93,6 +93,9 @@ ATTENTION: `valign-mode' will be laggy working with tables contain more than 100
+ (defvar org-enable-appear-support nil
+   "If non-nil, enable org-appear in org-mode buffers.")
+ 
++(defvar org-enable-roam-support (bound-and-true-p org-enable-roam-ui)
++  "If non-nil, org-roam (https://www.orgroam.com/) is configured")
++
+ (defvar org-enable-roam-ui nil
+   "If non-nil, enable org-roam-ui support.")
+ 
+diff --git a/layers/+emacs/org/packages.el b/layers/+emacs/org/packages.el
+index 4c94d58d0..b387634c6 100644
+--- a/layers/+emacs/org/packages.el
++++ b/layers/+emacs/org/packages.el
+@@ -51,6 +51,7 @@
+     org-download
+     (org-jira :toggle org-enable-jira-support)
+     org-mime
++    (org-modern :toggle org-enable-modern-support)
+     org-pomodoro
+     org-present
+     org-cliplink
+@@ -743,6 +744,17 @@ Headline^^            Visit entry^^               Filter^^                    Da
+         "em" 'org-mime-org-buffer-htmlize
+         "es" 'org-mime-org-subtree-htmlize))))
+ 
++(defun org/init-org-modern ()
++  (use-package org-modern
++      :defer t
++      :init
++      (progn
++        (add-hook 'org-mode-hook 'org-modern-mode)
++        (add-hook 'org-agenda-finalize-hook #'org-modern-agenda)
++
++        (spacemacs/set-leader-keys-for-major-mode 'org-mode
++            "Tm" 'org-modern-mode))))
++
+ (defun org/init-org-pomodoro ()
+   (use-package org-pomodoro
+     :defer t
+diff --git a/layers/+emacs/tabs/README.org b/layers/+emacs/tabs/README.org
+index dced48d5b..bed6b49f5 100644
+--- a/layers/+emacs/tabs/README.org
++++ b/layers/+emacs/tabs/README.org
+@@ -9,6 +9,7 @@ * Table of Contents                     :TOC_5_gh:noexport:
+ - [[#configuration][Configuration]]
+   - [[#selected-tab-bar][Selected tab bar]]
+   - [[#hide-tabs-after-a-delay][Hide tabs after a delay]]
++  - [[#tab-icons][Tab icons]]
+ - [[#key-bindings][Key bindings]]
+ 
+ * Description
+@@ -32,7 +33,7 @@ ** Selected tab bar
+ 
+ #+BEGIN_SRC emacs-lisp
+   (setq-default dotspacemacs-configuration-layers
+-                '(tabs :variables tabs-highlight-current-tab 'left))
++                '(tabs :variables tabs-selected-tab-bar 'over))
+ #+END_SRC
+ 
+ Note that this has no effect when Emacs is running in daemon mode.
+@@ -51,6 +52,15 @@ ** Hide tabs after a delay
+                        tabs-auto-hide-delay 3))
+ #+END_SRC
+ 
++** Tab icons
++By default, tab icons are enabled, if the =spacemacs-visual= layer is enabled and the =all-the-icons= package is used.
++You can disable icons just for the tabs display by setting =tabs-icons= to =nil=:
++
++#+BEGIN_SRC emacs-lisp
++  (setq-default dotspacemacs-configuration-layers
++                '(tabs :variables tabs-icons nil))
++#+END_SRC
++
+ * Key bindings
+ 
+ | Key binding | Description                                           |
+diff --git a/layers/+emacs/tabs/config.el b/layers/+emacs/tabs/config.el
+index ca1a49b25..81fd53c50 100644
+--- a/layers/+emacs/tabs/config.el
++++ b/layers/+emacs/tabs/config.el
+@@ -44,3 +44,7 @@ Calls (tabs-headline-match)"
+ (spacemacs|defc tabs-auto-hide-delay 2
+   "Tabs auto hide delay in seconds."
+   '(float))
++
++(defvar tabs-icons t
++  "When non-nil, use all-the-icons to display icons before tab titles.
++all-the-icons is provided by the `spacemacs-visual` layer, which also needs to be active.")
+diff --git a/layers/+emacs/tabs/packages.el b/layers/+emacs/tabs/packages.el
+index 12ac0935f..ddf524d43 100644
+--- a/layers/+emacs/tabs/packages.el
++++ b/layers/+emacs/tabs/packages.el
+@@ -25,12 +25,24 @@
+   '(centaur-tabs))
+ 
+ (defun tabs/init-centaur-tabs ()
++
++  (when (and tabs-icons (configuration-layer/package-used-p 'all-the-icons))
++    ;; centaur-tabs internally checks for `(featurep 'all-the-icons)`
++    ;; to draw icons even after we enabled `centaur-tabs-set-icons`
++    ;; but all-the-icons is inited in spacemacs-visual with `:defer t`,
++    ;; so the feature wouldn't be loaded...
++    (require 'all-the-icons))
++
+   (use-package centaur-tabs
+     :demand
+     :custom
+-    (centaur-tabs-set-icons t)
++    (centaur-tabs-set-icons tabs-icons)
++    (centaur-tabs-gray-out-icons 'buffer)
++    (centaur-tabs-set-bar 'left)
+     (centaur-tabs-set-modified-marker t)
+-    (centaur-tabs-modified-marker "⚠")
++    (centaur-tabs-show-navigation-buttons t)
++    (centaur-tabs-close-button "✕")
++    (centaur-tabs-modified-marker "•")
+     (centaur-tabs-cycle-scope 'tabs)
+     :config
+     (progn
+diff --git a/layers/+lang/asm/packages.el b/layers/+lang/asm/packages.el
+index 05d176edf..c2f0c3696 100644
+--- a/layers/+lang/asm/packages.el
++++ b/layers/+lang/asm/packages.el
+@@ -29,7 +29,6 @@
+         electric-indent-mode
+         ggtags
+         counsel-gtags
+-        helm-gtags
+         nasm-mode
+         x86-lookup
+         ))
+@@ -82,6 +81,3 @@
+ 
+ (defun asm/post-init-counsel-gtags ()
+   (spacemacs/counsel-gtags-define-keys-for-mode 'asm-mode))
+-
+-(defun asm/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'asm-mode))
+diff --git a/layers/+lang/c-c++/packages.el b/layers/+lang/c-c++/packages.el
+index 46df06b97..8caca17c2 100644
+--- a/layers/+lang/c-c++/packages.el
++++ b/layers/+lang/c-c++/packages.el
+@@ -49,7 +49,6 @@
+     counsel-gtags
+     (flycheck-rtags :requires (flycheck rtags))
+     ggtags
+-    helm-gtags
+     (helm-rtags :requires (helm rtags))
+     (ivy-rtags :requires (ivy rtags))
+     rtags
+@@ -213,10 +212,6 @@
+     (dolist (mode c-c++-modes)
+       (spacemacs/setup-helm-cscope mode))))
+ 
+-(defun c-c++/post-init-helm-gtags ()
+-  (dolist (mode c-c++-modes)
+-    (spacemacs/helm-gtags-define-keys-for-mode mode)))
+-
+ (defun c-c++/init-helm-rtags ()
+   (use-package helm-rtags
+     :defer t
+diff --git a/layers/+lang/clojure/packages.el b/layers/+lang/clojure/packages.el
+index 232f0ee26..2fadeaae3 100644
+--- a/layers/+lang/clojure/packages.el
++++ b/layers/+lang/clojure/packages.el
+@@ -45,7 +45,6 @@
+     ggtags
+     (kaocha-runner :toggle clojure-enable-kaocha-runner)
+     counsel-gtags
+-    helm-gtags
+     org
+     popwin
+     (sayid :toggle clojure-enable-sayid)
+@@ -487,9 +486,6 @@
+ (defun clojure/post-init-counsel-gtags ()
+   (spacemacs/counsel-gtags-define-keys-for-mode 'clojure-mode))
+ 
+-(defun clojure/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'clojure-mode))
+-
+ (defun clojure/init-clojure-snippets ()
+   (use-package clojure-snippets
+     :defer t))
+diff --git a/layers/+lang/common-lisp/packages.el b/layers/+lang/common-lisp/packages.el
+index 86688b8f1..a576c253a 100644
+--- a/layers/+lang/common-lisp/packages.el
++++ b/layers/+lang/common-lisp/packages.el
+@@ -30,7 +30,6 @@
+     ggtags
+     counsel-gtags
+     helm
+-    helm-gtags
+     rainbow-identifiers
+     slime
+     (slime-company :requires company)))
+@@ -69,9 +68,6 @@
+ (defun common-lisp/post-init-counsel-gtags ()
+   (spacemacs/counsel-gtags-define-keys-for-mode 'common-lisp-mode))
+ 
+-(defun common-lisp/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'common-lisp-mode))
+-
+ (defun common-lisp/post-init-rainbow-identifiers ()
+   (add-hook 'lisp-mode-hook #'colors//rainbow-identifiers-ignore-keywords))
+ 
+diff --git a/layers/+lang/csharp/packages.el b/layers/+lang/csharp/packages.el
+index 27d0322b0..eb83248d2 100644
+--- a/layers/+lang/csharp/packages.el
++++ b/layers/+lang/csharp/packages.el
+@@ -28,7 +28,6 @@
+         evil-matchit
+         ggtags
+         counsel-gtags
+-        helm-gtags
+         omnisharp
+         flycheck
+         ))
+@@ -64,6 +63,3 @@
+ 
+ (defun csharp/post-init-counsel-gtags ()
+   (spacemacs/counsel-gtags-define-keys-for-mode 'csharp-mode))
+-
+-(defun csharp/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'csharp-mode))
+diff --git a/layers/+lang/d/packages.el b/layers/+lang/d/packages.el
+index 3d196312b..2b251556e 100644
+--- a/layers/+lang/d/packages.el
++++ b/layers/+lang/d/packages.el
+@@ -32,7 +32,6 @@
+         (flycheck-dmd-dub :requires flycheck)
+         ggtags
+         counsel-gtags
+-        helm-gtags
+         ))
+ 
+ (defun d/post-init-company ()
+@@ -70,6 +69,3 @@
+ 
+ (defun d/post-init-counsel-gtags ()
+   (spacemacs/counsel-gtags-define-keys-for-mode 'd-mode))
+-
+-(defun d/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'd-mode))
+diff --git a/layers/+lang/elixir/packages.el b/layers/+lang/elixir/packages.el
+index ef379366d..bba8d5ee6 100644
+--- a/layers/+lang/elixir/packages.el
++++ b/layers/+lang/elixir/packages.el
+@@ -32,7 +32,6 @@
+     flycheck
+     flycheck-credo
+     ggtags
+-    helm-gtags
+     ob-elixir
+     popwin
+     smartparens))
+@@ -188,9 +187,6 @@
+ (defun elixir/post-init-ggtags ()
+   (add-hook 'elixir-mode-local-vars-hook #'spacemacs/ggtags-mode-enable))
+ 
+-(defun elixir/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'elixir-mode))
+-
+ (defun elixir/pre-init-ob-elixir ()
+   (spacemacs|use-package-add-hook org
+     :post-config
+diff --git a/layers/+lang/emacs-lisp/packages.el b/layers/+lang/emacs-lisp/packages.el
+index c56fb615a..29fe7ca77 100644
+--- a/layers/+lang/emacs-lisp/packages.el
++++ b/layers/+lang/emacs-lisp/packages.el
+@@ -39,7 +39,6 @@
+     flycheck-package
+     ggtags
+     counsel-gtags
+-    helm-gtags
+     (ielm :location built-in)
+     (inspector :location (recipe
+                           :fetcher github
+@@ -312,9 +311,6 @@
+ (defun emacs-lisp/post-init-counsel-gtags ()
+   (spacemacs/counsel-gtags-define-keys-for-mode 'emacs-lisp-mode))
+ 
+-(defun emacs-lisp/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'emacs-lisp-mode))
+-
+ (defun emacs-lisp/post-init-ggtags ()
+   (add-hook 'emacs-lisp-mode-local-vars-hook #'spacemacs/ggtags-mode-enable))
+ 
+diff --git a/layers/+lang/erlang/packages.el b/layers/+lang/erlang/packages.el
+index a42ba2518..b57a661c9 100644
+--- a/layers/+lang/erlang/packages.el
++++ b/layers/+lang/erlang/packages.el
+@@ -28,7 +28,6 @@
+         dap-mode
+         ggtags
+         counsel-gtags
+-        helm-gtags
+         flycheck))
+ 
+ 
+@@ -69,6 +68,3 @@
+ 
+ (defun erlang/post-init-counsel-gtags ()
+   (spacemacs/counsel-gtags-define-keys-for-mode 'erlang-mode))
+-
+-(defun erlang/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'erlang-mode))
+diff --git a/layers/+lang/fsharp/packages.el b/layers/+lang/fsharp/packages.el
+index 72d8216ae..2017f76f3 100644
+--- a/layers/+lang/fsharp/packages.el
++++ b/layers/+lang/fsharp/packages.el
+@@ -28,8 +28,7 @@
+     (eglot-fsharp :toggle (eq fsharp-backend 'eglot))
+     flycheck
+     fsharp-mode
+-    ggtags
+-    helm-gtags))
++    ggtags))
+ 
+ (defun fsharp/post-init-company ()
+   (spacemacs//fsharp-setup-company))
+@@ -80,6 +79,3 @@
+ 
+ (defun fsharp/post-init-counsel-gtags ()
+   (spacemacs/counsel-gtags-define-keys-for-mode 'fsharp-mode))
+-
+-(defun fsharp/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'fsharp-mode))
+diff --git a/layers/+lang/go/packages.el b/layers/+lang/go/packages.el
+index 025bced81..e3ebe715c 100644
+--- a/layers/+lang/go/packages.el
++++ b/layers/+lang/go/packages.el
+@@ -32,7 +32,6 @@
+     (flycheck-golangci-lint :toggle (and go-use-golangci-lint
+                                          (configuration-layer/package-used-p 'flycheck)))
+     ggtags
+-    helm-gtags
+     go-eldoc
+     go-fill-struct
+     go-gen-test
+@@ -77,9 +76,6 @@
+ (defun go/post-init-ggtags ()
+   (add-hook 'go-mode-local-vars-hook #'spacemacs/ggtags-mode-enable))
+ 
+-(defun go/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'go-mode))
+-
+ (defun go/init-go-eldoc ()
+   (use-package go-eldoc
+     :defer t))
+diff --git a/layers/+lang/haskell/packages.el b/layers/+lang/haskell/packages.el
+index 70ae4192e..11cffd7d2 100644
+--- a/layers/+lang/haskell/packages.el
++++ b/layers/+lang/haskell/packages.el
+@@ -40,7 +40,6 @@
+         haskell-mode
+         haskell-snippets
+         counsel-gtags
+-        helm-gtags
+         (helm-hoogle :requires helm)
+         hindent
+         hlint-refactor))
+@@ -317,10 +316,6 @@
+ (defun haskell/post-init-counsel-gtags ()
+   (spacemacs/counsel-gtags-define-keys-for-mode 'haskell-mode))
+ 
+-(defun haskell/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'haskell-mode))
+-
+-
+ ;; doesn't support haskell-literate-mode :(
+ (defun haskell/init-hindent ()
+   (use-package hindent
+diff --git a/layers/+lang/java/packages.el b/layers/+lang/java/packages.el
+index e6630c7a3..1d6c0ea31 100644
+--- a/layers/+lang/java/packages.el
++++ b/layers/+lang/java/packages.el
+@@ -28,7 +28,6 @@
+     flycheck
+     ggtags
+     counsel-gtags
+-    helm-gtags
+     (java-mode :location built-in)
+     maven-test-mode
+     (meghanada :toggle (eq java-backend 'meghanada))
+@@ -58,9 +57,6 @@
+ (defun java/post-init-counsel-gtags ()
+   (spacemacs/counsel-gtags-define-keys-for-mode 'java-mode))
+ 
+-(defun java/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'java-mode))
+-
+ (defun java/pre-init-org ()
+   (spacemacs|use-package-add-hook org
+     :post-config (add-to-list 'org-babel-load-languages '(java . t))))
+diff --git a/layers/+lang/javascript/packages.el b/layers/+lang/javascript/packages.el
+index b6d852d43..d20dd2644 100644
+--- a/layers/+lang/javascript/packages.el
++++ b/layers/+lang/javascript/packages.el
+@@ -30,7 +30,6 @@
+     evil-matchit
+     flycheck
+     ggtags
+-    helm-gtags
+     imenu
+     npm-mode
+     impatient-mode
+@@ -71,9 +70,6 @@
+ (defun javascript/post-init-ggtags ()
+   (add-hook 'js2-mode-local-vars-hook #'spacemacs/ggtags-mode-enable))
+ 
+-(defun javascript/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'js2-mode))
+-
+ (defun javascript/post-init-imenu ()
+   ;; Required to make imenu functions work correctly
+   (add-hook 'js2-mode-hook 'js2-imenu-extras-mode))
+diff --git a/layers/+lang/kotlin/packages.el b/layers/+lang/kotlin/packages.el
+index 154a32e5c..645117e67 100644
+--- a/layers/+lang/kotlin/packages.el
++++ b/layers/+lang/kotlin/packages.el
+@@ -28,7 +28,6 @@
+     (flycheck-kotlin :requires flycheck)
+     ggtags
+     counsel-gtags
+-    helm-gtags
+     kotlin-mode))
+ 
+ (defun kotlin/post-init-company ()
+@@ -53,8 +52,5 @@
+ (defun kotlin/post-init-ggtags ()
+   (add-hook 'kotlin-mode-local-vars-hook #'spacemacs/ggtags-mode-enable))
+ 
+-(defun kotlin/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'kotlin-mode))
+-
+ (defun kotlin/post-init-counsel-gtags ()
+   (spacemacs/counsel-gtags-define-keys-for-mode 'kotlin-mode))
+diff --git a/layers/+lang/latex/README.org b/layers/+lang/latex/README.org
+index 9f3b661df..50bed64f1 100644
+--- a/layers/+lang/latex/README.org
++++ b/layers/+lang/latex/README.org
+@@ -89,6 +89,12 @@ *** LSP
+                 '((latex :variables latex-backend 'lsp)))
+ #+END_SRC
+ 
++When LSP is chosen as the backend, auto-completions are provided by LSP.
++If you are not happy with the suggestions for completing citation keys and
++reference labels (in =\cite{...}=, =\ref{...}=, and related macros), you can
++press ~C-b~ in the auto-completion dropdown (see [[file:../../+completion/auto-completion/README.org][the auto-completion layer]])
++to switch to suggestions provided by RefTeX.
++
+ *** Company-auctex
+ This would be the backend if =LSP= layer is not enabled, and =latex-backend= is
+ not set.
+diff --git a/layers/+lang/latex/funcs.el b/layers/+lang/latex/funcs.el
+index a2ee1f5c1..049ec5e64 100644
+--- a/layers/+lang/latex/funcs.el
++++ b/layers/+lang/latex/funcs.el
+@@ -23,31 +23,31 @@
+ 
+ (defun spacemacs//latex-setup-company ()
+   "Conditionally setup company based on backend."
+-  (pcase latex-backend
+-    ('lsp
+-     (spacemacs|add-company-backends ;; Activate lsp company explicitly to activate
+-       :backends company-capf        ;; standard backends as well
+-       :modes LaTeX-mode))
+-    ('company-auctex
+-     (when (configuration-layer/package-used-p 'company-auctex)
+-       (if (configuration-layer/package-used-p 'company-math)
+-           (spacemacs|add-company-backends
+-             :backends (company-math-symbols-unicode
+-                        company-math-symbols-latex
+-                        company-auctex-macros
+-                        company-auctex-symbols
+-                        company-auctex-environments)
+-             :modes LaTeX-mode)
+-         (spacemacs|add-company-backends
+-           :backends (company-auctex-macros
+-                      company-auctex-symbols
+-                      company-auctex-environments)
+-           :modes LaTeX-mode)))
+-     (when (configuration-layer/package-used-p 'company-reftex)
+-       (spacemacs|add-company-backends
+-         :backends company-reftex-labels
+-         company-reftex-citations
+-         :modes LaTeX-mode)))))
++  ;; Always activate auctex and reftex backends so that they're
++  ;; accessible via company-other-backend even when using lsp.
++  (when (configuration-layer/package-used-p 'company-auctex)
++    (if (configuration-layer/package-used-p 'company-math)
++        (spacemacs|add-company-backends
++          :backends (company-math-symbols-unicode
++                     company-math-symbols-latex
++                     company-auctex-macros
++                     company-auctex-symbols
++                     company-auctex-environments)
++          :modes LaTeX-mode)
++      (spacemacs|add-company-backends
++        :backends (company-auctex-macros
++                   company-auctex-symbols
++                   company-auctex-environments)
++        :modes LaTeX-mode)))
++  (when (configuration-layer/package-used-p 'company-reftex)
++    (spacemacs|add-company-backends
++      :backends company-reftex-labels
++      company-reftex-citations
++      :modes LaTeX-mode))
++  (when (eq latex-backend 'lsp)
++    (spacemacs|add-company-backends
++      :backends company-capf
++      :modes LaTeX-mode)))
+ 
+ (defun spacemacs//latex-setup-backend ()
+   "Conditionally setup latex backend."
+diff --git a/layers/+lang/latex/packages.el b/layers/+lang/latex/packages.el
+index aac67c28b..84a78b48b 100644
+--- a/layers/+lang/latex/packages.el
++++ b/layers/+lang/latex/packages.el
+@@ -37,7 +37,6 @@
+     flycheck
+     flyspell
+     ggtags
+-    helm-gtags
+     (lsp-latex :requires lsp-mode)
+     (magic-latex-buffer :toggle latex-enable-magic)
+     smartparens
+@@ -235,9 +234,6 @@
+ (defun latex/post-init-counsel-gtags ()
+   (spacemacs/counsel-gtags-define-keys-for-mode 'latex-mode))
+ 
+-(defun latex/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'latex-mode))
+-
+ (defun latex/post-init-ggtags ()
+   (add-hook 'latex-mode-local-vars-hook #'spacemacs/ggtags-mode-enable))
+ 
+diff --git a/layers/+lang/lua/packages.el b/layers/+lang/lua/packages.el
+index 4688f4743..ca1e77dc6 100644
+--- a/layers/+lang/lua/packages.el
++++ b/layers/+lang/lua/packages.el
+@@ -28,7 +28,6 @@
+     flycheck
+     ggtags
+     counsel-gtags
+-    helm-gtags
+     lua-mode))
+ 
+ (defun lua/post-init-flycheck ()
+@@ -76,6 +75,3 @@
+ 
+ (defun lua/post-init-counsel-gtags ()
+   (spacemacs/counsel-gtags-define-keys-for-mode 'lua-mode))
+-
+-(defun lua/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'lua-mode))
+diff --git a/layers/+lang/ocaml/packages.el b/layers/+lang/ocaml/packages.el
+index 0c7cab22c..60e88e1ed 100644
+--- a/layers/+lang/ocaml/packages.el
++++ b/layers/+lang/ocaml/packages.el
+@@ -29,7 +29,6 @@
+     (flycheck-ocaml :toggle (configuration-layer/layer-used-p 'syntax-checking))
+     ggtags
+     counsel-gtags
+-    helm-gtags
+     imenu
+     merlin
+     merlin-company
+@@ -97,9 +96,6 @@
+ (defun ocaml/post-init-counsel-gtags ()
+   (spacemacs/counsel-gtags-define-keys-for-mode 'ocaml-mode))
+ 
+-(defun ocaml/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'ocaml-mode))
+-
+ (defun ocaml/init-merlin ()
+   (use-package merlin
+     :defer t
+diff --git a/layers/+lang/octave/packages.el b/layers/+lang/octave/packages.el
+index 8709bdf15..fe7ad6793 100644
+--- a/layers/+lang/octave/packages.el
++++ b/layers/+lang/octave/packages.el
+@@ -25,7 +25,6 @@
+       '(
+         ggtags
+         counsel-gtags
+-        helm-gtags
+         (octave :location built-in)
+         ))
+ 
+@@ -51,6 +50,3 @@
+ 
+ (defun octave/post-init-counsel-gtags ()
+   (spacemacs/counsel-gtags-define-keys-for-mode 'octave-mode))
+-
+-(defun octave/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'octave-mode))
+diff --git a/layers/+lang/php/packages.el b/layers/+lang/php/packages.el
+index 035cdd2c5..ec6ccda90 100644
+--- a/layers/+lang/php/packages.el
++++ b/layers/+lang/php/packages.el
+@@ -30,7 +30,6 @@
+     flycheck
+     ggtags
+     counsel-gtags
+-    helm-gtags
+     (php-auto-yasnippets :location (recipe :fetcher github :repo "emacs-php/php-auto-yasnippets"))
+     (php-extras :location (recipe :fetcher github :repo "arnested/php-extras") :toggle (not (eq php-backend 'lsp)))
+     php-mode
+@@ -62,9 +61,6 @@
+ (defun php/post-init-counsel-gtags ()
+   (spacemacs/counsel-gtags-define-keys-for-mode 'php-mode))
+ 
+-(defun php/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'php-mode))
+-
+ (defun php/post-init-evil-matchit ()
+   (add-hook 'php-mode-hook 'turn-on-evil-matchit-mode))
+ 
+diff --git a/layers/+lang/python/packages.el b/layers/+lang/python/packages.el
+index 2b2735e62..3255b8a60 100644
+--- a/layers/+lang/python/packages.el
++++ b/layers/+lang/python/packages.el
+@@ -34,7 +34,6 @@
+     flycheck
+     ggtags
+     helm-cscope
+-    helm-gtags
+     (helm-pydoc :requires helm)
+     importmagic
+     live-py-mode
+@@ -170,9 +169,6 @@
+ (defun python/post-init-counsel-gtags ()
+   (spacemacs/counsel-gtags-define-keys-for-mode 'python-mode))
+ 
+-(defun python/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'python-mode))
+-
+ (defun python/post-init-ggtags ()
+   (add-hook 'python-mode-local-vars-hook #'spacemacs/ggtags-mode-enable))
+ 
+diff --git a/layers/+lang/racket/packages.el b/layers/+lang/racket/packages.el
+index 6fe98ed7d..81f3b4e97 100644
+--- a/layers/+lang/racket/packages.el
++++ b/layers/+lang/racket/packages.el
+@@ -28,7 +28,6 @@
+         ggtags
+         counsel-gtags
+         evil-cleverparens
+-        helm-gtags
+         racket-mode
+         ))
+ 
+@@ -58,9 +57,6 @@
+     :pre-init
+     (add-to-list 'evil-lisp-safe-structural-editing-modes 'racket-mode)))
+ 
+-(defun racket/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'racket-mode))
+-
+ (defun racket/init-racket-mode ()
+   (use-package racket-mode
+     :defer t
+diff --git a/layers/+lang/ruby/README.org b/layers/+lang/ruby/README.org
+index 183657982..57cbc843c 100644
+--- a/layers/+lang/ruby/README.org
++++ b/layers/+lang/ruby/README.org
+@@ -207,15 +207,15 @@ ** Bundler
+ 
+ ** RuboCop
+ 
+-| Key binding   | Description                                          |
+-|---------------+------------------------------------------------------|
+-| ~SPC m = r~   | Format the current buffer using RuboCop              |
+-| ~SPC m R r f~ | Runs RuboCop on the currently visited file           |
+-| ~SPC m R r F~ | Runs auto-correct on the currently visited file      |
+-| ~SPC m R r d~ | Prompts from a directory on which to run RuboCop     |
+-| ~SPC m R r D~ | Prompts for a directory on which to run auto-correct |
+-| ~SPC m R r p~ | Runs RuboCop on the entire project                   |
+-| ~SPC m R r P~ | Runs auto-correct on the project                     |
++| Key binding | Description                                          |
++|-------------+------------------------------------------------------|
++| ~SPC m = r~ | Format the current buffer using RuboCop              |
++| ~SPC m R f~ | Runs RuboCop on the currently visited file           |
++| ~SPC m R F~ | Runs auto-correct on the currently visited file      |
++| ~SPC m R d~ | Prompts from a directory on which to run RuboCop     |
++| ~SPC m R D~ | Prompts for a directory on which to run auto-correct |
++| ~SPC m R p~ | Runs RuboCop on the entire project                   |
++| ~SPC m R P~ | Runs auto-correct on the project                     |
+ 
+ ** Tests
+ *** RSpec-mode
+diff --git a/layers/+lang/ruby/packages.el b/layers/+lang/ruby/packages.el
+index af933d5f6..a1bc72840 100644
+--- a/layers/+lang/ruby/packages.el
++++ b/layers/+lang/ruby/packages.el
+@@ -33,7 +33,6 @@
+     evil-matchit
+     flycheck
+     ggtags
+-    helm-gtags
+     minitest
+     org
+     popwin
+@@ -129,10 +128,6 @@
+                           '(ruby-mode-local-vars-hook
+                             enh-ruby-mode-local-vars-hook)))
+ 
+-(defun ruby/post-init-helm-gtags ()
+-  (dolist (mode '(ruby-mode enh-ruby-mode))
+-    (spacemacs/helm-gtags-define-keys-for-mode mode)))
+-
+ (defun ruby/init-minitest ()
+   (use-package minitest
+     :defer t
+@@ -276,6 +271,7 @@
+                 "Rd" 'rubocop-check-directory
+                 "RD" 'rubocop-autocorrect-directory
+                 "Rf" 'rubocop-check-current-file
++                "RF" 'rubocop-autocorrect-current-file
+                 "Rp" 'rubocop-check-project
+                 "RP" 'rubocop-autocorrect-project))))
+ 
+diff --git a/layers/+lang/rust/packages.el b/layers/+lang/rust/packages.el
+index 98f733a84..b75f8cb75 100644
+--- a/layers/+lang/rust/packages.el
++++ b/layers/+lang/rust/packages.el
+@@ -30,7 +30,6 @@
+     flycheck
+     (flycheck-rust :requires flycheck)
+     ggtags
+-    helm-gtags
+     ron-mode
+     (racer :toggle (eq rust-backend 'racer))
+     rust-mode
+@@ -93,9 +92,6 @@
+ (defun rust/post-init-ggtags ()
+   (add-hook 'rust-mode-local-vars-hook #'spacemacs/ggtags-mode-enable))
+ 
+-(defun rust/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'rust-mode))
+-
+ (defun rust/init-racer ()
+   (use-package racer
+     :defer t
+diff --git a/layers/+lang/scala/packages.el b/layers/+lang/scala/packages.el
+index 383e129b1..2060b3fff 100644
+--- a/layers/+lang/scala/packages.el
++++ b/layers/+lang/scala/packages.el
+@@ -30,7 +30,6 @@
+     flyspell
+     counsel-gtags
+     ggtags
+-    helm-gtags
+     sbt-mode
+     scala-mode))
+ 
+@@ -118,7 +117,3 @@
+ (defun scala/post-init-counsel-gtags ()
+   (when scala-enable-gtags
+     (spacemacs/counsel-gtags-define-keys-for-mode 'scala-mode)))
+-
+-(defun scala/post-init-helm-gtags ()
+-  (when scala-enable-gtags
+-    (spacemacs/helm-gtags-define-keys-for-mode 'scala-mode)))
+diff --git a/layers/+lang/scheme/packages.el b/layers/+lang/scheme/packages.el
+index c2f058b1f..187ed02ae 100644
+--- a/layers/+lang/scheme/packages.el
++++ b/layers/+lang/scheme/packages.el
+@@ -27,7 +27,6 @@
+     geiser
+     ggtags
+     counsel-gtags
+-    helm-gtags
+     (geiser-chez    :toggle (memq 'chez    scheme-implementations))
+     (geiser-chibi   :toggle (memq 'chibi   scheme-implementations))
+     (geiser-chicken :toggle (memq 'chicken scheme-implementations))
+@@ -148,9 +147,6 @@
+ (defun scheme/post-init-counsel-gtags ()
+   (spacemacs/counsel-gtags-define-keys-for-mode 'scheme-mode))
+ 
+-(defun scheme/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'scheme-mode))
+-
+ (defun scheme/init-geiser-chez ()
+   (use-package geiser-chez
+     :defer t))
+diff --git a/layers/+lang/shell-scripts/packages.el b/layers/+lang/shell-scripts/packages.el
+index 68e83f3fe..6edeac82f 100644
+--- a/layers/+lang/shell-scripts/packages.el
++++ b/layers/+lang/shell-scripts/packages.el
+@@ -30,7 +30,6 @@
+     flycheck-bashate
+     ggtags
+     counsel-gtags
+-    helm-gtags
+     insert-shebang
+     org
+     (sh-script :location built-in)
+@@ -121,9 +120,6 @@
+ (defun shell-scripts/post-init-counsel-gtags ()
+   (spacemacs/counsel-gtags-define-keys-for-mode 'sh-mode))
+ 
+-(defun shell-scripts/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'sh-mode))
+-
+ (defun shell-scripts/pre-init-org ()
+   (spacemacs|use-package-add-hook org
+     :post-config (add-to-list 'org-babel-load-languages '(shell . t))))
+diff --git a/layers/+lang/typescript/layers.el b/layers/+lang/typescript/layers.el
+index aec21c7dc..71188adfc 100644
+--- a/layers/+lang/typescript/layers.el
++++ b/layers/+lang/typescript/layers.el
+@@ -21,8 +21,9 @@
+ ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ 
+-(configuration-layer/declare-layer-dependencies '(node javascript prettier tide))
++(configuration-layer/declare-layer-dependencies '(node javascript prettier))
+ 
+-(when (and (boundp 'typescript-backend)
+-           (eq typescript-backend 'lsp))
+-  (configuration-layer/declare-layer-dependencies '(lsp)))
++(when (boundp 'typescript-backend)
++  (pcase typescript-backend
++    ('lsp (configuration-layer/declare-layer-dependencies '(lsp)))
++    ('tide (configuration-layer/declare-layer-dependencies '(tide)))))
+diff --git a/layers/+lang/typescript/packages.el b/layers/+lang/typescript/packages.el
+index 418970d63..201fb712e 100644
+--- a/layers/+lang/typescript/packages.el
++++ b/layers/+lang/typescript/packages.el
+@@ -53,41 +53,41 @@
+   (add-hook 'typescript-tsx-mode-hook #'spacemacs/typescript-emmet-mode))
+ 
+ (defun typescript/set-tide-linter ()
+-  (with-eval-after-load 'tide
+-    (with-eval-after-load 'flycheck
+-      (pcase typescript-linter
+-        ('tslint (flycheck-add-mode 'typescript-tide 'typescript-tsx-mode)
+-                 (flycheck-add-mode 'typescript-tslint 'typescript-tsx-mode))
+-        ('eslint (flycheck-add-mode 'javascript-eslint 'typescript-tsx-mode)
+-                 (flycheck-add-mode 'javascript-eslint 'typescript-mode)
+-                 (add-to-list 'flycheck-disabled-checkers 'typescript-tslint)
+-                 (flycheck-disable-checker 'typescript-tslint)
+-                 (flycheck-add-mode 'tsx-tide 'typescript-tsx-mode)
+-                 (flycheck-add-next-checker 'typescript-tide 'javascript-eslint 'append)
+-                 (flycheck-add-next-checker 'tsx-tide 'javascript-eslint 'append))
+-        (_ (message
+-            "Invalid typescript-layer configuration, no such linter: %s" typescript-linter))))))
++  (pcase typescript-linter
++    ('tslint (flycheck-add-mode 'typescript-tide 'typescript-tsx-mode)
++             (flycheck-add-mode 'typescript-tslint 'typescript-tsx-mode))
++    ('eslint (flycheck-add-mode 'javascript-eslint 'typescript-tsx-mode)
++             (flycheck-add-mode 'javascript-eslint 'typescript-mode)
++             (add-to-list 'flycheck-disabled-checkers 'typescript-tslint)
++             (flycheck-add-mode 'tsx-tide 'typescript-tsx-mode)
++             (flycheck-add-next-checker 'typescript-tide 'javascript-eslint 'append)
++             (flycheck-add-next-checker 'tsx-tide 'javascript-eslint 'append))
++    (_ (message
++        "Invalid typescript-layer configuration, no such linter: %s" typescript-linter))))
+ 
+ (defun typescript/set-lsp-linter ()
+-  (with-eval-after-load 'lsp-ui
+-    (with-eval-after-load 'flycheck
+-      (pcase typescript-linter
+-        ('tslint (flycheck-add-mode 'typescript-tslint 'typescript-tsx-mode))
+-        ;; This sets tslint unconditionally for all lsp clients which is wrong
+-        ;; Must be set for respective modes only, see go layer for examples.
+-        ('eslint (flycheck-add-mode 'javascript-eslint 'typescript-tsx-mode)
+-                 (flycheck-add-mode 'javascript-eslint 'typescript-mode))
+-        (_ (message
+-            "Invalid typescript-layer configuration, no such linter: %s" typescript-linter))))))
++  (pcase typescript-linter
++    ('tslint (flycheck-add-mode 'typescript-tslint 'typescript-tsx-mode))
++    ;; This sets tslint unconditionally for all lsp clients which is wrong
++    ;; Must be set for respective modes only, see go layer for examples.
++    ('eslint (flycheck-add-mode 'javascript-eslint 'typescript-tsx-mode)
++             (flycheck-add-mode 'javascript-eslint 'typescript-mode))
++    (_ (message
++        "Invalid typescript-layer configuration, no such linter: %s" typescript-linter))))
++
++(defun typescript/set-linter ()
++  (pcase typescript-backend
++    ('tide (typescript/set-tide-linter))
++    ('lsp (typescript/set-lsp-linter))))
+ 
+ (defun typescript/post-init-flycheck ()
+   (spacemacs/enable-flycheck 'typescript-mode)
+   (spacemacs/enable-flycheck 'typescript-tsx-mode)
+-  (pcase typescript-backend
+-    ('tide (typescript/set-tide-linter))
+-    ('lsp (typescript/set-lsp-linter)))
+   (spacemacs/add-to-hooks #'spacemacs//typescript-setup-checkers
+                           '(typescript-mode-hook typescript-tsx-mode-hook)
++                          t)
++  (spacemacs/add-to-hooks #'typescript/set-linter
++                          '(typescript-mode-local-vars-hook typescript-tsx-mode-local-vars-hook)
+                           t))
+ 
+ (defun typescript/post-init-smartparens ()
+diff --git a/layers/+lang/vimscript/packages.el b/layers/+lang/vimscript/packages.el
+index 3ffec9eab..25bacf1c0 100644
+--- a/layers/+lang/vimscript/packages.el
++++ b/layers/+lang/vimscript/packages.el
+@@ -28,7 +28,6 @@
+     vimrc-mode
+     ggtags
+     counsel-gtags
+-    helm-gtags
+     dactyl-mode))
+ 
+ (defun vimscript/post-init-company ()
+@@ -67,6 +66,3 @@
+ 
+ (defun vimscript/post-init-counsel-gtags ()
+   (spacemacs/counsel-gtags-define-keys-for-mode 'vimrc-mode))
+-
+-(defun vimscript/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'vimrc-mode))
+diff --git a/layers/+lang/windows-scripts/packages.el b/layers/+lang/windows-scripts/packages.el
+index bf2117859..9b358d6ed 100644
+--- a/layers/+lang/windows-scripts/packages.el
++++ b/layers/+lang/windows-scripts/packages.el
+@@ -27,7 +27,6 @@
+     bmx-mode
+     (counsel-gtags :if (configuration-layer/package-used-p 'counsel))
+     ggtags
+-    (helm-gtags :if (configuration-layer/package-used-p 'helm))
+     powershell))
+ 
+ (defun windows-scripts/init-bat-mode()
+@@ -87,9 +86,6 @@
+ (defun windows-scripts/post-init-counsel-gtags ()
+   (spacemacs/counsel-gtags-define-keys-for-mode 'bat-mode))
+ 
+-(defun windows-scripts/post-init-helm-gtags ()
+-  (spacemacs/helm-gtags-define-keys-for-mode 'bat-mode))
+-
+ (defun windows-scripts/init-powershell ()
+   (use-package powershell
+     :mode (("\\.ps1\\'"  . powershell-mode)
+diff --git a/layers/+misc/ietf/packages.el b/layers/+misc/ietf/packages.el
+index 7658743b1..f723d4222 100644
+--- a/layers/+misc/ietf/packages.el
++++ b/layers/+misc/ietf/packages.el
+@@ -42,18 +42,13 @@
+     (progn
+       (setq irfc-directory ietf-docs-cache)
+       (setq irfc-assoc-mode t)
+-      (add-to-list 'auto-mode-alist
+-                   '("/draft-\\([a-z0-9_]+-\\)+[0-9]+.txt" . irfc-mode))
+       (add-to-list 'auto-mode-alist
+                    '("/draft-\\([a-z0-9_]+-\\)+[a-z0-9_]+.txt" . irfc-mode))
+       (add-to-list 'auto-mode-alist
+                    '("/rfc\\([a-z0-9_-]+\\).txt" . irfc-mode)))))
+ 
+-
+-
+-(defun ietf/pre-init-ox-rfc ()
+-  (spacemacs|use-package-add-hook org :post-config (require 'ox-rfc)))
+-(defun ietf/init-ox-rfc ())
++(defun ietf/init-ox-rfc ()
++  (use-package ox-rfc :after ox))
+ 
+ 
+ ;;; packages.el ends here
+diff --git a/layers/+source-control/git/README.org b/layers/+source-control/git/README.org
+index ae939eeeb..d2b07dbe0 100644
+--- a/layers/+source-control/git/README.org
++++ b/layers/+source-control/git/README.org
+@@ -179,12 +179,12 @@ ** Forge
+ #+END_SRC
+ 
+ See the official [[https://magit.vc/manual/forge/Getting-Started.html#Getting-Started][Magit Forge]] and [[https://magit.vc/manual/ghub/Getting-Started.html][GHub Getting Started]] for general guides or follow
+-a community written [[https://practical.li/spacemacs/source-control/forge-configuration.html][Spacemacs specific guide to configuring Magit Forge]].
++a community written [[https://practical.li/spacemacs/source-control/forge-configuration/][Spacemacs specific guide to configuring Magit Forge]].
+ 
+ *** Magit Forge configuration
+ For each forge (e.g. GitHub, GitLab), add a machine configuration to the
+ PGP encrypted =~/.authinfo.gpg= file.
+-Detailed instructions to [[https://practical.li/spacemacs/source-control/forge-configuration.html#create-an-encrypted-authinfogpg-file][create an encrypted .authinfo.gpg file with Spacemacs]]
++Detailed instructions to [[https://practical.li/spacemacs/source-control/forge-configuration#create-an-encrypted-authinfogpg-file][create an encrypted .authinfo.gpg file with Spacemacs]]
+ 
+ The machine configuration should use your forge username and personal access token
+ GitHub token permissions: =repo=, =user= and =read:org=
+@@ -470,7 +470,8 @@ ** Forge
+ | ~SPC m b~   | browse topic (open in web browser)              |
+ | ~SPC m c~   | create comment post to existing topic)          |
+ | ~SPC m C~   | Checkout pull request (not for issues)          |
+-| ~SPC m d~   | delete comment under cursor                     |
++| ~SPC m d~   | toggle draft pull request
++| ~SPC m D~   | delete comment under cursor                     |
+ | ~SPC m e~   | edit topic body                                 |
+ | ~SPC m m~   | edit topic marks (mark is an unshared label)    |
+ | ~SPC m M~   | create mark to use with topics                  |
+diff --git a/layers/+source-control/git/packages.el b/layers/+source-control/git/packages.el
+index 2348ab621..b321a3e5a 100644
+--- a/layers/+source-control/git/packages.el
++++ b/layers/+source-control/git/packages.el
+@@ -356,7 +356,8 @@
+         "c" 'forge-create-post
+         "C" 'forge-checkout-pullreq
+         "b" 'forge-browse-topic
+-        "d" 'forge-delete-comment
++        "D" 'forge-delete-comment
++        "d" 'forge-post-toggle-draft
+         "e" 'forge-edit-post
+         "m" 'forge-edit-topic-marks
+         "M" 'forge-create-mark
+diff --git a/layers/+source-control/version-control/README.org b/layers/+source-control/version-control/README.org
+index 5742baadb..df0198407 100644
+--- a/layers/+source-control/version-control/README.org
++++ b/layers/+source-control/version-control/README.org
+@@ -222,10 +222,10 @@ ** Smerge Mode Transient-state
+ 
+ | Key binding | Description  |
+ |-------------+--------------|
++| ~SPC g r u~ | Keep upper   |
+ | ~SPC g r b~ | Keep base    |
+-| ~SPC g r m~ | Keep mine    |
++| ~SPC g r l~ | Keep lower   |
+ | ~SPC g r a~ | Keep all     |
+-| ~SPC g r o~ | Keep other   |
+ | ~SPC g r c~ | Keep current |
+ | ~SPC g r K~ | Kill current |
+ 
+@@ -244,7 +244,7 @@ ** Smerge Mode Transient-state
+ | Key binding | Description                    |
+ |-------------+--------------------------------|
+ | ~SPC g r C~ | Combine current and next hunks |
+-| ~SPC g r u~ | Undo                           |
++| ~SPC g r U~ | Undo                           |
+ | ~SPC g r q~ | Quit transient state           |
+ 
+ ** Toggles
+diff --git a/layers/+source-control/version-control/packages.el b/layers/+source-control/version-control/packages.el
+index 9dfb004d4..ca6a3491e 100644
+--- a/layers/+source-control/version-control/packages.el
++++ b/layers/+source-control/version-control/packages.el
+@@ -270,11 +270,11 @@
+         "\n
+  Movement^^^^             Merge Action^^      Diff^^            Other
+  -------------------^^^^  ----------------^^  --------------^^  -------------------------------^^
+- [_n_]^^   next conflict  [_b_] keep base     [_<_] base/mine   [_C_] combine curr/next conflicts
+- [_N_/_p_] prev conflict  [_m_] keep mine     [_=_] mine/other  [_u_] undo
+- [_j_]^^   next line      [_a_] keep all      [_>_] base/other  [_q_] quit
+- [_k_]^^   prev line      [_o_] keep other    [_r_] refine
+- ^^^^                     [_c_] keep current  [_e_] ediff       [_?_]^^ toggle help
++ [_n_]^^   next conflict  [_u_] keep upper    [_<_] base/upper  [_C_] combine curr/next conflicts
++ [_N_/_p_] prev conflict  [_b_] keep base     [_=_] upper/lower [_U_] undo
++ [_j_]^^   next line      [_l_] keep lower    [_>_] base/lower  [_q_] quit
++ [_k_]^^   prev line      [_a_] keep all      [_r_] refine
++ ^^^^                     [_c_] keep current  [_e_] ediff       [_?_] toggle help
+  ^^^^                     [_K_] kill current")
+       (spacemacs|define-transient-state smerge
+         :title "Smerge Transient State"
+@@ -289,10 +289,10 @@
+         ("j" evil-next-line)
+         ("k" evil-previous-line)
+         ;; merge action
+-        ("b" smerge-keep-base)
+-        ("m" smerge-keep-mine)
+         ("a" smerge-keep-all)
+-        ("o" smerge-keep-other)
++        ("b" smerge-keep-base)
++        ("l" smerge-keep-lower)
++        ("u" smerge-keep-upper)
+         ("c" smerge-keep-current)
+         ;; diff
+         ("<" smerge-diff-base-mine)
+@@ -303,7 +303,7 @@
+         ;; other
+         ("C" smerge-combine-with-next)
+         ("K" smerge-kill-current)
+-        ("u" undo-tree-undo)
++        ("U" undo-tree-undo)
+         ("q" nil :exit t)
+         ("?" spacemacs//smerge-ts-toggle-hint)))))
+ 
+diff --git a/layers/+spacemacs/spacemacs-defaults/config.el b/layers/+spacemacs/spacemacs-defaults/config.el
+index e85d4c8df..8ac17e176 100644
+--- a/layers/+spacemacs/spacemacs-defaults/config.el
++++ b/layers/+spacemacs/spacemacs-defaults/config.el
+@@ -47,8 +47,6 @@
+ (setq ring-bell-function 'ignore
+       visible-bell nil)
+ 
+-;; Hack to fix a bug with tabulated-list.el
+-;; see: http://redd.it/2dgy52
+ (defun tabulated-list-revert (&rest ignored)
+   "The `revert-buffer-function' for `tabulated-list-mode'.
+ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
+@@ -56,9 +54,7 @@ It runs `tabulated-list-revert-hook', then calls `tabulated-list-print'."
+   (unless (derived-mode-p 'tabulated-list-mode)
+     (error "The current buffer is not in Tabulated List mode"))
+   (run-hooks 'tabulated-list-revert-hook)
+-  ;; hack is here
+-  ;; (tabulated-list-print t)
+-  (tabulated-list-print))
++  (tabulated-list-print t))
+ 
+ ;; Highlight and allow to open http link at point in programming buffers
+ ;; goto-address-prog-mode only highlights links in strings and comments
+diff --git a/layers/+spacemacs/spacemacs-evil/funcs.el b/layers/+spacemacs/spacemacs-evil/funcs.el
+index 24916a3ef..f28f3f0ca 100644
+--- a/layers/+spacemacs/spacemacs-evil/funcs.el
++++ b/layers/+spacemacs/spacemacs-evil/funcs.el
+@@ -90,4 +90,5 @@ Otherwise, revert to the default behavior (i.e. enable `evil-insert-state')."
+ 
+ (defun spacemacs//load-evil-lisp-state ()
+   "Load evil-lisp-state lazily"
+-  (require 'evil-lisp-state))
++  (require 'evil-lisp-state)
++  (remove-hook 'prog-mode-hook #'spacemacs//load-evil-lisp-state))
+diff --git a/layers/+spacemacs/spacemacs-layouts/packages.el b/layers/+spacemacs/spacemacs-layouts/packages.el
+index 7d000adf3..220576ed6 100644
+--- a/layers/+spacemacs/spacemacs-layouts/packages.el
++++ b/layers/+spacemacs/spacemacs-layouts/packages.el
+@@ -117,7 +117,7 @@
+ 
+ 
+ (defun spacemacs-layouts/post-init-helm ()
+-  (with-eval-after-load 'helm (spacemacs//persp-helm-setup))
++  (with-eval-after-load 'helm-buffer (spacemacs//persp-helm-setup))
+   (spacemacs/set-leader-keys
+     "bB" 'spacemacs-layouts/non-restricted-buffer-list-helm
+     "pl" 'spacemacs/helm-persp-switch-project))
+diff --git a/layers/+spacemacs/spacemacs-modeline/packages.el b/layers/+spacemacs/spacemacs-modeline/packages.el
+index c8080e6b5..a37ff2012 100644
+--- a/layers/+spacemacs/spacemacs-modeline/packages.el
++++ b/layers/+spacemacs/spacemacs-modeline/packages.el
+@@ -26,15 +26,8 @@
+         anzu
+         (doom-modeline :toggle (eq (spacemacs/get-mode-line-theme-name) 'doom))
+         fancy-battery
+-        ;; dependency of spaceline-all-the-icons which came from
+-        ;; the emacs wiki, we fetch it from Emacs Mirror for now.
+-        ;; TODO eventually remove this if font-lock+ is available
+-        ;; in an ELPA repository.
+-        (font-lock+ :step pre
+-                    :location (recipe :fetcher github
+-                                      :repo emacsmirror/font-lock-plus))
+         spaceline
+-        spaceline-all-the-icons
++        (spaceline-all-the-icons :toggle (eq (spacemacs/get-mode-line-theme-name) 'all-the-icons))
+         symon
+         (vim-powerline :location (recipe :fetcher local))))
+ 
+@@ -62,8 +55,6 @@
+         :evil-leader "tmb")
+       (setq-default fancy-battery-show-percentage t))))
+ 
+-(defun spacemacs-modeline/init-font-lock+ ())
+-
+ (defun spacemacs-modeline/init-spaceline ()
+   (use-package spaceline-config
+     :if (memq (spacemacs/get-mode-line-theme-name)
+diff --git a/layers/+spacemacs/spacemacs-navigation/packages.el b/layers/+spacemacs/spacemacs-navigation/packages.el
+index f63ed64d4..c8cf6e4f6 100644
+--- a/layers/+spacemacs/spacemacs-navigation/packages.el
++++ b/layers/+spacemacs/spacemacs-navigation/packages.el
+@@ -332,7 +332,7 @@
+     (progn
+       (spacemacs/set-leader-keys "hj" 'info-display-manual)
+       (setq Info-fontify-angle-bracketed-flag nil)
+-      (add-hook 'Info-mode-hook (lambda () (require 'info+))))))
++      (with-eval-after-load "info" (require 'info+)))))
+ 
+ (defun spacemacs-navigation/init-open-junk-file ()
+   (use-package open-junk-file
+diff --git a/layers/+tags/gtags/funcs.el b/layers/+tags/gtags/funcs.el
+index c32bc3097..9f3c4fbc4 100644
+--- a/layers/+tags/gtags/funcs.el
++++ b/layers/+tags/gtags/funcs.el
+@@ -53,11 +53,6 @@ Otherwise does nothing."
+   (interactive)
+   (call-interactively 'helm-gtags-dwim))
+ 
+-(defun spacemacs/helm-gtags-define-keys-for-mode (mode)
+-  "Obsolete, does nothing."
+-  (message "spacemacs/helm-gtags-define-keys-for-mode does nothing! %s doesn't have to call it anymore."
+-           mode))
+-
+ (defun spacemacs/helm-ggtags-set-jump-handler ()
+   (add-to-list 'spacemacs-jump-handlers 'spacemacs/helm-gtags-maybe-dwim))
+ 
+diff --git a/layers/+themes/themes-megapack/packages.el b/layers/+themes/themes-megapack/packages.el
+index a71507533..53a14618a 100644
+--- a/layers/+themes/themes-megapack/packages.el
++++ b/layers/+themes/themes-megapack/packages.el
+@@ -70,7 +70,7 @@
+     light-soap-theme
+     lush-theme
+     madhat2r-theme
+-    majapahit-theme
++    majapahit-themes
+     material-theme
+     minimal-theme
+     modus-themes
+diff --git a/layers/+tools/command-log/README.org b/layers/+tools/command-log/README.org
+index 200981e60..ab389ead6 100644
+--- a/layers/+tools/command-log/README.org
++++ b/layers/+tools/command-log/README.org
+@@ -31,7 +31,7 @@ * Command log
+ * Keycast
+ This is an experimental addition to this layer which will show the last
+ used keystroke and command in the modeline. However as we support multiple
+-modelines it may require some tweaking of =keycast-insert-after= which will
++modelines it may require some tweaking of =keycast-mode-line-insert-after= which will
+ be defaulted to =%e= for now.
+ 
+ If you have a working configuration for your modeline feel free to share it
+@@ -39,7 +39,9 @@ * Keycast
+ 
+ * Key bindings
+ 
+-| Key binding   | Description            |
+-|---------------+------------------------|
+-| ~SPC a t l l~ | Toggle the command log |
+-| ~SPC a t l k~ | Toggle keycast         |
++| Key binding   | Description                |
++|---------------+----------------------------|
++| ~SPC a t l l~ | Toggle the command log     |
++| ~SPC a t K h~ | Toggle keycast in header   |
++| ~SPC a t K m~ | Toggle keycast in modeline |
++| ~SPC a t K t~ | Toggle keycast in tab bar  |
+diff --git a/layers/+tools/command-log/packages.el b/layers/+tools/command-log/packages.el
+index f32382092..67742a206 100644
+--- a/layers/+tools/command-log/packages.el
++++ b/layers/+tools/command-log/packages.el
+@@ -51,5 +51,10 @@
+   (use-package keycast
+     :init
+     (progn
+-      (spacemacs/set-leader-keys "atlk" #'keycast-mode)
+-      (setq keycast-insert-after "%e"))))
++      (spacemacs/declare-prefix "atK" "keycast")
++      (spacemacs/set-leader-keys "atKm" #'keycast-mode-line-mode)
++      (spacemacs/set-leader-keys "atKh" #'keycast-header-line-mode)
++      (spacemacs/set-leader-keys "atKt" #'keycast-tab-bar-mode)
++
++      ;; Include keycast in modeline
++      (setq keycast-mode-line-insert-after "%e"))))
+diff --git a/layers/+tools/finance/README.org b/layers/+tools/finance/README.org
+index 4fa2d6fcc..ee8e1ea6d 100644
+--- a/layers/+tools/finance/README.org
++++ b/layers/+tools/finance/README.org
+@@ -65,6 +65,9 @@ ** Ledger
+ evil-ledger additionally adds a transaction text object, bound to ~x~, so you
+ can for example use ~dix~ or ~vax~ to delete or mark the transaction at point.
+ 
++To navigate the calendar when adding a transaction, use ~S-<arrow>~ for days,
++and ~<~ or ~>~ for months.
++
+ ** Ledger-Reconcile
+ 
+ | Key binding | Description                                                               |
+diff --git a/layers/+tools/tide/packages.el b/layers/+tools/tide/packages.el
+index eadf755d8..dafef17ae 100644
+--- a/layers/+tools/tide/packages.el
++++ b/layers/+tools/tide/packages.el
+@@ -28,7 +28,6 @@
+ (defun tide/init-tide ()
+   (use-package tide
+     :defer t
+-    :commands (typescript/jump-to-type-def)
+     :config
+     (spacemacs//tide-setup-bindings)
+     (add-hook 'tide-mode-hook #'spacemacs//tide-setup-jump-handle)))
+diff --git a/layers/LAYERS.org b/layers/LAYERS.org
+index 3422dab9c..c9ed69bdb 100644
+--- a/layers/LAYERS.org
++++ b/layers/LAYERS.org
+@@ -371,17 +371,17 @@ ** Auto-completion
+ ** Compleseus
+ [[file:+completion/compleseus/README.org][+completion/compleseus/README.org]]
+ 
+-This layer adds a new way of completion provided by the following core packages:
+-- =consult=
+-- =embark=
+-- =marginalia=
+-- =orderless=
+-- =selectrum= or =vertico=
++This layer implements completion provided by combining the following packages:
++- =selectrum= or =vertico=: vertical completion user interface
++- =consult=: useful commands using ~completing-read~
++- =embark=: provides minibuffer actions
++- =marginalia=: annotations to completion candidates
++- =orderless=: filtering enhancements
+ 
+-This is an WIP and only supports emacs 27 or later. Please contribute.
++It only supports emacs 27 or later.
+ 
+ Features:
+-- Same features as =ivy= or =helm=
++- Similar features like =ivy= or =helm=
+ 
+ ** Helm
+ [[file:+completion/helm/README.org][+completion/helm/README.org]]
