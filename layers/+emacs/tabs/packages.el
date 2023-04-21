@@ -53,7 +53,7 @@
       (if tabs-group-by-project
           (centaur-tabs-group-by-projectile-project)
         (centaur-tabs-group-buffer-groups))
-      (centaur-tabs-mode t)
+      ;; (centaur-tabs-mode t)
 
       (when tabs-auto-hide
         (add-hook 'window-setup-hook 'spacemacs//tabs-timer-hide)
