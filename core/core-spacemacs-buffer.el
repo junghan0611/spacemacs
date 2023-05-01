@@ -1542,7 +1542,10 @@ can be adjusted with the variable:
   (with-current-buffer (get-buffer spacemacs-buffer-name)
     (when dotspacemacs-startup-lists
       (spacemacs-buffer/insert-startup-lists))
-    (spacemacs-buffer//insert-footer)
+
+    ;; (spacemacs-buffer//insert-footer)
+    ;; (spacemacs-buffer//insert-footer-jh)
+
     (if configuration-layer-error-count
         (progn
           (spacemacs-buffer-mode)
