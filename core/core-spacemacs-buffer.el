@@ -337,35 +337,24 @@ Right justified, based on the Spacemacs buffers window width."
 
 
 (defun spacemacs-buffer//insert-footer-quote ()
-  "Insert the footer of the home buffer."
-
+  "Insert the footer with fortune quote of the home buffer."
   (save-excursion
-    (let* (
-           (quote-width (- (spacemacs-buffer//get-buffer-width) 10))
-           (quote-string (if (executable-find "fortune")
-                                    (string-fill
-                                     (concat "\n"
-                                             (string-join
-                                              (mapcar (lambda (l) (concat " " l))
-                                                      (string-lines (shell-command-to-string "fortune"))))
-                                             "\n"
-                                             ) quote-width )))
-           (proudly-free "Proudly free software")
-           (buffer-read-only nil)
-           )
+    (let* ((quotestring
+            (if (executable-find "fortune")
+                (string-join
+                 (mapcar (lambda (l) (concat "\n " (string-fill l 78)))
+                         (string-lines (shell-command-to-string "fortune"))))))
+           ;; (proudly-free "Proudly free software")
+           (buffer-read-only nil))
       (goto-char (point-max))
-      (insert "\n")
-
+      (spacemacs-buffer/insert-page-break)
+      ;; (insert "\n")
       (when (executable-find "fortune")
-        (insert quote-string)
-        ;; (spacemacs-buffer//center-line (length quote-width))
-        (insert "\n")
-        )
-
-      (insert "\n")
-      (insert proudly-free)
-      (spacemacs-buffer//center-line (length proudly-free))
-      (insert "\n")))
+        (insert quotestring))
+      ;; (insert "\n")
+      ;; (insert proudly-free)
+      ;; (spacemacs-buffer//center-line (length proudly-free))
+      ))
   )
 
 (defun spacemacs-buffer//insert-footer ()
@@ -726,7 +715,9 @@ ADDITIONAL-WIDGETS: a function for inserting a widget under the frame."
                                                  spacemacs-buffer-version-info)
                                          "Update your dotfile (SPC f e D) and\
  packages after every update"
-                                         widget-func))
+                                         widget-func)
+
+    )
   (setq spacemacs-buffer--release-note-version nil)
   (spacemacs/dump-vars-to-file '(spacemacs-buffer--release-note-version)
                                spacemacs-buffer--cache-file))
@@ -823,7 +814,6 @@ ARGS: format string arguments."
   (when (display-graphic-p)
       (spacemacs-buffer/append "\n\n"))
 
-  ;; center-line 을 가져와야 한다.
   (unless (display-graphic-p)
     (spacemacs-buffer/append "\n"))
   )
@@ -1583,8 +1573,6 @@ can be adjusted with the variable:
       (spacemacs-buffer/insert-startup-lists))
 
     ;; (spacemacs-buffer//insert-footer)
-    ;; (spacemacs-buffer//insert-footer-jh)
-
     (if configuration-layer-error-count
         (progn
           (spacemacs-buffer-mode)
