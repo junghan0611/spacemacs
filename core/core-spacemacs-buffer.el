@@ -335,6 +335,39 @@ Right justified, based on the Spacemacs buffers window width."
                       version))
       (insert "\n\n"))))
 
+
+(defun spacemacs-buffer//insert-footer-quote ()
+  "Insert the footer of the home buffer."
+
+  (save-excursion
+    (let* (
+           (quote-width (- (spacemacs-buffer//get-buffer-width) 10))
+           (quote-string (if (executable-find "fortune")
+                                    (string-fill
+                                     (concat "\n"
+                                             (string-join
+                                              (mapcar (lambda (l) (concat " " l))
+                                                      (string-lines (shell-command-to-string "fortune"))))
+                                             "\n"
+                                             ) quote-width )))
+           (proudly-free "Proudly free software")
+           (buffer-read-only nil)
+           )
+      (goto-char (point-max))
+      (insert "\n")
+
+      (when (executable-find "fortune")
+        (insert quote-string)
+        ;; (spacemacs-buffer//center-line (length quote-width))
+        (insert "\n")
+        )
+
+      (insert "\n")
+      (insert proudly-free)
+      (spacemacs-buffer//center-line (length proudly-free))
+      (insert "\n")))
+  )
+
 (defun spacemacs-buffer//insert-footer ()
   "Insert the footer of the home buffer."
   (save-excursion
@@ -787,7 +820,13 @@ ARGS: format string arguments."
 
 (defun spacemacs-buffer/insert-page-break ()
   "Insert a page break line in spacemacs buffer."
-  (spacemacs-buffer/append "\n\n"))
+  (when (display-graphic-p)
+      (spacemacs-buffer/append "\n\n"))
+
+  ;; center-line 을 가져와야 한다.
+  (unless (display-graphic-p)
+    (spacemacs-buffer/append "\n"))
+  )
 
 (defun spacemacs-buffer/append (msg &optional messagebuf)
   "Append MSG to spacemacs buffer.
@@ -1596,7 +1635,8 @@ If a prefix argument is given, switch to it in an other, possibly new window."
             (spacemacs-buffer//notes-redisplay-current-note)
             (when dotspacemacs-startup-lists
               (spacemacs-buffer/insert-startup-lists))
-            (spacemacs-buffer//insert-footer)
+            ;; (spacemacs-buffer//insert-footer)
+            (spacemacs-buffer//insert-footer-quote) ; DONE
             (configuration-layer/display-summary emacs-start-time)
             (spacemacs-buffer/set-mode-line spacemacs--default-mode-line)
             (force-mode-line-update)
@@ -1673,3 +1713,5 @@ Useful for making the home buffer the only visible buffer in the frame."
 (provide 'core-spacemacs-buffer)
 
 ;;; core-spacemacs-buffer ends here
+
+HELLO
