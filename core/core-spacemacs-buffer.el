@@ -1713,5 +1713,3 @@ Useful for making the home buffer the only visible buffer in the frame."
 (provide 'core-spacemacs-buffer)
 
 ;;; core-spacemacs-buffer ends here
-
-HELLO
