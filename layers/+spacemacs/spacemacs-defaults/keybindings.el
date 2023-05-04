@@ -775,7 +775,10 @@ respond to this toggle."
   ("b" (cond ((configuration-layer/layer-used-p 'helm)
               (helm-buffers-list))
              ((configuration-layer/layer-used-p 'ivy)
-              (ivy-switch-buffer))))
+              (ivy-switch-buffer))
+             ((configuration-layer/layer-used-p 'compleseus)
+              (spacemacs/compleseus-switch-to-buffer))
+             ))
   ("d" spacemacs/kill-this-buffer)
   ("C-d" bury-buffer)
   ("z" recenter-top-bottom)
@@ -1119,4 +1122,3 @@ If FRAME is nil, it defaults to the selected frame."
 
 (spacemacs/set-leader-keys "TB"
   'spacemacs/scale-background-transparency-transient-state/spacemacs/toggle-background-transparency)
-
