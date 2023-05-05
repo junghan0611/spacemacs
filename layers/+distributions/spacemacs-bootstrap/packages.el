@@ -467,7 +467,7 @@ Press \\[which-key-toggle-persistent] to hide."
   ;; Rename the entry for M-1 in the SPC h k Top-level bindings,
   ;; and for 1 in the SPC- Spacemacs root, to 1..9
   (push '(("\\(.*\\)1" . "winum-select-window-1") .
-          ("\\11..9" . "select window 1..9"))
+          ("\\11..9" . "window 1..9"))
         which-key-replacement-alist)
 
   ;; Hide the entries for M-[2-9] in the SPC h k Top-level bindings,
@@ -477,13 +477,13 @@ Press \\[which-key-toggle-persistent] to hide."
 
   ;; SPC- Spacemacs root
   ;; Combine the ` (backtick) and ² (superscript 2) key entries
-  (push '(("\\(.*\\)`" . "winum-select-window-by-number") .
-          ("\\1`,²" . "select window by number"))
-        which-key-replacement-alist)
+  ;; (push '(("\\(.*\\)`" . "winum-select-window-by-number") .
+  ;;         ("\\1`,²" . "select window by number"))
+  ;;       which-key-replacement-alist)
 
   ;; hide the "² -> winum-select-window-by-number" entry
-  (push '(("\\(.*\\)²" . nil) . t)
-        which-key-replacement-alist)
+  ;; (push '(("\\(.*\\)²" . nil) . t)
+  ;;       which-key-replacement-alist)
 
   ;; SPC b- buffers
   ;; rename the buffer-to-window-1 entry, to 1..9
