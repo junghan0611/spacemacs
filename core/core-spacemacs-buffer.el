@@ -1620,11 +1620,11 @@ If a prefix argument is given, switch to it in an other, possibly new window."
               (insert "\n")))
           (spacemacs-buffer/insert-banner-and-buttons)
           (when (bound-and-true-p spacemacs-initialized)
-            (spacemacs-buffer//notes-redisplay-current-note)
+            ;; (spacemacs-buffer//notes-redisplay-current-note) ;; JH
             (when dotspacemacs-startup-lists
               (spacemacs-buffer/insert-startup-lists))
             ;; (spacemacs-buffer//insert-footer)
-            (spacemacs-buffer//insert-footer-quote) ; DONE
+            (spacemacs-buffer//insert-footer-quote) ; JH
             (configuration-layer/display-summary emacs-start-time)
             (spacemacs-buffer/set-mode-line spacemacs--default-mode-line)
             (force-mode-line-update)
