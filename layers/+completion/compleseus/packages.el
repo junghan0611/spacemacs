@@ -51,7 +51,7 @@
     (spacemacs/transient-state-register-add-bindings 'symbol-highlight
       '(("s" spacemacs/consult-line :exit t)
         ("f" spacemacs/compleseus-search-auto :exit t)
-        ("/" spacemacs/compleseus-search-projectile-auto :exit t)))))
+        ("/" spacemacs/compleseus-search-project-el-auto :exit t)))))
 
 (defun compleseus/post-init-imenu ()
   (spacemacs/set-leader-keys "ji" 'spacemacs/consult-jump-in-buffer))
@@ -65,15 +65,16 @@
 
     :config
     (dolist (it
-             '((spacemacs/compleseus-pers-switch-project . project-file)
+             '(
+               ;; (spacemacs/compleseus-pers-switch-project . project-file)
                ;; https://github.com/bbatsov/projectile/issues/1664
                ;; https://github.com/minad/marginalia/issues/110
-               (persp-switch-to-buffer . buffer)
-               (projectile-find-file . project-file)
-               (projectile-find-dir . project-file)
-               (projectile-recentf . project-file)
-               (projectile-switch-to-buffer . buffer)
-               (projectile-switch-project . project-file)))
+               ;; (persp-switch-to-buffer . buffer)
+               (project-find-file . project-file)
+               (project-find-dir . project-file)
+               ;; (project-recentf . project-file)
+               (project-switch-to-buffer . buffer)
+               (project-switch-project . project-file)))
       (push it marginalia-command-categories))
     (setq marginalia-align 'right)
     ;; The :init configuration is always executed (Not lazy!)
@@ -141,7 +142,8 @@
       dotspacemacs-emacs-command-key 'execute-extended-command
       "#" #'consult-register
       "*" #'spacemacs/compleseus-search-default
-      "/" #'spacemacs/compleseus-search-projectile-auto
+      ;; "/" #'spacemacs/compleseus-search-projectile-auto
+      "/" #'spacemacs/compleseus-search-project-el-auto
       "bb" #'spacemacs/compleseus-switch-to-buffer
       "bB" #'consult-buffer
       "fb" #'consult-bookmark
@@ -160,7 +162,8 @@
       "su" #'consult-focus-lines
       "sf" #'spacemacs/compleseus-search-auto
       "sd" #'spacemacs/compleseus-search-dir
-      "sp" #'spacemacs/compleseus-search-projectile
+      ;; "sp" #'spacemacs/compleseus-search-projectile
+      "sp" #'spacemacs/compleseus-search-project-el
       "ry" #'consult-yank-from-kill-ring
       "Ts" #'consult-theme)
 
