@@ -96,7 +96,7 @@
 (defun spacemacs/compleseus-search-project-el ()
   "Search in current project."
   (interactive)
-  (spacemacs/compleseus-search t (project-root)))
+  (spacemacs/compleseus-search t (project-root (project-current t))))
 
 (defun spacemacs/compleseus-search-default ()
   "Search."
@@ -107,7 +107,8 @@
   (defun spacemacs/compleseus-search-project-el-auto ()
   "Search in current project."
   (interactive)
-  (spacemacs/compleseus-search nil (project-root)))
+  (spacemacs/compleseus-search nil (project-root (project-current t))))
+
 
 (defun spacemacs/compleseus-search-from (input)
   "Embark action to start ripgrep search from candidate's directory."
