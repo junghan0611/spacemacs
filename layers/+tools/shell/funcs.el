@@ -306,3 +306,7 @@ tries to restore a dead buffer or window."
     (define-key mode-map (kbd "M-r") 'spacemacs/helm-vterm-search-history))
    ((configuration-layer/layer-used-p 'ivy)
     (define-key mode-map (kbd "M-r") 'spacemacs/counsel-vterm-search-history))))
+
+(defun spacemacs/shell-history (it)
+  (interactive (list (completing-read "Shell history: " (ring-elements comint-input-ring))))
+  (insert it))

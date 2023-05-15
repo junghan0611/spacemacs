@@ -281,16 +281,15 @@ in the window where the Symbol Highlight Transient State was closed."
 (defun spacemacs/symbol-overlay ()
   "Start symbol-overlay-transient-state."
   (interactive)
-  (symbol-overlay-put)
   (spacemacs/symbol-overlay-transient-state/body))
 
 (defun spacemacs//symbol-overlay-doc ()
         (let* ((symbol-at-point (symbol-overlay-get-symbol))
                (keyword (symbol-overlay-assoc symbol-at-point))
                (symbol (car keyword))
-	             (before (symbol-overlay-get-list -1 symbol))
-	             (after (symbol-overlay-get-list 1 symbol))
-	             (count (length before))
+               (before (symbol-overlay-get-list -1 symbol))
+               (after (symbol-overlay-get-list 1 symbol))
+               (count (length before))
                (scope (format "%s"
                               (if (cadr keyword)
                                   "Scope"

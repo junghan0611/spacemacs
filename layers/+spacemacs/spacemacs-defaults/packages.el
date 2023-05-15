@@ -38,7 +38,10 @@
     (electric-indent-mode :location built-in)
     (ediff :location built-in)
     (eldoc :location built-in)
-    (help-fns+ :location (recipe :fetcher local))
+    ;; (help-fns+ :location (recipe :fetcher local))
+    (help-fns+ :location (recipe
+                          :fetcher github
+                          :repo "emacsmirror/help-fns-plus"))
     (hi-lock :location built-in)
     (image-mode :location built-in)
     (imenu :location built-in)
