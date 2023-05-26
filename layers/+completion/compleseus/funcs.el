@@ -88,27 +88,21 @@
   (interactive)
   (spacemacs/compleseus-search t default-directory))
 
-;; (defun spacemacs/compleseus-search-projectile ()
-;;   "Search in current project."
-;;   (interactive)
-;;   (spacemacs/compleseus-search t (projectile-project-root)))
-
-(defun spacemacs/compleseus-search-project-el ()
+;; Projectile
+(defun spacemacs/compleseus-search-projectile ()
   "Search in current project."
   (interactive)
-  (spacemacs/compleseus-search t (project-root (project-current t))))
+  (spacemacs/compleseus-search t (projectile-project-root)))
 
 (defun spacemacs/compleseus-search-default ()
   "Search."
   (interactive)
-  (spacemacs/compleseus-search-project-el))
+  (spacemacs/compleseus-search-projectile))
 
-;; (defun spacemacs/compleseus-search-projectile-auto ()
-  (defun spacemacs/compleseus-search-project-el-auto ()
+(defun spacemacs/compleseus-search-projectile-auto ()
   "Search in current project."
   (interactive)
-  (spacemacs/compleseus-search nil (project-root (project-current t))))
-
+  (spacemacs/compleseus-search nil (projectile-project-root)))
 
 (defun spacemacs/compleseus-search-from (input)
   "Embark action to start ripgrep search from candidate's directory."
