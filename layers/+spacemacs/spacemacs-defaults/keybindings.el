@@ -31,6 +31,7 @@
                                        "*"   "search project w/input"
                                        "/"   "search project"
                                        "?"   "show keybindings"
+                                       "$"   "AI"
                                        "a"   "applications"
                                        "ac"  "chat"
                                        "ae"  "email"
