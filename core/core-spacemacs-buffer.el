@@ -343,7 +343,7 @@ Right justified, based on the Spacemacs buffers window width."
             (if (executable-find "fortune")
                 (string-join
                  (mapcar (lambda (l) (concat "\n " (string-fill l 78)))
-                         (string-lines (shell-command-to-string "fortune"))))))
+                         (string-lines (shell-command-to-string "fortune -c"))))))
            ;; (proudly-free "Proudly free software")
            (buffer-read-only nil))
       (goto-char (point-max))
@@ -491,8 +491,8 @@ MIN-WIDTH is the minimal width of the frame, frame included.  The frame will not
       (fill-region (point-min) (point-max) nil nil)
       (concat
        "╭─" (when topcaption (propertize (concat " " topcaption " ")
-                                         'face
-                                         '(:weight bold)))
+                                          'face
+                                          '(:weight bold)))
        (make-string (max 0 (- width (if topcaption 6 4) topcaption-length)) ?─) "─╮\n"
        (spacemacs-buffer//notes-render-framed-line "" width hpadding)
        (mapconcat (lambda (line)
@@ -500,7 +500,7 @@ MIN-WIDTH is the minimal width of the frame, frame included.  The frame will not
                   (split-string (buffer-string) "\n" nil) "")
        (spacemacs-buffer//notes-render-framed-line "" width hpadding)
        "╰─" (when botcaption (propertize (concat " " botcaption " ")
-                                         'face '(:weight bold)))
+                                          'face '(:weight bold)))
        (make-string (max 0 (- width (if botcaption 6 4) botcaption-length)) ?─)
        "─╯" (when botcaption "\n")))))
 
@@ -812,7 +812,7 @@ ARGS: format string arguments."
 (defun spacemacs-buffer/insert-page-break ()
   "Insert a page break line in spacemacs buffer."
   (when (display-graphic-p)
-      (spacemacs-buffer/append "\n\n"))
+    (spacemacs-buffer/append "\n\n"))
 
   (unless (display-graphic-p)
     (spacemacs-buffer/append "\n"))
@@ -1315,7 +1315,7 @@ LIST-SIZE is specified in `dotspacemacs-startup-lists' for recent entries."
   (let (;; we need to remove `org-agenda-files' entries from recent files
         (agenda-files
          (when-let ((default-directory
-                      (or (bound-and-true-p org-directory) "~/org"))
+                     (or (bound-and-true-p org-directory) "~/org"))
                     (files
                      (when (bound-and-true-p org-agenda-files)
                        (if (listp org-agenda-files)
@@ -1630,10 +1630,10 @@ If a prefix argument is given, switch to it in an other, possibly new window."
             (force-mode-line-update)
             (spacemacs-buffer-mode)))
         (if save-line
-           (progn (goto-char (point-min))
-                  (forward-line (1- save-line))
-                  (forward-to-indentation 0))
-         (spacemacs-buffer/goto-link-line)))
+            (progn (goto-char (point-min))
+                   (forward-line (1- save-line))
+                   (forward-to-indentation 0))
+          (spacemacs-buffer/goto-link-line)))
       (unless do-not-switch
         (if current-prefix-arg
             (switch-to-buffer-other-window spacemacs-buffer-name))
