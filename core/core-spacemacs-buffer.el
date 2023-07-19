@@ -1246,7 +1246,12 @@ LIST: list of `org-agenda' entries in the todo list."
                                 (format "- %s -"
                                         (cdr (assoc "time" el)))
                               "-")
-                            (cdr (assoc "text" el)))))
+                            ;; Replace links in org style in todo entries
+                            ;; "[[Link][Name]]" => "[Name]"
+                            (replace-regexp-in-string
+                             "\\[\\[[^][]+\\]\\[\\([^][]+\\)\\]\\]"
+                             "[\\1]"
+                             (cdr (assoc "text" el))))))
               (insert button-prefix)
               (widget-create 'push-button
                              :action `(lambda (&rest ignore)
