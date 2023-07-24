@@ -46,7 +46,7 @@
 
 (defvar consult--source-persp-buffers
   `(
-    :name     "Buffer"
+    :name     "Persp Buffer"
     :narrow   ?b
     :category buffer
     :face     consult-buffer

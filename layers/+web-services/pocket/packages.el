@@ -31,5 +31,5 @@
     (evilified-state-evilify-map pocket-reader-mode-map
       :mode pocket-reader-mode
       :bindings
-      "gr" 'pocket-reader-resort
-      "gR" 'pocket-reader-refresh)))
+      "gs" 'pocket-reader-resort
+      "gr" 'pocket-reader-refresh)))
