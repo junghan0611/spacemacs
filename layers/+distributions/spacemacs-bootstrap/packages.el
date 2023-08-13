@@ -29,7 +29,7 @@
     (bind-map :step bootstrap)
     (bind-key :step bootstrap)
     (diminish :step bootstrap)
-    (evil :step bootstrap)
+    (evil :location (recipe :fetcher local) :step bootstrap)
     (hydra :step bootstrap)
     (use-package :step bootstrap)
     (which-key :step bootstrap)
