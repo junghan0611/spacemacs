@@ -55,10 +55,11 @@
     org-present
     org-cliplink
     org-rich-yank
-    (org-projectile 
-      :location (recipe :fetcher github :repo "junghan0611/org-project-capture"
-                        :branch "main")
-      :requires projectile)
+    (org-projectile :requires projectile)
+    ;; (org-projectile
+    ;;   :location (recipe :fetcher github :repo "junghan0611/org-project-capture"
+    ;;                     :branch "main")
+    ;;   :requires projectile)
     (ox-epub :toggle org-enable-epub-support)
     (ox-twbs :toggle org-enable-bootstrap-support)
     ;; use a for of ox-gfm to fix index generation
