@@ -335,28 +335,6 @@ Right justified, based on the Spacemacs buffers window width."
                       version))
       (insert "\n\n"))))
 
-
-(defun spacemacs-buffer//insert-footer-quote ()
-  "Insert the footer with fortune quote of the home buffer."
-  (save-excursion
-    (let* ((quotestring
-            (if (executable-find "fortune")
-                (string-join
-                 (mapcar (lambda (l) (concat "\n " (string-fill l 78)))
-                         (string-lines (shell-command-to-string "fortune -c"))))))
-           ;; (proudly-free "Proudly free software")
-           (buffer-read-only nil))
-      (goto-char (point-max))
-      (spacemacs-buffer/insert-page-break)
-      ;; (insert "\n")
-      (when (executable-find "fortune")
-        (insert quotestring))
-      ;; (insert "\n")
-      ;; (insert proudly-free)
-      ;; (spacemacs-buffer//center-line (length proudly-free))
-      ))
-  )
-
 (defun spacemacs-buffer//insert-footer ()
   "Insert the footer of the home buffer."
   (save-excursion
@@ -491,8 +469,8 @@ MIN-WIDTH is the minimal width of the frame, frame included.  The frame will not
       (fill-region (point-min) (point-max) nil nil)
       (concat
        "╭─" (when topcaption (propertize (concat " " topcaption " ")
-                                          'face
-                                          '(:weight bold)))
+                                         'face
+                                         '(:weight bold)))
        (make-string (max 0 (- width (if topcaption 6 4) topcaption-length)) ?─) "─╮\n"
        (spacemacs-buffer//notes-render-framed-line "" width hpadding)
        (mapconcat (lambda (line)
@@ -500,7 +478,7 @@ MIN-WIDTH is the minimal width of the frame, frame included.  The frame will not
                   (split-string (buffer-string) "\n" nil) "")
        (spacemacs-buffer//notes-render-framed-line "" width hpadding)
        "╰─" (when botcaption (propertize (concat " " botcaption " ")
-                                          'face '(:weight bold)))
+                                         'face '(:weight bold)))
        (make-string (max 0 (- width (if botcaption 6 4) botcaption-length)) ?─)
        "─╯" (when botcaption "\n")))))
 
@@ -715,9 +693,7 @@ ADDITIONAL-WIDGETS: a function for inserting a widget under the frame."
                                                  spacemacs-buffer-version-info)
                                          "Update your dotfile (SPC f e D) and\
  packages after every update"
-                                         widget-func)
-
-    )
+                                         widget-func))
   (setq spacemacs-buffer--release-note-version nil)
   (spacemacs/dump-vars-to-file '(spacemacs-buffer--release-note-version)
                                spacemacs-buffer--cache-file))
@@ -811,12 +787,7 @@ ARGS: format string arguments."
 
 (defun spacemacs-buffer/insert-page-break ()
   "Insert a page break line in spacemacs buffer."
-  (when (display-graphic-p)
-    (spacemacs-buffer/append "\n\n"))
-
-  (unless (display-graphic-p)
-    (spacemacs-buffer/append "\n"))
-  )
+  (spacemacs-buffer/append "\n\n"))
 
 (defun spacemacs-buffer/append (msg &optional messagebuf)
   "Append MSG to spacemacs buffer.
@@ -1576,8 +1547,7 @@ can be adjusted with the variable:
   (with-current-buffer (get-buffer spacemacs-buffer-name)
     (when dotspacemacs-startup-lists
       (spacemacs-buffer/insert-startup-lists))
-
-    ;; (spacemacs-buffer//insert-footer)
+    (spacemacs-buffer//insert-footer)
     (if configuration-layer-error-count
         (progn
           (spacemacs-buffer-mode)
@@ -1625,11 +1595,10 @@ If a prefix argument is given, switch to it in an other, possibly new window."
               (insert "\n")))
           (spacemacs-buffer/insert-banner-and-buttons)
           (when (bound-and-true-p spacemacs-initialized)
-            ;; (spacemacs-buffer//notes-redisplay-current-note) ;; JH
+            (spacemacs-buffer//notes-redisplay-current-note)
             (when dotspacemacs-startup-lists
               (spacemacs-buffer/insert-startup-lists))
-            ;; (spacemacs-buffer//insert-footer)
-            (spacemacs-buffer//insert-footer-quote) ; JH
+            (spacemacs-buffer//insert-footer)
             (configuration-layer/display-summary emacs-start-time)
             (spacemacs-buffer/set-mode-line spacemacs--default-mode-line)
             (force-mode-line-update)
