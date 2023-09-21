@@ -46,8 +46,8 @@
 
 (defvar consult--source-persp-buffers
   `(
-    :name     "Persp Buffer"
-    :narrow   ?b
+    :name     "Layout/Persp Buffer"
+    :narrow   ?l
     :category buffer
     :face     consult-buffer
     :history  buffer-name-history
