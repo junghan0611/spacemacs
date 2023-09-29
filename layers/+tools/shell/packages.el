@@ -25,6 +25,7 @@
   '(
     (comint :location built-in)
     company
+    company-native-complete
     esh-help
     (eshell :location built-in)
     eshell-prompt-extras
@@ -44,7 +45,11 @@
     vi-tilde-fringe
     window-purpose
     (multi-vterm :toggle (and module-file-suffix (not (spacemacs/system-is-mswindows))))
-    (vterm :toggle (and module-file-suffix (not (spacemacs/system-is-mswindows))))))
+    (vterm :toggle (and module-file-suffix (not (spacemacs/system-is-mswindows))))
+    (vterm-extra
+     :location (recipe
+                :fetcher github
+                :repo  "Sbozzolo/vterm-extra"))))
 
 
 (defun shell/init-comint ()
@@ -53,7 +58,16 @@
   (with-eval-after-load 'centered-cursor-mode
     (add-hook 'comint-mode-hook 'spacemacs//inhibit-global-centered-cursor-mode)))
 
+(defun shell/init-company-native-complete()
+  (use-package company-native-complete
+    :defer t))
+
 (defun shell/pre-init-company ()
+  (spacemacs|add-company-backends :backends company-native-complete :modes shell-mode)
+  (spacemacs|use-package-add-hook company-native-complete
+    :post-init
+    (with-eval-after-load 'shell
+      (native-complete-setup-bash)))
   ;; support in eshell
   (spacemacs|use-package-add-hook eshell
     :post-init
@@ -234,14 +248,12 @@
              (t (comint-simple-send proc command))))))
   (add-hook 'shell-mode-hook 'shell-comint-input-sender-hook)
   (add-hook 'shell-mode-hook 'spacemacs/disable-hl-line-mode)
-
   (evil-define-key 'normal shell-mode-map
     [return] 'comint-send-input)
 
   (when (configuration-layer/layer-used-p 'compleseus)
     (with-eval-after-load 'shell
-      (define-key shell-mode-map (kbd "M-r") 'spacemacs/shell-history)))
-
+        (define-key shell-mode-map (kbd "M-r") 'spacemacs/shell-history)))
   (with-eval-after-load 'centered-cursor-mode
     (add-hook 'shell-mode-hook 'spacemacs//inhibit-global-centered-cursor-mode)))
 
@@ -315,6 +327,7 @@
 
 (defun shell/init-xterm-color ()
   (use-package xterm-color
+    :defer t
     :init
     ;; Comint and Shell
     (add-hook 'comint-preoutput-filter-functions 'xterm-color-filter)
@@ -348,6 +361,11 @@
     (make-shell-pop-command "vterm" vterm)
     (spacemacs/set-leader-keys "atsv" 'spacemacs/shell-pop-vterm)
     (spacemacs/register-repl 'vterm 'vterm)
+    (spacemacs/set-leader-keys "psf" #'spacemacs/vterm-repl-send-function)
+    (spacemacs/set-leader-keys "psl" #'spacemacs/vterm-repl-send-line)
+    (spacemacs/set-leader-keys "pss" #'spacemacs/vterm-repl-send-dwim)
+    (spacemacs/set-leader-keys "psr" #'spacemacs/vterm-repl-send-region)
+    (spacemacs/set-leader-keys "psg" #'spacemacs/vterm-repl-send-buffer)
     :config
     (setq vterm-shell shell-default-term-shell)
     (define-key vterm-mode-map (kbd "M-n") 'vterm-send-down)
@@ -356,13 +374,21 @@
     (define-key vterm-mode-map (kbd "M-/") 'vterm-send-tab)
     (when spacemacs-vterm-history-file-location
       (spacemacs//vterm-bind-m-r vterm-mode-map))
-    (evil-define-key 'insert vterm-mode-map (kbd "C-y") 'vterm-yank)
-    (evil-define-key 'insert vterm-mode-map (kbd "C-o") 'evil-execute-in-normal-state)
+
+    (evil-define-key 'insert vterm-mode-map
+      (kbd "C-y") 'vterm-yank
+      (kbd "C-j") 'vterm-send-down
+      (kbd "C-k") 'vterm-send-up
+      (kbd "C-o") 'evil-execute-in-normal-state)
+
     (evil-define-key 'normal vterm-mode-map
       [escape] 'vterm-send-escape
       [return] 'vterm-send-return
       (kbd "p") 'vterm-yank
-      (kbd "u") 'vterm-undo)
+      (kbd "u") 'vterm-undo
+      (kbd "C-j") 'vterm-send-down
+      (kbd "C-k") 'vterm-send-up)
+
     (add-hook 'vterm-mode-hook 'spacemacs/disable-hl-line-mode)
     (with-eval-after-load 'centered-cursor-mode
       (add-hook 'vterm-mode-hook 'spacemacs//inhibit-global-centered-cursor-mode))))
@@ -391,3 +417,10 @@
                                   (eshell-mode . terminal)
                                   (shell-mode . terminal)
                                   (term-mode . terminal)))))
+
+(defun shell/init-vterm-extra ()
+  (use-package vterm-extra
+    :after vterm
+    :bind (("C-c $" . vterm-extra-dispatcher)
+           :map vterm-mode-map
+           (("C-c C-e" . vterm-extra-edit-command-in-new-buffer)))))
