@@ -122,7 +122,8 @@
     (with-eval-after-load 'dired
       (evil-define-key 'normal dired-mode-map "J"
         (cond ((configuration-layer/layer-used-p 'helm) 'spacemacs/helm-find-files)
-              ((configuration-layer/layer-used-p 'ivy) 'spacemacs/counsel-find-file))))))
+              ((configuration-layer/layer-used-p 'ivy) 'spacemacs/counsel-find-file)
+              ((configuration-layer/layer-used-p 'compleseus) 'spacemacs/compleseus-find-file))))))
 
 (defun spacemacs-evil/init-evil-escape ()
   (use-package evil-escape
