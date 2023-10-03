@@ -11,6 +11,6 @@
 
 (configuration-layer/declare-layer-dependencies '(json node prettier))
 
-(when (and (boundp 'javascript-backend)
-        (eq javascript-backend 'lsp))
+(when (and (boundp 'js-backend)
+        (eq js-backend 'lsp))
   (configuration-layer/declare-layer-dependencies '(lsp)))

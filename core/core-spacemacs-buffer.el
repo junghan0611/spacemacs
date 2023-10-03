@@ -1593,7 +1593,7 @@ If a prefix argument is given, switch to it in an other, possibly new window."
               (spacemacs-buffer//insert-version)
             (let ((inhibit-read-only t))
               (insert "\n")))
-          (spacemacs-buffer/insert-banner-and-buttons)
+          ;; (spacemacs-buffer/insert-banner-and-buttons)
           (when (bound-and-true-p spacemacs-initialized)
             (spacemacs-buffer//notes-redisplay-current-note)
             (when dotspacemacs-startup-lists
