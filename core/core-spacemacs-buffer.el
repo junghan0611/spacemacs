@@ -198,7 +198,7 @@ Cate special text banner can de reachable via `998', `cat' or `random*'.
       (if (image-type-available-p (intern (file-name-extension banner)))
           (spacemacs-buffer//insert-image-banner banner)
         (spacemacs-buffer//insert-ascii-banner-centered banner)))
-    (spacemacs-buffer//insert-buttons)
+    ;; (spacemacs-buffer//insert-buttons)
     (spacemacs//redisplay)))
 
 (defun spacemacs-buffer/display-startup-note ()
@@ -1593,7 +1593,7 @@ If a prefix argument is given, switch to it in an other, possibly new window."
               (spacemacs-buffer//insert-version)
             (let ((inhibit-read-only t))
               (insert "\n")))
-          ;; (spacemacs-buffer/insert-banner-and-buttons)
+          (spacemacs-buffer/insert-banner-and-buttons)
           (when (bound-and-true-p spacemacs-initialized)
             (spacemacs-buffer//notes-redisplay-current-note)
             (when dotspacemacs-startup-lists
