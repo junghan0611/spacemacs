@@ -1561,7 +1561,8 @@ can be adjusted with the variable:
       (spacemacs-buffer/set-mode-line spacemacs--default-mode-line)
       (spacemacs-buffer-mode))
     (force-mode-line-update)
-    (spacemacs-buffer/goto-link-line)))
+    ;; (spacemacs-buffer/goto-link-line)
+    ))
 
 (defun spacemacs-buffer/goto-buffer (&optional refresh do-not-switch)
   "Create the special buffer for `spacemacs-buffer-mode'.
@@ -1603,11 +1604,12 @@ If a prefix argument is given, switch to it in an other, possibly new window."
             (spacemacs-buffer/set-mode-line spacemacs--default-mode-line)
             (force-mode-line-update)
             (spacemacs-buffer-mode)))
-        (if save-line
-            (progn (goto-char (point-min))
-                   (forward-line (1- save-line))
-                   (forward-to-indentation 0))
-          (spacemacs-buffer/goto-link-line)))
+        ;; (if save-line
+        ;;     (progn (goto-char (point-min))
+        ;;            (forward-line (1- save-line))
+        ;;            (forward-to-indentation 0))
+        ;;   (spacemacs-buffer/goto-link-line))
+        )
       (unless do-not-switch
         (if current-prefix-arg
             (switch-to-buffer-other-window spacemacs-buffer-name))
