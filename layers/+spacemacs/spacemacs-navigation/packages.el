@@ -112,9 +112,9 @@
 
     (with-eval-after-load 'evil
       (define-key evil-motion-state-map (kbd "*")
-        'spacemacs/enter-ahs-forward)
+                  'spacemacs/enter-ahs-forward)
       (define-key evil-motion-state-map (kbd "#")
-        'spacemacs/enter-ahs-backward))
+                  'spacemacs/enter-ahs-backward))
 
     (spacemacs/set-leader-keys
       "sh" 'spacemacs/symbol-highlight
@@ -436,14 +436,14 @@
       "7" 'winum-select-window-7
       "8" 'winum-select-window-8
       "9" 'winum-select-window-9)
-    (define-key winum-keymap (kbd "M-0") 'winum-select-window-0-or-10)
-    (define-key winum-keymap (kbd "M-1") 'winum-select-window-1)
-    (define-key winum-keymap (kbd "M-2") 'winum-select-window-2)
-    (define-key winum-keymap (kbd "M-3") 'winum-select-window-3)
-    (define-key winum-keymap (kbd "M-4") 'winum-select-window-4)
-    (define-key winum-keymap (kbd "M-5") 'winum-select-window-5)
-    (define-key winum-keymap (kbd "M-6") 'winum-select-window-6)
-    (define-key winum-keymap (kbd "M-7") 'winum-select-window-7)
-    (define-key winum-keymap (kbd "M-8") 'winum-select-window-8)
-    (define-key winum-keymap (kbd "M-9") 'winum-select-window-9)
+    (define-key winum-keymap (kbd "s-0") 'winum-select-window-0-or-10)
+    (define-key winum-keymap (kbd "s-1") 'winum-select-window-1)
+    (define-key winum-keymap (kbd "s-2") 'winum-select-window-2)
+    (define-key winum-keymap (kbd "s-3") 'winum-select-window-3)
+    (define-key winum-keymap (kbd "s-4") 'winum-select-window-4)
+    (define-key winum-keymap (kbd "s-5") 'winum-select-window-5)
+    (define-key winum-keymap (kbd "s-6") 'winum-select-window-6)
+    (define-key winum-keymap (kbd "s-7") 'winum-select-window-7)
+    (define-key winum-keymap (kbd "s-8") 'winum-select-window-8)
+    (define-key winum-keymap (kbd "s-9") 'winum-select-window-9)
     (winum-mode)))
