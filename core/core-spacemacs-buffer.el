@@ -198,7 +198,7 @@ Cate special text banner can de reachable via `998', `cat' or `random*'.
       (if (image-type-available-p (intern (file-name-extension banner)))
           (spacemacs-buffer//insert-image-banner banner)
         (spacemacs-buffer//insert-ascii-banner-centered banner)))
-    ;; (spacemacs-buffer//insert-buttons)
+    (spacemacs-buffer//insert-buttons)
     (spacemacs//redisplay)))
 
 (defun spacemacs-buffer/display-startup-note ()
@@ -335,6 +335,31 @@ Right justified, based on the Spacemacs buffers window width."
                       version))
       (insert "\n\n"))))
 
+
+(defun spacemacs-buffer//insert-footer-quote ()
+  "Insert the footer with fortune quote of the home buffer."
+  (save-excursion
+    (let* ((quotestring
+            (if (executable-find "fortune")
+                (string-join
+                 (mapcar (lambda (l) (concat "\n " (string-fill l 72)))
+                         (if *is-termux*
+                             (string-lines (shell-command-to-string "fortune"))
+                           (string-lines (shell-command-to-string "fortune -c 90% advice 10% ."))))))) ;; 10% samples
+           ;; (string-lines (shell-command-to-string "fortune")))))) ;; -c only works on linux
+           ;; (proudly-free "Proudly free software")
+           (buffer-read-only nil))
+      (goto-char (point-max))
+      (spacemacs-buffer/insert-page-break)
+      ;; (insert "\n")
+      (when (executable-find "fortune")
+        (insert quotestring))
+      ;; (insert "\n")
+      ;; (insert proudly-free)
+      ;; (spacemacs-buffer//center-line (length proudly-free))
+      ))
+  )
+
 (defun spacemacs-buffer//insert-footer ()
   "Insert the footer of the home buffer."
   (save-excursion
@@ -469,8 +494,8 @@ MIN-WIDTH is the minimal width of the frame, frame included.  The frame will not
       (fill-region (point-min) (point-max) nil nil)
       (concat
        "╭─" (when topcaption (propertize (concat " " topcaption " ")
-                                         'face
-                                         '(:weight bold)))
+                                          'face
+                                          '(:weight bold)))
        (make-string (max 0 (- width (if topcaption 6 4) topcaption-length)) ?─) "─╮\n"
        (spacemacs-buffer//notes-render-framed-line "" width hpadding)
        (mapconcat (lambda (line)
@@ -478,7 +503,7 @@ MIN-WIDTH is the minimal width of the frame, frame included.  The frame will not
                   (split-string (buffer-string) "\n" nil) "")
        (spacemacs-buffer//notes-render-framed-line "" width hpadding)
        "╰─" (when botcaption (propertize (concat " " botcaption " ")
-                                         'face '(:weight bold)))
+                                          'face '(:weight bold)))
        (make-string (max 0 (- width (if botcaption 6 4) botcaption-length)) ?─)
        "─╯" (when botcaption "\n")))))
 
@@ -693,7 +718,9 @@ ADDITIONAL-WIDGETS: a function for inserting a widget under the frame."
                                                  spacemacs-buffer-version-info)
                                          "Update your dotfile (SPC f e D) and\
  packages after every update"
-                                         widget-func))
+                                         widget-func)
+
+    )
   (setq spacemacs-buffer--release-note-version nil)
   (spacemacs/dump-vars-to-file '(spacemacs-buffer--release-note-version)
                                spacemacs-buffer--cache-file))
@@ -787,7 +814,12 @@ ARGS: format string arguments."
 
 (defun spacemacs-buffer/insert-page-break ()
   "Insert a page break line in spacemacs buffer."
-  (spacemacs-buffer/append "\n\n"))
+  (when (display-graphic-p)
+    (spacemacs-buffer/append "\n\n"))
+
+  (unless (display-graphic-p)
+    (spacemacs-buffer/append "\n"))
+  )
 
 (defun spacemacs-buffer/append (msg &optional messagebuf)
   "Append MSG to spacemacs buffer.
@@ -1547,7 +1579,8 @@ can be adjusted with the variable:
   (with-current-buffer (get-buffer spacemacs-buffer-name)
     (when dotspacemacs-startup-lists
       (spacemacs-buffer/insert-startup-lists))
-    (spacemacs-buffer//insert-footer)
+
+    ;; (spacemacs-buffer//insert-footer)
     (if configuration-layer-error-count
         (progn
           (spacemacs-buffer-mode)
@@ -1561,8 +1594,7 @@ can be adjusted with the variable:
       (spacemacs-buffer/set-mode-line spacemacs--default-mode-line)
       (spacemacs-buffer-mode))
     (force-mode-line-update)
-    ;; (spacemacs-buffer/goto-link-line)
-    ))
+    (spacemacs-buffer/goto-link-line)))
 
 (defun spacemacs-buffer/goto-buffer (&optional refresh do-not-switch)
   "Create the special buffer for `spacemacs-buffer-mode'.
@@ -1596,20 +1628,20 @@ If a prefix argument is given, switch to it in an other, possibly new window."
               (insert "\n")))
           (spacemacs-buffer/insert-banner-and-buttons)
           (when (bound-and-true-p spacemacs-initialized)
-            (spacemacs-buffer//notes-redisplay-current-note)
+            ;; (spacemacs-buffer//notes-redisplay-current-note) ;; JH
             (when dotspacemacs-startup-lists
               (spacemacs-buffer/insert-startup-lists))
-            (spacemacs-buffer//insert-footer)
+            ;; (spacemacs-buffer//insert-footer)
+            (spacemacs-buffer//insert-footer-quote) ; JH
             (configuration-layer/display-summary emacs-start-time)
             (spacemacs-buffer/set-mode-line spacemacs--default-mode-line)
             (force-mode-line-update)
             (spacemacs-buffer-mode)))
-        ;; (if save-line
-        ;;     (progn (goto-char (point-min))
-        ;;            (forward-line (1- save-line))
-        ;;            (forward-to-indentation 0))
-        ;;   (spacemacs-buffer/goto-link-line))
-        )
+        (if save-line
+            (progn (goto-char (point-min))
+                   (forward-line (1- save-line))
+                   (forward-to-indentation 0))
+          (spacemacs-buffer/goto-link-line)))
       (unless do-not-switch
         (if current-prefix-arg
             (switch-to-buffer-other-window spacemacs-buffer-name))

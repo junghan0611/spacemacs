@@ -226,7 +226,7 @@ Note: the hooked function is not executed when in dumped mode."
      ;; so that it can be changed in user-config if necessary). It was set to
      ;; nil earlier in the startup process to properly handle command line
      ;; arguments.
-     ;; (setq initial-buffer-choice (lambda () (get-buffer spacemacs-buffer-name)))
+     (setq initial-buffer-choice (lambda () (get-buffer spacemacs-buffer-name)))
 
      ;; Activate winner-mode for non dumped emacs sessions. Do this prior to
      ;; user-config to allow users to disable the feature and patch ediff
@@ -249,13 +249,13 @@ Note: the hooked function is not executed when in dumped mode."
          (with-current-buffer "*scratch*"
            (funcall dotspacemacs-scratch-mode)
            (run-hooks 'spacemacs-scratch-mode-hook))))
-     ;; (when spacemacs--delayed-user-theme
-     ;;   (spacemacs/load-theme spacemacs--delayed-user-theme
-     ;;                         spacemacs--fallback-theme t))
-     ;; (spacemacs-buffer//startup-hook)
+     (when spacemacs--delayed-user-theme
+       (spacemacs/load-theme spacemacs--delayed-user-theme
+                             spacemacs--fallback-theme t))
+     (spacemacs-buffer//startup-hook)
      (configuration-layer/display-summary emacs-start-time)
      (spacemacs/check-for-new-version nil spacemacs-version-check-interval)
-     ;; (spacemacs-buffer/goto-link-line)
+     (spacemacs-buffer/goto-link-line)
      (setq spacemacs-initialized t)
      (setq gc-cons-threshold (car dotspacemacs-gc-cons)
            gc-cons-percentage (cadr dotspacemacs-gc-cons))
@@ -263,9 +263,7 @@ Note: the hooked function is not executed when in dumped mode."
      ;; Redraw the spacemacs buffer with full org support
      ;; Before it must be drawn without org related features to
      ;; avoid loading build in org in emacs >= 29
-     ;; (spacemacs-buffer/goto-buffer t t)
-     )
-   )
+     (spacemacs-buffer/goto-buffer t t)))
 
   (if dotspacemacs-byte-compile
       (when (> 1 (spacemacs//dir-byte-compile-state
