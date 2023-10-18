@@ -299,63 +299,9 @@ tries to restore a dead buffer or window."
             :action #'vterm-send-string
             :caller 'spacemacs/counsel-vterm-search-history))
 
-(defun spacemacs/vterm-search-history (it)
-  "Generic version to search vtern history."
-  (interactive (list (completing-read "Bash history: " (spacemacs//vterm-make-history-candidates))))
-  (vterm-send-string it))
-
 (defun spacemacs//vterm-bind-m-r (mode-map)
   (cond
    ((configuration-layer/layer-used-p 'helm)
     (define-key mode-map (kbd "M-r") 'spacemacs/helm-vterm-search-history))
    ((configuration-layer/layer-used-p 'ivy)
-    (define-key mode-map (kbd "M-r") 'spacemacs/counsel-vterm-search-history))
-   ((configuration-layer/layer-used-p 'compleseus)
-    (define-key mode-map (kbd "M-r") 'spacemacs/vterm-search-history))))
-
-
-(defun spacemacs//vterm-repl--get-project-shell-buffer ()
-  (concat "*"
-          (spacemacs//current-layout-name)
-          "-"
-          (if (file-remote-p default-directory)
-              "remote-"
-            "")
-          "vterm"
-          (format "-%s" shell-pop-last-shell-buffer-index)
-          "*"))
-
-(defun spacemacs//vterm-repl-send-string (str)
-  (with-current-buffer (spacemacs//vterm-repl--get-project-shell-buffer)
-    (message "Sending: %s ..." (car (split-string str "\n")))
-    (vterm-send-string str)))
-
-(defun spacemacs/vterm-repl-send-buffer ()
-  (interactive)
-  (spacemacs//vterm-repl-send-string (buffer-substring-no-properties (point-min) (point-max))))
-
-(defun spacemacs/vterm-repl-send-line ()
-  (interactive)
-  (spacemacs//vterm-repl-send-string
-   (thing-at-point 'line t)))
-
-(defun spacemacs/vterm-repl-send-function ()
-  (interactive)
-  (spacemacs//vterm-repl-send-string
-   (thing-at-point 'defun t)))
-
-(defun spacemacs/vterm-repl-send-region (start end)
-  (interactive "r")
-  (spacemacs//vterm-repl-send-string
-   (buffer-substring-no-properties start end)))
-
-(defun spacemacs/vterm-repl-send-dwim (string)
-  (interactive (list
-                (if (use-region-p)
-                    (buffer-substring-no-properties (region-beginning) (region-end))
-                  (thing-at-point 'line t))))
-  (spacemacs//vterm-repl-send-string string))
-
-(defun spacemacs/shell-history (it)
-  (interactive (list (completing-read "Shell history: " (ring-elements comint-input-ring))))
-  (insert it))
+    (define-key mode-map (kbd "M-r") 'spacemacs/counsel-vterm-search-history))))
