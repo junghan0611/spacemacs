@@ -84,8 +84,8 @@
         (kbd "C-i") 'eww-forward-url
         "<" 'eww-back-url
         ">" 'eww-forward-url
-        "[" 'eww-previous-url
-        "]" 'eww-next-url
+        ;; "[" 'eww-previous-url
+        ;; "]" 'eww-next-url
         "L" 'spacemacs/eww-jump-next-buffer
         "H" 'spacemacs/eww-jump-previous-buffer
         (kbd "C-j") 'shr-next-link
