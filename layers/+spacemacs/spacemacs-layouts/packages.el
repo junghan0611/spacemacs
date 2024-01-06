@@ -1,6 +1,6 @@
 ;;; packages.el --- Spacemacs Layouts Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2012-2022 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2024 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -28,7 +28,7 @@
     persp-mode
     spaceline
     consult
-    (counsel-projectile :requires ivy)))
+    counsel-projectile))
 
 
 
@@ -252,13 +252,11 @@
 
 
 
-(defun spacemacs-layouts/init-counsel-projectile ()
-  (use-package counsel-projectile
-    :defer t
-    :init (spacemacs/set-leader-keys "pl" 'spacemacs/ivy-persp-switch-project)
-    :config (ivy-set-actions
-             'spacemacs/ivy-persp-switch-project
-             '(("d" spacemacs/ivy-switch-project-open-dired "dired")))))
+(defun spacemacs-layouts/post-init-counsel-projectile ()
+  (spacemacs/set-leader-keys "pl" 'spacemacs/ivy-persp-switch-project)
+  (ivy-set-actions
+   'spacemacs/ivy-persp-switch-project
+   '(("d" spacemacs/ivy-switch-project-open-dired "dired"))))
 
 (defun spacemacs-layouts/post-init-consult ()
   (spacemacs/set-leader-keys

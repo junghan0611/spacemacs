@@ -1,6 +1,6 @@
 ;;; funcs.el --- Auto-completion functions File -*- lexical-binding: t; -*-
 ;;
-;; Copyright (c) 2012-2022 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2024 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -395,14 +395,14 @@ MODE parameter must match the :modes values used in the call to
 ;; As `hippie-expand' is less frequently used than yasnippet I think it is
 ;; better to have smartparens state preserved with the default case.
 
-(defvar spacemacs--smartparens-enabled-initially t
+(defvar spacemacs--smartparens-enabled-initially nil
   "Stored whether smartparens is originally enabled or not.")
 
 (defun spacemacs//smartparens-disable-before-expand-snippet ()
   "Handler for `yas-before-expand-snippet-hook'.
 Disable smartparens and remember its initial state."
   ;; Remember the initial smartparens state only once, when expanding a top-level snippet.
-  (setq spacemacs--smartparens-enabled-initially (or smartparens-mode smartparens-strict-mode))
+  (setq spacemacs--smartparens-enabled-initially (or spacemacs--smartparens-enabled-initially smartparens-mode smartparens-strict-mode))
   (spacemacs//deactivate-smartparens))
 
 (defun spacemacs//smartparens-restore-after-exit-snippet ()
