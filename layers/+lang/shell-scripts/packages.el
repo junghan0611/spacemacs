@@ -1,6 +1,6 @@
 ;;; packages.el --- Shell Scripts Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2012-2022 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2024 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -30,7 +30,6 @@
     flycheck-bashate
     ggtags
     counsel-gtags
-    helm-gtags
     insert-shebang
     org
     (sh-script :location built-in)
@@ -97,7 +96,8 @@
                  (string-match-p "\\.zsh\\'" buffer-file-name))
         (sh-set-shell "zsh")))
     (add-hook 'sh-mode-hook 'spacemacs//setup-shell)
-    (add-hook 'sh-mode-hook 'spacemacs//shell-scripts-setup-backend)))
+    (add-hook 'sh-mode-hook 'spacemacs//shell-scripts-setup-backend)
+    (add-hook 'after-save-hook 'spacemacs/scripts-make-buffer-file-executable-maybe)))
 
 (defun shell-scripts/init-shfmt ()
   (use-package shfmt
@@ -110,16 +110,16 @@
     ;; therefore bind this function to "==" instead
     (if (eq shell-scripts-backend 'lsp)
         (spacemacs/set-leader-keys-for-major-mode 'sh-mode "==" 'shfmt-buffer)
-      (spacemacs/set-leader-keys-for-major-mode 'sh-mode "=" 'shfmt-buffer))))
+      (spacemacs/set-leader-keys-for-major-mode 'sh-mode "=" 'shfmt-buffer))
+    :config
+    (when shell-scripts-shfmt-args
+      (setq shfmt-arguments shell-scripts-shfmt-args))))
 
 (defun shell-scripts/post-init-ggtags ()
   (add-hook 'sh-mode-local-vars-hook #'spacemacs/ggtags-mode-enable))
 
 (defun shell-scripts/post-init-counsel-gtags ()
   (spacemacs/counsel-gtags-define-keys-for-mode 'sh-mode))
-
-(defun shell-scripts/post-init-helm-gtags ()
-  (spacemacs/helm-gtags-define-keys-for-mode 'sh-mode))
 
 (defun shell-scripts/pre-init-org ()
   (spacemacs|use-package-add-hook org

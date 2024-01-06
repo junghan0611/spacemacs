@@ -192,7 +192,6 @@
   - [[#languagetool][LanguageTool]]
 - [[#source-control][Source control]]
   - [[#git][Git]]
-  - [[#github][GitHub]]
   - [[#perforce][Perforce]]
   - [[#version-control][Version-Control]]
 - [[#spacemacs][Spacemacs]]
@@ -210,6 +209,7 @@
   - [[#theming][Theming]]
 - [[#tools][Tools]]
   - [[#ansible][Ansible]]
+  - [[#apache][Apache]]
   - [[#bm][Bm]]
   - [[#cfengine][CFEngine]]
   - [[#chrome][Chrome]]
@@ -265,6 +265,7 @@
   - [[#hacker-news][Hacker News]]
   - [[#layer-for-reddit][Layer for reddit]]
   - [[#lobsters][Lobsters]]
+  - [[#openai][OpenAI]]
   - [[#pocket][Pocket]]
   - [[#search-engine][Search Engine]]
   - [[#streamlink][Streamlink]]
@@ -349,11 +350,11 @@ Features:
 ** Syntax Checking
 [[file:+checkers/syntax-checking/README.org][+checkers/syntax-checking/README.org]]
 
-This layer adds on the fly syntax checking to all supported language layers.
+This layer adds on-the-fly syntax checking to all supported language layers.
 
 Features:
-- Support for automatic syntax checking with [[http://www.flycheck.org/][Flycheck]] for various language layers
-- Tooltip syntax errors with =popwin=
+- Automatic syntax checking with [[http://www.flycheck.org/][Flycheck]] for various language layers.
+- Shows syntax error in pop-up window via [[https://github.com/flycheck/flycheck-pos-tip][flycheck-pos-tip]].
 
 * Completion
 ** Auto-completion
@@ -371,17 +372,17 @@ Features:
 ** Compleseus
 [[file:+completion/compleseus/README.org][+completion/compleseus/README.org]]
 
-This layer adds a new way of completion provided by the following core packages:
-- =consult=
-- =embark=
-- =marginalia=
-- =orderless=
-- =selectrum= or =vertico=
+This layer implements completion provided by combining the following packages:
+- =selectrum= or =vertico=: vertical completion user interface
+- =consult=: useful commands using ~completing-read~
+- =embark=: provides minibuffer actions
+- =marginalia=: annotations to completion candidates
+- =orderless=: filtering enhancements
 
-This is an WIP and only supports emacs 27 or later. Please contribute.
+It only supports emacs 27 or later.
 
 Features:
-- Same features as =ivy= or =helm=
+- Similar features like =ivy= or =helm=
 
 ** Helm
 [[file:+completion/helm/README.org][+completion/helm/README.org]]
@@ -455,8 +456,8 @@ Features:
 - UI optimized for speed: quick keystrokes for common actions.
 - Very extendable and customizable.
 - Integration with Helm.
-- Maildir summary using [[https://github.com/agpchil/mu4e-maildirs-extension][mu4e-mailidirs-extension]]
-- Notifications using [[https://github.com/iqbalansari/mu4e-alert][mu4e-alert]]
+- Maildir summary.
+- Notifications using [[https://github.com/iqbalansari/mu4e-alert][mu4e-alert]].
 
 ** Notmuch
 [[file:+email/notmuch/README.org][+email/notmuch/README.org]]
@@ -647,10 +648,10 @@ This layer adds support for [[https://github.com/rolandwalker/unicode-fonts][uni
 install the fonts listed in the [[https://github.com/rolandwalker/unicode-fonts#quickstart][Quickstart]] section of the unicode-fonts README.
 
 Features:
-- Display unicode glyphs using the best available font.
+- Display Unicode glyphs using the best available font.
 - Easily override glyphs or sections of glyphs.
-- Display color emoji on both the macOS port version of Emacs and emacs-plus (with
-  =unicode-fonts-force-multi-color-on-mac= set to non nil).
+- Display color emoji on both the macOS port version of Emacs and emacs-plus
+  (with =unicode-fonts-force-multi-color-on-mac= set to non nil).
 - Enable support for font ligature in Emacs 27 + via [[https://github.com/mickeynp/ligature.el][ligatures.el]].
 
 * Fun
@@ -798,7 +799,8 @@ This layer provides an implementation of [[https://shaunlebron.github.io/parinfe
 controls indentation based on parentheses or vice versa.
 
 Features:
-- Automatic management of parenthesis in clojure, emacs lisp, common-lisp and scheme following the parinfer editing paradigm.
+- Automatic management of parenthesis in Clojure, Emacs Lisp, Common Lisp and
+  Scheme following the parinfer editing paradigm.
 - Powered by a native library in the background
 
 ** Spacemacs-completion
@@ -838,11 +840,10 @@ Features:
   - easypg
   - ediff
   - eldoc
-  - help-fns+
+  - help-fns+ (only in Emacs 27.x and older)
   - hi-lock
   - image-mode
   - imenu
-  - linum (only in Emacs 25.x and older)
   - occur-mode
   - package-menu
   - page-break-lines
@@ -889,6 +890,7 @@ Features:
 - Support for [[https://github.com/PythonNut/evil-easymotion][=evil-easymotion=]] if the editing style is =vim= or =hybrid=.
 - Support for cycling between multi line block styles via [[https://github.com/IvanMalison/multi-line/][=multi-line=]].
 - Support for editing strings inplace via [[https://github.com/magnars/string-edit.el][=string-edit=]]
+- Presents undo history as a tree via [[https://gitlab.com/tsc25/undo-tree/-/blob/master/undo-tree.el][=undo-tree=]]
 
 ** Spacemacs-editing-visual
 [[file:+spacemacs/spacemacs-editing-visual/README.org][+spacemacs/spacemacs-editing-visual/README.org]]
@@ -913,7 +915,6 @@ throughout the entirety of Spacemacs.
 
 Features:
 - Add evil tutorial with =evil-tutor=
-- Add relative line number with =linum-relative= (only in Emacs 25.x and older)
 - Add escaping under ~fd~ by default with =evil-escape=
 - Add occurrences count in mode-line when searching a buffer
 - Add support for lisp structure manipulation with =evil-lisp-state=
@@ -1555,6 +1556,7 @@ Features:
   - Arch Linux PKGBUILDs
   - Arduino
   - Android Logcat (not associated with any file types by default)
+  - Gemtext
   - Gentoo ebuilds
   - Hoon
   - MATLAB
@@ -1879,7 +1881,7 @@ Features:
 - Eldoc-mode
 - Documentation at point
 - Auto complete
-- Flycheck with either tslint or eslint
+- Flycheck with either eslint or tslint
 - Jump to definition, Jump to type definition
 - Find occurrences (Imenu-mode)
 - Rename symbol
@@ -2079,7 +2081,7 @@ Features:
 - syntax-highlighting
 - Auto-completion
 - Code Navigation
-- Python test runners (see [[file:+lang/hy/../python/README.org][python layer]])
+- Python test runners (see [[file:+lang/python/README.org][python layer]])
 - Virtual Environment using [[https://github.com/jorgenschaefer/pyvenv][pyvenv]] and [[https://github.com/yyuu/pyenv][pyenv]]
 - Org Babel support
 
@@ -2296,7 +2298,7 @@ Features:
 This layer supports [[https://www.rust-lang.org][Rust]] development in Spacemacs.
 
 Features:
-- Auto-completion and navigation support through [[https://github.com/emacs-lsp/lsp-mode][lsp-mode]] or [[https://github.com/phildawes/racer][Racer]]
+- Auto-completion and navigation support through [[https://github.com/emacs-lsp/lsp-mode][lsp-mode]]
 - Interactive debugger using [[https://github.com/emacs-lsp/dap-mode][dap-mode]]
 - Support for the Rust package manager [[http://doc.crates.io/index.html][Cargo]]
 - Support for [[https://github.com/nabero/ron-mode][Rusty Object Notation (RON)]]
@@ -2574,21 +2576,6 @@ Features:
 New to Magit? Checkout the [[https://magit.vc/about/][official intro]] and [[https://practical.li/spacemacs/source-control/][Practicalli Spacemacs]]
 guide to configuring and using the Git and version control layers.
 
-** GitHub
-[[file:+source-control/github/README.org][+source-control/github/README.org]]
-
-*This layer is deprecated*.
-
-The layer had support searching for and cloning [[http://github.com][GitHub]] repositories,
-although that did not provide a secure way to store an access token
-to connect to GitHub.
-
-The git layer provides interaction with GitHub and can securely
-store the access token using PGP.
-
-Features:
-- [[https://github.com/seagle0128/grip-mode][grip-mode]] Github-flavored Markdown/Org preview using [[https://github.com/joeyespo/grip][Grip]].
-
 ** Perforce
 [[file:+source-control/perforce/README.org][+source-control/perforce/README.org]]
 
@@ -2755,10 +2742,19 @@ Features:
 - Auto-completion via =company-ansible=.
 - Integration of =ansible-vault= into emacs for automatic encryption/decryption of files.
 
+** Apache
+[[file:+tools/apache/README.org][+tools/apache/README.org]]
+
+This layer adds support for configuring the [[https://httpd.apache.org/][Apache]] web server.
+
+Features:
+- Syntax highlighting of apache configuration files via [[https://github.com/emacs-php/apache-mode][apache-mode]].
+- Syntax-aware indentation
+
 ** Bm
 [[file:+tools/bm/README.org][+tools/bm/README.org]]
 
-[[https://github.com/joodland/bm/blob/master/README.md][BM]] provides visible, buffer local, bookmarks and the ability to jump forward and backward to the next bookmark.
+[[https://github.com/joodland/bm][bm]] provides visible, buffer local, bookmarks and the ability to jump forward and backward to the next bookmark.
 
 Features:
 - Auto remove bookmark after jump to it by =bm-next= or =bm-previous=
@@ -2769,7 +2765,7 @@ Features:
 - Annotate bookmarks.
 - Different wrapping modes.
 - Different bookmarks styles, line-only, fringe-only or both.
-- Persistent bookmarks.
+- Persistent bookmarks (buffer local), also in non-file buffers (info) and indirect buffers.
 - List bookmarks (in all buffers) in a separate buffer.
 - Cycle through bookmarks in all open buffers.
 
@@ -3182,7 +3178,7 @@ Features:
 ** Tide Layer
 [[file:+tools/tide/README.org][+tools/tide/README.org]]
 
-This layer installs [[https://github.com/ananthakumaran/tide][tide]] package which allows communication with 
+This layer installs [[https://github.com/ananthakumaran/tide][tide]] package which allows communication with
 [[https://github.com/Microsoft/TypeScript/wiki/Standalone-Server-%28tsserver%29][standalone typescript server]] =tsserver= for JavaScript/TypeScript development.
 
 Features:
@@ -3387,6 +3383,18 @@ This layer adds support for reading [[https://lobste.rs/][lobsters]].
 
 Features:
 - Read Lobsters news
+
+** OpenAI
+[[file:+web-services/openai/README.org][+web-services/openai/README.org]]
+
+This layer provides applications to make requests to openai via its API.
+
+Features:
+- Provides access to openai via the emacs-openai suite of packages
+- Send visual selection or buffer and receive response in current buffer
+- Improve, edit, and document code
+- Chat sessions with chatgpt
+- Obtain AI generated images
 
 ** Pocket
 [[file:+web-services/pocket/README.org][+web-services/pocket/README.org]]

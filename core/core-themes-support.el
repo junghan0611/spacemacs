@@ -1,6 +1,6 @@
 ;;; core-themes-support.el --- Spacemacs Core File -*- lexical-binding: t -*-
 ;;
-;; Copyright (c) 2012-2022 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2024 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -193,6 +193,7 @@
     (doom-city-lights                 . doom-themes)
     (doom-dark+                       . doom-themes)
     (doom-dracula                     . doom-themes)
+    (doom-earl-grey                   . doom-themes)
     (doom-ephemeral                   . doom-themes)
     (doom-fairy-floss                 . doom-themes)
     (doom-gruvbox                     . doom-themes)
@@ -230,11 +231,11 @@
     (doom-xcode                       . doom-themes)
     (doom-zenburn                     . doom-themes)
     (dorsey                           . sublime-themes)
-    (eziam-dark                       . eziam-theme)
-    (eziam-dusk                       . eziam-theme)
-    (eziam-light                      . eziam-theme)
-    (farmhouse-dark                   . farmhouse-theme)
-    (farmhouse-light                  . farmhouse-theme)
+    (eziam-dark                       . eziam-themes)
+    (eziam-dusk                       . eziam-themes)
+    (eziam-light                      . eziam-themes)
+    (farmhouse-dark                   . farmhouse-themes)
+    (farmhouse-light                  . farmhouse-themes)
     (fogus                            . sublime-themes)
     (graham                           . sublime-themes)
     (granger                          . sublime-themes)
@@ -260,8 +261,8 @@
     (kaolin-temple                    . kaolin-themes)
     (kaolin-valley-dark               . kaolin-themes)
     (kaolin-valley-light              . kaolin-themes)
-    (majapahit-dark                   . majapahit-theme)
-    (majapahit-light                  . majapahit-theme)
+    (majapahit-dark                   . majapahit-themes)
+    (majapahit-light                  . majapahit-themes)
     (material-light                   . material-theme)
     (mccarthy                         . sublime-themes)
     (minimal-light                    . minimal-theme)

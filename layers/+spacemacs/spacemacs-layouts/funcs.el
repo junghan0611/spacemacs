@@ -1,6 +1,6 @@
 ;;; funcs.el --- Spacemacs Layouts Layer functions File -*- lexical-binding: t; -*-
 ;;
-;; Copyright (c) 2012-2022 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2024 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -974,7 +974,9 @@ containing the buffer."
                                   nil))
          (project (completing-read
                    "Switch to Project Perspective: "
-                   projectile-known-projects
+                   (if current-project-maybe
+                       (cons current-project-maybe projectile-known-projects)
+                     projectile-known-projects)
                    nil
                    nil
                    nil

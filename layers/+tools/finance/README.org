@@ -65,12 +65,15 @@ your =dotspacemacs/user-config=. The default value, set in the layer, is =62=.
 evil-ledger additionally adds a transaction text object, bound to ~x~, so you
 can for example use ~dix~ or ~vax~ to delete or mark the transaction at point.
 
+To navigate the calendar when adding a transaction, use ~S-<arrow>~ for days,
+and ~<~ or ~>~ for months.
+
 ** Ledger-Reconcile
 
 | Key binding | Description                                                               |
 |-------------+---------------------------------------------------------------------------|
 | ~SPC m ,~   | toggle the current transaction pending                                    |
-| ~SPC m a~   | quickly add a transaction, without exiting the reconciliation buffer      |
-| ~SPC m t~   | change the target amount for the selected account                         |
-| ~SPC m q~   | quit reconciliation                                                       |
+| ~a~         | quickly add a transaction, without exiting the reconciliation buffer      |
+| ~t~         | change the target amount for the selected account                         |
+| ~q~         | quit reconciliation                                                       |
 | ~SPC m RET~ | finalize the reconciliation, changing all pending transactions to cleared |

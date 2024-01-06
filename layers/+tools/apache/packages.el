@@ -1,8 +1,8 @@
-;;; config.el --- parinfer layer config file for Spacemacs.
+;;; packages.el --- apache layer packages file for Spacemacs.
 ;;
-;; Copyright (c) 2012-2022 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2024 Sylvain Benner & Contributors
 ;;
-;; Author: Sylvain Benner <sylvain.benner@gmail.com>
+;; Author: Nathaniel Waisbrot <code@waisbrot.net>
 ;; URL: https://github.com/syl20bnr/spacemacs
 ;;
 ;; This file is not part of GNU Emacs.
@@ -20,13 +20,8 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-(spacemacs|defc parinfer-auto-download t
-  "If non nil auto install the parinfer rust library"
-  'boolean nil nil)
 
-(spacemacs|defc parinfer-library nil
-  "If non nil allows to set a custom library name and folder
+(defconst apache-packages '(apache-mode))
 
-Setting a path here and disabling `parinfer-auto-download'
-allows to use a local version of the library."
-  '(file :must-match t) nil nil)
+(defun apache/init-apache-mode()
+  (use-package apache-mode :defer t))

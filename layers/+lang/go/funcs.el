@@ -1,6 +1,6 @@
 ;;; funcs.el --- Go Layer functions File for Spacemacs
 ;;
-;; Copyright (c) 2012-2022 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2024 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -48,8 +48,19 @@
   "Conditionally setup go DAP integration."
   ;; currently DAP is only available using LSP
   (when (eq go-backend 'lsp)
-    (require 'dap-go)
-    (dap-go-setup)))
+    (pcase go-dap-mode
+      ('dap-dlv-go (spacemacs//go-setup-dap-dlv))
+      ('dap-go (spacemacs//go-setup-dap-vscode)))))
+
+(defun spacemacs//go-setup-dap-vscode ()
+  "Conditionally setup go DAP integration with aold dlv (vscode) setup."
+  (require 'dap-go)
+  (dap-go-setup))
+
+
+(defun spacemacs//go-setup-dap-dlv ()
+  "Conditionally setup go DAP integration with new dlv config."
+  (require 'dap-dlv-go))
 
 (defun spacemacs//go-setup-format ()
   "Conditionally setup format on save."
@@ -145,6 +156,16 @@
   (interactive)
   (shell-command
    (concat go-run-command " . " go-run-args)))
+
+(defun spacemacs/go-run-generate-current-dir ()
+  (interactive)
+  (compilation-start (concat go-generate-command " " (file-name-directory buffer-file-name))
+                     nil (lambda (n) go-generate-buffer-name) nil))
+
+(defun spacemacs/go-run-generate-current-buffer ()
+  (interactive)
+  (compilation-start (concat go-generate-command " " (buffer-file-name))
+                     nil (lambda (n) go-generate-buffer-name) nil))
 
 ;; misc
 (defun spacemacs/go-packages-gopkgs ()

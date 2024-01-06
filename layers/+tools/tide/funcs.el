@@ -1,6 +1,6 @@
 ;;; funcs.el --- Tide  Layer functions File for Spacemacs
 ;;
-;; Copyright (c) 2012-2022 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2024 Sylvain Benner & Contributors
 ;;
 ;; Author: Thanh Vuong <thanhvg@gmail.com>
 ;; URL: https://github.com/thanhvg
@@ -40,6 +40,7 @@
     "ri" #'tide-organize-imports
     "rr" #'tide-rename-symbol
     "rf" #'tide-rename-file
+    "rR" #'tide-refactor
     "S" "server"
     "Sr" #'tide-restart-server
     "Sj" #'spacemacs//tide-create-jsconfig-file))

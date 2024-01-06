@@ -1,6 +1,6 @@
 ;;; config.el --- Spacemacs Bootstrap Layer configuration File
 ;;
-;; Copyright (c) 2012-2022 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2024 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -36,6 +36,7 @@
     ((emacs-lisp-mode lisp-mode) . lisp-indent-offset)
     (enh-ruby-mode . enh-ruby-indent-level)
     (erlang-mode . erlang-indent-level)
+    (go-mode . go-tab-width)
     (js2-mode . js2-basic-offset)
     (js3-mode . js3-indent-level)
     ((js-mode json-mode) . js-indent-level)
@@ -73,6 +74,10 @@ if used there.")
   (spacemacs|dotspacemacs-backward-compatibility
    dotspacemacs-visual-line-move-text nil)
   "If non-nil, J and K move lines up and down when in visual mode.")
+
+(defvar vim-style-enable-undo-region nil
+  "If non-nil, `u' is remapped to `undo' in visual state.
+Otherwise, in visual state `u' downcases visually selected text.")
 
 (defvar vim-style-ex-substitute-global
   (spacemacs|dotspacemacs-backward-compatibility

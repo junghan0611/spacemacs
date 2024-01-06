@@ -1,6 +1,6 @@
 ;;; core-fonts-support.el --- Spacemacs Core File -*- lexical-binding: t -*-
 ;;
-;; Copyright (c) 2012-2022 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2024 Sylvain Benner & Contributors
 ;;
 ;; Author: Sylvain Benner <sylvain.benner@gmail.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -21,6 +21,8 @@
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 (require 'core-funcs)
+(require 'core-load-paths)
+
 (require 'core-spacemacs-buffer)
 
 (defvar spacemacs--diminished-minor-modes nil
@@ -47,11 +49,23 @@ The return value is nil if no font was found, truthy otherwise."
                             :powerline-offset))
                (fontspec (apply 'font-spec :name font font-props)))
           (spacemacs-buffer/message "Setting font \"%s\"..." font)
-          (set-frame-font fontspec nil t)
+          ;; We set the INHIBIT-CUSTOMIZE parameter to t to tell set-frame-font
+          ;; not to fiddle with the default face in the user's Customization
+          ;; settings. We don't need Customization because our way of ensuring
+          ;; that the font is applied to future frames is to modify
+          ;; default-frame-alist, and Customization causes issues, see
+          ;; https://github.com/syl20bnr/spacemacs/issues/5353.
+          ;; INHIBIT-CUSTOMIZE is only present in recent emacs versions. 
+          (if (version< emacs-version "28.0.90")
+              (set-frame-font fontspec nil t)
+            (set-frame-font fontspec nil t t))
           (push `(font . ,(frame-parameter nil 'font)) default-frame-alist)
           ;; fallback font for unicode characters used in spacemacs
           (pcase system-type
             (`gnu/linux
+             (setq fallback-font-name "NanumGothic")
+             (setq fallback-font-name2 "NanumGothic"))
+            (`android
              (setq fallback-font-name "NanumGothic")
              (setq fallback-font-name2 "NanumGothic"))
             (`darwin
@@ -79,18 +93,18 @@ The return value is nil if no font was found, truthy otherwise."
                    (fallback-spec2 (apply 'font-spec
                                           :name fallback-font-name2
                                           fallback-props)))
-              ;; window numbers
+              ;; window numbers (ding bang circled digits)
               (set-fontset-font "fontset-default"
                                 '(#x2776 . #x2793) fallback-spec nil 'prepend)
-              ;; mode-line circled letters
+              ;; mode-line circled letters (circled latin capital/small letters)
               (set-fontset-font "fontset-default"
-                                '(#x24b6 . #x24fe) fallback-spec nil 'prepend)
-              ;; mode-line additional characters
+                                '(#x24b6 . #x24e9) fallback-spec nil 'prepend)
+              ;; mode-line additional characters (circled/squared mathematical operators)
               (set-fontset-font "fontset-default"
                                 '(#x2295 . #x22a1) fallback-spec nil 'prepend)
-              ;; new version lighter
+              ;; new version lighter (arrow block)
               (set-fontset-font "fontset-default"
-                                '(#x2190 . #x2200) fallback-spec2 nil 'prepend))))
+                                '(#x2190 . #x21ff) fallback-spec2 nil 'prepend))))
         (throw 'break t)))
     nil))
 

@@ -1,6 +1,6 @@
 ;;; config.el --- Rust Layer packages File for Spacemacs
 ;;
-;; Copyright (c) 2012-2022 Sylvain Benner & Contributors
+;; Copyright (c) 2012-2024 Sylvain Benner & Contributors
 ;;
 ;; Author: Chris Hoeppner <me@mkaito.com>
 ;; URL: https://github.com/syl20bnr/spacemacs
@@ -23,12 +23,7 @@
 
 ;; Variables
 
-(spacemacs|define-jump-handlers rust-mode)
-
-(defvar rust-backend (if (configuration-layer/layer-used-p 'lsp) 'lsp 'racer)
-  "The backend to use for completion.
-Possible values are `lsp' `racer'.
-If `nil' then `racer' is the default backend unless `lsp' layer is used.")
+(spacemacs|define-jump-handlers rustic-mode)
 
 (defvar cargo-process-reload-on-modify nil
   "When non-nil, reload workspace after a cargo-process command modifies Cargo.toml.")
